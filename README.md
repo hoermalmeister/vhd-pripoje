@@ -112,9 +112,14 @@ Postup vyhodnocení (`engine/evaluate.py`):
 
 Zatím se neověřuje: čísla tratí („z trati 340“) – pravidlo se pak vybere s upozorněním na nejistotu.
 
-`data/coverage_report.json` – kontrola nad jízdním řádem: z 2 971 pravidel části C se 2 913 uplatní na reálné dvojice vlaků (16 dnů rozložených přes celý JŘ + cílené dotazy). U zbylých 58 je uveden ověřený důvod (vlak v JŘ 2026 není, stanicí nejede, nikdy nejede ve stejný den jako přípojný…). Vlaky, které stanicí jen projíždějí a staví v ní, se vyhodnocují normálně; obvody stanic, které jsou v GTFS samostatné (Ostrava hl.n. – uhelné nádraží, Čáslav m.n., Třemešná ve Sl. úz. r.), jsou v `STATION_DISTRICTS` v `engine/evaluate.py`. Přestupy přes půlnoc se párují s vlakem předchozího / následujícího dne.
+`data/coverage_report.json` – kontrola nad jízdním řádem: z 2 971 pravidel části C se 2959 uplatní na reálné dvojice vlaků nebo jsou vyhodnotitelné přímo podle čísel. U zbylých 12 obecných řádků je uveden ověřený důvod (v JŘ 2026 jim neodpovídá žádný vlak, všechny vlaky mají vlastní konkrétnější řádek, duplicitní řádek…). Obvody stanic samostatné v GTFS jsou v `STATION_DISTRICTS`, linky vedené v pomůcce jako Ex (R15, R18) v `LINE_ALSO_DRUH` – obojí v `engine/evaluate.py`.
 
 
 ### Ručně převedená pravidla části A/B (`tools/partb_manual.json`)
 
 70 textů, které nešly rozpoznat automaticky, je převedeno ručně na pravidla typu `connection_rule` (je přípoj / není přípoj), `operator_basic_wait`, `min_interval` nebo `info`. Používají stejné selektory jako část C, takže se vyhodnocují nad jízdním řádem: dopravce, linka, druh, směr („ze směru X“, „směr X“), čísla vlaků, dny (⑤, ⑥ a †…), podmínky na interval. Čísla tratí jsou převedena na směry a označena `approx` (Brno hl.n.: 240/244 = směr Střelice; Kralupy: 092/093/110/111 = Neratovice/Kladno/Slaný/Velvary; Ostrava hl.n.: 321/323 = Havířov/Frýdek-Místek). Nevyhodnocují se zatím přestupní doby podle konkrétních nástupišť.
+
+
+### Výslovné řádky tabulky platí vždy
+
+Je-li v tabulce stanice řádek s číslem návazného vlaku a číslem přípojného vlaku (nebo „V“), vrátí se jeho čekací doba **bez ohledu na jízdní řád** – i když vlak podle GTFS v daný den nejede nebo stanicí neprojíždí (výsledek nese upozornění). „V“ znamená každý vlak, který je ve stanici přípojem (garantovaný přestup dle článků 1 a 2: 2–60 min, týž dopravce nebo povoleno částí B); jsou-li oba vlaky v jízdním řádu, tyto podmínky se ověří. Jízdní řád je potřeba jen pro obecné řádky („všechny vlaky Os směr X“, dopravce, linka) a pro dvojice, které tabulka neuvádí.

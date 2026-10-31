@@ -1,255 +1,15 @@
 {
- "method": "16 dní rozložených přes celý JŘ 2026 + cílené dotazy do jízdního řádu u zbývajících pravidel",
+ "method": "16 dní rozložených přes celý JŘ 2026 + cílené dotazy; řádky s čísly návazného vlaku (a čísly nebo „V“ u přípojného) se vyhodnocují vždy i bez jízdního řádu",
  "rules_total": 2971,
- "rules_matched": 2913,
+ "rules_matched": 2959,
  "not_matched": [
-  {
-   "rule_id": "beroun-002",
-   "station": "Beroun",
-   "section": "vlaky směr Praha (přes Řevnice)",
-   "waiting_train": "1597",
-   "connecting_train": "V",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "beroun-012",
-   "station": "Beroun",
-   "section": "vlaky směr Zdice",
-   "waiting_train": "1596",
-   "connecting_train": "V",
-   "reason": "návazný vlak: stanicí nejede"
-  },
-  {
-   "rule_id": "bohumin-004",
-   "station": "Bohumín",
-   "section": "vlaky směr Ostrava hl.n. – Hranice na Moravě – Přerov (Olomouc hl.n.)",
-   "waiting_train": "131",
-   "connecting_train": "205 kurzy",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "bohumin-009",
-   "station": "Bohumín",
-   "section": "vlaky směr Ostrava hl.n. – Hranice na Moravě – Přerov (Olomouc hl.n.)",
-   "waiting_train": "442",
-   "connecting_train": "407 kurzy, 417 kurzy",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "bohumin-018",
-   "station": "Bohumín",
-   "section": "vlaky směr Dětmarovice",
-   "waiting_train": "204",
-   "connecting_train": "130 kurzy",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "brno-hl-n-045",
-   "station": "Brno hl. n.",
-   "section": "vlaky směr Česká Třebová",
-   "waiting_train": "4082",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "brno-hl-n-054",
-   "station": "Brno hl. n.",
-   "section": "vlaky směr Křenovice horní nádraží / Vyškov",
-   "waiting_train": "4089",
-   "connecting_train": "V",
-   "reason": "návazný vlak: stanicí nejede"
-  },
-  {
-   "rule_id": "brno-hl-n-062",
-   "station": "Brno hl. n.",
-   "section": "vlaky směr Veselí nad Moravou",
-   "waiting_train": "4141",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
   {
    "rule_id": "brno-horni-herspice-006",
    "station": "Brno-Horní Heršpice",
    "section": "vlaky směr Břeclav",
    "waiting_train": "všechny vlaky (vyjma níže uvedených)",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "breznice-008",
-   "station": "Březnice",
-   "section": "vlaky směr Rožmitál pod Třemšínem",
-   "waiting_train": "27943",
-   "connecting_train": "1596",
-   "reason": "přípojný vlak: stanicí nejede"
-  },
-  {
-   "rule_id": "cheb-018",
-   "station": "Cheb",
-   "section": "vlaky směr Schirnding",
-   "waiting_train": "5284",
-   "connecting_train": "564",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "cheb-020",
-   "station": "Cheb",
-   "section": "vlaky směr Schirnding",
-   "waiting_train": "5288",
-   "connecting_train": "562",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "cheb-022",
-   "station": "Cheb",
-   "section": "vlaky směr Schirnding",
-   "waiting_train": "5292",
-   "connecting_train": "558",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "chomutov-do-30-06-001",
-   "station": "Chomutov",
-   "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
-   "waiting_train": "všechny vlaky Ex (vyjma 619)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "chomutov-do-30-06-013",
-   "station": "Chomutov",
-   "section": "vlaky směr Kadaň-Prunéřov",
-   "waiting_train": "všechny vlaky Ex (vyjma 606)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "chomutov-od-01-07-015",
-   "station": "Chomutov",
-   "section": "vlaky směr Kadaň-Prunéřov",
-   "waiting_train": "všechny vlaky Ex (vyjma 606)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "hradec-kralove-hl-n-021",
-   "station": "Hradec Králové hl.n.",
-   "section": "vlaky směr Jaroměř",
-   "waiting_train": "5240",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "kadan-prunerov-do-30-06-001",
-   "station": "Kadaň-Prunéřov",
-   "section": "vlaky směr Chomutov",
-   "waiting_train": "všechny vlaky Ex (vyjma 619)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "kadan-prunerov-do-30-06-016",
-   "station": "Kadaň-Prunéřov",
-   "section": "vlaky směr Chomutov",
-   "waiting_train": "6825",
-   "connecting_train": "17613",
-   "reason": "návazný a přípojný vlak v období platnosti nikdy nejedou ve stejný den"
-  },
-  {
-   "rule_id": "kadan-prunerov-do-30-06-022",
-   "station": "Kadaň-Prunéřov",
-   "section": "vlaky směr Klášterec nad Ohří",
-   "waiting_train": "všechny vlaky Ex (vyjma 606)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "kadan-prunerov-od-01-07-011",
-   "station": "Kadaň-Prunéřov",
-   "section": "vlaky směr Chomutov",
-   "waiting_train": "6825",
-   "connecting_train": "17613",
-   "reason": "návazný a přípojný vlak v období platnosti nikdy nejedou ve stejný den"
-  },
-  {
-   "rule_id": "kadan-prunerov-od-01-07-013",
-   "station": "Kadaň-Prunéřov",
-   "section": "vlaky směr Chomutov",
-   "waiting_train": "7051",
-   "connecting_train": "17633",
-   "reason": "návazný a přípojný vlak v období platnosti nikdy nejedou ve stejný den"
-  },
-  {
-   "rule_id": "krnov-003",
-   "station": "Krnov",
-   "section": "vlaky směr Opava východ",
-   "waiting_train": "3475",
-   "connecting_train": "3519",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "liberec-021",
-   "station": "Liberec",
-   "section": "vlaky směr Turnov",
-   "waiting_train": "5431",
-   "connecting_train": "20939",
-   "reason": "přípojný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "lovosice-020",
-   "station": "Lovosice",
-   "section": "vlaky směr Teplice v Čechách",
-   "waiting_train": "16134 (NAD)",
-   "connecting_train": "V",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "mlada-boleslav-hl-n-006",
-   "station": "Mladá Boleslav hl.n.",
-   "section": "vlaky směr Bakov nad Jizerou",
-   "waiting_train": "6020",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "mlada-boleslav-hl-n-027",
-   "station": "Mladá Boleslav hl.n.",
-   "section": "vlaky směr Mšeno",
-   "waiting_train": "8529, 8571",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "most-do-30-06-001",
-   "station": "Most",
-   "section": "vlaky směr Ústí nad Labem",
-   "waiting_train": "všechny vlaky Ex (vyjma 619)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "most-do-30-06-012",
-   "station": "Most",
-   "section": "vlaky směr Chomutov",
-   "waiting_train": "všechny vlaky Ex (vyjma 604)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "most-od-01-07-001",
-   "station": "Most",
-   "section": "vlaky směr Ústí nad Labem",
-   "waiting_train": "všechny vlaky Ex (vyjma 619)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "most-od-01-07-010",
-   "station": "Most",
-   "section": "vlaky směr Chomutov",
-   "waiting_train": "všechny vlaky Ex (vyjma 604)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – odpovídající vlaky existují ([14601]), ale žádný přípojný vlak 2–60 min před odjezdem nesplnil podmínky přípoje"
   },
   {
    "rule_id": "ostrava-hl-n-004",
@@ -257,7 +17,7 @@
    "section": "vlaky směr Ostrava-Svinov",
    "waiting_train": "všechny vlaky Sp a Os (vyjma níže uvedených)",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – odpovídající vlaky existují ([2900, 2924, 2926, 2928, 2930, 2932]), ale žádný přípojný vlak 2–60 min před odjezdem nesplnil podmínky přípoje"
   },
   {
    "rule_id": "ostrava-hl-n-012",
@@ -265,7 +25,7 @@
    "section": "vlaky směr Ostrava střed",
    "waiting_train": "všechny vlaky (vyjma níže uvedených)",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – v jízdním řádu žádný vlak, který by mu odpovídal (druh/dopravce/směr)"
   },
   {
    "rule_id": "ostrava-svinov-012",
@@ -273,15 +33,7 @@
    "section": "vlaky směr Studénka",
    "waiting_train": "3067",
    "connecting_train": "V (včetně 515)",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "ostrava-svinov-048",
-   "station": "Ostrava-Svinov",
-   "section": "vlaky směr Havířov – Český Těšín",
-   "waiting_train": "3423",
-   "connecting_train": "502",
-   "reason": "návazný a přípojný vlak v období platnosti nikdy nejedou ve stejný den"
+   "reason": "duplicitní řádek (shodný s ostrava-svinov-022) – vyhodnocuje se přes něj"
   },
   {
    "rule_id": "pardubice-hl-n-021",
@@ -289,7 +41,7 @@
    "section": "vlaky směr Hradec Králové hl.n.",
    "waiting_train": "všechny vlaky R směr Liberec (vyjma níže uvedených)",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – všechny odpovídající vlaky (18) mají vlastní konkrétnější řádek"
   },
   {
    "rule_id": "praha-hl-n-002",
@@ -297,7 +49,7 @@
    "section": null,
    "waiting_train": "(vyjma níže uvedených)",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "pokračování řádku praha-hl-n-001 (sloučená buňka v podkladu)"
   },
   {
    "rule_id": "praha-liben-005",
@@ -305,7 +57,7 @@
    "section": "vlaky směr Praha-Holešovice",
    "waiting_train": "všechny vlaky ČD",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – v jízdním řádu žádný vlak, který by mu odpovídal (druh/dopravce/směr)"
   },
   {
    "rule_id": "protivin-011",
@@ -313,15 +65,7 @@
    "section": "vlaky směr Písek – Březnice",
    "waiting_train": "všechny R vlaky dopravce ARR",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "smrzovka-004",
-   "station": "Smržovka",
-   "section": "vlaky směr Liberec",
-   "waiting_train": "2673",
-   "connecting_train": "26355",
-   "reason": "přípojný vlak: není v jízdním řádu (GTFS)"
+   "reason": "obecný řádek – v jízdním řádu žádný vlak, který by mu odpovídal (druh/dopravce/směr)"
   },
   {
    "rule_id": "starkoc-003",
@@ -329,7 +73,7 @@
    "section": "vlaky směr Jaroměř",
    "waiting_train": "1381, 1383, 1385, 1387, 1389, 1391, 1393, 1395",
    "connecting_train": "přímé vozy Broumov – H.Králové (viz Prováděcí nařízení k SŽDC D7, část B)",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
+   "reason": "přípojný „vlak“ jsou přímé vozy Broumov – Hradec Králové; v jízdním řádu je nelze rozpoznat – vyhodnotí se jen dotazem s číslem vlaku, který vozy veze"
   },
   {
    "rule_id": "strakonice-009",
@@ -337,7 +81,7 @@
    "section": "vlaky směr České Budějovice",
    "waiting_train": "všechny vlaky Sp relace Strakonice – Tábor",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – všechny odpovídající vlaky (1) mají vlastní konkrétnější řádek"
   },
   {
    "rule_id": "tanvald-010",
@@ -345,7 +89,7 @@
    "section": "vlaky směr Liberec",
    "waiting_train": "všechny vlaky R dopravce ARR (vyjma níže uvedených)",
    "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
+   "reason": "obecný řádek – v jízdním řádu žádný vlak, který by mu odpovídal (druh/dopravce/směr)"
   },
   {
    "rule_id": "tanvald-012",
@@ -353,119 +97,7 @@
    "section": "vlaky směr Liberec",
    "waiting_train": "všechny Os vlaky ARR",
    "connecting_train": "Os vlaky od Liberce a Desné",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "teplice-v-cechach-do-30-6-001",
-   "station": "Teplice v Čechách",
-   "section": "vlaky směr Ústí nad Labem hl.n.",
-   "waiting_train": "všechny vlaky Ex (vyjma 619)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "teplice-v-cechach-od-1-7-001",
-   "station": "Teplice v Čechách",
-   "section": "vlaky směr Ústí nad Labem hl.n.",
-   "waiting_train": "všechny vlaky Ex (vyjma 619)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "tabor-008",
-   "station": "Tábor",
-   "section": "vlaky směr České Budějovice",
-   "waiting_train": "všechny vlaky Ex",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "uherske-hradiste-002",
-   "station": "Uherské Hradiště",
-   "section": "vlaky směr Kunovice",
-   "waiting_train": "všechny vlaky Ex",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "uhersky-brod-001",
-   "station": "Uherský Brod",
-   "section": "vlaky směr Kunovice",
-   "waiting_train": "všechny vlaky Ex",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "zdice-004",
-   "station": "Zdice",
-   "section": "vlaky směr Beroun",
-   "waiting_train": "1597",
-   "connecting_train": "V",
-   "reason": "návazný vlak: není v jízdním řádu (GTFS)"
-  },
-  {
-   "rule_id": "zdice-008",
-   "station": "Zdice",
-   "section": "vlaky směr Březnice",
-   "waiting_train": "1596",
-   "connecting_train": "V",
-   "reason": "návazný vlak: stanicí nejede"
-  },
-  {
-   "rule_id": "usti-nad-labem-hl-n-do-30-06-011",
-   "station": "Ústí nad Labem hl.n.",
-   "section": "vlaky směr Děčín hl.n.",
-   "waiting_train": "670",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "usti-nad-labem-hl-n-do-30-06-024",
-   "station": "Ústí nad Labem hl.n.",
-   "section": "vlaky směr Most",
-   "waiting_train": "všechny vlaky Ex (vyjma 606)",
-   "connecting_train": "V",
-   "reason": "obecné pravidlo – v 16 testovaných dnech mu nevyhověla žádná dvojice vlaků"
-  },
-  {
-   "rule_id": "usti-nad-labem-hl-n-od-01-07-011",
-   "station": "Ústí nad Labem hl.n.",
-   "section": "vlaky směr Děčín hl.n.",
-   "waiting_train": "670",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "usti-nad-labem-zapad-od-1-7-010",
-   "station": "Ústí nad Labem západ",
-   "section": "vlaky směr Ústí nad Labem hl.n.",
-   "waiting_train": "6833",
-   "connecting_train": "V",
-   "reason": "návazný vlak v období platnosti tabulky nejede"
-  },
-  {
-   "rule_id": "ceska-trebova-015",
-   "station": "Česká Třebová",
-   "section": "vlaky směr Zábřeh na Moravě, Olomouc hl.n.",
-   "waiting_train": "3787",
-   "connecting_train": "V",
-   "reason": "návazný vlak: stanicí nejede"
-  },
-  {
-   "rule_id": "sumperk-002",
-   "station": "Šumperk",
-   "section": "vlaky směr Hanušovice",
-   "waiting_train": "3603",
-   "connecting_train": "V",
-   "reason": "v testovaných dnech žádný přípojný vlak, který by byl přípojem (2–60 min před odjezdem, stejný dopravce nebo povoleno částí B)"
-  },
-  {
-   "rule_id": "zelezny-brod-003",
-   "station": "Železný Brod",
-   "section": "vlaky směr Stará Paka",
-   "waiting_train": "1295",
-   "connecting_train": "1149",
-   "reason": "návazný vlak: stanicí nejede"
+   "reason": "obecný řádek – v jízdním řádu žádný vlak, který by mu odpovídal (druh/dopravce/směr)"
   }
  ]
 }

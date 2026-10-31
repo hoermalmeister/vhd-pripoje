@@ -15,6 +15,13 @@ STATION_DISTRICTS = {
     "Třemešná ve Slezsku": ["Třemešná ve Sl.úz.r."],         # úzkorozchodná dráha do Osoblahy
 }
 
+# linky, které pomůcka v pravidlech označuje jako Ex, ačkoli GTFS je vede jako R (jen pro shodu pravidel,
+# základní čekací doba zůstává podle kategorie v jízdním řádu)
+LINE_ALSO_DRUH = {
+    "R15": ["Ex"],   # Praha – Ústí n.L. – Most – Chomutov – Cheb: Chomutov, Most, Kadaň, Teplice, Ústí – „všechny vlaky Ex (vyjma 619)“
+    "R18": ["Ex"],   # rychlíky do Luhačovic: Hulín, Uherské Hradiště, Uherský Brod – „vlaky Ex“ (Otrokovice je vede jako R)
+}
+
 DAY_LABEL = {"workday": "pracovní den (⚒)", "saturday": "sobota (⑥)", "sunday_holiday": "neděle / svátek (†)"}
 
 
@@ -222,10 +229,30 @@ class Engine:
         has_numbers = any(k in sel for k in ("trains", "ranges", "patterns"))
         if has_numbers and not self._num_match(sel, train.number):
             return False
+        if getattr(train, "stub", False):
+            # vlak bez údajů z jízdního řádu: rozhoduje jen číslo; ostatní podmínky nelze ověřit
+            filters = [k for k in ("categories", "operators", "lines", "from_directions", "to_directions", "destination_station", "relation", "tracks") if k in sel]
+            if "date_condition" in sel and sel["date_condition"].get("periods"):
+                md = date.strftime("%m-%d")
+                if not any(p.get("from", "01-01") <= md <= p.get("to", "12-31") for p in sel["date_condition"]["periods"]):
+                    return False
+            unknown = bool(filters) and not has_numbers
+            if not has_numbers and not sel.get("all"):
+                return None
+            if "parity" in sel and (base_number(train.number) % 2 == 1) != (sel["parity"] == "odd"):
+                return False
+            for ex in sel.get("except", []):
+                r = self.match_selector(ex, train, station, role, date, trace)
+                if r is True:
+                    return False
+                if r is None:
+                    unknown = True
+            return None if unknown else True
         if not has_numbers and not sel.get("all"):
             return None if sel.get("parse") in ("none", "partial") else False
         unknown = False
-        if "categories" in sel and not has_numbers and train.druh not in sel["categories"] and train.category not in sel["categories"]:
+        if "categories" in sel and not has_numbers and train.druh not in sel["categories"] and train.category not in sel["categories"] \
+                and not set(LINE_ALSO_DRUH.get(train.line or "", [])) & set(sel["categories"]):
             return False
         if "operators" in sel and not has_numbers:   # u výčtu čísel je dopravce jen poznámka, např. '6807, 6545 (RJ ÚK)'
             ops = set(sel["operators"])
@@ -335,14 +362,45 @@ class Engine:
 
         conn = self.train_at(int(connecting_no), sid, date)
         wait = self.train_at(int(waiting_no), sid, date)
+        st, warn = self.station_file(name, date) if name else (None, None)
+        missing = [k for k, tr in (("connecting_train", conn), ("waiting_train", wait)) if tr is None]
         for key, tr, no in (("connecting_train", conn, connecting_no), ("waiting_train", wait, waiting_no)):
             if tr is None:
-                out["result"] = "train_not_found"
-                out["message"] = f"Vlak {no} dne {date.isoformat()} ve stanici {out['station']['name']} nejede nebo zde nestaví."
-                return out
+                out[key] = {"label": f"vlak {no}", "number": int(no), "found_in_timetable": False}
+                continue
             out[key] = {"label": tr.label(self.names), "number": tr.number, "category": tr.category, "druh": tr.druh,
                         "operator": tr.operator, "line": tr.line, "arrival": hhmm(tr.times[tr.idx][0]), "departure": hhmm(tr.times[tr.idx][1]),
-                        "from": self.names.get(tr.origin), "to": self.names.get(tr.terminus)}
+                        "from": self.names.get(tr.origin), "to": self.names.get(tr.terminus), "found_in_timetable": True}
+        # 1) výslovný řádek tabulky pro obě čísla vlaků platí vždy – bez ohledu na jízdní řád
+        if st:
+            exp = self._explicit_rule(st, int(waiting_no), int(connecting_no), sid, date, out["trace"])
+            if exp and exp[2] and not missing:
+                exp = None      # 'V' a oba vlaky známe -> ověří se podmínky přípoje v plném vyhodnocení
+            if exp:
+                rule, section, plain_v = exp
+                if warn:
+                    out["warnings"].append(warn)
+                if missing:
+                    out["warnings"].append("Vlak " + " a ".join(str(out[k]["number"]) for k in missing) +
+                                           f" podle jízdního řádu dne {date.isoformat()} ve stanici nestaví nebo nejede – čekací doba je podle tabulky stanice.")
+                if plain_v:
+                    out["warnings"].append("Přípojný vlak je v tabulce uveden jako „" + rule["connecting_train"]["text"] +
+                                           "“ – platí pro vlaky, které jsou přípojem (garantovaný přestup dle článků 1 a 2: 2–60 min, týž dopravce nebo povoleno částí B).")
+                w = rule["wait"][dtype]
+                out["matched_rule"] = {"id": rule["id"], "section": section["title"], "waiting_train": rule["waiting_train"]["text"],
+                                       "connecting_train": rule["connecting_train"]["text"], "wait_raw": w["raw"], "source_row": rule["source_row"]}
+                if not missing and conn.arr is not None and wait.dep is not None:
+                    out["scheduled_transfer_minutes"] = round(wait.dep - conn.arr, 1)
+                if w["kind"] == "empty":
+                    out["warnings"].append("V tabulce stanice není pro tento typ dne u tohoto řádku čekací doba vyplněna.")
+                    return self._finish(out, "unspecified", None, "V tabulce není pro tento typ dne čekací doba uvedena.", st, rule)
+                return self._finish_rule(out, w, rule, st, None)
+        if missing:
+            out["result"] = "train_not_found"
+            out["message"] = ("Vlak " + " a ".join(str(out[k]["number"]) for k in missing) +
+                              f" dne {date.isoformat()} ve stanici {out['station']['name']} podle jízdního řádu nestaví a v tabulce stanice pro tuto dvojici není výslovný řádek – bez údajů o vlaku (druh, dopravce, směr, čas) nelze obecná pravidla vyhodnotit.")
+            self._context(out, st, None)
+            return out
         if conn.times[conn.idx][0] is None:
             out["result"] = "not_a_connection"
             out["message"] = f"Vlak {conn.number} ve stanici výchozí – nepřijíždí, nejde o přípoj."
@@ -373,7 +431,6 @@ class Engine:
                 out[key]["arrival"] = hhmm(tr.times[tr.idx][0]); out[key]["departure"] = hhmm(tr.times[tr.idx][1])
         out["scheduled_transfer_minutes"] = round(interval, 1)
 
-        st, warn = self.station_file(name, date) if name else (None, None)
         if warn:
             out["warnings"].append(warn)
         if conn.number == wait.number or base_number(conn.number) == base_number(wait.number):
@@ -415,6 +472,36 @@ class Engine:
             return self._finish_rule(out, w, rule, st, interval)
         return self._basic(out, st, conn, wait, sid, interval, effect, prule, ptext)
 
+    def _explicit_rule(self, st, waiting_no, connecting_no, sid, date, trace):
+        """Řádek tabulky, kde návazný vlak je uveden číslem a přípojný číslem nebo jako 'V' / 'V (vyjma …)' / 'V (včetně …)'.
+        Vrací (rule, section, plain_v) nebo None. Nepotřebuje jízdní řád."""
+        w_stub = Train(waiting_no, None, None, None, None, [sid], [(None, None)], 0, sid, sid); w_stub.stub = True
+        c_stub = Train(connecting_no, None, None, None, None, [sid], [(None, None)], 0, sid, sid); c_stub.stub = True
+        w_stub.onward = w_stub.backward = c_stub.onward = c_stub.backward = [sid]
+        best = None
+        for sec in st["part_c"]["sections"]:
+            if sec.get("status") == "cancelled":
+                continue
+            rules = [r for r in sec["rules"] if r["status"] == "active"]
+            for i, r in enumerate(rules):
+                ws, cs = r["waiting_train"], r["connecting_train"]
+                if not any(k in ws for k in ("trains", "ranges", "patterns")) and "any_of" not in ws:
+                    continue
+                if self.match_selector(ws, w_stub, sid, "waiting", date, trace) is not True:
+                    continue
+                c_numbered = any(k in cs for k in ("trains", "ranges", "patterns")) or (
+                    "include" in cs and any(self._num_match(x, connecting_no) for x in cs["include"]))
+                plain_v = (not c_numbered) and cs.get("all") and not any(
+                    k in cs for k in ("categories", "operators", "lines", "from_directions", "to_directions", "destination_station", "relation", "tracks"))
+                if not (c_numbered or plain_v):
+                    continue
+                if self.match_selector(cs, c_stub, sid, "connecting", date, trace) is not True:
+                    continue
+                score = (1 if c_numbered else 0, self._specificity(r), i)
+                if best is None or score > best[0]:
+                    best = (score, r, sec, bool(plain_v and not c_numbered))
+        return (best[1], best[2], best[3]) if best else None
+
     def _find_rule(self, st, conn, wait, sid, date, trace):
         best = None
         for sec in st["part_c"]["sections"]:
@@ -432,7 +519,9 @@ class Engine:
                 sec_ok = self.dir_match(sid, wait, sec["direction"], via=via)
             rules = [r for r in sec["rules"] if r["status"] == "active"]
             for i, r in enumerate(rules):
-                numbered = any(k in r["waiting_train"] for k in ("trains", "ranges", "patterns")) or "any_of" in r["waiting_train"]
+                ws_ = r["waiting_train"]
+                numbered = any(k in ws_ for k in ("trains", "ranges", "patterns")) or (
+                    "any_of" in ws_ and all(any(k in x for k in ("trains", "ranges", "patterns")) for x in ws_["any_of"]))
                 if sec_ok is False and not numbered:
                     continue
                 mw = self.match_selector(r["waiting_train"], wait, sid, "waiting", date, trace)
@@ -535,10 +624,11 @@ class Engine:
 
     def _finish_rule(self, out, w, rule, st, interval):
         k = w["kind"]
-        dep = out["waiting_train"]["departure"]
+        dep = out["waiting_train"].get("departure")
         if k == "minutes":
             mins = w["minutes"]
-            msg = f"Vlak {out['waiting_train']['number']} počká nejvýše {mins} min (odjezd nejpozději {self._plus(dep, mins)}) – odchylná čekací doba z tabulky stanice."
+            latest = f" (odjezd nejpozději {self._plus(dep, mins)})" if dep else " po pravidelném odjezdu"
+            msg = f"Vlak {out['waiting_train']['number']} počká nejvýše {mins} min{latest} – odchylná čekací doba z tabulky stanice."
             if "minutes_alternative" in w:
                 msg += f" Podle poznámky může platit {w['minutes_alternative']} min."
             return self._finish(out, "waits", mins, msg, st, rule)
