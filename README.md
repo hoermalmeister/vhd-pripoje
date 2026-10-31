@@ -68,15 +68,11 @@ python tools/build_json.py Pripoje_2026.xlsx data/
 
 Selektor vlaků může obsahovat `trains`, `ranges` (vč. sudé/liché), `patterns` (`16xx`), `categories` (Ex/R/Sp/Os), `operators`, `lines` (R8, R23…), `tracks` (trať 260), `from_directions` / `to_directions`, `except` / `include` (vnořené selektory), `except_listed_below`, `date_condition`, `footnote_marks`. Úplný popis je v `rules.json → selector_schema`.
 
-## Co je potřeba vědět pro další krok (webová služba)
+## Co je potřeba vědět
 
 1. **Data jízdního řádu** (druh vlaku, dopravce, linka, trasa a směr, časy, dny jízdy) se berou z GTFS – viz kapitola „Napojení na jízdní řád (GTFS)“. Jediné, co GTFS neobsahuje, jsou čísla tratí („z trati 340“) a rozlišení stanice / zastávka (to doplňuje seznam z Wikipedie, viz níže).
 2. **Postup vyhledání** je popsán v `rules.json → lookup_algorithm` (výběr platné varianty podle data, typ dne podle svátků, normalizace šestimístných čísel, priorita konkrétního pravidla před obecným, fallback na základní čekací dobu Ex 5 / ostatní 10 min).
 3. **Ruční revize:** `data/review.json` je po ručním převodu prázdný (dříve 95 míst – volně formulovaná pravidla části B a 17 prázdných buněk čekacích dob, které jádro řeší obecnými pravidly s upozorněním). Doslovný text je vždy zachován.
-
-## Zdroj a omezení
-
-Zdrojem je dokument Správy železnic označený „Jen pro služební potřebu“. Před zveřejněním dat přes veřejné API je vhodné ověřit, zda je jejich zveřejnění dovoleno.
 
 ## Napojení na jízdní řád (GTFS) a vyhodnocení přípoje
 
@@ -162,14 +158,6 @@ Výsledek `/api/connection` – pole `result`: `waits` / `waits_basic` (čeká `
 - Stažená pomůcka se přepočítá do `var/data` a má přednost před daty v repozitáři; nevydaří-li se (např. jiný formát souboru), služba běží dál s předchozími daty.
 - Ruční opravy pravidel (`tools/partb_manual.json`, `tools/overrides.json`) jsou navázané na původní text (`tools/manual_anchors.json`), ne na číslo řádku – při posunu řádků v nové verzi se použijí dál; když se text pravidla změní, oprava se nepoužije a objeví se v `/api/review`.
 - Svátky se počítají pro libovolný rok (vč. Velikonoc), takže přechod na JŘ 2027 nevyžaduje úpravu kódu.
-
-### Nasazení na Railway
-
-1. railway.com → New Project → Deploy from GitHub repo → `vhd-pripoje`.
-2. Railway použije `Dockerfile` a `railway.json` (healthcheck `/health`). Doporučené proměnné: `ADMIN_TOKEN` (heslo pro `/admin`); volitelně `HANDBOOK_URL`, `GTFS_URL`, `REFRESH_HOURS`, `HANDBOOK_REFRESH_DAYS`.
-3. Settings → Networking → Generate Domain.
-4. Volitelně připojte Volume na `/app/var` – databáze vlaků pak přežije restart a nemusí se pokaždé stahovat.
-
 
 ## Aplikace na Android (sdílení spojení z vyhledávače)
 
