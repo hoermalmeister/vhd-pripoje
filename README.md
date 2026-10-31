@@ -127,7 +127,7 @@ Je-li v tabulce stanice řádek s číslem návazného vlaku a číslem přípoj
 
 ## Webová služba a API
 
-Server (`app/server.py`) používá jen standardní knihovnu Pythonu – žádné závislosti. Při startu stáhne GTFS z `GTFS_URL` (výchozí `https://motis.obehy.cz/get-feeds/cz-czptt-gtfs.zip`), postaví databázi vlaků (~20 s) a pak ji každých `REFRESH_HOURS` (24) hodin obnoví. Do té doby vrací `/api/*` kód 503, `/health` je vždy 200 (`ready: false/true`).
+Server (`app/server.py`) používá jen standardní knihovnu Pythonu – žádné závislosti. Při startu stáhne GTFS z `GTFS_URL` (výchozí `https://motis.obehy.cz/get-feeds/cz-czptt-gtfs.zip`), postaví databázi vlaků (~20 s) a pak ji každých `REFRESH_HOURS` (84, tj. 2× týdně) hodin obnoví. Do té doby vrací `/api/*` kód 503, `/health` je vždy 200 (`ready: false/true`).
 
 Lokálně:
 ```bash
@@ -154,7 +154,7 @@ Výsledek `/api/connection` – pole `result`: `waits` / `waits_basic` (čeká `
 
 | data | automaticky | ručně |
 |---|---|---|
-| jízdní řád (GTFS) | každých 24 h (`REFRESH_HOURS`) a při každém restartu, pokud je databáze starší | `/admin` → Aktualizovat jízdní řád (nový odkaz nebo nahrání zipu) |
+| jízdní řád (GTFS) | dvakrát týdně – každých 84 h (`REFRESH_HOURS`); po restartu jen je-li databáze starší | `/admin` → Aktualizovat jízdní řád (nový odkaz nebo nahrání zipu) |
 | pomůcka (Excel) | kontrola každých 7 dní (`HANDBOOK_REFRESH_DAYS`), přepočet jen při změně souboru (SHA-256) | `/admin` → Aktualizovat pomůcku (nový odkaz, např. JŘ 2027, nebo nahrání .xlsx) |
 
 - Administrace vyžaduje proměnnou `ADMIN_TOKEN` (heslo); bez ní je vypnutá.

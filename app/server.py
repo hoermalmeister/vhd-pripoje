@@ -7,7 +7,7 @@ Proměnné prostředí:
   GTFS_URL        odkud stahovat GTFS, výchozí https://motis.obehy.cz/get-feeds/cz-czptt-gtfs.zip
   GTFS_PATH       místo stahování lze použít lokální zip / adresář GTFS (např. pro vývoj)
   TRAINS_DB       kam uložit databázi vlaků, výchozí ./var/trains.db
-  REFRESH_HOURS   jak často GTFS znovu stáhnout a přepočítat, výchozí 24
+  REFRESH_HOURS   jak často GTFS znovu stáhnout a přepočítat, výchozí 84 (2× týdně)
   HANDBOOK_URL    odkaz na Excel pomůcky „Přípoje mezi vlaky osobní dopravy“ (výchozí JŘ 2026)
   HANDBOOK_REFRESH_DAYS  jak často kontrolovat novou verzi Excelu, výchozí 7 (přepočítá se jen při změně)
   ADMIN_TOKEN     heslo pro ruční aktualizaci na /admin (bez něj je administrace vypnutá)
@@ -56,7 +56,7 @@ RUNTIME_DATA_DIR = os.path.join(VAR_DIR, "data")            # pomůcka stažená
 SETTINGS_FILE = os.path.join(VAR_DIR, "settings.json")
 HANDBOOK_META = os.path.join(VAR_DIR, "handbook_meta.json")
 GTFS_PATH = os.environ.get("GTFS_PATH")
-REFRESH_HOURS = float(os.environ.get("REFRESH_HOURS", "24"))
+REFRESH_HOURS = float(os.environ.get("REFRESH_HOURS", "84"))   # 2× týdně
 HANDBOOK_REFRESH_DAYS = float(os.environ.get("HANDBOOK_REFRESH_DAYS", "7"))
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
 DEFAULTS = {
