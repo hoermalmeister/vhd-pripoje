@@ -18,6 +18,8 @@ Endpointy (všechny GET, odpověď JSON, CORS povolen):
                                   vyhodnocení: arriving = čím přijíždím (přípojný vlak),
                                   departing = na co přestupuji (návazný vlak)
   /api/station-table?station=&date=   tabulka stanice z pomůcky platná k datu
+  /api/itinerary?text=&url=&date=     rozbor sdíleného spojení (text / odkaz z vyhledávače) -> přestupy a čekací doby
+  /share?text=&url=&title=            stránka, na kterou Android posílá sdílený obsah (Web Share Target)
 """
 import datetime as dt
 import json
@@ -37,6 +39,7 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 from engine.evaluate import Engine, _norm_name, hhmm  # noqa: E402
+from engine.itinerary import analyze  # noqa: E402
 import build_gtfs_db  # noqa: E402
 
 DATA_DIR = os.path.join(ROOT, "data")
@@ -202,6 +205,17 @@ def api_station_table(station, date):
     return 200, {"warning": warn, "table": st}
 
 
+def fetch_url(url):
+    """Stáhne stránku sdíleného odkazu (max. 3 MB) – použije se, když sdílený text neobsahuje čísla vlaků."""
+    if not url.startswith(("http://", "https://")):
+        raise ValueError("Neplatný odkaz")
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (vhd-pripoje)", "Accept-Language": "cs"})
+    with urllib.request.urlopen(req, timeout=12) as r:
+        raw = r.read(3_000_000)
+        enc = r.headers.get_content_charset() or "utf-8"
+    return raw.decode(enc, "replace")
+
+
 def api_info():
     eng = State.engine
     return {"handbook": eng.rules["document"], "stations_in_handbook": len(eng.index["stations"]),
@@ -238,6 +252,14 @@ class Handler(BaseHTTPRequestHandler):
             if u.path in ("/", "/index.html"):
                 with open(os.path.join(STATIC_DIR, "index.html"), "rb") as f:
                     return self._send(200, f.read(), "text/html; charset=utf-8")
+            if u.path == "/share":
+                with open(os.path.join(STATIC_DIR, "share.html"), "rb") as f:
+                    return self._send(200, f.read(), "text/html; charset=utf-8")
+            static = {"/manifest.webmanifest": "application/manifest+json", "/sw.js": "text/javascript; charset=utf-8",
+                      "/icon-192.png": "image/png", "/icon-512.png": "image/png", "/icon-maskable-512.png": "image/png"}
+            if u.path in static:
+                with open(os.path.join(STATIC_DIR, u.path.lstrip("/")), "rb") as f:
+                    return self._send(200, f.read(), static[u.path])
             if u.path == "/health":
                 return self._send(200, {"status": "ok", "ready": State.engine is not None, "data": State.status,
                                         "built_at": State.built_at, "error": State.error})
@@ -257,6 +279,12 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(*api_trains(q["station"], parse_date(q.get("date"))))
                 if u.path == "/api/station-table":
                     return self._send(*api_station_table(q.get("station", ""), parse_date(q.get("date"))))
+                if u.path == "/api/itinerary":
+                    text = " ".join(x for x in (q.get("title", ""), q.get("text", ""), q.get("url", "")) if x)
+                    if not text.strip():
+                        return self._send(400, {"error": "Chybí parametr text nebo url."})
+                    d = parse_date(q["date"]) if q.get("date") else None
+                    return self._send(200, analyze(State.engine, text, d, fetch=fetch_url))
                 if u.path == "/api/connection":
                     miss = [k for k in ("station", "arriving", "departing") if not q.get(k)]
                     if miss:

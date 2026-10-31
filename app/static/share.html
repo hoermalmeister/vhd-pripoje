@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b4f8a">
+<title>Přípoje – sdílené spojení</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
+<style>
+  :root {
+    --bg: #f4f2ee; --panel: #ffffff; --ink: #1d2430; --muted: #5d6675; --line: #dcd8d0;
+    --accent: #0b4f8a; --accent-ink: #ffffff;
+    --ok: #1d6b3a; --ok-bg: #e5f2e9; --warn: #8a5a00; --warn-bg: #fbf1dc; --no: #9b2c2c; --no-bg: #f8e4e4; --info-bg: #eaf0f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171c; --panel: #1d2128; --ink: #e8eaee; --muted: #9aa3b0; --line: #2f3540;
+      --accent: #5aa2e0; --accent-ink: #0d1117;
+      --ok: #7fd39b; --ok-bg: #18301f; --warn: #f0c060; --warn-bg: #33290f; --no: #f19a9a; --no-bg: #3a1c1c; --info-bg: #1b2735;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { background: #0b4f8a; color: #fff; padding: 16px; }
+  header .wrap, main { max-width: 760px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 1.25rem; }
+  header a { color: #fff; opacity: .85; font-size: .9rem; }
+  main { padding: 16px 16px 40px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  label { display: block; font-size: .78rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+  textarea, input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: var(--panel); color: var(--ink); }
+  textarea { min-height: 96px; resize: vertical; font-size: .92rem; }
+  .row { display: flex; gap: 10px; align-items: end; margin-top: 10px; }
+  .row > div { flex: 1; }
+  button { padding: 11px 16px; border: 0; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .chip { background: var(--info-bg); border-radius: 999px; padding: 2px 10px; font-size: .88rem; font-weight: 600; }
+  .tr { border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid var(--line); background: var(--panel); }
+  .tr .head { font-size: .9rem; color: var(--muted); }
+  .tr .head b { color: var(--ink); }
+  .tr .big { font-size: 1.45rem; font-weight: 700; margin: 6px 0 2px; }
+  .ok .big { color: var(--ok); } .no .big { color: var(--no); } .warn .big { color: var(--warn); }
+  .tr.ok { border-left: 6px solid var(--ok); } .tr.no { border-left: 6px solid var(--no); } .tr.warn { border-left: 6px solid var(--warn); }
+  .msg { font-size: .95rem; }
+  .meta { font-size: .88rem; color: var(--muted); margin-top: 6px; }
+  details { margin-top: 8px; font-size: .9rem; }
+  summary { cursor: pointer; color: var(--accent); }
+  .note { background: var(--info-bg); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
+  .note.w { background: var(--warn-bg); }
+  .status { color: var(--muted); font-size: .92rem; }
+  .err { color: var(--no); }
+  .install { font-size: .88rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Přípoje vlaků</h1>
+  <a href="/">Ruční zadání stanice a vlaků →</a>
+</div></header>
+<main>
+  <div class="card">
+    <label for="text">Sdílené spojení</label>
+    <textarea id="text" placeholder="Sdílejte spojení z vyhledávače do aplikace Přípoje, nebo sem vložte text či odkaz (např. „EC 113 … Ostrava-Svinov … Sp 3360“)."></textarea>
+    <div class="row">
+      <div><label for="date">Datum (prázdné = z textu)</label><input id="date" type="date"></div>
+      <button id="go">Vyhodnotit</button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="status" id="status"></div>
+  </div>
+  <div id="out"></div>
+  <p class="install" id="install"></p>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");
+if (!window.matchMedia("(display-mode: standalone)").matches)
+  $("install").textContent = "Tip: v Chrome otevřete menu ⋮ → „Přidat na plochu / Instalovat aplikaci“. Aplikace se pak objeví v nabídce Sdílet ve vyhledávačích spojení.";
+
+const V = {
+  waits: ["ok", r => `Počká až ${r.wait_minutes} min`], waits_basic: ["ok", r => `Počká až ${r.wait_minutes} min`],
+  waits_variants: ["ok", r => "Počká – podle poznámky"], always: ["ok", r => "Čeká vždy"],
+  no_wait: ["no", r => "Nečeká"], no_connection: ["no", r => "Vazba v tento den neexistuje"],
+  not_a_connection: ["no", r => "Není přípoj"], unspecified: ["warn", r => "V tabulce neuvedeno"],
+  train_not_found: ["warn", r => "Vlak nenalezen"], station_not_found: ["warn", r => "Přestup nenalezen"],
+};
+
+const params = new URLSearchParams(location.search);
+const shared = ["title", "text", "url"].map(k => params.get(k)).filter(Boolean);
+// některé aplikace pošlou odkaz zároveň v textu – neopakuj ho
+const joined = shared.filter((x, i) => !shared.some((y, j) => j !== i && y.includes(x) && y !== x)).join("\n");
+if (joined) $("text").value = joined;
+
+async function run() {
+  const text = $("text").value.trim();
+  if (!text) return;
+  $("status").textContent = "Vyhodnocuji…"; $("out").innerHTML = ""; $("chips").innerHTML = "";
+  let q = "/api/itinerary?text=" + encodeURIComponent(text);
+  if ($("date").value) q += "&date=" + $("date").value;
+  try {
+    const r = await fetch(q); const j = await r.json();
+    if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
+    $("status").textContent = `Datum: ${j.date}` + (j.fetched_url ? " · vlaky načteny z odkazu" : "");
+    if (!$("date").value) $("date").value = j.date;
+    $("chips").innerHTML = j.trains.map(t => `<span class="chip">${esc(t.category)} ${t.number}</span>`).join(" → ");
+    let h = "";
+    (j.warnings || []).forEach(w => h += `<div class="note w">${esc(w)}</div>`);
+    if (!j.transfers.length) h += `<div class="tr warn"><div class="big">Bez přestupu</div><div class="msg">${esc(j.message)}</div></div>`;
+    for (const t of j.transfers) {
+      const e = t.evaluation || {};
+      const [cls, fn] = V[t.result] || ["warn", () => t.result];
+      const ct = e.connecting_train || {}, wt = e.waiting_train || {};
+      h += `<div class="tr ${cls}"><div class="head"><b>${esc(t.from_train)} → ${esc(t.to_train)}</b>${t.station ? " · " + esc(t.station) : ""}</div>`;
+      h += `<div class="big">${esc(fn(e.result ? e : t))}</div><div class="msg">${esc(t.message)}</div>`;
+      const m = [];
+      if (ct.arrival) m.push(`příjezd ${ct.arrival}`);
+      if (wt.departure) m.push(`odjezd ${wt.departure}`);
+      if (e.scheduled_transfer_minutes != null) m.push(`přestup ${e.scheduled_transfer_minutes} min`);
+      if (m.length) h += `<div class="meta">${m.join(" · ")}</div>`;
+      const notes = [...(e.warnings || []).map(x => ["w", x]), ...(e.reasons || []).map(x => ["", x])];
+      const si = e.station_info || {};
+      Object.entries(si.footnotes || {}).forEach(([k, x]) => notes.push(["", `${k} ${x}`]));
+      (si.notes || []).forEach(x => notes.push(["", x]));
+      if (e.matched_rule) notes.unshift(["", `Řádek tabulky (${e.matched_rule.section}): ${e.matched_rule.waiting_train} ← ${e.matched_rule.connecting_train} = ${e.matched_rule.wait_raw}`]);
+      if (e.part_b_rule) notes.unshift(["", `Pravidlo stanice: ${e.part_b_rule.text}`]);
+      if (notes.length) h += `<details><summary>Podrobnosti (${notes.length})</summary>${notes.map(([c, x]) => `<div class="note ${c}">${esc(x)}</div>`).join("")}</details>`;
+      h += `</div>`;
+    }
+    $("out").innerHTML = h;
+  } catch (err) { $("status").innerHTML = `<span class="err">${esc(err.message)}</span>`; }
+}
+$("go").addEventListener("click", run);
+if (joined) run();
+</script>
+</body>
+</html>

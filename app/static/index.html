@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Přípoje vlaků – čekací doby</title>
+<meta name="theme-color" content="#0b4f8a">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
 <style>
   :root {
     --bg: #f4f2ee; --panel: #ffffff; --ink: #1d2430; --muted: #5d6675; --line: #dcd8d0;
@@ -58,6 +61,7 @@
 <header><div class="wrap">
   <h1>Přípoje vlaků – čekací doby</h1>
   <p>Počká na mě navazující vlak? Podle pomůcky Správy železnic „Přípoje mezi vlaky osobní dopravy 2026“.</p>
+  <p><a href="/share" style="color:inherit">Vložit / sdílet celé spojení z vyhledávače →</a></p>
 </div></header>
 <main>
   <div class="card">
@@ -96,6 +100,7 @@
 </footer>
 <script>
 const $ = id => document.getElementById(id);
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 $("date").value = new Date().toISOString().slice(0, 10);
 

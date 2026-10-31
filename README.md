@@ -145,6 +145,8 @@ GTFS_PATH=cesta/ke/gtfs.zip python -m app.server        # nebo z lokálního sou
 | `GET /api/trains?station=Ostrava-Svinov&date=2026-11-02` | příjezdy a odjezdy ve stanici v daný den |
 | `GET /api/connection?station=Ostrava-Svinov&date=2026-11-02&arriving=113&departing=3360` | vyhodnocení přípoje (`arriving` = čím přijíždím, `departing` = na co přestupuji) |
 | `GET /api/station-table?station=Kolín&date=2026-11-02` | tabulka stanice z pomůcky platná k datu |
+| `GET /api/itinerary?text=…&date=…` | rozbor sdíleného spojení: najde čísla vlaků, dopočítá stanice přestupu a vyhodnotí každý přestup |
+| `GET /share?text=…&url=…` | stránka pro sdílené spojení (cíl sdílení z Androidu) |
 
 Výsledek `/api/connection` – pole `result`: `waits` / `waits_basic` (čeká `wait_minutes`), `always` (čeká vždy), `no_wait` (N), `no_connection` (vazba v daný den neexistuje), `not_a_connection` (není přípoj), `unspecified`, `train_not_found`, `unknown_station`; dále `message`, `warnings`, `matched_rule`, `part_b_rule`, `station_info`. CORS je povolen (`Access-Control-Allow-Origin: *`).
 
@@ -154,3 +156,14 @@ Výsledek `/api/connection` – pole `result`: `waits` / `waits_basic` (čeká `
 2. Railway použije `Dockerfile` a `railway.json` (healthcheck `/health`). Proměnné prostředí nejsou nutné; volitelně `GTFS_URL`, `REFRESH_HOURS`.
 3. Settings → Networking → Generate Domain.
 4. Volitelně připojte Volume na `/app/var` – databáze vlaků pak přežije restart a nemusí se pokaždé stahovat.
+
+
+## Aplikace na Android (sdílení spojení z vyhledávače)
+
+Webová služba je zároveň instalovatelná aplikace (PWA) s cílem sdílení (Web Share Target):
+
+1. V telefonu otevřete adresu služby na Railway v **Chrome** → menu ⋮ → **Přidat na plochu / Instalovat aplikaci**.
+2. Ve vyhledávači spojení (IDOS, Můj vlak, …) zvolte **Sdílet** → **Přípoje**.
+3. Otevře se `/share` se sdíleným textem/odkazem a ukáže všechny přestupy a jejich čekací doby.
+
+Rozbor (`engine/itinerary.py`) nezávisí na formátu vyhledávače: z textu vezme čísla vlaků v pořadí („R 881“, „Os 2803“, „EC 113“…) a datum, stanici přestupu dopočítá z jízdního řádu (dává přednost stanici zmíněné v textu). Obsahuje-li sdílený obsah jen odkaz, server zkusí stránku odkazu načíst a čísla vlaků najít v ní.
