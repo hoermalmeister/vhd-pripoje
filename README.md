@@ -70,7 +70,7 @@ Selektor vlaků může obsahovat `trains`, `ranges` (vč. sudé/liché), `patter
 
 ## Co je potřeba vědět pro další krok (webová služba)
 
-1. **Data jízdního řádu.** Tabulky neříkají druh vlaku, dopravce, směr ani časy. Pro pravidla typu „všechny vlaky Os“, „vlaky ČD“, „směr Jihlava“ i pro článek 1 (interval 2–60 min) bude služba potřebovat napojení na data JŘ (celostátní data CIS JŘ v XML).
+1. **Data jízdního řádu** (druh vlaku, dopravce, linka, trasa a směr, časy, dny jízdy) se berou z GTFS – viz kapitola „Napojení na jízdní řád (GTFS)“. Jediné, co GTFS neobsahuje, jsou čísla tratí („z trati 340“) a rozlišení stanice / zastávka (to doplňuje seznam z Wikipedie, viz níže).
 2. **Postup vyhledání** je popsán v `rules.json → lookup_algorithm` (výběr platné varianty podle data, typ dne podle svátků, normalizace šestimístných čísel, priorita konkrétního pravidla před obecným, fallback na základní čekací dobu Ex 5 / ostatní 10 min).
 3. **Ruční revize:** `data/review.json` je po ručním převodu prázdný (dříve 95 míst – volně formulovaná pravidla části B a 17 prázdných buněk čekacích dob, které jádro řeší obecnými pravidly s upozorněním). Doslovný text je vždy zachován.
 
@@ -171,3 +171,14 @@ Sdílení přijímá text, odkaz i soubory (POST multipart – např. kalendář
 Podporované zdroje: **Pubtran** (sdílený text v jazyce telefonu – čeština, angličtina, němčina, ruština: „Train/Zug/Поезд S41 / Os 4424 …“, datum „Di. 03.11“, „Tue, Nov 3“, „11/3“, „вт, 3 нояб.“; u nejednoznačného „03/11“ se vybere datum nejbližší dnešku), **IDOS** (odkaz `idos.cz/…/spojeni/prehled/?p=…` – server stránku načte), **Seznam Jízdní řády / pubtran** (odkaz `seznam.cz/jizdnirady/detail/…` – vezme se jen vybrané spojení, ne další nabízená), **Můj vlak** (sdílený text, úseky oddělené prázdným řádkem) a obecný text. Úseky autobusem/tramvají apod. se poznají a přestup přes ně se zatím nevyhodnocuje. Počet přestupů není omezen.
 
 Rozbor (`engine/itinerary.py`) jinak nezávisí na formátu vyhledávače: z textu vezme čísla vlaků v pořadí („R 881“, „Os 2803“, „EC 113“…) a datum, stanici přestupu dopočítá z jízdního řádu (dává přednost stanici zmíněné v textu). Obsahuje-li sdílený obsah jen odkaz, server zkusí stránku odkazu načíst a čísla vlaků najít v ní.
+
+
+## Stanice a zastávky
+
+Podle článku 1 se na zastávkách přípoje nezajišťují. GTFS stanice a zastávky nerozlišuje, proto `data/station_types.json` obsahuje typ dopravny ze seznamu na Wikipedii ([Seznam železničních stanic, zastávek a nákladišť v Česku](https://cs.wikipedia.org/wiki/Seznam_%C5%BEelezni%C4%8Dn%C3%ADch_stanic,_zast%C3%A1vek_a_n%C3%A1kladi%C5%A1%C5%A5_v_%C4%8Cesku), CC BY-SA 4.0). Párování s GTFS je přes kód SR70 (id `czptt:stop:CZ:34434` = prvních 5 číslic SR70); spáruje se 2 671 z 2 691 míst, kde v GTFS staví vlaky.
+
+- **stanice** (přípoje se zajišťují): stanice, dopravna D3, dopravna radiobloku, výhybna, kolejová skupina / obvod stanice,
+- **zastávka** (přípoje se nezajišťují): všechny typy „zastávka …“ včetně „zastávka v obvodu stanice“,
+- **ostatní**: odbočka, nákladiště, vlečka.
+
+Typ se použije jen u míst, která nemají vlastní tabulku v pomůcce (tabulka má přednost – např. Brno-Židenice je na Wikipedii „zastávka a odbočka“, ale pomůcka pro ni tabulku má). Aktualizace: uložte stránku Wikipedie jako HTML a spusťte `python tools/build_station_types.py stranka.html data/station_types.json`.

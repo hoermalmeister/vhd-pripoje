@@ -329,7 +329,7 @@
       "6. Není-li pravidlo nalezeno: zkontroluj, zda jde vůbec o přípoj (článek 1 – interval 2–60 min, článek 2 – nepřípoje, část B – pravidla dopravců a dvojice). Pokud ano, vrať základní čekací dobu podle druhu návazného vlaku (Ex 5, ostatní 10) nebo podle pravidla operator_basic_wait; pokud ne, vrať 'není přípoj'.",
       "7. Vždy zobraz i část A (přestupní doby) a poznámky – obsahují pokyny pro případ, že k návaznosti nedojde."
     ],
-    "train_metadata_needed": "Tabulky neobsahují druh vlaku, dopravce, směr ani časy. Pro selektory typu 'všechny vlaky Os', 'vlaky ČD', 'směr Jihlava', 'z trati 260' a pro článek 1/2 je potřeba napojit data jízdního řádu (např. CIS JŘ / celostátní data JŘ ve formátu XML)."
+    "train_metadata_needed": "Druh vlaku, dopravce, linka, směr a časy se berou z GTFS (data/trains.db, viz tools/build_gtfs_db.py); typ dopravny (stanice / zastávka) z data/station_types.json. Neověřují se zatím jen čísla tratí."
   },
   "selector_schema": {
     "text": "původní (platný) text buňky",

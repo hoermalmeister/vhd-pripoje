@@ -338,9 +338,6 @@ def analyze(engine, text, date=None, fetch=None):
         hb, _sid = engine.find_station(name)
         res = engine.evaluate(hb or name, date, a, b)
         res.pop("trace", None)
-        if res.get("station") and not res["station"].get("in_handbook") and res.get("result") == "waits_basic":
-            res.setdefault("warnings", []).append(
-                "Stanice nemá v pomůcce vlastní tabulku. Je-li to zastávka (ne stanice), přípoje se zde nezajišťují a vlaky nečekají (článek 1).")
         item.update(station=res.get("station", {}).get("name", name), evaluation=res,
                     result=res.get("result"), message=res.get("message"))
         transfers.append(item)

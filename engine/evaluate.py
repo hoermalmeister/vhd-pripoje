@@ -104,6 +104,11 @@ class Engine:
         for st in self.index["stations"]:
             self.station_gtfs[st["station"]] = by_norm.get(_norm_name(st["station"]))
         self.gtfs_by_name = by_norm
+        # typy dopraven (stanice / zastávka) z Wikipedie, párované přes kód SR70
+        try:
+            self.station_types = json.load(open(os.path.join(data_dir, "station_types.json"), encoding="utf-8"))["by_code"]
+        except Exception:
+            self.station_types = {}
         self.districts = {}
         for st_name, sid in self.station_gtfs.items():
             extra = STATION_DISTRICTS.get(st_name) or STATION_DISTRICTS.get(self.names.get(sid, ""), [])
@@ -139,6 +144,15 @@ class Engine:
                 return st["station"], self.station_gtfs[st["station"]]
         sid = self.gtfs_by_name.get(n)
         return None, sid
+
+    def station_kind(self, sid):
+        """(category, type) – category: station | stop | other | None (neznámé). Podle Wikipedie (SR70)."""
+        recs = self.station_types.get(sid.split(":")[-1]) if sid else None
+        if not recs:
+            return None, None
+        name = _norm_name(self.names.get(sid, ""))
+        rec = next((r for r in recs if _norm_name(r["name"]) == name), recs[0])
+        return rec["category"], rec["type"]
 
     def day_type(self, date):
         if date.isoformat() in self.holidays or date.weekday() == 6:
@@ -356,7 +370,9 @@ class Engine:
             out["result"] = "unknown_station"
             out["message"] = f"Stanici '{station_text}' nelze najít."
             return out
-        out["station"] = {"name": name or self.names[sid], "gtfs_id": sid, "in_handbook": name is not None}
+        kcat, ktype = self.station_kind(sid)
+        out["station"] = {"name": name or self.names[sid], "gtfs_id": sid, "in_handbook": name is not None,
+                          "kind": ktype, "kind_category": kcat}
         dtype = self.day_type(date)
         out["day_type"] = {"key": dtype, "label": DAY_LABEL[dtype]}
 
@@ -654,6 +670,10 @@ class Engine:
     def _basic(self, out, st, conn, wait, sid, interval, effect=None, prule=None, ptext=None):
         """Žádné pravidlo v části C -> články 1 a 2, část B a základní čekací doby."""
         reasons = []
+        if not st and out["station"].get("kind_category") == "stop":
+            return self._finish(out, "not_a_connection", None,
+                                f"{out['station']['name']} je {out['station']['kind']} (ne stanice) – na zastávkách se přípoje nezajišťují "
+                                "a žádné vlaky zde nečekají (článek 1).", st, None)
         partb = [r for r, _ in self._partb(st)] if st else []
         min_int = 2
         for b in partb:
@@ -703,6 +723,8 @@ class Engine:
         msg = f"V tabulce stanice není pro tuto dvojici zvláštní pravidlo – platí {src}: vlak {wait.number} počká nejvýše {minutes} min (odjezd nejpozději {self._plus(out['waiting_train']['departure'], minutes)})."
         if not st:
             msg = f"Stanice nemá vlastní tabulku – platí {src}: nejvýše {minutes} min."
+            if out["station"].get("kind_category") is None:
+                out["warnings"].append("Typ dopravny (stanice / zastávka) není znám. Je-li to zastávka, přípoje se zde nezajišťují (článek 1).")
         out["reasons"] = reasons
         return self._finish(out, "waits_basic", minutes, msg, st, None)
 
