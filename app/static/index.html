@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Přípoje vlaků – čekací doby</title>
+<style>
+  :root {
+    --bg: #f4f2ee; --panel: #ffffff; --ink: #1d2430; --muted: #5d6675; --line: #dcd8d0;
+    --accent: #0b4f8a; --accent-ink: #ffffff;
+    --ok: #1d6b3a; --ok-bg: #e5f2e9; --warn: #8a5a00; --warn-bg: #fbf1dc; --no: #9b2c2c; --no-bg: #f8e4e4; --info-bg: #eaf0f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171c; --panel: #1d2128; --ink: #e8eaee; --muted: #9aa3b0; --line: #2f3540;
+      --accent: #5aa2e0; --accent-ink: #0d1117;
+      --ok: #7fd39b; --ok-bg: #18301f; --warn: #f0c060; --warn-bg: #33290f; --no: #f19a9a; --no-bg: #3a1c1c; --info-bg: #1b2735;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { background: var(--accent); color: var(--accent-ink); padding: 20px 16px; }
+  header .wrap { max-width: 860px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 1.45rem; letter-spacing: -0.01em; }
+  header p { margin: 4px 0 0; opacity: .85; font-size: .95rem; }
+  main { max-width: 860px; margin: 0 auto; padding: 20px 16px 48px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+  .grid { display: grid; grid-template-columns: 1fr 180px; gap: 12px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  @media (max-width: 620px) { .grid, .grid2 { grid-template-columns: 1fr; } }
+  label { display: block; font-size: .82rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+  input, select { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: var(--panel); color: var(--ink); }
+  input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .hint { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  button { margin-top: 14px; padding: 11px 18px; border: 0; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font: inherit; font-weight: 600; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  .verdict { border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+  .verdict.ok { background: var(--ok-bg); color: var(--ok); }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); }
+  .verdict.no { background: var(--no-bg); color: var(--no); }
+  .verdict .big { font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+  .verdict .msg { margin-top: 6px; color: var(--ink); }
+  dl { display: grid; grid-template-columns: 170px 1fr; gap: 6px 12px; margin: 0; font-size: .95rem; }
+  dt { color: var(--muted); }
+  dd { margin: 0; }
+  @media (max-width: 620px) { dl { grid-template-columns: 1fr; } dt { margin-top: 6px; } }
+  .notes { margin-top: 14px; }
+  .note { background: var(--info-bg); border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: .92rem; }
+  .note.w { background: var(--warn-bg); }
+  .note b { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 2px; }
+  .status { font-size: .9rem; color: var(--muted); }
+  .err { color: var(--no); }
+  footer { max-width: 860px; margin: 0 auto; padding: 0 16px 32px; font-size: .82rem; color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Přípoje vlaků – čekací doby</h1>
+  <p>Počká na mě navazující vlak? Podle pomůcky Správy železnic „Přípoje mezi vlaky osobní dopravy 2026“.</p>
+</div></header>
+<main>
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="station">Stanice přestupu</label>
+        <input id="station" list="stations" placeholder="např. Ostrava-Svinov" autocomplete="off">
+        <datalist id="stations"></datalist>
+      </div>
+      <div>
+        <label for="date">Datum</label>
+        <input id="date" type="date">
+      </div>
+    </div>
+    <div class="grid2">
+      <div>
+        <label for="arr">Čím přijíždím</label>
+        <input id="arr" list="arrList" placeholder="číslo vlaku, např. 113" inputmode="numeric" autocomplete="off">
+        <datalist id="arrList"></datalist>
+        <div class="hint" id="arrHint">Po zadání stanice a data se nabídnou příjezdy.</div>
+      </div>
+      <div>
+        <label for="dep">Na co přestupuji</label>
+        <input id="dep" list="depList" placeholder="číslo vlaku, např. 3360" inputmode="numeric" autocomplete="off">
+        <datalist id="depList"></datalist>
+        <div class="hint" id="depHint">&nbsp;</div>
+      </div>
+    </div>
+    <button id="go">Zjistit čekací dobu</button>
+    <div class="status" id="status"></div>
+  </div>
+  <div id="result"></div>
+</main>
+<footer>
+  Výsledek je informativní; rozhoduje pomůcka SŽ, dispečer dopravce a zaměstnanec řízení provozu. API: <a href="/api/info">/api/info</a>, <a href="/health">/health</a>.
+</footer>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("date").value = new Date().toISOString().slice(0, 10);
+
+async function api(path) {
+  const r = await fetch(path);
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
+  return j;
+}
+
+let stTimer;
+$("station").addEventListener("input", () => {
+  clearTimeout(stTimer);
+  stTimer = setTimeout(async () => {
+    const q = $("station").value.trim();
+    if (q.length < 2) return;
+    try {
+      const j = await api("/api/stations?q=" + encodeURIComponent(q));
+      $("stations").innerHTML = j.stations.map(s => `<option value="${esc(s.name)}">${s.in_handbook ? "má tabulku přípojů" : "jen obecná pravidla"}</option>`).join("");
+    } catch (e) {}
+  }, 200);
+});
+
+async function loadTrains() {
+  const st = $("station").value.trim(), d = $("date").value;
+  if (!st || !d) return;
+  $("arrHint").textContent = "Načítám vlaky…"; $("depHint").innerHTML = "&nbsp;";
+  try {
+    const j = await api(`/api/trains?station=${encodeURIComponent(st)}&date=${d}`);
+    $("arrList").innerHTML = j.arrivals.map(t => `<option value="${t.number}">${t.time} ${esc(t.label)} (${esc(t.operator)}) z ${esc(t.from)}</option>`).join("");
+    $("depList").innerHTML = j.departures.map(t => `<option value="${t.number}">${t.time} ${esc(t.label)} (${esc(t.operator)}) do ${esc(t.to)}</option>`).join("");
+    $("arrHint").textContent = `${j.arrivals.length} příjezdů – vyberte nebo napište číslo.`;
+    $("depHint").textContent = `${j.departures.length} odjezdů` + (j.in_handbook ? "" : " · stanice nemá vlastní tabulku, platí obecná pravidla");
+  } catch (e) { $("arrHint").textContent = e.message; }
+}
+$("station").addEventListener("change", loadTrains);
+$("date").addEventListener("change", loadTrains);
+
+const VERDICT = {
+  waits: ["ok", r => `Počká až ${r.wait_minutes} min`],
+  waits_basic: ["ok", r => `Počká až ${r.wait_minutes} min`],
+  waits_variants: ["ok", r => "Počká – podle poznámky"],
+  always: ["ok", r => "Čeká vždy"],
+  no_wait: ["no", r => "Nečeká"],
+  no_connection: ["no", r => "Vazba v tento den neexistuje"],
+  not_a_connection: ["no", r => "Není přípoj"],
+  unspecified: ["warn", r => "V tabulce neuvedeno"],
+  train_not_found: ["warn", r => "Vlak nenalezen"],
+  unknown_station: ["warn", r => "Neznámá stanice"],
+};
+
+function trainLine(t) {
+  if (!t) return "";
+  const times = [t.arrival && "příj. " + t.arrival, t.departure && "odj. " + t.departure].filter(Boolean).join(", ");
+  return `${esc(t.label)}${times ? " · " + times : ""}${t.found_in_timetable === false ? " · v jízdním řádu nenalezen" : ""}`;
+}
+
+$("go").addEventListener("click", async () => {
+  const st = $("station").value.trim(), d = $("date").value, a = $("arr").value.trim(), b = $("dep").value.trim();
+  if (!st || !a || !b) { $("status").innerHTML = '<span class="err">Vyplňte stanici a obě čísla vlaků.</span>'; return; }
+  $("go").disabled = true; $("status").textContent = "Vyhodnocuji…";
+  try {
+    const r = await api(`/api/connection?station=${encodeURIComponent(st)}&date=${d}&arriving=${encodeURIComponent(a)}&departing=${encodeURIComponent(b)}`);
+    $("status").textContent = "";
+    const [cls, fn] = VERDICT[r.result] || ["warn", () => r.result];
+    let h = `<div class="card"><div class="verdict ${cls}"><div class="big">${esc(fn(r))}</div><div class="msg">${esc(r.message)}</div></div><dl>`;
+    h += `<dt>Stanice</dt><dd>${esc(r.station?.name)}${r.station && !r.station.in_handbook ? " (bez vlastní tabulky)" : ""}</dd>`;
+    h += `<dt>Den</dt><dd>${esc(r.input?.date)} – ${esc(r.day_type?.label)}</dd>`;
+    h += `<dt>Přijíždím</dt><dd>${trainLine(r.connecting_train)}</dd>`;
+    h += `<dt>Přestupuji na</dt><dd>${trainLine(r.waiting_train)}</dd>`;
+    if (r.scheduled_transfer_minutes != null) h += `<dt>Plánovaný přestup</dt><dd>${r.scheduled_transfer_minutes} min</dd>`;
+    if (r.matched_rule) h += `<dt>Řádek tabulky</dt><dd>${esc(r.matched_rule.section)}: ${esc(r.matched_rule.waiting_train)} ← ${esc(r.matched_rule.connecting_train)} (${esc(r.matched_rule.wait_raw)})</dd>`;
+    if (r.part_b_rule) h += `<dt>Pravidlo stanice</dt><dd>${esc(r.part_b_rule.text)}</dd>`;
+    h += `</dl><div class="notes">`;
+    (r.warnings || []).filter(Boolean).forEach(w => h += `<div class="note w"><b>Upozornění</b>${esc(w)}</div>`);
+    (r.reasons || []).forEach(w => h += `<div class="note"><b>Odůvodnění</b>${esc(w)}</div>`);
+    const si = r.station_info || {};
+    Object.entries(si.footnotes || {}).forEach(([m, t]) => h += `<div class="note"><b>Poznámka ${esc(m)}</b>${esc(t)}</div>`);
+    (si.notes || []).forEach(t => h += `<div class="note"><b>Pokyn stanice</b>${esc(t)}</div>`);
+    (si.part_b_info || []).forEach(t => h += `<div class="note"><b>Část B</b>${esc(t)}</div>`);
+    (si.part_a || []).forEach(t => h += `<div class="note"><b>Přestupní doba</b>${esc(t)}</div>`);
+    h += `</div></div>`;
+    $("result").innerHTML = h;
+  } catch (e) {
+    $("status").innerHTML = `<span class="err">${esc(e.message)}</span>`;
+  } finally { $("go").disabled = false; }
+});
+</script>
+</body>
+</html>

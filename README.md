@@ -1,4 +1,4 @@
-# Přípoje vlaků ČR – data čekacích dob
+# Přípoje vlaků ČR – čekací doby (web + API)
 
 Strukturovaná data z pomůcky Správy železnic **„Přípoje mezi vlaky osobní dopravy 2026“** (JŘ 2026, platí od 14. 12. 2025, zapracovány změny 1–28) jako podklad pro webovou službu a veřejné API, které odpoví na otázku:
 
@@ -123,3 +123,34 @@ Zatím se neověřuje: čísla tratí („z trati 340“) – pravidlo se pak vy
 ### Výslovné řádky tabulky platí vždy
 
 Je-li v tabulce stanice řádek s číslem návazného vlaku a číslem přípojného vlaku (nebo „V“), vrátí se jeho čekací doba **bez ohledu na jízdní řád** – i když vlak podle GTFS v daný den nejede nebo stanicí neprojíždí (výsledek nese upozornění). „V“ znamená každý vlak, který je ve stanici přípojem (garantovaný přestup dle článků 1 a 2: 2–60 min, týž dopravce nebo povoleno částí B); jsou-li oba vlaky v jízdním řádu, tyto podmínky se ověří. Jízdní řád je potřeba jen pro obecné řádky („všechny vlaky Os směr X“, dopravce, linka) a pro dvojice, které tabulka neuvádí.
+
+
+## Webová služba a API
+
+Server (`app/server.py`) používá jen standardní knihovnu Pythonu – žádné závislosti. Při startu stáhne GTFS z `GTFS_URL` (výchozí `https://motis.obehy.cz/get-feeds/cz-czptt-gtfs.zip`), postaví databázi vlaků (~20 s) a pak ji každých `REFRESH_HOURS` (24) hodin obnoví. Do té doby vrací `/api/*` kód 503, `/health` je vždy 200 (`ready: false/true`).
+
+Lokálně:
+```bash
+python -m app.server                                    # stáhne GTFS z obehy.cz
+GTFS_PATH=cesta/ke/gtfs.zip python -m app.server        # nebo z lokálního souboru
+# http://localhost:8000
+```
+
+| endpoint | popis |
+|---|---|
+| `GET /` | webová stránka (stanice → datum → čím přijíždím → na co přestupuji) |
+| `GET /health` | stav služby |
+| `GET /api/info` | verze pomůcky a dat |
+| `GET /api/stations?q=Brno` | vyhledání stanice (`in_handbook` = má vlastní tabulku) |
+| `GET /api/trains?station=Ostrava-Svinov&date=2026-11-02` | příjezdy a odjezdy ve stanici v daný den |
+| `GET /api/connection?station=Ostrava-Svinov&date=2026-11-02&arriving=113&departing=3360` | vyhodnocení přípoje (`arriving` = čím přijíždím, `departing` = na co přestupuji) |
+| `GET /api/station-table?station=Kolín&date=2026-11-02` | tabulka stanice z pomůcky platná k datu |
+
+Výsledek `/api/connection` – pole `result`: `waits` / `waits_basic` (čeká `wait_minutes`), `always` (čeká vždy), `no_wait` (N), `no_connection` (vazba v daný den neexistuje), `not_a_connection` (není přípoj), `unspecified`, `train_not_found`, `unknown_station`; dále `message`, `warnings`, `matched_rule`, `part_b_rule`, `station_info`. CORS je povolen (`Access-Control-Allow-Origin: *`).
+
+### Nasazení na Railway
+
+1. railway.com → New Project → Deploy from GitHub repo → `vhd-pripoje`.
+2. Railway použije `Dockerfile` a `railway.json` (healthcheck `/health`). Proměnné prostředí nejsou nutné; volitelně `GTFS_URL`, `REFRESH_HOURS`.
+3. Settings → Networking → Generate Domain.
+4. Volitelně připojte Volume na `/app/var` – databáze vlaků pak přežije restart a nemusí se pokaždé stahovat.

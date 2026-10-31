@@ -1,0 +1,6 @@
+.git
+var/
+*.db
+**/__pycache__
+*.xlsx
+*.pdf
