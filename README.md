@@ -72,8 +72,44 @@ Selektor vlaků může obsahovat `trains`, `ranges` (vč. sudé/liché), `patter
 
 1. **Data jízdního řádu.** Tabulky neříkají druh vlaku, dopravce, směr ani časy. Pro pravidla typu „všechny vlaky Os“, „vlaky ČD“, „směr Jihlava“ i pro článek 1 (interval 2–60 min) bude služba potřebovat napojení na data JŘ (celostátní data CIS JŘ v XML).
 2. **Postup vyhledání** je popsán v `rules.json → lookup_algorithm` (výběr platné varianty podle data, typ dne podle svátků, normalizace šestimístných čísel, priorita konkrétního pravidla před obecným, fallback na základní čekací dobu Ex 5 / ostatní 10 min).
-3. **Ruční revize:** `data/review.json` obsahuje 107 míst – hlavně volně formulovaná pravidla části B (např. intervaly podle tratí v Brně hl.n.) a 17 prázdných buněk čekacích dob. Doslovný text je vždy zachován.
+3. **Ruční revize:** `data/review.json` obsahuje 95 míst – hlavně volně formulovaná pravidla části B (např. intervaly podle tratí v Brně hl.n.) a 17 prázdných buněk čekacích dob. Doslovný text je vždy zachován.
 
 ## Zdroj a omezení
 
 Zdrojem je dokument Správy železnic označený „Jen pro služební potřebu“. Před zveřejněním dat přes veřejné API je vhodné ověřit, zda je jejich zveřejnění dovoleno.
+
+## Napojení na jízdní řád (GTFS) a vyhodnocení přípoje
+
+Tabulky pomůcky neobsahují druh vlaku, dopravce, linku, směr ani časy. Ty se berou z GTFS celostátního jízdního řádu (obehy.cz / CIS JŘ):
+
+```bash
+# 1) z GTFS (adresář nebo zip) postavit databázi vlaků a železniční sítě (~110 MB, do gitu nepatří)
+python tools/build_gtfs_db.py cesta/ke/gtfs data/trains.db
+
+# 2) dotaz: stanice, datum, přípojný vlak (čím přijíždím), návazný vlak (na co přestupuji)
+python -m engine.cli "Ostrava-Svinov" 2026-11-02 113 3360
+```
+
+Co z GTFS jádro (`engine/`) používá:
+
+| údaj v pomůcce | odkud se bere |
+|---|---|
+| druh vlaku Ex / R / Sp / Os | kategorie vlaku (EC, IC, rj, RJ, LE → Ex; TLX → R; TL → Os) |
+| dopravce (ČD, ARR, GWTR, RJ, …) | `agency` (převodní tabulka v `tools/build_gtfs_db.py`) |
+| linka (R8, R23, S1, Ex3, …) | `route_short_name` linkových tras |
+| „směr X“, „ze směru X“, „od X“ | trasa vlaku přes železniční síť sestavenou ze všech jízd – včetně stanic, kterými vlak jen projíždí; názvy ve 2. pádě („od Prahy“, „Kutné Hory“, „Žďáru n. S.“) se porovnávají přes kmeny slov; zahraniční cíle (Wien, Hof, Linz) přes hraniční stanice |
+| dny jízdy, svátky | `calendar_dates` + seznam svátků v `rules.json` |
+| časy, interval přestupu | `stop_times` (vč. vlaků jedoucích přes půlnoc) |
+| šestimístná čísla | převod na kmenové číslo |
+
+Postup vyhodnocení (`engine/evaluate.py`):
+
+1. najde oba vlaky v daný den ve stanici a vybere verzi tabulky stanice platnou k datu,
+2. typ dne ⚒ / ⑥ / † (svátky jako †),
+3. projde pravidla části C: sekce „vlaky směr X“ se ověřuje podle trasy návazného vlaku, vyhrává nejkonkrétnější pravidlo (výčet čísel > rozsah > obecné „všechny vlaky … (vyjma níže uvedených)“),
+4. bez pravidla: článek 1 (2–60 min), 2a (0–1 min, minimální interval z části B), 2f (různí dopravci – výjimky z části B), 2b/2c (opačný / stejný směr téže trati), pak základní čekací doba (Ex 5, ostatní 10, nebo doba dopravce z části B),
+5. k výsledku přidá poznámky pod čarou, pokyny pod tabulkou, přestupní doby (část A) a **doslovné nestrukturované texty části B jako upozornění** – složité případy z revize se tak nemusí převádět do struktury, uživatel je uvidí u výsledku.
+
+Zatím se neověřuje: čísla tratí („z trati 340“) – pravidlo se pak vybere s upozorněním na nejistotu.
+
+`data/coverage_report.json` – pravidla, která se v pěti zkušebních dnech (červen, červenec, listopad – pracovní den, sobota, neděle) nechytila na žádnou reálnou dvojici vlaků z GTFS (217 z 2 971, většinou vlaky jedoucí jen v jiné dny). Užitečné pro kontrolu.

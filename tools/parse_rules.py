@@ -388,11 +388,14 @@ def _parse_part_b_sentence(t):
     # Vlaky X jsou přípojem (od) vlaků (dopravce) Y [pouze linky R8 ...] (a opačně), nejsou přípojem vlaků ostatních dopravců.
     w = t
     lines_conn = []
-    w = re.sub(r'\s*\(zahrnuty i pod "V"\)', "", w)
+    w = re.sub(r',?\s*zahrnuty i pod "V"', "", w)
+    w = re.sub(r"\(\s*\d+\s*[–-]\s*\d+\s*\)", "", w)          # (1100 – 1133)
+    w = re.sub(r"\s+a zpět", "", w)
+    w = re.sub(r"\(\s*\)", "", w)
     w = re.sub(r",?\s*pokud není v části C stanoveno jinak", "", w)
     def lc(m):
         lines_conn.append(m.group(1)); return ""
-    w = re.sub(r"\s*\(?\s*(?:pouze\s+)?linky\s+(R\d+)(?:\s+(?:[A-ZČŘŠŽ][^,()]*?|\([^)]*\)))?(?:\s*\([^)]*\))?\)?(?=,| a opačně| a naopak|\.|$)", lc, w)
+    w = re.sub(r"\s*\(?\s*(?:pouze\s+)?linky\s+(R\d+)(?:\s+(?:[A-ZČŘŠŽ](?:(?! a opačně| a naopak)[^,()])*|\([^)]*\)))?(?:\s*\([^)]*\))?\)?(?=,| a opačně| a naopak|\.$|$)", lc, w)
     m = re.fullmatch(
         r"Vlaky (?:dopravce )?((?:" + OP_RE + r")(?:(?:,\s*| a )" + OP_RE + r")*)"
         r" jsou (?:přípojem|přípojné|přípojné vlaky|přípojnými vlaky)\s+(?:od\s+)?(?:vlaků\s+)?(?:dopravc[eů]\s+)?"

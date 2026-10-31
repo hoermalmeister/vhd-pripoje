@@ -1,5 +1,5 @@
 {
-  "count": 107,
+  "count": 95,
   "items": [
     {
       "station": "Beroun",
@@ -77,14 +77,6 @@
       "row": 12,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Všechny vlaky Ex a R ve směru Zebrzydowice jsou přípojnými pro vlaky ze směru Český Těšín, pokud jsou uvedeny v části C."
-    },
-    {
-      "station": "Bohumín",
-      "file": "stations/bohumin.json",
-      "where": "part_b",
-      "row": 14,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
     },
     {
       "station": "Bohumín",
@@ -173,14 +165,6 @@
       "row": 24,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Vlaky ARR jsou přípojem od vlaků ČD a dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
-      "station": "Brno-Královo Pole",
-      "file": "stations/brno-kralovo-pole.json",
-      "where": "part_b",
-      "row": 9,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
     },
     {
       "station": "Brno-Královo Pole",
@@ -285,14 +269,6 @@
       "text": ""
     },
     {
-      "station": "Hranice na Moravě",
-      "file": "stations/hranice-na-morave.json",
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
       "station": "Hulín",
       "file": "stations/hulin.json",
       "where": "part_b",
@@ -367,22 +343,6 @@
       "field": "wait.workday",
       "issue": "Prázdná nebo nerozpoznaná čekací doba.",
       "text": ""
-    },
-    {
-      "station": "Kojetín",
-      "file": "stations/kojetin.json",
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
-      "station": "Kojetín",
-      "file": "stations/kojetin.json",
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců."
     },
     {
       "station": "Kolín",
@@ -473,22 +433,6 @@
       "text": "Vlaky Os směr Bohumín nejsou přípojné od vlaků Ex/R stejného směru."
     },
     {
-      "station": "Nezamyslice",
-      "file": "stations/nezamyslice.json",
-      "where": "part_b",
-      "row": 9,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
-      "station": "Nezamyslice",
-      "file": "stations/nezamyslice.json",
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
       "station": "Nymburk hl.n.",
       "file": "stations/nymburk-hl-n.json",
       "where": "part_b",
@@ -564,14 +508,6 @@
       "station": "Ostrava hlavní nádraží",
       "file": "stations/ostrava-hl-n.json",
       "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
-    },
-    {
-      "station": "Ostrava hlavní nádraží",
-      "file": "stations/ostrava-hl-n.json",
-      "where": "part_b",
       "row": 14,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
@@ -591,14 +527,6 @@
       "row": 15,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117."
-    },
-    {
-      "station": "Ostrava-Svinov",
-      "file": "stations/ostrava-svinov.json",
-      "where": "part_b",
-      "row": 16,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak."
     },
     {
       "station": "Ostrava-Svinov",
@@ -756,14 +684,6 @@
       "station": "Přerov",
       "file": "stations/prerov.json",
       "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
-      "station": "Přerov",
-      "file": "stations/prerov.json",
-      "where": "part_b",
       "row": 12,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Vlaky linky R8 směr Brno a Bohumín jsou přípojem od ostatních spojů ČD."
@@ -784,22 +704,6 @@
       "field": "wait.saturday",
       "issue": "Prázdná nebo nerozpoznaná čekací doba.",
       "text": ""
-    },
-    {
-      "station": "Studénka",
-      "file": "stations/studenka.json",
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
-    },
-    {
-      "station": "Suchdol nad Odrou",
-      "file": "stations/suchdol-nad-odrou.json",
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
     },
     {
       "station": "Šakvice",

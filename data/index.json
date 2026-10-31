@@ -7,7 +7,7 @@
     "valid_from": "2025-12-14",
     "valid_to": "2026-12-12",
     "source_file": "pripoje.xlsx",
-    "generated_at": "2026-10-31T13:46:04"
+    "generated_at": "2026-10-31T14:21:24"
   },
   "station_count": 256,
   "file_count": 265,
@@ -224,7 +224,7 @@
           "sections": 3,
           "rules_active": 32,
           "rules_cancelled": 0,
-          "review_items": 4
+          "review_items": 3
         }
       ]
     },
@@ -296,7 +296,7 @@
           "sections": 2,
           "rules_active": 1,
           "rules_cancelled": 0,
-          "review_items": 2
+          "review_items": 1
         }
       ]
     },
@@ -926,7 +926,7 @@
           "sections": 3,
           "rules_active": 16,
           "rules_cancelled": 0,
-          "review_items": 1
+          "review_items": 0
         }
       ]
     },
@@ -1280,7 +1280,7 @@
           "sections": 3,
           "rules_active": 10,
           "rules_cancelled": 0,
-          "review_items": 2
+          "review_items": 0
         }
       ]
     },
@@ -2138,7 +2138,7 @@
           "sections": 3,
           "rules_active": 9,
           "rules_cancelled": 0,
-          "review_items": 2
+          "review_items": 0
         }
       ]
     },
@@ -2372,7 +2372,7 @@
           "sections": 3,
           "rules_active": 17,
           "rules_cancelled": 0,
-          "review_items": 4
+          "review_items": 3
         }
       ]
     },
@@ -2408,7 +2408,7 @@
           "sections": 4,
           "rules_active": 47,
           "rules_cancelled": 5,
-          "review_items": 4
+          "review_items": 3
         }
       ]
     },
@@ -2948,7 +2948,7 @@
           "sections": 4,
           "rules_active": 27,
           "rules_cancelled": 0,
-          "review_items": 3
+          "review_items": 2
         }
       ]
     },
@@ -3398,7 +3398,7 @@
           "sections": 5,
           "rules_active": 28,
           "rules_cancelled": 0,
-          "review_items": 1
+          "review_items": 0
         }
       ]
     },
@@ -3434,7 +3434,7 @@
           "sections": 5,
           "rules_active": 18,
           "rules_cancelled": 0,
-          "review_items": 1
+          "review_items": 0
         }
       ]
     },

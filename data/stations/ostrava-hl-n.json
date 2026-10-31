@@ -53,8 +53,19 @@
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "RJ"
+        ],
+        "reciprocal": false,
+        "exclusive": true,
+        "connecting_lines": [
+          "R8"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
       }
     },
     {
@@ -756,7 +767,7 @@
     "sections": 3,
     "rules_active": 17,
     "rules_cancelled": 0,
-    "review_items": 4
+    "review_items": 3
   },
   "review": [
     {
@@ -770,12 +781,6 @@
       "row": 12,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Za sebou jedoucí vlaky směr Ostrava-Svinov (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné."
-    },
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
     },
     {
       "where": "part_b",

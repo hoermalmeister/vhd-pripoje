@@ -336,8 +336,19 @@
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak.",
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "RJ"
+        ],
+        "reciprocal": false,
+        "exclusive": true,
+        "connecting_lines": [
+          "R8"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
       }
     },
     {
@@ -2496,7 +2507,7 @@
     "sections": 4,
     "rules_active": 47,
     "rules_cancelled": 5,
-    "review_items": 4
+    "review_items": 3
   },
   "review": [
     {
@@ -2510,12 +2521,6 @@
       "row": 15,
       "issue": "Text nebyl plně strukturován – zpracovat ručně.",
       "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117."
-    },
-    {
-      "where": "part_b",
-      "row": 16,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak."
     },
     {
       "where": "part_b",

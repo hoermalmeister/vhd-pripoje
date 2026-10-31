@@ -52,15 +52,37 @@
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců.",
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "RJ"
+        ],
+        "reciprocal": true,
+        "exclusive": true,
+        "connecting_lines": [
+          "R8"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců.",
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "RJ"
+        ],
+        "reciprocal": true,
+        "exclusive": true,
+        "connecting_lines": [
+          "R8"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
       }
     },
     {
@@ -458,20 +480,7 @@
     "sections": 3,
     "rules_active": 10,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců."
-    }
-  ]
+  "review": []
 }
