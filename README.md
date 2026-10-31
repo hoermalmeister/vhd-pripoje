@@ -166,4 +166,6 @@ Webová služba je zároveň instalovatelná aplikace (PWA) s cílem sdílení (
 2. Ve vyhledávači spojení (IDOS, Můj vlak, …) zvolte **Sdílet** → **Přípoje**.
 3. Otevře se `/share` se sdíleným textem/odkazem a ukáže všechny přestupy a jejich čekací doby.
 
-Rozbor (`engine/itinerary.py`) nezávisí na formátu vyhledávače: z textu vezme čísla vlaků v pořadí („R 881“, „Os 2803“, „EC 113“…) a datum, stanici přestupu dopočítá z jízdního řádu (dává přednost stanici zmíněné v textu). Obsahuje-li sdílený obsah jen odkaz, server zkusí stránku odkazu načíst a čísla vlaků najít v ní.
+Podporované zdroje: **IDOS** (odkaz `idos.cz/…/spojeni/prehled/?p=…` – server stránku načte), **Seznam Jízdní řády / pubtran** (odkaz `seznam.cz/jizdnirady/detail/…` – vezme se jen vybrané spojení, ne další nabízená), **Můj vlak** (sdílený text, úseky oddělené prázdným řádkem) a obecný text. Úseky autobusem/tramvají apod. se poznají a přestup přes ně se zatím nevyhodnocuje. Počet přestupů není omezen.
+
+Rozbor (`engine/itinerary.py`) jinak nezávisí na formátu vyhledávače: z textu vezme čísla vlaků v pořadí („R 881“, „Os 2803“, „EC 113“…) a datum, stanici přestupu dopočítá z jízdního řádu (dává přednost stanici zmíněné v textu). Obsahuje-li sdílený obsah jen odkaz, server zkusí stránku odkazu načíst a čísla vlaků najít v ní.

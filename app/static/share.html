@@ -85,6 +85,7 @@ const V = {
   no_wait: ["no", r => "Nečeká"], no_connection: ["no", r => "Vazba v tento den neexistuje"],
   not_a_connection: ["no", r => "Není přípoj"], unspecified: ["warn", r => "V tabulce neuvedeno"],
   train_not_found: ["warn", r => "Vlak nenalezen"], station_not_found: ["warn", r => "Přestup nenalezen"],
+  skipped_other_mode: ["warn", r => "Přestup přes autobus – nehodnoceno"],
 };
 
 const params = new URLSearchParams(location.search);
@@ -102,9 +103,12 @@ async function run() {
   try {
     const r = await fetch(q); const j = await r.json();
     if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
-    $("status").textContent = `Datum: ${j.date}` + (j.fetched_url ? " · vlaky načteny z odkazu" : "");
+    const src = {idos: "IDOS", seznam: "Seznam Jízdní řády", mujvlak: "Můj vlak"}[j.source];
+    $("status").textContent = `Datum: ${j.date}` + (src ? ` · ${src}` : "") + (j.fetched_url ? " · načteno z odkazu" : "");
     if (!$("date").value) $("date").value = j.date;
-    $("chips").innerHTML = j.trains.map(t => `<span class="chip">${esc(t.category)} ${t.number}</span>`).join(" → ");
+    $("chips").innerHTML = (j.legs || []).map(l => l.type === "train"
+      ? `<span class="chip">${esc(l.category)} ${l.number}</span>`
+      : `<span class="chip" style="opacity:.6">🚌 ${esc(l.text.split(/\s+/).slice(0, 2).join(" "))}</span>`).join(" → ");
     let h = "";
     (j.warnings || []).forEach(w => h += `<div class="note w">${esc(w)}</div>`);
     if (!j.transfers.length) h += `<div class="tr warn"><div class="big">Bez přestupu</div><div class="msg">${esc(j.message)}</div></div>`;

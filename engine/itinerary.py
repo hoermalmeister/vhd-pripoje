@@ -138,42 +138,122 @@ def find_transfer(engine, a_no, b_no, date, text=""):
     return best[1] if best else None
 
 
+OTHER_MODE_RE = re.compile(r"(?<![\w])(Autobus|autobus|Bus|BUS|Tramvaj|tramvaj|Tram|Trolejbus|trolejbus|Metro|metro|Lanovka|Loď|Přívoz|Taxi)(?![\w])")
+
+
+def _cut(text, start_markers, end_markers):
+    i = 0
+    for m in start_markers:
+        k = text.find(m)
+        if k >= 0:
+            i = k
+            break
+    j = len(text)
+    for m in end_markers:
+        k = text.find(m, i + 1)
+        if k >= 0:
+            j = min(j, k)
+    return text[i:j]
+
+
+def _legs_from_chunks(chunks):
+    legs = []
+    for ch in chunks:
+        ch = ch.strip()
+        if not ch:
+            continue
+        tr = parse_trains(ch)
+        head = ch[:80]
+        if tr and not OTHER_MODE_RE.match(head.strip()):
+            cat, num = tr[0]
+            legs.append({"type": "train", "category": cat, "number": num, "text": ch[:160]})
+        elif OTHER_MODE_RE.search(head):
+            legs.append({"type": "other", "text": ch[:160]})
+    return legs
+
+
+def extract_legs(text, url=""):
+    """Rozdělí spojení na úseky. Vrací (legs, text_pro_datum, zdroj)."""
+    t = text or ""
+    if "Jízdní řády Seznam" in t or "seznam.cz/jizdnirady" in url:
+        seg = _cut(t, ["Předchozí spojení"], ["Následující spojení"])
+        chunks = re.split(r"(?=(?<![\w])(?:Vlak|Autobus|Tramvaj|Trolejbus|Metro|Lanovka|Loď)\s)", seg)
+        legs = [l for l in _legs_from_chunks(chunks)]
+        # první chunk (souhrn) obsahuje všechny vlaky bez označení – ber jen úseky začínající druhem dopravy
+        legs = [l for l in legs if re.match(r"(Vlak|Autobus|Tramvaj|Trolejbus|Metro|Lanovka|Loď)\s", l["text"])]
+        return legs, seg, "seznam"
+    if "IDOS" in t[:200] or "idos.cz" in url:
+        seg = _cut(t, ["Celkový čas"], ["Detaily spojení"])
+        chunks = re.split(r"\s[ûü]\s", seg)
+        m = re.search(r"Detail spojení [^»]*» [^0-9]*(\d{1,2}\.\d{1,2}\.20\d\d)", t)
+        date_text = (m.group(1) + " " if m else "") + _cut(t, ["Datum:"], ["Čas:"]) + " " + seg
+        return _legs_from_chunks(chunks[1:] if len(chunks) > 1 else chunks), date_text, "idos"
+    if "Můj vlak" in t or re.search(r"\n\s*\n", t):
+        chunks = re.split(r"\n\s*\n", t)
+        legs = _legs_from_chunks(chunks)
+        if len(legs) >= 2 or any(l["type"] == "other" for l in legs):
+            return legs, t, "mujvlak" if "Můj vlak" in t else "text"
+    # obecný text: vlaky v pořadí, jiné druhy dopravy jako oddělovač
+    legs = []
+    pos = []
+    for m in TRAIN_RE.finditer(t):
+        pos.append((m.start(), "train", (m.group(1) or m.group(3), int(m.group(2) or m.group(4)))))
+    for m in OTHER_MODE_RE.finditer(t):
+        pos.append((m.start(), "other", m.group(0)))
+    seen = set()
+    for _, kind, val in sorted(pos):
+        if kind == "train":
+            if val[1] in seen:
+                continue
+            seen.add(val[1])
+            legs.append({"type": "train", "category": val[0], "number": val[1], "text": f"{val[0]} {val[1]}"})
+        elif not legs or legs[-1]["type"] != "other":
+            legs.append({"type": "other", "text": val})
+    while legs and legs[0]["type"] == "other":
+        legs.pop(0)
+    return legs, t, "text"
+
+
 def analyze(engine, text, date=None, fetch=None):
-    """Hlavní funkce: vrátí rozpoznané vlaky, přestupy a vyhodnocení každého přestupu."""
+    """Hlavní funkce: vrátí úseky spojení, přestupy mezi vlaky a vyhodnocení každého přestupu."""
     out = {"input_text": (text or "")[:2000], "warnings": []}
-    trains = parse_trains(text)
-    source_text = text or ""
+    legs, date_text, source = extract_legs(text)
+    trains = [l for l in legs if l["type"] == "train"]
     if len(trains) < 2 and fetch:
         for url in URL_RE.findall(text or ""):
+            url = url.rstrip(").,")
             try:
-                page = fetch(url.rstrip(").,"))
-                more = parse_trains(html_to_text(page))
-                if len(more) >= len(trains):
-                    trains, source_text = more, html_to_text(page)
+                page_text = html_to_text(fetch(url))
+                l2, d2, src2 = extract_legs(page_text, url)
+                if len([x for x in l2 if x["type"] == "train"]) >= len(trains):
+                    legs, date_text, source = l2, d2, src2
+                    trains = [l for l in legs if l["type"] == "train"]
                     out["fetched_url"] = url
                     break
             except Exception as e:
                 out["warnings"].append(f"Odkaz se nepodařilo načíst ({type(e).__name__}).")
+    out["source"] = source
     if date is None:
-        date, explicit = parse_date(source_text)
+        date, explicit = parse_date(date_text)
         if not explicit:
             out["warnings"].append("V textu nebylo datum – použit dnešek.")
     out["date"] = date.isoformat()
-    out["trains"] = [{"category": c, "number": n} for c, n in trains]
-    if len(trains) < 2:
-        out["result"] = "no_transfer"
-        out["message"] = ("V textu jsem nenašel žádný přestup mezi vlaky." if trains else
-                          "V textu jsem nenašel čísla vlaků (např. „R 881“, „Os 2803“).")
-        out["transfers"] = []
-        return out
+    out["legs"] = [{"type": l["type"], **({"category": l["category"], "number": l["number"]} if l["type"] == "train" else {"text": l["text"][:60]})} for l in legs]
+    out["trains"] = [{"category": l["category"], "number": l["number"]} for l in trains]
     transfers = []
-    for (ca, a), (cb, b) in zip(trains, trains[1:]):
-        st = find_transfer(engine, a, b, date, source_text)
-        item = {"from_train": f"{ca} {a}", "to_train": f"{cb} {b}"}
+    for prev, nxt, between in _pairs(legs):
+        a, b = prev["number"], nxt["number"]
+        item = {"from_train": f"{prev['category']} {a}", "to_train": f"{nxt['category']} {b}"}
+        if between:
+            item["result"] = "skipped_other_mode"
+            item["message"] = "Mezi vlaky je úsek jiným dopravním prostředkem (autobus apod.) – tento přestup zatím nevyhodnocujeme."
+            transfers.append(item)
+            continue
+        st = find_transfer(engine, a, b, date, date_text)
         if st is None:
             item["result"] = "station_not_found"
-            item["message"] = (f"Nenašel jsem stanici, kde by šlo z {ca} {a} přestoupit na {cb} {b} dne {date.isoformat()} "
-                               "(vlaky ten den nejedou, nebo mezi nimi je jiný dopravní prostředek).")
+            item["message"] = (f"Nenašel jsem stanici, kde by šlo z {item['from_train']} přestoupit na {item['to_train']} dne {date.isoformat()} "
+                               "(vlaky ten den nejedou, nebo se mezi nimi přechází jinam).")
             transfers.append(item)
             continue
         name = engine.names.get(st)
@@ -184,5 +264,22 @@ def analyze(engine, text, date=None, fetch=None):
                     result=res.get("result"), message=res.get("message"))
         transfers.append(item)
     out["transfers"] = transfers
-    out["result"] = "ok"
+    if not transfers:
+        out["result"] = "no_transfer"
+        out["message"] = ("Spojení je bez přestupu mezi vlaky." if trains else
+                          "V textu ani v odkazu jsem nenašel čísla vlaků (např. „R 881“, „Os 2803“).")
+    else:
+        out["result"] = "ok"
     return out
+
+
+def _pairs(legs):
+    """Dvojice po sobě jdoucích vlaků; between=True, pokud mezi nimi byl jiný druh dopravy."""
+    prev, between = None, False
+    for l in legs:
+        if l["type"] == "train":
+            if prev is not None:
+                yield prev, l, between
+            prev, between = l, False
+        elif prev is not None:
+            between = True
