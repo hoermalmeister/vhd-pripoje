@@ -1,0 +1,572 @@
+{
+  "schema_version": "1.0",
+  "id": "tanvald",
+  "station": "Tanvald",
+  "sheet_name": "Tanvald",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Harrachov",
+        "direction": "Harrachov",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tanvald-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "2602",
+              "trains": [
+                2602
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26200 (ARR)",
+              "trains": [
+                26200
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "tanvald-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "2638",
+              "trains": [
+                2638
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "R 1150 (ARR)",
+              "trains": [
+                1150
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tanvald-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "2642",
+              "trains": [
+                2642
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26216 (ARR)",
+              "trains": [
+                26216
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tanvald-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "2646",
+              "trains": [
+                2646
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26218 (ARR)",
+              "trains": [
+                26218
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tanvald-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "2670",
+              "trains": [
+                2670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26214 (ARR)",
+              "trains": [
+                26214
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tanvald-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "2672",
+              "trains": [
+                2672
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26216 (ARR)",
+              "trains": [
+                26216
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Liberec",
+        "direction": "Liberec",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tanvald-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "2607 – 2613, 2615, 2617 – 2629, 2657 – 2667, 2677",
+              "trains": [
+                2615,
+                2677
+              ],
+              "ranges": [
+                {
+                  "from": 2607,
+                  "to": 2613,
+                  "parity": null
+                },
+                {
+                  "from": 2617,
+                  "to": 2629,
+                  "parity": null
+                },
+                {
+                  "from": 2657,
+                  "to": 2667,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "tanvald-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "2651 – 2655, 2675",
+              "trains": [
+                2675
+              ],
+              "ranges": [
+                {
+                  "from": 2651,
+                  "to": 2655,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "tanvald-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "2673",
+              "trains": [
+                2673
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26218 (ARR)",
+              "trains": [
+                26218
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          },
+          {
+            "id": "tanvald-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ARR (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "tanvald-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "1141, 1143, 1153, 1155, 1157, 1159",
+              "trains": [
+                1141,
+                1143,
+                1153,
+                1155,
+                1157,
+                1159
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "tanvald-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Os vlaky ARR",
+              "categories": [
+                "Os"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "Os vlaky od Liberce a Desné",
+              "from_directions": [
+                "Liberce",
+                "Desné"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Železný Brod",
+      "after_section": "vlaky směr Liberec"
+    },
+    {
+      "text": "Ve dnech 22.XII. - 2.I. platí čekací doby jako v ⑥ a †.",
+      "after_section": "vlaky směr Liberec"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Za Správu železnic odsouhlasil: Mikuláš Lipnický"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 12,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

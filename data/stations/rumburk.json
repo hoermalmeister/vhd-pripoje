@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "id": "rumburk",
+  "station": "Rumburk",
+  "sheet_name": "Rumburk",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 1 minuta.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 1,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Jedlová",
+        "direction": "Jedlová",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rumburk-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "6019",
+              "trains": [
+                6019
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Dolní Poustevna",
+        "direction": "Dolní Poustevna",
+        "source_row": 18,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mikulášovice dolní nádraží",
+        "direction": "Mikulášovice dolní nádraží",
+        "source_row": 20,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Za Správu železnic odsouhlasil: Jan Kosterhon"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

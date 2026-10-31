@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "chodov",
+  "station": "Chodov",
+  "sheet_name": "Chodov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky z/do Lokte jsou přípojnými vlaky na rychlíky směr z /do Chebu.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 15,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Karlovy Vary",
+        "direction": "Karlovy Vary",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chodov-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "619",
+              "trains": [
+                619
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27135",
+              "trains": [
+                27135
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chodov-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1688",
+              "trains": [
+                1688
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27133",
+              "trains": [
+                27133
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Loket",
+        "direction": "Loket",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chodov-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "27122",
+              "trains": [
+                27122
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "609, 618",
+              "trains": [
+                609,
+                618
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chodov-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "27124",
+              "trains": [
+                27124
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "611, 616",
+              "trains": [
+                611,
+                616
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chodov-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "27130",
+              "trains": [
+                27130
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "610, 617",
+              "trains": [
+                610,
+                617
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chodov-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "27132",
+              "trains": [
+                27132
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "608, 619",
+              "trains": [
+                608,
+                619
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nová Role",
+        "direction": "Nová Role",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chodov-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "27113",
+              "trains": [
+                27113
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1664",
+              "trains": [
+                1664
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 7,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky z/do Lokte jsou přípojnými vlaky na rychlíky směr z /do Chebu."
+    }
+  ]
+}

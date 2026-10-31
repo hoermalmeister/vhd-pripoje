@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "id": "karvina-hl-n",
+  "station": "Karviná hl.n.",
+  "sheet_name": "Karviná hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 9. února 2026",
+    "valid_from": "2026-02-09",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na sousední nástupiště – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na sousední nástupiště"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti (hrana – hrana, za sebou) – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti (hrana – hrana, za sebou)"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": null,
+        "direction": null,
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karvina-hl-n-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "341",
+              "trains": [
+                341
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3005",
+              "trains": [
+                3005
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Za Správu železnic odsouhlasil: Ing. David Rada"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

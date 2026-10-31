@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "id": "decin-vychod",
+  "station": "Děčín východ",
+  "sheet_name": "Děčín východ",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 12. ledna 2026",
+    "valid_from": "2026-01-12",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků ČD a RJÚK, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky DLB CZ jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Benešov nad Ploučnicí",
+        "direction": "Benešov nad Ploučnicí",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "decin-vychod-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "ARR 1335",
+              "trains": [
+                1335
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6474",
+              "trains": [
+                6474
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "6474 (RJÚK)",
+                "after": "6474"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Děčín hl.n.",
+        "direction": "Děčín hl.n.",
+        "source_row": 19,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ústí nad Labem-Střekov",
+        "direction": "Ústí nad Labem-Střekov",
+        "source_row": 21,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Při zpoždění vlaku linky U8 Os 6650 (Os 6652, Os 6654, Os 6656, Os 6658, Os 6660, Os 6664) směr Rumburk a dřívější jízdy vlaku linky L2 směr Česká Lípa, zajistěte zastavení vlaku linky L2 Os 6607 (Os 6609, Os 6611, Os 6613, Os 6615, Os 6617, Os 6619) na zastávkách Březiny u Děčína a Malá Veleň.",
+      "after_section": "vlaky směr Ústí nad Labem-Střekov"
+    },
+    {
+      "text": "Při zpoždění vlaku linky U8 Os 6650 (Os 6652, Os 6654, Os 6656, Os 6658, Os 6660, Os 6664) směr Rumburk a dřívější jízdy vlaku linky L2 směr Česká Lípa, zajistěte zastavení vlaku linky L2 Os 6607 (Os 6609, Os 6611, Os 6613, Os 6615, Os 6617, Os 6619) na zastávkách Březiny u Děčína a Malá Veleň.",
+      "after_section": "vlaky směr Ústí nad Labem-Střekov"
+    },
+    {
+      "text": "Při zpoždění vlaku linky U8 Os 6650 (Os 6652, Os 6654, Os 6656, Os 6658, Os 6660, Os 6664) směr Rumburk a dřívější jízdy vlaku linky L2 směr Česká Lípa, zajistěte zastavení vlaku linky L2 Os 6607 (Os 6609, Os 6611, Os 6613, Os 6615, Os 6617, Os 6619) na zastávkách Březiny u Děčína a Malá Veleň.",
+      "after_section": "vlaky směr Ústí nad Labem-Střekov"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Za Správu železnic odsouhlasil: Jan Kosterhon"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

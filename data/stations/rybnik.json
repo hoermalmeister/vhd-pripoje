@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "id": "rybnik",
+  "station": "Rybník",
+  "sheet_name": "Rybník",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi nástupištěm u 1. a 2. koleje a nástupištěm směr Lipno nad Vltavou – 4 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupištěm u 1. a 2. koleje a nástupištěm směr Lipno nad Vltavou"
+      }
+    },
+    {
+      "text": "Jinak platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rybnik-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "330",
+              "trains": [
+                330
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18849",
+              "trains": [
+                18849
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "rybnik-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "3800, 3802, 3804, 3806, 18809, 18821",
+              "trains": [
+                3800,
+                3802,
+                3804,
+                3806,
+                18809,
+                18821
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 18884)",
+              "all": true,
+              "except": [
+                {
+                  "text": "18884",
+                  "trains": [
+                    18884
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "rybnik-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "18809",
+              "trains": [
+                18809
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18884",
+              "trains": [
+                18884
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Horní Dvořiště – Summerau – Linz",
+        "direction": "Horní Dvořiště – Summerau – Linz",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rybnik-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "337",
+              "trains": [
+                337
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18849",
+              "trains": [
+                18849
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "rybnik-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "3885, 18841, 18843, 18881",
+              "trains": [
+                3885,
+                18841,
+                18843,
+                18881
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lipno nad Vltavou",
+        "direction": "Lipno nad Vltavou",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rybnik-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "18810, 18832, 18834, 18836, 18838, 18842",
+              "trains": [
+                18810,
+                18832,
+                18834,
+                18836,
+                18838,
+                18842
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "rybnik-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "18830",
+              "trains": [
+                18830
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18882",
+              "trains": [
+                18882
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "rybnik-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "18846, 18860",
+              "trains": [
+                18846,
+                18860
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Za Správu železnic odsouhlasil: Aleš Baldík"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 8,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

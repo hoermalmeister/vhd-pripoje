@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0",
+  "id": "karlovy-vary",
+  "station": "Karlovy Vary",
+  "sheet_name": "Karlovy Vary",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Klášterec nad Ohří",
+        "direction": "Klášterec nad Ohří",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karlovy-vary-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "7063",
+              "trains": [
+                7063
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7309",
+              "trains": [
+                7309
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "7065",
+              "trains": [
+                7065
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19857",
+              "trains": [
+                19857
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karlovy-vary-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "618",
+              "trains": [
+                618
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19801, 19853",
+              "trains": [
+                19801,
+                19853
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "7000",
+              "trains": [
+                7000
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19803, 27003",
+              "trains": [
+                19803,
+                27003
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nejdek",
+        "direction": "Nejdek",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karlovy-vary-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "19858",
+              "trains": [
+                19858
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7065",
+              "trains": [
+                7065
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Karlovy Vary dolní nádraží",
+        "direction": "Karlovy Vary dolní nádraží",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karlovy-vary-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "19803",
+              "trains": [
+                19803
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "19813",
+              "trains": [
+                19813
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7060",
+              "trains": [
+                7060
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "19831",
+              "trains": [
+                19831
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "19851",
+              "trains": [
+                19851
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.0",
+  "id": "liberec",
+  "station": "Liberec",
+  "sheet_name": "Liberec",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 a 3 a obráceně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupišti 1 a 3 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 nebo 3 a nástupišti 2 nebo 3A a obráceně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupišti 1 nebo 3 a nástupišti 2 nebo 3A a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 nebo 3 a nástupištěm 4 a obráceně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupišti 1 nebo 3 a nástupištěm 4 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 nebo 3 a nástupištěm 5 a obráceně – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti 1 nebo 3 a nástupištěm 5 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 2 nebo 3A a nástupištěm 4 a obráceně – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti 2 nebo 3A a nástupištěm 4 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 2 nebo 3A a nástupištěm 5 a obráceně – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti 2 nebo 3A a nástupištěm 5 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm 4 a nástupištěm 5 a obráceně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupištěm 4 a nástupištěm 5 a obráceně"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a DLB, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "DLB"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Česká Lípa",
+        "direction": "Česká Lípa",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "liberec-001",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1298",
+              "trains": [
+                1298
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "—",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "liberec-002",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "6602 - 6616",
+              "ranges": [
+                {
+                  "from": 6602,
+                  "to": 6616,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "liberec-003",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "6618",
+              "trains": [
+                6618
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "liberec-004",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6620",
+              "trains": [
+                6620
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "—",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "liberec-005",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6630",
+              "trains": [
+                6630
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "—",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Frýdlant v Čechách",
+        "direction": "Frýdlant v Čechách",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "liberec-006",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6302, 6306, 6310, 6312, 6358, 6360",
+              "trains": [
+                6302,
+                6306,
+                6310,
+                6312,
+                6358,
+                6360
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "liberec-007",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6304, 6308, 6350, 6352, 6356, 6364, 6366, 6370, 6372, 6376, 6378",
+              "trains": [
+                6304,
+                6308,
+                6350,
+                6352,
+                6356,
+                6364,
+                6366,
+                6370,
+                6372,
+                6376,
+                6378
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "liberec-008",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "6314",
+              "trains": [
+                6314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "liberec-009",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "6316, 6318, 6320, 6322",
+              "trains": [
+                6316,
+                6318,
+                6320,
+                6322
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "liberec-010",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "6332",
+              "trains": [
+                6332
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "liberec-011",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "6334",
+              "trains": [
+                6334
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "liberec-012",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "6354, 6362, 6368, 6374",
+              "trains": [
+                6354,
+                6362,
+                6368,
+                6374
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hrádek nad Nisou",
+        "direction": "Hrádek nad Nisou",
+        "source_row": 39,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "liberec-013",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "liberec-014",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "20932",
+              "trains": [
+                20932
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "liberec-015",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "20960",
+              "trains": [
+                20960
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "liberec-016",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "20962",
+              "trains": [
+                20962
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Tanvald",
+        "direction": "Tanvald",
+        "source_row": 44,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "liberec-017",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "2602",
+              "trains": [
+                2602
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6301",
+              "trains": [
+                6301
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "liberec-018",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "2604 – 2642, 2650 – 2672",
+              "ranges": [
+                {
+                  "from": 2604,
+                  "to": 2642,
+                  "parity": null
+                },
+                {
+                  "from": 2650,
+                  "to": 2672,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Turnov",
+        "direction": "Turnov",
+        "source_row": 47,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "liberec-019",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "1077",
+              "trains": [
+                1077
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "liberec-020",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Sp a Os vlaky ARR (vyjma níže uvedených",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "liberec-021",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "5431",
+              "trains": [
+                5431
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20939",
+              "trains": [
+                20939
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "liberec-022",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "5427",
+              "trains": [
+                5427
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "liberec-023",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "5571",
+              "trains": [
+                5571
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2615",
+              "trains": [
+                2615
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "Z důvodu návazné autobusové dopravy v ŽST Raspenava a v ŽST Frýdlant v Čechách je nutné dodržet čekání vlaků Os 6332 a Os 6334 v ⚒ v ŽST Liberec na zpožděné přípojné vlaky maximálně 5 minut."
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk, Tomáš Neumann",
+    "Za Správu železnic odsouhlasil: Mikuláš Lipnický, Milan Mazánek"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 23,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

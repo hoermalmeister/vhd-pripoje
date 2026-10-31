@@ -1,0 +1,738 @@
+{
+  "schema_version": "1.0",
+  "id": "chlumec-nad-cidlinou",
+  "station": "Chlumec nad Cidlinou",
+  "sheet_name": "Chlumec nad Cidlinou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Velký Osek",
+        "direction": "Velký Osek",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chlumec-nad-cidlinou-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 920, 930)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "920, 930",
+                  "trains": [
+                    920,
+                    930
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "920",
+              "trains": [
+                920
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "930",
+              "trains": [
+                930
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyma 1816)",
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1816",
+                  "trains": [
+                    1816
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-005",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1816",
+              "trains": [
+                1816
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hradec Králové hl.n.",
+        "direction": "Hradec Králové hl.n.",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chlumec-nad-cidlinou-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 955)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "955",
+                  "trains": [
+                    955
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "955",
+              "trains": [
+                955
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "5229",
+              "trains": [
+                5229
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ostroměř",
+        "direction": "Ostroměř",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chlumec-nad-cidlinou-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1795",
+              "trains": [
+                1795
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1817",
+              "trains": [
+                1817
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1819",
+              "trains": [
+                1819
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-012",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "5703",
+              "trains": [
+                5703
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-013",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "5723",
+              "trains": [
+                5723
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Městec Králové",
+        "direction": "Městec Králové",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chlumec-nad-cidlinou-014",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Os vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-015",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "5704",
+              "trains": [
+                5704
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-016",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "5716",
+              "trains": [
+                5716
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "5716"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "7"
+              },
+              "saturday": {
+                "before": null,
+                "after": "-"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "-"
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-017",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "5720, 5722",
+              "trains": [
+                5720,
+                5722
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chlumec-nad-cidlinou-018",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "15654",
+              "trains": [
+                15654
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Petr Entler",
+    "Za Správu železnic odsouhlasil: Dušan Kopecký"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 18,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

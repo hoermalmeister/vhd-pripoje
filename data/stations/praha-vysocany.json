@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "id": "praha-vysocany",
+  "station": "Praha-Vysočany",
+  "sheet_name": "Praha-Vysočany",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků dopravce ČD.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": null,
+        "direction": null,
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-vysocany-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Cikner",
+    "Zpracoval za KŽC Doprava: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Ing. Vladimír Coubal"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

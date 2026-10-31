@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "id": "postoloprty",
+  "station": "Postoloprty",
+  "sheet_name": "Postoloprty",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJÚK jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJÚK"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Louny",
+        "direction": "Louny",
+        "source_row": 16,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Most",
+        "direction": "Most",
+        "source_row": 18,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Žatec",
+        "direction": "Žatec",
+        "source_row": 20,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Josef Růžička"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 0,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

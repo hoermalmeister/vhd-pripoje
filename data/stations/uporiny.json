@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "id": "uporiny",
+  "station": "Úpořiny",
+  "sheet_name": "Úpořiny",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 1 minuta.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 1,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD a RJÚK jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Ústí nad Labem",
+        "direction": "Ústí nad Labem",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "uporiny-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "16500, 16503, 16505,",
+              "trains": [
+                16500,
+                16503,
+                16505
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "uporiny-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "16507, 16511, , 16513, 16515, 16519, 16523, 16527",
+              "trains": [
+                16507,
+                16511,
+                16513,
+                16515,
+                16519,
+                16523,
+                16527
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Most",
+        "direction": "Most",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "uporiny-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "16502",
+              "trains": [
+                16502
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "uporiny-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "16504, 16508, 16510, 16512, 16516, 16520, 16524",
+              "trains": [
+                16504,
+                16508,
+                16510,
+                16512,
+                16516,
+                16520,
+                16524
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Teplice v Čechách",
+        "direction": "Teplice v Čechách",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "uporiny-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "16116",
+              "trains": [
+                16116
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lovosice",
+        "direction": "Lovosice",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "uporiny-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "16119",
+              "trains": [
+                16119
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Miroslav Zubík"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 6,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

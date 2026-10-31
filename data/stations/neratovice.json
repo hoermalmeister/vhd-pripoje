@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0",
+  "id": "neratovice",
+  "station": "Neratovice",
+  "sheet_name": "Neratovice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Brandýs nad Labem",
+        "direction": "Brandýs nad Labem",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "neratovice-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "19441",
+              "trains": [
+                19441
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9538, 9545",
+              "trains": [
+                9538,
+                9545
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "neratovice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "19443",
+              "trains": [
+                19443
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9540",
+              "trains": [
+                9540
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kralupy nad Vltavou",
+        "direction": "Kralupy nad Vltavou",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "neratovice-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6988, 19508 – 19524",
+              "trains": [
+                6988
+              ],
+              "ranges": [
+                {
+                  "from": 19508,
+                  "to": 19524,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "neratovice-004",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché R ARR 1139 - 1159 a 1179",
+              "trains": [
+                1179
+              ],
+              "ranges": [
+                {
+                  "from": 1139,
+                  "to": 1159,
+                  "parity": "odd"
+                }
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "neratovice-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "1543, 1545, 1547, 9505, 9511, 9515",
+              "trains": [
+                1543,
+                1545,
+                1547,
+                9505,
+                9511,
+                9515
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "neratovice-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "9503, 9519 – 9541",
+              "trains": [
+                9503
+              ],
+              "ranges": [
+                {
+                  "from": 9519,
+                  "to": 9541,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "neratovice-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "9507, 9509, 9513",
+              "trains": [
+                9507,
+                9509,
+                9513
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Všetaty",
+        "direction": "Všetaty",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "neratovice-008",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "sudé R ARR 1140 - 1156 a 1178",
+              "trains": [
+                1178
+              ],
+              "ranges": [
+                {
+                  "from": 1140,
+                  "to": 1156,
+                  "parity": "even"
+                }
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "neratovice-009",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "9502",
+              "trains": [
+                9502
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Ing. Petr Vaněk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Zuzana Bárta Telecká"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

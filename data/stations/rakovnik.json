@@ -1,0 +1,633 @@
+{
+  "schema_version": "1.0",
+  "id": "rakovnik",
+  "station": "Rakovník",
+  "sheet_name": "Rakovník",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC, ARR a DLB, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "ARR",
+          "DLB"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem od vlaků dopravce ČD, ARR a KŽC, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "ARR",
+          "KŽC"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků dopravce ARR, ČD a DLB, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "ČD",
+          "DLB"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Beroun",
+        "direction": "Beroun",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rakovnik-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "7726",
+              "trains": [
+                7726
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jesenice",
+        "direction": "Jesenice",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rakovnik-002",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1576, 16702, 16714, 16716, 16720, 16762, 16764, 16766, 16768, 16774, 16776",
+              "trains": [
+                1576,
+                16702,
+                16714,
+                16716,
+                16720,
+                16762,
+                16764,
+                16766,
+                16768,
+                16774,
+                16776
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "rakovnik-003",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "16724",
+              "trains": [
+                16724
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "rakovnik-004",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "16726, 16780",
+              "trains": [
+                16726,
+                16780
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Čistá",
+        "direction": "Čistá",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rakovnik-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "16832",
+              "trains": [
+                16832
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "rakovnik-006",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "16834",
+              "trains": [
+                16834
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "rakovnik-007",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "16836",
+              "trains": [
+                16836
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "rakovnik-008",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "16838",
+              "trains": [
+                16838
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1576",
+              "trains": [
+                1576
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "rakovnik-009",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "16840",
+              "trains": [
+                16840
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lužná u Rakovníka",
+        "direction": "Lužná u Rakovníka",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rakovnik-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "1565",
+              "trains": [
+                1565
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "rakovnik-011",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "9805",
+              "trains": [
+                9805
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "rakovnik-012",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "16810",
+              "trains": [
+                16810
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "rakovnik-013",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "16812",
+              "trains": [
+                16812
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Louny",
+        "direction": "Louny",
+        "source_row": 35,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rakovnik-014",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "6730",
+              "trains": [
+                6730
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Zpracoval za DLB: Tomáš Duroň, MPA",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Pavel Sklenička"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 14,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

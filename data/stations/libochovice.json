@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "id": "libochovice",
+  "station": "Libochovice",
+  "sheet_name": "Libochovice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků dopravce ČD.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Lovosice",
+        "direction": "Lovosice",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "libochovice-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "6107",
+              "trains": [
+                6107
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18340",
+              "trains": [
+                18340
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracovala za ČD: Jana Hinterholzingerová",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Ing. Lenka Rosová"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

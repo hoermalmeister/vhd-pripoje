@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.0",
+  "id": "martinice-v-krkonosich",
+  "station": "Martinice v Krkonoších",
+  "sheet_name": "Martinice v Krkonoších",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Jablonec nad Jizerou",
+        "direction": "Jablonec nad Jizerou",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "martinice-v-krkonosich-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "15500",
+              "trains": [
+                15500
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "martinice-v-krkonosich-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "15502, 15508 – 15512",
+              "trains": [
+                15502
+              ],
+              "ranges": [
+                {
+                  "from": 15508,
+                  "to": 15512,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "martinice-v-krkonosich-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "15504",
+              "trains": [
+                15504
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "martinice-v-krkonosich-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "15506, 15542",
+              "trains": [
+                15506,
+                15542
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "martinice-v-krkonosich-005",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "15514",
+              "trains": [
+                15514
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "martinice-v-krkonosich-006",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "15524",
+              "trains": [
+                15524
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Stará Paka",
+        "direction": "Stará Paka",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "martinice-v-krkonosich-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Trutnov hl.n.",
+        "direction": "Trutnov hl.n.",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "martinice-v-krkonosich-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "1819",
+              "trains": [
+                1819
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15515",
+              "trains": [
+                15515
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Za Správu železnic odsouhlasil: Vladimír Brodský"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 8,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,712 @@
+{
+  "schema_version": "1.0",
+  "id": "hranice-na-morave",
+  "station": "Hranice na Moravě",
+  "sheet_name": "Hranice na Moravě",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 7. září 2026",
+    "valid_from": "2026-09-07",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bohumín",
+        "direction": "Bohumín",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hranice-na-morave-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R ČD",
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 1101-1131",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1131,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1133",
+              "trains": [
+                1133
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 1101-1133",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1133,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "liché 1001-1019",
+              "ranges": [
+                {
+                  "from": 1001,
+                  "to": 1019,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "3301, 3303, 3325",
+              "trains": [
+                3301,
+                3303,
+                3325
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "3321",
+              "trains": [
+                3321
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "3323",
+              "trains": [
+                3323
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lipník nad Bečvou",
+        "direction": "Lipník nad Bečvou",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hranice-na-morave-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R ČD",
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-011",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "3212, 3216, 3220",
+              "trains": [
+                3212,
+                3216,
+                3220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vsetín",
+        "direction": "Vsetín",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hranice-na-morave-012",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-013",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "1425",
+              "trains": [
+                1425
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-014",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "93211, 93219, 93223, 93227, 95929",
+              "trains": [
+                93211,
+                93219,
+                93223,
+                93227,
+                95929
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "1427, 1429, 3209, 3211, 3219, 3223, 3227 93211, 93219, 93223, 93227, 95929",
+                "after": "93211, 93219, 93223, 93227, 95929"
+              },
+              "workday": {
+                "before": "N",
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "93213, 93215, 93217, 93225, 93231",
+              "trains": [
+                93213,
+                93215,
+                93217,
+                93225,
+                93231
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3213, 3215, 3217, 3225, 3231 93213, 93215, 93217, 93225, 93231",
+                "after": "93213, 93215, 93217, 93225, 93231"
+              },
+              "workday": {
+                "before": "N",
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "hranice-na-morave-016",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "93221",
+              "trains": [
+                93221
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3221 93221",
+                "after": "93221"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček, Ing. David Valouch",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 16,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "schema_version": "1.0",
+  "id": "tisnov",
+  "station": "Tišnov",
+  "sheet_name": "Tišnov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tisnov-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Nedvědice",
+              "from_directions": [
+                "Nedvědice"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "tisnov-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R od Žďáru nad Sázavou",
+              "from_directions": [
+                "Žďáru nad Sázavou"
+              ],
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "tisnov-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "1781",
+              "trains": [
+                1781
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "tisnov-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "4661",
+              "trains": [
+                4661
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14917, 14919",
+              "trains": [
+                14917,
+                14919
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "tisnov-005",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "4663",
+              "trains": [
+                4663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14959",
+              "trains": [
+                14959
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Křižanov – Havlíčkův Brod",
+        "direction": "Křižanov – Havlíčkův Brod",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tisnov-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "970",
+              "trains": [
+                970
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tisnov-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "4622",
+              "trains": [
+                4622
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14917, 14919",
+              "trains": [
+                14917,
+                14919
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tisnov-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "4624",
+              "trains": [
+                4624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14959",
+              "trains": [
+                14959
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nedvědice",
+        "direction": "Nedvědice",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tisnov-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Brna",
+              "from_directions": [
+                "Brna"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tisnov-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1780",
+              "trains": [
+                1780
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "tisnov-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "14904",
+              "trains": [
+                14904
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4640",
+              "trains": [
+                4640
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tisnov-012",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "14914, 14916",
+              "trains": [
+                14914,
+                14916
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4618",
+              "trains": [
+                4618
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tisnov-013",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "14918",
+              "trains": [
+                14918
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4656",
+              "trains": [
+                4656
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "tisnov-014",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "14948",
+              "trains": [
+                14948
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4608",
+              "trains": [
+                4608
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tisnov-015",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "14954",
+              "trains": [
+                14954
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "tisnov-016",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "14958",
+              "trains": [
+                14958
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "991, 4625",
+              "trains": [
+                991,
+                4625
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "tisnov-017",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "14958",
+              "trains": [
+                14958
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4660",
+              "trains": [
+                4660
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              }
+            }
+          },
+          {
+            "id": "tisnov-018",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "14960",
+              "trains": [
+                14960
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4664",
+              "trains": [
+                4664
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "saturday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Aleš Opatřil"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 18,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

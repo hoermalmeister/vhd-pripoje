@@ -1,0 +1,515 @@
+{
+  "schema_version": "1.0",
+  "id": "horazdovice-predmesti",
+  "station": "Horažďovice předměstí",
+  "sheet_name": "Horažďovice předměstí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků dopravce ČD a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Klatovy",
+        "direction": "Klatovy",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "horazdovice-predmesti-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "17534, 17538, 17542, 17544, 17546, 17550",
+              "trains": [
+                17534,
+                17538,
+                17542,
+                17544,
+                17546,
+                17550
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "17506, 17508, 17510, 17512, 17516, 17520",
+              "trains": [
+                17506,
+                17508,
+                17510,
+                17512,
+                17516,
+                17520
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "17522",
+              "trains": [
+                17522
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "17548",
+              "trains": [
+                17548
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "sunday_holiday": {
+                "raw": "",
+                "kind": "empty"
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "17552",
+              "trains": [
+                17552
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice (Strakonice)",
+        "direction": "České Budějovice",
+        "direction_detail": "Strakonice",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "horazdovice-predmesti-006",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 637, 639)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "637, 639",
+                  "trains": [
+                    637,
+                    639
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-007",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "637",
+              "trains": [
+                637
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-008",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "639",
+              "trains": [
+                639
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň hl.n.",
+        "direction": "Plzeň hl.n.",
+        "source_row": 29,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "horazdovice-predmesti-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 626)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "626",
+                  "trains": [
+                    626
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "horazdovice-predmesti-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "626",
+              "trains": [
+                626
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Čekání nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Klatovy"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Ing. Vladimír Rut"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "horazdovice-predmesti-004",
+      "row": 22,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "where": "horazdovice-predmesti-004",
+      "row": 22,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

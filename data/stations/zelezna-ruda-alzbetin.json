@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "id": "zelezna-ruda-alzbetin",
+  "station": "Železná Ruda-Alžbětín",
+  "sheet_name": "Železná Ruda-Alžbětín",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem přijíždějících pravidelných vlaků ze sousední infrastruktury DB.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Klatovy",
+        "direction": "Klatovy",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zelezna-ruda-alzbetin-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Za Správu železnic odsouhlasil: Václava Klímová"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem přijíždějících pravidelných vlaků ze sousední infrastruktury DB."
+    }
+  ]
+}

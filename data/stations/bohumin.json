@@ -1,0 +1,1530 @@
+{
+  "schema_version": "1.0",
+  "id": "bohumin",
+  "station": "Bohumín",
+  "sheet_name": "Bohumín",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Základní přestupní doba je 3 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "základní přestupní doba ve stanici"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti (hrana – hrana) – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti (hrana – hrana)"
+      }
+    },
+    {
+      "text": "Přestup z 1. nástupiště na nástupiště 1A – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup z 1. nástupiště na nástupiště 1A"
+      }
+    },
+    {
+      "text": "Přestup z 1. nástupiště na nástupiště 2–4 jsou 4 minuty, z nástupiště 1A na nástupiště 2–4 – 5 minut",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Všechny vlaky Ex a R ve směru Zebrzydowice jsou přípojnými pro vlaky ze směru Český Těšín, pokud jsou uvedeny v části C.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem a odjezdem přípojných vlaků interval menší než 3 minuty, pokud není v části A nebo B stanoveno jinak.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ pouze linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Ostrava hl.n. – Hranice na Moravě – Přerov (Olomouc hl.n.)",
+        "direction": "Ostrava hl.n. – Hranice na Moravě – Přerov",
+        "direction_detail": "Olomouc hl.n.",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "bohumin-001",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "112",
+              "trains": [
+                112
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "212 kurzy",
+              "through_coaches": true,
+              "trains": [
+                212
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "bohumin-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "114",
+              "trains": [
+                114
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "131 kurzy",
+              "through_coaches": true,
+              "trains": [
+                131
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "bohumin-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "116",
+              "trains": [
+                116
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "216 kurzy",
+              "through_coaches": true,
+              "trains": [
+                216
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "bohumin-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "131",
+              "trains": [
+                131
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "205 kurzy",
+              "through_coaches": true,
+              "trains": [
+                205
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "bohumin-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "131",
+              "trains": [
+                131
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "114",
+              "trains": [
+                114
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "bohumin-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "203",
+              "trains": [
+                203
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "303 kurzy",
+              "through_coaches": true,
+              "trains": [
+                303
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "bohumin-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "207",
+              "trains": [
+                207
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "307 kurzy",
+              "through_coaches": true,
+              "trains": [
+                307
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "bohumin-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "344, 346, 348, 510, 512, 516, 548",
+              "trains": [
+                344,
+                346,
+                348,
+                510,
+                512,
+                516,
+                548
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "bohumin-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "442",
+              "trains": [
+                442
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "407 kurzy, 417 kurzy",
+              "through_coaches": true,
+              "trains": [
+                407,
+                417
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "60*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "saturday": {
+                "raw": "60*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "sunday_holiday": {
+                "raw": "60*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 60
+              }
+            }
+          },
+          {
+            "id": "bohumin-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "R8 směr Brno (sudé 1100-1132)",
+              "lines": [
+                "R8"
+              ],
+              "to_directions": [
+                "Brno"
+              ],
+              "ranges": [
+                {
+                  "from": 1100,
+                  "to": 1132,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky ze směrů Chalupki a Petrovice u Karviné, kromě níže uvedených",
+              "except_listed_below": true,
+              "from_directions": [
+                "Chalupki",
+                "Petrovice u Karviné"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "bohumin-011",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "1104",
+              "trains": [
+                1104
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "101",
+              "trains": [
+                101
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "bohumin-012",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "1112",
+              "trains": [
+                1112
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "103",
+              "trains": [
+                103
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "bohumin-013",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "1128",
+              "trains": [
+                1128
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "107",
+              "trains": [
+                107
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "bohumin-014",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "R8 směr Brno (sudé 1100-1132)",
+              "lines": [
+                "R8"
+              ],
+              "to_directions": [
+                "Brno"
+              ],
+              "ranges": [
+                {
+                  "from": 1100,
+                  "to": 1132,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky linky S2 ze směru Karviná",
+              "lines": [
+                "S2"
+              ],
+              "from_directions": [
+                "Karviná"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "bohumin-015",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Dětmarovice",
+        "direction": "Dětmarovice",
+        "source_row": 37,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "bohumin-016",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "115",
+              "trains": [
+                115
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "130",
+              "trains": [
+                130
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "bohumin-017",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "130",
+              "trains": [
+                130
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "115 kurzy",
+              "through_coaches": true,
+              "trains": [
+                115
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "bohumin-018",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "204",
+              "trains": [
+                204
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "130 kurzy",
+              "through_coaches": true,
+              "trains": [
+                130
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "bohumin-019",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "213",
+              "trains": [
+                213
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "113 kurzy",
+              "through_coaches": true,
+              "trains": [
+                113
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "bohumin-020",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "217",
+              "trains": [
+                217
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "117 kurzy",
+              "through_coaches": true,
+              "trains": [
+                117
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 30
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "217"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "117 kurzy"
+              },
+              "workday": {
+                "before": null,
+                "after": "30*"
+              },
+              "saturday": {
+                "before": null,
+                "after": "30*"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "30*"
+              }
+            }
+          },
+          {
+            "id": "bohumin-021",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "341, 343, 345, 347, 349",
+              "trains": [
+                341,
+                343,
+                345,
+                347,
+                349
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 113, 115, 117)",
+              "all": true,
+              "except": [
+                {
+                  "text": "113, 115, 117",
+                  "trains": [
+                    113,
+                    115,
+                    117
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "bohumin-022",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "345, 347, 349",
+              "trains": [
+                345,
+                347,
+                349
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "113, 115, 117",
+              "trains": [
+                113,
+                115,
+                117
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "bohumin-023",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "443",
+              "trains": [
+                443
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "406",
+              "trains": [
+                406
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "bohumin-024",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "547",
+              "trains": [
+                547
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "110",
+              "trains": [
+                110
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "bohumin-025",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků ze směru Chałupki)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků ze směru Chałupki",
+                  "from_directions": [
+                    "Chałupki"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "bohumin-026",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V ze směru Chałupki",
+              "from_directions": [
+                "Chałupki"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "bohumin-027",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "2915, 2955",
+              "trains": [
+                2915,
+                2955
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "bohumin-028",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "2957",
+              "trains": [
+                2957
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Chałupki (PKP)",
+        "direction": "Chałupki",
+        "direction_detail": "PKP",
+        "source_row": 51,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "bohumin-029",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex, R a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "bohumin-030",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "302",
+              "trains": [
+                302
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "202 kurzy",
+              "through_coaches": true,
+              "trains": [
+                202
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "bohumin-031",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "306",
+              "trains": [
+                306
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "206 kurzy",
+              "through_coaches": true,
+              "trains": [
+                206
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "bohumin-032",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "406, 416",
+              "trains": [
+                406,
+                416
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "406, 443 kurzy",
+              "through_coaches": true,
+              "trains": [
+                406,
+                443
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "120*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 120
+              },
+              "saturday": {
+                "raw": "120*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 120
+              },
+              "sunday_holiday": {
+                "raw": "120*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 120
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "V případě vyššího zpoždění přípojného vlaku o vyčkání rozhodne SD ČD"
+    },
+    "**": {
+      "text": "Přípoj se vytvoří v žst. Ostrava-Svinov"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Ing. David Rada"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 32,
+    "rules_cancelled": 0,
+    "review_items": 4
+  },
+  "review": [
+    {
+      "where": "part_a",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup z 1. nástupiště na nástupiště 2–4 jsou 4 minuty, z nástupiště 1A na nástupiště 2–4 – 5 minut"
+    },
+    {
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Všechny vlaky Ex a R ve směru Zebrzydowice jsou přípojnými pro vlaky ze směru Český Těšín, pokud jsou uvedeny v části C."
+    },
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    },
+    {
+      "where": "part_b",
+      "row": 15,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ pouze linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

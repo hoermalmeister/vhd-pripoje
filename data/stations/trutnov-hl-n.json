@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.0",
+  "id": "trutnov-hl-n",
+  "station": "Trutnov hl.n.",
+  "sheet_name": "Trutnov hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 21. července 2026",
+    "valid_from": "2026-07-21",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Jaroměř",
+        "direction": "Jaroměř",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trutnov-hl-n-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "920",
+              "trains": [
+                920
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "1381",
+              "trains": [
+                1381
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1397",
+              "trains": [
+                1397
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1399",
+              "trains": [
+                1399
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Stará Paka",
+        "direction": "Stará Paka",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trutnov-hl-n-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "1820",
+              "trains": [
+                1820
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "5748",
+              "trains": [
+                5748
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "5746, 5748",
+                "after": "5748"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Teplice nad Metují",
+        "direction": "Teplice nad Metují",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trutnov-hl-n-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "15745",
+              "trains": [
+                15745
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Svoboda nad Úpou",
+        "direction": "Svoboda nad Úpou",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trutnov-hl-n-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma 1392, 5478)",
+              "all": true,
+              "except": [
+                {
+                  "text": "1392, 5478",
+                  "trains": [
+                    1392,
+                    5478
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "1392",
+              "trains": [
+                1392
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "trutnov-hl-n-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "5478",
+              "trains": [
+                5478
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky GWTR směr Královec (opatření dopravce GWTR)",
+        "direction": "Královec",
+        "direction_detail": "opatření dopravce GWTR",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trutnov-hl-n-012",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky GWTR",
+              "operators": [
+                "GWTR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Petr Entler",
+    "Zpracoval za GWTR: Jan Ivanko",
+    "Za Správu železnic odsouhlasil: Radko Ivan"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 12,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

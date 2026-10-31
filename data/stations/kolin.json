@@ -1,0 +1,1730 @@
+{
+  "schema_version": "1.0",
+  "id": "kolin",
+  "station": "Kolín",
+  "sheet_name": "Kolín",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 16. června 2026",
+    "valid_from": "2026-06-16",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup z/na 4. na/z 5. nástupiště – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup z/na 4. na/z 5. nástupiště"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti"
+      }
+    },
+    {
+      "text": "Při přestupu z/na 1A nástupiště na/z 3. – 5. nástupiště – 6 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 6,
+        "applies_to": "Při přestupu z/na 1A nástupiště na/z 3. – 5. nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců, platí základní čekací doby.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce ARR a RJ (pouze linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "RJ"
+        ],
+        "reciprocal": false,
+        "exclusive": true,
+        "connecting_lines": [
+          "R23"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
+      }
+    },
+    {
+      "text": "Vlaky linky R23 dopravce RJ jsou přípojem od vlaků dopravce ČD.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJ"
+        ],
+        "waiting_lines": [
+          "R23"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha (přes Poříčany)",
+        "direction": "Praha",
+        "direction_detail": "přes Poříčany",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kolin-001",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "kolin-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "52, 270",
+              "trains": [
+                52,
+                270
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kolin-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "874, 876, 894, 998",
+              "trains": [
+                874,
+                876,
+                894,
+                998
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Kutné Hory a Záboří n. L.",
+              "from_directions": [
+                "Kutné Hory",
+                "Záboří n. L."
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kolin-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1500",
+              "trains": [
+                1500
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5040",
+              "trains": [
+                5040
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kolin-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1508",
+              "trains": [
+                1508
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5902",
+              "trains": [
+                5902
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kolin-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "9360",
+              "trains": [
+                9360
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "9360"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "5"
+              },
+              "saturday": {
+                "before": null,
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "kolin-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "9362",
+              "trains": [
+                9362
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Pardubice",
+        "direction": "Pardubice",
+        "source_row": 29,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kolin-008",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kolin-009",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "443, 519, 577, 579, 879, 899, 999",
+              "trains": [
+                443,
+                519,
+                577,
+                579,
+                879,
+                899,
+                999
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kolin-010",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 5031, 5045, 5051)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "5031, 5045, 5051",
+                  "trains": [
+                    5031,
+                    5045,
+                    5051
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kolin-011",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "5031",
+              "trains": [
+                5031
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "879",
+                "after": "V"
+              },
+              "saturday": {
+                "before": "20",
+                "after": "15"
+              },
+              "sunday_holiday": {
+                "before": "20",
+                "after": "15"
+              }
+            }
+          },
+          {
+            "id": "kolin-012",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "5045",
+              "trains": [
+                5045
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "967",
+                "after": "V"
+              }
+            }
+          },
+          {
+            "id": "kolin-013",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "5051",
+              "trains": [
+                5051
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "999",
+                "after": "V"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Havlíčkův Brod",
+        "direction": "Havlíčkův Brod",
+        "source_row": 38,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kolin-014",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "965",
+              "trains": [
+                965
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1315",
+              "trains": [
+                1315
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "kolin-015",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "967",
+              "trains": [
+                967
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kolin-016",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "a Os (vyjma níže uvedených)",
+                "after": "všechny vlaky Sp"
+              },
+              "saturday": {
+                "before": "5 -",
+                "after": "-",
+                "heuristic": "Přeškrtnutí zasahuje i pomlčku, v PDF je pomlčka vidět jako platná – použita pomlčka."
+              },
+              "sunday_holiday": {
+                "before": "5 -",
+                "after": "-",
+                "heuristic": "Přeškrtnutí zasahuje i pomlčku, v PDF je pomlčka vidět jako platná – použita pomlčka."
+              }
+            }
+          },
+          {
+            "id": "kolin-017",
+            "source_row": 43,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "5903, 5915, 5919, 5921, 5923, 5925",
+              "trains": [
+                5903,
+                5915,
+                5919,
+                5921,
+                5923,
+                5925
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "kolin-018",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "5955",
+              "trains": [
+                5955
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "saturday": {
+                "before": "10 -",
+                "after": "-",
+                "heuristic": "Přeškrtnutí zasahuje i pomlčku, v PDF je pomlčka vidět jako platná – použita pomlčka."
+              },
+              "sunday_holiday": {
+                "before": "10 -",
+                "after": "-",
+                "heuristic": "Přeškrtnutí zasahuje i pomlčku, v PDF je pomlčka vidět jako platná – použita pomlčka."
+              }
+            }
+          },
+          {
+            "id": "kolin-019",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "5927",
+              "trains": [
+                5927
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "5927, 19225",
+                "after": "5927"
+              },
+              "workday": {
+                "before": "15",
+                "after": "20"
+              },
+              "saturday": {
+                "before": "15",
+                "after": "20"
+              },
+              "sunday_holiday": {
+                "before": "15",
+                "after": "20"
+              }
+            }
+          },
+          {
+            "id": "kolin-020",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "5953",
+              "trains": [
+                5953
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "25809",
+              "trains": [
+                25809
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kolin-021",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "5957",
+              "trains": [
+                5957
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Velký Osek",
+        "direction": "Velký Osek",
+        "source_row": 51,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kolin-022",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky ARR ve směru Česká Lípa (vyjma 1192 a 1212)",
+              "to_directions": [
+                "Česká Lípa"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1192 a 1212",
+                  "trains": [
+                    1192,
+                    1212
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kolin-023",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "1192, 1212",
+              "trains": [
+                1192,
+                1212
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "976, 140, 862",
+              "trains": [
+                976,
+                140,
+                862
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "274, 976, 140, 862",
+                "after": "976, 140, 862"
+              }
+            }
+          },
+          {
+            "id": "kolin-024",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "1300, 1302, 1304, 1306, 1308, 1310,",
+              "trains": [
+                1300,
+                1302,
+                1304,
+                1306,
+                1308,
+                1310
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky linky Ex1 a R9",
+              "lines": [
+                "Ex1",
+                "R9"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "5",
+                "after": "10"
+              },
+              "saturday": {
+                "before": "5",
+                "after": "15"
+              },
+              "sunday_holiday": {
+                "before": "5",
+                "after": "15"
+              }
+            }
+          },
+          {
+            "id": "kolin-025",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "1312",
+              "trains": [
+                1312
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky linky Ex1 a R9",
+              "lines": [
+                "Ex1",
+                "R9"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "5",
+                "after": "20"
+              },
+              "saturday": {
+                "before": "5",
+                "after": "20"
+              },
+              "sunday_holiday": {
+                "before": "5",
+                "after": "20"
+              }
+            }
+          },
+          {
+            "id": "kolin-026",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "1314",
+              "trains": [
+                1314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky linky Ex1 a R9",
+              "lines": [
+                "Ex1",
+                "R9"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "kolin-027",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků od Prahy)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků od Prahy",
+                  "from_directions": [
+                    "Prahy"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "V (vyjma od Prahy)",
+                "after": "V (vyjma vlaků od Prahy)"
+              }
+            }
+          },
+          {
+            "id": "kolin-028",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky od Prahy",
+              "from_directions": [
+                "Prahy"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "kolin-029",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "5858",
+              "trains": [
+                5858
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "112, 265, 860, 972, 5958",
+                "after": "V"
+              }
+            }
+          },
+          {
+            "id": "kolin-030",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "5874",
+              "trains": [
+                5874
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "120, 240, 272, 5960",
+                "after": "V"
+              }
+            }
+          },
+          {
+            "id": "kolin-031",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "5876",
+              "trains": [
+                5876
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ledečko",
+        "direction": "Ledečko",
+        "source_row": 62,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kolin-032",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kolin-033",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "22204",
+              "trains": [
+                22204
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "865",
+              "trains": [
+                865
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kolin-034",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "22206",
+              "trains": [
+                22206
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "867",
+              "trains": [
+                867
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kolin-035",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "22208",
+              "trains": [
+                22208
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "869",
+              "trains": [
+                869
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kolin-036",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "22214",
+              "trains": [
+                22214
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "875",
+              "trains": [
+                875
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "kolin-037",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "22218",
+              "trains": [
+                22218
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "967",
+              "trains": [
+                967
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "kolin-038",
+            "source_row": 69,
+            "status": "active",
+            "waiting_train": {
+              "text": "22226",
+              "trains": [
+                22226
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "877",
+              "trains": [
+                877
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "V případě, že nejbližší následující vlak kategorie Ex, R, Sp do Prahy jede déle než za 30 minut (ať už dle JŘ nebo vzhledem ke zpoždění), prodlužte čekací dobu z N na 5 minut pro přípoj ze směru Kutná Hora, Ratboř, Záboří nad Labem."
+    }
+  },
+  "notes": [
+    {
+      "text": "Je-li R ve směru Kutná Hora na příjezdu opožděn tak, že v čase jeho odjezdu přijede zpožděný R ze směru Ústí nad Labem, umožněte cestujícím přestup i za cenu překročení čekací doby.",
+      "after_section": "vlaky směr Havlíčkův Brod"
+    },
+    {
+      "text": "Je-li R ve směru Kutná Hora na příjezdu opožděn tak, že v čase jeho odjezdu přijede zpožděný R ze směru Ústí nad Labem, umožněte cestujícím přestup i za cenu překročení čekací doby.",
+      "after_section": "vlaky směr Havlíčkův Brod"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman, Ing. Nikolay Petrakiev",
+    "Zpracoval za ČD: Pavel Cikner",
+    "Zpracoval za RJ: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: David Jandečka"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 37,
+    "rules_cancelled": 1,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců, platí základní čekací doby."
+    }
+  ]
+}

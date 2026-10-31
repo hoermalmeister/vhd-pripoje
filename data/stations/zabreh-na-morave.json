@@ -1,0 +1,816 @@
+{
+  "schema_version": "1.0",
+  "id": "zabreh-na-morave",
+  "station": "Zábřeh na Moravě",
+  "sheet_name": "Zábřeh na Moravě",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 19. ledna 2026",
+    "valid_from": "2026-01-19",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zabreh-na-morave-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 120)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "120",
+                  "trains": [
+                    120
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "900",
+              "trains": [
+                900
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1400",
+              "trains": [
+                1400
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "13025",
+              "trains": [
+                13025
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hanušovice / Šumperk",
+        "direction": "Hanušovice / Šumperk",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zabreh-na-morave-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "1401, 1403, 1405, 1407, 1409, 1411",
+              "trains": [
+                1401,
+                1403,
+                1405,
+                1407,
+                1409,
+                1411
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 901, 903, 905, 907, 909, 911)",
+              "all": true,
+              "except": [
+                {
+                  "text": "901, 903, 905, 907, 909, 911",
+                  "trains": [
+                    901,
+                    903,
+                    905,
+                    907,
+                    909,
+                    911
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "1401, 1403, 1405, 1407, 1409, 1411, 1413",
+                "after": "1401, 1403, 1405, 1407, 1409, 1411"
+              },
+              "connecting_train": {
+                "before": "V (vyjma 901, 903, 905, 907, 909, 911, 913)",
+                "after": "V (vyjma 901, 903, 905, 907, 909, 911)"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "1401, 1403, 1405, 1407, 1409, 1411, 1413",
+              "trains": [
+                1401,
+                1403,
+                1405,
+                1407,
+                1409,
+                1411,
+                1413
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "901, 903, 905, 907, 909, 911, 913",
+              "trains": [
+                901,
+                903,
+                905,
+                907,
+                909,
+                911,
+                913
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "1413",
+              "trains": [
+                1413
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 913)",
+              "all": true,
+              "except": [
+                {
+                  "text": "913",
+                  "trains": [
+                    913
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "1413"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V (vyjma 913)"
+              },
+              "workday": {
+                "before": null,
+                "after": "15"
+              },
+              "saturday": {
+                "before": null,
+                "after": "15"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "15"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1422, 3704, 13000, 13010, 13012, 13014, 13016",
+              "trains": [
+                1422,
+                3704,
+                13000,
+                13010,
+                13012,
+                13014,
+                13016
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "3700, 3710, 3712, 3722, 3724, 3726, 3728, 3732, 3734, 3736, 3740, 13020",
+              "trains": [
+                3700,
+                3710,
+                3712,
+                3722,
+                3724,
+                3726,
+                3728,
+                3732,
+                3734,
+                3736,
+                3740,
+                13020
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "3764, 13054",
+              "trains": [
+                3764,
+                13054
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "13002, 13022",
+              "trains": [
+                13002,
+                13022
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "13032, 13038",
+              "trains": [
+                13032,
+                13038
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-013",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "13040",
+              "trains": [
+                13040
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Olomouc hl.n.",
+        "direction": "Olomouc hl.n.",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zabreh-na-morave-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "900",
+              "trains": [
+                900
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1400",
+              "trains": [
+                1400
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-015",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "902, 904, 906, 908, 910, 912",
+              "trains": [
+                902,
+                904,
+                906,
+                908,
+                910,
+                912
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1402, 1404, 1406, 1408, 1410, 1412",
+              "trains": [
+                1402,
+                1404,
+                1406,
+                1408,
+                1410,
+                1412
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-016",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "914",
+              "trains": [
+                914
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1414",
+              "trains": [
+                1414
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-017",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "1421, 1423, 13001",
+              "trains": [
+                1421,
+                1423,
+                13001
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zabreh-na-morave-018",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "3709, 3713, 3715, 3725, 3727, 3729, 3731, 3733, 3737, 3739",
+              "trains": [
+                3709,
+                3713,
+                3715,
+                3725,
+                3727,
+                3729,
+                3731,
+                3733,
+                3737,
+                3739
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 18,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty"
+    }
+  ]
+}

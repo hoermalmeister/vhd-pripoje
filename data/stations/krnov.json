@@ -1,0 +1,573 @@
+{
+  "schema_version": "1.0",
+  "id": "krnov",
+  "station": "Krnov",
+  "sheet_name": "Krnov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 9. února 2026",
+    "valid_from": "2026-02-09",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Opava východ",
+        "direction": "Opava východ",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krnov-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "841",
+              "trains": [
+                841
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1441, 1449",
+              "trains": [
+                1441,
+                1449
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "1441",
+                "after": "1441, 1449"
+              }
+            }
+          },
+          {
+            "id": "krnov-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "841",
+              "trains": [
+                841
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3505",
+              "trains": [
+                3505
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "krnov-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "3475",
+              "trains": [
+                3475
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3519",
+              "trains": [
+                3519
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "krnov-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "3481",
+              "trains": [
+                3481
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "855",
+              "trains": [
+                855
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Olomouc hl.n.",
+        "direction": "Olomouc hl.n.",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krnov-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "854",
+              "trains": [
+                854
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3450",
+              "trains": [
+                3450
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krnov-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1447",
+              "trains": [
+                1447
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "840",
+              "trains": [
+                840
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krnov-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "3506",
+              "trains": [
+                3506
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "840",
+              "trains": [
+                840
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "krnov-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "3508",
+              "trains": [
+                3508
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jindřichov ve Slezsku – Jeseník",
+        "direction": "Jindřichov ve Slezsku – Jeseník",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krnov-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1440, 1442, 1444",
+              "trains": [
+                1440,
+                1442,
+                1444
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "krnov-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1446",
+              "trains": [
+                1446
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "840",
+              "trains": [
+                840
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "krnov-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1446",
+              "trains": [
+                1446
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "853",
+              "trains": [
+                853
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "krnov-012",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "krnov-013",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "3570",
+              "trains": [
+                3570
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krnov-014",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "3572",
+              "trains": [
+                3572
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "v období od 22. XII. do 2. I. a od 1. VII. do 31. VIII. Přechod"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Za Správu železnic odsouhlasil: Jiří Adamczyk"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 14,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

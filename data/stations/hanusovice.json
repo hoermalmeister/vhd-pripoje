@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "id": "hanusovice",
+  "station": "Hanušovice",
+  "sheet_name": "Hanušovice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce LET, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "LET"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky LET jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "LET"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bludov / Zábřeh na Moravě",
+        "direction": "Bludov / Zábřeh na Moravě",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hanusovice-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "hanusovice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "3610",
+              "trains": [
+                3610
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jeseník",
+        "direction": "Jeseník",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hanusovice-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "hanusovice-004",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "1415, 1417, 3601, 3605, 3607, 3611, 3615",
+              "trains": [
+                1415,
+                1417,
+                3601,
+                3605,
+                3607,
+                3611,
+                3615
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Staré Město pod Sněžníkem",
+        "direction": "Staré Město pod Sněžníkem",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hanusovice-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "13654, 13664, 13668",
+              "trains": [
+                13654,
+                13664,
+                13668
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "hanusovice-006",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "13656, 13658, 13660, 13662, 13672, 13674",
+              "trains": [
+                13656,
+                13658,
+                13660,
+                13662,
+                13672,
+                13674
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "hanusovice-007",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "13666, 13670",
+              "trains": [
+                13666,
+                13670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Dolní Lipka (dopravce Leo Express Tenders s.r.o.)",
+        "direction": "Dolní Lipka",
+        "direction_detail": "dopravce Leo Express Tenders s.r.o.",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "hanusovice-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "20504",
+              "trains": [
+                20504
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          },
+          {
+            "id": "hanusovice-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "ostatní vlaky LET",
+              "operators": [
+                "LET"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Zpracoval za LET: Hynek Richter",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

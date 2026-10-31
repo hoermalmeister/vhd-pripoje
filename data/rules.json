@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "document": {
+    "title": "Přípoje mezi vlaky osobní dopravy 2026",
+    "issuer": "Správa železnic, státní organizace",
+    "timetable": "JŘ 2026",
+    "valid_from": "2025-12-14",
+    "valid_to": "2026-12-12",
+    "last_change_included": "Změna č. 28 (Český Těšín, Starkoč), účinnost od 30. 9. 2026",
+    "classification": "Jen pro služební potřebu"
+  },
+
+  "day_types": {
+    "workday": {"symbol": "⚒", "label": "pracovní dny", "definition": "pondělí až pátek, pokud nejde o státní svátek"},
+    "saturday": {"symbol": "⑥", "label": "sobota", "definition": "sobota, pokud nejde o státní svátek"},
+    "sunday_holiday": {"symbol": "†", "label": "neděle a státní svátky", "definition": "neděle a státem uznané svátky (i když připadnou na všední den nebo sobotu)"},
+    "public_holidays": [
+      "2025-12-24", "2025-12-25", "2025-12-26",
+      "2026-01-01", "2026-04-03", "2026-04-06", "2026-05-01", "2026-05-08",
+      "2026-07-05", "2026-07-06", "2026-09-28", "2026-10-28", "2026-11-17",
+      "2026-12-24", "2026-12-25", "2026-12-26"
+    ],
+    "note": "Seznam svátků je pro období JŘ 2026 (Velký pátek 3. 4., Velikonoční pondělí 6. 4. 2026). Ve stanicích se objevují i značky ①–⑦ (dny v týdnu: ① pondělí … ⑦ neděle) v poznámkách pod tabulkou."
+  },
+
+  "symbols": {
+    "⚒": "pracovní dny", "①": "pondělí", "②": "úterý", "③": "středa", "④": "čtvrtek", "⑤": "pátek", "⑥": "sobota", "⑦": "neděle", "†": "neděle a státní svátky",
+    "V": "ve sloupci přípojných vlaků: návazný vlak čeká na všechny přípojné vlaky",
+    "N": "čekací doba N – návazný vlak nečeká (výjimka viz článek 11)",
+    "vždy": "návazný vlak čeká vždy",
+    "přechod": "návazný vlak čeká vždy, protože přecházejí vozy (náležitosti) z přípojného vlaku",
+    "-": "přestupní vazba neexistuje, protože přípoj nebo přípojný vlak v příslušné dny nejede",
+    "*": "odkaz na poznámku pod tabulkou dané stanice (*, **, ***)",
+    "přeškrtnuto": "v podkladu vyznačená změna – přeškrtnutý text už neplatí (červený text je nově doplněný)"
+  },
+
+  "wait_kinds": {
+    "minutes": "Návazný vlak čeká nejvýše 'minutes' minut po svém pravidelném odjezdu (nejvyšší přípustné zpoždění návazného vlaku). 'minutes_alternative' = jiná hodnota podle poznámky pod čarou.",
+    "never": "N – nečeká. Výjimka (článek 11): zpožděný přípojný vlak, který přijede do pravidelného odjezdu návazného vlaku ke stejnému nástupišti, se stihne.",
+    "always": "vždy – návazný vlak čeká bez omezení (vždy).",
+    "always_through_coach": "přechod – čeká vždy, přecházejí vozy z přípojného vlaku.",
+    "no_connection": "'-' nebo '—' – vazba v tento typ dne neexistuje (vlak nejede).",
+    "empty": "Buňka je v podkladu prázdná – údaj neuveden. Doporučeno zobrazit 'neuvedeno' (nejčastěji vlak v daný den nejede).",
+    "variants": "Více hodnot rozlišených hvězdičkami – rozhoduje poznámka pod čarou.",
+    "see_footnote": "Jen odkaz na poznámku pod čarou.",
+    "text": "Nerozpoznaný text – viz 'raw'."
+  },
+
+  "basic_wait_times": {
+    "by_category": {"Ex": 5, "R": 10, "Sp": 10, "Os": 10},
+    "unit": "min",
+    "articles": [6, 7, 8],
+    "note": "Platí pro všechny návazné vlaky, pokud tabulka stanice nestanoví odchylnou čekací dobu (část C) nebo pravidlo dopravce v části B (např. 'Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut'). Kategorie EC/IC/EN/SC/rj se v ČR řadí do druhu Ex."
+  },
+
+  "connection_window": {
+    "min_minutes": 2,
+    "max_minutes": 60,
+    "article": 1,
+    "text": "Přípojem jsou vlaky, u kterých je v rámci jedné stanice (jednoho obvodu stanice uvedeného samostatně v jízdním řádu pro cestující) mezi pravidelným příjezdem prvního (přípojného) vlaku a pravidelným odjezdem druhého (návazného) vlaku nejméně dvě minuty a nejvýše šedesát minut (přípoj s kratší přestupní dobou může být uveden v tabulkové části). Na zastávkách se přípoje nezajišťují."
+  },
+
+  "basic_transfer_times": {
+    "article": 9,
+    "items": [
+      {"case": "přestup bez použití podchodu, cestující překračuje nejvýše dvě koleje", "minutes": 2},
+      {"case": "přestup bez použití podchodu, cestující překračuje více než dvě koleje", "minutes": 3},
+      {"case": "přestup podchodem na sousední nástupiště", "minutes": 3},
+      {"case": "za každé další nástupiště", "add_minutes": 1},
+      {"case": "rozdělené nástupiště (např. severní a jižní část), cestující překonává toto dělení", "add_minutes": 1},
+      {"case": "vjezd přípojného vlaku na obsazenou kolej prodlouží vzdálenost pro přestup", "add_minutes": 1}
+    ],
+    "note": "Odlišné přestupní doby jsou v části A tabulky stanice."
+  },
+
+  "articles": [
+    {"no": 1, "title": "Přípoj", "text": "Přípojem jsou vlaky, u kterých je v rámci jedné stanice (jednoho obvodu stanice uvedeného samostatně v jízdním řádu pro cestující) mezi pravidelným příjezdem prvního (přípojného) vlaku a pravidelným odjezdem druhého (návazného) vlaku nejméně dvě minuty a nejvíce šedesát minut (přípoj s kratší přestupní dobou může být uveden v tabulkové části čekacích dob). V případě zpoždění prvního vlaku platí postup uvedený v článku 4. Případy, kdy je přípoj i z jiného obvodu stanice, jsou uvedeny v tabulkové části pomůcky. Na zastávkách (ve smyslu předpisu SŽ D1) se přípoje nezajišťují a žádné vlaky zde nečekají na žádné přípoje."},
+    {"no": 2, "title": "Nepřípoj", "text": "Nepřípoj je dvojice nebo skupina vlaků, mezi kterými nebude ani při včasné jízdě zajištěn přestup cestujících. Odchylky a výjimky mohou být stanoveny v tabulkové části u jednotlivých ŽST v části B.",
+     "cases": [
+       {"id": "a", "rule": "interval_0_1", "text": "vlaky, u kterých je v rámci jedné stanice mezi příjezdem prvního (přípojného) vlaku a odjezdem druhého (návazného) vlaku 0 až 1 minuta"},
+       {"id": "b", "rule": "opposite_direction_same_line", "text": "vlaky opačného směru téže trati – přípojný vlak přijíždí ze stejné sousední stanice (neplatí pro odbočky, které nejsou zastávkou), do které bude odjíždět návazný vlak, bez ohledu na to, zda vlak v této stanici zastavuje"},
+       {"id": "c", "rule": "same_direction_same_line", "text": "vlaky stejného směru téže trati – přípojný a návazný vlak mají v pokračování své trasy shodné následující místo pravidelného zastavení"},
+       {"id": "d", "rule": "transfer_time_not_met", "text": "vlaky ve stanicích s delší přestupní dobou, kde mezi příjezdem přípojného a odjezdem návazného vlaku není tato přestupní doba dodržena (delší přestupní doba je v tabulkové části a v KJŘ značkou u názvu stanice); lze stanovit vlaky, které budou přípojem s kratší přestupní dobou"},
+       {"id": "e", "rule": "explicitly_not_connection", "text": "vlaky, u nichž je sice dodržena přestupní doba, ale pomůckou je stanoveno, že 'není přípoj mezi vlaky' (v KJŘ vyznačeno značkou u časového údaje příjezdu prvního vlaku)"},
+       {"id": "f", "rule": "different_operators", "text": "vlaky různých dopravců"}
+     ]},
+    {"no": 3, "title": "Přípojný vlak", "text": "Přípojný vlak je vlak nebo vlaky, na který ve stanici navazuje návazný vlak nebo vlaky (dle článku 1)."},
+    {"no": 4, "title": "Čekací doba", "text": "Čekací doba je doba v minutách, která stanovuje nejvyšší možné zpoždění návazných vlaků při odjezdu ze stanice, kde probíhá přestup cestujících mezi přípojným a návazným vlakem – zpoždění se stanovuje od pravidelného odjezdu vlaku dle platného JŘ, popř. platného výlukového JŘ. Tato doba obsahuje nejvyšší možnou dobu, kterou bude návazný vlak (vlak čekající na přípoj) čekat bez zvláštního pokynu dopravce na příjezd zpožděného přípojného vlaku – do této doby je zahrnuta doba pro přestup cestujících (přestupní doba). Takto stanovené zpoždění nesmí být překročeno při čekání na přípojný vlak bez zvláštního pokynu dopravce. Pro stanovení, zda bude mezi vlaky přípoj, je rozhodující výše čekací doby stanovená pomůckou. Zaměstnanec řízení provozu zjistí aktuální zpoždění přípojného vlaku a posoudí s ohledem na vjezdovou kolej, zda nebude překročeno nejvyšší zpoždění návazného vlaku (čekací doba). Pokud by měla být čekací doba překročena (bez zohlednění vlivu pořadí vlaků u návazného vlaku), odjede návazný vlak včas bez čekání. Pokud čekací doba nebude překročena, návazný vlak vyčká. Při rozhodování se bere v úvahu předpokládaná doba příjezdu prvního vlaku včetně předvídatelné možnosti zkrácení nebo navýšení zpoždění a pokyny dopravce. Další zpoždění nad rámec čekací doby vzniklé sledem vlaků se eviduje samostatně a nepovažuje se za překročení čekací doby.",
+     "formula": "Návazný vlak vyčká, pokud: předpokládaný příjezd přípojného vlaku + přestupní doba ≤ pravidelný odjezd návazného vlaku + čekací doba."},
+    {"no": 5, "title": "Druhy čekacích dob", "text": "Pro každý přípojný vlak je ve stanici stanovena pouze jedna čekací doba: a) základní čekací doba; b) odchylná čekací doba, tj. delší nebo kratší než základní – je uvedena v tabulkové části."},
+    {"no": 6, "title": "Základní čekací doba Ex", "text": "Základní čekací doba pro vlaky dopravního druhu Ex je stanovena shodně pro všechny stanice a činí 5 minut.", "value": {"Ex": 5}},
+    {"no": 7, "title": "Základní čekací doba R, Sp, Os", "text": "Základní čekací doba pro vlaky dopravních druhů R, Sp a Os je stanovena shodně pro všechny stanice a činí 10 minut.", "value": {"R": 10, "Sp": 10, "Os": 10}},
+    {"no": 8, "title": "Použití základní čekací doby", "text": "Základní čekací doba platí pro všechny návazné vlaky, není-li pomůckou stanovena odchylná čekací doba."},
+    {"no": 9, "title": "Přestupní doba", "text": "Přestupní doba je doba potřebná na přestup, která mezi příjezdem přípojného a odjezdem návazného vlaku postačí pro bezpečný přestup cestujících. Za dodržení přestupní doby odpovídá zaměstnanec řízení provozu Správy železnic a lze ji zkrátit po ověření, že přestup byl uskutečněn. Základní přestupní doby jsou v tabulce (viz basic_transfer_times), odlišné přestupní doby v tabulkové části (část A)."},
+    {"no": 10, "title": "Čekací doba N", "text": "Pokud je v tabulkové části uvedena čekací doba N, nečeká návazný vlak na přípojný vlak (vlaky). Značka ⊙ v jízdních řádech pro cestující má pouze informativní význam pro veřejnost."},
+    {"no": 11, "title": "Výjimka z čekací doby N", "text": "Výjimkou od čekací doby N (nečeká) jsou zpožděné přípojné vlaky, které dojedou do času pravidelného odjezdu návazného vlaku, jsou-li vedeny ke stejnému nástupišti."},
+    {"no": 12, "title": "Není přestupní frekvence", "text": "Oznámí-li obsluha vlaku, že na konkrétní návazný vlak není přestupní frekvence a je tato skutečnost známa zaměstnanci řízení provozu, návazný vlak nečeká a odjede před uplynutím čekací doby."},
+    {"no": 13, "title": "Nelze zjistit zpoždění", "text": "Nelze-li zjistit zpoždění přípojného vlaku nebo získat informaci o přestupní frekvenci, vyčká návazný vlak po celou stanovenou čekací dobu, pokud dispečer dopravce nerozhodne jinak."},
+    {"no": 14, "title": "Vlak stejného čísla", "text": "Je-li u vlaku stejného čísla přestup do jiné soupravy, či je přestup na náhradní dopravu vedenou pod stejným číslem, nejde o přípoj, ale o pokračování jednoho vlaku a přestup se zajišťuje vždy, pokud není uvedeno v ROV jinak, či dispečer dopravce nerozhodne jinak."},
+    {"no": 15, "title": "Výluky", "text": "Opatření pro přípoje mezi vlaky dotčenými výlukou, stejně tak dočasná úprava přestupních dob po dobu výluk, může být upravena ROV. U výluk, pro které je vydaný výlukový jízdní řád, jsou pro stanovení čekacích dob rozhodující časy příjezdů a odjezdů uvedených ve výlukovém jízdním řádu."}
+  ],
+
+  "table_part": {
+    "intro": "Tabulky obsahují odchylky od přestupních dob, článku 2 a základních čekacích dob. Pro stanice, které nemají samostatnou tabulku, platí pro vlaky, které jsou dle článků 1 a 2 přípojnými, základní čekací a přestupní doby. Pro zastávky se tabulky nesestavují.",
+    "parts": {
+      "A": "odchylky, případně platnost základních přestupních dob; pokud není vyplněna, platí přestupní doby dle článku 9",
+      "B": "odchylky od článku 2 – stanovení přípojů mezi vlaky, které dle článku 2 jsou nepřípoji (např. vlaky různých dopravců)",
+      "C": "odchylné čekací doby: sloupec 1 = návazné vlaky (ty, které čekají), sloupec 2 = přípojné vlaky (na které se čeká), sloupec 3 = čekací doba (nejvyšší možné zpoždění návazného vlaku v minutách, které nesmí být překročeno bez souhlasu dispečera dopravce); má-li vlak odlišnou dobu např. jen v pracovní dny, uvedou se do ostatních polí základní čekací doby"
+    },
+    "six_digit_numbers": {
+      "rule": "Opatření platí vždy i pro případná šestimístná čísla vlaků odvozená od kmenového čísla: kmenové číslo je doplněno zleva tak, že první číslice je 1, 2 nebo 3, a případně doplněno nulami na šest míst.",
+      "examples": [{"base": 6602, "derived": [106602, 206602, 306602]}, {"base": 700, "derived": [100700, 200700, 300700]}],
+      "algorithm": "base_number(n): je-li n šestimístné a začíná 1, 2 nebo 3, odstraň první číslici a vedoucí nuly; výsledek porovnávej s čísly v tabulce."
+    }
+  },
+
+  "operators": {
+    "ARR": "Arriva vlaky s.r.o.", "AŽD": "AŽD Praha s.r.o.", "ČD": "České dráhy, a.s.", "DLB": "Die Länderbahn CZ s.r.o.",
+    "GWTR": "GW Train Regio a.s.", "KŽC": "KŽC doprava s.r.o.", "LE": "Leo Express s.r.o.", "LET": "Leo Express Tenders s.r.o.",
+    "MBMR": "MBM rail s.r.o.", "ÖBB": "ÖBB-Personenverkehr AG", "OÚD": "Osoblažská úzkorozchodná dráha o.p.s.",
+    "RCAS": "Railway Capital a.s.", "RJ": "RegioJet a.s.", "RJÚK": "RegioJet ÚK a.s.", "SZD": "Slezské zemské dráhy o.p.s."
+  },
+
+  "abbreviations": {
+    "CDP": "Centrální dispečerské pracoviště", "GŘ": "Generální ředitelství", "IDS": "Integrovaný dopravní systém", "JŘ": "Jízdní řád",
+    "KJŘ": "Knižní jízdní řád", "NAD": "Náhradní doprava", "OŘ": "Oblastní ředitelství", "OJ": "Organizační jednotka", "PO": "Provozní obvod",
+    "RD": "Regionální dispečer dopravce České dráhy, a.s.", "ROV": "Rozkaz o výluce", "SD": "Síťový dispečer dopravce České dráhy, a.s.", "ŽST": "Železniční stanice"
+  },
+
+  "part_b_rule_types": {
+    "default_rules": "Platí základní pravidla dle článku 2.",
+    "default_wait_times": "Platí základní čekací doby.",
+    "operator_connection": "Vlaky dopravce(ů) 'waiting_operators' čekají na vlaky dopravců 'connecting_operators' ('all' = všech, 'others' = ostatních). 'reciprocal' = platí i opačně. 'exclusive' = na vlaky ostatních dopravců nečekají. 'connecting_lines' / 'waiting_lines' = omezení na linku (např. R8, R23). Výklad: formulace 'Vlaky X jsou přípojem (od) vlaků Y' i 'Vlaky X jsou přípojné vlaky všech dopravců' je převedena tak, že X je návazný (čekající) vlak a Y přípojný – ověřit u konkrétních stanic.",
+    "operator_basic_wait": "Základní čekací doba vlaků dopravce 'waiting_operator' na vlaky 'connecting_operators' je 'minutes' minut.",
+    "min_interval": "Je-li plánovaný interval mezi příjezdem a odjezdem kratší než 'minutes', nejde o přípoj.",
+    "connection_pairs": "Výčet dvojic vlaků, mezi kterými je přípoj (případně s mimořádnou přestupní dobou 'transfer_minutes'); kind = considered_connection | opposite_direction_connection | same_direction_connection.",
+    "text": "Pravidlo zatím nestrukturované – platí doslovný text ('text'), je v seznamu 'review' k ruční úpravě."
+  },
+
+  "lookup_algorithm": {
+    "description": "Doporučený postup pro webovou službu: stanice + datum + čím přijíždím (přípojný vlak) + na co přestupuji (návazný vlak) -> čekací doba.",
+    "steps": [
+      "1. Ze 'index.json' vyber soubor stanice, jehož platnost (valid_from–valid_to) obsahuje zvolené datum. Je-li datum dřív než valid_from, upozorni, že pro toto datum platila starší verze tabulky.",
+      "2. Urči typ dne: státní svátek nebo neděle -> sunday_holiday; sobota -> saturday; jinak workday.",
+      "3. Normalizuj čísla vlaků (šestimístná čísla -> kmenové číslo, viz table_part.six_digit_numbers).",
+      "4. V part_c projdi pravidla se status = 'active'. Pravidlo platí, když waiting_train odpovídá návaznému vlaku a connecting_train přípojnému vlaku. Konkrétní čísla mají přednost před obecnými ('všechny vlaky … (vyjma níže uvedených)'); při více shodách vyhrává nejkonkrétnější, při shodě konkrétnosti pravidlo níže v tabulce.",
+      "5. Je-li nalezeno pravidlo, vrať wait[typ dne] (minutes / never / always / always_through_coach / no_connection) a připoj poznámky pod čarou podle footnote_marks a obecné poznámky stanice (notes).",
+      "6. Není-li pravidlo nalezeno: zkontroluj, zda jde vůbec o přípoj (článek 1 – interval 2–60 min, článek 2 – nepřípoje, část B – pravidla dopravců a dvojice). Pokud ano, vrať základní čekací dobu podle druhu návazného vlaku (Ex 5, ostatní 10) nebo podle pravidla operator_basic_wait; pokud ne, vrať 'není přípoj'.",
+      "7. Vždy zobraz i část A (přestupní doby) a poznámky – obsahují pokyny pro případ, že k návaznosti nedojde."
+    ],
+    "train_metadata_needed": "Tabulky neobsahují druh vlaku, dopravce, směr ani časy. Pro selektory typu 'všechny vlaky Os', 'vlaky ČD', 'směr Jihlava', 'z trati 260' a pro článek 1/2 je potřeba napojit data jízdního řádu (např. CIS JŘ / celostátní data JŘ ve formátu XML)."
+  },
+
+  "selector_schema": {
+    "text": "původní (platný) text buňky",
+    "all": "true = všechny vlaky splňující ostatní filtry (categories, operators, lines, from_directions, to_directions …)",
+    "trains": "výčet čísel vlaků",
+    "ranges": "rozsahy čísel {from, to, parity: odd|even|null}",
+    "patterns": "vzory čísel, 'x' = libovolná číslice (např. '16xx' = 1600–1699)",
+    "parity": "odd = liché, even = sudé čísla vlaků",
+    "categories": "druhy vlaků Ex, R, Sp, Os",
+    "operators": "zkratky dopravců (viz operators)",
+    "lines": "linky (R8, R23, S1, Ex3 …)",
+    "tracks": "čísla tratí (např. 'z trati 260')",
+    "from_directions": "přípojný vlak přijíždí ze směru / od (tvar dle podkladu, často 2. pád: 'od Prahy')",
+    "to_directions": "vlak jede ve směru",
+    "relation": "relace vlaku (např. 'Tábor – Strakonice')",
+    "destination_station": "cílová stanice vlaku",
+    "except": "seznam selektorů, které se vylučují ('vyjma …')",
+    "except_listed_below": "'vyjma níže uvedených' – vlaky uvedené na dalších řádcích téže sekce mají vlastní pravidlo",
+    "include": "seznam selektorů, které se navíc zahrnují ('včetně …')",
+    "any_of": "selektor platí, když odpovídá kterémukoli z uvedených (ruční opravy složených textů)",
+    "date_condition": "omezení na období {text, periods:[{from:'MM-DD', to:'MM-DD'}]}",
+    "through_coaches": "jde o přímé vozy / kurzy",
+    "replacement_bus": "jde o náhradní autobusovou dopravu (NAD)",
+    "footnote_marks": "odkazy na poznámky pod čarou (*, **, ***)",
+    "parse": "full = rozpoznáno automaticky celé, partial = částečně (zbytek v 'unparsed'), manual = ruční oprava z tools/overrides.json, none = nerozpoznáno",
+    "section_direction": "Každé pravidlo leží v sekci 'vlaky směr X' – sekce určuje směr jízdy návazného (čekajícího) vlaku; tento směr platí i pro obecné selektory typu 'všechny vlaky Os'."
+  }
+}

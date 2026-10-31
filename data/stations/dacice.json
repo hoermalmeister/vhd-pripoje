@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "id": "dacice",
+  "station": "Dačice",
+  "sheet_name": "Dačice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Slavonice",
+        "direction": "Slavonice",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "dacice-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "28315",
+              "trains": [
+                28315
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1909",
+              "trains": [
+                1909
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "dacice-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "28319",
+              "trains": [
+                28319
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1913",
+              "trains": [
+                1913
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "dacice-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "28321",
+              "trains": [
+                28321
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1917",
+              "trains": [
+                1917
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "dacice-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "28323",
+              "trains": [
+                28323
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1923",
+              "trains": [
+                1923
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kostelec u Jihlavy",
+        "direction": "Kostelec u Jihlavy",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "dacice-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1906",
+              "trains": [
+                1906
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "28316",
+              "trains": [
+                28316
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Martin Novák",
+    "Za Správu železnic odsouhlasil: Josef Kolba"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 5,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

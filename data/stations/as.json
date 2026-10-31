@@ -1,0 +1,543 @@
+{
+  "schema_version": "1.0",
+  "id": "as",
+  "station": "Aš",
+  "sheet_name": "Aš",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Hof",
+        "direction": "Hof",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "as-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "20870",
+              "trains": [
+                20870
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17241",
+              "trains": [
+                17241
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "as-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "20870",
+              "trains": [
+                20870
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17212",
+              "trains": [
+                17212
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "as-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "20888",
+              "trains": [
+                20888
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17210",
+              "trains": [
+                17210
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hranice v Čechách",
+        "direction": "Hranice v Čechách",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "as-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "17210",
+              "trains": [
+                17210
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20889",
+              "trains": [
+                20889
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "as-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "17220",
+              "trains": [
+                17220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20874",
+              "trains": [
+                20874
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "as-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "17222",
+              "trains": [
+                17222
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20880",
+              "trains": [
+                20880
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "as-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "17240",
+              "trains": [
+                17240
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20872",
+              "trains": [
+                20872
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "as-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "17242",
+              "trains": [
+                17242
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20874",
+              "trains": [
+                20874
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "as-009",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "17244",
+              "trains": [
+                17244
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20876",
+              "trains": [
+                20876
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "as-010",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "17246",
+              "trains": [
+                17246
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20878",
+              "trains": [
+                20878
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "as-011",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "17248",
+              "trains": [
+                17248
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20882",
+              "trains": [
+                20882
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "as-012",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "17250",
+              "trains": [
+                17250
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20884",
+              "trains": [
+                20884
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "as-013",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "17252",
+              "trains": [
+                17252
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "20888",
+              "trains": [
+                20888
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 29,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "as-014",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "20883",
+              "trains": [
+                20883
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17223",
+              "trains": [
+                17223
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 14,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

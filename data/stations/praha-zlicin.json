@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "id": "praha-zlicin",
+  "station": "Praha-Zličín",
+  "sheet_name": "Praha-Zličín",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce KŽC a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Hostivice",
+        "direction": "Hostivice",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-zlicin-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "25908, 25914, 25918, 25954",
+              "trains": [
+                25908,
+                25914,
+                25918,
+                25954
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os dopravce KŽC od Prahy hl.n.",
+              "from_directions": [
+                "Prahy hl.n."
+              ],
+              "categories": [
+                "Os"
+              ],
+              "operators": [
+                "KŽC"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha-Smíchov",
+        "direction": "Praha-Smíchov",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-zlicin-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "7751",
+              "trains": [
+                7751
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "25909",
+              "trains": [
+                25909
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "praha-zlicin-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "7753",
+              "trains": [
+                7753
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "25957",
+              "trains": [
+                25957
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "praha-zlicin-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "7755",
+              "trains": [
+                7755
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "25915",
+              "trains": [
+                25915
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Filip Štorek"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

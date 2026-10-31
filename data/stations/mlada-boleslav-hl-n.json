@@ -1,0 +1,1389 @@
+{
+  "schema_version": "1.0",
+  "id": "mlada-boleslav-hl-n",
+  "station": "Mladá Boleslav hl.n.",
+  "sheet_name": "Mladá Boleslav hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi kolejemi 4, 2, 1, 3, 5, 7 a 9 – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup mezi kolejemi 4, 2, 1, 3, 5, 7 a 9"
+      }
+    },
+    {
+      "text": "Přestup na/z koleje 6 a 4 vlevo od staniční budovy – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na/z koleje 6 a 4 vlevo od staniční budovy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 1 minuta jsou: Os 6031 a Os 9501.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 6031
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 9501
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 1
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC, DLB a ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "DLB",
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bakov nad Jizerou",
+        "direction": "Bakov nad Jizerou",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mlada-boleslav-hl-n-001",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny R vlaky dopravce ARR (vyjma 1152, 1154)",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1152, 1154",
+                  "trains": [
+                    1152,
+                    1154
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "pouze R dopravce ARR linky R22 z Kolína",
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "lines": [
+                "R22"
+              ],
+              "from_directions": [
+                "Kolín"
+              ],
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-002",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1152",
+              "trains": [
+                1152
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1190, 1210",
+              "trains": [
+                1190,
+                1210
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-003",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "1154",
+              "trains": [
+                1154
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1192, 1212",
+              "trains": [
+                1192,
+                1212
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-004",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "1554",
+              "trains": [
+                1554
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6036",
+              "trains": [
+                6036
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "6002 – 6066",
+              "ranges": [
+                {
+                  "from": 6002,
+                  "to": 6066,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "6020",
+              "trains": [
+                6020
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "9568",
+              "trains": [
+                9568
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6034",
+              "trains": [
+                6034
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-008",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "9578",
+              "trains": [
+                9578
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1546",
+              "trains": [
+                1546
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-009",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "9586",
+              "trains": [
+                9586
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-010",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "9588",
+              "trains": [
+                9588
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mladá Boleslav město",
+        "direction": "Mladá Boleslav město",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mlada-boleslav-hl-n-011",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6003 – 6017, 6021",
+              "trains": [
+                6021
+              ],
+              "ranges": [
+                {
+                  "from": 6003,
+                  "to": 6017,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-012",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6030",
+              "trains": [
+                6030
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18500",
+              "trains": [
+                18500
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-013",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "6050",
+              "trains": [
+                6050
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1544",
+              "trains": [
+                1544
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-014",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "6058",
+              "trains": [
+                6058
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1156",
+              "trains": [
+                1156
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "8502",
+              "trains": [
+                8502
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9561",
+              "trains": [
+                9561
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-016",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "8504, 8532",
+              "trains": [
+                8504,
+                8532
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-017",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "8510, 8512",
+              "trains": [
+                8510,
+                8512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1140, 1142, 1180, 1200",
+              "trains": [
+                1140,
+                1142,
+                1180,
+                1200
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-018",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "8516, 8518",
+              "trains": [
+                8516,
+                8518
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1144, 1178, 1182, 1202",
+              "trains": [
+                1144,
+                1178,
+                1182,
+                1202
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-019",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "8548",
+              "trains": [
+                8548
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-020",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "8550",
+              "trains": [
+                8550
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9538",
+              "trains": [
+                9538
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-021",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "8580",
+              "trains": [
+                8580
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1146, 1184, 1204",
+              "trains": [
+                1146,
+                1184,
+                1204
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-022",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "8584",
+              "trains": [
+                8584
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1148, 1186, 1206",
+              "trains": [
+                1148,
+                1186,
+                1206
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-023",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "8586",
+              "trains": [
+                8586
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1150, 1188, 1208",
+              "trains": [
+                1150,
+                1188,
+                1208
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-024",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "8588",
+              "trains": [
+                8588
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1152, 1190, 1210",
+              "trains": [
+                1152,
+                1190,
+                1210
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mšeno",
+        "direction": "Mšeno",
+        "source_row": 46,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mlada-boleslav-hl-n-025",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "8509, 8549",
+              "trains": [
+                8509,
+                8549
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1140, 1142, 1180, 1200",
+              "trains": [
+                1140,
+                1142,
+                1180,
+                1200
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-026",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "8515",
+              "trains": [
+                8515
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1144, 1178, 1182, 1202",
+              "trains": [
+                1144,
+                1178,
+                1182,
+                1202
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-027",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "8529, 8571",
+              "trains": [
+                8529,
+                8571
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-028",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "8535",
+              "trains": [
+                8535
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1152, 1190, 1210",
+              "trains": [
+                1152,
+                1190,
+                1210
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nymburk hl.n.",
+        "direction": "Nymburk hl.n.",
+        "source_row": 51,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mlada-boleslav-hl-n-029",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "6045",
+              "trains": [
+                6045
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8523",
+              "trains": [
+                8523
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-030",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "6057",
+              "trains": [
+                6057
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Všetaty",
+        "direction": "Všetaty",
+        "source_row": 54,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mlada-boleslav-hl-n-031",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "1543",
+              "trains": [
+                1543
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-032",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "8537, 9527, 18507, 18509, 18513, 18515, 18519",
+              "trains": [
+                8537,
+                9527,
+                18507,
+                18509,
+                18513,
+                18515,
+                18519
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R 1xxx od Nymburka a Os 60xx od České Lípy",
+              "any_of": [
+                {
+                  "categories": [
+                    "R"
+                  ],
+                  "patterns": [
+                    "1xxx"
+                  ],
+                  "from_directions": [
+                    "Nymburk"
+                  ]
+                },
+                {
+                  "categories": [
+                    "Os"
+                  ],
+                  "patterns": [
+                    "60xx"
+                  ],
+                  "from_directions": [
+                    "Česká Lípa"
+                  ]
+                }
+              ],
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-hl-n-033",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "9547",
+              "trains": [
+                9547
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Ing. Petr Vaněk",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasila: Iva Konvalinová"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 33,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

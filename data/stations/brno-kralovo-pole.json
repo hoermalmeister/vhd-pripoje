@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "id": "brno-kralovo-pole",
+  "station": "Brno-Královo Pole",
+  "sheet_name": "Brno-Královo Pole",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Tišnov",
+        "direction": "Tišnov",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-kralovo-pole-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno-Židenice",
+        "direction": "Brno-Židenice",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-kralovo-pole-002",
+            "source_row": 19,
+            "status": "inactive",
+            "waiting_train": {
+              "text": "1105 - 1133",
+              "ranges": [
+                {
+                  "from": 1105,
+                  "to": 1133,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "toho času do 19.1.2025 jsou vlaky odřeknuty (NAD Brno-Přerov)",
+              "none": true,
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "saturday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "sunday_holiday": {
+                "raw": "",
+                "kind": "empty"
+              }
+            },
+            "note": "V podkladu je místo přípojného vlaku uvedeno 'toho času do 19.1.2025 jsou vlaky odřeknuty (NAD Brno-Přerov)' a čekací doby jsou prázdné – informativní řádek, neuplatňuje se."
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Aleš Opatřil"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD."
+    }
+  ]
+}

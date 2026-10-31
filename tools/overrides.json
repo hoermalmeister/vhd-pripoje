@@ -1,0 +1,22 @@
+{
+  "_readme": "Ruční opravy selektorů, které automatický parser nerozpozná. Klíč: '<id stanice>:<řádek v Excelu>:<pole>'. Hodnota nahradí strukturu selektoru (text zůstává z podkladu). Pole '_rule' upravuje celý řádek.",
+  "brno-kralovo-pole:19:_rule": {"status": "inactive", "note": "V podkladu je místo přípojného vlaku uvedeno 'toho času do 19.1.2025 jsou vlaky odřeknuty (NAD Brno-Přerov)' a čekací doby jsou prázdné – informativní řádek, neuplatňuje se."},
+  "brno-kralovo-pole:19:connecting_train": {"none": true},
+  "cesky-tesin:37:connecting_train": {"all": true, "except": [{"all": true, "from_directions": ["Třinec"]}, {"all": true, "categories": ["Ex", "R"], "from_directions": ["Bohumín", "Ostrava"]}]},
+  "cicenice:32:connecting_train": {"trains": [8038, 639], "note": "V podkladu doplněno '(V)' – nejasný význam, ověřit."},
+  "havlickuv-brod:42:waiting_train": {"categories": ["Os"], "patterns": ["248xx"], "except": [{"trains": [24852, 24854]}]},
+  "hradec-kralove-hl-n:30:waiting_train": {"categories": ["R"], "to_directions": ["Liberec"], "ranges": [{"from": 1060, "to": 1076, "parity": null}]},
+  "mlada-boleslav-hl-n:20:connecting_train": {"all": true, "categories": ["R"], "operators": ["ARR"], "lines": ["R22"], "from_directions": ["Kolín"]},
+  "mlada-boleslav-hl-n:56:connecting_train": {"any_of": [{"categories": ["R"], "patterns": ["1xxx"], "from_directions": ["Nymburk"]}, {"categories": ["Os"], "patterns": ["60xx"], "from_directions": ["Česká Lípa"]}]},
+  "nezvestice:17:waiting_train": {"categories": ["Os"], "trains": [8950], "ranges": [{"from": 8954, "to": 8960, "parity": null}]},
+  "nezvestice:19:waiting_train": {"categories": ["Os"], "trains": [8953], "ranges": [{"from": 8955, "to": 8961, "parity": null}]},
+  "olomouc-hl-n:36:waiting_train": {"categories": ["R"], "lines": ["R13"], "trains": [802, 804, 806, 808, 810, 812, 814], "note": "V podkladu '(vyjma R 800 v †)' – R 800 v neděli/svátek se neuplatní."},
+  "ostrava-hl-n:25:waiting_train": {"any_of": [{"all": true, "categories": ["Sp"], "to_directions": ["Opava východ"]}, {"categories": ["Os"], "patterns": ["29xx"], "from_directions": ["Návsí"]}]},
+  "ostrava-hl-n:32:waiting_train": {"categories": ["Os"], "patterns": ["29xx"], "to_directions": ["Návsí"], "direction_detail": "– Mosty u Jablunkova"},
+  "plzen-hl-n:37:connecting_train": {"all": true, "except": [{"all": true, "categories": ["Ex"], "from_directions": ["Cheb"]}, {"all": true, "categories": ["Ex"], "from_directions": ["Praha"]}, {"all": true, "categories": ["R"], "operators": ["GWTR"], "from_directions": ["Most"]}]},
+  "plzen-hl-n:48:waiting_train": {"categories": ["Os"], "ranges": [{"from": 8953, "to": 8961, "parity": null}], "note": "Plzeňské linky"},
+  "plzen-jizni-predmesti:21:waiting_train": {"categories": ["Os"], "ranges": [{"from": 8950, "to": 8962, "parity": null}], "except": [{"trains": [8952]}], "note": "Plzeňské linky"},
+  "starkoc:17:connecting_train": {"through_coaches": true, "relation": "Broumov – Hradec Králové", "note": "Přímé vozy – viz Prováděcí nařízení k SŽDC D7, část B."},
+  "tabor:18:waiting_train": {"any_of": [{"all": true, "categories": ["Ex"], "except": [{"trains": [330]}]}, {"trains": [732]}]},
+  "veseli-nad-luznici:37:connecting_train": {"all": true, "categories": ["R"], "relation": "Praha – České Velenice – (Wien)"}
+}

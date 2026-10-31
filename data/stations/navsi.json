@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "id": "navsi",
+  "station": "Návsí",
+  "sheet_name": "Návsí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na sousední nástupiště – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na sousední nástupiště"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti (hrana – hrana, za sebou) – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti (hrana – hrana, za sebou)"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky Os směr Bohumín nejsou přípojné od vlaků Ex/R stejného směru.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Třinec",
+        "direction": "Třinec",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mosty u Jablunkova",
+        "direction": "Mosty u Jablunkova",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "navsi-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "2915",
+              "trains": [
+                2915
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1017",
+              "trains": [
+                1017
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "navsi-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "2923, 2927, 2931, 2935, 2939, 2945, 2949, 2953",
+              "trains": [
+                2923,
+                2927,
+                2931,
+                2935,
+                2939,
+                2945,
+                2949,
+                2953
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "341, 343, 345, 141, 347, 143, 349, 145",
+              "trains": [
+                341,
+                343,
+                345,
+                141,
+                347,
+                143,
+                349,
+                145
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "navsi-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "2939",
+              "trains": [
+                2939
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3417",
+              "trains": [
+                3417
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Za Správu železnic odsouhlasil: Ing. David Rada"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 3,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky Os směr Bohumín nejsou přípojné od vlaků Ex/R stejného směru."
+    }
+  ]
+}

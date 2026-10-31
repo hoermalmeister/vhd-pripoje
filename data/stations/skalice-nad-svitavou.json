@@ -1,0 +1,620 @@
+{
+  "schema_version": "1.0",
+  "id": "skalice-nad-svitavou",
+  "station": "Skalice nad Svitavou",
+  "sheet_name": "Skalice nad Svitavou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 3. srpna 2026",
+    "valid_from": "2026-08-03",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi kolejemi s úrovňovým nástupištěm – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup mezi kolejemi s úrovňovým nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup z ostrovního na úrovňové nástupiště a opačně – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup z ostrovního na úrovňové nástupiště a opačně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm u koleje č. 16 a ostatními nástupišti – 7 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 7,
+        "applies_to": "Přestup mezi nástupištěm u koleje č. 16 a ostatními nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky považované za přípoj: Ex 1040 a Os 14732.",
+      "change": {
+        "before": null,
+        "after": "Vlaky považované za přípoj: Ex 1040 a Os 14732."
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 1040
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 14732
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "change": {
+        "before": "platí základní pravidla dle článku 2.",
+        "after": "Jinak platí základní pravidla dle článku 2."
+      },
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "skalice-nad-svitavou-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R a Sp (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "863, 865, 867, 875",
+              "trains": [
+                863,
+                865,
+                867,
+                875
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "4719, 4723",
+              "trains": [
+                4719,
+                4723
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "4757",
+              "trains": [
+                4757
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "4759",
+              "trains": [
+                4759
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 25,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Boskovice",
+        "direction": "Boskovice",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "skalice-nad-svitavou-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "14730, 14736",
+              "trains": [
+                14730,
+                14736
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "14732",
+              "trains": [
+                14732
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 1040)",
+              "all": true,
+              "include": [
+                {
+                  "text": "1040",
+                  "trains": [
+                    1040
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "14732"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V (včetně 1040)"
+              },
+              "workday": {
+                "before": null,
+                "after": "-"
+              },
+              "saturday": {
+                "before": null,
+                "after": "10"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "10"
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "14734",
+              "trains": [
+                14734
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-011",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "14744, 14748, 14752",
+              "trains": [
+                14744,
+                14748,
+                14752
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "14744, 14748, 14752, 14776",
+                "after": "14744, 14748, 14752"
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-012",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "14758, 14764",
+              "trains": [
+                14758,
+                14764
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "skalice-nad-svitavou-013",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "14776, 14778",
+              "trains": [
+                14776,
+                14778
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Bc. Petr Juračka"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 13,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

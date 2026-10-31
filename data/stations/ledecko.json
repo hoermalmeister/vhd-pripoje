@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "id": "ledecko",
+  "station": "Ledečko",
+  "sheet_name": "Ledečko",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Čerčany",
+        "direction": "Čerčany",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ledecko-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "1596, 9226, 9228",
+              "trains": [
+                1596,
+                9226,
+                9228
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "22210",
+              "trains": [
+                22210
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ledecko-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "9230, 9232",
+              "trains": [
+                9230,
+                9232
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "22212",
+              "trains": [
+                22212
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ledecko-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "9234",
+              "trains": [
+                9234
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "22214",
+              "trains": [
+                22214
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kolín",
+        "direction": "Kolín",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ledecko-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "22215",
+              "trains": [
+                22215
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9227, 9229",
+              "trains": [
+                9227,
+                9229
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ledecko-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "22217, 22219",
+              "trains": [
+                22217,
+                22219
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9231",
+              "trains": [
+                9231
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Zruč nad Sázavou",
+        "direction": "Zruč nad Sázavou",
+        "source_row": 21,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Cikner",
+    "Za Správu železnic odsouhlasil: Iva Konvalinová"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 5,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

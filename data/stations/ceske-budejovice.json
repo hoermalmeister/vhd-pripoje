@@ -1,0 +1,3039 @@
+{
+  "schema_version": "1.0",
+  "id": "ceske-budejovice",
+  "station": "České Budějovice",
+  "sheet_name": "České Budějovice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Jinak platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 4 minuty jsou: R 625 a Ex 538, R 629 a Ex 536, R 631 a Ex 334, R 633 a Ex 530, R 635 a Ex 332, Os 3800 a R 657, Os 8005 a Ex 540, Os 18821 a Os 8054.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 625
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 538
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 629
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 536
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 631
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 334
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 633
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 530
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 635
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 332
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 3800
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 657
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8005
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 540
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 18821
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8054
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 4
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Ex 500 a Sp 1998, Ex 500 a R 1177, Ex 537 a Os 18810, Ex 543 a Os 18822, Os 3880 a Os 8202, Os 8019 a R 704, Os 8126 a Os 1730, Os 18803 a Ex 534, Os 18805 a Ex 532.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 500
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1998
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 500
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 1177
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 537
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 18810
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 543
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 18822
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 3880
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8202
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8019
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 704
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8126
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 1730
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 18803
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 534
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 18805
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 532
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků dopravce ČD a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravců ARR a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojem vlaků dopravce ARR, ČD a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "ČD"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Základní čekací doba dopravce GWTR na vlaky dopravců ARR a ČD je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": [
+          "ARR",
+          "ČD"
+        ],
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Veselí nad Lužnicí",
+        "direction": "Veselí nad Lužnicí",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceske-budejovice-001",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 330)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "330",
+                  "trains": [
+                    330
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "330",
+              "trains": [
+                330
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "653, 655, 657, 659, 661, 663",
+              "trains": [
+                653,
+                655,
+                657,
+                659,
+                661,
+                663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 625, 627, 629, 631, 633, 1981, 8001)",
+              "all": true,
+              "except": [
+                {
+                  "text": "625, 627, 629, 631, 633, 1981, 8001",
+                  "trains": [
+                    625,
+                    627,
+                    629,
+                    631,
+                    633,
+                    1981,
+                    8001
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "653",
+              "trains": [
+                653
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1981, 8001",
+              "trains": [
+                1981,
+                8001
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "655",
+              "trains": [
+                655
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "625",
+              "trains": [
+                625
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "657",
+              "trains": [
+                657
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "627",
+              "trains": [
+                627
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "659",
+              "trains": [
+                659
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "629",
+              "trains": [
+                629
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "661",
+              "trains": [
+                661
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "631",
+              "trains": [
+                631
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "663",
+              "trains": [
+                663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "633",
+              "trains": [
+                633
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "665, 700",
+              "trains": [
+                665,
+                700
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 635)",
+              "all": true,
+              "except": [
+                {
+                  "text": "635",
+                  "trains": [
+                    635
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-011",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "665",
+              "trains": [
+                665
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "635",
+              "trains": [
+                635
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-012",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "702",
+              "trains": [
+                702
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-013",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "1722, 1730, 1738",
+              "trains": [
+                1722,
+                1730,
+                1738
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 18803, 18809)",
+              "all": true,
+              "except": [
+                {
+                  "text": "18803, 18809",
+                  "trains": [
+                    18803,
+                    18809
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-014",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "1730",
+              "trains": [
+                1730
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18803",
+              "trains": [
+                18803
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-015",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "1732",
+              "trains": [
+                1732
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 18805)",
+              "all": true,
+              "except": [
+                {
+                  "text": "18805",
+                  "trains": [
+                    18805
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-016",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "1732",
+              "trains": [
+                1732
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18805",
+              "trains": [
+                18805
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-017",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "1736",
+              "trains": [
+                1736
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-018",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "1738",
+              "trains": [
+                1738
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18809",
+              "trains": [
+                18809
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-019",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "1740",
+              "trains": [
+                1740
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-020",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "8220",
+              "trains": [
+                8220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-021",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "8322",
+              "trains": [
+                8322
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 18811)",
+              "all": true,
+              "except": [
+                {
+                  "text": "18811",
+                  "trains": [
+                    18811
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-022",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "8322",
+              "trains": [
+                8322
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18811",
+              "trains": [
+                18811
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Protivín",
+        "direction": "Protivín",
+        "source_row": 45,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceske-budejovice-023",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "624",
+              "trains": [
+                624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 337)",
+              "all": true,
+              "except": [
+                {
+                  "text": "337",
+                  "trains": [
+                    337
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-024",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "624",
+              "trains": [
+                624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "337",
+              "trains": [
+                337
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-025",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "626",
+              "trains": [
+                626
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 539, 656)",
+              "all": true,
+              "except": [
+                {
+                  "text": "539, 656",
+                  "trains": [
+                    539,
+                    656
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-026",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "626",
+              "trains": [
+                626
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "539",
+              "trains": [
+                539
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-027",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "626",
+              "trains": [
+                626
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "656",
+              "trains": [
+                656
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-028",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "628, 630, 632, 634, 636, 638",
+              "trains": [
+                628,
+                630,
+                632,
+                634,
+                636,
+                638
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 331, 333, 335, 531, 535, 658, 660, 662, 664, 666)",
+              "all": true,
+              "except": [
+                {
+                  "text": "331, 333, 335, 531, 535, 658, 660, 662, 664, 666",
+                  "trains": [
+                    331,
+                    333,
+                    335,
+                    531,
+                    535,
+                    658,
+                    660,
+                    662,
+                    664,
+                    666
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-029",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "628, 630, 632, 634, 636",
+              "trains": [
+                628,
+                630,
+                632,
+                634,
+                636
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "331, 333, 335, 531, 535",
+              "trains": [
+                331,
+                333,
+                335,
+                531,
+                535
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-030",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "628",
+              "trains": [
+                628
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "658",
+              "trains": [
+                658
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-031",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "630",
+              "trains": [
+                630
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "660",
+              "trains": [
+                660
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-032",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "632",
+              "trains": [
+                632
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "662",
+              "trains": [
+                662
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-033",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "634",
+              "trains": [
+                634
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "664",
+              "trains": [
+                664
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-034",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "636",
+              "trains": [
+                636
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "666",
+              "trains": [
+                666
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-035",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "1988, 1990, 1992, 1994",
+              "trains": [
+                1988,
+                1990,
+                1992,
+                1994
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-036",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "1998",
+              "trains": [
+                1998
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-037",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "8004",
+              "trains": [
+                8004
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2180",
+              "trains": [
+                2180
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-038",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "8006",
+              "trains": [
+                8006
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2156",
+              "trains": [
+                2156
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-039",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "8008",
+              "trains": [
+                8008
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2182",
+              "trains": [
+                2182
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-040",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "8010",
+              "trains": [
+                8010
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2162",
+              "trains": [
+                2162
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-041",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "8014",
+              "trains": [
+                8014
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2166",
+              "trains": [
+                2166
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-042",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "8016",
+              "trains": [
+                8016
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2170",
+              "trains": [
+                2170
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-043",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "8018",
+              "trains": [
+                8018
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-044",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "8038",
+              "trains": [
+                8038
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-045",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "8052, 8054, 8056, 8062, 8064",
+              "trains": [
+                8052,
+                8054,
+                8056,
+                8062,
+                8064
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 2146)",
+              "all": true,
+              "except": [
+                {
+                  "text": "2146",
+                  "trains": [
+                    2146
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-046",
+            "source_row": 69,
+            "status": "active",
+            "waiting_train": {
+              "text": "8056",
+              "trains": [
+                8056
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2146",
+              "trains": [
+                2146
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-047",
+            "source_row": 70,
+            "status": "active",
+            "waiting_train": {
+              "text": "8082",
+              "trains": [
+                8082
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Horní Dvořiště – Summerau – Linz",
+        "direction": "Horní Dvořiště – Summerau – Linz",
+        "source_row": 71,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceske-budejovice-048",
+            "source_row": 72,
+            "status": "active",
+            "waiting_train": {
+              "text": "337",
+              "trains": [
+                337
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-049",
+            "source_row": 73,
+            "status": "active",
+            "waiting_train": {
+              "text": "3801, 3803, 3805, 18800, 18802, 18804, 18808, 18810",
+              "trains": [
+                3801,
+                3803,
+                3805,
+                18800,
+                18802,
+                18804,
+                18808,
+                18810
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8203, 1725, 1733, 1737)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8203, 1725, 1733, 1737",
+                  "trains": [
+                    8203,
+                    1725,
+                    1733,
+                    1737
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-050",
+            "source_row": 74,
+            "status": "active",
+            "waiting_train": {
+              "text": "3807",
+              "trains": [
+                3807
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-051",
+            "source_row": 75,
+            "status": "active",
+            "waiting_train": {
+              "text": "3885",
+              "trains": [
+                3885
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1739",
+              "trains": [
+                1739
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-052",
+            "source_row": 76,
+            "status": "active",
+            "waiting_train": {
+              "text": "3889",
+              "trains": [
+                3889
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-053",
+            "source_row": 77,
+            "status": "active",
+            "waiting_train": {
+              "text": "18800",
+              "trains": [
+                18800
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8203",
+              "trains": [
+                8203
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-054",
+            "source_row": 78,
+            "status": "active",
+            "waiting_train": {
+              "text": "18802",
+              "trains": [
+                18802
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1725",
+              "trains": [
+                1725
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-055",
+            "source_row": 79,
+            "status": "active",
+            "waiting_train": {
+              "text": "18806",
+              "trains": [
+                18806
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-056",
+            "source_row": 80,
+            "status": "active",
+            "waiting_train": {
+              "text": "18808",
+              "trains": [
+                18808
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1733",
+              "trains": [
+                1733
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-057",
+            "source_row": 81,
+            "status": "active",
+            "waiting_train": {
+              "text": "18810",
+              "trains": [
+                18810
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1737",
+              "trains": [
+                1737
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-058",
+            "source_row": 82,
+            "status": "active",
+            "waiting_train": {
+              "text": "18822",
+              "trains": [
+                18822
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Velenice",
+        "direction": "České Velenice",
+        "source_row": 84,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceske-budejovice-059",
+            "source_row": 85,
+            "status": "active",
+            "waiting_train": {
+              "text": "2143, 2145, 2147, 2149, 2151, 2153, 2155, 2157, 2159, 2161, 2163, 2165, 2167, 2169, 2183",
+              "trains": [
+                2143,
+                2145,
+                2147,
+                2149,
+                2151,
+                2153,
+                2155,
+                2157,
+                2159,
+                2161,
+                2163,
+                2165,
+                2167,
+                2169,
+                2183
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8007, 8009, 8011, 8013, 8015, 8019)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8007, 8009, 8011, 8013, 8015, 8019",
+                  "trains": [
+                    8007,
+                    8009,
+                    8011,
+                    8013,
+                    8015,
+                    8019
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-060",
+            "source_row": 86,
+            "status": "active",
+            "waiting_train": {
+              "text": "2149",
+              "trains": [
+                2149
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8007",
+              "trains": [
+                8007
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-061",
+            "source_row": 87,
+            "status": "active",
+            "waiting_train": {
+              "text": "2155",
+              "trains": [
+                2155
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8011",
+              "trains": [
+                8011
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-062",
+            "source_row": 88,
+            "status": "active",
+            "waiting_train": {
+              "text": "2159",
+              "trains": [
+                2159
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8013",
+              "trains": [
+                8013
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "sunday_holiday": {
+                "raw": "",
+                "kind": "empty"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-063",
+            "source_row": 89,
+            "status": "active",
+            "waiting_train": {
+              "text": "2163",
+              "trains": [
+                2163
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8015",
+              "trains": [
+                8015
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-064",
+            "source_row": 90,
+            "status": "active",
+            "waiting_train": {
+              "text": "2167",
+              "trains": [
+                2167
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8019",
+              "trains": [
+                8019
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-065",
+            "source_row": 91,
+            "status": "active",
+            "waiting_train": {
+              "text": "2171",
+              "trains": [
+                2171
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-066",
+            "source_row": 92,
+            "status": "active",
+            "waiting_train": {
+              "text": "2173",
+              "trains": [
+                2173
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-067",
+            "source_row": 93,
+            "status": "active",
+            "waiting_train": {
+              "text": "2181",
+              "trains": [
+                2181
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8005)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8005",
+                  "trains": [
+                    8005
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-068",
+            "source_row": 94,
+            "status": "active",
+            "waiting_train": {
+              "text": "2181",
+              "trains": [
+                2181
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8005",
+              "trains": [
+                8005
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-069",
+            "source_row": 95,
+            "status": "active",
+            "waiting_train": {
+              "text": "2183",
+              "trains": [
+                2183
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8009",
+              "trains": [
+                8009
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Černý Kříž",
+        "direction": "Černý Kříž",
+        "source_row": 96,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceske-budejovice-070",
+            "source_row": 97,
+            "status": "active",
+            "waiting_train": {
+              "text": "8109",
+              "trains": [
+                8109
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-071",
+            "source_row": 98,
+            "status": "active",
+            "waiting_train": {
+              "text": "8125, 8127, 8129",
+              "trains": [
+                8125,
+                8127,
+                8129
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-072",
+            "source_row": 99,
+            "status": "active",
+            "waiting_train": {
+              "text": "8131",
+              "trains": [
+                8131
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "ceske-budejovice-073",
+            "source_row": 100,
+            "status": "active",
+            "waiting_train": {
+              "text": "8145",
+              "trains": [
+                8145
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "**": {
+      "text": "platí v ⚒ do 24.IV. a od 19.X., od 27.IV. do 16.X. denně, mimo toto období platí základní čekací doba"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Bc. Jan Zeman",
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Zpracoval za GWTR: Ing. Filip Lorenz",
+    "Za Správu železnic odsouhlasil: Karel Juríček"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 73,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "ceske-budejovice-062",
+      "row": 88,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "where": "ceske-budejovice-062",
+      "row": 88,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

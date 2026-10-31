@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "id": "sazava",
+  "station": "Sázava",
+  "sheet_name": "Sázava",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Čerčany",
+        "direction": "Čerčany",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "sazava-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "9202",
+              "trains": [
+                9202
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "22200",
+              "trains": [
+                22200
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ledečko",
+        "direction": "Ledečko",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "sazava-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "22203",
+              "trains": [
+                22203
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9241",
+              "trains": [
+                9241
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Cikner",
+    "Za Správu železnic odsouhlasil: Iva Konvalinová"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 2,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

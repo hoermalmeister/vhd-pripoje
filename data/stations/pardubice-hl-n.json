@@ -1,0 +1,1761 @@
+{
+  "schema_version": "1.0",
+  "id": "pardubice-hl-n",
+  "station": "Pardubice hlavní nádraží",
+  "sheet_name": "Pardubice hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 12. ledna 2026",
+    "valid_from": "2026-01-12",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na sousední nástupiště – 4 minuty; na/z nástupiště 1A (kromě na/z nástupiště 5) – 5 minut",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 a 1A – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupišti 1 a 1A"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 5 a 2 – 5 minut, mezi nástupišti 5 a 1, 1A – 6 minut",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravců ARR a LET, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "LET"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ve směru jízdy na zastávku Pardubice centrum nečekají na žádné přípoje.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pardubice-hl-n-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R dopravce ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "112",
+              "trains": [
+                112
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "876",
+              "trains": [
+                876
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5330, 6223",
+              "trains": [
+                5330,
+                6223
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "898",
+              "trains": [
+                898
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5320, 6201",
+              "trains": [
+                5320,
+                6201
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "998",
+              "trains": [
+                998
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 5300)",
+              "all": true,
+              "except": [
+                {
+                  "text": "5300",
+                  "trains": [
+                    5300
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "998",
+              "trains": [
+                998
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5300",
+              "trains": [
+                5300
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-009",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "5026",
+              "trains": [
+                5026
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-010",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "5028, 5052",
+              "trains": [
+                5028,
+                5052
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-011",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "25061",
+              "trains": [
+                25061
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "579",
+              "trains": [
+                579
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 36,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pardubice-hl-n-012",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R dopravce ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-013",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "500 – 519",
+              "ranges": [
+                {
+                  "from": 500,
+                  "to": 519,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-014",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "579",
+              "trains": [
+                579
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5355",
+              "trains": [
+                5355
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-015",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "879",
+              "trains": [
+                879
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-016",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "899",
+              "trains": [
+                899
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-017",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-018",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "5029",
+              "trains": [
+                5029
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-019",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "5031",
+              "trains": [
+                5031
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-020",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "5051, 5059",
+              "trains": [
+                5051,
+                5059
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "579",
+              "trains": [
+                579
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "sunday_holiday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hradec Králové hl.n.",
+        "direction": "Hradec Králové hl.n.",
+        "source_row": 49,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pardubice-hl-n-021",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R směr Liberec (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "to_directions": [
+                "Liberec"
+              ],
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-022",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "1076",
+              "trains": [
+                1076
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-023",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "1074",
+              "trains": [
+                1074
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "875, 1458, 1468",
+              "trains": [
+                875,
+                1458,
+                1468
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-024",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "1072",
+              "trains": [
+                1072
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "873, 1456, 1466",
+              "trains": [
+                873,
+                1456,
+                1466
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-025",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "1070",
+              "trains": [
+                1070
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "871, 1454",
+              "trains": [
+                871,
+                1454
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-026",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "1068",
+              "trains": [
+                1068
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "869, 5356",
+              "trains": [
+                869,
+                5356
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-027",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "1066",
+              "trains": [
+                1066
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "867",
+              "trains": [
+                867
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-028",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "1064",
+              "trains": [
+                1064
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "865, 1452",
+              "trains": [
+                865,
+                1452
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-029",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "1062, 1060",
+              "trains": [
+                1062,
+                1060
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 863)",
+              "all": true,
+              "except": [
+                {
+                  "text": "863",
+                  "trains": [
+                    863
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-030",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "1062",
+              "trains": [
+                1062
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "863",
+              "trains": [
+                863
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-031",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-032",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "1388, 1390, 1470",
+              "trains": [
+                1388,
+                1390,
+                1470
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "1388, 1390",
+                "after": "1388, 1390, 1470"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-033",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "1392",
+              "trains": [
+                1392
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-034",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "1488, 6256, 6258, 6260",
+              "trains": [
+                1488,
+                6256,
+                6258,
+                6260
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-035",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "6220",
+              "trains": [
+                6220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "579",
+              "trains": [
+                579
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-036",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "6254",
+              "trains": [
+                6254
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Chrudim",
+        "direction": "Chrudim",
+        "source_row": 67,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pardubice-hl-n-037",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-038",
+            "source_row": 70,
+            "status": "active",
+            "waiting_train": {
+              "text": "5319, 5321",
+              "trains": [
+                5319,
+                5321
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-039",
+            "source_row": 71,
+            "status": "active",
+            "waiting_train": {
+              "text": "5323",
+              "trains": [
+                5323
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-040",
+            "source_row": 72,
+            "status": "active",
+            "waiting_train": {
+              "text": "5325",
+              "trains": [
+                5325
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-041",
+            "source_row": 73,
+            "status": "active",
+            "waiting_train": {
+              "text": "5333, 5335, 5337, 5339, 5341",
+              "trains": [
+                5333,
+                5335,
+                5337,
+                5339,
+                5341
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-042",
+            "source_row": 74,
+            "status": "active",
+            "waiting_train": {
+              "text": "5351",
+              "trains": [
+                5351
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "579",
+              "trains": [
+                579
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-043",
+            "source_row": 75,
+            "status": "active",
+            "waiting_train": {
+              "text": "5353",
+              "trains": [
+                5353
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "863",
+              "trains": [
+                863
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-044",
+            "source_row": 76,
+            "status": "active",
+            "waiting_train": {
+              "text": "5361",
+              "trains": [
+                5361
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "pardubice-hl-n-045",
+            "source_row": 77,
+            "status": "active",
+            "waiting_train": {
+              "text": "5365, 5367, 5369",
+              "trains": [
+                5365,
+                5367,
+                5369
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "V případě, že nejbližší následující vlak kategorie R a Ex do Prahy jede déle než za 30 minut (ať už dle GVD nebo vzhledem ke zpoždění), je možné prodloužit čekací dobu z N na 5 minut."
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Aleš Rotrekl",
+    "Za Správu železnic odsouhlasil: Petr Koutný, DiS."
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 45,
+    "rules_cancelled": 0,
+    "review_items": 3
+  },
+  "review": [
+    {
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 4 minuty; na/z nástupiště 1A (kromě na/z nástupiště 5) – 5 minut"
+    },
+    {
+      "where": "part_a",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup mezi nástupišti 5 a 2 – 5 minut, mezi nástupišti 5 a 1, 1A – 6 minut"
+    },
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ve směru jízdy na zastávku Pardubice centrum nečekají na žádné přípoje."
+    }
+  ]
+}

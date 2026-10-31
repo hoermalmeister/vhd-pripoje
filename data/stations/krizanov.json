@@ -1,0 +1,489 @@
+{
+  "schema_version": "1.0",
+  "id": "krizanov",
+  "station": "Křižanov",
+  "sheet_name": "Křižanov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na jiné nástupiště – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na jiné nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Tišnov",
+        "direction": "Tišnov",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krizanov-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 4623, 4625)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "4623, 4625",
+                  "trains": [
+                    4623,
+                    4625
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "krizanov-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "4623, 4625",
+              "trains": [
+                4623,
+                4625
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Velké Meziříčí",
+        "direction": "Velké Meziříčí",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krizanov-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "24903",
+              "trains": [
+                24903
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krizanov-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "24905",
+              "trains": [
+                24905
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krizanov-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "24913, 24935, 24939",
+              "trains": [
+                24913,
+                24935,
+                24939
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krizanov-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "24919, 24959",
+              "trains": [
+                24919,
+                24959
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "krizanov-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "24927, 24931",
+              "trains": [
+                24927,
+                24931
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "krizanov-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "24941",
+              "trains": [
+                24941
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "krizanov-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "24945",
+              "trains": [
+                24945
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4624",
+              "trains": [
+                4624
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Žďár nad Sázavou",
+        "direction": "Žďár nad Sázavou",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krizanov-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "24942",
+              "trains": [
+                24942
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4622",
+              "trains": [
+                4622
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "krizanov-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "24944",
+              "trains": [
+                24944
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4624",
+              "trains": [
+                4624
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "čekací dobu na přípojný Os vlak lze po konzultaci s RD Východ zvýšit na 20 min (v ⚒ mimo LP u vlaků Os 4605, Os 4607, Os 4609, Os 4617, Os 4619, Os 4621), resp. na 30 min (v ostatních případech)"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Martin Novák",
+    "Za Správu železnic odsouhlasil: Aleš Opatřil"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 11,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.0",
+  "id": "turnov",
+  "station": "Turnov",
+  "sheet_name": "Turnov ",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bakov nad Jizerou",
+        "direction": "Bakov nad Jizerou",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "turnov-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky R dopravce ARR směr Praha",
+              "to_directions": [
+                "Praha"
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R od Liberce",
+              "from_directions": [
+                "Liberce"
+              ],
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "turnov-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky R dopravce ARR směr Praha (vyjma 1157, 1159)",
+              "to_directions": [
+                "Praha"
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1157, 1159",
+                  "trains": [
+                    1157,
+                    1159
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Jičína",
+              "from_directions": [
+                "Jičína"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "turnov-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "1157, 1159",
+              "trains": [
+                1157,
+                1159
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5518",
+              "trains": [
+                5518
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "turnov-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1559",
+              "trains": [
+                1559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "turnov-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "9575",
+              "trains": [
+                9575
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "turnov-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "9577",
+              "trains": [
+                9577
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "turnov-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "9579, 9581",
+              "trains": [
+                9579,
+                9581
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "turnov-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "9583",
+              "trains": [
+                9583
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jičín",
+        "direction": "Jičín",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "turnov-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "5523",
+              "trains": [
+                5523
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "turnov-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "5559",
+              "trains": [
+                5559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Liberec",
+        "direction": "Liberec",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "turnov-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "ARR 1076",
+              "trains": [
+                1076
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9588",
+              "trains": [
+                9588
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "turnov-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "ARR 1074",
+              "trains": [
+                1074
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Stará Paka",
+        "direction": "Stará Paka",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "turnov-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky R dopravce ARR směr Tanvald",
+              "to_directions": [
+                "Tanvald"
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "turnov-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "ARR 1077",
+              "trains": [
+                1077
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "turnov-015",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "5425",
+              "trains": [
+                5425
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9586",
+              "trains": [
+                9586
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Za Správu železnic odsouhlasil: Vladimír Brodský"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 15,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

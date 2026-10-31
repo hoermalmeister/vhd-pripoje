@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "id": "vaclavice",
+  "station": "Václavice",
+  "sheet_name": "Václavice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Týniště nad Orlicí",
+        "direction": "Týniště nad Orlicí",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vaclavice-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 5131, 5133)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "5131, 5133",
+                  "trains": [
+                    5131,
+                    5133
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "vaclavice-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "5131",
+              "trains": [
+                5131
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vaclavice-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "5133 *",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                5133
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Náchod",
+        "direction": "Náchod",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vaclavice-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "vaclavice-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1880",
+              "trains": [
+                1880
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "3**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "vaclavice-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1884, 1886, 5110, 5112, 5122",
+              "trains": [
+                1884,
+                1886,
+                5110,
+                5112,
+                5122
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Starkoč",
+        "direction": "Starkoč",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vaclavice-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "viz Prováděcí nařízení k SŽDC D7, část B"
+    },
+    "**": {
+      "text": "platí od 25. IV. do 28. IX., v ostatní dny platí 5 minut"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Petr Entler",
+    "Za Správu železnic odsouhlasil: Radko Ivan"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 7,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

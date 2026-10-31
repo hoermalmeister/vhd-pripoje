@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.0",
+  "id": "kladno",
+  "station": "Kladno",
+  "sheet_name": "Kladno",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Kralupy nad Vltavou",
+        "direction": "Kralupy nad Vltavou",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kladno-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "9834",
+              "trains": [
+                9834
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9805",
+              "trains": [
+                9805
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kladno-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "17162",
+              "trains": [
+                17162
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1230, 1560",
+              "trains": [
+                1230,
+                1560
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "kladno-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "17164",
+              "trains": [
+                17164
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1232",
+              "trains": [
+                1232
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kladno-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "17166",
+              "trains": [
+                17166
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1234",
+              "trains": [
+                1234
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "kladno-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "17170",
+              "trains": [
+                17170
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kladno-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "17174",
+              "trains": [
+                17174
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1240",
+              "trains": [
+                1240
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "kladno-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "17176",
+              "trains": [
+                17176
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1242, 1586",
+              "trains": [
+                1242,
+                1586
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kladno-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kladno-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1561, 1563",
+              "trains": [
+                1561,
+                1563
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kladno-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "9805",
+              "trains": [
+                9805
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17103",
+              "trains": [
+                17103
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kladno-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "9841",
+              "trains": [
+                9841
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19719",
+              "trains": [
+                19719
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kladno-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "9853",
+              "trains": [
+                9853
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19701",
+              "trains": [
+                19701
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rakovník",
+        "direction": "Rakovník",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kladno-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "1576",
+              "trains": [
+                1576
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kladno-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "19714, 19724",
+              "trains": [
+                19714,
+                19724
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "kladno-015",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "19716",
+              "trains": [
+                19716
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Bc. Jan Zeman",
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Za Správu železnic odsouhlasil: Bc. Dušan Vymazal"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 15,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

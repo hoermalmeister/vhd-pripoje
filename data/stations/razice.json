@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "id": "razice",
+  "station": "Ražice",
+  "sheet_name": "Ražice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Strakonice – Plzeň",
+        "direction": "Strakonice – Plzeň",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "razice-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "8016",
+              "trains": [
+                8016
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8434",
+              "trains": [
+                8434
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "razice-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "8007, 8009, 8011, 8013, 8015, 8019",
+              "trains": [
+                8007,
+                8009,
+                8011,
+                8013,
+                8015,
+                8019
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "Sp relace Tábor - Strakonice",
+              "relation": "Tábor - Strakonice",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "razice-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "8434",
+              "trains": [
+                8434
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2075",
+              "trains": [
+                2075
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "razice-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "8438",
+              "trains": [
+                8438
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8477, 8479",
+              "trains": [
+                8477,
+                8479
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Písek – Tábor",
+        "direction": "Písek – Tábor",
+        "source_row": 20,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Za Správu železnic odsouhlasil: Aleš Baldík"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

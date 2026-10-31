@@ -1,0 +1,424 @@
+{
+  "schema_version": "1.0",
+  "id": "nezamyslice",
+  "station": "Nezamyslice",
+  "sheet_name": "Nezamyslice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 22. června 2026",
+    "valid_from": "2026-06-22",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Prostějov hl.n.",
+        "direction": "Prostějov hl.n.",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nezamyslice-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "nezamyslice-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "3714",
+              "trains": [
+                3714
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3877",
+              "trains": [
+                3877
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "nezamyslice-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "3746",
+              "trains": [
+                3746
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1133",
+              "trains": [
+                1133
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Přerov",
+        "direction": "Přerov",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nezamyslice-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1133",
+              "trains": [
+                1133
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "nezamyslice-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "93847",
+              "trains": [
+                93847
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "915",
+              "trains": [
+                915
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3847",
+                "after": "93847"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vyškov na Moravě",
+        "direction": "Vyškov na Moravě",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nezamyslice-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R ČD",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "nezamyslice-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1100",
+              "trains": [
+                1100
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "nezamyslice-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "3876",
+              "trains": [
+                3876
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3707",
+              "trains": [
+                3707
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "nezamyslice-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "3878",
+              "trains": [
+                3878
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "93822",
+              "trains": [
+                93822
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "3822",
+                "after": "93822"
+              },
+              "workday": {
+                "before": null,
+                "after": "-"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

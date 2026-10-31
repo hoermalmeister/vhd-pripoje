@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0",
+  "id": "luzna-u-rakovnika",
+  "station": "Lužná u Rakovníka",
+  "sheet_name": "Lužná u Rakovníka",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce DLB a ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "DLB",
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem od vlaků dopravce ČD a ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Kladno",
+        "direction": "Kladno",
+        "source_row": 16,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rakovník",
+        "direction": "Rakovník",
+        "source_row": 18,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Žatec",
+        "direction": "Žatec",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "luzna-u-rakovnika-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "16831",
+              "trains": [
+                16831
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1230, 1560",
+              "trains": [
+                1230,
+                1560
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "16802",
+              "trains": [
+                16802
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1232",
+              "trains": [
+                1232
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "16814",
+              "trains": [
+                16814
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1590, 19711",
+              "trains": [
+                1590,
+                19711
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "16816",
+              "trains": [
+                16816
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1234, 19713",
+              "trains": [
+                1234,
+                19713
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "16804",
+              "trains": [
+                16804
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-006",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "16806",
+              "trains": [
+                16806
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1236, 19715",
+              "trains": [
+                1236,
+                19715
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-007",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "16808",
+              "trains": [
+                16808
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1238, 19717",
+              "trains": [
+                1238,
+                19717
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-008",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "16810",
+              "trains": [
+                16810
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1240",
+              "trains": [
+                1240
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "luzna-u-rakovnika-009",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "16812",
+              "trains": [
+                16812
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1586",
+              "trains": [
+                1586
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Zpracoval za DLB: Tomáš Duroň, MPA",
+    "Za Správu železnic odsouhlasil: Pavel Sklenička"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

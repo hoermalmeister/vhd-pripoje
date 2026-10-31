@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "id": "blansko",
+  "station": "Blansko",
+  "sheet_name": "Blansko",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky opačného směru jsou R 879 a Os 4758 s přestupní dobou 2 minuty.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "opposite_direction_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 879
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4758
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": null,
+        "direction": null,
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blansko-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "4758",
+              "trains": [
+                4758
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "879",
+              "trains": [
+                879
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Ing. Radim Svoboda"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 1,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

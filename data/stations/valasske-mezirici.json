@@ -1,0 +1,644 @@
+{
+  "schema_version": "1.0",
+  "id": "valasske-mezirici",
+  "station": "Valašské Meziříčí",
+  "sheet_name": "Valašské Meziříčí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 22. června 2026",
+    "valid_from": "2026-06-22",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Hranice na Moravě",
+        "direction": "Hranice na Moravě",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "valasske-mezirici-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "93204, 93214, 93218, 95926",
+              "trains": [
+                93204,
+                93214,
+                93218,
+                95926
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "1426, 3204, 3214, 3218",
+                "after": "93204, 93214, 93218, 95926"
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "93206, 93212, 93216, 93220, 93224, 93238",
+              "trains": [
+                93206,
+                93212,
+                93216,
+                93220,
+                93224,
+                93238
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3206, 3212, 3216, 3220, 3224, 3238",
+                "after": "93206, 93212, 93216, 93220, 93224, 93238"
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "93208",
+              "trains": [
+                93208
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3208",
+                "after": "93208"
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "3222",
+              "trains": [
+                3222
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Střelná",
+        "direction": "Střelná",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kojetín",
+        "direction": "Kojetín",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "valasske-mezirici-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "3908",
+              "trains": [
+                3908
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "3936",
+              "trains": [
+                3936
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "3938",
+              "trains": [
+                3938
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rožnov pod Radhoštěm",
+        "direction": "Rožnov pod Radhoštěm",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "valasske-mezirici-010",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-011",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "3933, 14353",
+              "trains": [
+                3933,
+                14353
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Frýdek-Místek",
+        "direction": "Frýdek-Místek",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "valasske-mezirici-012",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "3105, 3133, 13101, 13117, 13125",
+              "trains": [
+                3105,
+                3133,
+                13101,
+                13117,
+                13125
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-013",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "3109, 13115, 13121, 13129",
+              "trains": [
+                3109,
+                13115,
+                13121,
+                13129
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-014",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "3139",
+              "trains": [
+                3139
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "valasske-mezirici-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "3143",
+              "trains": [
+                3143
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Viktor Farbiak",
+    "Zpracoval za ČD: Zdeněk Urbanský, Ing. David Valouch, Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Ing. Martina Procházková, Libor Matula"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 15,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

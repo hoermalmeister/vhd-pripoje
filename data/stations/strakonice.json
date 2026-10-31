@@ -1,0 +1,869 @@
+{
+  "schema_version": "1.0",
+  "id": "strakonice",
+  "station": "Strakonice",
+  "sheet_name": "Strakonice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Sp 1697 a Os 7917, Os 7900 a R 638, Os 17910 a R 628.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1697
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7917
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7900
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 638
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 17910
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 628
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ČD je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": [
+          "ČD"
+        ],
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Plzeň",
+        "direction": "Plzeň",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "strakonice-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 624, 626)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "624, 626",
+                  "trains": [
+                    624,
+                    626
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "strakonice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "624",
+              "trains": [
+                624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "strakonice-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "626",
+              "trains": [
+                626
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "strakonice-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1696",
+              "trains": [
+                1696
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "strakonice-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "8072",
+              "trains": [
+                8072
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "strakonice-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 637, 639)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "637, 639",
+                  "trains": [
+                    637,
+                    639
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "strakonice-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "637",
+              "trains": [
+                637
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "strakonice-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "639",
+              "trains": [
+                639
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "strakonice-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp relace Strakonice – Tábor",
+              "relation": "Strakonice – Tábor",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "strakonice-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "1981",
+              "trains": [
+                1981
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "strakonice-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os relace Strakonice – Tábor (vyjma 8417)",
+              "relation": "Strakonice – Tábor",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "8417",
+                  "trains": [
+                    8417
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "strakonice-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "8417",
+              "trains": [
+                8417
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Blatná – Březnice",
+        "direction": "Blatná – Březnice",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "strakonice-013",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "7905",
+              "trains": [
+                7905
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8040",
+              "trains": [
+                8040
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "strakonice-014",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "7915, 7917, 7919, 17901, 17903, 17911",
+              "trains": [
+                7915,
+                7917,
+                7919,
+                17901,
+                17903,
+                17911
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "strakonice-015",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "17905, 17907, 17909",
+              "trains": [
+                17905,
+                17907,
+                17909
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "strakonice-016",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "17915",
+              "trains": [
+                17915
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "strakonice-017",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "17917",
+              "trains": [
+                17917
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "strakonice-018",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "17919",
+              "trains": [
+                17919
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "strakonice-019",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "17921",
+              "trains": [
+                17921
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vimperk – Volary",
+        "direction": "Vimperk – Volary",
+        "source_row": 39,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "strakonice-020",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "18122, 18124",
+              "trains": [
+                18122,
+                18124
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Zpracoval za GWTR: Ing. Filip Lorenz",
+    "Za Správu železnic odsouhlasil: Aleš Baldík"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 20,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

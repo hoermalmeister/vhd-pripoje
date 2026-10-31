@@ -1,0 +1,1211 @@
+{
+  "schema_version": "1.0",
+  "id": "studenka",
+  "station": "Studénka",
+  "sheet_name": "Studénka",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba mezi kolejemi hlavní trati a nástupištěm směr Bílovec – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestupní doba mezi kolejemi hlavní trati a nástupištěm směr Bílovec"
+      }
+    },
+    {
+      "text": "Přestupní doba mezi nástupištěm směr Kopřivnice a ostatními kolejemi – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestupní doba mezi nástupištěm směr Kopřivnice a ostatními kolejemi"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJ"
+        ],
+        "waiting_lines": [
+          "R8"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: R 1105 a Sp 3055, Os 3323 a Sp 3385, R 1131 a Sp 3382.",
+      "change": {
+        "before": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 3323 a Sp 3385.",
+        "after": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: R 1105 a Sp 3055, Os 3323 a Sp 3385, R 1131 a Sp 3382."
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1105
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3055
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 3323
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3385
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1131
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3382
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Suchdol nad Odrou",
+        "direction": "Suchdol nad Odrou",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "studenka-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "sudé 1100-1130",
+              "ranges": [
+                {
+                  "from": 1100,
+                  "to": 1130,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "studenka-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1132",
+              "trains": [
+                1132
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "3302",
+              "trains": [
+                3302
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "studenka-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "3310, 3312, 3318, 3320",
+              "trains": [
+                3310,
+                3312,
+                3318,
+                3320
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3356, 3364, 3372, 3376",
+              "trains": [
+                3356,
+                3364,
+                3372,
+                3376
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "studenka-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "3314",
+              "trains": [
+                3314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3368",
+              "trains": [
+                3368
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "studenka-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "3324",
+              "trains": [
+                3324
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3086",
+              "trains": [
+                3086
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ostrava-Svinov",
+        "direction": "Ostrava-Svinov",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "studenka-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 1101-1131",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1131,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "studenka-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1133",
+              "trains": [
+                1133
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "studenka-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "3361, 3369, 3373, 3377, 3381",
+              "trains": [
+                3361,
+                3369,
+                3373,
+                3377,
+                3381
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3307, 3309, 3313, 3317, 3321",
+              "trains": [
+                3307,
+                3309,
+                3313,
+                3317,
+                3321
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "3385",
+              "trains": [
+                3385
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3323",
+              "trains": [
+                3323
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Příbor",
+        "direction": "Příbor",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "studenka-013",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky směr Štramberk a Veřovice (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "to_directions": [
+                "Štramberk",
+                "Veřovice"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-014",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "3350",
+              "trains": [
+                3350
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3001",
+              "trains": [
+                3001
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "studenka-015",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "3356, 3360, 3364, 3368, 3372",
+              "trains": [
+                3356,
+                3360,
+                3364,
+                3368,
+                3372
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-016",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "3362, 3366",
+              "trains": [
+                3362,
+                3366
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "studenka-017",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "3374, 3376, 3378, 3380, 3382",
+              "trains": [
+                3374,
+                3376,
+                3378,
+                3380,
+                3382
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "studenka-018",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "23106",
+              "trains": [
+                23106
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "23307",
+              "trains": [
+                23307
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "studenka-019",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "23108",
+              "trains": [
+                23108
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně LE)",
+              "all": true,
+              "include": [
+                {
+                  "text": "LE",
+                  "operators": [
+                    "LE"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bílovec",
+        "direction": "Bílovec",
+        "source_row": 39,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "studenka-020",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "23300, 23302, 23304",
+              "trains": [
+                23300,
+                23302,
+                23304
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "studenka-021",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "23306, 23308, 23310",
+              "trains": [
+                23306,
+                23308,
+                23310
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "studenka-022",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "23314",
+              "trains": [
+                23314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-023",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "23318, 23320",
+              "trains": [
+                23318,
+                23320
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "studenka-024",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "23322, 23326",
+              "trains": [
+                23322,
+                23326
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "studenka-025",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "23332",
+              "trains": [
+                23332
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mošnov, Ostrava Airport",
+        "direction": "Mošnov, Ostrava Airport",
+        "source_row": 46,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "studenka-026",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "3008, 3040, 3042",
+              "trains": [
+                3008,
+                3040,
+                3042
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "studenka-027",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "3057, 3059, 3061, 3063, 3065",
+              "trains": [
+                3057,
+                3059,
+                3061,
+                3063,
+                3065
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "studenka-028",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "3067",
+              "trains": [
+                3067
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "15",
+                "after": "10"
+              },
+              "saturday": {
+                "before": "20",
+                "after": "15"
+              },
+              "sunday_holiday": {
+                "before": "20",
+                "after": "15"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Jiří Adamczyk"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 28,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    }
+  ]
+}

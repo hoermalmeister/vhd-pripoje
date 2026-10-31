@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "id": "louny",
+  "station": "Louny",
+  "sheet_name": "Louny",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlak Os 9714 se považuje za přípojný vlak k vlaku Sp 1348.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 9714 a Sp 1348.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 9714
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1348
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Lovosice",
+        "direction": "Lovosice",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "louny-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6143",
+              "trains": [
+                6143
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6762",
+              "trains": [
+                6762
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Slaný",
+        "direction": "Slaný",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "louny-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "9717",
+              "trains": [
+                9717
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Postoloprty",
+        "direction": "Postoloprty",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "louny-003",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1350",
+              "trains": [
+                1350
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rakovník",
+        "direction": "Rakovník",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "louny-004",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6717",
+              "trains": [
+                6717
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1350",
+              "trains": [
+                1350
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Čekání nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Postoloprty"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za DLB: Tomáš Duroň, MPA",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Josef Růžička"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak Os 9714 se považuje za přípojný vlak k vlaku Sp 1348."
+    }
+  ]
+}

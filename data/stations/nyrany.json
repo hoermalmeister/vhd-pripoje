@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "id": "nyrany",
+  "station": "Nýřany",
+  "sheet_name": "Nýřany",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Heřmanova Huť",
+        "direction": "Heřmanova Huť",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nyrany-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "27402, 27408, 27424, 27426, 27428",
+              "trains": [
+                27402,
+                27408,
+                27424,
+                27426,
+                27428
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "nyrany-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "27430, 27432",
+              "trains": [
+                27430,
+                27432
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7428",
+              "trains": [
+                7428
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "nyrany-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "27434",
+              "trains": [
+                27434
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7432",
+              "trains": [
+                7432
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň hl.n.",
+        "direction": "Plzeň hl.n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nyrany-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 7431, 7433, 7435)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "7431, 7433, 7435",
+                  "trains": [
+                    7431,
+                    7433,
+                    7435
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "nyrany-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "7435",
+              "trains": [
+                7435
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27433",
+              "trains": [
+                27433
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Domažlice",
+        "direction": "Domažlice",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nyrany-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 7432)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "7432",
+                  "trains": [
+                    7432
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "nyrany-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "7432",
+              "trains": [
+                7432
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27435",
+              "trains": [
+                27435
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Za Správu železnic odsouhlasil: Tomáš Hampl"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 7,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

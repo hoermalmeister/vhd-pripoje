@@ -1,0 +1,892 @@
+{
+  "schema_version": "1.0",
+  "id": "lovosice",
+  "station": "Lovosice",
+  "sheet_name": "Lovosice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Mezi NAD směr Radejčín a vlaky je přestupní doba 4 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Mezi NAD směr Radejčín a vlaky"
+      }
+    },
+    {
+      "text": "Jinak platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky AŽD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "AŽD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "lovosice-001",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R",
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "lovosice-002",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1973",
+              "trains": [
+                1973
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "lovosice-003",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6901 – 6919 (vyjma 6903), 6941",
+              "trains": [
+                6941
+              ],
+              "ranges": [
+                {
+                  "from": 6901,
+                  "to": 6919,
+                  "parity": null
+                }
+              ],
+              "except": [
+                {
+                  "text": "6903",
+                  "trains": [
+                    6903
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "lovosice-004",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "6943, 6945, 6947",
+              "trains": [
+                6943,
+                6945,
+                6947
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "lovosice-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "6951, 6953",
+              "trains": [
+                6951,
+                6953
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "saturday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "sunday_holiday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              }
+            }
+          },
+          {
+            "id": "lovosice-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "6959",
+              "trains": [
+                6959
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Děčín",
+        "direction": "Děčín",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "lovosice-007",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma 670)",
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "670",
+                  "trains": [
+                    670
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "lovosice-008",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "670",
+              "trains": [
+                670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "25546",
+              "trains": [
+                25546
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "lovosice-009",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "1972*",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                1972
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "602",
+              "trains": [
+                602
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "lovosice-010",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6900 – 6922, 6934, 6952",
+              "trains": [
+                6934,
+                6952
+              ],
+              "ranges": [
+                {
+                  "from": 6900,
+                  "to": 6922,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "lovosice-011",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6926**",
+              "footnote_marks": [
+                "**"
+              ],
+              "trains": [
+                6926
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "602",
+              "trains": [
+                602
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "lovosice-012",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6930, 6942",
+              "trains": [
+                6930,
+                6942
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Litoměřice horní nádraží",
+        "direction": "Litoměřice horní nádraží",
+        "source_row": 33,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "lovosice-013",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "lovosice-014",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "6101, 6107",
+              "trains": [
+                6101,
+                6107
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "lovosice-015",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "6131, 6133, 6171",
+              "trains": [
+                6131,
+                6133,
+                6171
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "lovosice-016",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "6143",
+              "trains": [
+                6143
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Louny",
+        "direction": "Louny",
+        "source_row": 38,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "lovosice-017",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "lovosice-018",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "6116",
+              "trains": [
+                6116
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "lovosice-019",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "6140",
+              "trains": [
+                6140
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Teplice v Čechách",
+        "direction": "Teplice v Čechách",
+        "source_row": 42,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "lovosice-020",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "16134 (NAD)",
+              "replacement_bus": true,
+              "trains": [
+                16134
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "čekání vlaku Sp 1972 na vlak R 602 mimo pátek."
+    },
+    "**": {
+      "text": "čekání vlaku Os 6926 na vlak R 602 pouze v pátek. V případě frekvence cestujících ve vlaku R 602, zastaví Os 6926 při jízdě z Lovosic mimořádně na všech zastávkách v úseku Lovosice – Ústí nad Labem."
+    }
+  },
+  "notes": [
+    {
+      "text": "Při rozvázání přípoje směr Praha je uvedeno opatření v Prováděcím nařízení k SŽDC D7, část B",
+      "after_section": "vlaky směr Teplice v Čechách"
+    },
+    {
+      "text": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Teplice v Čechách"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za AŽD: Jiří Pavlík",
+    "Zpracovala za ČD: Jana Hinterholzingerová",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Ing. Lenka Rosová"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 20,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

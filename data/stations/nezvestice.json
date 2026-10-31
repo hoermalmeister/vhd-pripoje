@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0",
+  "id": "nezvestice",
+  "station": "Nezvěstice",
+  "sheet_name": "Nezvěstice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Plzeň hl.n.",
+        "direction": "Plzeň hl.n.",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nezvestice-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (8950 a 8954 - 8960)",
+              "categories": [
+                "Os"
+              ],
+              "trains": [
+                8950
+              ],
+              "ranges": [
+                {
+                  "from": 8954,
+                  "to": 8960,
+                  "parity": null
+                }
+              ],
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nezvestice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (8953, 8955 - 8961)",
+              "categories": [
+                "Os"
+              ],
+              "trains": [
+                8953
+              ],
+              "ranges": [
+                {
+                  "from": 8955,
+                  "to": 8961,
+                  "parity": null
+                }
+              ],
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rokycany",
+        "direction": "Rokycany",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nezvestice-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "27881",
+              "trains": [
+                27881
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Za Správu železnic odsouhlasil: Jana Bělohlávková"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 3,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

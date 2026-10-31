@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.0",
+  "id": "ceska-kamenice",
+  "station": "Česká Kamenice",
+  "sheet_name": "Česká Kamenice ",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Děčín hl. n.",
+        "direction": "Děčín hl. n.",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-kamenice-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "1967",
+              "trains": [
+                1967
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2401",
+              "trains": [
+                2401
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-kamenice-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "26053",
+              "trains": [
+                26053
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2405",
+              "trains": [
+                2405
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-kamenice-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "26055",
+              "trains": [
+                26055
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2407",
+              "trains": [
+                2407
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-kamenice-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "26057",
+              "trains": [
+                26057
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2409",
+              "trains": [
+                2409
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rumburk",
+        "direction": "Rumburk",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-kamenice-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1966",
+              "trains": [
+                1966
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2401",
+              "trains": [
+                2401
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kamenický Šenov",
+        "direction": "Kamenický Šenov",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Za Správu železnic odsouhlasil: Jan Kosterhon"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 5,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,987 @@
+{
+  "schema_version": "1.0",
+  "id": "kralupy-nad-vltavou",
+  "station": "Kralupy nad Vltavou",
+  "sheet_name": "Kralupy nad Vltavou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 1 minuta",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 1,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 a 2, mezi nástupišti 2 a 3, mezi nástupišti 2 a 4 a mezi nástupišti 3 a 4 – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupišti 1 a 2, mezi nástupišti 2 a 3, mezi nástupišti 2 a 4 a mezi nástupišti 3 a 4"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 a 3, mezi nástupišti 1 a 4 – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti 1 a 3, mezi nástupišti 1 a 4"
+      }
+    },
+    {
+      "text": "Přestup na/z nástupiště 5 – o dvě minuty delší",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratě 092, 093, 110, 111 a odjezdem vlaků na tratě 092, 093, 110, 111 interval kratší než 4 minuty, u ostatních přípojných vlaků 3 minuty.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků dopravce ČD.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Kladno",
+        "direction": "Kladno",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kralupy-nad-vltavou-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "9813, 17105",
+              "trains": [
+                9813,
+                17105
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "17103",
+              "trains": [
+                17103
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Neratovice",
+        "direction": "Neratovice",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kralupy-nad-vltavou-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "19505, 19531, 19533",
+              "trains": [
+                19505,
+                19531,
+                19533
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "19509, 19513 – 19525",
+              "trains": [
+                19509
+              ],
+              "ranges": [
+                {
+                  "from": 19513,
+                  "to": 19525,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru od Vraňan, Kladna, Velvar a Slaného",
+              "from_directions": [
+                "Vraňan",
+                "Kladna",
+                "Velvar",
+                "Slaného"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "19529",
+              "trains": [
+                19529
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kralupy-nad-vltavou-006",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-007",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "179",
+              "trains": [
+                179
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-008",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "1495",
+              "trains": [
+                1495
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-009",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků R ze směru Ústí nad Labem)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků R ze směru Ústí nad Labem",
+                  "from_directions": [
+                    "Ústí nad Labem"
+                  ],
+                  "categories": [
+                    "R"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-010",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6903, 6905, 9607, 9611, 9613, 9615",
+              "trains": [
+                6903,
+                6905,
+                9607,
+                9611,
+                9613,
+                9615
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-011",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "9665",
+              "trains": [
+                9665
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Slaný",
+        "direction": "Slaný",
+        "source_row": 34,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kralupy-nad-vltavou-012",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "9700",
+              "trains": [
+                9700
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-013",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "9720, 9722",
+              "trains": [
+                9720,
+                9722
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-014",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "9740, 9742",
+              "trains": [
+                9740,
+                9742
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Velvary",
+        "direction": "Velvary",
+        "source_row": 38,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kralupy-nad-vltavou-015",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "20302, 20304, 20350",
+              "trains": [
+                20302,
+                20304,
+                20350
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-016",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "20324",
+              "trains": [
+                20324
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-017",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "20336",
+              "trains": [
+                20336
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-018",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "20338, 20340",
+              "trains": [
+                20338,
+                20340
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vraňany",
+        "direction": "Vraňany",
+        "source_row": 43,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kralupy-nad-vltavou-019",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "618",
+              "trains": [
+                618
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-020",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-021",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "6908, 6924",
+              "trains": [
+                6908,
+                6924
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-022",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "6914, 9672",
+              "trains": [
+                6914,
+                9672
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kralupy-nad-vltavou-023",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "6926, 6928",
+              "trains": [
+                6926,
+                6928
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Vaněk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Tomáš Kubát"
+  ],
+  "summary": {
+    "sections": 6,
+    "rules_active": 23,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_a",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na/z nástupiště 5 – o dvě minuty delší"
+    },
+    {
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratě 092, 093, 110, 111 a odjezdem vlaků na tratě 092, 093, 110, 111 interval kratší než 4 minuty, u ostatních přípojných vlaků 3 minuty."
+    }
+  ]
+}

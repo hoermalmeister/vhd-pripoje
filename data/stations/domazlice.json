@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.0",
+  "id": "domazlice",
+  "station": "Domažlice",
+  "sheet_name": "Domažlice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 7400 a Os 7200, Os 7406 a Os 17563, Os 7416 a Os 17569, Os 7418 a Os 17571.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7400
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7200
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7406
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 17563
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7416
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 17569
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7418
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 17571
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Plzeň hl.n.",
+        "direction": "Plzeň hl.n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "domazlice-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1699",
+              "trains": [
+                1699
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "domazlice-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "7401 – 7429",
+              "ranges": [
+                {
+                  "from": 7401,
+                  "to": 7429,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "domazlice-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "7435",
+              "trains": [
+                7435
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7229",
+              "trains": [
+                7229
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Kubice (Furth im Wald)",
+        "direction": "Česká Kubice",
+        "direction_detail": "Furth im Wald",
+        "source_row": 22,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Planá u Mariánských Lázní",
+        "direction": "Planá u Mariánských Lázní",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "domazlice-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "7220, 7224",
+              "trains": [
+                7220,
+                7224
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "domazlice-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "7222, 7226",
+              "trains": [
+                7222,
+                7226
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "domazlice-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "7228",
+              "trains": [
+                7228
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 363)",
+              "all": true,
+              "except": [
+                {
+                  "text": "363",
+                  "trains": [
+                    363
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "domazlice-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "7236",
+              "trains": [
+                7236
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7430",
+              "trains": [
+                7430
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Klatovy",
+        "direction": "Klatovy",
+        "source_row": 29,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "domazlice-008",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "17573",
+              "trains": [
+                17573
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "sunday_holiday": {
+                "raw": "",
+                "kind": "empty"
+              }
+            }
+          },
+          {
+            "id": "domazlice-009",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "17575",
+              "trains": [
+                17575
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Čekání nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Klatovy"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Václava Klímová"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "domazlice-008",
+      "row": 30,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "where": "domazlice-008",
+      "row": 30,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

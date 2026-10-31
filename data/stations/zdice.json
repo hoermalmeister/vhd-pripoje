@@ -1,0 +1,573 @@
+{
+  "schema_version": "1.0",
+  "id": "zdice",
+  "station": "Zdice",
+  "sheet_name": "Zdice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Při přestupu z Os od Příbrami na R směr Beroun u stejného nástupiště platí přestupní doba 1 minuta.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 1,
+        "applies_to": "Při přestupu z Os od Příbrami na R směr Beroun u stejného nástupiště platí"
+      }
+    },
+    {
+      "text": "Jinak platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Beroun",
+        "direction": "Beroun",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zdice-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ČD (vyjma 743, 753)",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "743, 753",
+                  "trains": [
+                    743,
+                    753
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "zdice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "743, 753",
+              "trains": [
+                743,
+                753
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7901",
+              "trains": [
+                7901
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "zdice-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ARR",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "zdice-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1597",
+              "trains": [
+                1597
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "zdice-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 7703)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "7703",
+                  "trains": [
+                    7703
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "sunday_holiday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              }
+            }
+          },
+          {
+            "id": "zdice-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "7703",
+              "trains": [
+                7703
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7931",
+              "trains": [
+                7931
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Březnice",
+        "direction": "Březnice",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zdice-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ARR",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "pouze vlaky R od Plzně",
+              "from_directions": [
+                "Plzně"
+              ],
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "zdice-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1596",
+              "trains": [
+                1596
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "zdice-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "7916",
+              "trains": [
+                7916
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zdice-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "7918",
+              "trains": [
+                7918
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zdice-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "7930",
+              "trains": [
+                7930
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň",
+        "direction": "Plzeň",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zdice-012",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ČD",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "V případě, že se R směr Praha nedočkal přípoje od Lochovic, zastavte mimořádně pro nástup cestujících vlak Ex (+ pro případný výstup v ŽST Beroun). To neplatí, pojede-li do dalších 15 minut jiný vlak směr Beroun."
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Za Správu železnic odsouhlasil: Pavel Sklenička"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 12,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

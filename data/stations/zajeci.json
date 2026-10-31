@@ -1,0 +1,632 @@
+{
+  "schema_version": "1.0",
+  "id": "zajeci",
+  "station": "Zaječí",
+  "sheet_name": "Zaječí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi I. a II. nástupištěm – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup mezi I. a II. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi I., II. a III., IV. nástupištěm – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi I., II. a III., IV. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi III. a IV. nástupištěm – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi III. a IV. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky považované za přípoj: Os 14500 a Sp 834, Os 14514 a Os 14614.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 14500
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 834
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 14514
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 14614
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Břeclav",
+        "direction": "Břeclav",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zajeci-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R a Sp (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "zajeci-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "825, 827, 829",
+              "trains": [
+                825,
+                827,
+                829
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "zajeci-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "831, 833",
+              "trains": [
+                831,
+                833
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "zajeci-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "835",
+              "trains": [
+                835
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zajeci-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "782, 802",
+              "trains": [
+                782,
+                802
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14528",
+              "trains": [
+                14528
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zajeci-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "806, 808, 818, 820, 822",
+              "trains": [
+                806,
+                808,
+                818,
+                820,
+                822
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "zajeci-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "14624",
+              "trains": [
+                14624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14530",
+              "trains": [
+                14530
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zajeci-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "14674*",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                14674
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14556*",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                14556
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "45",
+                "kind": "minutes",
+                "minutes": 45
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hodonín",
+        "direction": "Hodonín",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zajeci-009",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všchny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "zajeci-010",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "14501, 14507",
+              "trains": [
+                14501,
+                14507
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zajeci-011",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "14503",
+              "trains": [
+                14503
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "zajeci-012",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "14505",
+              "trains": [
+                14505
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "zajeci-013",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "14509, 14511, 14531, 14533",
+              "trains": [
+                14509,
+                14511,
+                14531,
+                14533
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "Vlaky jedou pouze 10. 10. 2025."
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Ing. Marek Foltán",
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Dalibor Horák"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 13,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,1387 @@
+{
+  "schema_version": "1.0",
+  "id": "chomutov-od-01-07",
+  "station": "Chomutov",
+  "sheet_name": "Chomutov od 01.07.",
+  "variant": "od 1.7.",
+  "validity": {
+    "text": "JŘ 2026, platí od 01. července 2026",
+    "valid_from": "2026-07-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD a RJÚK jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky DLB jsou přípojem od vlaků dopravce ČD a RJÚK, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
+        "direction": "Praha",
+        "direction_detail": "přes Ústí nad Labem hl.n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chomutov-od-01-07-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 619)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "619",
+                  "trains": [
+                    619
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "619",
+              "trains": [
+                619
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1949",
+              "trains": [
+                1949
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6541, 6545, 6549, 6553, 6557, 6561",
+              "trains": [
+                6541,
+                6545,
+                6549,
+                6553,
+                6557,
+                6561
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "6547",
+              "trains": [
+                6547
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "6551, 6559",
+              "trains": [
+                6551,
+                6559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "6555",
+              "trains": [
+                6555
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "6563",
+              "trains": [
+                6563
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "6567",
+              "trains": [
+                6567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6575",
+              "trains": [
+                6575
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1094",
+              "trains": [
+                1094
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6805",
+              "trains": [
+                6805
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6807 – 6829",
+              "ranges": [
+                {
+                  "from": 6807,
+                  "to": 6829,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6831",
+              "trains": [
+                6831
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6835",
+              "trains": [
+                6835
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kadaň-Prunéřov",
+        "direction": "Kadaň-Prunéřov",
+        "source_row": 34,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chomutov-od-01-07-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 606)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "606",
+                  "trains": [
+                    606
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-016",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "606",
+              "trains": [
+                606
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-017",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "6540, 6546, 6552, 6554, 6556, 6562, 6566",
+              "trains": [
+                6540,
+                6546,
+                6552,
+                6554,
+                6556,
+                6562,
+                6566
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-018",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "6544, 6548, 6560, 6564,",
+              "trains": [
+                6544,
+                6548,
+                6560,
+                6564
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-019",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "6550",
+              "trains": [
+                6550
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-020",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "6802 – 6822",
+              "ranges": [
+                {
+                  "from": 6802,
+                  "to": 6822,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-021",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "7000",
+              "trains": [
+                7000
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6540 (RJ ÚK)",
+              "trains": [
+                6540
+              ],
+              "operators": [
+                "RJÚK"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-022",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "7072",
+              "trains": [
+                7072
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17680",
+              "trains": [
+                17680
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-023",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "7078",
+              "trains": [
+                7078
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6808",
+              "trains": [
+                6808
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "směr Žatec",
+        "direction": "Žatec",
+        "source_row": 44,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chomutov-od-01-07-024",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "1093",
+              "trains": [
+                1093
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-025",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "1095*",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                1095
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-026",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "1099**",
+              "footnote_marks": [
+                "**"
+              ],
+              "trains": [
+                1099
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-027",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "16801",
+              "trains": [
+                16801
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-028",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "16803",
+              "trains": [
+                16803
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-029",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "16807",
+              "trains": [
+                16807
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-030",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "16817",
+              "trains": [
+                16817
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-031",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "16823",
+              "trains": [
+                16823
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-032",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "16825",
+              "trains": [
+                16825
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chomutov-od-01-07-033",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "16827",
+              "trains": [
+                16827
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "směr Jirkov",
+        "direction": "Jirkov",
+        "source_row": 55,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chomutov-od-01-07-034",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "16800-16829",
+              "ranges": [
+                {
+                  "from": 16800,
+                  "to": 16829,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "směr Vejprty",
+        "direction": "Vejprty",
+        "source_row": 57,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chomutov-od-01-07-035",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "5690-5695",
+              "ranges": [
+                {
+                  "from": 5690,
+                  "to": 5695,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "jezdí ⑤,⑥,⑦"
+    },
+    "**": {
+      "text": "jezdí ①–④"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracovala za ČD: Jana Hinterholzingerová",
+    "Zpracoval za DLB: Tomáš Duroň, MPA",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 35,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "chomutov-od-01-07-005",
+      "row": 23,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

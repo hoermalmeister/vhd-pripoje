@@ -1,0 +1,1251 @@
+{
+  "schema_version": "1.0",
+  "id": "praha-hl-n",
+  "station": "Praha hl.n.",
+  "sheet_name": "Praha hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 27. července 2026",
+    "valid_from": "2026-07-27",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, pokud je mezi příjezdem a odjezdem interval kratší než 7 minut.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 7,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR od Berouna a Všetat, nejsou přípojem vlaků ostatních dopravců (ARR z ostatních směrů).",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky dálkové dopravy ze směru Kolín nejsou přípojem na vlaky dálkové dopravy směr Nymburk a opačně.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": null,
+        "direction": null,
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky na všechny směry",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "(vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Beroun",
+        "direction": "Beroun",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "550",
+              "trains": [
+                550
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "748",
+              "trains": [
+                748
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "750",
+              "trains": [
+                750
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "8800",
+              "trains": [
+                8800
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Benešov u Prahy",
+        "direction": "Benešov u Prahy",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "735",
+              "trains": [
+                735
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "737",
+              "trains": [
+                737
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "2501",
+              "trains": [
+                2501
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kolín",
+        "direction": "Kolín",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-010",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "443, 899, 965, 999",
+              "trains": [
+                443,
+                899,
+                965,
+                999
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-011",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "457, 577, 579, 967",
+              "trains": [
+                457,
+                577,
+                579,
+                967
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-012",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "549, 877, 879",
+              "trains": [
+                549,
+                877,
+                879
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-013",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "9301",
+              "trains": [
+                9301
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kralupy nad Vltavou",
+        "direction": "Kralupy nad Vltavou",
+        "source_row": 33,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-014",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "478",
+              "trains": [
+                478
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "270",
+              "trains": [
+                270
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "478"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "270"
+              },
+              "workday": {
+                "before": null,
+                "after": "30"
+              },
+              "saturday": {
+                "before": null,
+                "after": "30"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "30"
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "600, 602",
+              "trains": [
+                600,
+                602
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-016",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "670",
+              "trains": [
+                670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-017",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "9600",
+              "trains": [
+                9600
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nymburk",
+        "direction": "Nymburk",
+        "source_row": 38,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-018",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "955",
+              "trains": [
+                955
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-019",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "957",
+              "trains": [
+                957
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-020",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "5801",
+              "trains": [
+                5801
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Všetaty",
+        "direction": "Všetaty",
+        "source_row": 42,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-021",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "1152",
+              "trains": [
+                1152
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "712, 769",
+              "trains": [
+                712,
+                769
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-022",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "1154",
+              "trains": [
+                1154
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "706, 773",
+              "trains": [
+                706,
+                773
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-023",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "1156",
+              "trains": [
+                1156
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "704",
+              "trains": [
+                704
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-024",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "9500",
+              "trains": [
+                9500
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vrané nad Vltavou",
+        "direction": "Vrané nad Vltavou",
+        "source_row": 47,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-025",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "9023, 9025, 19025, 19027, 19067",
+              "trains": [
+                9023,
+                9025,
+                19025,
+                19027,
+                19067
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Ex, R dopravce ČD* + ARR",
+              "footnote_marks": [
+                "*"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD",
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "praha-hl-n-026",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "19001",
+              "trains": [
+                19001
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kladno",
+        "direction": "Kladno",
+        "source_row": 50,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-hl-n-027",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "9850",
+              "trains": [
+                9850
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "vyjma výchozích vlaků ze ŽST Praha-Vršovice"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Pavel Cikner",
+    "Za Správu železnic odsouhlasil: Ing. Filip Štorek"
+  ],
+  "summary": {
+    "sections": 9,
+    "rules_active": 27,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR od Berouna a Všetat, nejsou přípojem vlaků ostatních dopravců (ARR z ostatních směrů)."
+    },
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky dálkové dopravy ze směru Kolín nejsou přípojem na vlaky dálkové dopravy směr Nymburk a opačně."
+    }
+  ]
+}

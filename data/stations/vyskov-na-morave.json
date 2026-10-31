@@ -1,0 +1,315 @@
+{
+  "schema_version": "1.0",
+  "id": "vyskov-na-morave",
+  "station": "Vyškov na Moravě",
+  "sheet_name": "Vyškov na Moravě",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 ze směru Bohumín, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ linky R8 (Brno-Bohumín a zpět) jsou přípojem od vlaků ČD.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJ"
+        ],
+        "waiting_lines": [
+          "R8"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Přerov",
+        "direction": "Přerov",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vyskov-na-morave-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "RJ liché 1101-1133",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1133,
+                  "parity": "odd"
+                }
+              ],
+              "operators": [
+                "RJ"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "vyskov-na-morave-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno",
+        "direction": "Brno",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vyskov-na-morave-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "RJ 1100",
+              "trains": [
+                1100
+              ],
+              "operators": [
+                "RJ"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vyskov-na-morave-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "RJ sudé 1102-1128",
+              "ranges": [
+                {
+                  "from": 1102,
+                  "to": 1128,
+                  "parity": "even"
+                }
+              ],
+              "operators": [
+                "RJ"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "vyskov-na-morave-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "RJ 1130",
+              "trains": [
+                1130
+              ],
+              "operators": [
+                "RJ"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "vyskov-na-morave-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "RJ 1132",
+              "trains": [
+                1132
+              ],
+              "operators": [
+                "RJ"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný, Bc. Radek Kraváček",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Ing. Radim Svoboda"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 6,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 ze směru Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

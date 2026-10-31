@@ -1,0 +1,823 @@
+{
+  "schema_version": "1.0",
+  "id": "teplice-v-cechach-od-1-7",
+  "station": "Teplice v Čechách",
+  "sheet_name": "Teplice v Čechách od 1.7.",
+  "variant": "od 1.7.",
+  "validity": {
+    "text": "JŘ 2026, platí od 01. července 2026",
+    "valid_from": "2026-07-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "change": {
+        "before": null,
+        "after": "Vlaky GWTR jsou přípojné vlaky všech dopravců."
+      },
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "change": {
+        "before": null,
+        "after": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut."
+      },
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Vlaky RJÚK jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJÚK"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Ústí nad Labem hl.n.",
+        "direction": "Ústí nad Labem hl.n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "teplice-v-cechach-od-1-7-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 619)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "619",
+                  "trains": [
+                    619
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "619",
+              "trains": [
+                619
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1339",
+              "trains": [
+                1339
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6539, 6547, 6555, 6563",
+              "trains": [
+                6539,
+                6547,
+                6555,
+                6563
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "6541, 6545, 6549, 6553, 6557, 6561, 6565,",
+              "trains": [
+                6541,
+                6545,
+                6549,
+                6553,
+                6557,
+                6561,
+                6565
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "6543, 6551, 6559,",
+              "trains": [
+                6543,
+                6551,
+                6559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "6567",
+              "trains": [
+                6567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "6805",
+              "trains": [
+                6805
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 6807 – 6829",
+              "ranges": [
+                {
+                  "from": 6807,
+                  "to": 6829,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6831",
+              "trains": [
+                6831
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Chomutov",
+        "direction": "Chomutov",
+        "source_row": 29,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "teplice-v-cechach-od-1-7-011",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "604",
+              "trains": [
+                604
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-012",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "1942, 1944, 1946, 1948, 1950",
+              "trains": [
+                1942,
+                1944,
+                1946,
+                1948,
+                1950
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-013",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6540, 6544, 6548, 6552, 6556, 6560, 6564",
+              "trains": [
+                6540,
+                6544,
+                6548,
+                6552,
+                6556,
+                6560,
+                6564
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-014",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "6542, 6550, 6558",
+              "trains": [
+                6542,
+                6550,
+                6558
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-015",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "6546, 6554, 6562",
+              "trains": [
+                6546,
+                6554,
+                6562
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-016",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "6566",
+              "trains": [
+                6566
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "teplice-v-cechach-od-1-7-017",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "sudé 6800 – 6830",
+              "ranges": [
+                {
+                  "from": 6800,
+                  "to": 6830,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Úpořiny",
+        "direction": "Úpořiny",
+        "source_row": 37,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "teplice-v-cechach-od-1-7-018",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "16119",
+              "trains": [
+                16119
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Litvínov",
+        "direction": "Litvínov",
+        "source_row": 39,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "teplice-v-cechach-od-1-7-019",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "16930 - 16950",
+              "ranges": [
+                {
+                  "from": 16930,
+                  "to": 16950,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "change": {
+        "before": null,
+        "after": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824."
+      },
+      "after_section": "vlaky směr Litvínov"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Miroslav Zubík"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 19,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

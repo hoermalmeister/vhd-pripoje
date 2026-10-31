@@ -1,0 +1,929 @@
+{
+  "schema_version": "1.0",
+  "id": "zruc-nad-sazavou",
+  "station": "Zruč nad Sázavou",
+  "sheet_name": "Zruč nad Sázavou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Čerčany",
+        "direction": "Čerčany",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zruc-nad-sazavou-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "1596, 9226, 9228",
+              "trains": [
+                1596,
+                9226,
+                9228
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24868",
+              "trains": [
+                24868
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "9204",
+              "trains": [
+                9204
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24848",
+              "trains": [
+                24848
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "9206",
+              "trains": [
+                9206
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24852",
+              "trains": [
+                24852
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "9208",
+              "trains": [
+                9208
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24854",
+              "trains": [
+                24854
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-005",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "9210, 9212",
+              "trains": [
+                9210,
+                9212
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24858",
+              "trains": [
+                24858
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-006",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "9214, 9216",
+              "trains": [
+                9214,
+                9216
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24862",
+              "trains": [
+                24862
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-007",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "9218, 9220",
+              "trains": [
+                9218,
+                9220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24864",
+              "trains": [
+                24864
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-008",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "9222",
+              "trains": [
+                9222
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24866",
+              "trains": [
+                24866
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-009",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "9230",
+              "trains": [
+                9230
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24872",
+              "trains": [
+                24872
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-010",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "9232",
+              "trains": [
+                9232
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24874",
+              "trains": [
+                24874
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-011",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "9234",
+              "trains": [
+                9234
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24878",
+              "trains": [
+                24878
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-012",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "9280",
+              "trains": [
+                9280
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24850",
+              "trains": [
+                24850
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kutná Hora",
+        "direction": "Kutná Hora",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zruc-nad-sazavou-013",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "19212 – 19218",
+              "ranges": [
+                {
+                  "from": 19212,
+                  "to": 19218,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-014",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "19222 – 19232",
+              "ranges": [
+                {
+                  "from": 19222,
+                  "to": 19232,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Světlá nad Sázavou",
+        "direction": "Světlá nad Sázavou",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zruc-nad-sazavou-015",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "24857",
+              "trains": [
+                24857
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9203, 9205",
+              "trains": [
+                9203,
+                9205
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-016",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "24861",
+              "trains": [
+                24861
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9207, 9209",
+              "trains": [
+                9207,
+                9209
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-017",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "24863",
+              "trains": [
+                24863
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1599, 9213",
+              "trains": [
+                1599,
+                9213
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-018",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "24865",
+              "trains": [
+                24865
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9217",
+              "trains": [
+                9217
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-019",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "24871",
+              "trains": [
+                24871
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9221",
+              "trains": [
+                9221
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-020",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "24875",
+              "trains": [
+                24875
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9223",
+              "trains": [
+                9223
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-021",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "24877",
+              "trains": [
+                24877
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9225",
+              "trains": [
+                9225
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-022",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "24879",
+              "trains": [
+                24879
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9227",
+              "trains": [
+                9227
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-023",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "24881",
+              "trains": [
+                24881
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9229",
+              "trains": [
+                9229
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "zruc-nad-sazavou-024",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "24885",
+              "trains": [
+                24885
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9231",
+              "trains": [
+                9231
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Cikner",
+    "Za Správu železnic odsouhlasil: Iva Konvalinová"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 24,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

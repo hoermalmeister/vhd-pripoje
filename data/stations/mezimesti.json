@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "id": "mezimesti",
+  "station": "Meziměstí",
+  "sheet_name": "Meziměstí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR a naopak, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Broumov",
+        "direction": "Broumov",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mezimesti-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma 25154)",
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "25154",
+                  "trains": [
+                    25154
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "všechny vlaky Sp a Os (vyjma 25154)"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "10"
+              },
+              "saturday": {
+                "before": null,
+                "after": "10"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "10"
+              }
+            }
+          },
+          {
+            "id": "mezimesti-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "25154",
+              "trains": [
+                25154
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5148",
+              "trains": [
+                5148
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "25154"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "5148"
+              },
+              "workday": {
+                "before": null,
+                "after": "30"
+              },
+              "saturday": {
+                "before": null,
+                "after": "30"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "30"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Teplice nad Metují",
+        "direction": "Teplice nad Metují",
+        "source_row": 18,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mieroszów",
+        "direction": "Mieroszów",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Petr Entler",
+    "Za Správu železnic odsouhlasil: Radko Ivan"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 2,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

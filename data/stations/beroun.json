@@ -1,0 +1,824 @@
+{
+  "schema_version": "1.0",
+  "id": "beroun",
+  "station": "Beroun",
+  "sheet_name": "Beroun",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minut.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky považované za přípoj: Os 7921 a Os 8877.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7921
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8877
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků dopravce ČD a KŽC, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "KŽC"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Všechny vlaky směr Praha přes Řevnice nejsou přípojem od vlaků ze směru Nučice.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Všechny vlaky směr Nučice nejsou přípojem od vlaků R ze směru Praha.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha (přes Řevnice)",
+        "direction": "Praha",
+        "direction_detail": "přes Řevnice",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "beroun-001",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ČD",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "beroun-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "1597",
+              "trains": [
+                1597
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "beroun-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "8807 – 8825",
+              "ranges": [
+                {
+                  "from": 8807,
+                  "to": 8825,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "beroun-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "8827 – 8875",
+              "ranges": [
+                {
+                  "from": 8827,
+                  "to": 8875,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha (přes Nučice)",
+        "direction": "Praha",
+        "direction_detail": "přes Nučice",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "beroun-005",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma 19929, 19931)",
+              "all": true,
+              "except": [
+                {
+                  "text": "19929, 19931",
+                  "trains": [
+                    19929,
+                    19931
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků R od Prahy)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků R od Prahy",
+                  "from_directions": [
+                    "Prahy"
+                  ],
+                  "categories": [
+                    "R"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "beroun-006",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "19929",
+              "trains": [
+                19929
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků R od Prahy)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků R od Prahy",
+                  "from_directions": [
+                    "Prahy"
+                  ],
+                  "categories": [
+                    "R"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "beroun-007",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "19931",
+              "trains": [
+                19931
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků R od Prahy)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků R od Prahy",
+                  "from_directions": [
+                    "Prahy"
+                  ],
+                  "categories": [
+                    "R"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rakovník",
+        "direction": "Rakovník",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "beroun-008",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "7725",
+              "trains": [
+                7725
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "beroun-009",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "7727",
+              "trains": [
+                7727
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "beroun-010",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "7729",
+              "trains": [
+                7729
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Zdice",
+        "direction": "Zdice",
+        "source_row": 34,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "beroun-011",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "758, 760, 762, 764, 766, 768, 772, 774, 776, 778",
+              "trains": [
+                758,
+                760,
+                762,
+                764,
+                766,
+                768,
+                772,
+                774,
+                776,
+                778
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "beroun-012",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "1596",
+              "trains": [
+                1596
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "beroun-013",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "7828",
+              "trains": [
+                7828
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "beroun-014",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "7830",
+              "trains": [
+                7830
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "beroun-015",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "7916",
+              "trains": [
+                7916
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "beroun-016",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "7918",
+              "trains": [
+                7918
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "beroun-017",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "7930",
+              "trains": [
+                7930
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Pavel Sklenička"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 17,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Všechny vlaky směr Praha přes Řevnice nejsou přípojem od vlaků ze směru Nučice."
+    },
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Všechny vlaky směr Nučice nejsou přípojem od vlaků R ze směru Praha."
+    }
+  ]
+}

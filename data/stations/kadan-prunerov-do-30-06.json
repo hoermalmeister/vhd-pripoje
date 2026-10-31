@@ -1,0 +1,1875 @@
+{
+  "schema_version": "1.0",
+  "id": "kadan-prunerov-do-30-06",
+  "station": "Kadaň-Prunéřov",
+  "sheet_name": "Kadaň-Prunéřov do 30.06.",
+  "variant": "do 30.6.",
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": "2026-06-30"
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD a RJÚK jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Chomutov",
+        "direction": "Chomutov",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kadan-prunerov-do-30-06-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 619)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "619",
+                  "trains": [
+                    619
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "619",
+              "trains": [
+                619
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17659",
+              "trains": [
+                17659
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "1945",
+              "trains": [
+                1945
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17603",
+              "trains": [
+                17603
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1947",
+              "trains": [
+                1947
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17637",
+              "trains": [
+                17637
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1951",
+              "trains": [
+                1951
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17649",
+              "trains": [
+                17649
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6551",
+              "trains": [
+                6551
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7055",
+              "trains": [
+                7055
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6559",
+              "trains": [
+                6559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17613",
+              "trains": [
+                17613
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "6567",
+              "trains": [
+                6567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7063",
+              "trains": [
+                7063
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-009",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "6803",
+              "trains": [
+                6803
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7049",
+              "trains": [
+                7049
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-010",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "6807",
+              "trains": [
+                6807
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7339",
+              "trains": [
+                7339
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-011",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "6809",
+              "trains": [
+                6809
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17605",
+              "trains": [
+                17605
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-012",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "6813",
+              "trains": [
+                6813
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17607",
+              "trains": [
+                17607
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-013",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6817",
+              "trains": [
+                6817
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17601, 17609",
+              "trains": [
+                17601,
+                17609
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-014",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6821",
+              "trains": [
+                6821
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17611",
+              "trains": [
+                17611
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-015",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6823",
+              "trains": [
+                6823
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17627",
+              "trains": [
+                17627
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-016",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6825",
+              "trains": [
+                6825
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17613",
+              "trains": [
+                17613
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-017",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6827",
+              "trains": [
+                6827
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17615",
+              "trains": [
+                17615
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-018",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "6829",
+              "trains": [
+                6829
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17617",
+              "trains": [
+                17617
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-019",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "6833",
+              "trains": [
+                6833
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17619",
+              "trains": [
+                17619
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-020",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "6837",
+              "trains": [
+                6837
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17621",
+              "trains": [
+                17621
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-021",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "7051",
+              "trains": [
+                7051
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17633",
+              "trains": [
+                17633
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Klášterec nad Ohří",
+        "direction": "Klášterec nad Ohří",
+        "source_row": 37,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kadan-prunerov-do-30-06-022",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 606)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "606",
+                  "trains": [
+                    606
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-023",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "606",
+              "trains": [
+                606
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6833",
+              "trains": [
+                6833
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-024",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "1944",
+              "trains": [
+                1944
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6819",
+              "trains": [
+                6819
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-025",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "7000",
+              "trains": [
+                7000
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6805, 17637",
+              "trains": [
+                6805,
+                17637
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-026",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "7048",
+              "trains": [
+                7048
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1943",
+              "trains": [
+                1943
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-027",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "17600",
+              "trains": [
+                17600
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17643",
+              "trains": [
+                17643
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-028",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "17602",
+              "trains": [
+                17602
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17647",
+              "trains": [
+                17647
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-029",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "17604",
+              "trains": [
+                17604
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7088",
+              "trains": [
+                7088
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-030",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "17604",
+              "trains": [
+                17604
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17635",
+              "trains": [
+                17635
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-031",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "17606",
+              "trains": [
+                17606
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17651",
+              "trains": [
+                17651
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-032",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "17608 – 17614",
+              "ranges": [
+                {
+                  "from": 17608,
+                  "to": 17614,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-033",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "17616",
+              "trains": [
+                17616
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6562",
+              "trains": [
+                6562
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-034",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "17618",
+              "trains": [
+                17618
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6830, 17661",
+              "trains": [
+                6830,
+                17661
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-035",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "17626",
+              "trains": [
+                17626
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17645",
+              "trains": [
+                17645
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-036",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "17628",
+              "trains": [
+                17628
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17649",
+              "trains": [
+                17649
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kadaň",
+        "direction": "Kadaň",
+        "source_row": 54,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "kadan-prunerov-do-30-06-037",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "6800",
+              "trains": [
+                6800
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1947",
+              "trains": [
+                1947
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-038",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "17630",
+              "trains": [
+                17630
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "603",
+              "trains": [
+                603
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-039",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "17632",
+              "trains": [
+                17632
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "620, 1945",
+              "trains": [
+                620,
+                1945
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-040",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "17632",
+              "trains": [
+                17632
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17603",
+              "trains": [
+                17603
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-041",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "17634",
+              "trains": [
+                17634
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7000",
+              "trains": [
+                7000
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "-",
+                "after": null
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-042",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "17636",
+              "trains": [
+                17636
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7339",
+              "trains": [
+                7339
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-043",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "17638, 17640",
+              "trains": [
+                17638,
+                17640
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "616, 17607",
+              "trains": [
+                616,
+                17607
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-044",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "17642",
+              "trains": [
+                17642
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17609",
+              "trains": [
+                17609
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-045",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "17642",
+              "trains": [
+                17642
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "614",
+              "trains": [
+                614
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-046",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "17644",
+              "trains": [
+                17644
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17625",
+              "trains": [
+                17625
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-047",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "17646",
+              "trains": [
+                17646
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17611",
+              "trains": [
+                17611
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-048",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "17648",
+              "trains": [
+                17648
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17627",
+              "trains": [
+                17627
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-049",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "17650",
+              "trains": [
+                17650
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17613",
+              "trains": [
+                17613
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-050",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "17652 – 17658",
+              "ranges": [
+                {
+                  "from": 17652,
+                  "to": 17658,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "kadan-prunerov-do-30-06-051",
+            "source_row": 69,
+            "status": "active",
+            "waiting_train": {
+              "text": "17660, 17686",
+              "trains": [
+                17660,
+                17686
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 51,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "kadan-prunerov-do-30-06-041",
+      "row": 59,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

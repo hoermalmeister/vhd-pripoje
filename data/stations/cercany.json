@@ -1,0 +1,860 @@
+{
+  "schema_version": "1.0",
+  "id": "cercany",
+  "station": "Čerčany",
+  "sheet_name": "Čerčany",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup ze 2. na 1. nástupiště nebo opačně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup ze 2. na 1. nástupiště nebo opačně"
+      }
+    },
+    {
+      "text": "Přestup ze 2. nebo 1. nástupiště na 1A nástupiště nebo opačně – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup ze 2. nebo 1. nástupiště na 1A nástupiště nebo opačně"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce KŽC a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Benešov u Prahy",
+        "direction": "Benešov u Prahy",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cercany-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "cercany-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "cercany-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "2501, 2569, 2571, 2573, 2575, 2577, 2501",
+              "trains": [
+                2501,
+                2569,
+                2571,
+                2573,
+                2575,
+                2577,
+                2501
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cercany-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "2505, 2509, 2513, 2517",
+              "trains": [
+                2505,
+                2509,
+                2513,
+                2517
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha (přes Říčany)",
+        "direction": "Praha",
+        "direction_detail": "přes Říčany",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cercany-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "cercany-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "cercany-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "2502, 2506, 2514, 2518",
+              "trains": [
+                2502,
+                2506,
+                2514,
+                2518
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cercany-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "2508, 2512, 2516, 2520, 2548, 2552",
+              "trains": [
+                2508,
+                2512,
+                2516,
+                2520,
+                2548,
+                2552
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "cercany-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "2564 – 2572",
+              "ranges": [
+                {
+                  "from": 2564,
+                  "to": 2572,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cercany-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "2574",
+              "trains": [
+                2574
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Sázava",
+        "direction": "Sázava",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cercany-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "1599, 9207, 9209, 9211, 9219 – 9229, 9245, 9247, 9249",
+              "trains": [
+                1599,
+                9207,
+                9209,
+                9211,
+                9245,
+                9247,
+                9249
+              ],
+              "ranges": [
+                {
+                  "from": 9219,
+                  "to": 9229,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Říčan i Benešova",
+              "from_directions": [
+                "Říčan",
+                "Benešova"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "cercany-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "9203, 9205, 9241, 9243",
+              "trains": [
+                9203,
+                9205,
+                9241,
+                9243
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cercany-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "9213, 9215, 9217, 9231",
+              "trains": [
+                9213,
+                9215,
+                9217,
+                9231
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Říčan i Benešova",
+              "from_directions": [
+                "Říčan",
+                "Benešova"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "cercany-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "9233, 9235",
+              "trains": [
+                9233,
+                9235
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Říčan i Benešova",
+              "from_directions": [
+                "Říčan",
+                "Benešova"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "45",
+                "kind": "minutes",
+                "minutes": 45
+              },
+              "saturday": {
+                "raw": "45",
+                "kind": "minutes",
+                "minutes": 45
+              },
+              "sunday_holiday": {
+                "raw": "45",
+                "kind": "minutes",
+                "minutes": 45
+              }
+            }
+          },
+          {
+            "id": "cercany-015",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "9251",
+              "trains": [
+                9251
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Říčan i Benešova",
+              "from_directions": [
+                "Říčan",
+                "Benešova"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "saturday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "sunday_holiday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vrané nad Vltavou",
+        "direction": "Vrané nad Vltavou",
+        "source_row": 34,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cercany-016",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "9002",
+              "trains": [
+                9002
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cercany-017",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "9004, 9006, 9064, 9066, 9068, 9070",
+              "trains": [
+                9004,
+                9006,
+                9064,
+                9066,
+                9068,
+                9070
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cercany-018",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "9008, 9010, 9012, 9014, 9016, 9018, 9020, 9022, 9034, 9056, 9058, 9060, 9062",
+              "trains": [
+                9008,
+                9010,
+                9012,
+                9014,
+                9016,
+                9018,
+                9020,
+                9022,
+                9034,
+                9056,
+                9058,
+                9060,
+                9062
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Říčan i Benešova",
+              "from_directions": [
+                "Říčan",
+                "Benešova"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "cercany-019",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "9024, 9026, 9072, 9074",
+              "trains": [
+                9024,
+                9026,
+                9072,
+                9074
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Říčan i Benešova",
+              "from_directions": [
+                "Říčan",
+                "Benešova"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Cikner",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Jiří Urban"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 19,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

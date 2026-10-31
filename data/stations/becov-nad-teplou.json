@@ -1,0 +1,370 @@
+{
+  "schema_version": "1.0",
+  "id": "becov-nad-teplou",
+  "station": "Bečov nad Teplou",
+  "sheet_name": "Bečov nad Teplou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojnými vlaky od vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Žlutice",
+        "direction": "Žlutice",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "becov-nad-teplou-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "16725",
+              "trains": [
+                16725
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7110, 7111, 26910, 26911",
+              "trains": [
+                7110,
+                7111,
+                26910,
+                26911
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "becov-nad-teplou-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "16739",
+              "trains": [
+                16739
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7112, 7113",
+              "trains": [
+                7112,
+                7113
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Karlovy Vary (opatření dopravce GWTR)",
+        "direction": "Karlovy Vary",
+        "direction_detail": "opatření dopravce GWTR",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "becov-nad-teplou-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "7100",
+              "trains": [
+                7100
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16700",
+              "trains": [
+                16700
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "becov-nad-teplou-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "7102",
+              "trains": [
+                7102
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16702",
+              "trains": [
+                16702
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "becov-nad-teplou-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "7104",
+              "trains": [
+                7104
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16706",
+              "trains": [
+                16706
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "becov-nad-teplou-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "7112",
+              "trains": [
+                7112
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16732",
+              "trains": [
+                16732
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mariánské Lázně (opatření dopravce GWTR)",
+        "direction": "Mariánské Lázně",
+        "direction_detail": "opatření dopravce GWTR",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "becov-nad-teplou-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "7101",
+              "trains": [
+                7101
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16700",
+              "trains": [
+                16700
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "becov-nad-teplou-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "7113",
+              "trains": [
+                7113
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16732",
+              "trains": [
+                16732
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Zpracoval za GWTR: Jaroslav Šeda",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 8,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

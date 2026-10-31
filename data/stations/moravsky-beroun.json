@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "id": "moravsky-beroun",
+  "station": "Moravský Beroun",
+  "sheet_name": "Moravský Beroun",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Základní přestupní doba je 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "základní přestupní doba ve stanici"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Krnov",
+        "direction": "Krnov",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravsky-beroun-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "3509",
+              "trains": [
+                3509
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3565",
+              "trains": [
+                3565
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Olomouc",
+        "direction": "Olomouc",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravsky-beroun-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "3534",
+              "trains": [
+                3534
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3500",
+              "trains": [
+                3500
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-beroun-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "3564",
+              "trains": [
+                3564
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1447, 3506",
+              "trains": [
+                1447,
+                3506
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch, Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Josef Štefan"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 3,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

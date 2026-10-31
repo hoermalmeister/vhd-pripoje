@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "id": "mlada-boleslav-mesto",
+  "station": "Mladá Boleslav město",
+  "sheet_name": "Mladá Boleslav město",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD a DLB na sebe navzájem nečekají. Přípoje se vytvoří ve stanici Mladá Boleslav hl.n.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": null,
+        "direction": null,
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "mlada-boleslav-mesto-001",
+            "source_row": 14,
+            "status": "active",
+            "waiting_train": {
+              "text": "8506",
+              "trains": [
+                8506
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8504",
+              "trains": [
+                8504
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-mesto-002",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "8552",
+              "trains": [
+                8552
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9538",
+              "trains": [
+                9538
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "mlada-boleslav-mesto-003",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "18509",
+              "trains": [
+                18509
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8513",
+              "trains": [
+                8513
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Vaněk",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Za Správu železnic odsouhlasila: Iva Konvalinová"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 3,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD a DLB na sebe navzájem nečekají. Přípoje se vytvoří ve stanici Mladá Boleslav hl.n."
+    }
+  ]
+}

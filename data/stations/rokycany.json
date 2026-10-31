@@ -1,0 +1,600 @@
+{
+  "schema_version": "1.0",
+  "id": "rokycany",
+  "station": "Rokycany",
+  "sheet_name": "Rokycany",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 7817 a Os 27846, Os 7821 a Os 27848, Os 27801 a 7842, Os 27805 a Os 7804, Os 27843 a Sp 1706, Os 27845 a Os 7816, Os 27851 a Os 7860.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7817
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 27846
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7821
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 27848
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 27805
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7804
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 27843
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1706
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 27845
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7816
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 27851
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7860
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3,
+        "unparsed": "Os 27801 7842",
+        "parse": "partial"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rokycany-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 779)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "779",
+                  "trains": [
+                    779
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "rokycany-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "779",
+              "trains": [
+                779
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň hl.n.",
+        "direction": "Plzeň hl.n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rokycany-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "750",
+              "trains": [
+                750
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27849",
+              "trains": [
+                27849
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "rokycany-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "754",
+              "trains": [
+                754
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27847",
+              "trains": [
+                27847
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "rokycany-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "756 – 766, 774 – 778",
+              "ranges": [
+                {
+                  "from": 756,
+                  "to": 766,
+                  "parity": null
+                },
+                {
+                  "from": 774,
+                  "to": 778,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nezvěstice",
+        "direction": "Nezvěstice",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "rokycany-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "27800 – 27818, 27844 – 27848",
+              "ranges": [
+                {
+                  "from": 27800,
+                  "to": 27818,
+                  "parity": null
+                },
+                {
+                  "from": 27844,
+                  "to": 27848,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "6",
+                "kind": "minutes",
+                "minutes": 6
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "rokycany-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "27820, 27822, 27824",
+              "trains": [
+                27820,
+                27822,
+                27824
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "rokycany-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "27826",
+              "trains": [
+                27826
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "rokycany-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "27828",
+              "trains": [
+                27828
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "750",
+              "trains": [
+                750
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "rokycany-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "27840",
+              "trains": [
+                27840
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "748, 7841",
+              "trains": [
+                748,
+                7841
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "rokycany-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "27850",
+              "trains": [
+                27850
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "Pokud vlaková četa zjistí ve zpožděném vlaku Os 27847 a Os 27849 frekvenci cestujících, která přestupuje v ŽST Plzeň hl. n. a cestuje dále, je čekací doba rychlíku 10 minut. Vlakvedoucí je povinen tuto skutečnost vždy ohlásit traťovému dispečerovi na tel.: 972 095 511."
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Za Správu železnic odsouhlasil: Jana Bělohlávková"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 11,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 7817 a Os 27846, Os 7821 a Os 27848, Os 27801 a 7842, Os 27805 a Os 7804, Os 27843 a Sp 1706, Os 27845 a Os 7816, Os 27851 a Os 7860."
+    }
+  ]
+}

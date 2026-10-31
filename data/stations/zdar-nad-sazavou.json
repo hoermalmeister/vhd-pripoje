@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.0",
+  "id": "zdar-nad-sazavou",
+  "station": "Žďár nad Sázavou",
+  "sheet_name": "Žďár nad Sázavou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup mezi II. a III. nástupištěm – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi II. a III. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup z/na I. nástupiště – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup z/na I. nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: R 991 a Os 14977, Os 14978 a R 970",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 991
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 14977
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 14978
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 970
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Havlíčkův Brod",
+        "direction": "Havlíčkův Brod",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zdar-nad-sazavou-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Křižanov",
+        "direction": "Křižanov",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zdar-nad-sazavou-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "989",
+              "trains": [
+                989
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14914",
+              "trains": [
+                14914
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zdar-nad-sazavou-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "991",
+              "trains": [
+                991
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14976",
+              "trains": [
+                14976
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zdar-nad-sazavou-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "24903",
+              "trains": [
+                24903
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zdar-nad-sazavou-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "24927, 24931",
+              "trains": [
+                24927,
+                24931
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zdar-nad-sazavou-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "24945",
+              "trains": [
+                24945
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nové Město na Moravě",
+        "direction": "Nové Město na Moravě",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zdar-nad-sazavou-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "14977, 14979",
+              "trains": [
+                14977,
+                14979
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zdar-nad-sazavou-008",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "14981",
+              "trains": [
+                14981
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8763",
+              "trains": [
+                8763
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Martin Novák",
+    "Za Správu železnic odsouhlasil: Ing. David Bříza"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 8,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "id": "sokolov",
+  "station": "Sokolov",
+  "sheet_name": "Sokolov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojnými vlaky od vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "sokolov-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "7310",
+              "trains": [
+                7310
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17029",
+              "trains": [
+                17029
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Karlovy Vary",
+        "direction": "Karlovy Vary",
+        "source_row": 17,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kraslice (opatření dopravce GWTR)",
+        "direction": "Kraslice",
+        "direction_detail": "opatření dopravce GWTR",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "sokolov-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "17008",
+              "trains": [
+                17008
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "607, 1663",
+              "trains": [
+                607,
+                1663
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "sokolov-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "17014",
+              "trains": [
+                17014
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "sokolov-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "17016",
+              "trains": [
+                17016
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1669.615",
+              "trains": [
+                1669,
+                615
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "sokolov-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "17030",
+              "trains": [
+                17030
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "606.1672",
+              "trains": [
+                606,
+                1672
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "sokolov-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "17032",
+              "trains": [
+                17032
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7310",
+              "trains": [
+                7310
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Zpracoval za GWTR: Jaroslav Šeda",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 6,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

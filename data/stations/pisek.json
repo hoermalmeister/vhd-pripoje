@@ -1,0 +1,549 @@
+{
+  "schema_version": "1.0",
+  "id": "pisek",
+  "station": "Písek",
+  "sheet_name": "Písek",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2,5 minuty jsou: Os 7940 a Os 8480, Os 8480 a Os 7941.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7940
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8480
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8480
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7941
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2.5
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Sp 1982 a Os 8423, Os 8422 a Os 7946.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1982
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8423
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8422
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7946
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Ražice, Protivín",
+        "direction": "Ražice, Protivín",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pisek-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp relace Tábor – Strakonice",
+              "relation": "Tábor – Strakonice",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R dopravce ARR",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "pisek-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os relace Tábor – Strakonice",
+              "relation": "Tábor – Strakonice",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R dopravce ARR",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "pisek-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1983, 7946",
+              "trains": [
+                1983,
+                7946
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7940, 8422, 8480",
+              "trains": [
+                7940,
+                8422,
+                8480
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "pisek-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1987",
+              "trains": [
+                1987
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7946",
+              "trains": [
+                7946
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "pisek-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "7974",
+              "trains": [
+                7974
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8479",
+              "trains": [
+                8479
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "pisek-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "7976",
+              "trains": [
+                7976
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8477",
+              "trains": [
+                8477
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "pisek-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "8480",
+              "trains": [
+                8480
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7940",
+              "trains": [
+                7940
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Březnice",
+        "direction": "Březnice",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pisek-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "7943",
+              "trains": [
+                7943
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2060",
+              "trains": [
+                2060
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Tábor",
+        "direction": "Tábor",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "pisek-009",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "8417",
+              "trains": [
+                8417
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8038",
+              "trains": [
+                8038
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "pisek-010",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "8479",
+              "trains": [
+                8479
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1998",
+              "trains": [
+                1998
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "pisek-011",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "8481",
+              "trains": [
+                8481
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7946",
+              "trains": [
+                7946
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Za Správu železnic odsouhlasila: Jana Salačová"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 11,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

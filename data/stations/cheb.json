@@ -1,0 +1,1358 @@
+{
+  "schema_version": "1.0",
+  "id": "cheb",
+  "station": "Cheb",
+  "sheet_name": "Cheb",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi sousedními nástupišti – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi sousedními nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Přípojnými vlaky jsou: Os 7000 a Os 20873 (93), Os 7002 a Os 20879, Os 7006 a Os 20881, Os 7010 a Os 20883, Os 7305 a Sp 5280, Os 20878 a Os 7003, Os 20880 a Os 7005, Os 20882 a Os 7009, Os 20884 a Os 7309, Os 20890 a Ex 504",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7000
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20873
+              }
+            ],
+            "note_b": "93"
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7002
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20879
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7006
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20881
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7010
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20883
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7305
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 5280
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20878
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7003
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20880
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7005
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20882
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7009
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20884
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7309
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20890
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 504
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Přípojnými vlaky jsou: Os 7000 a Os 20873 (93), Os 7002 a Os 20879, Os 7006 a Os 20881, Os 7010 a Os 20883, Os 7305 a Sp 5280, Os 20878 a Os 7003, Os 20880 a Os 7005, Os 20882 a Os 7009, Os 20884 a Os 7309, Os 20890 a Ex 504",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7000
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20873
+              }
+            ],
+            "note_b": "93"
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7002
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20879
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7006
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20881
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7010
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20883
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7305
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 5280
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20878
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7003
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20880
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7005
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20882
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7009
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20884
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7309
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20890
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 504
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Přípojnými vlaky jsou: Os 7000 a Os 20873 (93), Os 7002 a Os 20879, Os 7006 a Os 20881, Os 7010 a Os 20883, Os 7305 a Sp 5280, Os 20878 a Os 7003, Os 20880 a Os 7005, Os 20882 a Os 7009, Os 20884 a Os 7309, Os 20890 a Ex 504",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7000
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20873
+              }
+            ],
+            "note_b": "93"
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7002
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20879
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7006
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20881
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7010
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 20883
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7305
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 5280
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20878
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7003
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20880
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7005
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20882
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7009
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20884
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7309
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 20890
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 504
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Vlaky z/do Lubů u Chebu jsou přípojnými vlaky na rychlíky směr z /do Karlových Varů.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Mariánské Lázně",
+        "direction": "Mariánské Lázně",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cheb-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "503, 515",
+              "trains": [
+                503,
+                515
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cheb-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "557, 565, 567",
+              "trains": [
+                557,
+                565,
+                567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "7308",
+              "trains": [
+                7308
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "7373",
+              "trains": [
+                7373
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Karlovy Vary",
+        "direction": "Karlovy Vary",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cheb-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "607, 609, 619",
+              "trains": [
+                607,
+                609,
+                619
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "7027",
+              "trains": [
+                7027
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "27206, 27212",
+              "trains": [
+                27206,
+                27212
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cheb-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "27208",
+              "trains": [
+                27208
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cheb-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "27218",
+              "trains": [
+                27218
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "27220",
+              "trains": [
+                27220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Františkovy Lázně",
+        "direction": "Františkovy Lázně",
+        "source_row": 32,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cheb-011",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "512",
+              "trains": [
+                512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "cheb-012",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "20980, 20992",
+              "trains": [
+                20980,
+                20992
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cheb-013",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "20982",
+              "trains": [
+                20982
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5 v ⑥",
+                "kind": "minutes",
+                "minutes": 5,
+                "only_on_days": "⑥"
+              },
+              "sunday_holiday": {
+                "raw": "5 v ⑦",
+                "kind": "minutes",
+                "minutes": 5,
+                "only_on_days": "⑦"
+              }
+            }
+          },
+          {
+            "id": "cheb-014",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "20984, 20986, 20988, 20990",
+              "trains": [
+                20984,
+                20986,
+                20988,
+                20990
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cheb-015",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "20998",
+              "trains": [
+                20998
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Schirnding",
+        "direction": "Schirnding",
+        "source_row": 38,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cheb-016",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "5280",
+              "trains": [
+                5280
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "568",
+              "trains": [
+                568
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cheb-017",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "5282",
+              "trains": [
+                5282
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "566",
+              "trains": [
+                566
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-018",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "5284",
+              "trains": [
+                5284
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "564",
+              "trains": [
+                564
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-019",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "5286",
+              "trains": [
+                5286
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "512",
+              "trains": [
+                512
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-020",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "5288",
+              "trains": [
+                5288
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "562",
+              "trains": [
+                562
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-021",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "5290",
+              "trains": [
+                5290
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "560",
+              "trains": [
+                560
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-022",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "5292",
+              "trains": [
+                5292
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "558",
+              "trains": [
+                558
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cheb-023",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "20871",
+              "trains": [
+                20871
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "17203",
+              "trains": [
+                17203
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 23,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky z/do Lubů u Chebu jsou přípojnými vlaky na rychlíky směr z /do Karlových Varů."
+    }
+  ]
+}

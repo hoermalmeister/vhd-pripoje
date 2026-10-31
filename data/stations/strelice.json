@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0",
+  "id": "strelice",
+  "station": "Střelice",
+  "sheet_name": "Střelice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky považované za přípoj: Os 4425 a Os 4842, Os 4427 a Os 4844.",
+      "change": {
+        "before": null,
+        "after": "Vlaky považované za přípoj: Os 4425 a Os 4842, Os 4427 a Os 4844."
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 4425
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4842
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 4427
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4844
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "change": {
+        "before": "platí základní pravidla dle článku 2.",
+        "after": "Jinak platí základní pravidla dle článku 2."
+      },
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Jihlava",
+        "direction": "Jihlava",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "strelice-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "strelice-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "4806, 4808, 4810, 4812, 4828, 4830, 4832",
+              "trains": [
+                4806,
+                4808,
+                4810,
+                4812,
+                4828,
+                4830,
+                4832
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "strelice-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "4814",
+              "trains": [
+                4814
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "strelice-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "4856",
+              "trains": [
+                4856
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "strelice-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "4858",
+              "trains": [
+                4858
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14459",
+              "trains": [
+                14459
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "strelice-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "4860, 4862, 4864, 4866, 4868, 4870, 4872, 4874, 4876",
+              "trains": [
+                4860,
+                4862,
+                4864,
+                4866,
+                4868,
+                4870,
+                4872,
+                4874,
+                4876
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hrušovany nad Jevišovkou / Ivančice",
+        "direction": "Hrušovany nad Jevišovkou / Ivančice",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "strelice-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "strelice-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "4454, 4456",
+              "trains": [
+                4454,
+                4456
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4833, 4835",
+              "trains": [
+                4833,
+                4835
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "strelice-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "14460",
+              "trains": [
+                14460
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4858",
+              "trains": [
+                4858
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": [],
+        "no_connections": true
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Ing. Luděk Krátký"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 9,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

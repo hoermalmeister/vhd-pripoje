@@ -1,0 +1,2694 @@
+{
+  "schema_version": "1.0",
+  "id": "brno-hl-n",
+  "station": "Brno hl. n.",
+  "sheet_name": "Brno hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 30. března 2026",
+    "valid_from": "2026-03-30",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi I., II., III. a IV. nástupištěm – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi I., II., III. a IV. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi I. a V., VI. nástupištěm – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi I. a V., VI. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi II., III., IV. a V., VI. nástupištěm – 7 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 7,
+        "applies_to": "Přestup mezi II., III., IV. a V., VI. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi V. a VI. nástupištěm – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi V. a VI. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky opačného směru: vlaky směr Střelice a vlaky směr Břeclav jsou přípojné v obou směrech.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Přípojné vlaky opačného směru jsou Ex 50 a Os 4959, R 879 a Os 4082.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "opposite_direction_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 50
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4959
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 879
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4082
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Přípojné vlaky stejného směru jsou R 1102 a R 986, R 1106 a R 984, R 1110 a R 982, R 1114 a R 980, R 1116 a R 978, R 1118 a R 976, R 1120 a R 974, R 1122 a R 972, R 1126 a R 970",
+      "change": {
+        "before": null,
+        "after": "Přípojné vlaky stejného směru jsou R 1102 a R 986, R 1106 a R 984, R 1110 a R 982, R 1114 a R 980, R 1116 a R 978, R 1118 a R 976, R 1120 a R 974, R 1122 a R 972, R 1126 a R 970"
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "same_direction_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1102
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 986
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1106
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 984
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1110
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 982
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1114
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 980
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1116
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 978
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1118
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 976
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1120
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 974
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1122
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 972
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1126
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 970
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratí 240 a 244 a odjezdem vlaků na jiné tratě interval kratší než 7 minut.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 002+250+251+252 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucích na jiné tratě a na trať 250 kratší než 5 minut. Vlaky stejných čísel jsou však vždy přípojné.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 260 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 300 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 340 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, a od vlaků Sp 1371 a Sp 1373 dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD a ARR (Sp 1371 a 1373).",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ ve směru Praha a Břeclav nejsou přípojné od vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků ČD a dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Jihlava",
+        "direction": "Jihlava",
+        "source_row": 30,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-001",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-002",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "650",
+              "trains": [
+                650
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-003",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "652",
+              "trains": [
+                652
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-004",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "4828",
+              "trains": [
+                4828
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-005",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "4830, 4832",
+              "trains": [
+                4830,
+                4832
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-006",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "4834, 4858",
+              "trains": [
+                4834,
+                4858
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hrušovany nad Jevišovkou / Ivančice",
+        "direction": "Hrušovany nad Jevišovkou / Ivančice",
+        "source_row": 37,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-007",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-008",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "4416, 4454",
+              "trains": [
+                4416,
+                4454
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-009",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "4456",
+              "trains": [
+                4456
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-010",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "4458",
+              "trains": [
+                4458
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Havlíčkův Brod",
+        "direction": "Havlíčkův Brod",
+        "source_row": 43,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-011",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R a Sp ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-012",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "970",
+              "trains": [
+                970
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-013",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "972",
+              "trains": [
+                972
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-014",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "sudé 1100 - 1132",
+              "ranges": [
+                {
+                  "from": 1100,
+                  "to": 1132,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-015",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-016",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "4604, 4606, 4608, 4610, 4612, 4614, 4616, 4618, 4620, 4634, 4640, 4644, 4646",
+              "trains": [
+                4604,
+                4606,
+                4608,
+                4610,
+                4612,
+                4614,
+                4616,
+                4618,
+                4620,
+                4634,
+                4640,
+                4644,
+                4646
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-017",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "4622, 4660",
+              "trains": [
+                4622,
+                4660
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-018",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "4624",
+              "trains": [
+                4624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-019",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "4656, 4662, 4954",
+              "trains": [
+                4656,
+                4662,
+                4954
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-020",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "4664, 4670",
+              "trains": [
+                4664,
+                4670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Břeclav",
+        "direction": "Břeclav",
+        "source_row": 54,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-021",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-022",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "177, 259, 283",
+              "trains": [
+                177,
+                259,
+                283
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-023",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R a Sp ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-024",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "831, 833",
+              "trains": [
+                831,
+                833
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-025",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "835",
+              "trains": [
+                835
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-026",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "1031, 1033, 1035, 1037, 1041, 1043, 1045, 1047",
+              "trains": [
+                1031,
+                1033,
+                1035,
+                1037,
+                1041,
+                1043,
+                1045,
+                1047
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-027",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "1360",
+              "trains": [
+                1360
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-028",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "1372",
+              "trains": [
+                1372
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-029",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-030",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "4605, 4607, 4609, 4611, 4613, 4615, 4617, 4619, 4621, 4637, 4639, 4641, 4647, 4657",
+              "trains": [
+                4605,
+                4607,
+                4609,
+                4611,
+                4613,
+                4615,
+                4617,
+                4619,
+                4621,
+                4637,
+                4639,
+                4641,
+                4647,
+                4657
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-031",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "4623, 4661, 4955",
+              "trains": [
+                4623,
+                4661,
+                4955
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-032",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "4625, 4957",
+              "trains": [
+                4625,
+                4957
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-033",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "4663, 4669, 4959",
+              "trains": [
+                4663,
+                4669,
+                4959
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 68,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-034",
+            "source_row": 69,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-035",
+            "source_row": 70,
+            "status": "active",
+            "waiting_train": {
+              "text": "52",
+              "trains": [
+                52
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-036",
+            "source_row": 71,
+            "status": "active",
+            "waiting_train": {
+              "text": "54, 56, 250, 252, 254, 256, 282",
+              "trains": [
+                54,
+                56,
+                250,
+                252,
+                254,
+                256,
+                282
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Sp z trati 340",
+              "tracks": [
+                "340"
+              ],
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-037",
+            "source_row": 72,
+            "status": "active",
+            "waiting_train": {
+              "text": "270",
+              "trains": [
+                270
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-038",
+            "source_row": 73,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R a Sp ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-039",
+            "source_row": 74,
+            "status": "active",
+            "waiting_train": {
+              "text": "860",
+              "trains": [
+                860
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-040",
+            "source_row": 75,
+            "status": "active",
+            "waiting_train": {
+              "text": "862, 864, 866, 868, 870",
+              "trains": [
+                862,
+                864,
+                866,
+                868,
+                870
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "Ex ČD (linka Ex3) ze směru Břeclav",
+              "lines": [
+                "Ex3"
+              ],
+              "from_directions": [
+                "Břeclav"
+              ],
+              "categories": [
+                "Ex"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-041",
+            "source_row": 76,
+            "status": "active",
+            "waiting_train": {
+              "text": "1030, 1032, 1034, 1036, 1040, 1042, 1044, 1046, 1048, 1050",
+              "trains": [
+                1030,
+                1032,
+                1034,
+                1036,
+                1040,
+                1042,
+                1044,
+                1046,
+                1048,
+                1050
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-042",
+            "source_row": 77,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-043",
+            "source_row": 78,
+            "status": "active",
+            "waiting_train": {
+              "text": "4032, 4750, 4752, 4754",
+              "trains": [
+                4032,
+                4750,
+                4752,
+                4754
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-044",
+            "source_row": 79,
+            "status": "active",
+            "waiting_train": {
+              "text": "4058, 4062, 4708, 4710, 4712, 4714, 4716, 4718, 4722, 4726, 4730, 4734, 4738, 4742, 4746",
+              "trains": [
+                4058,
+                4062,
+                4708,
+                4710,
+                4712,
+                4714,
+                4716,
+                4718,
+                4722,
+                4726,
+                4730,
+                4734,
+                4738,
+                4742,
+                4746
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-045",
+            "source_row": 80,
+            "status": "active",
+            "waiting_train": {
+              "text": "4082",
+              "trains": [
+                4082
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-046",
+            "source_row": 81,
+            "status": "active",
+            "waiting_train": {
+              "text": "4756",
+              "trains": [
+                4756
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-047",
+            "source_row": 82,
+            "status": "active",
+            "waiting_train": {
+              "text": "4758",
+              "trains": [
+                4758
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Křenovice horní nádraží / Vyškov",
+        "direction": "Křenovice horní nádraží / Vyškov",
+        "source_row": 84,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-048",
+            "source_row": 85,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-049",
+            "source_row": 86,
+            "status": "active",
+            "waiting_train": {
+              "text": "915, 917",
+              "trains": [
+                915,
+                917
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-050",
+            "source_row": 87,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 1101 - 1129",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1129,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-051",
+            "source_row": 88,
+            "status": "active",
+            "waiting_train": {
+              "text": "1131",
+              "trains": [
+                1131
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-052",
+            "source_row": 89,
+            "status": "active",
+            "waiting_train": {
+              "text": "1133",
+              "trains": [
+                1133
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-053",
+            "source_row": 90,
+            "status": "active",
+            "waiting_train": {
+              "text": "4037",
+              "trains": [
+                4037
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-054",
+            "source_row": 91,
+            "status": "active",
+            "waiting_train": {
+              "text": "4089",
+              "trains": [
+                4089
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-055",
+            "source_row": 92,
+            "status": "active",
+            "waiting_train": {
+              "text": "4751",
+              "trains": [
+                4751
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-056",
+            "source_row": 93,
+            "status": "active",
+            "waiting_train": {
+              "text": "4755",
+              "trains": [
+                4755
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Veselí nad Moravou",
+        "direction": "Veselí nad Moravou",
+        "source_row": 94,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-hl-n-057",
+            "source_row": 95,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-058",
+            "source_row": 96,
+            "status": "active",
+            "waiting_train": {
+              "text": "1773, 1775",
+              "trains": [
+                1773,
+                1775
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-059",
+            "source_row": 97,
+            "status": "active",
+            "waiting_train": {
+              "text": "1777",
+              "trains": [
+                1777
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-060",
+            "source_row": 98,
+            "status": "active",
+            "waiting_train": {
+              "text": "4125",
+              "trains": [
+                4125
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-061",
+            "source_row": 99,
+            "status": "active",
+            "waiting_train": {
+              "text": "4127",
+              "trains": [
+                4127
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-062",
+            "source_row": 100,
+            "status": "active",
+            "waiting_train": {
+              "text": "4141",
+              "trains": [
+                4141
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-hl-n-063",
+            "source_row": 101,
+            "status": "active",
+            "waiting_train": {
+              "text": "4159",
+              "trains": [
+                4159
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Ing. Marek Foltán",
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Ing. Ivo Peška"
+  ],
+  "summary": {
+    "sections": 7,
+    "rules_active": 63,
+    "rules_cancelled": 0,
+    "review_items": 10
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky opačného směru: vlaky směr Střelice a vlaky směr Břeclav jsou přípojné v obou směrech."
+    },
+    {
+      "where": "part_b",
+      "row": 16,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratí 240 a 244 a odjezdem vlaků na jiné tratě interval kratší než 7 minut."
+    },
+    {
+      "where": "part_b",
+      "row": 17,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 002+250+251+252 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucích na jiné tratě a na trať 250 kratší než 5 minut. Vlaky stejných čísel jsou však vždy přípojné."
+    },
+    {
+      "where": "part_b",
+      "row": 18,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 260 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
+    },
+    {
+      "where": "part_b",
+      "row": 19,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 300 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
+    },
+    {
+      "where": "part_b",
+      "row": 20,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 340 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
+    },
+    {
+      "where": "part_b",
+      "row": 21,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, a od vlaků Sp 1371 a Sp 1373 dopravce ARR, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "where": "part_b",
+      "row": 22,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD a ARR (Sp 1371 a 1373)."
+    },
+    {
+      "where": "part_b",
+      "row": 23,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ ve směru Praha a Břeclav nejsou přípojné od vlaků ostatních dopravců."
+    },
+    {
+      "where": "part_b",
+      "row": 24,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ARR jsou přípojem od vlaků ČD a dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

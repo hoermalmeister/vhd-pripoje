@@ -1,0 +1,2527 @@
+{
+  "schema_version": "1.0",
+  "id": "ostrava-svinov",
+  "station": "Ostrava-Svinov",
+  "sheet_name": "Ostrava-Svinov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 21. září 2026",
+    "valid_from": "2026-09-21",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Základní přestupní doba je 4 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "základní přestupní doba ve stanici"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti (hrana – hrana) – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti (hrana – hrana)"
+      }
+    },
+    {
+      "text": "Přestup z/na opavské nástupiště – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup z/na opavské nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Ve stanici není zaručen přestup, je-li mezi příjezdem a odjezdem vlaků interval menší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Přípojné vlaky s přestupní dobou 3 minuty jsou: R 1105 a Os 3409, R 1109 a Os 3413, R 1113 a Os 3417, R 1117 a Os 3421, R 1131 a Os 3435.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1105
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3409
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1109
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3413
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1113
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3417
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1117
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3421
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 1131
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3435
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Přípojné vlaky opačného směru jsou: Sp 3070 a Ex 512, Ex 113 a Sp 3360, Ex 141 a Sp 3364, Ex 115 a Sp 3368, Ex 505 a Sp 3061+Sp 3370, Ex 143 a Sp 3372, Ex 117 a Sp 3376, Ex 511 a Sp 3065+Sp 3378, Ex 513+Ex 145 a Os 3380, Ex 515 a Sp 3067, Ex 547 a Sp 3382 a Ex 517 a Os 3324.",
+      "change": {
+        "before": "Přípojné vlaky opačného směru jsou: Sp 3070 a Ex 512, Ex 113 a Sp 3360, Ex 141 a Sp 3364, Ex 503 a Sp 3059+Sp 3366, Ex 115 a Sp 3368, Ex 505 a Sp 3061+Sp 3370, Ex 143 a Sp 3372, Ex 507 a Sp 3063+Sp 3374, Ex 117 a Sp 3376, Ex 511 a Sp 3065+Sp 3378, Ex 513+Ex 145 a Os 3380, Ex 515 a Sp 3067, Ex 547 a Sp 3382 a Ex 517 a Os 3324.",
+        "after": "Přípojné vlaky opačného směru jsou: Sp 3070 a Ex 512, Ex 113 a Sp 3360, Ex 141 a Sp 3364, Ex 115 a Sp 3368, Ex 505 a Sp 3061+Sp 3370, Ex 143 a Sp 3372, Ex 117 a Sp 3376, Ex 511 a Sp 3065+Sp 3378, Ex 513+Ex 145 a Os 3380, Ex 515 a Sp 3067, Ex 547 a Sp 3382 a Ex 517 a Os 3324."
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "opposite_direction_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 3070
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 512
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 113
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3360
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 141
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3364
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 115
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3368
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 505
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3061
+              },
+              {
+                "category": "Sp",
+                "number": 3370
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 143
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3372
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 117
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3376
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 511
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3065
+              },
+              {
+                "category": "Sp",
+                "number": 3378
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 513
+              },
+              {
+                "category": "Ex",
+                "number": 145
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3380
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 515
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3067
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 547
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 3382
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 517
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 3324
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Za sebou jedoucí vlaky ve směru Ostrava hl. n. (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné. Toto ustanovení se nevztahuje na případy, kdy jeden z vlaků pokračuje ve směru Ostrava hl. n. obvod uhelné nádraží a na případy vyjmenované v následujícím řádku.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Studénka",
+        "direction": "Studénka",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-svinov-001",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-002",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "502",
+              "trains": [
+                502
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-003",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "512",
+              "trains": [
+                512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 3070)",
+              "all": true,
+              "include": [
+                {
+                  "text": "3070",
+                  "trains": [
+                    3070
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-004",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "sudé 1100-1130",
+              "ranges": [
+                {
+                  "from": 1100,
+                  "to": 1130,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-005",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "1132",
+              "trains": [
+                1132
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-006",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-007",
+            "source_row": 30,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3061, 3063, 3065, 3376, 3380, 3382",
+              "trains": [
+                3061,
+                3063,
+                3065,
+                3376,
+                3380,
+                3382
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 117, 145, 505, 507, 511, 513, 547)",
+              "all": true,
+              "include": [
+                {
+                  "text": "117, 145, 505, 507, 511, 513, 547",
+                  "trains": [
+                    117,
+                    145,
+                    505,
+                    507,
+                    511,
+                    513,
+                    547
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "ostrava-svinov-008",
+            "source_row": 31,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3059, 3366",
+              "trains": [
+                3059,
+                3366
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "503",
+              "trains": [
+                503
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "ostrava-svinov-009",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "3061, 3370",
+              "trains": [
+                3061,
+                3370
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "505",
+              "trains": [
+                505
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-010",
+            "source_row": 33,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3063, 3374",
+              "trains": [
+                3063,
+                3374
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "507",
+              "trains": [
+                507
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "ostrava-svinov-011",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "3065, 3378",
+              "trains": [
+                3065,
+                3378
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "511",
+              "trains": [
+                511
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-012",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "3067",
+              "trains": [
+                3067
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 515)",
+              "all": true,
+              "include": [
+                {
+                  "text": "515",
+                  "trains": [
+                    515
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-013",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "3360",
+              "trains": [
+                3360
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "113",
+              "trains": [
+                113
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "10",
+                "after": "5"
+              },
+              "saturday": {
+                "before": "10",
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": "10",
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-014",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "3364",
+              "trains": [
+                3364
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "141",
+              "trains": [
+                141
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "10",
+                "after": "5"
+              },
+              "saturday": {
+                "before": "10",
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": "10",
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-015",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "3368",
+              "trains": [
+                3368
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "115",
+              "trains": [
+                115
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "7",
+                "after": "5"
+              },
+              "saturday": {
+                "before": "7",
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": "7",
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-016",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "3372",
+              "trains": [
+                3372
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "143",
+              "trains": [
+                143
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-017",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "3376",
+              "trains": [
+                3376
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "117",
+              "trains": [
+                117
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "workday": {
+                "before": "10",
+                "after": "5"
+              },
+              "saturday": {
+                "before": "10",
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": "10",
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-018",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "3380",
+              "trains": [
+                3380
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 145, 513)",
+              "all": true,
+              "include": [
+                {
+                  "text": "145, 513",
+                  "trains": [
+                    145,
+                    513
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "145, 513",
+                "after": "V (včetně 145, 513)"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-019",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "3382",
+              "trains": [
+                3382
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "547",
+              "trains": [
+                547
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-020",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-021",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "3040, 3042, 3044",
+              "trains": [
+                3040,
+                3042,
+                3044
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-022",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "3067",
+              "trains": [
+                3067
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 515)",
+              "all": true,
+              "include": [
+                {
+                  "text": "515",
+                  "trains": [
+                    515
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "3067"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V (včetně 515)"
+              },
+              "workday": {
+                "before": null,
+                "after": "10"
+              },
+              "saturday": {
+                "before": null,
+                "after": "10"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "10"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-023",
+            "source_row": 47,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3067",
+              "trains": [
+                3067
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 515)",
+              "all": true,
+              "include": [
+                {
+                  "text": "515",
+                  "trains": [
+                    515
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "ostrava-svinov-024",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "3324",
+              "trains": [
+                3324
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 517)",
+              "all": true,
+              "include": [
+                {
+                  "text": "517",
+                  "trains": [
+                    517
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ostrava hl.n., Bohumín",
+        "direction": "Ostrava hl.n., Bohumín",
+        "source_row": 49,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-svinov-025",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Ex, R a Os ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R",
+                "Os"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-026",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "241, 503, 505, 507, 511, 515, 517",
+              "trains": [
+                241,
+                503,
+                505,
+                507,
+                511,
+                515,
+                517
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-027",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "345, 347, 349",
+              "trains": [
+                345,
+                347,
+                349
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 113, 115, 117)",
+              "all": true,
+              "except": [
+                {
+                  "text": "113, 115, 117",
+                  "trains": [
+                    113,
+                    115,
+                    117
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-028",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "345, 347, 349",
+              "trains": [
+                345,
+                347,
+                349
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "113, 115, 117",
+              "trains": [
+                113,
+                115,
+                117
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-029",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 1101-1133",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1133,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-030",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky Sp 16xx, 29xx",
+              "patterns": [
+                "16xx",
+                "29xx"
+              ],
+              "categories": [
+                "Sp"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "vlaky Sp 16xx, 20xx",
+                "after": "vlaky Sp 16xx, 29xx"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-031",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky Sp 30xx, 33xx",
+              "patterns": [
+                "30xx",
+                "33xx"
+              ],
+              "categories": [
+                "Sp"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-032",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "2915",
+              "trains": [
+                2915
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-033",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "2957",
+              "trains": [
+                2957
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Opava východ",
+        "direction": "Opava východ",
+        "source_row": 60,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-svinov-034",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "513",
+              "trains": [
+                513
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-035",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "840",
+              "trains": [
+                840
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-036",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-037",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-038",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "3418",
+              "trains": [
+                3418
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2802",
+              "trains": [
+                2802
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-039",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "3432, 3434, 3436",
+              "trains": [
+                3432,
+                3434,
+                3436
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-040",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "3438",
+              "trains": [
+                3438
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-041",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "3440",
+              "trains": [
+                3440
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 1019)",
+              "all": true,
+              "include": [
+                {
+                  "text": "1019",
+                  "trains": [
+                    1019
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Havířov – Český Těšín",
+        "direction": "Havířov – Český Těšín",
+        "source_row": 69,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-svinov-042",
+            "source_row": 70,
+            "status": "active",
+            "waiting_train": {
+              "text": "2040, 2042, 2044",
+              "trains": [
+                2040,
+                2042,
+                2044
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-043",
+            "source_row": 71,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 112, 116, 140, 142, 144, 340, 342, 344, 346, 348)",
+              "all": true,
+              "except": [
+                {
+                  "text": "112, 116, 140, 142, 144, 340, 342, 344, 346, 348",
+                  "trains": [
+                    112,
+                    116,
+                    140,
+                    142,
+                    144,
+                    340,
+                    342,
+                    344,
+                    346,
+                    348
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "V (vyjma 112, 114, 116, 140, 142, 144, 340, 342, 344, 346, 348)",
+                "after": "V (vyjma 112, 116, 140, 142, 144, 340, 342, 344, 346, 348)"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-044",
+            "source_row": 72,
+            "status": "active",
+            "waiting_train": {
+              "text": "2803, 3407, 3411, 3415, 3419, 3423 (3443), 3431, 3435",
+              "trains": [
+                2803,
+                3407,
+                3411,
+                3415,
+                3419,
+                3423,
+                3443,
+                3431,
+                3435
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "112, 116, 140, 142, 144, 340, 342, 344, 346, 348",
+              "trains": [
+                112,
+                116,
+                140,
+                142,
+                144,
+                340,
+                342,
+                344,
+                346,
+                348
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "112, 114, 116, 140, 142, 144, 340, 342, 344, 346, 348",
+                "after": "112, 116, 140, 142, 144, 340, 342, 344, 346, 348"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-045",
+            "source_row": 73,
+            "status": "active",
+            "waiting_train": {
+              "text": "2803",
+              "trains": [
+                2803
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3427",
+              "trains": [
+                3427
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-046",
+            "source_row": 74,
+            "status": "active",
+            "waiting_train": {
+              "text": "2805",
+              "trains": [
+                2805
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1013",
+              "trains": [
+                1013
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-047",
+            "source_row": 75,
+            "status": "active",
+            "waiting_train": {
+              "text": "2863",
+              "trains": [
+                2863
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "839",
+              "trains": [
+                839
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-048",
+            "source_row": 76,
+            "status": "active",
+            "waiting_train": {
+              "text": "3423",
+              "trains": [
+                3423
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "502",
+              "trains": [
+                502
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-049",
+            "source_row": 77,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3429",
+              "trains": [
+                3429
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1013",
+              "trains": [
+                1013
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "ostrava-svinov-050",
+            "source_row": 78,
+            "status": "active",
+            "waiting_train": {
+              "text": "3433",
+              "trains": [
+                3433
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 1017)",
+              "all": true,
+              "include": [
+                {
+                  "text": "1017",
+                  "trains": [
+                    1017
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-051",
+            "source_row": 79,
+            "status": "active",
+            "waiting_train": {
+              "text": "3435",
+              "trains": [
+                3435
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ostrava-svinov-052",
+            "source_row": 80,
+            "status": "active",
+            "waiting_train": {
+              "text": "3437",
+              "trains": [
+                3437
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (včetně 1019)",
+              "all": true,
+              "include": [
+                {
+                  "text": "1019",
+                  "trains": [
+                    1019
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Jiří Adamczyk"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 47,
+    "rules_cancelled": 5,
+    "review_items": 4
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Za sebou jedoucí vlaky ve směru Ostrava hl. n. (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné. Toto ustanovení se nevztahuje na případy, kdy jeden z vlaků pokračuje ve směru Ostrava hl. n. obvod uhelné nádraží a na případy vyjmenované v následujícím řádku."
+    },
+    {
+      "where": "part_b",
+      "row": 15,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117."
+    },
+    {
+      "where": "part_b",
+      "row": 16,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak."
+    },
+    {
+      "where": "part_b",
+      "row": 17,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

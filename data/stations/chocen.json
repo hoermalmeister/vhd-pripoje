@@ -1,0 +1,882 @@
+{
+  "schema_version": "1.0",
+  "id": "chocen",
+  "station": "Choceň",
+  "sheet_name": "Choceň ",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 16. srpna 2026",
+    "valid_from": "2026-08-16",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na jednom nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na jednom nástupišti"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm č. 3 a nástupištěm č. 2 – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupištěm č. 3 a nástupištěm č. 2"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti č. 1, 2 a nástupištěm č. 1A – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti č. 1, 2 a nástupištěm č. 1A"
+      }
+    },
+    {
+      "text": "Přestup mezi ostatními nástupišti – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi ostatními nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce LET, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "LET"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 15003 a Os 5646.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 15003
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 5646
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Pardubice hl.n., Praha hl.n.",
+        "direction": "Pardubice hl.n., Praha hl.n.",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chocen-001",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R, Sp a Os dopravce ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp",
+                "Os"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chocen-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "860",
+              "trains": [
+                860
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15023",
+              "trains": [
+                15023
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chocen-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "5028, 5052",
+              "trains": [
+                5028,
+                5052
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chocen-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "5053",
+              "trains": [
+                5053
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "5641",
+              "trains": [
+                5641
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chocen-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R, Sp a Os dopravce ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp",
+                "Os"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "chocen-006",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "873",
+              "trains": [
+                873
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1895",
+              "trains": [
+                1895
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "chocen-007",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "875",
+              "trains": [
+                875
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "chocen-008",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "877",
+              "trains": [
+                877
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15057",
+              "trains": [
+                15057
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chocen-009",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "5029",
+              "trains": [
+                5029
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Týniště nad Orlicí",
+        "direction": "Týniště nad Orlicí",
+        "source_row": 32,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chocen-010",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "1880 (do 24.IV. a od 29.IX.)",
+              "date_condition": {
+                "text": "do 24.IV. a od 29.IX.",
+                "periods": [
+                  {
+                    "to": "04-24"
+                  },
+                  {
+                    "from": "09-29"
+                  }
+                ]
+              },
+              "trains": [
+                1880
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chocen-011",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "1880 (od 25.IV. do 28.IX.)",
+              "date_condition": {
+                "text": "od 25.IV. do 28.IX.",
+                "periods": [
+                  {
+                    "from": "04-25",
+                    "to": "09-28"
+                  }
+                ]
+              },
+              "trains": [
+                1880
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "chocen-012",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "1882",
+              "trains": [
+                1882
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chocen-013",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "1884, 1886",
+              "trains": [
+                1884,
+                1886
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chocen-014",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "1888, 1890, 1892",
+              "trains": [
+                1888,
+                1890,
+                1892
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "chocen-015",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "5130",
+              "trains": [
+                5130
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "chocen-016",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "5640, 5642",
+              "trains": [
+                5640,
+                5642
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vysoké Mýto",
+        "direction": "Vysoké Mýto",
+        "source_row": 40,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "chocen-017",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "15000, 15002, 15034, 15036, 15038, 15050, 15052, 15072",
+              "trains": [
+                15000,
+                15002,
+                15034,
+                15036,
+                15038,
+                15050,
+                15052,
+                15072
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "chocen-018",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "15024, 15026",
+              "trains": [
+                15024,
+                15026
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "chocen-019",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "15030",
+              "trains": [
+                15030
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "579",
+              "trains": [
+                579
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "chocen-020",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "15066",
+              "trains": [
+                15066
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "sunday_holiday": {
+                "before": null,
+                "after": "20"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Aleš Rotrekl",
+    "Za Správu železnic odsouhlasil: Petr Koutný, DiS."
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 20,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,1902 @@
+{
+  "schema_version": "1.0",
+  "id": "plzen-hl-n",
+  "station": "Plzeň hl.n.",
+  "sheet_name": "Plzeň hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj je-li mezi příjezdem a odjezdem vlaků interval kratší než 6 minut.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 6,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlak Ex 567 je přípojný od vlaku R 624 a v ⚒ je vlak Sp 1700 přípojný od vlaku Os 7842.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlak R 778 je přípojný od vlaku Os 7844 v ⑥ a †.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců.",
+      "change": {
+        "before": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců.",
+        "after": null
+      },
+      "status": "cancelled",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky Os směr Radnice jsou přípojnými vlaky od Ex ze směru Praha hl.n.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců. Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false,
+        "additional_text": "Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min.",
+        "parse": "partial"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha hl.n.",
+        "direction": "Praha hl.n.",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-hl-n-001",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "351, 353, 355, 357, 359, 361, 363, 503, 515, 553, 555, 557, 559, 561, 563, 565",
+              "trains": [
+                351,
+                353,
+                355,
+                357,
+                359,
+                361,
+                363,
+                503,
+                515,
+                553,
+                555,
+                557,
+                559,
+                561,
+                563,
+                565
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "567",
+              "trains": [
+                567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlak R (vyjma 779)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "779",
+                  "trains": [
+                    779
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-004",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "779",
+              "trains": [
+                779
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-005",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "7803, 7843",
+              "trains": [
+                7803,
+                7843
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "7805 – 7819, 7871",
+              "trains": [
+                7871
+              ],
+              "ranges": [
+                {
+                  "from": 7805,
+                  "to": 7819,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "7821, 7823, 7859, 7875",
+              "trains": [
+                7821,
+                7823,
+                7859,
+                7875
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "7833, 27327",
+              "trains": [
+                7833,
+                27327
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "7845, 7849, 7851, 7853",
+              "trains": [
+                7845,
+                7849,
+                7851,
+                7853
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-hl-n-010",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 554)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "554",
+                  "trains": [
+                    554
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-011",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "554",
+              "trains": [
+                554
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-012",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "7320, 27360",
+              "trains": [
+                7320,
+                27360
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 36,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-hl-n-013",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "625, 627, 629, 631, 633",
+              "trains": [
+                625,
+                627,
+                629,
+                631,
+                633
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma Ex ze směru Cheb, Ex ze směru Praha a R GWTR ze směru Most)",
+              "all": true,
+              "except": [
+                {
+                  "all": true,
+                  "categories": [
+                    "Ex"
+                  ],
+                  "from_directions": [
+                    "Cheb"
+                  ]
+                },
+                {
+                  "all": true,
+                  "categories": [
+                    "Ex"
+                  ],
+                  "from_directions": [
+                    "Praha"
+                  ]
+                },
+                {
+                  "all": true,
+                  "categories": [
+                    "R"
+                  ],
+                  "operators": [
+                    "GWTR"
+                  ],
+                  "from_directions": [
+                    "Most"
+                  ]
+                }
+              ],
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "6",
+                "kind": "minutes",
+                "minutes": 6
+              },
+              "saturday": {
+                "raw": "6",
+                "kind": "minutes",
+                "minutes": 6
+              },
+              "sunday_holiday": {
+                "raw": "6",
+                "kind": "minutes",
+                "minutes": 6
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-014",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "625, 627, 629, 631, 633",
+              "trains": [
+                625,
+                627,
+                629,
+                631,
+                633
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex ze směru Cheb",
+              "from_directions": [
+                "Cheb"
+              ],
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "11",
+                "kind": "minutes",
+                "minutes": 11
+              },
+              "saturday": {
+                "raw": "11",
+                "kind": "minutes",
+                "minutes": 11
+              },
+              "sunday_holiday": {
+                "raw": "11",
+                "kind": "minutes",
+                "minutes": 11
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-015",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "627, 629, 631, 633",
+              "trains": [
+                627,
+                629,
+                631,
+                633
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex ze směru Praha",
+              "from_directions": [
+                "Praha"
+              ],
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-016",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "627, 629, 631, 633",
+              "trains": [
+                627,
+                629,
+                631,
+                633
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R GWTR ze směru Most",
+              "from_directions": [
+                "Most"
+              ],
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "GWTR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-017",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "635",
+              "trains": [
+                635
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 560)",
+              "all": true,
+              "except": [
+                {
+                  "text": "560",
+                  "trains": [
+                    560
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "11",
+                "kind": "minutes",
+                "minutes": 11
+              },
+              "saturday": {
+                "raw": "11",
+                "kind": "minutes",
+                "minutes": 11
+              },
+              "sunday_holiday": {
+                "raw": "11",
+                "kind": "minutes",
+                "minutes": 11
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-018",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "635",
+              "trains": [
+                635
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "560",
+              "trains": [
+                560
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-019",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "637",
+              "trains": [
+                637
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 558)",
+              "all": true,
+              "except": [
+                {
+                  "text": "558",
+                  "trains": [
+                    558
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-020",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "637",
+              "trains": [
+                637
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "558",
+              "trains": [
+                558
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-021",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "639",
+              "trains": [
+                639
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 504)",
+              "all": true,
+              "except": [
+                {
+                  "text": "504",
+                  "trains": [
+                    504
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-022",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "639",
+              "trains": [
+                639
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "504",
+              "trains": [
+                504
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-023",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "1697",
+              "trains": [
+                1697
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-024",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os – Plzeňské linky 8953 – 8961",
+              "categories": [
+                "Os"
+              ],
+              "ranges": [
+                {
+                  "from": 8953,
+                  "to": 8961,
+                  "parity": null
+                }
+              ],
+              "note": "Plzeňské linky",
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-025",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "8963",
+              "trains": [
+                8963
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-026",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "8901, 8903, 8905, 8907, 8939, 8971",
+              "trains": [
+                8901,
+                8903,
+                8905,
+                8907,
+                8939,
+                8971
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-027",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "8909, 8911, 8913, 8915, 8917, 8919, 8921, 8923, 8931, 8933, 8937",
+              "trains": [
+                8909,
+                8911,
+                8913,
+                8915,
+                8917,
+                8919,
+                8921,
+                8923,
+                8931,
+                8933,
+                8937
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-028",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "8925",
+              "trains": [
+                8925
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Klatovy",
+        "direction": "Klatovy",
+        "source_row": 53,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-hl-n-029",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "750, 756",
+              "trains": [
+                750,
+                756
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-030",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "758, 762, 766, 774, 778",
+              "trains": [
+                758,
+                762,
+                766,
+                774,
+                778
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-031",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "760, 764, 768, 770, 772, 776",
+              "trains": [
+                760,
+                764,
+                768,
+                770,
+                772,
+                776
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-032",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "1700, 1702",
+              "trains": [
+                1700,
+                1702
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-033",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "1706, 1708, 7800, 7804, 7806, 7814, 7816, 7872, 7874, 7876",
+              "trains": [
+                1706,
+                1708,
+                7800,
+                7804,
+                7806,
+                7814,
+                7816,
+                7872,
+                7874,
+                7876
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-034",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "7512",
+              "trains": [
+                7512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Domažlice",
+        "direction": "Domažlice",
+        "source_row": 60,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-hl-n-035",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "7400 – 7422, 7452",
+              "trains": [
+                7452
+              ],
+              "ranges": [
+                {
+                  "from": 7400,
+                  "to": 7422,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-036",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "7430",
+              "trains": [
+                7430
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-037",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "7432",
+              "trains": [
+                7432
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-038",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "7442, 7444",
+              "trains": [
+                7442,
+                7444
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Žatec",
+        "direction": "Žatec",
+        "source_row": 65,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-hl-n-039",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "1080 - 1088",
+              "ranges": [
+                {
+                  "from": 1080,
+                  "to": 1088,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-040",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "1092",
+              "trains": [
+                1092
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-041",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "1094*",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                1094
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-042",
+            "source_row": 70,
+            "status": "active",
+            "waiting_train": {
+              "text": "7604, 7606, 7644, 7660, 7662, 7664",
+              "trains": [
+                7604,
+                7606,
+                7644,
+                7660,
+                7662,
+                7664
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-043",
+            "source_row": 71,
+            "status": "active",
+            "waiting_train": {
+              "text": "7612",
+              "trains": [
+                7612
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "plzen-hl-n-044",
+            "source_row": 72,
+            "status": "active",
+            "waiting_train": {
+              "text": "7670",
+              "trains": [
+                7670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň-Jižní Předměstí",
+        "direction": "Plzeň-Jižní Předměstí",
+        "source_row": 73,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "jezdí ⑤,⑦"
+    }
+  },
+  "notes": [
+    {
+      "text": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Žatec"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Tomáš Hampl"
+  ],
+  "summary": {
+    "sections": 7,
+    "rules_active": 44,
+    "rules_cancelled": 0,
+    "review_items": 5
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak Ex 567 je přípojný od vlaku R 624 a v ⚒ je vlak Sp 1700 přípojný od vlaku Os 7842."
+    },
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak R 778 je přípojný od vlaku Os 7844 v ⑥ a †."
+    },
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců."
+    },
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky Os směr Radnice jsou přípojnými vlaky od Ex ze směru Praha hl.n."
+    },
+    {
+      "where": "part_b",
+      "row": 15,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců. Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min."
+    }
+  ]
+}

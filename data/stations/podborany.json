@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "id": "podborany",
+  "station": "Podbořany",
+  "sheet_name": "Podbořany",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RCAS"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false,
+        "additional_text": "Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467.",
+        "parse": "partial"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": []
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Platí základní pravidla dle článku 2."
+    }
+  ],
+  "signatures": [
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Zpracoval za RCAS: Tadeáš Richter",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 0,
+    "rules_active": 0,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    }
+  ]
+}

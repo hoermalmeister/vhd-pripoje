@@ -1,0 +1,1347 @@
+{
+  "schema_version": "1.0",
+  "id": "ceska-trebova",
+  "station": "Česká Třebová",
+  "sheet_name": "Česká Třebová",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 12. ledna 2026",
+    "valid_from": "2026-01-12",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti č. 1 až č. 4 – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupišti č. 1 až č. 4"
+      }
+    },
+    {
+      "text": "Přestup na nástupiště č. 5 – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup na nástupiště č. 5"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž k příslušným vlakům dálkové dopravy ve směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž od příslušných vlaků dálkové dopravy ze směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce LET, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "LET"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-trebova-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-002",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-003",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-004",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "5028, 15026",
+              "trains": [
+                5028,
+                15026
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "5022, 5058, 5074, 15020, 15022",
+                "after": "5028, 15026"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-005",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "5052",
+              "trains": [
+                5052
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "5024",
+                "after": "5052"
+              },
+              "saturday": {
+                "before": null,
+                "after": "10"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "10"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Zábřeh na Moravě, Olomouc hl.n.",
+        "direction": "Zábřeh na Moravě, Olomouc hl.n.",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-trebova-006",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-007",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "115",
+              "trains": [
+                115
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12722",
+              "trains": [
+                12722
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-008",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "117",
+              "trains": [
+                117
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12734",
+              "trains": [
+                12734
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-009",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "143",
+              "trains": [
+                143
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12736",
+              "trains": [
+                12736
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-010",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "145",
+              "trains": [
+                145
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12742",
+              "trains": [
+                12742
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-011",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "547",
+              "trains": [
+                547
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12746",
+              "trains": [
+                12746
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-012",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "889",
+              "trains": [
+                889
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12724",
+              "trains": [
+                12724
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-013",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "891",
+              "trains": [
+                891
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12730",
+              "trains": [
+                12730
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-014",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-015",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "3787",
+              "trains": [
+                3787
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno",
+        "direction": "Brno",
+        "source_row": 42,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-trebova-016",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-017",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "879",
+              "trains": [
+                879
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-018",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "2055",
+              "trains": [
+                2055
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "121",
+              "trains": [
+                121
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-019",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-020",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "1757",
+              "trains": [
+                1757
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "891",
+              "trains": [
+                891
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-021",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "4777",
+              "trains": [
+                4777
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-022",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "4779",
+              "trains": [
+                4779
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lanškroun",
+        "direction": "Lanškroun",
+        "source_row": 52,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-trebova-023",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-024",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "12705, 12709, 12723, 12727, 12729, 12731, 12735, 12737",
+              "trains": [
+                12705,
+                12709,
+                12723,
+                12727,
+                12729,
+                12731,
+                12735,
+                12737
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-025",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "12707",
+              "trains": [
+                12707
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "578, 24752",
+              "trains": [
+                578,
+                24752
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-026",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "12753",
+              "trains": [
+                12753
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-027",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "12755",
+              "trains": [
+                12755
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-028",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "12757",
+              "trains": [
+                12757
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Moravská Třebová",
+        "direction": "Moravská Třebová",
+        "source_row": 60,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-trebova-029",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-030",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "24753",
+              "trains": [
+                24753
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12704",
+              "trains": [
+                12704
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-031",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "24767",
+              "trains": [
+                24767
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "142",
+              "trains": [
+                142
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-032",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "24771, 24773, 24775",
+              "trains": [
+                24771,
+                24773,
+                24775
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-033",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "24779",
+              "trains": [
+                24779
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceska-trebova-034",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "24781",
+              "trains": [
+                24781
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Aleš Rotrekl",
+    "Za Správu železnic odsouhlasil: Ing. Miroslav Šneider"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 34,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž k příslušným vlakům dálkové dopravy ve směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším."
+    },
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž od příslušných vlaků dálkové dopravy ze směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším."
+    }
+  ]
+}

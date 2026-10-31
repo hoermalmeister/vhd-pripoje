@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "id": "blatna",
+  "station": "Blatná",
+  "sheet_name": "Blatná",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Březnice",
+        "direction": "Březnice",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatna-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "7909, 7913",
+              "trains": [
+                7909,
+                7913
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27906, 27910",
+              "trains": [
+                27906,
+                27910
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "blatna-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "7919",
+              "trains": [
+                7919
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27922",
+              "trains": [
+                27922
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "blatna-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "7921",
+              "trains": [
+                7921
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "27924",
+              "trains": [
+                27924
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Strakonice",
+        "direction": "Strakonice",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatna-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "17922",
+              "trains": [
+                17922
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "blatna-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "17924",
+              "trains": [
+                17924
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7916",
+              "trains": [
+                7916
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nepomuk",
+        "direction": "Nepomuk",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatna-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "27921",
+              "trains": [
+                27921
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7914",
+              "trains": [
+                7914
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Za Správu železnic odsouhlasil: Aleš Baldík"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 6,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

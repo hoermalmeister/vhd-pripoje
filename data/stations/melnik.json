@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "id": "melnik",
+  "station": "Mělník",
+  "sheet_name": "Mělník",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a RJ (linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "RJ"
+        ],
+        "reciprocal": false,
+        "exclusive": true,
+        "connecting_lines": [
+          "R23"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a RJ (linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC",
+          "RJ"
+        ],
+        "reciprocal": false,
+        "exclusive": true,
+        "connecting_lines": [
+          "R23"
+        ],
+        "note": "Omezení na linku se vztahuje k dopravci RJ uvedenému v textu."
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Mšeno",
+        "direction": "Mšeno",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "melnik-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "8516, 8534, 8536, 8542, 8548, 8570",
+              "trains": [
+                8516,
+                8534,
+                8536,
+                8542,
+                8548,
+                8570
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "melnik-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "8564",
+              "trains": [
+                8564
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ústí nad Labem",
+        "direction": "Ústí nad Labem",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "melnik-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6402 – 6416",
+              "ranges": [
+                {
+                  "from": 6402,
+                  "to": 6416,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9506 – 9532",
+              "ranges": [
+                {
+                  "from": 9506,
+                  "to": 9532,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "melnik-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6418",
+              "trains": [
+                6418
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "9536",
+              "trains": [
+                9536
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Všetaty",
+        "direction": "Všetaty",
+        "source_row": 23,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Vaněk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasila: Bc. Zuzana Bárta Telecká"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

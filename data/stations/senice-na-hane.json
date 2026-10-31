@@ -1,0 +1,442 @@
+{
+  "schema_version": "1.0",
+  "id": "senice-na-hane",
+  "station": "Senice na Hané",
+  "sheet_name": "Senice na Hané",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Červenka",
+        "direction": "Červenka",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "senice-na-hane-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "13820",
+              "trains": [
+                13820
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14029",
+              "trains": [
+                14029
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "13824",
+              "trains": [
+                13824
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 14033)",
+              "all": true,
+              "except": [
+                {
+                  "text": "14033",
+                  "trains": [
+                    14033
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "13824",
+              "trains": [
+                13824
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14033",
+              "trains": [
+                14033
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-005",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "13826",
+              "trains": [
+                13826
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Olomouc hl.n.",
+        "direction": "Olomouc hl.n.",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "senice-na-hane-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "14010",
+              "trains": [
+                14010
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "13805",
+              "trains": [
+                13805
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Prostějov hl.n.",
+        "direction": "Prostějov hl.n.",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "senice-na-hane-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "13823",
+              "trains": [
+                13823
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14033",
+              "trains": [
+                14033
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "13823"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "14033"
+              },
+              "workday": {
+                "before": null,
+                "after": "25"
+              },
+              "saturday": {
+                "before": null,
+                "after": "-"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "-"
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "14067",
+              "trains": [
+                14067
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14017",
+              "trains": [
+                14017
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "senice-na-hane-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "14069",
+              "trains": [
+                14069
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "14019",
+              "trains": [
+                14019
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

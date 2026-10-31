@@ -1,0 +1,1040 @@
+{
+  "schema_version": "1.0",
+  "id": "veseli-nad-moravou",
+  "station": "Veselí nad Moravou",
+  "sheet_name": "Veselí nad Moravou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi I., II. a III. nástupištěm – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi I., II. a III. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky považované za přípoj: Os 4105 a R 892, Os 4109 a Os 4107, Os 12210 a Os 4178.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 4105
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 892
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 4109
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4107
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 12210
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 4178
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-moravou-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1774",
+              "trains": [
+                1774
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1778",
+              "trains": [
+                1778
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "4182",
+              "trains": [
+                4182
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "4184",
+              "trains": [
+                4184
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Uherské Hradiště / Kunovice",
+        "direction": "Uherské Hradiště / Kunovice",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-moravou-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "892",
+              "trains": [
+                892
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "1775",
+              "trains": [
+                1775
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "4241",
+              "trains": [
+                4241
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-008",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "12215",
+              "trains": [
+                12215
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hodonín",
+        "direction": "Hodonín",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-moravou-009",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "2722, 2724",
+              "trains": [
+                2722,
+                2724
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-010",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "2726",
+              "trains": [
+                2726
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-011",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "2740",
+              "trains": [
+                2740
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2708",
+              "trains": [
+                2708
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-012",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "2742",
+              "trains": [
+                2742
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2710",
+              "trains": [
+                2710
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-013",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "2744",
+              "trains": [
+                2744
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2714",
+              "trains": [
+                2714
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-014",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "2746",
+              "trains": [
+                2746
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2718",
+              "trains": [
+                2718
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "2748",
+              "trains": [
+                2748
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-016",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "2748",
+              "trains": [
+                2748
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2722",
+              "trains": [
+                2722
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-017",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "2750",
+              "trains": [
+                2750
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vrbovce",
+        "direction": "Vrbovce",
+        "source_row": 39,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-moravou-018",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-019",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "2701, 2709, 2713, 2717, 2721",
+              "trains": [
+                2701,
+                2709,
+                2713,
+                2717,
+                2721
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-020",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "2723",
+              "trains": [
+                2723
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-021",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "2727",
+              "trains": [
+                2727
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-022",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "2711",
+              "trains": [
+                2711
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2745",
+              "trains": [
+                2745
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-023",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "2715",
+              "trains": [
+                2715
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2747",
+              "trains": [
+                2747
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-024",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "2719",
+              "trains": [
+                2719
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2749",
+              "trains": [
+                2749
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-025",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "2729",
+              "trains": [
+                2729
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2703",
+              "trains": [
+                2703
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-moravou-026",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "2771",
+              "trains": [
+                2771
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Ing. Marek Foltán",
+    "Zpracoval za ČD: Ing. Filip Novotný, Zdeněk Urbanský",
+    "Za Správu železnic odsouhlasil: Ing. Radek Pavelka, Dalibor Horák"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 26,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

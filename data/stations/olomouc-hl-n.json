@@ -1,0 +1,1731 @@
+{
+  "schema_version": "1.0",
+  "id": "olomouc-hl-n",
+  "station": "Olomouc hl.n.",
+  "sheet_name": "Olomouc hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 22. prosince 2025",
+    "valid_from": "2025-12-22",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Mezi vlaky 915 a 1435 je přípoj i v případě, že vlaky mimořádně nejsou přistaveny ke stejnému nástupišti.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Moravský Beroun",
+        "direction": "Moravský Beroun",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "olomouc-hl-n-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "855",
+              "trains": [
+                855
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Os vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "sunday_holiday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "3531, 3563, 3565, 3567",
+              "trains": [
+                3531,
+                3563,
+                3565,
+                3567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "saturday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "sunday_holiday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "3569",
+              "trains": [
+                3569
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Prostějov hl.n.",
+        "direction": "Prostějov hl.n.",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "olomouc-hl-n-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 900, 902)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "900, 902",
+                  "trains": [
+                    900,
+                    902
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "900",
+              "trains": [
+                900
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15 v ⑤",
+                "kind": "minutes",
+                "minutes": 15,
+                "only_on_days": "⑤"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "902",
+              "trains": [
+                902
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1431, 1433, 1439",
+              "trains": [
+                1431,
+                1433,
+                1439
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "3703, 3713, 3715, 3717, 3719, 3721, 3725, 3727, 3729, 3731, 3733, 3735, 3737, 3751",
+              "trains": [
+                3703,
+                3713,
+                3715,
+                3717,
+                3719,
+                3721,
+                3725,
+                3727,
+                3729,
+                3731,
+                3733,
+                3735,
+                3737,
+                3751
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "3705, 3707, 3711, 3723",
+              "trains": [
+                3705,
+                3707,
+                3711,
+                3723
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "3709",
+              "trains": [
+                3709
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "saturday": {
+                "before": null,
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "3755",
+              "trains": [
+                3755
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Grygov",
+        "direction": "Grygov",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "olomouc-hl-n-013",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma 241, 503, 505, 507, 509, 511, 513, 515, 517, 521 a vlaků linky R13 – 800–814)",
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "241, 503, 505, 507, 509, 511, 513, 515, 517, 521 a vlaků linky R13 – 800–814",
+                  "lines": [
+                    "R13"
+                  ],
+                  "trains": [
+                    241,
+                    503,
+                    505,
+                    507,
+                    509,
+                    511,
+                    513,
+                    515,
+                    517,
+                    521
+                  ],
+                  "ranges": [
+                    {
+                      "from": 800,
+                      "to": 814,
+                      "parity": null
+                    }
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-014",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "241, 503, 505, 507, 509, 511, 513, 515, 517",
+              "trains": [
+                241,
+                503,
+                505,
+                507,
+                509,
+                511,
+                513,
+                515,
+                517
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-015",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "521",
+              "trains": [
+                521
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-016",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky R linky R13 – 802, 804, 806, 808, 810, 812, 814 (vyjma R 800 v †)",
+              "categories": [
+                "R"
+              ],
+              "lines": [
+                "R13"
+              ],
+              "trains": [
+                802,
+                804,
+                806,
+                808,
+                810,
+                812,
+                814
+              ],
+              "note": "V podkladu '(vyjma R 800 v †)' – R 800 v neděli/svátek se neuplatní.",
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "vlaky linky R12 – 900–914 a 918",
+              "lines": [
+                "R12"
+              ],
+              "trains": [
+                918
+              ],
+              "ranges": [
+                {
+                  "from": 900,
+                  "to": 914,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-017",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "800",
+              "trains": [
+                800
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "900",
+              "trains": [
+                900
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-018",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-019",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "1427, 1429, 3203, 3205, 3209, 3211, 3219, 3221, 3223, 3225, 3231, 3860",
+              "trains": [
+                1427,
+                1429,
+                3203,
+                3205,
+                3209,
+                3211,
+                3219,
+                3221,
+                3223,
+                3225,
+                3231,
+                3860
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-020",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "3237, 3810, 3812, 3816, 3822, 3826, 3830, 3834, 3840, 3862",
+              "trains": [
+                3237,
+                3810,
+                3812,
+                3816,
+                3822,
+                3826,
+                3830,
+                3834,
+                3840,
+                3862
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3810, 3812, 3816, 3822, 3826, 3830, 3834, 3840, 3862",
+                "after": "3237, 3810, 3812, 3816, 3822, 3826, 3830, 3834, 3840, 3862"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-021",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "3850",
+              "trains": [
+                3850
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Senice na Hané",
+        "direction": "Senice na Hané",
+        "source_row": 44,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "olomouc-hl-n-022",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-023",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "14033",
+              "trains": [
+                14033
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "14033, 14037",
+                "after": "14033"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-024",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "14037",
+              "trains": [
+                14037
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-025",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "14077",
+              "trains": [
+                14077
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Uničov",
+        "direction": "Uničov",
+        "source_row": 50,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "olomouc-hl-n-026",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "3621, 3623, 3625, 3627, 3629, 3631, 3633, 3635, 3637, 3639, 3851, 13705, 13711, 13713, 13715, 13717, 13723, 13725, 13727",
+              "trains": [
+                3621,
+                3623,
+                3625,
+                3627,
+                3629,
+                3631,
+                3633,
+                3635,
+                3637,
+                3639,
+                3851,
+                13705,
+                13711,
+                13713,
+                13715,
+                13717,
+                13723,
+                13725,
+                13727
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3621, 3623, 3625, 3627, 3629, 3631, 3633, 3635, 3637, 3639, 3851, 13705, 13711, 13713, 13715, 13717, 13719, 13723, 13725, 13727",
+                "after": "3621, 3623, 3625, 3627, 3629, 3631, 3633, 3635, 3637, 3639, 3851, 13705, 13711, 13713, 13715, 13717, 13723, 13725, 13727"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-027",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "3649",
+              "trains": [
+                3649
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-028",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "3811, 3813, 3827, 3829, 3833, 3835, 3837, 3839, 13701",
+              "trains": [
+                3811,
+                3813,
+                3827,
+                3829,
+                3833,
+                3835,
+                3837,
+                3839,
+                13701
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-029",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "3815, 3817, 3821, 3823, 3825, 3843, 3845, 3847",
+              "trains": [
+                3815,
+                3817,
+                3821,
+                3823,
+                3825,
+                3843,
+                3845,
+                3847
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "3815, 3817, 3821, 3823, 3825, 3843, 3845, 3847, 13719",
+                "after": "3815, 3817, 3821, 3823, 3825, 3843, 3845, 3847"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-030",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "13719",
+              "trains": [
+                13719
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Zábřeh na Moravě",
+        "direction": "Zábřeh na Moravě",
+        "source_row": 56,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "olomouc-hl-n-031",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-032",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "120",
+              "trains": [
+                120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "880",
+              "trains": [
+                880
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-033",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "240, 500, 502, 504, 506, 508, 510, 512, 516",
+              "trains": [
+                240,
+                500,
+                502,
+                504,
+                506,
+                508,
+                510,
+                512,
+                516
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-034",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky R linky R12 – 901, 903, 905, 907, 909, 911, 913",
+              "lines": [
+                "R12"
+              ],
+              "trains": [
+                901,
+                903,
+                905,
+                907,
+                909,
+                911,
+                913
+              ],
+              "categories": [
+                "R"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky linky R13 – 801–815",
+              "lines": [
+                "R13"
+              ],
+              "ranges": [
+                {
+                  "from": 801,
+                  "to": 815,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-035",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "915",
+              "trains": [
+                915
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "815",
+              "trains": [
+                815
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-036",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "1435",
+              "trains": [
+                1435
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-037",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "3704, 3710, 3764",
+              "trains": [
+                3704,
+                3710,
+                3764
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-038",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "3712, 3718, 3722, 3724, 3726, 3728, 3732, 3734, 3736, 3740",
+              "trains": [
+                3712,
+                3718,
+                3722,
+                3724,
+                3726,
+                3728,
+                3732,
+                3734,
+                3736,
+                3740
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-039",
+            "source_row": 66,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3718",
+              "trains": [
+                3718
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "olomouc-hl-n-040",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "3748",
+              "trains": [
+                3748
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "olomouc-hl-n-041",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "13000, 13002",
+              "trains": [
+                13000,
+                13002
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 6,
+    "rules_active": 40,
+    "rules_cancelled": 1,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty"
+    },
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky 915 a 1435 je přípoj i v případě, že vlaky mimořádně nejsou přistaveny ke stejnému nástupišti."
+    }
+  ]
+}

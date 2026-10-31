@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.0",
+  "id": "praha-liben",
+  "station": "Praha-Libeň",
+  "sheet_name": "Praha-Libeň",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minut.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky S49 Praha-Hostivař – Roztoky u Prahy, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "change": {
+        "before": null,
+        "after": "Vlaky RJ jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+      },
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJ"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Kolín",
+        "direction": "Kolín",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-liben-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R",
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "praha-liben-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os",
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků Os od Prahy-Holešovic a Prahy-Hostivaře)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků Os od Prahy-Holešovic a Prahy-Hostivaře",
+                  "from_directions": [
+                    "Prahy-Holešovic",
+                    "Prahy-Hostivaře"
+                  ],
+                  "categories": [
+                    "Os"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "praha-liben-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os",
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os od Prahy-Holešovic a Prahy-Hostivaře",
+              "from_directions": [
+                "Prahy-Holešovic",
+                "Prahy-Hostivaře"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha hl.n. a Praha Masarykovo nádraží",
+        "direction": "Praha hl.n. a Praha Masarykovo nádraží",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-liben-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha-Holešovice",
+        "direction": "Praha-Holešovice",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-liben-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky ČD",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "praha-liben-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky linky S49 (sudé 28100-28166)",
+              "lines": [
+                "S49"
+              ],
+              "ranges": [
+                {
+                  "from": 28100,
+                  "to": 28166,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky linky S1 od Úval",
+              "lines": [
+                "S1"
+              ],
+              "from_directions": [
+                "Úval"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "0",
+                "kind": "minutes",
+                "minutes": 0
+              },
+              "saturday": {
+                "raw": "0",
+                "kind": "minutes",
+                "minutes": 0
+              },
+              "sunday_holiday": {
+                "raw": "0",
+                "kind": "minutes",
+                "minutes": 0
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "vlaky linky S49 (sudé 28100-28166)"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "vlaky linky S1 od Úval"
+              },
+              "workday": {
+                "before": null,
+                "after": "0"
+              },
+              "saturday": {
+                "before": null,
+                "after": "0"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "0"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Praha-Hostivař",
+        "direction": "Praha-Hostivař",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-liben-007",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "všechny vlaky"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "N"
+              },
+              "saturday": {
+                "before": null,
+                "after": "N"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "N"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Cikner",
+    "Zpracoval za RJ: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Ing. Vladimír Coubal"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 7,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky S49 Praha-Hostivař – Roztoky u Prahy, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}

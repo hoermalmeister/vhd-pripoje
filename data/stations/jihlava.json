@@ -1,0 +1,934 @@
+{
+  "schema_version": "1.0",
+  "id": "jihlava",
+  "station": "Jihlava",
+  "sheet_name": "Jihlava",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na jiné nástupiště – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup na jiné nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Havlíčkův Brod",
+        "direction": "Havlíčkův Brod",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "jihlava-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "960",
+              "trains": [
+                960
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 1932)",
+              "all": true,
+              "except": [
+                {
+                  "text": "1932",
+                  "trains": [
+                    1932
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "jihlava-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "960",
+              "trains": [
+                960
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1932",
+              "trains": [
+                1932
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "jihlava-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "1902",
+              "trains": [
+                1902
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 1930)",
+              "all": true,
+              "except": [
+                {
+                  "text": "1930",
+                  "trains": [
+                    1930
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1902",
+              "trains": [
+                1902
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1930",
+              "trains": [
+                1930
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "1912, 1916",
+              "trains": [
+                1912,
+                1916
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1920",
+              "trains": [
+                1920
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "jihlava-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "28308",
+              "trains": [
+                28308
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kostelec u Jihlavy",
+        "direction": "Kostelec u Jihlavy",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "jihlava-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 652)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "652",
+                  "trains": [
+                    652
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "jihlava-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "652",
+              "trains": [
+                652
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "jihlava-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma 1917)",
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1917",
+                  "trains": [
+                    1917
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "jihlava-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1917",
+              "trains": [
+                1917
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "22822",
+              "trains": [
+                22822
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Okříšky",
+        "direction": "Okříšky",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "jihlava-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma Os ze směru Jihlava město)",
+              "all": true,
+              "except": [
+                {
+                  "text": "Os ze směru Jihlava město",
+                  "from_directions": [
+                    "Jihlava město"
+                  ],
+                  "categories": [
+                    "Os"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "jihlava-013",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky Os ze směru Jihlava město",
+              "from_directions": [
+                "Jihlava město"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "jihlava-014",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "663",
+              "trains": [
+                663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8372)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8372",
+                  "trains": [
+                    8372
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          },
+          {
+            "id": "jihlava-015",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "663",
+              "trains": [
+                663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8372",
+              "trains": [
+                8372
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "jihlava-016",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "665",
+              "trains": [
+                665
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1923",
+              "trains": [
+                1923
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "17",
+                "kind": "minutes",
+                "minutes": 17
+              },
+              "saturday": {
+                "raw": "17",
+                "kind": "minutes",
+                "minutes": 17
+              },
+              "sunday_holiday": {
+                "raw": "17",
+                "kind": "minutes",
+                "minutes": 17
+              }
+            }
+          },
+          {
+            "id": "jihlava-017",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "665",
+              "trains": [
+                665
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8374",
+              "trains": [
+                8374
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "jihlava-018",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "jihlava-019",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "1931",
+              "trains": [
+                1931
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "961",
+              "trains": [
+                961
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-020",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "1931",
+              "trains": [
+                1931
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18406",
+              "trains": [
+                18406
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-021",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "1933",
+              "trains": [
+                1933
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 1919)",
+              "all": true,
+              "except": [
+                {
+                  "text": "1919",
+                  "trains": [
+                    1919
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-022",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "1933",
+              "trains": [
+                1933
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1919",
+              "trains": [
+                1919
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "jihlava-023",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "14845",
+              "trains": [
+                14845
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Martin Novák",
+    "Za Správu železnic odsouhlasil: Josef Kolba"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 23,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

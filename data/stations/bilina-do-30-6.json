@@ -1,0 +1,620 @@
+{
+  "schema_version": "1.0",
+  "id": "bilina-do-30-6",
+  "station": "Bílina",
+  "sheet_name": "Bílina do 30.6.",
+  "variant": "do 30.6.",
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": "2026-06-30"
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky RJÚK jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJÚK"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
+        "direction": "Praha",
+        "direction_detail": "přes Ústí nad Labem hl.n.",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "bilina-do-30-6-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "16505, 16509, 16517, 16521, 16525",
+              "trains": [
+                16505,
+                16509,
+                16517,
+                16521,
+                16525
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "sunday_holiday": {
+                "raw": "",
+                "kind": "empty"
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "16507, 16511, 16513, 16515, 16519, 16521, 16523, 16527, 16529",
+              "trains": [
+                16507,
+                16511,
+                16513,
+                16515,
+                16519,
+                16521,
+                16523,
+                16527,
+                16529
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "6543, 6551, 6559,",
+              "trains": [
+                6543,
+                6551,
+                6559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "6539, 6547, 6555, 6563",
+              "trains": [
+                6539,
+                6547,
+                6555,
+                6563
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "6567",
+              "trains": [
+                6567
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6801 – 6831",
+              "ranges": [
+                {
+                  "from": 6801,
+                  "to": 6831,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6835",
+              "trains": [
+                6835
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "16531",
+              "trains": [
+                16531
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Chomutov",
+        "direction": "Chomutov",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "bilina-do-30-6-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "604",
+              "trains": [
+                604
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1942, 1946, 1948, 1950",
+              "trains": [
+                1942,
+                1946,
+                1948,
+                1950
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "6546, 6554, 6562",
+              "trains": [
+                6546,
+                6554,
+                6562
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-012",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6542, 6550, 6558",
+              "trains": [
+                6542,
+                6550,
+                6558
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-013",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6566",
+              "trains": [
+                6566
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-014",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6800 – 6830",
+              "ranges": [
+                {
+                  "from": 6800,
+                  "to": 6830,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "bilina-do-30-6-015",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6846",
+              "trains": [
+                6846
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Josef Růžička"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 15,
+    "rules_cancelled": 0,
+    "review_items": 2
+  },
+  "review": [
+    {
+      "where": "bilina-do-30-6-001",
+      "row": 16,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "where": "bilina-do-30-6-001",
+      "row": 16,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

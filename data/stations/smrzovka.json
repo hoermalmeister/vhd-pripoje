@@ -1,0 +1,482 @@
+{
+  "schema_version": "1.0",
+  "id": "smrzovka",
+  "station": "Smržovka",
+  "sheet_name": "Smržovka ",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 1 minuta.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 1,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Liberec",
+        "direction": "Liberec",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "smrzovka-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "2603 – 2629, 2657 – 2667, 2677",
+              "trains": [
+                2677
+              ],
+              "ranges": [
+                {
+                  "from": 2603,
+                  "to": 2629,
+                  "parity": null
+                },
+                {
+                  "from": 2657,
+                  "to": 2667,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "smrzovka-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "2633",
+              "trains": [
+                2633
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26343",
+              "trains": [
+                26343
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "smrzovka-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "2651, 2653",
+              "trains": [
+                2651,
+                2653
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "smrzovka-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "2673",
+              "trains": [
+                2673
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26355",
+              "trains": [
+                26355
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Tanvald",
+        "direction": "Tanvald",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "smrzovka-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "2602 – 2640, 2650, 2652, 2660 – 2670",
+              "trains": [
+                2650,
+                2652
+              ],
+              "ranges": [
+                {
+                  "from": 2602,
+                  "to": 2640,
+                  "parity": null
+                },
+                {
+                  "from": 2660,
+                  "to": 2670,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "smrzovka-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "2656, 2658",
+              "trains": [
+                2656,
+                2658
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Josefův Důl",
+        "direction": "Josefův Důl",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "smrzovka-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "26300, 26302, 26304 – 26310, 26320",
+              "trains": [
+                26300,
+                26302,
+                26320
+              ],
+              "ranges": [
+                {
+                  "from": 26304,
+                  "to": 26310,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "smrzovka-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "26312 – 26318, 26322 – 26338",
+              "ranges": [
+                {
+                  "from": 26312,
+                  "to": 26318,
+                  "parity": null
+                },
+                {
+                  "from": 26322,
+                  "to": 26338,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "smrzovka-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "26340",
+              "trains": [
+                26340
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "smrzovka-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "26342",
+              "trains": [
+                26342
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "Čekací doby lze prodloužit s ohledem na dopravu na trati 036."
+    }
+  },
+  "notes": [
+    {
+      "text": "Ve dnech 22.XII. – 2. I. platí čekací doby jako v ⑥ a †.",
+      "after_section": "vlaky směr Josefův Důl"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Za Správu železnic odsouhlasil: Mikuláš Lipnický"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

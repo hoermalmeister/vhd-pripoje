@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0",
+  "id": "postrelmov",
+  "station": "Postřelmov",
+  "sheet_name": "Postřelmov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky opačného směru jsou Os 3741 a Sp 1413, Os 3709 a Sp 1415.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "opposite_direction_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 3741
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1413
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 3709
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1415
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Hanušovice",
+        "direction": "Hanušovice",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "postrelmov-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "1413",
+              "trains": [
+                1413
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3741",
+              "trains": [
+                3741
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "postrelmov-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "1415",
+              "trains": [
+                1415
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3709",
+              "trains": [
+                3709
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Šumperk",
+        "direction": "Šumperk",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "postrelmov-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 3,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "id": "nejdek",
+  "station": "Nejdek",
+  "sheet_name": "Nejdek",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Karlovy Vary",
+        "direction": "Karlovy Vary",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nejdek-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "19853",
+              "trains": [
+                19853
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19805",
+              "trains": [
+                19805
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "nejdek-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "19857",
+              "trains": [
+                19857
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19817",
+              "trains": [
+                19817
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nové Hamry",
+        "direction": "Nové Hamry",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "nejdek-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "19824",
+              "trains": [
+                19824
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19854",
+              "trains": [
+                19854
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 3,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

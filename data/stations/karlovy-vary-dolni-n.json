@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "id": "karlovy-vary-dolni-n",
+  "station": "Karlovy Vary dolní nádraží",
+  "sheet_name": "Karlovy Vary dolní n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojnými vlaky od vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Karlovy Vary",
+        "direction": "Karlovy Vary",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karlovy-vary-dolni-n-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "19804",
+              "trains": [
+                19804
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7100",
+              "trains": [
+                7100
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "19806",
+              "trains": [
+                19806
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7102, 26902",
+              "trains": [
+                7102,
+                26902
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "19810",
+              "trains": [
+                19810
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7106",
+              "trains": [
+                7106
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "19814",
+              "trains": [
+                19814
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7128",
+              "trains": [
+                7128
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "19816",
+              "trains": [
+                19816
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7110, 26910",
+              "trains": [
+                7110,
+                26910
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-006",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "19836",
+              "trains": [
+                19836
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7126",
+              "trains": [
+                7126
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "19838",
+              "trains": [
+                19838
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7108",
+              "trains": [
+                7108
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-008",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "19842",
+              "trains": [
+                19842
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7130",
+              "trains": [
+                7130
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-009",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "19858",
+              "trains": [
+                19858
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7114",
+              "trains": [
+                7114
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bečov nad Teplou (opatření dopravce GWTR)",
+        "direction": "Bečov nad Teplou",
+        "direction_detail": "opatření dopravce GWTR",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "karlovy-vary-dolni-n-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "7103",
+              "trains": [
+                7103
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19805.19853",
+              "trains": [
+                19805,
+                19853
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "7105",
+              "trains": [
+                7105
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19807",
+              "trains": [
+                19807
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "karlovy-vary-dolni-n-012",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "7129",
+              "trains": [
+                7129
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "19815",
+              "trains": [
+                19815
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Zpracoval za GWTR: Jaroslav Šeda",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 12,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

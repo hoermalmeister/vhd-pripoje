@@ -1,0 +1,524 @@
+{
+  "schema_version": "1.0",
+  "id": "vranany",
+  "station": "Vraňany",
+  "sheet_name": "Vraňany",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Kralupy nad Vltavou",
+        "direction": "Kralupy nad Vltavou",
+        "source_row": 14,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Roudnice nad Labem",
+        "direction": "Roudnice nad Labem",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vranany-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "6902 – 6920",
+              "ranges": [
+                {
+                  "from": 6902,
+                  "to": 6920,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Straškov",
+        "direction": "Straškov",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vranany-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "12302, 12314",
+              "trains": [
+                12302,
+                12314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6914, 6934",
+              "trains": [
+                6914,
+                6934
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "vranany-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "12304, 12316",
+              "trains": [
+                12304,
+                12316
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6922, 6952",
+              "trains": [
+                6922,
+                6952
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "vranany-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "12320",
+              "trains": [
+                12320
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6903",
+              "trains": [
+                6903
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "12322",
+              "trains": [
+                12322
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6905",
+              "trains": [
+                6905
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "12332",
+              "trains": [
+                12332
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6907",
+              "trains": [
+                6907
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "12334",
+              "trains": [
+                12334
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6906",
+              "trains": [
+                6906
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "12336",
+              "trains": [
+                12336
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6912",
+              "trains": [
+                6912
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "12338",
+              "trains": [
+                12338
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6916",
+              "trains": [
+                6916
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "12342",
+              "trains": [
+                12342
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6920",
+              "trains": [
+                6920
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "vranany-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "12344",
+              "trains": [
+                12344
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6988",
+              "trains": [
+                6988
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lužec nad Vltavou",
+        "direction": "Lužec nad Vltavou",
+        "source_row": 29,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "vranany-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "9674, 9676, 9678",
+              "trains": [
+                9674,
+                9676,
+                9678
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "50",
+                "kind": "minutes",
+                "minutes": 50
+              },
+              "saturday": {
+                "raw": "50",
+                "kind": "minutes",
+                "minutes": 50
+              },
+              "sunday_holiday": {
+                "raw": "50",
+                "kind": "minutes",
+                "minutes": 50
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "9674, 9676, 9678"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "50"
+              },
+              "saturday": {
+                "before": null,
+                "after": "50"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "50"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Vaněk, Jana Hinterholzingerová",
+    "Za Správu železnic odsouhlasil: Tomáš Kubát"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 12,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

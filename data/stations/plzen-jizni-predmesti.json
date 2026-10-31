@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "id": "plzen-jizni-predmesti",
+  "station": "Plzeň-Jižní Předměstí",
+  "sheet_name": "Plzeň-Jižní Předměstí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ve směru Domažlice jsou přípojnými na vlaky ze směru Cheb, které zde pravidelně zastavují.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ve směru Cheb, které zde pravidelně zastavují, jsou přípojnými na vlaky ze směru Domažlice.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Odchylně od výše uvedeného není přípoj mezi vlaky: Ex 515 a Os 7444.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-jizni-predmesti-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "504, 512",
+              "trains": [
+                504,
+                512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "plzen-jizni-predmesti-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "554",
+              "trains": [
+                554
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "plzen-jizni-predmesti-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os Plzeňské linky (8950 - 8962, vyjma 8952)",
+              "categories": [
+                "Os"
+              ],
+              "ranges": [
+                {
+                  "from": 8950,
+                  "to": 8962,
+                  "parity": null
+                }
+              ],
+              "except": [
+                {
+                  "trains": [
+                    8952
+                  ]
+                }
+              ],
+              "note": "Plzeňské linky",
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "plzen-jizni-predmesti-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "8952",
+              "trains": [
+                8952
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7407",
+              "trains": [
+                7407
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Domažlice",
+        "direction": "Domažlice",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plzen-jizni-predmesti-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "7400 – 7422, 7442, 7444, 7452",
+              "trains": [
+                7442,
+                7444,
+                7452
+              ],
+              "ranges": [
+                {
+                  "from": 7400,
+                  "to": 7422,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "plzen-jizni-predmesti-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "7430",
+              "trains": [
+                7430
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "plzen-jizni-predmesti-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "7432",
+              "trains": [
+                7432
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Za Správu železnic odsouhlasil: Tomáš Hampl"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 7,
+    "rules_cancelled": 0,
+    "review_items": 3
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ve směru Domažlice jsou přípojnými na vlaky ze směru Cheb, které zde pravidelně zastavují."
+    },
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ve směru Cheb, které zde pravidelně zastavují, jsou přípojnými na vlaky ze směru Domažlice."
+    },
+    {
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Odchylně od výše uvedeného není přípoj mezi vlaky: Ex 515 a Os 7444."
+    }
+  ]
+}

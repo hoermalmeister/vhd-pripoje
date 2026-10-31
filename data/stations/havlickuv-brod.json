@@ -1,0 +1,1235 @@
+{
+  "schema_version": "1.0",
+  "id": "havlickuv-brod",
+  "station": "Havlíčkův Brod",
+  "sheet_name": "Havlíčkův Brod",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na jiné nástupiště – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup na jiné nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 5373 a Os 24854",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 5373
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 24854
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Humpolec",
+        "direction": "Humpolec",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "havlickuv-brod-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 15952, 15966)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "15952, 15966",
+                  "trains": [
+                    15952,
+                    15966
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "15952",
+              "trains": [
+                15952
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "15966",
+              "trains": [
+                15966
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Hlinsko v Čechách",
+        "direction": "Hlinsko v Čechách",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "havlickuv-brod-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma 5316, 5372)",
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "5316, 5372",
+                  "trains": [
+                    5316,
+                    5372
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "5316",
+              "trains": [
+                5316
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "5372",
+              "trains": [
+                5372
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jihlava",
+        "direction": "Jihlava",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "havlickuv-brod-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "961",
+              "trains": [
+                961
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1919",
+              "trains": [
+                1919
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1921",
+              "trains": [
+                1921
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "saturday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              },
+              "sunday_holiday": {
+                "raw": "12",
+                "kind": "minutes",
+                "minutes": 12
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "1923",
+              "trains": [
+                1923
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "17",
+                "kind": "minutes",
+                "minutes": 17
+              },
+              "saturday": {
+                "raw": "17",
+                "kind": "minutes",
+                "minutes": 17
+              },
+              "sunday_holiday": {
+                "raw": "17",
+                "kind": "minutes",
+                "minutes": 17
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma 8377, 28305)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "8377, 28305",
+                  "trains": [
+                    8377,
+                    28305
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "8377",
+              "trains": [
+                8377
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "28305",
+              "trains": [
+                28305
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Světlá nad Sázavou",
+        "direction": "Světlá nad Sázavou",
+        "source_row": 32,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "havlickuv-brod-014",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "972",
+              "trains": [
+                972
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-015",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "976",
+              "trains": [
+                976
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-016",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "5902, 5922",
+              "trains": [
+                5902,
+                5922
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-017",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "5904, 5918",
+              "trains": [
+                5904,
+                5918
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-018",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "5908",
+              "trains": [
+                5908
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8348",
+              "trains": [
+                8348
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-019",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "5916",
+              "trains": [
+                5916
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8354",
+              "trains": [
+                8354
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-020",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "5926",
+              "trains": [
+                5926
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8372)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8372",
+                  "trains": [
+                    8372
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-021",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "5926",
+              "trains": [
+                5926
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8372",
+              "trains": [
+                8372
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-022",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "5934",
+              "trains": [
+                5934
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-023",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os série 248xx (vyjma 24852, 24854)",
+              "categories": [
+                "Os"
+              ],
+              "patterns": [
+                "248xx"
+              ],
+              "except": [
+                {
+                  "trains": [
+                    24852,
+                    24854
+                  ]
+                }
+              ],
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-024",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "24852",
+              "trains": [
+                24852
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8740",
+              "trains": [
+                8740
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-025",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "24854",
+              "trains": [
+                24854
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8742)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8742",
+                  "trains": [
+                    8742
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-026",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "24854",
+              "trains": [
+                24854
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8742",
+              "trains": [
+                8742
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Žďár nad Sázavou",
+        "direction": "Žďár nad Sázavou",
+        "source_row": 46,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "havlickuv-brod-027",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "963",
+              "trains": [
+                963
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-028",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "987",
+              "trains": [
+                987
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-029",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "991",
+              "trains": [
+                991
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-030",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "997",
+              "trains": [
+                997
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "havlickuv-brod-031",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "8763",
+              "trains": [
+                8763
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Martin Novák",
+    "Za Správu železnic odsouhlasil: Libor Čížek"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 31,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

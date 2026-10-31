@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "id": "usti-nad-labem-strekov",
+  "station": "Ústí nad Labem-Střekov",
+  "sheet_name": "Ústí nad Labem-Střekov",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Lysá nad Labem",
+        "direction": "Lysá nad Labem",
+        "source_row": 15,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ústí nad Labem západ",
+        "direction": "Ústí nad Labem západ",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-labem-strekov-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "6408",
+              "trains": [
+                6408
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15481",
+              "trains": [
+                15481
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-strekov-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "6410",
+              "trains": [
+                6410
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15483",
+              "trains": [
+                15483
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-strekov-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "6412",
+              "trains": [
+                6412
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15485",
+              "trains": [
+                15485
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-strekov-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6414",
+              "trains": [
+                6414
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "15487",
+              "trains": [
+                15487
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Za Správu železnic odsouhlasil: Jan Kosterhon"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

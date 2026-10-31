@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0",
+  "id": "zastavka-u-brna",
+  "station": "Zastávka u Brna",
+  "sheet_name": "Zastávka u Brna",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na jiné nástupiště – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup na jiné nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Jihlava",
+        "direction": "Jihlava",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zastavka-u-brna-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "22800",
+              "trains": [
+                22800
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4858",
+              "trains": [
+                4858
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "22808, 22814, 22820, 22822, 22828, 22832",
+              "trains": [
+                22808,
+                22814,
+                22820,
+                22822,
+                22828,
+                22832
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "22810, 22816, 22818, 22840, 22842",
+              "trains": [
+                22810,
+                22816,
+                22818,
+                22840,
+                22842
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "22826, 22830",
+              "trains": [
+                22826,
+                22830
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-005",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "22834",
+              "trains": [
+                22834
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno hl.n.",
+        "direction": "Brno hl.n.",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "zastavka-u-brna-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "2081, 2083, 2085, 2087, 2091, 2093, 2095, 2097",
+              "trains": [
+                2081,
+                2083,
+                2085,
+                2087,
+                2091,
+                2093,
+                2095,
+                2097
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "4801, 4805",
+              "trains": [
+                4801,
+                4805
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "4809, 4811, 4813, 4817, 4829, 4833, 4835, 4859",
+              "trains": [
+                4809,
+                4811,
+                4813,
+                4817,
+                4829,
+                4833,
+                4835,
+                4859
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "4841, 4843, 4845, 4847, 4851, 4853, 4855, 4857",
+              "trains": [
+                4841,
+                4843,
+                4845,
+                4847,
+                4851,
+                4853,
+                4855,
+                4857
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "zastavka-u-brna-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "4861, 4863, 4865, 4867, 4871, 4873, 4875, 4877",
+              "trains": [
+                4861,
+                4863,
+                4865,
+                4867,
+                4871,
+                4873,
+                4875,
+                4877
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Ing. Luděk Krátký"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

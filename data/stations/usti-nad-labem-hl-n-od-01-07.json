@@ -1,0 +1,1790 @@
+{
+  "schema_version": "1.0",
+  "id": "usti-nad-labem-hl-n-od-01-07",
+  "station": "Ústí nad Labem hl.n.",
+  "sheet_name": "Ústí nad Labem hl.n. od 01.07.",
+  "variant": "od 1.7.",
+  "validity": {
+    "text": "JŘ 2026, platí od 01. července 2026",
+    "valid_from": "2026-07-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na sousední nástupiště – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup na sousední nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 4,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky považované za přípoj: R 670 a Sp 1940, R 671 a Ex 620, Os 6970 a Os 6841, Ex 600 a Os 6848 + Os 6968, Sp 1943 a R 673, Os 6942 a Os 6856, Os 16903 (RJ ÚK) a Os 6871, Os 16907 (RJ ÚK) a Os 6964, Os 5275 a Os 6925, 5277 a Os 6923, Os 6565 (RJ ÚK) a Os 6962",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 670
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1940
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 671
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 620
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 6970
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6841
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 600
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6848
+              },
+              {
+                "category": "Os",
+                "number": 6968
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1943
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 673
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 6942
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6856
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 16903
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6871
+              }
+            ],
+            "note_a": "RJ ÚK"
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 16907
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6964
+              }
+            ],
+            "note_a": "RJ ÚK"
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 5275
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6925
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 6565
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 6962
+              }
+            ],
+            "note_a": "RJ ÚK"
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "unparsed": "5277 Os 6923",
+        "parse": "partial"
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků ČD a RJÚK, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky AŽD jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "AŽD"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky ČD a RJÚK jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Vlaky linky R23 dopravce RJ jsou přípojem od vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RJ"
+        ],
+        "waiting_lines": [
+          "R23"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-001",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-002",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "619",
+              "trains": [
+                619
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-003",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1971",
+              "trains": [
+                1971
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-004",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6901",
+              "trains": [
+                6901
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6853",
+              "trains": [
+                6853
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-005",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6905 – 6925",
+              "ranges": [
+                {
+                  "from": 6905,
+                  "to": 6925,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-006",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6941",
+              "trains": [
+                6941
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-007",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6943, 6945, 6947",
+              "trains": [
+                6943,
+                6945,
+                6947
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-008",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6951, 6953",
+              "trains": [
+                6951,
+                6953
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "saturday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              },
+              "sunday_holiday": {
+                "raw": "13",
+                "kind": "minutes",
+                "minutes": 13
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-009",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "6959",
+              "trains": [
+                6959
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6567, 6568, 6835, 6844",
+              "trains": [
+                6567,
+                6568,
+                6835,
+                6844
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "6560, 6835",
+                "after": "6567, 6568, 6835, 6844"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Děčín hl.n.",
+        "direction": "Děčín hl.n.",
+        "source_row": 34,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-010",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 670)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "670",
+                  "trains": [
+                    670
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-011",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "670",
+              "trains": [
+                670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-012",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "5274, 5276",
+              "trains": [
+                5274,
+                5276
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "607",
+              "trains": [
+                607
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-013",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "6539, 6547, 6555",
+              "trains": [
+                6539,
+                6547,
+                6555
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-014",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "6541, 6545, 6549, 6553, 6557, 6561",
+              "trains": [
+                6541,
+                6545,
+                6549,
+                6553,
+                6557,
+                6561
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-015",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "6543, 6551, 6559",
+              "trains": [
+                6543,
+                6551,
+                6559
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-016",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "6563",
+              "trains": [
+                6563
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-017",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "6569",
+              "trains": [
+                6569
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-018",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "6801 – 6829",
+              "ranges": [
+                {
+                  "from": 6801,
+                  "to": 6829,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-019",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "6831",
+              "trains": [
+                6831
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-020",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "6841",
+              "trains": [
+                6841
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6970",
+              "trains": [
+                6970
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-021",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "6871",
+              "trains": [
+                6871
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16903 (RJ ÚK)",
+              "trains": [
+                16903
+              ],
+              "operators": [
+                "RJÚK"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-022",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "6962",
+              "trains": [
+                6962
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6565 (RJ ÚK)",
+              "trains": [
+                6565
+              ],
+              "operators": [
+                "RJÚK"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-023",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "6964",
+              "trains": [
+                6964
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "16907 (RJ ÚK)",
+              "trains": [
+                16907
+              ],
+              "operators": [
+                "RJÚK"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-024",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "6968",
+              "trains": [
+                6968
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "600",
+              "trains": [
+                600
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Most",
+        "direction": "Most",
+        "source_row": 51,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-025",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 606)",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "606",
+                  "trains": [
+                    606
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-026",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "606",
+              "trains": [
+                606
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-027",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp (vyjma 1940)",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1940",
+                  "trains": [
+                    1940
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-028",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "1940",
+              "trains": [
+                1940
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "670",
+              "trains": [
+                670
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-029",
+            "source_row": 56,
+            "status": "active",
+            "waiting_train": {
+              "text": "6540, 6544, 6548, 6552, 6556, 6560, 6564,",
+              "trains": [
+                6540,
+                6544,
+                6548,
+                6552,
+                6556,
+                6560,
+                6564
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-030",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "6542, 6550, 6558",
+              "trains": [
+                6542,
+                6550,
+                6558
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-031",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "6546, 6554, 6562",
+              "trains": [
+                6546,
+                6554,
+                6562
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-032",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "6566",
+              "trains": [
+                6566
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-033",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "6800 – 6830",
+              "ranges": [
+                {
+                  "from": 6800,
+                  "to": 6830,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-034",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "6848",
+              "trains": [
+                6848
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "600, 6926",
+              "trains": [
+                600,
+                6926
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-035",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "6852",
+              "trains": [
+                6852
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6940",
+              "trains": [
+                6940
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-036",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "6852",
+              "trains": [
+                6852
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6941",
+              "trains": [
+                6941
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-037",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "6856",
+              "trains": [
+                6856
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6942",
+              "trains": [
+                6942
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-038",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "16528",
+              "trains": [
+                16528
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-039",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "16910, 16912",
+              "trains": [
+                16910,
+                16912
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ústí nad Labem-Střekov",
+        "direction": "Ústí nad Labem-Střekov",
+        "source_row": 67,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-labem-hl-n-od-01-07-040",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "1301, 1303, 1305, 1307, 1309, 1311, 1313, 1315",
+              "trains": [
+                1301,
+                1303,
+                1305,
+                1307,
+                1309,
+                1311,
+                1313,
+                1315
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Praha"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za AŽD: Jiří Pavlík",
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Zpracoval za RJ a RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Miroslav Zubík"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 40,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky považované za přípoj: R 670 a Sp 1940, R 671 a Ex 620, Os 6970 a Os 6841, Ex 600 a Os 6848 + Os 6968, Sp 1943 a R 673, Os 6942 a Os 6856, Os 16903 (RJ ÚK) a Os 6871, Os 16907 (RJ ÚK) a Os 6964, Os 5275 a Os 6925, 5277 a Os 6923, Os 6565 (RJ ÚK) a Os 6962"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "id": "moravske-budejovice",
+  "station": "Moravské Budějovice",
+  "sheet_name": "Moravské Budějovice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RCAS, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "RCAS"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467.",
+      "change": {
+        "before": null,
+        "after": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+      },
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "RCAS"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false,
+        "additional_text": "Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467.",
+        "parse": "partial"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Okříšky",
+        "direction": "Okříšky",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravske-budejovice-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky ČD",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky RCAS",
+              "operators": [
+                "RCAS"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Znojmo",
+        "direction": "Znojmo",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravske-budejovice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky ČD",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny vlaky RCAS",
+              "operators": [
+                "RCAS"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Martin Novák",
+    "Zpracoval za RCAS: Tadeáš Richter",
+    "Za Správu železnic odsouhlasil: Ing. Radek Pavelka"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 2,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    }
+  ]
+}

@@ -1,0 +1,851 @@
+{
+  "schema_version": "1.0",
+  "id": "ceska-lipa-hl-n",
+  "station": "Česká Lípa hl.n.",
+  "sheet_name": "Česká Lípa hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup na stejném nástupišti – 1,5 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup na stejném nástupišti – 1,"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm 1 a nástupištěm 2 a obráceně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupištěm 1 a nástupištěm 2 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm 2 a nástupištěm 3 a obráceně – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi nástupištěm 2 a nástupištěm 3 a obráceně"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm 1 a nástupištěm 3 a obráceně – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupištěm 1 a nástupištěm 3 a obráceně"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a DLB, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "DLB"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky DLB CZ jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky KŽC jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "KŽC"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bakov nad Jizerou",
+        "direction": "Bakov nad Jizerou",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-lipa-hl-n-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "6001 – 6017",
+              "ranges": [
+                {
+                  "from": 6001,
+                  "to": 6017,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "6631",
+              "trains": [
+                6631
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6019",
+              "trains": [
+                6019
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "6631",
+              "trains": [
+                6631
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1336, 6115",
+              "trains": [
+                1336,
+                6115
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky ARR (vyjma 16001)",
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "16001",
+                  "trains": [
+                    16001
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "16001",
+              "trains": [
+                16001
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Děčín hl.n.",
+        "direction": "Děčín hl.n.",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-lipa-hl-n-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "ARR 1336",
+              "trains": [
+                1336
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "6614",
+              "trains": [
+                6614
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6616",
+              "trains": [
+                6616
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6628",
+              "trains": [
+                6628
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "—",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jedlová",
+        "direction": "Jedlová",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-lipa-hl-n-010",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky ARR (vyjma 1190, 1210, 1192 a 1212)",
+              "operators": [
+                "ARR"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "1190, 1210, 1192 a 1212",
+                  "trains": [
+                    1190,
+                    1210,
+                    1192,
+                    1212
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-011",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "ARR 1190, 1210, 1192 a 1212",
+              "trains": [
+                1190,
+                1210,
+                1192,
+                1212
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-012",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "6002 – 6016",
+              "ranges": [
+                {
+                  "from": 6002,
+                  "to": 6016,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-013",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "6018",
+              "trains": [
+                6018
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-014",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "6022",
+              "trains": [
+                6022
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Liberec",
+        "direction": "Liberec",
+        "source_row": 37,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-lipa-hl-n-015",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "6601 – 6619",
+              "ranges": [
+                {
+                  "from": 6601,
+                  "to": 6619,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-016",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "6629",
+              "trains": [
+                6629
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6019",
+              "trains": [
+                6019
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-017",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "6629",
+              "trains": [
+                6629
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6631",
+              "trains": [
+                6631
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "ceska-lipa-hl-n-018",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "6629",
+              "trains": [
+                6629
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1192, 1212, 6115",
+              "trains": [
+                1192,
+                1212,
+                6115
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lovosice",
+        "direction": "Lovosice",
+        "source_row": 42,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ceska-lipa-hl-n-019",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "6118",
+              "trains": [
+                6118
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Mikuláš Lipnický"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 19,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

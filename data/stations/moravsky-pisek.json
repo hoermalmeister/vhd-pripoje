@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0",
+  "id": "moravsky-pisek",
+  "station": "Moravský Písek",
+  "sheet_name": "Moravský Písek",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 15. prosince 2025",
+    "valid_from": "2025-12-15",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi kolejemi s úrovňovým nástupištěm – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup mezi kolejemi s úrovňovým nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi úrovňovým a ostrovním nástupištěm – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi úrovňovým a ostrovním nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Břeclav",
+        "direction": "Břeclav",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravsky-pisek-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "802",
+              "trains": [
+                802
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24157",
+              "trains": [
+                24157
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "4222",
+              "trains": [
+                4222
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24159",
+              "trains": [
+                24159
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Přerov",
+        "direction": "Přerov",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravsky-pisek-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "815",
+              "trains": [
+                815
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24157",
+              "trains": [
+                24157
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "4223",
+              "trains": [
+                4223
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24161",
+              "trains": [
+                24161
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bzenec",
+        "direction": "Bzenec",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "moravsky-pisek-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "24114",
+              "trains": [
+                24114
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "814",
+              "trains": [
+                814
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "24120",
+              "trains": [
+                24120
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "812",
+              "trains": [
+                812
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "24126",
+              "trains": [
+                24126
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "810",
+              "trains": [
+                810
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "24152",
+              "trains": [
+                24152
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "804, 813",
+              "trains": [
+                804,
+                813
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "24158",
+              "trains": [
+                24158
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "802, 815",
+              "trains": [
+                802,
+                815
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "moravsky-pisek-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "24162",
+              "trains": [
+                24162
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Dalibor Horák"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

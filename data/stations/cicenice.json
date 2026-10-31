@@ -1,0 +1,565 @@
+{
+  "schema_version": "1.0",
+  "id": "cicenice",
+  "station": "Číčenice",
+  "sheet_name": "Číčenice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi 1. a 2. nástupištěm (koleje č. 6 a 10) a nástupištěm směr České Budějovice a Plzeň – 3 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi 1. a 2. nástupištěm (koleje č. 6 a 10) a nástupištěm směr České Budějovice a Plzeň"
+      }
+    },
+    {
+      "text": "Jinak platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků dopravce ČD a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojem vlaků dopravce ARR, ČD a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": [
+          "ARR",
+          "ČD"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Základní čekací doba dopravce GWTR na vlaky dopravce ČD a ARR je 10 minut.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cicenice-001",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ČD (vyjma 637, 639)",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "637, 639",
+                  "trains": [
+                    637,
+                    639
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cicenice-002",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "637",
+              "trains": [
+                637
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18035",
+              "trains": [
+                18035
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cicenice-003",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "639",
+              "trains": [
+                639
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18037",
+              "trains": [
+                18037
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "cicenice-004",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "1981",
+              "trains": [
+                1981
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18021",
+              "trains": [
+                18021
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cicenice-005",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "1983",
+              "trains": [
+                1983
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18021",
+              "trains": [
+                18021
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cicenice-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "8005",
+              "trains": [
+                8005
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18001",
+              "trains": [
+                18001
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cicenice-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "8007, 8009, 8011, 8013, 8015, 8019, 8035",
+              "trains": [
+                8007,
+                8009,
+                8011,
+                8013,
+                8015,
+                8019,
+                8035
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky GWTR",
+              "operators": [
+                "GWTR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Protivín",
+        "direction": "Protivín",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cicenice-008",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R dopravce ČD (vyjma 624)",
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "624",
+                  "trains": [
+                    624
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky GWTR",
+              "operators": [
+                "GWTR"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "cicenice-009",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "624",
+              "trains": [
+                624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18015",
+              "trains": [
+                18015
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "cicenice-010",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "8038",
+              "trains": [
+                8038
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "18037",
+              "trains": [
+                18037
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Volary",
+        "direction": "Volary",
+        "source_row": 31,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cicenice-011",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "18026",
+              "trains": [
+                18026
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8038, 639 (V)",
+              "trains": [
+                8038,
+                639
+              ],
+              "note": "V podkladu doplněno '(V)' – nejasný význam, ověřit.",
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ARR: Bc. Jan Zeman",
+    "Zpracovala za ČD: Ing. Věra Jeseničová",
+    "Zpracoval za GWTR: Ing. Filip Lorenz",
+    "Za Správu železnic odsouhlasil: Aleš Baldík"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 11,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Základní čekací doba dopravce GWTR na vlaky dopravce ČD a ARR je 10 minut."
+    }
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "schema_version": "1.0",
+  "id": "tabor",
+  "station": "Tábor",
+  "sheet_name": "Tábor",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 1. června 2026",
+    "valid_from": "2026-06-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba na/z nástupiště směr Bechyně – 7 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 7,
+        "applies_to": "Přestupní doba na/z nástupiště směr Bechyně"
+      }
+    },
+    {
+      "text": "Jinak platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Ex 500 a Os 8221, Sp 2471 a Os 8205, Os 8429 a Os 8232, Os 8455 a Ex 539.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 500
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8221
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 2471
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8205
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8429
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8232
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8455
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 539
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 18407 a Ex 540, Os 8431 a Os 8315.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 18407
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Ex",
+                "number": 540
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8431
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8315
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tabor-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma 330) a 732",
+              "any_of": [
+                {
+                  "all": true,
+                  "categories": [
+                    "Ex"
+                  ],
+                  "except": [
+                    {
+                      "trains": [
+                        330
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "trains": [
+                    732
+                  ]
+                }
+              ],
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "tabor-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "330",
+              "trains": [
+                330
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "tabor-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "700",
+              "trains": [
+                700
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "28435",
+              "trains": [
+                28435
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tabor-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "702",
+              "trains": [
+                702
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tabor-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "2470, 2472, 2474, 2478, 2482",
+              "trains": [
+                2470,
+                2472,
+                2474,
+                2478,
+                2482
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "tabor-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "8250 – 8276, 8284",
+              "trains": [
+                8284
+              ],
+              "ranges": [
+                {
+                  "from": 8250,
+                  "to": 8276,
+                  "parity": null
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "8250 – 8276, 8284"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "7"
+              },
+              "saturday": {
+                "before": null,
+                "after": "7"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "7"
+              }
+            }
+          },
+          {
+            "id": "tabor-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "8282",
+              "trains": [
+                8282
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tabor-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "tabor-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "733",
+              "trains": [
+                733
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "28435",
+              "trains": [
+                28435
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tabor-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "735",
+              "trains": [
+                735
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8417",
+              "trains": [
+                8417
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "tabor-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "8207, 8213, 8215, 8217",
+              "trains": [
+                8207,
+                8213,
+                8215,
+                8217
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tabor-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "8209, 8211, 8219",
+              "trains": [
+                8209,
+                8211,
+                8219
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tabor-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "8221",
+              "trains": [
+                8221
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "tabor-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "8237",
+              "trains": [
+                8237
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ražice",
+        "direction": "Ražice",
+        "source_row": 33,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tabor-015",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp (vyjma 2062)",
+              "categories": [
+                "Sp"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "2062",
+                  "trains": [
+                    2062
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "tabor-016",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "2062",
+              "trains": [
+                2062
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "tabor-017",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "8402, 8404, 8406, 8408, 8410, 8412, 8414, 8416, 8436",
+              "trains": [
+                8402,
+                8404,
+                8406,
+                8408,
+                8410,
+                8412,
+                8414,
+                8416,
+                8436
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "tabor-018",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "8418, 8424, 8426, 8428, 8430, 8432, 8434",
+              "trains": [
+                8418,
+                8424,
+                8426,
+                8428,
+                8430,
+                8432,
+                8434
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "tabor-019",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "8422",
+              "trains": [
+                8422
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "tabor-020",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "8452",
+              "trains": [
+                8452
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bechyně",
+        "direction": "Bechyně",
+        "source_row": 40,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tabor-021",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Os (vyjma 28434)",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "28434",
+                  "trains": [
+                    28434
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "tabor-022",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "28434",
+              "trains": [
+                28434
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Pelhřimov – Horní Cerekev",
+        "direction": "Pelhřimov – Horní Cerekev",
+        "source_row": 43,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "tabor-023",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "18418, 18422",
+              "trains": [
+                18418,
+                18422
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "tabor-024",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "18470",
+              "trains": [
+                18470
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 8455)",
+              "all": true,
+              "except": [
+                {
+                  "text": "8455",
+                  "trains": [
+                    8455
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "tabor-025",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "18470",
+              "trains": [
+                18470
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8455",
+              "trains": [
+                8455
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Za Správu železnic odsouhlasil: Jiří Vaňák"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 25,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

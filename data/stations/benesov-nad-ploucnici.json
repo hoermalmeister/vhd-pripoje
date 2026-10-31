@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "id": "benesov-nad-ploucnici",
+  "station": "Benešov nad Ploučnicí",
+  "sheet_name": "Benešov nad Ploučnicí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Vlaky DLB CZ jsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "DLB"
+        ],
+        "connecting_operators": "others",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Děčín",
+        "direction": "Děčín",
+        "source_row": 16,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Lípa",
+        "direction": "Česká Lípa",
+        "source_row": 18,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rumburk",
+        "direction": "Rumburk",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "benesov-nad-ploucnici-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "2400",
+              "trains": [
+                2400
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1323, 1322",
+              "trains": [
+                1323,
+                1322
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "benesov-nad-ploucnici-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "2402",
+              "trains": [
+                2402
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1325, 1324",
+              "trains": [
+                1325,
+                1324
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "benesov-nad-ploucnici-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "2404",
+              "trains": [
+                2404
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1327, 1326",
+              "trains": [
+                1327,
+                1326
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "benesov-nad-ploucnici-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "2406",
+              "trains": [
+                2406
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1329, 1328",
+              "trains": [
+                1329,
+                1328
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "benesov-nad-ploucnici-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "2408",
+              "trains": [
+                2408
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1331, 1330",
+              "trains": [
+                1331,
+                1330
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "benesov-nad-ploucnici-006",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "6668",
+              "trains": [
+                6668
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6616",
+              "trains": [
+                6616
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "V případě zpoždění vlaku linky L2 Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) ze směru Česká Lípa a dřívější jízdy vlaků Os 6655 (Os 6657, Os 6659, Os 6661, Os 6663, Os 6665) linky U8 ze směru Rumburk, zajistěte zastavení vlaků Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) na zastávkách Malá Veleň a Březiny u Děčína pro nástup a výstup cestujících.",
+      "after_section": "vlaky směr Rumburk"
+    },
+    {
+      "text": "V případě zpoždění vlaku linky L2 Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) ze směru Česká Lípa a dřívější jízdy vlaků Os 6655 (Os 6657, Os 6659, Os 6661, Os 6663, Os 6665) linky U8 ze směru Rumburk, zajistěte zastavení vlaků Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) na zastávkách Malá Veleň a Březiny u Děčína pro nástup a výstup cestujících.",
+      "after_section": "vlaky směr Rumburk"
+    },
+    {
+      "text": "V případě zpoždění vlaku linky L2 Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) ze směru Česká Lípa a dřívější jízdy vlaků Os 6655 (Os 6657, Os 6659, Os 6661, Os 6663, Os 6665) linky U8 ze směru Rumburk, zajistěte zastavení vlaků Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) na zastávkách Malá Veleň a Březiny u Děčína pro nástup a výstup cestujících.",
+      "after_section": "vlaky směr Rumburk"
+    },
+    {
+      "text": "V případě zpoždění vlaku linky L2 Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) ze směru Česká Lípa a dřívější jízdy vlaků Os 6655 (Os 6657, Os 6659, Os 6661, Os 6663, Os 6665) linky U8 ze směru Rumburk, zajistěte zastavení vlaků Os 6602 (Os 6604, Os 6606, Os 6608, Os 6610, Os 6612) na zastávkách Malá Veleň a Březiny u Děčína pro nástup a výstup cestujících.",
+      "after_section": "vlaky směr Rumburk"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Za Správu železnic odsouhlasil: Jan Kosterhon"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 6,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

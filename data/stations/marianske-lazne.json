@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0",
+  "id": "marianske-lazne",
+  "station": "Mariánské Lázně",
+  "sheet_name": "Mariánské Lázně",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojnými vlaky od vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Zpracoval za GWTR: Jaroslav Šeda - upraveno Šeda 30.10.2025",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "marianske-lazne-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "504",
+              "trains": [
+                504
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7113",
+              "trains": [
+                7113
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "512",
+              "trains": [
+                512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "554",
+              "trains": [
+                554
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7115",
+              "trains": [
+                7115
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Planá u Mariánských Lázní",
+        "direction": "Planá u Mariánských Lázní",
+        "source_row": 19,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "marianske-lazne-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "565",
+              "trains": [
+                565
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7111",
+              "trains": [
+                7111
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1661",
+              "trains": [
+                1661
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7119, 26911",
+              "trains": [
+                7119,
+                26911
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "1663",
+              "trains": [
+                1663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7101",
+              "trains": [
+                7101
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bečov nad Teplou (opatření dopravce GWTR)",
+        "direction": "Bečov nad Teplou",
+        "direction_detail": "opatření dopravce GWTR",
+        "source_row": 23,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "marianske-lazne-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "7102",
+              "trains": [
+                7102
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1660, 1680",
+              "trains": [
+                1660,
+                1680
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "7104",
+              "trains": [
+                7104
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7304.7375",
+              "trains": [
+                7304,
+                7375
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-009",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "7112",
+              "trains": [
+                7112
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "558, 565",
+              "trains": [
+                558,
+                565
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "marianske-lazne-010",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "7114",
+              "trains": [
+                7114
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "504",
+              "trains": [
+                504
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Zpracoval za GWTR: Jaroslav Šeda",
+    "Za Správu železnic odsouhlasil: Jana Bělohlávková"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Zpracoval za GWTR: Jaroslav Šeda - upraveno Šeda 30.10.2025"
+    }
+  ]
+}

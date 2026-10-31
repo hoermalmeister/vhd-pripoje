@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "id": "trsnice",
+  "station": "Tršnice",
+  "sheet_name": "Tršnice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Karlovy Vary",
+        "direction": "Karlovy Vary",
+        "source_row": 14,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Luby u Chebu",
+        "direction": "Luby u Chebu",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trsnice-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "27214",
+              "trains": [
+                27214
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7004, 7006",
+              "trains": [
+                7004,
+                7006
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "trsnice-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "27220",
+              "trains": [
+                27220
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7310",
+              "trains": [
+                7310
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 2,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

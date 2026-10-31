@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0",
+  "id": "plana-u-marianskych-lazni",
+  "station": "Planá u Mariánských Lázní",
+  "sheet_name": "Planá u Mariánských Lázní",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 7252 a Os 7303.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 7252
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 7303
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Tachov (Domažlice)",
+        "direction": "Tachov",
+        "direction_detail": "Domažlice",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plana-u-marianskych-lazni-001",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "7255",
+              "trains": [
+                7255
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "503, 568*",
+              "footnote_marks": [
+                "*"
+              ],
+              "trains": [
+                503,
+                568
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plana-u-marianskych-lazni-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "7277",
+              "trains": [
+                7277
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "565",
+              "trains": [
+                565
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          },
+          {
+            "id": "plana-u-marianskych-lazni-003",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "7279",
+              "trains": [
+                7279
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "saturday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              },
+              "sunday_holiday": {
+                "raw": "40",
+                "kind": "minutes",
+                "minutes": 40
+              }
+            }
+          },
+          {
+            "id": "plana-u-marianskych-lazni-004",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "7281",
+              "trains": [
+                7281
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "554",
+              "trains": [
+                554
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň",
+        "direction": "Plzeň",
+        "source_row": 20,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Cheb",
+        "direction": "Cheb",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "plana-u-marianskych-lazni-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "plana-u-marianskych-lazni-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "1670",
+              "trains": [
+                1670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "7274",
+              "trains": [
+                7274
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "v ⚒ od 1. VII. do 31. VIII. a 22., 23., 29. – 31. XII., 2., 30. I., 16. – 20. II., 2. IV., 29., 30. X. čeká základní čekací dobu"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Pavel Kojzar",
+    "Za Správu železnic odsouhlasil: Jana Bělohlávková"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 6,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

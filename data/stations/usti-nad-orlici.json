@@ -1,0 +1,540 @@
+{
+  "schema_version": "1.0",
+  "id": "usti-nad-orlici",
+  "station": "Ústí nad Orlicí",
+  "sheet_name": "Ústí nad Orlicí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 2 (kolej 2 a 4a) – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 2 (kolej 2 a 4a)"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 2 (kolej 4) – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 2 (kolej 4)"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 3 – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 3"
+      }
+    },
+    {
+      "text": "Přestup na nástupišti č. 2 mezi všemi kolejemi – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na nástupišti č. 2 mezi všemi kolejemi"
+      }
+    },
+    {
+      "text": "Přestup z nástupiště č. 2 (kolej č. 2 a 4a) na nástupiště č. 3 – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup z nástupiště č. 2 (kolej č. 2 a 4a) na nástupiště č. 3"
+      }
+    },
+    {
+      "text": "Přestup z nástupiště č. 2 (kolej č. 4) na nástupiště č. 3 – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup z nástupiště č. 2 (kolej č. 4) na nástupiště č. 3"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce LET, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "LET"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky LET jsou přípojem vlaků dopravců ČD a LE, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "LET"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "LE"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky LET čekají na vlaky LE maximálně 5 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "LET",
+        "connecting_operators": [
+          "LE"
+        ],
+        "minutes": 5
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Pardubice hl.n.",
+        "direction": "Pardubice hl.n.",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-orlici-001",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex, R, Sp a Os dopravce ČD",
+              "categories": [
+                "Ex",
+                "R",
+                "Sp",
+                "Os"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-orlici-002",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex, R, Sp a Os dopravce ČD",
+              "categories": [
+                "Ex",
+                "R",
+                "Sp",
+                "Os"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Letohrad",
+        "direction": "Letohrad",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "usti-nad-orlici-003",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex",
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky kategorie R od Brna",
+              "from_directions": [
+                "Brna"
+              ],
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-004",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "7141, 7143, 7147",
+              "trains": [
+                7141,
+                7143,
+                7147
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-005",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "7145",
+              "trains": [
+                7145
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-006",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "7159",
+              "trains": [
+                7159
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-007",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "7151, 7157, 7165, 7167",
+              "trains": [
+                7151,
+                7157,
+                7165,
+                7167
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-008",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "7177, 7181",
+              "trains": [
+                7177,
+                7181
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-009",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "20501",
+              "trains": [
+                20501
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "usti-nad-orlici-010",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny ostatní vlaky LET",
+              "operators": [
+                "LET"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (ČD)",
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Aleš Rotrekl",
+    "Zpracoval za LET: Hynek Richter",
+    "Za Správu železnic odsouhlasil: Ing. Miroslav Šneider"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 10,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

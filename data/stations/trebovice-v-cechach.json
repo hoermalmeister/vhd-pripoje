@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "id": "trebovice-v-cechach",
+  "station": "Třebovice v Čechách",
+  "sheet_name": "Třebovice v Čechách",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 9. února 2026",
+    "valid_from": "2026-02-09",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Česká Třebová",
+        "direction": "Česká Třebová",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trebovice-v-cechach-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "12700",
+              "trains": [
+                12700
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24750",
+              "trains": [
+                24750
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lanškroun",
+        "direction": "Lanškroun",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trebovice-v-cechach-002",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "12715",
+              "trains": [
+                12715
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24758",
+              "trains": [
+                24758
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "12715"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "24758"
+              },
+              "workday": {
+                "before": null,
+                "after": "5"
+              },
+              "saturday": {
+                "before": null,
+                "after": "-"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "-"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Moravská Třebová",
+        "direction": "Moravská Třebová",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "trebovice-v-cechach-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "24783",
+              "trains": [
+                24783
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12755",
+              "trains": [
+                12755
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "trebovice-v-cechach-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "24785",
+              "trains": [
+                24785
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12757",
+              "trains": [
+                12757
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Aleš Rotrekl",
+    "Za Správu železnic odsouhlasil: Ing. Miroslav Šneider"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

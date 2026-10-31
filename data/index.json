@@ -1,0 +1,4732 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "document": "Přípoje mezi vlaky osobní dopravy 2026",
+    "issuer": "Správa železnic, státní organizace",
+    "timetable": "JŘ 2026",
+    "valid_from": "2025-12-14",
+    "valid_to": "2026-12-12",
+    "source_file": "pripoje.xlsx",
+    "generated_at": "2026-10-31T13:46:04"
+  },
+  "station_count": 256,
+  "file_count": 265,
+  "stations": [
+    {
+      "station": "Aš",
+      "slug": "as",
+      "files": [
+        {
+          "id": "as",
+          "station": "Aš",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/as.json",
+          "sections": 3,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bakov nad Jizerou",
+      "slug": "bakov-nad-jizerou",
+      "files": [
+        {
+          "id": "bakov-nad-jizerou",
+          "station": "Bakov nad Jizerou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/bakov-nad-jizerou.json",
+          "sections": 3,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Benešov nad Ploučnicí",
+      "slug": "benesov-nad-ploucnici",
+      "files": [
+        {
+          "id": "benesov-nad-ploucnici",
+          "station": "Benešov nad Ploučnicí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/benesov-nad-ploucnici.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Benešov u Prahy",
+      "slug": "benesov-u-prahy",
+      "files": [
+        {
+          "id": "benesov-u-prahy",
+          "station": "Benešov u Prahy",
+          "variant": null,
+          "valid_from": "2026-01-12",
+          "valid_to": null,
+          "file": "stations/benesov-u-prahy.json",
+          "sections": 3,
+          "rules_active": 15,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Beroun",
+      "slug": "beroun",
+      "files": [
+        {
+          "id": "beroun",
+          "station": "Beroun",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/beroun.json",
+          "sections": 4,
+          "rules_active": 17,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Beroun-Závodí",
+      "slug": "beroun-zavodi",
+      "files": [
+        {
+          "id": "beroun-zavodi",
+          "station": "Beroun-Závodí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/beroun-zavodi.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bečov nad Teplou",
+      "slug": "becov-nad-teplou",
+      "files": [
+        {
+          "id": "becov-nad-teplou",
+          "station": "Bečov nad Teplou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/becov-nad-teplou.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Blansko",
+      "slug": "blansko",
+      "files": [
+        {
+          "id": "blansko",
+          "station": "Blansko",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/blansko.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Blatno u Jesenice",
+      "slug": "blatno-u-jesenice",
+      "files": [
+        {
+          "id": "blatno-u-jesenice",
+          "station": "Blatno u Jesenice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/blatno-u-jesenice.json",
+          "sections": 4,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Blatná",
+      "slug": "blatna",
+      "files": [
+        {
+          "id": "blatna",
+          "station": "Blatná",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/blatna.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bludov",
+      "slug": "bludov",
+      "files": [
+        {
+          "id": "bludov",
+          "station": "Bludov",
+          "variant": null,
+          "valid_from": "2026-04-06",
+          "valid_to": null,
+          "file": "stations/bludov.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bohumín",
+      "slug": "bohumin",
+      "files": [
+        {
+          "id": "bohumin",
+          "station": "Bohumín",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/bohumin.json",
+          "sections": 3,
+          "rules_active": 32,
+          "rules_cancelled": 0,
+          "review_items": 4
+        }
+      ]
+    },
+    {
+      "station": "Bojkovice",
+      "slug": "bojkovice",
+      "files": [
+        {
+          "id": "bojkovice",
+          "station": "Bojkovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/bojkovice.json",
+          "sections": 2,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Brno hl. n.",
+      "slug": "brno-hl-n",
+      "files": [
+        {
+          "id": "brno-hl-n",
+          "station": "Brno hl. n.",
+          "variant": null,
+          "valid_from": "2026-03-30",
+          "valid_to": null,
+          "file": "stations/brno-hl-n.json",
+          "sections": 7,
+          "rules_active": 63,
+          "rules_cancelled": 0,
+          "review_items": 10
+        }
+      ]
+    },
+    {
+      "station": "Brno-Horní Heršpice",
+      "slug": "brno-horni-herspice",
+      "files": [
+        {
+          "id": "brno-horni-herspice",
+          "station": "Brno-Horní Heršpice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/brno-horni-herspice.json",
+          "sections": 4,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Brno-Královo Pole",
+      "slug": "brno-kralovo-pole",
+      "files": [
+        {
+          "id": "brno-kralovo-pole",
+          "station": "Brno-Královo Pole",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/brno-kralovo-pole.json",
+          "sections": 2,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Brno-Slatina",
+      "slug": "brno-slatina",
+      "files": [
+        {
+          "id": "brno-slatina",
+          "station": "Brno-Slatina",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/brno-slatina.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Brno-Židenice",
+      "slug": "brno-zidenice",
+      "files": [
+        {
+          "id": "brno-zidenice",
+          "station": "Brno-Židenice",
+          "variant": null,
+          "valid_from": "2026-04-20",
+          "valid_to": null,
+          "file": "stations/brno-zidenice.json",
+          "sections": 4,
+          "rules_active": 18,
+          "rules_cancelled": 2,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bruntál",
+      "slug": "bruntal",
+      "files": [
+        {
+          "id": "bruntal",
+          "station": "Bruntál",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/bruntal.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bylnice",
+      "slug": "bylnice",
+      "files": [
+        {
+          "id": "bylnice",
+          "station": "Bylnice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/bylnice.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bzenec",
+      "slug": "bzenec",
+      "files": [
+        {
+          "id": "bzenec",
+          "station": "Bzenec",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/bzenec.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Bílina",
+      "slug": "bilina",
+      "files": [
+        {
+          "id": "bilina-do-30-6",
+          "station": "Bílina",
+          "variant": "do 30.6.",
+          "valid_from": "2025-12-14",
+          "valid_to": "2026-06-30",
+          "file": "stations/bilina-do-30-6.json",
+          "sections": 2,
+          "rules_active": 15,
+          "rules_cancelled": 0,
+          "review_items": 2
+        },
+        {
+          "id": "bilina-od-1-7",
+          "station": "Bílina",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/bilina-od-1-7.json",
+          "sections": 2,
+          "rules_active": 16,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Břeclav",
+      "slug": "breclav",
+      "files": [
+        {
+          "id": "breclav",
+          "station": "Břeclav",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/breclav.json",
+          "sections": 6,
+          "rules_active": 60,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Březnice",
+      "slug": "breznice",
+      "files": [
+        {
+          "id": "breznice",
+          "station": "Březnice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/breznice.json",
+          "sections": 4,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Cheb",
+      "slug": "cheb",
+      "files": [
+        {
+          "id": "cheb",
+          "station": "Cheb",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/cheb.json",
+          "sections": 4,
+          "rules_active": 23,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Chlumec nad Cidlinou",
+      "slug": "chlumec-nad-cidlinou",
+      "files": [
+        {
+          "id": "chlumec-nad-cidlinou",
+          "station": "Chlumec nad Cidlinou",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/chlumec-nad-cidlinou.json",
+          "sections": 4,
+          "rules_active": 18,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Choceň",
+      "slug": "chocen",
+      "files": [
+        {
+          "id": "chocen",
+          "station": "Choceň",
+          "variant": null,
+          "valid_from": "2026-08-16",
+          "valid_to": null,
+          "file": "stations/chocen.json",
+          "sections": 4,
+          "rules_active": 20,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Chodov",
+      "slug": "chodov",
+      "files": [
+        {
+          "id": "chodov",
+          "station": "Chodov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/chodov.json",
+          "sections": 4,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Chomutov",
+      "slug": "chomutov",
+      "files": [
+        {
+          "id": "chomutov-do-30-06",
+          "station": "Chomutov",
+          "variant": "do 30.6.",
+          "valid_from": "2025-12-14",
+          "valid_to": "2026-06-30",
+          "file": "stations/chomutov-do-30-06.json",
+          "sections": 5,
+          "rules_active": 32,
+          "rules_cancelled": 0,
+          "review_items": 1
+        },
+        {
+          "id": "chomutov-od-01-07",
+          "station": "Chomutov",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/chomutov-od-01-07.json",
+          "sections": 5,
+          "rules_active": 35,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Dačice",
+      "slug": "dacice",
+      "files": [
+        {
+          "id": "dacice",
+          "station": "Dačice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/dacice.json",
+          "sections": 2,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Dolní Bousov",
+      "slug": "dolni-bousov",
+      "files": [
+        {
+          "id": "dolni-bousov",
+          "station": "Dolní Bousov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/dolni-bousov.json",
+          "sections": 1,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Dolní Lipka",
+      "slug": "dolni-lipka",
+      "files": [
+        {
+          "id": "dolni-lipka",
+          "station": "Dolní Lipka",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/dolni-lipka.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Domažlice",
+      "slug": "domazlice",
+      "files": [
+        {
+          "id": "domazlice",
+          "station": "Domažlice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/domazlice.json",
+          "sections": 4,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Doudleby nad Orlicí",
+      "slug": "doudleby-nad-orlici",
+      "files": [
+        {
+          "id": "doudleby-nad-orlici",
+          "station": "Doudleby nad Orlicí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/doudleby-nad-orlici.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Dětmarovice",
+      "slug": "detmarovice",
+      "files": [
+        {
+          "id": "detmarovice",
+          "station": "Dětmarovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/detmarovice.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Děčín hl.n.",
+      "slug": "decin-hl-n",
+      "files": [
+        {
+          "id": "decin-hl-n-do-30-06",
+          "station": "Děčín hl.n.",
+          "variant": "do 30.6.",
+          "valid_from": "2025-12-14",
+          "valid_to": "2026-06-30",
+          "file": "stations/decin-hl-n-do-30-06.json",
+          "sections": 4,
+          "rules_active": 22,
+          "rules_cancelled": 0,
+          "review_items": 0
+        },
+        {
+          "id": "decin-hl-n-od-01-07",
+          "station": "Děčín hl.n.",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/decin-hl-n-od-01-07.json",
+          "sections": 4,
+          "rules_active": 22,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Děčín východ",
+      "slug": "decin-vychod",
+      "files": [
+        {
+          "id": "decin-vychod",
+          "station": "Děčín východ",
+          "variant": null,
+          "valid_from": "2026-01-12",
+          "valid_to": null,
+          "file": "stations/decin-vychod.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ejpovice",
+      "slug": "ejpovice",
+      "files": [
+        {
+          "id": "ejpovice",
+          "station": "Ejpovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ejpovice.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Františkovy Lázně",
+      "slug": "frantiskovy-lazne",
+      "files": [
+        {
+          "id": "frantiskovy-lazne",
+          "station": "Františkovy Lázně",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/frantiskovy-lazne.json",
+          "sections": 2,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Frýdek-Místek",
+      "slug": "frydek-mistek",
+      "files": [
+        {
+          "id": "frydek-mistek",
+          "station": "Frýdek-Místek",
+          "variant": null,
+          "valid_from": "2026-09-21",
+          "valid_to": null,
+          "file": "stations/frydek-mistek.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Frýdlant nad Ostravicí",
+      "slug": "frydlant-nad-ostravici",
+      "files": [
+        {
+          "id": "frydlant-nad-ostravici",
+          "station": "Frýdlant nad Ostravicí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/frydlant-nad-ostravici.json",
+          "sections": 3,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hanušovice",
+      "slug": "hanusovice",
+      "files": [
+        {
+          "id": "hanusovice",
+          "station": "Hanušovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/hanusovice.json",
+          "sections": 4,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Havlíčkův Brod",
+      "slug": "havlickuv-brod",
+      "files": [
+        {
+          "id": "havlickuv-brod",
+          "station": "Havlíčkův Brod",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/havlickuv-brod.json",
+          "sections": 5,
+          "rules_active": 31,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hodonín",
+      "slug": "hodonin",
+      "files": [
+        {
+          "id": "hodonin",
+          "station": "Hodonín",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/hodonin.json",
+          "sections": 4,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Horažďovice předměstí",
+      "slug": "horazdovice-predmesti",
+      "files": [
+        {
+          "id": "horazdovice-predmesti",
+          "station": "Horažďovice předměstí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/horazdovice-predmesti.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Horní Lideč",
+      "slug": "horni-lidec",
+      "files": [
+        {
+          "id": "horni-lidec",
+          "station": "Horní Lideč",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/horni-lidec.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hostivice",
+      "slug": "hostivice",
+      "files": [
+        {
+          "id": "hostivice",
+          "station": "Hostivice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/hostivice.json",
+          "sections": 5,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hradec Králové hl.n.",
+      "slug": "hradec-kralove-hl-n",
+      "files": [
+        {
+          "id": "hradec-kralove-hl-n",
+          "station": "Hradec Králové hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/hradec-kralove-hl-n.json",
+          "sections": 5,
+          "rules_active": 46,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hranice na Moravě",
+      "slug": "hranice-na-morave",
+      "files": [
+        {
+          "id": "hranice-na-morave",
+          "station": "Hranice na Moravě",
+          "variant": null,
+          "valid_from": "2026-09-07",
+          "valid_to": null,
+          "file": "stations/hranice-na-morave.json",
+          "sections": 3,
+          "rules_active": 16,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Hrušovany nad Jevišovkou-Šanov",
+      "slug": "hrusovany-nad-jevisovkou-sanov",
+      "files": [
+        {
+          "id": "hrusovany-nad-jevisovkou-sanov",
+          "station": "Hrušovany nad Jevišovkou-Šanov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/hrusovany-nad-jevisovkou-sanov.json",
+          "sections": 1,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hrušovany u Brna",
+      "slug": "hrusovany-u-brna",
+      "files": [
+        {
+          "id": "hrusovany-u-brna",
+          "station": "Hrušovany u Brna",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/hrusovany-u-brna.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Hulín",
+      "slug": "hulin",
+      "files": [
+        {
+          "id": "hulin",
+          "station": "Hulín",
+          "variant": null,
+          "valid_from": "2026-09-14",
+          "valid_to": null,
+          "file": "stations/hulin.json",
+          "sections": 4,
+          "rules_active": 18,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Janovice nad Úhlavou",
+      "slug": "janovice-nad-uhlavou",
+      "files": [
+        {
+          "id": "janovice-nad-uhlavou",
+          "station": "Janovice nad Úhlavou",
+          "variant": null,
+          "valid_from": "2026-06-01",
+          "valid_to": null,
+          "file": "stations/janovice-nad-uhlavou.json",
+          "sections": 2,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Jaroměř",
+      "slug": "jaromer",
+      "files": [
+        {
+          "id": "jaromer",
+          "station": "Jaroměř",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/jaromer.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Jedlová",
+      "slug": "jedlova",
+      "files": [
+        {
+          "id": "jedlova",
+          "station": "Jedlová",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/jedlova.json",
+          "sections": 3,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Jeseník",
+      "slug": "jesenik",
+      "files": [
+        {
+          "id": "jesenik",
+          "station": "Jeseník",
+          "variant": null,
+          "valid_from": "2026-08-17",
+          "valid_to": null,
+          "file": "stations/jesenik.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Jihlava",
+      "slug": "jihlava",
+      "files": [
+        {
+          "id": "jihlava",
+          "station": "Jihlava",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/jihlava.json",
+          "sections": 3,
+          "rules_active": 23,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Jihlava město",
+      "slug": "jihlava-mesto",
+      "files": [
+        {
+          "id": "jihlava-mesto",
+          "station": "Jihlava město",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/jihlava-mesto.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Jičín",
+      "slug": "jicin",
+      "files": [
+        {
+          "id": "jicin",
+          "station": "Jičín",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/jicin.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kadaň",
+      "slug": "kadan",
+      "files": [
+        {
+          "id": "kadan",
+          "station": "Kadaň",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/kadan.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Kadaň-Prunéřov",
+      "slug": "kadan-prunerov",
+      "files": [
+        {
+          "id": "kadan-prunerov-do-30-06",
+          "station": "Kadaň-Prunéřov",
+          "variant": "do 30.6.",
+          "valid_from": "2025-12-14",
+          "valid_to": "2026-06-30",
+          "file": "stations/kadan-prunerov-do-30-06.json",
+          "sections": 3,
+          "rules_active": 51,
+          "rules_cancelled": 0,
+          "review_items": 1
+        },
+        {
+          "id": "kadan-prunerov-od-01-07",
+          "station": "Kadaň-Prunéřov",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/kadan-prunerov-od-01-07.json",
+          "sections": 3,
+          "rules_active": 41,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Karlovy Vary",
+      "slug": "karlovy-vary",
+      "files": [
+        {
+          "id": "karlovy-vary",
+          "station": "Karlovy Vary",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/karlovy-vary.json",
+          "sections": 4,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Karlovy Vary dolní nádraží",
+      "slug": "karlovy-vary-dolni-nadrazi",
+      "files": [
+        {
+          "id": "karlovy-vary-dolni-n",
+          "station": "Karlovy Vary dolní nádraží",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/karlovy-vary-dolni-n.json",
+          "sections": 2,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Karviná hl.n.",
+      "slug": "karvina-hl-n",
+      "files": [
+        {
+          "id": "karvina-hl-n",
+          "station": "Karviná hl.n.",
+          "variant": null,
+          "valid_from": "2026-02-09",
+          "valid_to": null,
+          "file": "stations/karvina-hl-n.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kladno",
+      "slug": "kladno",
+      "files": [
+        {
+          "id": "kladno",
+          "station": "Kladno",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kladno.json",
+          "sections": 3,
+          "rules_active": 15,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Klatovy",
+      "slug": "klatovy",
+      "files": [
+        {
+          "id": "klatovy",
+          "station": "Klatovy",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/klatovy.json",
+          "sections": 4,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Klášterec nad Ohří",
+      "slug": "klasterec-nad-ohri",
+      "files": [
+        {
+          "id": "klasterec-nad-ohri",
+          "station": "Klášterec nad Ohří",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/klasterec-nad-ohri.json",
+          "sections": 2,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kojetín",
+      "slug": "kojetin",
+      "files": [
+        {
+          "id": "kojetin",
+          "station": "Kojetín",
+          "variant": null,
+          "valid_from": "2026-07-20",
+          "valid_to": null,
+          "file": "stations/kojetin.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Kolín",
+      "slug": "kolin",
+      "files": [
+        {
+          "id": "kolin",
+          "station": "Kolín",
+          "variant": null,
+          "valid_from": "2026-06-16",
+          "valid_to": null,
+          "file": "stations/kolin.json",
+          "sections": 5,
+          "rules_active": 37,
+          "rules_cancelled": 1,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Kopidlno",
+      "slug": "kopidlno",
+      "files": [
+        {
+          "id": "kopidlno",
+          "station": "Kopidlno",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kopidlno.json",
+          "sections": 1,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kostelec na Hané",
+      "slug": "kostelec-na-hane",
+      "files": [
+        {
+          "id": "kostelec-na-hane",
+          "station": "Kostelec na Hané",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kostelec-na-hane.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kostelec u Jihlavy",
+      "slug": "kostelec-u-jihlavy",
+      "files": [
+        {
+          "id": "kostelec-u-jihlavy",
+          "station": "Kostelec u Jihlavy",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kostelec-u-jihlavy.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kralupy nad Vltavou",
+      "slug": "kralupy-nad-vltavou",
+      "files": [
+        {
+          "id": "kralupy-nad-vltavou",
+          "station": "Kralupy nad Vltavou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kralupy-nad-vltavou.json",
+          "sections": 6,
+          "rules_active": 23,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Kralupy nad Vltavou předměstí",
+      "slug": "kralupy-nad-vltavou-predmesti",
+      "files": [
+        {
+          "id": "kralupy-nad-vltavou-predmesti",
+          "station": "Kralupy nad Vltavou předměstí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kralupy-nad-vltavou-predmesti.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Krnov",
+      "slug": "krnov",
+      "files": [
+        {
+          "id": "krnov",
+          "station": "Krnov",
+          "variant": null,
+          "valid_from": "2026-02-09",
+          "valid_to": null,
+          "file": "stations/krnov.json",
+          "sections": 3,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kroměříž",
+      "slug": "kromeriz",
+      "files": [
+        {
+          "id": "kromeriz",
+          "station": "Kroměříž",
+          "variant": null,
+          "valid_from": "2025-12-15",
+          "valid_to": null,
+          "file": "stations/kromeriz.json",
+          "sections": 3,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Krásná Lípa",
+      "slug": "krasna-lipa",
+      "files": [
+        {
+          "id": "krasna-lipa",
+          "station": "Krásná Lípa",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/krasna-lipa.json",
+          "sections": 3,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Krásný Jez",
+      "slug": "krasny-jez",
+      "files": [
+        {
+          "id": "krasny-jez",
+          "station": "Krásný Jez",
+          "variant": null,
+          "valid_from": "2026-06-01",
+          "valid_to": null,
+          "file": "stations/krasny-jez.json",
+          "sections": 1,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kunovice",
+      "slug": "kunovice",
+      "files": [
+        {
+          "id": "kunovice",
+          "station": "Kunovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kunovice.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kunčice nad Labem",
+      "slug": "kuncice-nad-labem",
+      "files": [
+        {
+          "id": "kuncice-nad-labem",
+          "station": "Kunčice nad Labem",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kuncice-nad-labem.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Kutná Hora hl.n.",
+      "slug": "kutna-hora-hl-n",
+      "files": [
+        {
+          "id": "kutna-hora-hl-n",
+          "station": "Kutná Hora hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/kutna-hora-hl-n.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Křižanov",
+      "slug": "krizanov",
+      "files": [
+        {
+          "id": "krizanov",
+          "station": "Křižanov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/krizanov.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ledečko",
+      "slug": "ledecko",
+      "files": [
+        {
+          "id": "ledecko",
+          "station": "Ledečko",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ledecko.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Letohrad",
+      "slug": "letohrad",
+      "files": [
+        {
+          "id": "letohrad",
+          "station": "Letohrad",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/letohrad.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Letovice",
+      "slug": "letovice",
+      "files": [
+        {
+          "id": "letovice",
+          "station": "Letovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/letovice.json",
+          "sections": 2,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Liberec",
+      "slug": "liberec",
+      "files": [
+        {
+          "id": "liberec",
+          "station": "Liberec",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/liberec.json",
+          "sections": 5,
+          "rules_active": 23,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Libochovice",
+      "slug": "libochovice",
+      "files": [
+        {
+          "id": "libochovice",
+          "station": "Libochovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/libochovice.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Lichkov",
+      "slug": "lichkov",
+      "files": [
+        {
+          "id": "lichkov",
+          "station": "Lichkov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/lichkov.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Lipová Lázně",
+      "slug": "lipova-lazne",
+      "files": [
+        {
+          "id": "lipova-lazne",
+          "station": "Lipová Lázně",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/lipova-lazne.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Litovel předměstí",
+      "slug": "litovel-predmesti",
+      "files": [
+        {
+          "id": "litovel-predmesti",
+          "station": "Litovel předměstí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/litovel-predmesti.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Lochovice",
+      "slug": "lochovice",
+      "files": [
+        {
+          "id": "lochovice",
+          "station": "Lochovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/lochovice.json",
+          "sections": 2,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Louka u Litvínova",
+      "slug": "louka-u-litvinova",
+      "files": [
+        {
+          "id": "louka-u-litvinova",
+          "station": "Louka u Litvínova",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/louka-u-litvinova.json",
+          "sections": 2,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Louny",
+      "slug": "louny",
+      "files": [
+        {
+          "id": "louny",
+          "station": "Louny",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/louny.json",
+          "sections": 4,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Lovosice",
+      "slug": "lovosice",
+      "files": [
+        {
+          "id": "lovosice",
+          "station": "Lovosice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/lovosice.json",
+          "sections": 5,
+          "rules_active": 20,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Lužná u Rakovníka",
+      "slug": "luzna-u-rakovnika",
+      "files": [
+        {
+          "id": "luzna-u-rakovnika",
+          "station": "Lužná u Rakovníka",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/luzna-u-rakovnika.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Lysá nad Labem",
+      "slug": "lysa-nad-labem",
+      "files": [
+        {
+          "id": "lysa-nad-labem",
+          "station": "Lysá nad Labem",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/lysa-nad-labem.json",
+          "sections": 4,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Mariánské Lázně",
+      "slug": "marianske-lazne",
+      "files": [
+        {
+          "id": "marianske-lazne",
+          "station": "Mariánské Lázně",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/marianske-lazne.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Martinice v Krkonoších",
+      "slug": "martinice-v-krkonosich",
+      "files": [
+        {
+          "id": "martinice-v-krkonosich",
+          "station": "Martinice v Krkonoších",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/martinice-v-krkonosich.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Meziměstí",
+      "slug": "mezimesti",
+      "files": [
+        {
+          "id": "mezimesti",
+          "station": "Meziměstí",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/mezimesti.json",
+          "sections": 3,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Mikulovice",
+      "slug": "mikulovice",
+      "files": [
+        {
+          "id": "mikulovice",
+          "station": "Mikulovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/mikulovice.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Mikulášovice dolní nádraží",
+      "slug": "mikulasovice-dolni-nadrazi",
+      "files": [
+        {
+          "id": "mikulasovice-dolni-nadrazi",
+          "station": "Mikulášovice dolní nádraží",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/mikulasovice-dolni-nadrazi.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Milotice nad Opavou",
+      "slug": "milotice-nad-opavou",
+      "files": [
+        {
+          "id": "milotice-nad-opavou",
+          "station": "Milotice nad Opavou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/milotice-nad-opavou.json",
+          "sections": 2,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Mladá Boleslav hl.n.",
+      "slug": "mlada-boleslav-hl-n",
+      "files": [
+        {
+          "id": "mlada-boleslav-hl-n",
+          "station": "Mladá Boleslav hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/mlada-boleslav-hl-n.json",
+          "sections": 5,
+          "rules_active": 33,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Mladá Boleslav město",
+      "slug": "mlada-boleslav-mesto",
+      "files": [
+        {
+          "id": "mlada-boleslav-mesto",
+          "station": "Mladá Boleslav město",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/mlada-boleslav-mesto.json",
+          "sections": 1,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Moravany",
+      "slug": "moravany",
+      "files": [
+        {
+          "id": "moravany",
+          "station": "Moravany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/moravany.json",
+          "sections": 4,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Moravské Bránice",
+      "slug": "moravske-branice",
+      "files": [
+        {
+          "id": "moravske-branice",
+          "station": "Moravské Bránice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/moravske-branice.json",
+          "sections": 3,
+          "rules_active": 13,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Moravské Budějovice",
+      "slug": "moravske-budejovice",
+      "files": [
+        {
+          "id": "moravske-budejovice",
+          "station": "Moravské Budějovice",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/moravske-budejovice.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Moravský Beroun",
+      "slug": "moravsky-beroun",
+      "files": [
+        {
+          "id": "moravsky-beroun",
+          "station": "Moravský Beroun",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/moravsky-beroun.json",
+          "sections": 2,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Moravský Písek",
+      "slug": "moravsky-pisek",
+      "files": [
+        {
+          "id": "moravsky-pisek",
+          "station": "Moravský Písek",
+          "variant": null,
+          "valid_from": "2025-12-15",
+          "valid_to": null,
+          "file": "stations/moravsky-pisek.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Most",
+      "slug": "most",
+      "files": [
+        {
+          "id": "most-do-30-06",
+          "station": "Most",
+          "variant": "do 30.6.",
+          "valid_from": "2026-06-14",
+          "valid_to": "2026-06-30",
+          "file": "stations/most-do-30-06.json",
+          "sections": 5,
+          "rules_active": 30,
+          "rules_cancelled": 0,
+          "review_items": 1
+        },
+        {
+          "id": "most-od-01-07",
+          "station": "Most",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/most-od-01-07.json",
+          "sections": 5,
+          "rules_active": 28,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Mělník",
+      "slug": "melnik",
+      "files": [
+        {
+          "id": "melnik",
+          "station": "Mělník",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/melnik.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Nejdek",
+      "slug": "nejdek",
+      "files": [
+        {
+          "id": "nejdek",
+          "station": "Nejdek",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nejdek.json",
+          "sections": 2,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Nepomuk",
+      "slug": "nepomuk",
+      "files": [
+        {
+          "id": "nepomuk",
+          "station": "Nepomuk",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nepomuk.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Neratovice",
+      "slug": "neratovice",
+      "files": [
+        {
+          "id": "neratovice",
+          "station": "Neratovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/neratovice.json",
+          "sections": 4,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Nezamyslice",
+      "slug": "nezamyslice",
+      "files": [
+        {
+          "id": "nezamyslice",
+          "station": "Nezamyslice",
+          "variant": null,
+          "valid_from": "2026-06-22",
+          "valid_to": null,
+          "file": "stations/nezamyslice.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Nezvěstice",
+      "slug": "nezvestice",
+      "files": [
+        {
+          "id": "nezvestice",
+          "station": "Nezvěstice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nezvestice.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Nové Sedlo u Lokte",
+      "slug": "nove-sedlo-u-lokte",
+      "files": [
+        {
+          "id": "nove-sedlo-u-lokte",
+          "station": "Nové Sedlo u Lokte",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nove-sedlo-u-lokte.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Nymburk hl.n.",
+      "slug": "nymburk-hl-n",
+      "files": [
+        {
+          "id": "nymburk-hl-n",
+          "station": "Nymburk hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nymburk-hl-n.json",
+          "sections": 5,
+          "rules_active": 17,
+          "rules_cancelled": 0,
+          "review_items": 3
+        }
+      ]
+    },
+    {
+      "station": "Nymburk město",
+      "slug": "nymburk-mesto",
+      "files": [
+        {
+          "id": "nymburk-mesto",
+          "station": "Nymburk město",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nymburk-mesto.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Náchod",
+      "slug": "nachod",
+      "files": [
+        {
+          "id": "nachod",
+          "station": "Náchod",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nachod.json",
+          "sections": 2,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Návsí",
+      "slug": "navsi",
+      "files": [
+        {
+          "id": "navsi",
+          "station": "Návsí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/navsi.json",
+          "sections": 2,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Nýřany",
+      "slug": "nyrany",
+      "files": [
+        {
+          "id": "nyrany",
+          "station": "Nýřany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/nyrany.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Obrnice",
+      "slug": "obrnice",
+      "files": [
+        {
+          "id": "obrnice",
+          "station": "Obrnice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/obrnice.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Okříšky",
+      "slug": "okrisky",
+      "files": [
+        {
+          "id": "okrisky",
+          "station": "Okříšky",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/okrisky.json",
+          "sections": 3,
+          "rules_active": 16,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Olbramovice",
+      "slug": "olbramovice",
+      "files": [
+        {
+          "id": "olbramovice",
+          "station": "Olbramovice",
+          "variant": null,
+          "valid_from": "2026-06-01",
+          "valid_to": null,
+          "file": "stations/olbramovice.json",
+          "sections": 3,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Olomouc hl.n.",
+      "slug": "olomouc-hl-n",
+      "files": [
+        {
+          "id": "olomouc-hl-n",
+          "station": "Olomouc hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-22",
+          "valid_to": null,
+          "file": "stations/olomouc-hl-n.json",
+          "sections": 6,
+          "rules_active": 40,
+          "rules_cancelled": 1,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Opava východ",
+      "slug": "opava-vychod",
+      "files": [
+        {
+          "id": "opava-vychod",
+          "station": "Opava východ",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/opava-vychod.json",
+          "sections": 5,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Ostrava hlavní nádraží",
+      "slug": "ostrava-hlavni-nadrazi",
+      "files": [
+        {
+          "id": "ostrava-hl-n",
+          "station": "Ostrava hlavní nádraží",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ostrava-hl-n.json",
+          "sections": 3,
+          "rules_active": 17,
+          "rules_cancelled": 0,
+          "review_items": 4
+        }
+      ]
+    },
+    {
+      "station": "Ostrava-Kunčice",
+      "slug": "ostrava-kuncice",
+      "files": [
+        {
+          "id": "ostrava-kuncice",
+          "station": "Ostrava-Kunčice",
+          "variant": null,
+          "valid_from": "2026-09-21",
+          "valid_to": null,
+          "file": "stations/ostrava-kuncice.json",
+          "sections": 4,
+          "rules_active": 19,
+          "rules_cancelled": 2,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ostrava-Svinov",
+      "slug": "ostrava-svinov",
+      "files": [
+        {
+          "id": "ostrava-svinov",
+          "station": "Ostrava-Svinov",
+          "variant": null,
+          "valid_from": "2026-09-21",
+          "valid_to": null,
+          "file": "stations/ostrava-svinov.json",
+          "sections": 4,
+          "rules_active": 47,
+          "rules_cancelled": 5,
+          "review_items": 4
+        }
+      ]
+    },
+    {
+      "station": "Ostroměř",
+      "slug": "ostromer",
+      "files": [
+        {
+          "id": "ostromer",
+          "station": "Ostroměř",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ostromer.json",
+          "sections": 4,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Otrokovice",
+      "slug": "otrokovice",
+      "files": [
+        {
+          "id": "otrokovice",
+          "station": "Otrokovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/otrokovice.json",
+          "sections": 3,
+          "rules_active": 13,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Pardubice hlavní nádraží",
+      "slug": "pardubice-hlavni-nadrazi",
+      "files": [
+        {
+          "id": "pardubice-hl-n",
+          "station": "Pardubice hlavní nádraží",
+          "variant": null,
+          "valid_from": "2026-01-12",
+          "valid_to": null,
+          "file": "stations/pardubice-hl-n.json",
+          "sections": 4,
+          "rules_active": 45,
+          "rules_cancelled": 0,
+          "review_items": 3
+        }
+      ]
+    },
+    {
+      "station": "Pardubice-Rosice nad Labem",
+      "slug": "pardubice-rosice-nad-labem",
+      "files": [
+        {
+          "id": "pardubice-rosice-nad-labem",
+          "station": "Pardubice-Rosice nad Labem",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/pardubice-rosice-nad-labem.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Pečky",
+      "slug": "pecky",
+      "files": [
+        {
+          "id": "pecky",
+          "station": "Pečky",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/pecky.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Planá u Mariánských Lázní",
+      "slug": "plana-u-marianskych-lazni",
+      "files": [
+        {
+          "id": "plana-u-marianskych-lazni",
+          "station": "Planá u Mariánských Lázní",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/plana-u-marianskych-lazni.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Plzeň hl.n.",
+      "slug": "plzen-hl-n",
+      "files": [
+        {
+          "id": "plzen-hl-n",
+          "station": "Plzeň hl.n.",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/plzen-hl-n.json",
+          "sections": 7,
+          "rules_active": 44,
+          "rules_cancelled": 0,
+          "review_items": 5
+        }
+      ]
+    },
+    {
+      "station": "Plzeň-Jižní Předměstí",
+      "slug": "plzen-jizni-predmesti",
+      "files": [
+        {
+          "id": "plzen-jizni-predmesti",
+          "station": "Plzeň-Jižní Předměstí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/plzen-jizni-predmesti.json",
+          "sections": 2,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 3
+        }
+      ]
+    },
+    {
+      "station": "Podbořany",
+      "slug": "podborany",
+      "files": [
+        {
+          "id": "podborany",
+          "station": "Podbořany",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/podborany.json",
+          "sections": 0,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Postoloprty",
+      "slug": "postoloprty",
+      "files": [
+        {
+          "id": "postoloprty",
+          "station": "Postoloprty",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/postoloprty.json",
+          "sections": 3,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Postřelmov",
+      "slug": "postrelmov",
+      "files": [
+        {
+          "id": "postrelmov",
+          "station": "Postřelmov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/postrelmov.json",
+          "sections": 2,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Poříčany",
+      "slug": "poricany",
+      "files": [
+        {
+          "id": "poricany",
+          "station": "Poříčany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/poricany.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha Masarykovo nádraží",
+      "slug": "praha-masarykovo-nadrazi",
+      "files": [
+        {
+          "id": "praha-masarykovo-nadrazi",
+          "station": "Praha Masarykovo nádraží",
+          "variant": null,
+          "valid_from": "2026-06-01",
+          "valid_to": null,
+          "file": "stations/praha-masarykovo-nadrazi.json",
+          "sections": 4,
+          "rules_active": 4,
+          "rules_cancelled": 2,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha hl.n.",
+      "slug": "praha-hl-n",
+      "files": [
+        {
+          "id": "praha-hl-n",
+          "station": "Praha hl.n.",
+          "variant": null,
+          "valid_from": "2026-07-27",
+          "valid_to": null,
+          "file": "stations/praha-hl-n.json",
+          "sections": 9,
+          "rules_active": 27,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "Praha-Bubny",
+      "slug": "praha-bubny",
+      "files": [
+        {
+          "id": "praha-bubny",
+          "station": "Praha-Bubny",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-bubny.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Holešovice",
+      "slug": "praha-holesovice",
+      "files": [
+        {
+          "id": "praha-holesovice",
+          "station": "Praha-Holešovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-holesovice.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Hostivař",
+      "slug": "praha-hostivar",
+      "files": [
+        {
+          "id": "praha-hostivar",
+          "station": "Praha-Hostivař",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-hostivar.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Libeň",
+      "slug": "praha-liben",
+      "files": [
+        {
+          "id": "praha-liben",
+          "station": "Praha-Libeň",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/praha-liben.json",
+          "sections": 4,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Praha-Smíchov",
+      "slug": "praha-smichov",
+      "files": [
+        {
+          "id": "praha-smichov",
+          "station": "Praha-Smíchov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-smichov.json",
+          "sections": 4,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Vršovice",
+      "slug": "praha-vrsovice",
+      "files": [
+        {
+          "id": "praha-vrsovice",
+          "station": "Praha-Vršovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-vrsovice.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Vysočany",
+      "slug": "praha-vysocany",
+      "files": [
+        {
+          "id": "praha-vysocany",
+          "station": "Praha-Vysočany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-vysocany.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Zahradní Město",
+      "slug": "praha-zahradni-mesto",
+      "files": [
+        {
+          "id": "praha-zahradni-mesto",
+          "station": "Praha-Zahradní Město",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-zahradni-mesto.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Praha-Zličín",
+      "slug": "praha-zlicin",
+      "files": [
+        {
+          "id": "praha-zlicin",
+          "station": "Praha-Zličín",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/praha-zlicin.json",
+          "sections": 2,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Prostějov hl.n.",
+      "slug": "prostejov-hl-n",
+      "files": [
+        {
+          "id": "prostejov-hl-n",
+          "station": "Prostějov hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/prostejov-hl-n.json",
+          "sections": 3,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Protivec",
+      "slug": "protivec",
+      "files": [
+        {
+          "id": "protivec",
+          "station": "Protivec",
+          "variant": null,
+          "valid_from": "2026-06-01",
+          "valid_to": null,
+          "file": "stations/protivec.json",
+          "sections": 3,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Protivín",
+      "slug": "protivin",
+      "files": [
+        {
+          "id": "protivin",
+          "station": "Protivín",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/protivin.json",
+          "sections": 3,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Putim",
+      "slug": "putim",
+      "files": [
+        {
+          "id": "putim",
+          "station": "Putim",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/putim.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Písek",
+      "slug": "pisek",
+      "files": [
+        {
+          "id": "pisek",
+          "station": "Písek",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/pisek.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Přelouč",
+      "slug": "prelouc",
+      "files": [
+        {
+          "id": "prelouc",
+          "station": "Přelouč",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/prelouc.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Přerov",
+      "slug": "prerov",
+      "files": [
+        {
+          "id": "prerov",
+          "station": "Přerov",
+          "variant": null,
+          "valid_from": "2026-07-20",
+          "valid_to": null,
+          "file": "stations/prerov.json",
+          "sections": 4,
+          "rules_active": 27,
+          "rules_cancelled": 0,
+          "review_items": 3
+        }
+      ]
+    },
+    {
+      "station": "Příkosice",
+      "slug": "prikosice",
+      "files": [
+        {
+          "id": "prikosice",
+          "station": "Příkosice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/prikosice.json",
+          "sections": 2,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rakovník",
+      "slug": "rakovnik",
+      "files": [
+        {
+          "id": "rakovnik",
+          "station": "Rakovník",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rakovnik.json",
+          "sections": 5,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Raspenava",
+      "slug": "raspenava",
+      "files": [
+        {
+          "id": "raspenava",
+          "station": "Raspenava",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/raspenava.json",
+          "sections": 3,
+          "rules_active": 14,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ražice",
+      "slug": "razice",
+      "files": [
+        {
+          "id": "razice",
+          "station": "Ražice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/razice.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rohatec",
+      "slug": "rohatec",
+      "files": [
+        {
+          "id": "rohatec",
+          "station": "Rohatec",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rohatec.json",
+          "sections": 2,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rokycany",
+      "slug": "rokycany",
+      "files": [
+        {
+          "id": "rokycany",
+          "station": "Rokycany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rokycany.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Roudnice nad Labem",
+      "slug": "roudnice-nad-labem",
+      "files": [
+        {
+          "id": "roudnice-nad-labem",
+          "station": "Roudnice nad Labem",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/roudnice-nad-labem.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rudná u Prahy",
+      "slug": "rudna-u-prahy",
+      "files": [
+        {
+          "id": "rudna-u-prahy",
+          "station": "Rudná u Prahy",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rudna-u-prahy.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rudoltice v Čechách",
+      "slug": "rudoltice-v-cechach",
+      "files": [
+        {
+          "id": "rudoltice-v-cechach",
+          "station": "Rudoltice v Čechách",
+          "variant": null,
+          "valid_from": "2026-09-07",
+          "valid_to": null,
+          "file": "stations/rudoltice-v-cechach.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rumburk",
+      "slug": "rumburk",
+      "files": [
+        {
+          "id": "rumburk",
+          "station": "Rumburk",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rumburk.json",
+          "sections": 3,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rybniště",
+      "slug": "rybniste",
+      "files": [
+        {
+          "id": "rybniste",
+          "station": "Rybniště",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rybniste.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Rybník",
+      "slug": "rybnik",
+      "files": [
+        {
+          "id": "rybnik",
+          "station": "Rybník",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/rybnik.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Senice na Hané",
+      "slug": "senice-na-hane",
+      "files": [
+        {
+          "id": "senice-na-hane",
+          "station": "Senice na Hané",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/senice-na-hane.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Skalice nad Svitavou",
+      "slug": "skalice-nad-svitavou",
+      "files": [
+        {
+          "id": "skalice-nad-svitavou",
+          "station": "Skalice nad Svitavou",
+          "variant": null,
+          "valid_from": "2026-08-03",
+          "valid_to": null,
+          "file": "stations/skalice-nad-svitavou.json",
+          "sections": 3,
+          "rules_active": 13,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Skuteč",
+      "slug": "skutec",
+      "files": [
+        {
+          "id": "skutec",
+          "station": "Skuteč",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/skutec.json",
+          "sections": 1,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Smržovka",
+      "slug": "smrzovka",
+      "files": [
+        {
+          "id": "smrzovka",
+          "station": "Smržovka",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/smrzovka.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Sokolov",
+      "slug": "sokolov",
+      "files": [
+        {
+          "id": "sokolov",
+          "station": "Sokolov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/sokolov.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Starkoč",
+      "slug": "starkoc",
+      "files": [
+        {
+          "id": "starkoc",
+          "station": "Starkoč",
+          "variant": null,
+          "valid_from": "2026-09-30",
+          "valid_to": null,
+          "file": "stations/starkoc.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Stará Paka",
+      "slug": "stara-paka",
+      "files": [
+        {
+          "id": "stara-paka",
+          "station": "Stará Paka",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/stara-paka.json",
+          "sections": 5,
+          "rules_active": 15,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Staré Město u Uherského Hradiště",
+      "slug": "stare-mesto-u-uherskeho-hradiste",
+      "files": [
+        {
+          "id": "stare-mesto-u-uh",
+          "station": "Staré Město u Uherského Hradiště",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/stare-mesto-u-uh.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Staňkov",
+      "slug": "stankov",
+      "files": [
+        {
+          "id": "stankov",
+          "station": "Staňkov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/stankov.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Strakonice",
+      "slug": "strakonice",
+      "files": [
+        {
+          "id": "strakonice",
+          "station": "Strakonice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/strakonice.json",
+          "sections": 4,
+          "rules_active": 20,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Straškov",
+      "slug": "straskov",
+      "files": [
+        {
+          "id": "straskov",
+          "station": "Straškov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/straskov.json",
+          "sections": 1,
+          "rules_active": 0,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Studenec",
+      "slug": "studenec",
+      "files": [
+        {
+          "id": "studenec",
+          "station": "Studenec",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/studenec.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Studénka",
+      "slug": "studenka",
+      "files": [
+        {
+          "id": "studenka",
+          "station": "Studénka",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/studenka.json",
+          "sections": 5,
+          "rules_active": 28,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Střelice",
+      "slug": "strelice",
+      "files": [
+        {
+          "id": "strelice",
+          "station": "Střelice",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/strelice.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Suchdol nad Odrou",
+      "slug": "suchdol-nad-odrou",
+      "files": [
+        {
+          "id": "suchdol-nad-odrou",
+          "station": "Suchdol nad Odrou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/suchdol-nad-odrou.json",
+          "sections": 5,
+          "rules_active": 18,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Svitavy",
+      "slug": "svitavy",
+      "files": [
+        {
+          "id": "svitavy",
+          "station": "Svitavy",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/svitavy.json",
+          "sections": 3,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Světlá nad Sázavou",
+      "slug": "svetla-nad-sazavou",
+      "files": [
+        {
+          "id": "svetla-nad-sazavou",
+          "station": "Světlá nad Sázavou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/svetla-nad-sazavou.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Sázava",
+      "slug": "sazava",
+      "files": [
+        {
+          "id": "sazava",
+          "station": "Sázava",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/sazava.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Tachov",
+      "slug": "tachov",
+      "files": [
+        {
+          "id": "tachov",
+          "station": "Tachov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/tachov.json",
+          "sections": 2,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Tanvald",
+      "slug": "tanvald",
+      "files": [
+        {
+          "id": "tanvald",
+          "station": "Tanvald",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/tanvald.json",
+          "sections": 2,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Teplice nad Metují",
+      "slug": "teplice-nad-metuji",
+      "files": [
+        {
+          "id": "teplice-nad-metuji-mimo",
+          "station": "Teplice nad Metují",
+          "variant": "MIMO",
+          "valid_from": "2026-09-01",
+          "valid_to": null,
+          "file": "stations/teplice-nad-metuji-mimo.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 1
+        },
+        {
+          "id": "teplice-nad-metuji-sez",
+          "station": "Teplice nad Metují",
+          "variant": "SEZ",
+          "valid_from": "2026-06-14",
+          "valid_to": "2026-08-31",
+          "file": "stations/teplice-nad-metuji-sez.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Teplice v Čechách",
+      "slug": "teplice-v-cechach",
+      "files": [
+        {
+          "id": "teplice-v-cechach-do-30-6",
+          "station": "Teplice v Čechách",
+          "variant": "do 30.6.",
+          "valid_from": "2026-06-01",
+          "valid_to": "2026-06-30",
+          "file": "stations/teplice-v-cechach-do-30-6.json",
+          "sections": 4,
+          "rules_active": 17,
+          "rules_cancelled": 0,
+          "review_items": 0
+        },
+        {
+          "id": "teplice-v-cechach-od-1-7",
+          "station": "Teplice v Čechách",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/teplice-v-cechach-od-1-7.json",
+          "sections": 4,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Tišnov",
+      "slug": "tisnov",
+      "files": [
+        {
+          "id": "tisnov",
+          "station": "Tišnov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/tisnov.json",
+          "sections": 3,
+          "rules_active": 18,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Trutnov hl.n.",
+      "slug": "trutnov-hl-n",
+      "files": [
+        {
+          "id": "trutnov-hl-n",
+          "station": "Trutnov hl.n.",
+          "variant": null,
+          "valid_from": "2026-07-21",
+          "valid_to": null,
+          "file": "stations/trutnov-hl-n.json",
+          "sections": 5,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Trutnov střed",
+      "slug": "trutnov-stred",
+      "files": [
+        {
+          "id": "trutnov-stred",
+          "station": "Trutnov střed",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/trutnov-stred.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Tršnice",
+      "slug": "trsnice",
+      "files": [
+        {
+          "id": "trsnice",
+          "station": "Tršnice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/trsnice.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Turnov",
+      "slug": "turnov",
+      "files": [
+        {
+          "id": "turnov",
+          "station": "Turnov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/turnov.json",
+          "sections": 4,
+          "rules_active": 15,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Tábor",
+      "slug": "tabor",
+      "files": [
+        {
+          "id": "tabor",
+          "station": "Tábor",
+          "variant": null,
+          "valid_from": "2026-06-01",
+          "valid_to": null,
+          "file": "stations/tabor.json",
+          "sections": 5,
+          "rules_active": 25,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Týniště nad Orlicí",
+      "slug": "tyniste-nad-orlici",
+      "files": [
+        {
+          "id": "tyniste-nad-orlici",
+          "station": "Týniště nad Orlicí",
+          "variant": null,
+          "valid_from": "2026-02-16",
+          "valid_to": null,
+          "file": "stations/tyniste-nad-orlici.json",
+          "sections": 4,
+          "rules_active": 31,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Třebovice v Čechách",
+      "slug": "trebovice-v-cechach",
+      "files": [
+        {
+          "id": "trebovice-v-cechach",
+          "station": "Třebovice v Čechách",
+          "variant": null,
+          "valid_from": "2026-02-09",
+          "valid_to": null,
+          "file": "stations/trebovice-v-cechach.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Třebíč",
+      "slug": "trebic",
+      "files": [
+        {
+          "id": "trebic",
+          "station": "Třebíč",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/trebic.json",
+          "sections": 2,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Třemešná ve Slezsku",
+      "slug": "tremesna-ve-slezsku",
+      "files": [
+        {
+          "id": "tremesna-ve-slezsku",
+          "station": "Třemešná ve Slezsku",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/tremesna-ve-slezsku.json",
+          "sections": 2,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Uherské Hradiště",
+      "slug": "uherske-hradiste",
+      "files": [
+        {
+          "id": "uherske-hradiste",
+          "station": "Uherské Hradiště",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/uherske-hradiste.json",
+          "sections": 3,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Uherský Brod",
+      "slug": "uhersky-brod",
+      "files": [
+        {
+          "id": "uhersky-brod",
+          "station": "Uherský Brod",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/uhersky-brod.json",
+          "sections": 2,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Valašské Meziříčí",
+      "slug": "valasske-mezirici",
+      "files": [
+        {
+          "id": "valasske-mezirici",
+          "station": "Valašské Meziříčí",
+          "variant": null,
+          "valid_from": "2026-06-22",
+          "valid_to": null,
+          "file": "stations/valasske-mezirici.json",
+          "sections": 5,
+          "rules_active": 15,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Varnsdorf",
+      "slug": "varnsdorf",
+      "files": [
+        {
+          "id": "varnsdorf",
+          "station": "Varnsdorf",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/varnsdorf.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Velký Osek",
+      "slug": "velky-osek",
+      "files": [
+        {
+          "id": "velky-osek",
+          "station": "Velký Osek",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/velky-osek.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Veselí nad Lužnicí",
+      "slug": "veseli-nad-luznici",
+      "files": [
+        {
+          "id": "veseli-nad-luznici",
+          "station": "Veselí nad Lužnicí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/veseli-nad-luznici.json",
+          "sections": 4,
+          "rules_active": 25,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Veselí nad Moravou",
+      "slug": "veseli-nad-moravou",
+      "files": [
+        {
+          "id": "veseli-nad-moravou",
+          "station": "Veselí nad Moravou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/veseli-nad-moravou.json",
+          "sections": 4,
+          "rules_active": 26,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Veřovice",
+      "slug": "verovice",
+      "files": [
+        {
+          "id": "verovice",
+          "station": "Veřovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/verovice.json",
+          "sections": 3,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Vlašim",
+      "slug": "vlasim",
+      "files": [
+        {
+          "id": "vlasim",
+          "station": "Vlašim",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/vlasim.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Vlárský průsmyk",
+      "slug": "vlarsky-prusmyk",
+      "files": [
+        {
+          "id": "vlarsky-prusmyk",
+          "station": "Vlárský průsmyk",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vlarsky-prusmyk.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Vranovice",
+      "slug": "vranovice",
+      "files": [
+        {
+          "id": "vranovice",
+          "station": "Vranovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vranovice.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Vrané nad Vltavou",
+      "slug": "vrane-nad-vltavou",
+      "files": [
+        {
+          "id": "vrane-nad-vltavou",
+          "station": "Vrané nad Vltavou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vrane-nad-vltavou.json",
+          "sections": 3,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Vraňany",
+      "slug": "vranany",
+      "files": [
+        {
+          "id": "vranany",
+          "station": "Vraňany",
+          "variant": null,
+          "valid_from": "2026-06-14",
+          "valid_to": null,
+          "file": "stations/vranany.json",
+          "sections": 4,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Vsetín",
+      "slug": "vsetin",
+      "files": [
+        {
+          "id": "vsetin",
+          "station": "Vsetín",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vsetin.json",
+          "sections": 3,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Vyškov na Moravě",
+      "slug": "vyskov-na-morave",
+      "files": [
+        {
+          "id": "vyskov-na-morave",
+          "station": "Vyškov na Moravě",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vyskov-na-morave.json",
+          "sections": 2,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Václavice",
+      "slug": "vaclavice",
+      "files": [
+        {
+          "id": "vaclavice",
+          "station": "Václavice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vaclavice.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Všetaty",
+      "slug": "vsetaty",
+      "files": [
+        {
+          "id": "vsetaty",
+          "station": "Všetaty",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/vsetaty.json",
+          "sections": 4,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Zadní Třebaň",
+      "slug": "zadni-treban",
+      "files": [
+        {
+          "id": "zadni-treban",
+          "station": "Zadní Třebaň",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zadni-treban.json",
+          "sections": 3,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Zaječí",
+      "slug": "zajeci",
+      "files": [
+        {
+          "id": "zajeci",
+          "station": "Zaječí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zajeci.json",
+          "sections": 3,
+          "rules_active": 13,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Zastávka u Brna",
+      "slug": "zastavka-u-brna",
+      "files": [
+        {
+          "id": "zastavka-u-brna",
+          "station": "Zastávka u Brna",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zastavka-u-brna.json",
+          "sections": 2,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Zdice",
+      "slug": "zdice",
+      "files": [
+        {
+          "id": "zdice",
+          "station": "Zdice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zdice.json",
+          "sections": 3,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Zlín střed",
+      "slug": "zlin-stred",
+      "files": [
+        {
+          "id": "zlin-stred",
+          "station": "Zlín střed",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zlin-stred.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Znojmo",
+      "slug": "znojmo",
+      "files": [
+        {
+          "id": "znojmo",
+          "station": "Znojmo",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/znojmo.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Zruč nad Sázavou",
+      "slug": "zruc-nad-sazavou",
+      "files": [
+        {
+          "id": "zruc-nad-sazavou",
+          "station": "Zruč nad Sázavou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zruc-nad-sazavou.json",
+          "sections": 3,
+          "rules_active": 24,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Zábřeh na Moravě",
+      "slug": "zabreh-na-morave",
+      "files": [
+        {
+          "id": "zabreh-na-morave",
+          "station": "Zábřeh na Moravě",
+          "variant": null,
+          "valid_from": "2026-01-19",
+          "valid_to": null,
+          "file": "stations/zabreh-na-morave.json",
+          "sections": 3,
+          "rules_active": 18,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Úpořiny",
+      "slug": "uporiny",
+      "files": [
+        {
+          "id": "uporiny",
+          "station": "Úpořiny",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/uporiny.json",
+          "sections": 4,
+          "rules_active": 6,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ústí nad Labem hl.n.",
+      "slug": "usti-nad-labem-hl-n",
+      "files": [
+        {
+          "id": "usti-nad-labem-hl-n-do-30-06",
+          "station": "Ústí nad Labem hl.n.",
+          "variant": "do 30.6.",
+          "valid_from": "2026-01-26",
+          "valid_to": "2026-06-30",
+          "file": "stations/usti-nad-labem-hl-n-do-30-06.json",
+          "sections": 4,
+          "rules_active": 39,
+          "rules_cancelled": 0,
+          "review_items": 1
+        },
+        {
+          "id": "usti-nad-labem-hl-n-od-01-07",
+          "station": "Ústí nad Labem hl.n.",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/usti-nad-labem-hl-n-od-01-07.json",
+          "sections": 4,
+          "rules_active": 40,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Ústí nad Labem západ",
+      "slug": "usti-nad-labem-zapad",
+      "files": [
+        {
+          "id": "usti-nad-labem-zapad-do-30-6",
+          "station": "Ústí nad Labem západ",
+          "variant": "do 30.6.",
+          "valid_from": "2025-12-14",
+          "valid_to": "2026-06-30",
+          "file": "stations/usti-nad-labem-zapad-do-30-6.json",
+          "sections": 3,
+          "rules_active": 17,
+          "rules_cancelled": 0,
+          "review_items": 0
+        },
+        {
+          "id": "usti-nad-labem-zapad-od-1-7",
+          "station": "Ústí nad Labem západ",
+          "variant": "od 1.7.",
+          "valid_from": "2026-07-01",
+          "valid_to": null,
+          "file": "stations/usti-nad-labem-zapad-od-1-7.json",
+          "sections": 3,
+          "rules_active": 20,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ústí nad Labem-Střekov",
+      "slug": "usti-nad-labem-strekov",
+      "files": [
+        {
+          "id": "usti-nad-labem-strekov",
+          "station": "Ústí nad Labem-Střekov",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/usti-nad-labem-strekov.json",
+          "sections": 2,
+          "rules_active": 4,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Ústí nad Orlicí",
+      "slug": "usti-nad-orlici",
+      "files": [
+        {
+          "id": "usti-nad-orlici",
+          "station": "Ústí nad Orlicí",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/usti-nad-orlici.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Častolovice",
+      "slug": "castolovice",
+      "files": [
+        {
+          "id": "castolovice",
+          "station": "Častolovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/castolovice.json",
+          "sections": 3,
+          "rules_active": 12,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Čelákovice",
+      "slug": "celakovice",
+      "files": [
+        {
+          "id": "celakovice",
+          "station": "Čelákovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/celakovice.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Červenka",
+      "slug": "cervenka",
+      "files": [
+        {
+          "id": "cervenka",
+          "station": "Červenka",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/cervenka.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Čerčany",
+      "slug": "cercany",
+      "files": [
+        {
+          "id": "cercany",
+          "station": "Čerčany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/cercany.json",
+          "sections": 4,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Česká Kamenice",
+      "slug": "ceska-kamenice",
+      "files": [
+        {
+          "id": "ceska-kamenice",
+          "station": "Česká Kamenice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ceska-kamenice.json",
+          "sections": 3,
+          "rules_active": 5,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Česká Lípa hl.n.",
+      "slug": "ceska-lipa-hl-n",
+      "files": [
+        {
+          "id": "ceska-lipa-hl-n",
+          "station": "Česká Lípa hl.n.",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ceska-lipa-hl-n.json",
+          "sections": 5,
+          "rules_active": 19,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Česká Třebová",
+      "slug": "ceska-trebova",
+      "files": [
+        {
+          "id": "ceska-trebova",
+          "station": "Česká Třebová",
+          "variant": null,
+          "valid_from": "2026-01-12",
+          "valid_to": null,
+          "file": "stations/ceska-trebova.json",
+          "sections": 5,
+          "rules_active": 34,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "České Budějovice",
+      "slug": "ceske-budejovice",
+      "files": [
+        {
+          "id": "ceske-budejovice",
+          "station": "České Budějovice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ceske-budejovice.json",
+          "sections": 5,
+          "rules_active": 73,
+          "rules_cancelled": 0,
+          "review_items": 2
+        }
+      ]
+    },
+    {
+      "station": "České Velenice",
+      "slug": "ceske-velenice",
+      "files": [
+        {
+          "id": "ceske-velenice",
+          "station": "České Velenice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ceske-velenice.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Český Brod",
+      "slug": "cesky-brod",
+      "files": [
+        {
+          "id": "cesky-brod",
+          "station": "Český Brod",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/cesky-brod.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Český Těšín",
+      "slug": "cesky-tesin",
+      "files": [
+        {
+          "id": "cesky-tesin",
+          "station": "Český Těšín",
+          "variant": null,
+          "valid_from": "2026-09-30",
+          "valid_to": null,
+          "file": "stations/cesky-tesin.json",
+          "sections": 5,
+          "rules_active": 30,
+          "rules_cancelled": 2,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Čáslav",
+      "slug": "caslav",
+      "files": [
+        {
+          "id": "caslav",
+          "station": "Čáslav",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/caslav.json",
+          "sections": 3,
+          "rules_active": 7,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Číčenice",
+      "slug": "cicenice",
+      "files": [
+        {
+          "id": "cicenice",
+          "station": "Číčenice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/cicenice.json",
+          "sections": 3,
+          "rules_active": 11,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Řetenice",
+      "slug": "retenice",
+      "files": [
+        {
+          "id": "retenice",
+          "station": "Řetenice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/retenice.json",
+          "sections": 4,
+          "rules_active": 9,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Říčany",
+      "slug": "ricany",
+      "files": [
+        {
+          "id": "ricany",
+          "station": "Říčany",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/ricany.json",
+          "sections": 2,
+          "rules_active": 2,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Šakvice",
+      "slug": "sakvice",
+      "files": [
+        {
+          "id": "sakvice",
+          "station": "Šakvice",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/sakvice.json",
+          "sections": 3,
+          "rules_active": 13,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Šumperk",
+      "slug": "sumperk",
+      "files": [
+        {
+          "id": "sumperk",
+          "station": "Šumperk",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/sumperk.json",
+          "sections": 4,
+          "rules_active": 16,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Žatec",
+      "slug": "zatec",
+      "files": [
+        {
+          "id": "zatec",
+          "station": "Žatec",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zatec.json",
+          "sections": 2,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Železná Ruda-Alžbětín",
+      "slug": "zelezna-ruda-alzbetin",
+      "files": [
+        {
+          "id": "zelezna-ruda-alzbetin",
+          "station": "Železná Ruda-Alžbětín",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zelezna-ruda-alzbetin.json",
+          "sections": 1,
+          "rules_active": 1,
+          "rules_cancelled": 0,
+          "review_items": 1
+        }
+      ]
+    },
+    {
+      "station": "Železný Brod",
+      "slug": "zelezny-brod",
+      "files": [
+        {
+          "id": "zelezny-brod",
+          "station": "Železný Brod",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zelezny-brod.json",
+          "sections": 3,
+          "rules_active": 10,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Žďár nad Sázavou",
+      "slug": "zdar-nad-sazavou",
+      "files": [
+        {
+          "id": "zdar-nad-sazavou",
+          "station": "Žďár nad Sázavou",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zdar-nad-sazavou.json",
+          "sections": 3,
+          "rules_active": 8,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    },
+    {
+      "station": "Žďárec u Skutče",
+      "slug": "zdarec-u-skutce",
+      "files": [
+        {
+          "id": "zdarec-u-skutce",
+          "station": "Žďárec u Skutče",
+          "variant": null,
+          "valid_from": "2025-12-14",
+          "valid_to": null,
+          "file": "stations/zdarec-u-skutce.json",
+          "sections": 3,
+          "rules_active": 3,
+          "rules_cancelled": 0,
+          "review_items": 0
+        }
+      ]
+    }
+  ]
+}

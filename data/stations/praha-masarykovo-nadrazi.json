@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "id": "praha-masarykovo-nadrazi",
+  "station": "Praha Masarykovo nádraží",
+  "sheet_name": "Praha Masarykovo nádraží",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 1. června 2026",
+    "valid_from": "2026-06-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 5 minut.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 5,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce KŽC, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "KŽC"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Český Brod",
+        "direction": "Český Brod",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-masarykovo-nadrazi-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kladno",
+        "direction": "Kladno",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-masarykovo-nadrazi-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "všechny vlaky (vyjma níže uvedených)",
+                "after": "všechny vlaky"
+              }
+            }
+          },
+          {
+            "id": "praha-masarykovo-nadrazi-003",
+            "source_row": 20,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "1584, 1586, 9860, 9886",
+              "trains": [
+                1584,
+                1586,
+                9860,
+                9886
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků od Prahy-Buben)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků od Prahy-Buben",
+                  "from_directions": [
+                    "Prahy-Buben"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "praha-masarykovo-nadrazi-004",
+            "source_row": 21,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "1588, 9834, 9862",
+              "trains": [
+                1588,
+                9834,
+                9862
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků od Prahy-Buben)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků od Prahy-Buben",
+                  "from_directions": [
+                    "Prahy-Buben"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kralupy nad Vltavou",
+        "direction": "Kralupy nad Vltavou",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-masarykovo-nadrazi-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Lysá nad Labem",
+        "direction": "Lysá nad Labem",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "praha-masarykovo-nadrazi-006",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Za Správu železnic odsouhlasil: Ing. Jan Satranský"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 4,
+    "rules_cancelled": 2,
+    "review_items": 0
+  },
+  "review": []
+}

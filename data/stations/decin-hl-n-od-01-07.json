@@ -1,0 +1,919 @@
+{
+  "schema_version": "1.0",
+  "id": "decin-hl-n-od-01-07",
+  "station": "Děčín hl.n.",
+  "sheet_name": "Děčín hl.n. od 01.07.",
+  "variant": "od 1.7.",
+  "validity": {
+    "text": "JŘ 2026, platí od 1. července 2026",
+    "valid_from": "2026-07-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ARR jsou přípojem vlaků ČD a RJÚK, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD",
+          "RJÚK"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD, DLB, KŽC a RJÚK jsou přípojem vlaků všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD",
+          "DLB",
+          "KŽC",
+          "RJÚK"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
+        "direction": "Praha",
+        "direction_detail": "přes Ústí nad Labem hl.n.",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "decin-hl-n-od-01-07-001",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "179",
+              "trains": [
+                179
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-002",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 673, 697)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "673, 697",
+                  "trains": [
+                    673,
+                    697
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-003",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "673",
+              "trains": [
+                673
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-004",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "697",
+              "trains": [
+                697
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-005",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os směr Ústí nad Labem, Most, Louka u Litvínova (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "to_directions": [
+                "Ústí nad Labem",
+                "Most",
+                "Louka u Litvínova"
+              ],
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-006",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "1977",
+              "trains": [
+                1977
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "28023",
+              "trains": [
+                28023
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "5271",
+                "after": "28023"
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-007",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "6562",
+              "trains": [
+                6562
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "6832",
+              "trains": [
+                6832
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "6941",
+              "trains": [
+                6941
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "6969",
+              "trains": [
+                6969
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              },
+              "sunday_holiday": {
+                "raw": "25",
+                "kind": "minutes",
+                "minutes": 25
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Děčín východ",
+        "direction": "Děčín východ",
+        "source_row": 27,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "decin-hl-n-od-01-07-011",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "1966",
+              "trains": [
+                1966
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6807, 6545 (RJ Úk)",
+              "trains": [
+                6807,
+                6545
+              ],
+              "operators": [
+                "RJÚK"
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "6621",
+              "trains": [
+                6621
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "—",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-013",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "6670",
+              "trains": [
+                6670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "6670"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "V"
+              },
+              "workday": {
+                "before": null,
+                "after": "30"
+              },
+              "saturday": {
+                "before": null,
+                "after": "30"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "30"
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-014",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "6605, 6615",
+              "trains": [
+                6605,
+                6615
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-015",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "6623, 6625",
+              "trains": [
+                6623,
+                6625
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "—",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "—",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-016",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "6631",
+              "trains": [
+                6631
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "676, 6829",
+              "trains": [
+                676,
+                6829
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-017",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "6627",
+              "trains": [
+                6627
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bad Schandau",
+        "direction": "Bad Schandau",
+        "source_row": 35,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "decin-hl-n-od-01-07-018",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "28022",
+              "trains": [
+                28022
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "5270",
+                "after": "28022"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Telnice",
+        "direction": "Telnice",
+        "source_row": 37,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "decin-hl-n-od-01-07-019",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "18310",
+              "trains": [
+                18310
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-020",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "18312",
+              "trains": [
+                18312
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-021",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "18314",
+              "trains": [
+                18314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "decin-hl-n-od-01-07-022",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "18316",
+              "trains": [
+                18316
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "V případě zpoždění vlaku linky R20 (R 696, R 692, R 690, R 688, R 684, R 680, R 676, R 672) do 10 minut, vyčkejte s odjezdem vlaku linky U8 (Os 6652, Os 6654, Os 6656, Os 6658, Os 6660, Os 6664, Os 6666, Os 6668) směr Rumburk. Dodržte základní čekací dobu a sled vlaku linky U8 (Os 6652, Os 6654, Os 6656, Os 6658, Os 6660, Os 6664, Os 6666, Os 6668) a L2 (Os 6609,Os 6611, Os 6613, Os 6615, Os 6617, Os 6619, Os 6631, Os 6627).",
+      "after_section": "vlaky směr Telnice"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Jan Zeman",
+    "Zpracoval za ČD: Jana Hinterholzingerová",
+    "Zpracoval za DLB: Ing. Uwe Miertschischk",
+    "Zpracoval za KŽC: Aleš Svoboda",
+    "Zpracoval za RJÚK: Michal Vlášek",
+    "Za Správu železnic odsouhlasil: Jan Kosterhon"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 22,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

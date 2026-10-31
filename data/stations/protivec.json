@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "id": "protivec",
+  "station": "Protivec",
+  "sheet_name": "Protivec",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 1. června 2026",
+    "valid_from": "2026-06-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bochov",
+        "direction": "Bochov",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "protivec-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "16752",
+              "trains": [
+                16752
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "16750, 16752",
+                "after": "16752"
+              }
+            }
+          },
+          {
+            "id": "protivec-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "16754",
+              "trains": [
+                16754
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bečov nad Teplou",
+        "direction": "Bečov nad Teplou",
+        "source_row": 17,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rakovník",
+        "direction": "Rakovník",
+        "source_row": 19,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 2,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

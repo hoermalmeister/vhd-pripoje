@@ -1,0 +1,1319 @@
+{
+  "schema_version": "1.0",
+  "id": "veseli-nad-luznici",
+  "station": "Veselí nad Lužnicí",
+  "sheet_name": "Veselí nad Lužnicí",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3,5 minuty jsou: Ex 500 a Os 8322, R 702 a Os 8320, R 702 a Os 8727, R 704 a Os 1738, R 712 a Os 8721, R 728 a Os 8707, Os 8309 a Os 8205, Os 8311 a R 709, Os 8313 a R 713.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Ex",
+                "number": 500
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8322
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 702
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8320
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 702
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8727
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 704
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 1738
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 712
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8721
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 728
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8707
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8309
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8205
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8311
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 709
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8313
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 713
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3.5
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: R 322 a R 659, R 326 a R 659, R 661 a Os 8717, Os 8201 a Os 8701, Os 8205 a Os 8304, Os 8213 a Os 8715, Os 8720 a R 663.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 322
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 659
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 326
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 659
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 661
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8717
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8201
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8701
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8205
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8304
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8213
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8715
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8720
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 663
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 3
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2,5 minuty jsou: Os 8714 a R 717.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8714
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 717
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2.5
+      }
+    },
+    {
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: R 320 a Sp 1739, R 324 a Sp 1739, R 710 a R 663, Sp 1730 a R 715, Os 8213 a Os 8715.",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 320
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1739
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 324
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Sp",
+                "number": 1739
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "R",
+                "number": 710
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 663
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1730
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 715
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 8213
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 8715
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Praha",
+        "direction": "Praha",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-luznici-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "700, 702",
+              "trains": [
+                700,
+                702
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "704, 706, 712, 716, 728",
+              "trains": [
+                704,
+                706,
+                712,
+                716,
+                728
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1722, 1730, 1732, 1736, 1738",
+              "trains": [
+                1722,
+                1730,
+                1732,
+                1736,
+                1738
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "708",
+              "trains": [
+                708
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "663",
+              "trains": [
+                663
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "714",
+              "trains": [
+                714
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "661",
+              "trains": [
+                661
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "722",
+              "trains": [
+                722
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "657",
+              "trains": [
+                657
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "8220, 8240",
+              "trains": [
+                8220,
+                8240
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Jihlava – Brno",
+        "direction": "Jihlava – Brno",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-luznici-007",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 663, 665)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "663, 665",
+                  "trains": [
+                    663,
+                    665
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-008",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "663",
+              "trains": [
+                663
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-009",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "665",
+              "trains": [
+                665
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-010",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "1722, 1730, 1732, 1736, 1738, 8308, 8310, 8320, 8322",
+              "trains": [
+                1722,
+                1730,
+                1732,
+                1736,
+                1738,
+                8308,
+                8310,
+                8320,
+                8322
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-011",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "1740",
+              "trains": [
+                1740
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-012",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "8304",
+              "trains": [
+                8304
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-013",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "8314",
+              "trains": [
+                8314
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-014",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "8324",
+              "trains": [
+                8324
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Budějovice",
+        "direction": "České Budějovice",
+        "source_row": 34,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-luznici-015",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "654, 656, 660, 664",
+              "trains": [
+                654,
+                656,
+                660,
+                664
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky R Praha – České Velenice – (Wien)",
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "relation": "Praha – České Velenice – (Wien)",
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-016",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "717",
+              "trains": [
+                717
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "8714",
+              "trains": [
+                8714
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-017",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "733",
+              "trains": [
+                733
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-018",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "735",
+              "trains": [
+                735
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-019",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "8205",
+              "trains": [
+                8205
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr České Velenice",
+        "direction": "České Velenice",
+        "source_row": 43,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "veseli-nad-luznici-020",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "321, 323, 723",
+              "trains": [
+                321,
+                323,
+                723
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "saturday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              },
+              "sunday_holiday": {
+                "raw": "8",
+                "kind": "minutes",
+                "minutes": 8
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-021",
+            "source_row": 45,
+            "status": "active",
+            "waiting_train": {
+              "text": "715",
+              "trains": [
+                715
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "660",
+              "trains": [
+                660
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-022",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "715",
+              "trains": [
+                715
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1730",
+              "trains": [
+                1730
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-023",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "8701, 8705, 8707, 8711, 8721",
+              "trains": [
+                8701,
+                8705,
+                8707,
+                8711,
+                8721
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-024",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "8729",
+              "trains": [
+                8729
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "veseli-nad-luznici-025",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "8731",
+              "trains": [
+                8731
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "v 5 čeká 25 minut"
+    }
+  },
+  "notes": [
+    {
+      "text": "Pokud jedou současně rychlíky, popř. spěšné vlaky ze směru Brno a Praha, čeká pouze ten, který přijel do stanice Veselí nad Lužnicí jako druhý.",
+      "after_section": "vlaky směr České Budějovice"
+    },
+    {
+      "text": "Pokud jedou současně rychlíky, popř. spěšné vlaky ze směru Brno a Praha, čeká pouze ten, který přijel do stanice Veselí nad Lužnicí jako druhý.",
+      "after_section": "vlaky směr České Budějovice"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Věra Jeseničová",
+    "Za Správu železnic odsouhlasil: Jiří Vaňák"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 25,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

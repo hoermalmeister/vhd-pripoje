@@ -1,0 +1,877 @@
+{
+  "count": 107,
+  "items": [
+    {
+      "station": "Beroun",
+      "file": "stations/beroun.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Všechny vlaky směr Praha přes Řevnice nejsou přípojem od vlaků ze směru Nučice."
+    },
+    {
+      "station": "Beroun",
+      "file": "stations/beroun.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Všechny vlaky směr Nučice nejsou přípojem od vlaků R ze směru Praha."
+    },
+    {
+      "station": "Bílina",
+      "file": "stations/bilina-do-30-6.json",
+      "where": "bilina-do-30-6-001",
+      "row": 16,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Bílina",
+      "file": "stations/bilina-do-30-6.json",
+      "where": "bilina-do-30-6-001",
+      "row": 16,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Bílina",
+      "file": "stations/bilina-od-1-7.json",
+      "where": "bilina-od-1-7-007",
+      "row": 22,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Bílina",
+      "file": "stations/bilina-od-1-7.json",
+      "where": "bilina-od-1-7-007",
+      "row": 22,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Blatno u Jesenice",
+      "file": "stations/blatno-u-jesenice.json",
+      "where": "blatno-u-jesenice-002",
+      "row": 19,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Bohumín",
+      "file": "stations/bohumin.json",
+      "where": "part_a",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup z 1. nástupiště na nástupiště 2–4 jsou 4 minuty, z nástupiště 1A na nástupiště 2–4 – 5 minut"
+    },
+    {
+      "station": "Bohumín",
+      "file": "stations/bohumin.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Všechny vlaky Ex a R ve směru Zebrzydowice jsou přípojnými pro vlaky ze směru Český Těšín, pokud jsou uvedeny v části C."
+    },
+    {
+      "station": "Bohumín",
+      "file": "stations/bohumin.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    },
+    {
+      "station": "Bohumín",
+      "file": "stations/bohumin.json",
+      "where": "part_b",
+      "row": 15,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ pouze linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky opačného směru: vlaky směr Střelice a vlaky směr Břeclav jsou přípojné v obou směrech."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 16,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratí 240 a 244 a odjezdem vlaků na jiné tratě interval kratší než 7 minut."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 17,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 002+250+251+252 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucích na jiné tratě a na trať 250 kratší než 5 minut. Vlaky stejných čísel jsou však vždy přípojné."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 18,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 260 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 19,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 300 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 20,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 340 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 21,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, a od vlaků Sp 1371 a Sp 1373 dopravce ARR, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 22,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD a ARR (Sp 1371 a 1373)."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 23,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ ve směru Praha a Břeclav nejsou přípojné od vlaků ostatních dopravců."
+    },
+    {
+      "station": "Brno hl. n.",
+      "file": "stations/brno-hl-n.json",
+      "where": "part_b",
+      "row": 24,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ARR jsou přípojem od vlaků ČD a dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Brno-Královo Pole",
+      "file": "stations/brno-kralovo-pole.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Brno-Královo Pole",
+      "file": "stations/brno-kralovo-pole.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD."
+    },
+    {
+      "station": "Česká Třebová",
+      "file": "stations/ceska-trebova.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž k příslušným vlakům dálkové dopravy ve směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším."
+    },
+    {
+      "station": "Česká Třebová",
+      "file": "stations/ceska-trebova.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž od příslušných vlaků dálkové dopravy ze směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším."
+    },
+    {
+      "station": "České Budějovice",
+      "file": "stations/ceske-budejovice.json",
+      "where": "ceske-budejovice-062",
+      "row": 88,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "České Budějovice",
+      "file": "stations/ceske-budejovice.json",
+      "where": "ceske-budejovice-062",
+      "row": 88,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Číčenice",
+      "file": "stations/cicenice.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Základní čekací doba dopravce GWTR na vlaky dopravce ČD a ARR je 10 minut."
+    },
+    {
+      "station": "Domažlice",
+      "file": "stations/domazlice.json",
+      "where": "domazlice-008",
+      "row": 30,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Domažlice",
+      "file": "stations/domazlice.json",
+      "where": "domazlice-008",
+      "row": 30,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Hodonín",
+      "file": "stations/hodonin.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky opačného směru: vlaky R Přerov – Břeclav a vlaky Os Hodonín – Veselí nad Moravou jsou přípojné v obou směrech."
+    },
+    {
+      "station": "Hodonín",
+      "file": "stations/hodonin.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky považované za přípoj: Os 2746 a R 813 v ⑥ a †, Os 4221 a Os 14526 v ⑤."
+    },
+    {
+      "station": "Horažďovice předměstí",
+      "file": "stations/horazdovice-predmesti.json",
+      "where": "horazdovice-predmesti-004",
+      "row": 22,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Horažďovice předměstí",
+      "file": "stations/horazdovice-predmesti.json",
+      "where": "horazdovice-predmesti-004",
+      "row": 22,
+      "field": "wait.sunday_holiday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Hranice na Moravě",
+      "file": "stations/hranice-na-morave.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Hulín",
+      "file": "stations/hulin.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 3909 a Sp 2021, 2029, Os 3961 a Sp 1650, R 804 a Os 3928, R 802 a Os 3932, Os 3933."
+    },
+    {
+      "station": "Hulín",
+      "file": "stations/hulin.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky Ex ve směru Luhačovice nejsou přípojem od vlaků Os ze směru Přerov."
+    },
+    {
+      "station": "Cheb",
+      "file": "stations/cheb.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky z/do Lubů u Chebu jsou přípojnými vlaky na rychlíky směr z /do Karlových Varů."
+    },
+    {
+      "station": "Chodov",
+      "file": "stations/chodov.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky z/do Lokte jsou přípojnými vlaky na rychlíky směr z /do Chebu."
+    },
+    {
+      "station": "Chomutov",
+      "file": "stations/chomutov-do-30-06.json",
+      "where": "chomutov-do-30-06-006",
+      "row": 24,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Chomutov",
+      "file": "stations/chomutov-od-01-07.json",
+      "where": "chomutov-od-01-07-005",
+      "row": 23,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Kadaň",
+      "file": "stations/kadan.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Kadaň-Prunéřov",
+      "file": "stations/kadan-prunerov-do-30-06.json",
+      "where": "kadan-prunerov-do-30-06-041",
+      "row": 59,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Kadaň-Prunéřov",
+      "file": "stations/kadan-prunerov-od-01-07.json",
+      "where": "kadan-prunerov-od-01-07-031",
+      "row": 49,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Kojetín",
+      "file": "stations/kojetin.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Kojetín",
+      "file": "stations/kojetin.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Kolín",
+      "file": "stations/kolin.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců, platí základní čekací doby."
+    },
+    {
+      "station": "Kralupy nad Vltavou",
+      "file": "stations/kralupy-nad-vltavou.json",
+      "where": "part_a",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na/z nástupiště 5 – o dvě minuty delší"
+    },
+    {
+      "station": "Kralupy nad Vltavou",
+      "file": "stations/kralupy-nad-vltavou.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratě 092, 093, 110, 111 a odjezdem vlaků na tratě 092, 093, 110, 111 interval kratší než 4 minuty, u ostatních přípojných vlaků 3 minuty."
+    },
+    {
+      "station": "Louka u Litvínova",
+      "file": "stations/louka-u-litvinova.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Louny",
+      "file": "stations/louny.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak Os 9714 se považuje za přípojný vlak k vlaku Sp 1348."
+    },
+    {
+      "station": "Mariánské Lázně",
+      "file": "stations/marianske-lazne.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Zpracoval za GWTR: Jaroslav Šeda - upraveno Šeda 30.10.2025"
+    },
+    {
+      "station": "Mladá Boleslav město",
+      "file": "stations/mlada-boleslav-mesto.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD a DLB na sebe navzájem nečekají. Přípoje se vytvoří ve stanici Mladá Boleslav hl.n."
+    },
+    {
+      "station": "Moravské Budějovice",
+      "file": "stations/moravske-budejovice.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Most",
+      "file": "stations/most-do-30-06.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Most",
+      "file": "stations/most-od-01-07.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Návsí",
+      "file": "stations/navsi.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky Os směr Bohumín nejsou přípojné od vlaků Ex/R stejného směru."
+    },
+    {
+      "station": "Nezamyslice",
+      "file": "stations/nezamyslice.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Nezamyslice",
+      "file": "stations/nezamyslice.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a opačně, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Nymburk hl.n.",
+      "file": "stations/nymburk-hl-n.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky Os ČD ve směru Jičín jsou přípojem od vlaků R ARR ze směru Mladá Boleslav hl. n."
+    },
+    {
+      "station": "Nymburk hl.n.",
+      "file": "stations/nymburk-hl-n.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak R 950 je přípojem od vlaku Os 15640."
+    },
+    {
+      "station": "Nymburk hl.n.",
+      "file": "stations/nymburk-hl-n.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky není přípoj, pokud je mezi příjezdem a odjezdem interval kratší než 3 minuty, v případě přestupu mezi nejvzdálenějšími nástupišti 4 minuty. Jinak platí základní pravidla dle článku 2."
+    },
+    {
+      "station": "Obrnice",
+      "file": "stations/obrnice.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJÚK jsou přípojem od vlaků dopravce DLB, nejsou přípojem vlaků ostatních dopravců. Platí základní čekací doba."
+    },
+    {
+      "station": "Olomouc hl.n.",
+      "file": "stations/olomouc-hl-n.json",
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty"
+    },
+    {
+      "station": "Olomouc hl.n.",
+      "file": "stations/olomouc-hl-n.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Mezi vlaky 915 a 1435 je přípoj i v případě, že vlaky mimořádně nejsou přistaveny ke stejnému nástupišti."
+    },
+    {
+      "station": "Opava východ",
+      "file": "stations/opava-vychod.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojnými vlaky od vlaků dopravce GE a RJ, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Ostrava hlavní nádraží",
+      "file": "stations/ostrava-hl-n.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem vlaku z tratě 001 nebo 271 a odjezdem na trať 321 nebo 323 interval menší než 7 minut, v ostatních případech menší než 4 minuty. Jsou-li oba vlaky vedeny k Frýdlantskému nástupišti, ve stanici není zaručen přestup, je-li mezi příjezdem vlaku z tratě 321 nebo 323 a odjezdem na trať 001 nebo 271 interval menší než 4 minuty (při přestupu hrana – hrana 2 minuty)."
+    },
+    {
+      "station": "Ostrava hlavní nádraží",
+      "file": "stations/ostrava-hl-n.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Za sebou jedoucí vlaky směr Ostrava-Svinov (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné."
+    },
+    {
+      "station": "Ostrava hlavní nádraží",
+      "file": "stations/ostrava-hl-n.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    },
+    {
+      "station": "Ostrava hlavní nádraží",
+      "file": "stations/ostrava-hl-n.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Ostrava-Svinov",
+      "file": "stations/ostrava-svinov.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Za sebou jedoucí vlaky ve směru Ostrava hl. n. (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné. Toto ustanovení se nevztahuje na případy, kdy jeden z vlaků pokračuje ve směru Ostrava hl. n. obvod uhelné nádraží a na případy vyjmenované v následujícím řádku."
+    },
+    {
+      "station": "Ostrava-Svinov",
+      "file": "stations/ostrava-svinov.json",
+      "where": "part_b",
+      "row": 15,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117."
+    },
+    {
+      "station": "Ostrava-Svinov",
+      "file": "stations/ostrava-svinov.json",
+      "where": "part_b",
+      "row": 16,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak."
+    },
+    {
+      "station": "Ostrava-Svinov",
+      "file": "stations/ostrava-svinov.json",
+      "where": "part_b",
+      "row": 17,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Otrokovice",
+      "file": "stations/otrokovice.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky R ve směru Luhačovice nejsou přípojem od vlaků Os ze směru Přerov."
+    },
+    {
+      "station": "Pardubice hlavní nádraží",
+      "file": "stations/pardubice-hl-n.json",
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 4 minuty; na/z nástupiště 1A (kromě na/z nástupiště 5) – 5 minut"
+    },
+    {
+      "station": "Pardubice hlavní nádraží",
+      "file": "stations/pardubice-hl-n.json",
+      "where": "part_a",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup mezi nástupišti 5 a 2 – 5 minut, mezi nástupišti 5 a 1, 1A – 6 minut"
+    },
+    {
+      "station": "Pardubice hlavní nádraží",
+      "file": "stations/pardubice-hl-n.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ve směru jízdy na zastávku Pardubice centrum nečekají na žádné přípoje."
+    },
+    {
+      "station": "Plzeň hl.n.",
+      "file": "stations/plzen-hl-n.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak Ex 567 je přípojný od vlaku R 624 a v ⚒ je vlak Sp 1700 přípojný od vlaku Os 7842."
+    },
+    {
+      "station": "Plzeň hl.n.",
+      "file": "stations/plzen-hl-n.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlak R 778 je přípojný od vlaku Os 7844 v ⑥ a †."
+    },
+    {
+      "station": "Plzeň hl.n.",
+      "file": "stations/plzen-hl-n.json",
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců."
+    },
+    {
+      "station": "Plzeň hl.n.",
+      "file": "stations/plzen-hl-n.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky Os směr Radnice jsou přípojnými vlaky od Ex ze směru Praha hl.n."
+    },
+    {
+      "station": "Plzeň hl.n.",
+      "file": "stations/plzen-hl-n.json",
+      "where": "part_b",
+      "row": 15,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců. Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min."
+    },
+    {
+      "station": "Plzeň-Jižní Předměstí",
+      "file": "stations/plzen-jizni-predmesti.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ve směru Domažlice jsou přípojnými na vlaky ze směru Cheb, které zde pravidelně zastavují."
+    },
+    {
+      "station": "Plzeň-Jižní Předměstí",
+      "file": "stations/plzen-jizni-predmesti.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ve směru Cheb, které zde pravidelně zastavují, jsou přípojnými na vlaky ze směru Domažlice."
+    },
+    {
+      "station": "Plzeň-Jižní Předměstí",
+      "file": "stations/plzen-jizni-predmesti.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Odchylně od výše uvedeného není přípoj mezi vlaky: Ex 515 a Os 7444."
+    },
+    {
+      "station": "Podbořany",
+      "file": "stations/podborany.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Postoloprty",
+      "file": "stations/postoloprty.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Praha hl.n.",
+      "file": "stations/praha-hl-n.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR od Berouna a Všetat, nejsou přípojem vlaků ostatních dopravců (ARR z ostatních směrů)."
+    },
+    {
+      "station": "Praha hl.n.",
+      "file": "stations/praha-hl-n.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky dálkové dopravy ze směru Kolín nejsou přípojem na vlaky dálkové dopravy směr Nymburk a opačně."
+    },
+    {
+      "station": "Praha-Libeň",
+      "file": "stations/praha-liben.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky S49 Praha-Hostivař – Roztoky u Prahy, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Přerov",
+      "file": "stations/prerov.json",
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 3 minuty, a na každé další nástupiště o jednu minutu více, max. 4 minuty"
+    },
+    {
+      "station": "Přerov",
+      "file": "stations/prerov.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Přerov",
+      "file": "stations/prerov.json",
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky linky R8 směr Brno a Bohumín jsou přípojem od ostatních spojů ČD."
+    },
+    {
+      "station": "Rokycany",
+      "file": "stations/rokycany.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 7817 a Os 27846, Os 7821 a Os 27848, Os 27801 a 7842, Os 27805 a Os 7804, Os 27843 a Sp 1706, Os 27845 a Os 7816, Os 27851 a Os 7860."
+    },
+    {
+      "station": "Staré Město u Uherského Hradiště",
+      "file": "stations/stare-mesto-u-uh.json",
+      "where": "stare-mesto-u-uh-003",
+      "row": 20,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Studénka",
+      "file": "stations/studenka.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    },
+    {
+      "station": "Suchdol nad Odrou",
+      "file": "stations/suchdol-nad-odrou.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    },
+    {
+      "station": "Šakvice",
+      "file": "stations/sakvice.json",
+      "where": "sakvice-004",
+      "row": 19,
+      "field": "wait.workday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    },
+    {
+      "station": "Teplice nad Metují",
+      "file": "stations/teplice-nad-metuji-mimo.json",
+      "where": "station",
+      "issue": "Varianta 'mimo sezónu' má v listu jen datum začátku; pravděpodobně platí i před sezónou (14. 12. 2025 – 13. 6. 2026) – ověřit.",
+      "text": "JŘ 2026, platí od 1. září 2026"
+    },
+    {
+      "station": "Ústí nad Labem hl.n.",
+      "file": "stations/usti-nad-labem-hl-n-do-30-06.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky považované za přípoj: R 670 a Sp 1940, R 671 a Ex 620, Os 6970 a Os 6841, Ex 600 a Os 6848 + Os 6850 + Os 6968, Sp 1943 a R 673, Os 6942 a Os 6856, Os 16903 (RJ ÚK) a Os 6871, Os 16907 (RJ ÚK) a Os 6964, Os 5275 a Os 6925, 5277 a Os 6923, Os 6833 a Os 6962"
+    },
+    {
+      "station": "Ústí nad Labem hl.n.",
+      "file": "stations/usti-nad-labem-hl-n-od-01-07.json",
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky považované za přípoj: R 670 a Sp 1940, R 671 a Ex 620, Os 6970 a Os 6841, Ex 600 a Os 6848 + Os 6968, Sp 1943 a R 673, Os 6942 a Os 6856, Os 16903 (RJ ÚK) a Os 6871, Os 16907 (RJ ÚK) a Os 6964, Os 5275 a Os 6925, 5277 a Os 6923, Os 6565 (RJ ÚK) a Os 6962"
+    },
+    {
+      "station": "Vlašim",
+      "file": "stations/vlasim.json",
+      "where": "part_b",
+      "row": 10,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
+    },
+    {
+      "station": "Všetaty",
+      "file": "stations/vsetaty.json",
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky linky R23 dopravce RJ jsou přípojem vlaků dopravce Arriva."
+    },
+    {
+      "station": "Vyškov na Moravě",
+      "file": "stations/vyskov-na-morave.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 ze směru Bohumín, nejsou přípojem vlaků ostatních dopravců."
+    },
+    {
+      "station": "Zábřeh na Moravě",
+      "file": "stations/zabreh-na-morave.json",
+      "where": "part_a",
+      "row": 7,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty"
+    },
+    {
+      "station": "Železná Ruda-Alžbětín",
+      "file": "stations/zelezna-ruda-alzbetin.json",
+      "where": "part_b",
+      "row": 9,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem přijíždějících pravidelných vlaků ze sousední infrastruktury DB."
+    }
+  ]
+}

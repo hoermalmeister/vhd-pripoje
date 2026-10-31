@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.0",
+  "id": "krasny-jez",
+  "station": "Krásný Jez",
+  "sheet_name": "Krásný Jez",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 1. června 2026",
+    "valid_from": "2026-06-01",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojnými vlaky od vlaků dopravce GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "change": {
+        "before": null,
+        "after": "Vlaky GWTR jsou přípojné vlaky všech dopravců."
+      },
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "change": {
+        "before": null,
+        "after": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut."
+      },
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Horní Slavkov-Kounice",
+        "direction": "Horní Slavkov-Kounice",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "krasny-jez-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "27170",
+              "trains": [
+                27170
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26902, 26903",
+              "trains": [
+                26902,
+                26903
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "krasny-jez-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "27172",
+              "trains": [
+                27172
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26904, 26905",
+              "trains": [
+                26904,
+                26905
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "krasny-jez-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "27174",
+              "trains": [
+                27174
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26908, 26909",
+              "trains": [
+                26908,
+                26909
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          },
+          {
+            "id": "krasny-jez-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "27176",
+              "trains": [
+                27176
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "26910, 26911",
+              "trains": [
+                26910,
+                26911
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "vždy",
+                "kind": "always"
+              },
+              "sunday_holiday": {
+                "raw": "vždy",
+                "kind": "always"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "change": {
+        "before": null,
+        "after": "Čekání vlaků GWTR nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824."
+      },
+      "after_section": "vlaky směr Horní Slavkov-Kounice"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Jana Michovská",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 1,
+    "rules_active": 4,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

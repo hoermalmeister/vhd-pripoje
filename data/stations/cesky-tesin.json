@@ -1,0 +1,1552 @@
+{
+  "schema_version": "1.0",
+  "id": "cesky-tesin",
+  "station": "Český Těšín",
+  "sheet_name": "Český Těšín",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 30. září 2026",
+    "valid_from": "2026-09-30",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Základní přestupní doba je 3 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "základní přestupní doba ve stanici"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti (hrana – hrana, za sebou) – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti (hrana – hrana, za sebou)"
+      }
+    },
+    {
+      "text": "Přestup z/na 1. nástupiště na/z 5. nástupiště (frýdecké) – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup z/na 1. nástupiště na/z 5. nástupiště (frýdecké)"
+      }
+    },
+    {
+      "text": "Přestup ze/na 2. a 3. nástupiště na/z 5. nástupiště (frýdecké) – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup ze/na 2. a 3. nástupiště na/z 5. nástupiště (frýdecké)"
+      }
+    },
+    {
+      "text": "Přestup ze/na 4. nástupiště na/z 5. nástupiště (frýdecké) – 6 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 6,
+        "applies_to": "Přestup ze/na 4. nástupiště na/z 5. nástupiště (frýdecké)"
+      }
+    },
+    {
+      "text": "Přestup mezi nástupišti 1 a 4 – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi nástupišti 1 a 4"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minut (pokud není v části B stanoveno jinak).",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Přípojné vlaky s přestupní dobou 2 minuty jsou: Os 2924 a Os 12808.",
+      "change": {
+        "before": "Přípojné vlaky s přestupní dobou 2 minuty jsou: Os 12801 a Sp 1604, Os 12805 a Sp 1606, Os 12809 a Sp 1608, Os 2924 a Os 12808.",
+        "after": "Přípojné vlaky s přestupní dobou 2 minuty jsou: Os 2924 a Os 12808."
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 2924
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 12808
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
+        "transfer_minutes": 2
+      }
+    },
+    {
+      "text": "Přípojné vlaky opačného směru jsou: Sp 1605 a Os 2926, Sp 2901 a Os 2926, Sp 1613 a Os 2934, Sp 1617 a Os 2938, Sp 1621 a Os 2942, Sp 1625 a Os 2946, Sp 1629 a Os 2950, Sp 1631 a Os 2952.",
+      "change": {
+        "before": "Přípojné vlaky opačného směru jsou: Sp 1605 a Os 2926, Sp 2047 2901 a Os 2926, Sp 1613 a Os 2934, Sp 1617 a Os 2938, Sp 1621 a Os 2942, Sp 1625 a Os 2946, Sp 1629 a Os 2950, Sp 1631 a Os 2952.",
+        "after": "Přípojné vlaky opačného směru jsou: Sp 1605 a Os 2926, Sp 2901 a Os 2926, Sp 1613 a Os 2934, Sp 1617 a Os 2938, Sp 1621 a Os 2942, Sp 1625 a Os 2946, Sp 1629 a Os 2950, Sp 1631 a Os 2952."
+      },
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "opposite_direction_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1605
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2926
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 2901
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2926
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1613
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2934
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1617
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2938
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1621
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2942
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1625
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2946
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1629
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2950
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Sp",
+                "number": 1631
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2952
+              }
+            ]
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Bohumín",
+        "direction": "Bohumín",
+        "source_row": 22,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cesky-tesin-001",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Frýdku-Místku a Havířova",
+              "from_directions": [
+                "Frýdku-Místku",
+                "Havířova"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-002",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "546",
+              "trains": [
+                546
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "2900",
+              "trains": [
+                2900
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-003",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os",
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Frýdku-Místku",
+              "from_directions": [
+                "Frýdku-Místku"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-004",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "2900",
+              "trains": [
+                2900
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "12804",
+              "trains": [
+                12804
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-005",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "2926, 2934, 2938, 2942, 2946, 2950, 2952",
+              "trains": [
+                2926,
+                2934,
+                2938,
+                2942,
+                2946,
+                2950,
+                2952
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1605, 1613, 1617, 1621, 1625, 1629, 1631",
+              "trains": [
+                1605,
+                1613,
+                1617,
+                1621,
+                1625,
+                1629,
+                1631
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": "2926, 2934, 2838, 2938, 2942, 2946, 2950, 2952",
+                "after": "2926, 2934, 2938, 2942, 2946, 2950, 2952"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Mosty u Jablunkova – Čadca",
+        "direction": "Mosty u Jablunkova – Čadca",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cesky-tesin-006",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-007",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Havířova, Frýdku-Místku",
+              "from_directions": [
+                "Havířova",
+                "Frýdku-Místku"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-008",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Cieszyna",
+              "from_directions": [
+                "Cieszyna"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-009",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "2915, 2929",
+              "trains": [
+                2915,
+                2929
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-010",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "2933",
+              "trains": [
+                2933
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-011",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "2947, 2951, 2955, 2957",
+              "trains": [
+                2947,
+                2951,
+                2955,
+                2957
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-012",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "3417",
+              "trains": [
+                3417
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Havířov – Ostrava-Svinov",
+        "direction": "Havířov – Ostrava-Svinov",
+        "source_row": 36,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cesky-tesin-013",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků od Třince, vlaků Ex nebo R od Bohumína nebo Ostravy)",
+              "all": true,
+              "except": [
+                {
+                  "all": true,
+                  "from_directions": [
+                    "Třinec"
+                  ]
+                },
+                {
+                  "all": true,
+                  "categories": [
+                    "Ex",
+                    "R"
+                  ],
+                  "from_directions": [
+                    "Bohumín",
+                    "Ostrava"
+                  ]
+                }
+              ],
+              "parse": "manual"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-014",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex nebo R od Bohumína nebo Ostravy",
+              "from_directions": [
+                "Bohumína",
+                "Ostravy"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-015",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Třince",
+              "from_directions": [
+                "Třince"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-016",
+            "source_row": 40,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "2802, 3412, 3414, 3416, 3420, 3430, 3432, 3434, 3436, 3438",
+              "trains": [
+                2802,
+                3412,
+                3414,
+                3416,
+                3420,
+                3430,
+                3432,
+                3434,
+                3436,
+                3438
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Třince",
+              "from_directions": [
+                "Třince"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "cesky-tesin-017",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "2804",
+              "trains": [
+                2804
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Třince",
+              "from_directions": [
+                "Třince"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-018",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "3406, 3410",
+              "trains": [
+                3406,
+                3410
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Třince",
+              "from_directions": [
+                "Třince"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-019",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "3416, 3432, 3434, 3436, 3438",
+              "trains": [
+                3416,
+                3432,
+                3434,
+                3436,
+                3438
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Třince",
+              "from_directions": [
+                "Třince"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": null,
+                "after": "V od Třince"
+              },
+              "workday": {
+                "before": null,
+                "after": "10"
+              },
+              "saturday": {
+                "before": null,
+                "after": "10"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "10"
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-020",
+            "source_row": 44,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "3416, 3432, 3434, 3436, 3438",
+              "trains": [
+                3416,
+                3432,
+                3434,
+                3436,
+                3438
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V od Třince",
+              "from_directions": [
+                "Třince"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Frýdek – Místek",
+        "direction": "Frýdek – Místek",
+        "source_row": 46,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cesky-tesin-021",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-022",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "12812, 12820",
+              "trains": [
+                12812,
+                12820
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1008, 1012",
+              "trains": [
+                1008,
+                1012
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-023",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "12838",
+              "trains": [
+                12838
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1257",
+              "trains": [
+                1257
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-024",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "12844",
+              "trains": [
+                12844
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1011",
+              "trains": [
+                1011
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-025",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "12848",
+              "trains": [
+                12848
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 1015)",
+              "all": true,
+              "except": [
+                {
+                  "text": "1015",
+                  "trains": [
+                    1015
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-026",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "12848",
+              "trains": [
+                12848
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1015",
+              "trains": [
+                1015
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-027",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "12850",
+              "trains": [
+                12850
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 1017)",
+              "all": true,
+              "except": [
+                {
+                  "text": "1017",
+                  "trains": [
+                    1017
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-028",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "12850",
+              "trains": [
+                12850
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1017",
+              "trains": [
+                1017
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-029",
+            "source_row": 55,
+            "status": "active",
+            "waiting_train": {
+              "text": "12852",
+              "trains": [
+                12852
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Cieszyn (Polsko)",
+        "direction": "Cieszyn",
+        "direction_detail": "Polsko",
+        "source_row": 56,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "cesky-tesin-030",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-031",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "12801",
+              "trains": [
+                12801
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "cesky-tesin-032",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "12849",
+              "trains": [
+                12849
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Za Správu železnic odsouhlasil: Ing. David Rada"
+  ],
+  "summary": {
+    "sections": 5,
+    "rules_active": 30,
+    "rules_cancelled": 2,
+    "review_items": 0
+  },
+  "review": []
+}

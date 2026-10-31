@@ -1,0 +1,2455 @@
+{
+  "schema_version": "1.0",
+  "id": "breclav",
+  "station": "Břeclav",
+  "sheet_name": "Břeclav",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. června 2026",
+    "valid_from": "2026-06-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi I. a I.A nástupištěm – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup mezi I. a I.A nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi I. a I.B nástupištěm – 4 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Přestup mezi I. a I.B nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi I.B a III., IV. nástupištěm – 6 minut.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 6,
+        "applies_to": "Přestup mezi I.B a III., IV. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi různými nástupišti vyjma výše uvedených – 5 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 5,
+        "applies_to": "Přestup mezi různými nástupišti vyjma výše uvedených"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky považované za přípoj: Os 14601 a R 801, Os 14605 a Os 2319 (Os 22319), Os 14619 a Os 2359 (Os 22359).",
+      "structured": {
+        "type": "connection_pairs",
+        "kind": "considered_connection",
+        "pairs": [
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 14601
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "R",
+                "number": 801
+              }
+            ]
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 14605
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2319
+              }
+            ],
+            "note_b": "Os 22319"
+          },
+          {
+            "trains_a": [
+              {
+                "category": "Os",
+                "number": 14619
+              }
+            ],
+            "trains_b": [
+              {
+                "category": "Os",
+                "number": 2359
+              }
+            ],
+            "note_b": "Os 22359"
+          }
+        ],
+        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky."
+      }
+    },
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 5 minut.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 5,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Vlaky ARR jsou přípojem od vlaků ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ARR"
+        ],
+        "connecting_operators": [
+          "ČD"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "ARR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Lednice",
+        "direction": "Lednice",
+        "source_row": 22,
+        "basic_wait_times_only": true,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Znojmo",
+        "direction": "Znojmo",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "breclav-001",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-002",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "1360, 1364, 1366, 1368, 1370",
+              "trains": [
+                1360,
+                1364,
+                1366,
+                1368,
+                1370
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex, R od Přerova",
+              "from_directions": [
+                "Přerova"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-003",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1362",
+              "trains": [
+                1362
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex, R od Přerova",
+              "from_directions": [
+                "Přerova"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-004",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "4526",
+              "trains": [
+                4526
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Ex, R od Přerova",
+              "from_directions": [
+                "Přerova"
+              ],
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "breclav-005",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "4506, 4512, 4516, 4520",
+              "trains": [
+                4506,
+                4512,
+                4516,
+                4520
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10/5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10,
+                "minutes_alternative": 5,
+                "note": "Hodnota závisí na podmínce v poznámce pod čarou."
+              },
+              "sunday_holiday": {
+                "raw": "10/5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10,
+                "minutes_alternative": 5,
+                "note": "Hodnota závisí na podmínce v poznámce pod čarou."
+              }
+            }
+          },
+          {
+            "id": "breclav-006",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "4510",
+              "trains": [
+                4510
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10/5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10,
+                "minutes_alternative": 5,
+                "note": "Hodnota závisí na podmínce v poznámce pod čarou."
+              },
+              "sunday_holiday": {
+                "raw": "10/5*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 10,
+                "minutes_alternative": 5,
+                "note": "Hodnota závisí na podmínce v poznámce pod čarou."
+              }
+            }
+          },
+          {
+            "id": "breclav-007",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "4524, 4528",
+              "trains": [
+                4524,
+                4528
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-008",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "4530, 4532, 4548",
+              "trains": [
+                4530,
+                4532,
+                4548
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "breclav-009",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "4542",
+              "trains": [
+                4542
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 35,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "breclav-010",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "50, 270",
+              "trains": [
+                50,
+                270
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-011",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "456",
+              "trains": [
+                456
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "476",
+              "trains": [
+                476
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "120",
+                "kind": "minutes",
+                "minutes": 120
+              },
+              "saturday": {
+                "raw": "120",
+                "kind": "minutes",
+                "minutes": 120
+              },
+              "sunday_holiday": {
+                "raw": "120",
+                "kind": "minutes",
+                "minutes": 120
+              }
+            }
+          },
+          {
+            "id": "breclav-012",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R a Sp (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "R",
+                "Sp"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-013",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "802",
+              "trains": [
+                802
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-014",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "818, 1788",
+              "trains": [
+                818,
+                1788
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4555, 4553",
+              "trains": [
+                4555,
+                4553
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-015",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "1371",
+              "trains": [
+                1371
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-016",
+            "source_row": 42,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-017",
+            "source_row": 43,
+            "status": "active",
+            "waiting_train": {
+              "text": "14622",
+              "trains": [
+                14622
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-018",
+            "source_row": 44,
+            "status": "active",
+            "waiting_train": {
+              "text": "14624",
+              "trains": [
+                14624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Kúty",
+        "direction": "Kúty",
+        "source_row": 45,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "breclav-019",
+            "source_row": 46,
+            "status": "active",
+            "waiting_train": {
+              "text": "131",
+              "trains": [
+                131
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "253",
+              "trains": [
+                253
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-020",
+            "source_row": 47,
+            "status": "active",
+            "waiting_train": {
+              "text": "175",
+              "trains": [
+                175
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "207, 804",
+              "trains": [
+                207,
+                804
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "175"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "207, 804"
+              },
+              "workday": {
+                "before": null,
+                "after": "15"
+              },
+              "saturday": {
+                "before": null,
+                "after": "15"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "15"
+              }
+            }
+          },
+          {
+            "id": "breclav-021",
+            "source_row": 48,
+            "status": "active",
+            "waiting_train": {
+              "text": "273",
+              "trains": [
+                273
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "101",
+              "trains": [
+                101
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-022",
+            "source_row": 49,
+            "status": "active",
+            "waiting_train": {
+              "text": "275",
+              "trains": [
+                275
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "203",
+              "trains": [
+                203
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-023",
+            "source_row": 50,
+            "status": "active",
+            "waiting_train": {
+              "text": "277",
+              "trains": [
+                277
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "103",
+              "trains": [
+                103
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-024",
+            "source_row": 51,
+            "status": "active",
+            "waiting_train": {
+              "text": "279",
+              "trains": [
+                279
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "205",
+              "trains": [
+                205
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-025",
+            "source_row": 52,
+            "status": "active",
+            "waiting_train": {
+              "text": "281",
+              "trains": [
+                281
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "806",
+              "trains": [
+                806
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "804",
+                "after": "806"
+              },
+              "workday": {
+                "before": "15",
+                "after": "10"
+              },
+              "saturday": {
+                "before": "15",
+                "after": "10"
+              },
+              "sunday_holiday": {
+                "before": "15",
+                "after": "10"
+              }
+            }
+          },
+          {
+            "id": "breclav-026",
+            "source_row": 53,
+            "status": "active",
+            "waiting_train": {
+              "text": "283",
+              "trains": [
+                283
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-027",
+            "source_row": 54,
+            "status": "active",
+            "waiting_train": {
+              "text": "477",
+              "trains": [
+                477
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "407, 457, 577",
+              "trains": [
+                407,
+                457,
+                577
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "saturday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              },
+              "sunday_holiday": {
+                "raw": "60",
+                "kind": "minutes",
+                "minutes": 60
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Přerov",
+        "direction": "Přerov",
+        "source_row": 56,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "breclav-028",
+            "source_row": 57,
+            "status": "active",
+            "waiting_train": {
+              "text": "100",
+              "trains": [
+                100
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "272",
+              "trains": [
+                272
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-029",
+            "source_row": 58,
+            "status": "active",
+            "waiting_train": {
+              "text": "100",
+              "trains": [
+                100
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1371",
+              "trains": [
+                1371
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-030",
+            "source_row": 59,
+            "status": "active",
+            "waiting_train": {
+              "text": "102",
+              "trains": [
+                102
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "276",
+              "trains": [
+                276
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-031",
+            "source_row": 60,
+            "status": "active",
+            "waiting_train": {
+              "text": "102",
+              "trains": [
+                102
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1367",
+              "trains": [
+                1367
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-032",
+            "source_row": 61,
+            "status": "active",
+            "waiting_train": {
+              "text": "106",
+              "trains": [
+                106
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "282",
+              "trains": [
+                282
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-033",
+            "source_row": 62,
+            "status": "active",
+            "waiting_train": {
+              "text": "130",
+              "trains": [
+                130
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "252",
+              "trains": [
+                252
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-034",
+            "source_row": 63,
+            "status": "active",
+            "waiting_train": {
+              "text": "202",
+              "trains": [
+                202
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "274",
+              "trains": [
+                274
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-035",
+            "source_row": 64,
+            "status": "active",
+            "waiting_train": {
+              "text": "202",
+              "trains": [
+                202
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1369",
+              "trains": [
+                1369
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-036",
+            "source_row": 65,
+            "status": "active",
+            "waiting_train": {
+              "text": "204",
+              "trains": [
+                204
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "278",
+              "trains": [
+                278
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-037",
+            "source_row": 66,
+            "status": "active",
+            "waiting_train": {
+              "text": "204",
+              "trains": [
+                204
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1365",
+              "trains": [
+                1365
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-038",
+            "source_row": 67,
+            "status": "active",
+            "waiting_train": {
+              "text": "206",
+              "trains": [
+                206
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "280",
+              "trains": [
+                280
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-039",
+            "source_row": 68,
+            "status": "active",
+            "waiting_train": {
+              "text": "206",
+              "trains": [
+                206
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1361",
+              "trains": [
+                1361
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "breclav-040",
+            "source_row": 69,
+            "status": "active",
+            "waiting_train": {
+              "text": "406",
+              "trains": [
+                406
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "476",
+              "trains": [
+                476
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "120",
+                "kind": "minutes",
+                "minutes": 120
+              },
+              "saturday": {
+                "raw": "120",
+                "kind": "minutes",
+                "minutes": 120
+              },
+              "sunday_holiday": {
+                "raw": "120",
+                "kind": "minutes",
+                "minutes": 120
+              }
+            }
+          },
+          {
+            "id": "breclav-041",
+            "source_row": 70,
+            "status": "active",
+            "waiting_train": {
+              "text": "815",
+              "trains": [
+                815
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-042",
+            "source_row": 71,
+            "status": "active",
+            "waiting_train": {
+              "text": "823, 825, 827, 829",
+              "trains": [
+                823,
+                825,
+                827,
+                829
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma vlaků Os ze Znojma)",
+              "all": true,
+              "except": [
+                {
+                  "text": "vlaků Os ze Znojma",
+                  "from_directions": [
+                    "Znojma"
+                  ],
+                  "categories": [
+                    "Os"
+                  ],
+                  "all": true,
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "breclav-043",
+            "source_row": 72,
+            "status": "active",
+            "waiting_train": {
+              "text": "823, 825, 827, 829",
+              "trains": [
+                823,
+                825,
+                827,
+                829
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze Znojma",
+              "from_directions": [
+                "Znojma"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-044",
+            "source_row": 73,
+            "status": "active",
+            "waiting_train": {
+              "text": "831, 833",
+              "trains": [
+                831,
+                833
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-045",
+            "source_row": 74,
+            "status": "active",
+            "waiting_train": {
+              "text": "835",
+              "trains": [
+                835
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "breclav-046",
+            "source_row": 75,
+            "status": "active",
+            "waiting_train": {
+              "text": "2723",
+              "trains": [
+                2723
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "255",
+              "trains": [
+                255
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "breclav-047",
+            "source_row": 76,
+            "status": "active",
+            "waiting_train": {
+              "text": "4223, 4669",
+              "trains": [
+                4223,
+                4669
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "breclav-048",
+            "source_row": 77,
+            "status": "active",
+            "waiting_train": {
+              "text": "4531",
+              "trains": [
+                4531
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Wien",
+        "direction": "Wien",
+        "source_row": 78,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "breclav-049",
+            "source_row": 79,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "sunday_holiday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              }
+            }
+          },
+          {
+            "id": "breclav-050",
+            "source_row": 80,
+            "status": "active",
+            "waiting_train": {
+              "text": "101",
+              "trains": [
+                101
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "273",
+              "trains": [
+                273
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-051",
+            "source_row": 81,
+            "status": "active",
+            "waiting_train": {
+              "text": "103",
+              "trains": [
+                103
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "277",
+              "trains": [
+                277
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-052",
+            "source_row": 82,
+            "status": "active",
+            "waiting_train": {
+              "text": "107",
+              "trains": [
+                107
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "283",
+              "trains": [
+                283
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-053",
+            "source_row": 83,
+            "status": "active",
+            "waiting_train": {
+              "text": "177",
+              "trains": [
+                177
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "breclav-054",
+            "source_row": 84,
+            "status": "active",
+            "waiting_train": {
+              "text": "203",
+              "trains": [
+                203
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "275",
+              "trains": [
+                275
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-055",
+            "source_row": 85,
+            "status": "active",
+            "waiting_train": {
+              "text": "205",
+              "trains": [
+                205
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "279",
+              "trains": [
+                279
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-056",
+            "source_row": 86,
+            "status": "active",
+            "waiting_train": {
+              "text": "207",
+              "trains": [
+                207
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "175",
+              "trains": [
+                175
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "connecting_train": {
+                "before": "281 175",
+                "after": "175"
+              }
+            }
+          },
+          {
+            "id": "breclav-057",
+            "source_row": 87,
+            "status": "active",
+            "waiting_train": {
+              "text": "259",
+              "trains": [
+                259
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-058",
+            "source_row": 88,
+            "status": "active",
+            "waiting_train": {
+              "text": "457",
+              "trains": [
+                457
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-059",
+            "source_row": 89,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "breclav-060",
+            "source_row": 90,
+            "status": "active",
+            "waiting_train": {
+              "text": "2371, 2375, 2379",
+              "trains": [
+                2371,
+                2375,
+                2379
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "v sezoně rekreačních vlaků (28.3. - 25.10.2026) se čekací doba snižuje na 5 minut, jinak platí 10 minut."
+    }
+  },
+  "notes": [
+    {
+      "text": "Při rozvázání přípoje s přechodem vozů řeší jejich další přechod SD ČD.",
+      "after_section": "vlaky směr Wien"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ARR: Ing. Marek Foltán",
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Dalibor Horák"
+  ],
+  "summary": {
+    "sections": 6,
+    "rules_active": 60,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

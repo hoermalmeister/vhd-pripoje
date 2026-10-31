@@ -1,0 +1,753 @@
+{
+  "schema_version": "1.0",
+  "id": "prostejov-hl-n",
+  "station": "Prostějov hl.n.",
+  "sheet_name": "Prostějov hl.n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestupní doba je vždy 2 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestupní doba je vždy"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Kostelec na Hané",
+        "direction": "Kostelec na Hané",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "prostejov-hl-n-001",
+            "source_row": 15,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-002",
+            "source_row": 16,
+            "status": "active",
+            "waiting_train": {
+              "text": "24706, 24722, 24734",
+              "trains": [
+                24706,
+                24722,
+                24734
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-003",
+            "source_row": 17,
+            "status": "active",
+            "waiting_train": {
+              "text": "24708",
+              "trains": [
+                24708
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V (vyjma 3735)",
+              "all": true,
+              "except": [
+                {
+                  "text": "3735",
+                  "trains": [
+                    3735
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-004",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "24708",
+              "trains": [
+                24708
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "3735",
+              "trains": [
+                3735
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod ZP a LP",
+                "kind": "always_through_coach",
+                "condition": "ZP a LP"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-005",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "24712, 24716, 24720",
+              "trains": [
+                24712,
+                24716,
+                24720
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-006",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "24724",
+              "trains": [
+                24724
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Nezamyslice",
+        "direction": "Nezamyslice",
+        "source_row": 21,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "prostejov-hl-n-007",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R (vyjma 900, 902, 914)",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "except": [
+                {
+                  "text": "900, 902, 914",
+                  "trains": [
+                    900,
+                    902,
+                    914
+                  ],
+                  "parse": "full"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-008",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "900",
+              "trains": [
+                900
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15 v ⑤",
+                "kind": "minutes",
+                "minutes": 15,
+                "only_on_days": "⑤"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-009",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "902",
+              "trains": [
+                902
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-010",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "914",
+              "trains": [
+                914
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24705",
+              "trains": [
+                24705
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-011",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "3719, 3725, 3729, 3733",
+              "trains": [
+                3719,
+                3725,
+                3729,
+                3733
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Olomouc hl.n.",
+        "direction": "Olomouc hl.n.",
+        "source_row": 28,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "prostejov-hl-n-012",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky R",
+              "categories": [
+                "R"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-013",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "1430, 1432, 1434, 1438",
+              "trains": [
+                1430,
+                1432,
+                1434,
+                1438
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-014",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "3708, 3710",
+              "trains": [
+                3708,
+                3710
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-015",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "3706, 3712, 3714, 3716, 3718, 3722, 3724, 3726, 3728, 3732, 3734, 3736",
+              "trains": [
+                3706,
+                3712,
+                3714,
+                3716,
+                3718,
+                3722,
+                3724,
+                3726,
+                3728,
+                3732,
+                3734,
+                3736
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-016",
+            "source_row": 33,
+            "status": "active",
+            "waiting_train": {
+              "text": "3730",
+              "trains": [
+                3730
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24709",
+              "trains": [
+                24709
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-017",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "3738",
+              "trains": [
+                3738
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24723",
+              "trains": [
+                24723
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod v 1 - 4",
+                "kind": "always_through_coach",
+                "condition": "v 1 - 4"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-018",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "3738",
+              "trains": [
+                3738
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5 v 5",
+                "kind": "minutes",
+                "minutes": 5,
+                "only_on_days": "5"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "prostejov-hl-n-019",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "3744",
+              "trains": [
+                3744
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "24725",
+              "trains": [
+                24725
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Bc. Radek Kraváček",
+    "Za Správu železnic odsouhlasil: Libor Matula"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 19,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

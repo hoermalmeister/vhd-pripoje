@@ -1,0 +1,999 @@
+{
+  "schema_version": "1.0",
+  "id": "brno-zidenice",
+  "station": "Brno-Židenice",
+  "sheet_name": "Brno-Židenice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 20. dubna 2026",
+    "valid_from": "2026-04-20",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Přestup mezi I. a II., III. nástupištěm – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi I. a II., III. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup mezi II. a III. nástupištěm – 3 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 3,
+        "applies_to": "Přestup mezi II. a III. nástupištěm"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "structured": {
+        "type": "min_interval",
+        "minutes": 3,
+        "meaning": "Je-li plánovaný interval mezi příjezdem přípojného a odjezdem návazného vlaku kratší, nejde o přípoj."
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Blansko",
+        "direction": "Blansko",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-zidenice-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "4000, 4008, 4010, 4012, 4014, 4016, 4058, 4060, 4062, 4064, 4066, 4068, 4070, 4072, 4074, 4076, 4078, 4080",
+              "trains": [
+                4000,
+                4008,
+                4010,
+                4012,
+                4014,
+                4016,
+                4058,
+                4060,
+                4062,
+                4064,
+                4066,
+                4068,
+                4070,
+                4072,
+                4074,
+                4076,
+                4078,
+                4080
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru Tišnov",
+              "from_directions": [
+                "Tišnov"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "4082",
+              "trains": [
+                4082
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4665",
+              "trains": [
+                4665
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "4702, 4704, 4706, 4708, 4710, 4712, 4714, 4716, 4718, 4720, 4722, 4724, 4726, 4728, 4730, 4732, 4734, 4736, 4738, 4740, 4742, 4744, 4746, 4748",
+              "trains": [
+                4702,
+                4704,
+                4706,
+                4708,
+                4710,
+                4712,
+                4714,
+                4716,
+                4718,
+                4720,
+                4722,
+                4724,
+                4726,
+                4728,
+                4730,
+                4732,
+                4734,
+                4736,
+                4738,
+                4740,
+                4742,
+                4744,
+                4746,
+                4748
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru Tišnov",
+              "from_directions": [
+                "Tišnov"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "4750, 4754",
+              "trains": [
+                4750,
+                4754
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "4756",
+              "trains": [
+                4756
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "4758",
+              "trains": [
+                4758
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Tišnov",
+        "direction": "Tišnov",
+        "source_row": 25,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-zidenice-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1780",
+              "trains": [
+                1780
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-010",
+            "source_row": 28,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "4602, 4604, 4606, 4608, 4610, 4612, 4614, 4616, 4618, 4620, 4630, 4632, 4634, 4636, 4638, 4640, 4642, 4644, 4646, 4648, 4650, 4652, 4654, 4656, 4658",
+              "trains": [
+                4602,
+                4604,
+                4606,
+                4608,
+                4610,
+                4612,
+                4614,
+                4616,
+                4618,
+                4620,
+                4630,
+                4632,
+                4634,
+                4636,
+                4638,
+                4640,
+                4642,
+                4644,
+                4646,
+                4648,
+                4650,
+                4652,
+                4654,
+                4656,
+                4658
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru Blansko",
+              "from_directions": [
+                "Blansko"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2**",
+                "footnote_marks": [
+                  "**"
+                ],
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "brno-zidenice-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "4602, 4604, 4612, 4614, 4616, 4618, 4620, 4630, 4632, 4634, 4636, 4648, 4650, 4652, 4924, 4930, 4962, 4964, 4966, 4968, 4970, 4972, 4974, 4976, 4978",
+              "trains": [
+                4602,
+                4604,
+                4612,
+                4614,
+                4616,
+                4618,
+                4620,
+                4630,
+                4632,
+                4634,
+                4636,
+                4648,
+                4650,
+                4652,
+                4924,
+                4930,
+                4962,
+                4964,
+                4966,
+                4968,
+                4970,
+                4972,
+                4974,
+                4976,
+                4978
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru Blansko",
+              "from_directions": [
+                "Blansko"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "4602, 4604, 4612, 4614, 4616, 4618, 4620, 4630, 4632, 4634, 4636, 4648, 4650, 4652, 4924, 4930, 4962, 4964, 4966, 4968, 4970, 4972, 4974, 4976, 4978"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "vlaky Os ze směru Blansko"
+              },
+              "workday": {
+                "before": null,
+                "after": "2"
+              },
+              "saturday": {
+                "before": null,
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "4622, 4660, 4954",
+              "trains": [
+                4622,
+                4660,
+                4954
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "4624",
+              "trains": [
+                4624
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "4664, 4670",
+              "trains": [
+                4664,
+                4670
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-015",
+            "source_row": 33,
+            "status": "cancelled",
+            "waiting_train": {
+              "text": "4918, 4920, 4922, 4924, 4930, 4962, 4964, 4966, 4968, 4970, 4972, 4974, 4976, 4978",
+              "trains": [
+                4918,
+                4920,
+                4922,
+                4924,
+                4930,
+                4962,
+                4964,
+                4966,
+                4968,
+                4970,
+                4972,
+                4974,
+                4976,
+                4978
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru Blansko",
+              "from_directions": [
+                "Blansko"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "2",
+                "kind": "minutes",
+                "minutes": 2
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "note": "Řádek je v podkladu celý přeškrtnutý – vazba byla změnou zrušena, neuplatňuje se."
+          },
+          {
+            "id": "brno-zidenice-016",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "4606, 4608, 4610, 4620, 4638, 4640, 4642, 4644, 4646, 4654, 4656, 4658, 4918, 4920, 4922",
+              "trains": [
+                4606,
+                4608,
+                4610,
+                4620,
+                4638,
+                4640,
+                4642,
+                4644,
+                4646,
+                4654,
+                4656,
+                4658,
+                4918,
+                4920,
+                4922
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "vlaky Os ze směru Blansko",
+              "from_directions": [
+                "Blansko"
+              ],
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            },
+            "changes": {
+              "waiting_train": {
+                "before": null,
+                "after": "4606, 4608, 4610, 4620, 4638, 4640, 4642, 4644, 4646, 4654, 4656, 4658, 4918, 4920, 4922"
+              },
+              "connecting_train": {
+                "before": null,
+                "after": "vlaky Os ze směru Blansko"
+              },
+              "workday": {
+                "before": null,
+                "after": "5"
+              },
+              "saturday": {
+                "before": null,
+                "after": "5"
+              },
+              "sunday_holiday": {
+                "before": null,
+                "after": "5"
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-017",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "4934, 4938, 4942",
+              "trains": [
+                4934,
+                4938,
+                4942
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "4146, 4148, 4150",
+              "trains": [
+                4146,
+                4148,
+                4150
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "3",
+                "kind": "minutes",
+                "minutes": 3
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Brno hl. n.",
+        "direction": "Brno hl. n.",
+        "source_row": 36,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-zidenice-018",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky",
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Veselí nad Moravou",
+        "direction": "Veselí nad Moravou",
+        "source_row": 39,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "brno-zidenice-019",
+            "source_row": 40,
+            "status": "active",
+            "waiting_train": {
+              "text": "1783",
+              "trains": [
+                1783
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "brno-zidenice-020",
+            "source_row": 41,
+            "status": "active",
+            "waiting_train": {
+              "text": "4145, 4147, 4149, 4151, 4153, 4155, 4157",
+              "trains": [
+                4145,
+                4147,
+                4149,
+                4151,
+                4153,
+                4155,
+                4157
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "U vlaků Os 4710, Os 4712, Os 4714, Os 4716 a Os 4718 lze čekací dobu na přípojný lichý Os vlak po projednání s ČD RD Východ a příslušným PD prodloužit na 5 min."
+    },
+    "**": {
+      "text": "U vlaků Os 4606, Os 4608, Os 4610, Os 4640, a Os 4644 lze čekací dobu na přípojný lichý Os vlak po projednání s ČD RD Východ a příslušným PD prodloužit na 5 min.",
+      "change": {
+        "before": "** U vlaků Os 4606, Os 4608, Os 4610, Os 4640, a Os 4644 lze čekací dobu na přípojný lichý Os vlak po projednání s ČD RD Východ a příslušným PD prodloužit na 5 min.",
+        "after": null
+      },
+      "status": "cancelled"
+    }
+  },
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Filip Novotný",
+    "Za Správu železnic odsouhlasil: Aleš Opatřil"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 18,
+    "rules_cancelled": 2,
+    "review_items": 0
+  },
+  "review": []
+}

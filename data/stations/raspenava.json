@@ -1,0 +1,544 @@
+{
+  "schema_version": "1.0",
+  "id": "raspenava",
+  "station": "Raspenava",
+  "sheet_name": "Raspenava ",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Liberec",
+        "direction": "Liberec",
+        "source_row": 14,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Frýdlant v Čechách",
+        "direction": "Frýdlant v Čechách",
+        "source_row": 16,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bílý Potok pod Smrkem",
+        "direction": "Bílý Potok pod Smrkem",
+        "source_row": 18,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "raspenava-001",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "16301",
+              "trains": [
+                16301
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6302",
+              "trains": [
+                6302
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "raspenava-002",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "16303",
+              "trains": [
+                16303
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6304, 6354",
+              "trains": [
+                6304,
+                6354
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "raspenava-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "16305",
+              "trains": [
+                16305
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6306",
+              "trains": [
+                6306
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "16307",
+              "trains": [
+                16307
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6358",
+              "trains": [
+                6358
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-005",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "16309",
+              "trains": [
+                16309
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6310",
+              "trains": [
+                6310
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-006",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "16311",
+              "trains": [
+                16311
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6360",
+              "trains": [
+                6360
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-007",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "16313",
+              "trains": [
+                16313
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6312",
+              "trains": [
+                6312
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-008",
+            "source_row": 26,
+            "status": "active",
+            "waiting_train": {
+              "text": "16315",
+              "trains": [
+                16315
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6314, 6362",
+              "trains": [
+                6314,
+                6362
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-009",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "16317",
+              "trains": [
+                16317
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6316",
+              "trains": [
+                6316
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-010",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "16319",
+              "trains": [
+                16319
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6318, 6368",
+              "trains": [
+                6318,
+                6368
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-011",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "16321",
+              "trains": [
+                16321
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6320",
+              "trains": [
+                6320
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-012",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "16323",
+              "trains": [
+                16323
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6322, 6374",
+              "trains": [
+                6322,
+                6374
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-013",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "16325",
+              "trains": [
+                16325
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6324",
+              "trains": [
+                6324
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          },
+          {
+            "id": "raspenava-014",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "16327",
+              "trains": [
+                16327
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "6326, 6380",
+              "trains": [
+                6326,
+                6380
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "saturday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              },
+              "sunday_holiday": {
+                "raw": "přechod",
+                "kind": "always_through_coach"
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Zdeněk Vladař",
+    "Za Správu železnic odsouhlasil: Mikuláš Lipnický"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 14,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0",
+  "id": "blatno-u-jesenice",
+  "station": "Blatno u Jesenice",
+  "sheet_name": "Blatno u Jesenice",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": false,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "GWTR"
+        ],
+        "connecting_operators": "all",
+        "reciprocal": false,
+        "exclusive": false
+      }
+    },
+    {
+      "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "structured": {
+        "type": "operator_basic_wait",
+        "waiting_operator": "GWTR",
+        "connecting_operators": "others",
+        "minutes": 10
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Žatec",
+        "direction": "Žatec",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatno-u-jesenice-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "1092",
+              "trains": [
+                1092
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "blatno-u-jesenice-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "1094***",
+              "footnote_marks": [
+                "***"
+              ],
+              "trains": [
+                1094
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "",
+                "kind": "empty"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Plzeň",
+        "direction": "Plzeň",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatno-u-jesenice-003",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "1093",
+              "trains": [
+                1093
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          },
+          {
+            "id": "blatno-u-jesenice-004",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "1095**",
+              "footnote_marks": [
+                "**"
+              ],
+              "trains": [
+                1095
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "všechny",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bečov nad Teplou",
+        "direction": "Bečov nad Teplou",
+        "source_row": 24,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatno-u-jesenice-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "16724",
+              "trains": [
+                16724
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1092",
+              "trains": [
+                1092
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Rakovník",
+        "direction": "Rakovník",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "blatno-u-jesenice-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "1565, 16703, 16705, 16723, 16725, 16729, 16763, 16773, 16775, 19703",
+              "trains": [
+                1565,
+                16703,
+                16705,
+                16723,
+                16725,
+                16729,
+                16763,
+                16773,
+                16775,
+                19703
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "blatno-u-jesenice-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "16727",
+              "trains": [
+                16727
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1095, 1099",
+              "trains": [
+                1095,
+                1099
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15/10*",
+                "footnote_marks": [
+                  "*"
+                ],
+                "kind": "minutes",
+                "minutes": 15,
+                "minutes_alternative": 10,
+                "note": "Hodnota závisí na podmínce v poznámce pod čarou."
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "blatno-u-jesenice-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "16777",
+              "trains": [
+                16777
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1094",
+              "trains": [
+                1094
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {
+    "*": {
+      "text": "V ① – ④ je čekací doba 15 minut a v ⑤ je čekací doba 10 minut."
+    },
+    "**": {
+      "text": "jezdí ⑤,⑥,⑦"
+    },
+    "***": {
+      "text": "jezdí ⑤,⑦"
+    }
+  },
+  "notes": [
+    {
+      "text": "Čekání nad rámec čekacích dob je nutné projednat s dispečery GWTR na tel. 734 640 824.",
+      "after_section": "vlaky směr Plzeň"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Ing. Petr Kolomazník",
+    "Zpracoval za GWTR: Ondřej Bouda",
+    "Za Správu železnic odsouhlasil: Vladimír Hopp"
+  ],
+  "summary": {
+    "sections": 4,
+    "rules_active": 8,
+    "rules_cancelled": 0,
+    "review_items": 1
+  },
+  "review": [
+    {
+      "where": "blatno-u-jesenice-002",
+      "row": 19,
+      "field": "wait.saturday",
+      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
+      "text": ""
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0",
+  "id": "milotice-nad-opavou",
+  "station": "Milotice nad Opavou",
+  "sheet_name": "Milotice nad Opavou",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Platí základní přestupní doby.",
+      "structured": {
+        "type": "default_transfer_times"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "operator_connection",
+        "waiting_operators": [
+          "ČD"
+        ],
+        "connecting_operators": [
+          "GWTR"
+        ],
+        "reciprocal": true,
+        "exclusive": true
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Krnov a Olomouc",
+        "direction": "Krnov a Olomouc",
+        "source_row": 15,
+        "basic_wait_times_only": false,
+        "rules": [],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Vrbno pod Pradědem",
+        "direction": "Vrbno pod Pradědem",
+        "source_row": 17,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "milotice-nad-opavou-001",
+            "source_row": 18,
+            "status": "active",
+            "waiting_train": {
+              "text": "13500",
+              "trains": [
+                13500
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "854",
+              "trains": [
+                854
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-002",
+            "source_row": 19,
+            "status": "active",
+            "waiting_train": {
+              "text": "13502",
+              "trains": [
+                13502
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "852, 3513",
+              "trains": [
+                852,
+                3513
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-003",
+            "source_row": 20,
+            "status": "active",
+            "waiting_train": {
+              "text": "13504",
+              "trains": [
+                13504
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "850, 3515",
+              "trains": [
+                850,
+                3515
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-004",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "13506",
+              "trains": [
+                13506
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "848, 3517",
+              "trains": [
+                848,
+                3517
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-005",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "13508",
+              "trains": [
+                13508
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "846, 3519",
+              "trains": [
+                846,
+                3519
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-006",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "13510",
+              "trains": [
+                13510
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "844, 3521",
+              "trains": [
+                844,
+                3521
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-007",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "13512",
+              "trains": [
+                13512
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "851, 3524",
+              "trains": [
+                851,
+                3524
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "saturday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              },
+              "sunday_holiday": {
+                "raw": "20",
+                "kind": "minutes",
+                "minutes": 20
+              }
+            }
+          },
+          {
+            "id": "milotice-nad-opavou-008",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "13514",
+              "trains": [
+                13514
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "1447, 3506, 3525",
+              "trains": [
+                1447,
+                3506,
+                3525
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "saturday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              },
+              "sunday_holiday": {
+                "raw": "30",
+                "kind": "minutes",
+                "minutes": 30
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [
+    {
+      "text": "Vlaky R a Os ČD čekají na vlaky Os GWTR 10 minut, jinak platí základní čekací doby.",
+      "after_section": "vlaky směr Krnov a Olomouc"
+    }
+  ],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Zpracoval za GWTR: Kamila Kováčová",
+    "Za Správu železnic odsouhlasil: Jiří Adamczyk"
+  ],
+  "summary": {
+    "sections": 2,
+    "rules_active": 8,
+    "rules_cancelled": 0,
+    "review_items": 0
+  },
+  "review": []
+}

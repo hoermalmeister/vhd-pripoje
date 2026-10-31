@@ -1,0 +1,787 @@
+{
+  "schema_version": "1.0",
+  "id": "ostrava-hl-n",
+  "station": "Ostrava hlavní nádraží",
+  "sheet_name": "Ostrava hl. n.",
+  "variant": null,
+  "validity": {
+    "text": "JŘ 2026, platí od 14. prosince 2025",
+    "valid_from": "2025-12-14",
+    "valid_to": null
+  },
+  "part_a": [
+    {
+      "text": "Základní přestupní doba mezi sousedními nástupišti je 4 minuty.",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 4,
+        "applies_to": "Základní přestupní doba mezi sousedními nástupišti"
+      }
+    },
+    {
+      "text": "Přestup na stejném nástupišti (hrana – hrana) – 2 minuty",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 2,
+        "applies_to": "Přestup na stejném nástupišti (hrana – hrana)"
+      }
+    },
+    {
+      "text": "Přestup z/na Frýdlantské nástupiště – 7 minut",
+      "structured": {
+        "type": "transfer_time",
+        "minutes": 7,
+        "applies_to": "Přestup z/na Frýdlantské nástupiště"
+      }
+    }
+  ],
+  "part_b": [
+    {
+      "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem vlaku z tratě 001 nebo 271 a odjezdem na trať 321 nebo 323 interval menší než 7 minut, v ostatních případech menší než 4 minuty. Jsou-li oba vlaky vedeny k Frýdlantskému nástupišti, ve stanici není zaručen přestup, je-li mezi příjezdem vlaku z tratě 321 nebo 323 a odjezdem na trať 001 nebo 271 interval menší než 4 minuty (při přestupu hrana – hrana 2 minuty).",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Za sebou jedoucí vlaky směr Ostrava-Svinov (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "structured": {
+        "type": "text",
+        "parse": "none"
+      }
+    },
+    {
+      "text": "Jinak platí základní pravidla dle článku 2.",
+      "structured": {
+        "type": "default_rules"
+      }
+    }
+  ],
+  "part_c": {
+    "sections": [
+      {
+        "title": "vlaky směr Ostrava-Svinov",
+        "direction": "Ostrava-Svinov",
+        "source_row": 20,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-hl-n-001",
+            "source_row": 21,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Ex a R ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-002",
+            "source_row": 22,
+            "status": "active",
+            "waiting_train": {
+              "text": "240, 340, 342, 344, 346, 348, 510, 512, 516, 518",
+              "trains": [
+                240,
+                340,
+                342,
+                344,
+                346,
+                348,
+                510,
+                512,
+                516,
+                518
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-003",
+            "source_row": 23,
+            "status": "active",
+            "waiting_train": {
+              "text": "sudé 1100-1132",
+              "ranges": [
+                {
+                  "from": 1100,
+                  "to": 1132,
+                  "parity": "even"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-004",
+            "source_row": 24,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp a Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Sp",
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-005",
+            "source_row": 25,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Sp směr Opava východ a vlaky Os 29xx ze směru Návsí",
+              "any_of": [
+                {
+                  "all": true,
+                  "categories": [
+                    "Sp"
+                  ],
+                  "to_directions": [
+                    "Opava východ"
+                  ]
+                },
+                {
+                  "categories": [
+                    "Os"
+                  ],
+                  "patterns": [
+                    "29xx"
+                  ],
+                  "from_directions": [
+                    "Návsí"
+                  ]
+                }
+              ],
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Bohumín",
+        "direction": "Bohumín",
+        "source_row": 26,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-hl-n-006",
+            "source_row": 27,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny Ex a R ČD (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-007",
+            "source_row": 28,
+            "status": "active",
+            "waiting_train": {
+              "text": "241, 511, 515, 517",
+              "trains": [
+                241,
+                511,
+                515,
+                517
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-008",
+            "source_row": 29,
+            "status": "active",
+            "waiting_train": {
+              "text": "345, 347, 349",
+              "trains": [
+                345,
+                347,
+                349
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "113, 115, 117",
+              "trains": [
+                113,
+                115,
+                117
+              ],
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-009",
+            "source_row": 30,
+            "status": "active",
+            "waiting_train": {
+              "text": "liché 1101-1133",
+              "ranges": [
+                {
+                  "from": 1101,
+                  "to": 1133,
+                  "parity": "odd"
+                }
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-010",
+            "source_row": 31,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky Os (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "categories": [
+                "Os"
+              ],
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              },
+              "sunday_holiday": {
+                "raw": "7",
+                "kind": "minutes",
+                "minutes": 7
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-011",
+            "source_row": 32,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky Os 29xx směr Návsí (– Mosty u Jablunkova)",
+              "categories": [
+                "Os"
+              ],
+              "patterns": [
+                "29xx"
+              ],
+              "to_directions": [
+                "Návsí"
+              ],
+              "direction_detail": "– Mosty u Jablunkova",
+              "parse": "manual"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "vlaky směr Ostrava střed",
+        "direction": "Ostrava střed",
+        "source_row": 33,
+        "basic_wait_times_only": false,
+        "rules": [
+          {
+            "id": "ostrava-hl-n-012",
+            "source_row": 34,
+            "status": "active",
+            "waiting_train": {
+              "text": "všechny vlaky (vyjma níže uvedených)",
+              "except_listed_below": true,
+              "all": true,
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "saturday": {
+                "raw": "N",
+                "kind": "never"
+              },
+              "sunday_holiday": {
+                "raw": "N",
+                "kind": "never"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-013",
+            "source_row": 35,
+            "status": "active",
+            "waiting_train": {
+              "text": "1601, 1615, 1631",
+              "trains": [
+                1601,
+                1615,
+                1631
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "-",
+                "kind": "no_connection"
+              },
+              "sunday_holiday": {
+                "raw": "-",
+                "kind": "no_connection"
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-014",
+            "source_row": 36,
+            "status": "active",
+            "waiting_train": {
+              "text": "vlaky Sp 30xx a 33xx",
+              "patterns": [
+                "30xx",
+                "33xx"
+              ],
+              "categories": [
+                "Sp"
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "saturday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              },
+              "sunday_holiday": {
+                "raw": "4",
+                "kind": "minutes",
+                "minutes": 4
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-015",
+            "source_row": 37,
+            "status": "active",
+            "waiting_train": {
+              "text": "3100, 3104, 3106, 3108, 3112, 3114, 3116, 3118, 3120, 3122, 3124, 3126, 3128, 3132, 3136, 3138, 3140",
+              "trains": [
+                3100,
+                3104,
+                3106,
+                3108,
+                3112,
+                3114,
+                3116,
+                3118,
+                3120,
+                3122,
+                3124,
+                3126,
+                3128,
+                3132,
+                3136,
+                3138,
+                3140
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "saturday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              },
+              "sunday_holiday": {
+                "raw": "5",
+                "kind": "minutes",
+                "minutes": 5
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-016",
+            "source_row": 38,
+            "status": "active",
+            "waiting_train": {
+              "text": "3142, 3170",
+              "trains": [
+                3142,
+                3170
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "saturday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              },
+              "sunday_holiday": {
+                "raw": "10",
+                "kind": "minutes",
+                "minutes": 10
+              }
+            }
+          },
+          {
+            "id": "ostrava-hl-n-017",
+            "source_row": 39,
+            "status": "active",
+            "waiting_train": {
+              "text": "3162",
+              "trains": [
+                3162
+              ],
+              "parse": "full"
+            },
+            "connecting_train": {
+              "text": "V",
+              "all": true,
+              "parse": "full"
+            },
+            "wait": {
+              "workday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "saturday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              },
+              "sunday_holiday": {
+                "raw": "15",
+                "kind": "minutes",
+                "minutes": 15
+              }
+            }
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  "footnotes": {},
+  "notes": [],
+  "signatures": [
+    "Zpracoval za ČD: Ing. David Valouch",
+    "Zpracoval za RJ: Marek Výda",
+    "Za Správu železnic odsouhlasil: Jiří Adamczyk"
+  ],
+  "summary": {
+    "sections": 3,
+    "rules_active": 17,
+    "rules_cancelled": 0,
+    "review_items": 4
+  },
+  "review": [
+    {
+      "where": "part_b",
+      "row": 11,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem vlaku z tratě 001 nebo 271 a odjezdem na trať 321 nebo 323 interval menší než 7 minut, v ostatních případech menší než 4 minuty. Jsou-li oba vlaky vedeny k Frýdlantskému nástupišti, ve stanici není zaručen přestup, je-li mezi příjezdem vlaku z tratě 321 nebo 323 a odjezdem na trať 001 nebo 271 interval menší než 4 minuty (při přestupu hrana – hrana 2 minuty)."
+    },
+    {
+      "where": "part_b",
+      "row": 12,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Za sebou jedoucí vlaky směr Ostrava-Svinov (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné."
+    },
+    {
+      "where": "part_b",
+      "row": 13,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak."
+    },
+    {
+      "where": "part_b",
+      "row": 14,
+      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
+      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
+    }
+  ]
+}
