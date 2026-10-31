@@ -112,7 +112,7 @@ Postup vyhodnocení (`engine/evaluate.py`):
 
 Zatím se neověřuje: čísla tratí („z trati 340“) – pravidlo se pak vybere s upozorněním na nejistotu.
 
-`data/coverage_report.json` – pravidla, která se v pěti zkušebních dnech (červen, červenec, listopad – pracovní den, sobota, neděle) nechytila na žádnou reálnou dvojici vlaků z GTFS (225 z 2 971, většinou vlaky jedoucí jen v jiné dny). Užitečné pro kontrolu.
+`data/coverage_report.json` – kontrola nad jízdním řádem: z 2 971 pravidel části C se 2 913 uplatní na reálné dvojice vlaků (16 dnů rozložených přes celý JŘ + cílené dotazy). U zbylých 58 je uveden ověřený důvod (vlak v JŘ 2026 není, stanicí nejede, nikdy nejede ve stejný den jako přípojný…). Vlaky, které stanicí jen projíždějí a staví v ní, se vyhodnocují normálně; obvody stanic, které jsou v GTFS samostatné (Ostrava hl.n. – uhelné nádraží, Čáslav m.n., Třemešná ve Sl. úz. r.), jsou v `STATION_DISTRICTS` v `engine/evaluate.py`. Přestupy přes půlnoc se párují s vlakem předchozího / následujícího dne.
 
 
 ### Ručně převedená pravidla části A/B (`tools/partb_manual.json`)

@@ -8,6 +8,13 @@ from functools import lru_cache
 
 from .network import Network
 
+# obvody stanic, které jsou v GTFS samostatnými stanicemi (název v pomůcce -> další názvy v GTFS)
+STATION_DISTRICTS = {
+    "Ostrava hlavní nádraží": ["Ostrava uhelné nádraží"],   # pomůcka: „Ostrava hl. n. obvod uhelné nádraží“
+    "Čáslav": ["Čáslav m.n."],                               # místní nádraží – vlaky do Třemošnice
+    "Třemešná ve Slezsku": ["Třemešná ve Sl.úz.r."],         # úzkorozchodná dráha do Osoblahy
+}
+
 DAY_LABEL = {"workday": "pracovní den (⚒)", "saturday": "sobota (⑥)", "sunday_holiday": "neděle / svátek (†)"}
 
 
@@ -90,6 +97,10 @@ class Engine:
         for st in self.index["stations"]:
             self.station_gtfs[st["station"]] = by_norm.get(_norm_name(st["station"]))
         self.gtfs_by_name = by_norm
+        self.districts = {}
+        for st_name, sid in self.station_gtfs.items():
+            extra = STATION_DISTRICTS.get(st_name) or STATION_DISTRICTS.get(self.names.get(sid, ""), [])
+            self.districts[sid] = [sid] + [by_norm[_norm_name(x)] for x in extra if _norm_name(x) in by_norm]
 
     # ------------------------------------------------------------ data pomůcky
     @lru_cache(maxsize=1024)
@@ -157,7 +168,9 @@ class Engine:
                             kmpos[-1] = (pi, km)
                             continue
                         stations.append(st); times.append((a, d)); meta.append((num, cat, druh, op, line)); kmpos.append((pi, km))
-                if station_id not in stations:
+                group = self.districts.get(station_id, [station_id])
+                here = next((x for x in group if x in stations), None)
+                if here is None:
                     continue
                 # výchozí stanice nemá příjezd, konečná nemá odjezd (GTFS u nich uvádí oba časy)
                 # (u vlaků useknutých na hranici – cíl/odjezd mimo data – časy ponecháme)
@@ -169,7 +182,7 @@ class Engine:
                 if not (dN is not None and aN is not None and (dN > aN or (hs and hs != self.names.get(stations[-1])))):
                     times[-1] = (aN, None)
                 seg_km = [(k2 - k1) if (p1 == p2 and k2 > k1) else None for (p1, k1), (p2, k2) in zip(kmpos, kmpos[1:])]
-                i = stations.index(station_id)
+                i = stations.index(here)
                 t_here = times[i][1] if times[i][1] is not None else times[i][0]
                 if shift == -1 and t_here < 0:
                     continue
@@ -214,7 +227,7 @@ class Engine:
         unknown = False
         if "categories" in sel and not has_numbers and train.druh not in sel["categories"] and train.category not in sel["categories"]:
             return False
-        if "operators" in sel:
+        if "operators" in sel and not has_numbers:   # u výčtu čísel je dopravce jen poznámka, např. '6807, 6545 (RJ ÚK)'
             ops = set(sel["operators"])
             if train.operator not in ops and not (train.operator == "LET" and "LE" in ops and False):
                 return False
@@ -275,6 +288,7 @@ class Engine:
 
     def dir_match(self, station, train, token, backward=False, via=None):
         """Jede vlak (z/do) směru 'token'? Zohlední i 'přes X' a cíl vlaku z popisu (headsign) u tras končících na hranici."""
+        station = train.stations[train.idx]          # obvod stanice, kde vlak skutečně staví
         path = train.backward if backward else train.onward
         tokens = [token] + ([via] if via else [])
         results = []
@@ -338,6 +352,25 @@ class Engine:
             out["message"] = f"Vlak {wait.number} ve stanici končí – neodjíždí."
             return out
         interval = wait.dep - conn.arr
+        if interval < -720:
+            # přestup přes půlnoc: přípojný vlak přijíždí před půlnocí předchozího dne, nebo návazný odjíždí po půlnoci
+            c2 = self.train_at(int(connecting_no), sid, date - dt.timedelta(days=1))
+            if c2 and c2.times[c2.idx][0] is not None and 0 <= wait.dep - (c2.arr - 1440) <= 720:
+                c2.times = [(a - 1440 if a is not None else None, d - 1440 if d is not None else None) for a, d in c2.times]
+                conn = c2
+                out["warnings"].append("Přípojný vlak přijíždí předchozí den před půlnocí.")
+            else:
+                w2 = self.train_at(int(waiting_no), sid, date + dt.timedelta(days=1))
+                if w2 and w2.times[w2.idx][1] is not None and 0 <= (w2.dep + 1440) - conn.arr <= 720:
+                    w2.times = [(a + 1440 if a is not None else None, d + 1440 if d is not None else None) for a, d in w2.times]
+                    wait = w2
+                    date = date + dt.timedelta(days=1)
+                    dtype = self.day_type(date)
+                    out["day_type"] = {"key": dtype, "label": DAY_LABEL[dtype]}
+                    out["warnings"].append(f"Návazný vlak odjíždí po půlnoci ({date.isoformat()}).")
+            interval = wait.dep - conn.arr
+            for key, tr in (("connecting_train", conn), ("waiting_train", wait)):
+                out[key]["arrival"] = hhmm(tr.times[tr.idx][0]); out[key]["departure"] = hhmm(tr.times[tr.idx][1])
         out["scheduled_transfer_minutes"] = round(interval, 1)
 
         st, warn = self.station_file(name, date) if name else (None, None)
