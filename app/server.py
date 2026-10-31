@@ -39,7 +39,9 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 from engine.evaluate import Engine, _norm_name, hhmm  # noqa: E402
-from engine.itinerary import analyze  # noqa: E402
+from engine.itinerary import analyze, ics_to_text  # noqa: E402
+from email.parser import BytesParser  # noqa: E402
+from email import policy  # noqa: E402
 import build_gtfs_db  # noqa: E402
 
 DATA_DIR = os.path.join(ROOT, "data")
@@ -244,6 +246,43 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "*")
         self.end_headers()
+
+    def do_POST(self):
+        """Cíl sdílení z Androidu (Web Share Target, multipart/form-data): text, odkaz i soubory (.ics, .txt)."""
+        u = urllib.parse.urlparse(self.path)
+        if u.path != "/share":
+            return self._send(404, {"error": "Nenalezeno"})
+        try:
+            length = min(int(self.headers.get("Content-Length") or 0), 5_000_000)
+            body = self.rfile.read(length)
+            ctype = self.headers.get("Content-Type", "")
+            parts = []
+            if ctype.startswith("multipart/form-data"):
+                msg = BytesParser(policy=policy.default).parsebytes(
+                    b"Content-Type: " + ctype.encode() + b"\r\nMIME-Version: 1.0\r\n\r\n" + body)
+                for part in msg.iter_parts():
+                    name = part.get_param("name", header="content-disposition") or ""
+                    fname = part.get_filename() or ""
+                    data = part.get_payload(decode=True) or b""
+                    if not data:
+                        continue
+                    txt = data[:300_000].decode(part.get_content_charset() or "utf-8", "replace")
+                    if fname.lower().endswith(".ics") or "calendar" in part.get_content_type() or txt.lstrip().startswith("BEGIN:VCALENDAR"):
+                        txt = ics_to_text(txt)
+                    elif fname and not part.get_content_type().startswith("text/") and not fname.lower().endswith((".txt", ".ics")):
+                        continue
+                    parts.append(txt.strip())
+            else:
+                q = urllib.parse.parse_qs(body.decode("utf-8", "replace"))
+                parts = [q[k][0] for k in ("title", "text", "url") if q.get(k)]
+            text = "\n".join(p for p in parts if p)[:20000]
+            self.send_response(303)
+            self.send_header("Location", "/share?" + urllib.parse.urlencode({"text": text}))
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+        except Exception as e:
+            traceback.print_exc()
+            return self._send(400, {"error": f"Sdílený obsah nelze přečíst: {e}"})
 
     def do_GET(self):
         u = urllib.parse.urlparse(self.path)

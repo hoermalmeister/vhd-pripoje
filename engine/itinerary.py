@@ -12,11 +12,9 @@ from .evaluate import base_number, _norm_name
 
 CATS = r"(?:Os|Sp|R|Rx|Ex|EC|IC|EN|SC|rj|RJ|RJX|LE|TL|TLX|ES|NJ|IR|EuroCity|InterCity|Railjet|railjet)"
 TRAIN_RE = re.compile(r"(?<![\w/])(" + CATS + r")\s+(\d{1,6})(?![\d:.,]\d)|(?<![\w/])(" + CATS + r")(\d{3,6})(?!\d)")
-DATE_RES = [
-    re.compile(r"(?<!\d)(\d{1,2})\.\s?(\d{1,2})\.\s?(20\d{2})(?!\d)"),
-    re.compile(r"(?<!\d)(20\d{2})-(\d{2})-(\d{2})(?!\d)"),
-    re.compile(r"(?<![\d.])(\d{1,2})\.\s?(\d{1,2})\.(?!\s?\d)"),
-]
+DATE_FULL = re.compile(r"(?<!\d)(\d{1,2})\.\s?(\d{1,2})\.\s?(20\d{2})(?!\d)")            # 31. 10. 2026
+DATE_SHORT = re.compile(r"(?<![\d.:/])(\d{1,2})\.\s?(\d{1,2})(?:\.(?!\s?\d)|(?![\d.:/]))")  # 31.10. / 03.11
+DATE_ISO = re.compile(r"(?<!\d)(20\d{2})-?(\d{2})-?(\d{2})(?=T|\b)")                          # 2026-11-03, 20261103T…
 URL_RE = re.compile(r"https?://\S+")
 
 
@@ -54,26 +52,51 @@ def parse_trains(text):
 
 
 def parse_date(text, today=None):
+    """Datum cesty z textu. Přednost má datum v textu před datem v odkazu (v odkazu bývá čas hledání)."""
     today = today or prague_today()
     t = text or ""
-    low = t.lower()
-    m = DATE_RES[0].search(t)
+    plain = URL_RE.sub(" ", t)
+    m = DATE_FULL.search(plain)
     if m:
         return dt.date(int(m.group(3)), int(m.group(2)), int(m.group(1))), True
-    m = DATE_RES[1].search(t)
-    if m:
-        return dt.date(int(m.group(1)), int(m.group(2)), int(m.group(3))), True
-    m = DATE_RES[2].search(t)
-    if m:
+    for m in DATE_SHORT.finditer(plain):
         d, mo = int(m.group(1)), int(m.group(2))
         if 1 <= d <= 31 and 1 <= mo <= 12:
-            cand = dt.date(today.year, mo, d)
+            try:
+                cand = dt.date(today.year, mo, d)
+            except ValueError:
+                continue
             if cand < today - dt.timedelta(days=60):
                 cand = dt.date(today.year + 1, mo, d)
             return cand, True
-    if "zítra" in low or "zitra" in low:
+    for src in (plain, t):
+        m = DATE_ISO.search(src)
+        if m:
+            try:
+                return dt.date(int(m.group(1)), int(m.group(2)), int(m.group(3))), True
+            except ValueError:
+                pass
+    low = plain.lower()
+    if "zítra" in low or "zitra" in low or "morgen" in low or "tomorrow" in low:
         return today + dt.timedelta(days=1), True
     return today, False
+
+
+def ics_to_text(s):
+    """Kalendářový soubor (.ics, např. z Můj vlak) -> čitelný text."""
+    s = re.sub(r"\r?\n[ \t]", "", s)                      # rozbalení zalomených řádků
+    out = []
+    for line in s.splitlines():
+        if ":" not in line:
+            continue
+        key, val = line.split(":", 1)
+        key = key.split(";")[0].upper()
+        if key in ("SUMMARY", "DESCRIPTION", "LOCATION", "DTSTART"):
+            val = val.replace("\\n", "\n").replace("\\N", "\n").replace("\\,", ",").replace("\\;", ";")
+            out.append(val)
+        if key == "END" and val.strip().upper() == "VEVENT":
+            out.append("")
+    return "\n".join(out)
 
 
 def html_to_text(s):
@@ -192,7 +215,7 @@ def extract_legs(text, url=""):
         chunks = re.split(r"\n\s*\n", t)
         legs = _legs_from_chunks(chunks)
         if len(legs) >= 2 or any(l["type"] == "other" for l in legs):
-            return legs, t, "mujvlak" if "Můj vlak" in t else "text"
+            return legs, t, "mujvlak" if "Můj vlak" in t else ("pubtran" if "Pubtran" in t else "text")
     # obecný text: vlaky v pořadí, jiné druhy dopravy jako oddělovač
     legs = []
     pos = []
@@ -260,6 +283,9 @@ def analyze(engine, text, date=None, fetch=None):
         hb, _sid = engine.find_station(name)
         res = engine.evaluate(hb or name, date, a, b)
         res.pop("trace", None)
+        if res.get("station") and not res["station"].get("in_handbook") and res.get("result") == "waits_basic":
+            res.setdefault("warnings", []).append(
+                "Stanice nemá v pomůcce vlastní tabulku. Je-li to zastávka (ne stanice), přípoje se zde nezajišťují a vlaky nečekají (článek 1).")
         item.update(station=res.get("station", {}).get("name", name), evaluation=res,
                     result=res.get("result"), message=res.get("message"))
         transfers.append(item)
