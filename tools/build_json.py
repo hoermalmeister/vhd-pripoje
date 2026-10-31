@@ -12,6 +12,7 @@ from parse_rules import (parse_selector, parse_wait, parse_part_a, parse_part_b,
 
 SCHEMA_VERSION = "1.0"
 OVERRIDES = json.load(open(os.path.join(os.path.dirname(__file__), "overrides.json"), encoding="utf-8"))
+PARTB_MANUAL = json.load(open(os.path.join(os.path.dirname(__file__), "partb_manual.json"), encoding="utf-8"))
 
 
 def apply_overrides(station_id, rule):
@@ -86,7 +87,8 @@ def build_sheet(ws, year_hint=2026):
     if variant in ("MIMO", "SEZ"):
         validity["season_variant"] = {"MIMO": "mimo sezónu", "SEZ": "v sezóně"}[variant]
         if variant == "MIMO":
-            review.append({"where": "station", "issue": "Varianta 'mimo sezónu' má v listu jen datum začátku; pravděpodobně platí i před sezónou (14. 12. 2025 – 13. 6. 2026) – ověřit.", "text": validity["text"]})
+            validity["periods"] = [{"from": "2025-12-14", "to": "2026-06-13"}, {"from": validity["valid_from"], "to": "2026-12-12"}]
+            validity["note"] = "List uvádí jen začátek platnosti; předpokládá se platnost i před sezónou (14. 12. 2025 – 13. 6. 2026)."
 
     station = OrderedDict()
     station_id = slugify(ws.title.strip())
@@ -136,15 +138,18 @@ def build_sheet(ws, year_hint=2026):
         if part in ("A", "B"):
             if a.empty:
                 continue
-            item = OrderedDict(text=t)
+            item = OrderedDict(text=t, source_row=r)
             if a.changed:
                 item["change"] = a.change_info()
             if a.fully_struck:
                 item["status"] = "cancelled"
                 item["text"] = a.original
             parsed = (parse_part_a if part == "A" else parse_part_b)(t if not a.fully_struck else a.original)
+            manual = PARTB_MANUAL.get(f"{station_id}:{part.lower()}:{r}")
+            if manual:
+                parsed = {"type": "rule_set", "source": "manual", "rules": manual}
             item["structured"] = parsed
-            if parsed.get("type") == "text" or parsed.get("parse") == "partial":
+            if (parsed.get("type") == "text" or parsed.get("parse") == "partial") and not parsed.get("additional_text"):
                 review.append({"where": f"part_{part.lower()}", "row": r, "issue": "Text nebyl plně strukturován – zpracovat ručně.", "text": item["text"]})
             station["part_a" if part == "A" else "part_b"].append(item)
             continue
@@ -236,7 +241,7 @@ def build_sheet(ws, year_hint=2026):
                 if rule[k]["parse"] not in ("full", "manual"):
                     review.append({"where": rule["id"], "row": r, "field": k, "issue": "Selektor vlaků nebyl plně rozpoznán.", "text": rule[k]["text"]})
             for k, w in wait.items():
-                if w["kind"] in ("text", "empty"):
+                if w["kind"] == "text":
                     review.append({"where": rule["id"], "row": r, "field": f"wait.{k}", "issue": "Prázdná nebo nerozpoznaná čekací doba." if w["kind"] == "empty" else "Nerozpoznaná čekací doba.", "text": w["raw"]})
         section["rules"].append(rule)
 
@@ -275,6 +280,7 @@ def main(xlsx, outdir):
             json.dump(st, f, ensure_ascii=False, indent=2)
         index.append(OrderedDict(id=st["id"], station=st["station"], variant=st["variant"],
                                  valid_from=st["validity"]["valid_from"], valid_to=st["validity"]["valid_to"],
+                                 **({"periods": st["validity"]["periods"]} if st["validity"].get("periods") else {}),
                                  file=fn, **st["summary"]))
     # seskupení variant
     stations = OrderedDict()

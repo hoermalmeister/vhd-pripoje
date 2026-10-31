@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Základní přestupní doba je 3 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti (hrana – hrana, za sebou) – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup z/na 1. nástupiště na/z 5. nástupiště (frýdecké) – 3 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Přestup ze/na 2. a 3. nástupiště na/z 5. nástupiště (frýdecké) – 5 minut",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -44,6 +48,7 @@
     },
     {
       "text": "Přestup ze/na 4. nástupiště na/z 5. nástupiště (frýdecké) – 6 minut",
+      "source_row": 10,
       "structured": {
         "type": "transfer_time",
         "minutes": 6,
@@ -52,6 +57,7 @@
     },
     {
       "text": "Přestup mezi nástupišti 1 a 4 – 4 minuty",
+      "source_row": 11,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -62,6 +68,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minut (pokud není v části B stanoveno jinak).",
+      "source_row": 14,
       "structured": {
         "type": "min_interval",
         "minutes": 3,
@@ -70,6 +77,7 @@
     },
     {
       "text": "Přípojné vlaky s přestupní dobou 2 minuty jsou: Os 2924 a Os 12808.",
+      "source_row": 15,
       "change": {
         "before": "Přípojné vlaky s přestupní dobou 2 minuty jsou: Os 12801 a Sp 1604, Os 12805 a Sp 1606, Os 12809 a Sp 1608, Os 2924 a Os 12808.",
         "after": "Přípojné vlaky s přestupní dobou 2 minuty jsou: Os 2924 a Os 12808."
@@ -99,6 +107,7 @@
     },
     {
       "text": "Přípojné vlaky opačného směru jsou: Sp 1605 a Os 2926, Sp 2901 a Os 2926, Sp 1613 a Os 2934, Sp 1617 a Os 2938, Sp 1621 a Os 2942, Sp 1625 a Os 2946, Sp 1629 a Os 2950, Sp 1631 a Os 2952.",
+      "source_row": 16,
       "change": {
         "before": "Přípojné vlaky opačného směru jsou: Sp 1605 a Os 2926, Sp 2047 2901 a Os 2926, Sp 1613 a Os 2934, Sp 1617 a Os 2938, Sp 1621 a Os 2942, Sp 1625 a Os 2946, Sp 1629 a Os 2950, Sp 1631 a Os 2952.",
         "after": "Přípojné vlaky opačného směru jsou: Sp 1605 a Os 2926, Sp 2901 a Os 2926, Sp 1613 a Os 2934, Sp 1617 a Os 2938, Sp 1621 a Os 2942, Sp 1625 a Os 2946, Sp 1629 a Os 2950, Sp 1631 a Os 2952."
@@ -225,6 +234,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 17,
       "structured": {
         "type": "default_rules"
       }

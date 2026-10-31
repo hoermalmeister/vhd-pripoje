@@ -8,11 +8,23 @@
     "text": "JŘ 2026, platí od 1. září 2026",
     "valid_from": "2026-09-01",
     "valid_to": null,
-    "season_variant": "mimo sezónu"
+    "season_variant": "mimo sezónu",
+    "periods": [
+      {
+        "from": "2025-12-14",
+        "to": "2026-06-13"
+      },
+      {
+        "from": "2026-09-01",
+        "to": "2026-12-12"
+      }
+    ],
+    "note": "List uvádí jen začátek platnosti; předpokládá se platnost i před sezónou (14. 12. 2025 – 13. 6. 2026)."
   },
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -21,6 +33,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -35,6 +48,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }
@@ -332,13 +346,7 @@
     "sections": 3,
     "rules_active": 7,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "station",
-      "issue": "Varianta 'mimo sezónu' má v listu jen datum začátku; pravděpodobně platí i před sezónou (14. 12. 2025 – 13. 6. 2026) – ověřit.",
-      "text": "JŘ 2026, platí od 1. září 2026"
-    }
-  ]
+  "review": []
 }

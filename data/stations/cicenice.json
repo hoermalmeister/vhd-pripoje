@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi 1. a 2. nástupištěm (koleje č. 6 a 10) a nástupištěm směr České Budějovice a Plzeň – 3 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Jinak platí základní přestupní doby.",
+      "source_row": 7,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -28,6 +30,7 @@
   "part_b": [
     {
       "text": "Vlaky ARR jsou přípojem vlaků dopravce ČD a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -43,6 +46,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -58,6 +62,7 @@
     },
     {
       "text": "Vlaky GWTR jsou přípojem vlaků dopravce ARR, ČD a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -73,13 +78,26 @@
     },
     {
       "text": "Základní čekací doba dopravce GWTR na vlaky dopravce ČD a ARR je 10 minut.",
+      "source_row": 13,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "operator_basic_wait",
+            "waiting_operator": "GWTR",
+            "connecting_operators": [
+              "ČD",
+              "ARR"
+            ],
+            "minutes": 10
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 14,
       "structured": {
         "type": "default_rules"
       }
@@ -552,14 +570,7 @@
     "sections": 3,
     "rules_active": 11,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Základní čekací doba dopravce GWTR na vlaky dopravce ČD a ARR je 10 minut."
-    }
-  ]
+  "review": []
 }

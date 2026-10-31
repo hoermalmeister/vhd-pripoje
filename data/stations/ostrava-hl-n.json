@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Základní přestupní doba mezi sousedními nástupišti je 4 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti (hrana – hrana) – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup z/na Frýdlantské nástupiště – 7 minut",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 7,
@@ -38,20 +41,69 @@
   "part_b": [
     {
       "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem vlaku z tratě 001 nebo 271 a odjezdem na trať 321 nebo 323 interval menší než 7 minut, v ostatních případech menší než 4 minuty. Jsou-li oba vlaky vedeny k Frýdlantskému nástupišti, ve stanici není zaručen přestup, je-li mezi příjezdem vlaku z tratě 321 nebo 323 a odjezdem na trať 001 nebo 271 interval menší než 4 minuty (při přestupu hrana – hrana 2 minuty).",
+      "source_row": 11,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "interval_below": 7,
+            "approx": true,
+            "note": "Tratě 001/271 = od Ostravy-Svinova a Bohumína; 321/323 = směr Havířov / Frýdek-Místek. Pravidlo pro Frýdlantské nástupiště (4 min, hrana–hrana 2 min) zatím nevyhodnocujeme.",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Havířov",
+                "Frýdek-Místek"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Ostrava-Svinov",
+                "Bohumín"
+              ]
+            }
+          },
+          {
+            "type": "min_interval",
+            "minutes": 4
+          }
+        ]
       }
     },
     {
       "text": "Za sebou jedoucí vlaky směr Ostrava-Svinov (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Ostrava-Svinov"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "to_directions": [
+                "Ostrava-Svinov"
+              ]
+            },
+            "note": "Za sebou jedoucí vlaky směr Ostrava-Svinov jsou vlaky stejného směru (článek 2c)."
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
+      "source_row": 13,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -70,13 +122,36 @@
     },
     {
       "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "RJ"
+              ],
+              "lines": [
+                "R8"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 15,
       "structured": {
         "type": "default_rules"
       }
@@ -767,26 +842,7 @@
     "sections": 3,
     "rules_active": 17,
     "rules_cancelled": 0,
-    "review_items": 3
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem vlaku z tratě 001 nebo 271 a odjezdem na trať 321 nebo 323 interval menší než 7 minut, v ostatních případech menší než 4 minuty. Jsou-li oba vlaky vedeny k Frýdlantskému nástupišti, ve stanici není zaručen přestup, je-li mezi příjezdem vlaku z tratě 321 nebo 323 a odjezdem na trať 001 nebo 271 interval menší než 4 minuty (při přestupu hrana – hrana 2 minuty)."
-    },
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Za sebou jedoucí vlaky směr Ostrava-Svinov (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné."
-    },
-    {
-      "where": "part_b",
-      "row": 14,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
-    }
-  ]
+  "review": []
 }

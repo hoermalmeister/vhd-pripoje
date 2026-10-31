@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,103 +21,129 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 7817 a Os 27846, Os 7821 a Os 27848, Os 27801 a 7842, Os 27805 a Os 7804, Os 27843 a Sp 1706, Os 27845 a Os 7816, Os 27851 a Os 7860.",
+      "source_row": 9,
       "structured": {
-        "type": "connection_pairs",
-        "kind": "considered_connection",
-        "pairs": [
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 7817
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 27846
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                7817
+              ]
+            },
+            "connecting": {
+              "trains": [
+                27846
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 7821
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 27848
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                7821
+              ]
+            },
+            "connecting": {
+              "trains": [
+                27848
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 27805
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 7804
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                27801
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7842
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 27843
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Sp",
-                "number": 1706
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                27805
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7804
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 27845
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 7816
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                27843
+              ]
+            },
+            "connecting": {
+              "trains": [
+                1706
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 27851
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 7860
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                27845
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7816
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 3,
+            "waiting": {
+              "trains": [
+                27851
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7860
+              ]
+            }
           }
-        ],
-        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
-        "transfer_minutes": 3,
-        "unparsed": "Os 27801 7842",
-        "parse": "partial"
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }
@@ -587,14 +614,7 @@
     "sections": 3,
     "rules_active": 11,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 9,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Os 7817 a Os 27846, Os 7821 a Os 27848, Os 27801 a 7842, Os 27805 a Os 7804, Os 27843 a Sp 1706, Os 27845 a Os 7816, Os 27851 a Os 7860."
-    }
-  ]
+  "review": []
 }

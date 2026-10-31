@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 8723 a Os 2170.",
+      "source_row": 9,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -45,6 +47,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem dopravce ÖBB PV AG, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -59,6 +62,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 11,
       "structured": {
         "type": "default_rules"
       }

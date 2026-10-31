@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -32,6 +34,7 @@
     },
     {
       "text": "Vlaky RJÚK jsou přípojem vlaků všech dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -599,22 +602,7 @@
     "sections": 2,
     "rules_active": 15,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "bilina-do-30-6-001",
-      "row": 16,
-      "field": "wait.saturday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    },
-    {
-      "where": "bilina-do-30-6-001",
-      "row": 16,
-      "field": "wait.sunday_holiday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    }
-  ]
+  "review": []
 }

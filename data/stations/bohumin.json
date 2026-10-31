@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Základní přestupní doba je 3 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti (hrana – hrana) – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup z 1. nástupiště na nástupiště 1A – 2 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -36,22 +39,37 @@
     },
     {
       "text": "Přestup z 1. nástupiště na nástupiště 2–4 jsou 4 minuty, z nástupiště 1A na nástupiště 2–4 – 5 minut",
+      "source_row": 9,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Přestupní doby podle nástupišť (4 / 5 min) – nástupiště z jízdního řádu zatím nevyhodnocujeme."
+          }
+        ]
       }
     }
   ],
   "part_b": [
     {
       "text": "Všechny vlaky Ex a R ve směru Zebrzydowice jsou přípojnými pro vlaky ze směru Český Těšín, pokud jsou uvedeny v části C.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Přípoje Ex/R směr Zebrzydowice od vlaků ze směru Český Těšín platí jen tam, kde jsou uvedeny v části C – vyhodnoceno tabulkou."
+          }
+        ]
       }
     },
     {
       "text": "Ve stanici není zaručen přestup mezi vlaky, je-li mezi příjezdem a odjezdem přípojných vlaků interval menší než 3 minuty, pokud není v části A nebo B stanoveno jinak.",
+      "source_row": 13,
       "structured": {
         "type": "min_interval",
         "minutes": 3,
@@ -60,6 +78,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -78,13 +97,36 @@
     },
     {
       "text": "Vlaky RJ pouze linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 15,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "RJ"
+              ],
+              "lines": [
+                "R8"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 16,
       "structured": {
         "type": "default_rules"
       }
@@ -1510,26 +1552,7 @@
     "sections": 3,
     "rules_active": 32,
     "rules_cancelled": 0,
-    "review_items": 3
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_a",
-      "row": 9,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Přestup z 1. nástupiště na nástupiště 2–4 jsou 4 minuty, z nástupiště 1A na nástupiště 2–4 – 5 minut"
-    },
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Všechny vlaky Ex a R ve směru Zebrzydowice jsou přípojnými pro vlaky ze směru Český Těšín, pokud jsou uvedeny v části C."
-    },
-    {
-      "where": "part_b",
-      "row": 15,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RJ pouze linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
-    }
-  ]
+  "review": []
 }

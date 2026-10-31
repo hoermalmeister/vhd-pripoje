@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a RJ (linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -39,6 +41,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a RJ (linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -58,6 +61,7 @@
     },
     {
       "text": "Vlaky KŽC jsou přípojem vlaků všech dopravců.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -70,6 +74,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }

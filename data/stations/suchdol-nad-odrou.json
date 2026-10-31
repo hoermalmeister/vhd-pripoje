@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Základní přestupní doba je 5 minut.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi jičínským a ostrovním nástupištěm – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi fulneckým (oderským) nástupištěm a nástupištěm směr Přerov – 3 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín (zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců pokud není v části C stanoveno jinak.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -56,6 +60,7 @@
     },
     {
       "text": "Vlaky RJ linky R8 Brno – Bohumín jsou přípojem vlaků dopravce ČD.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -73,6 +78,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
         "type": "default_rules"
       }

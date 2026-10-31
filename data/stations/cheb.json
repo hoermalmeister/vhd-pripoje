@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi sousedními nástupišti – 4 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -30,6 +32,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "source_row": 10,
       "structured": {
         "type": "min_interval",
         "minutes": 4,
@@ -38,6 +41,7 @@
     },
     {
       "text": "Přípojnými vlaky jsou: Os 7000 a Os 20873 (93), Os 7002 a Os 20879, Os 7006 a Os 20881, Os 7010 a Os 20883, Os 7305 a Sp 5280, Os 20878 a Os 7003, Os 20880 a Os 7005, Os 20882 a Os 7009, Os 20884 a Os 7309, Os 20890 a Ex 504",
+      "source_row": 11,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -189,6 +193,7 @@
     },
     {
       "text": "Přípojnými vlaky jsou: Os 7000 a Os 20873 (93), Os 7002 a Os 20879, Os 7006 a Os 20881, Os 7010 a Os 20883, Os 7305 a Sp 5280, Os 20878 a Os 7003, Os 20880 a Os 7005, Os 20882 a Os 7009, Os 20884 a Os 7309, Os 20890 a Ex 504",
+      "source_row": 12,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -340,6 +345,7 @@
     },
     {
       "text": "Přípojnými vlaky jsou: Os 7000 a Os 20873 (93), Os 7002 a Os 20879, Os 7006 a Os 20881, Os 7010 a Os 20883, Os 7305 a Sp 5280, Os 20878 a Os 7003, Os 20880 a Os 7005, Os 20882 a Os 7009, Os 20884 a Os 7309, Os 20890 a Ex 504",
+      "source_row": 13,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -491,13 +497,55 @@
     },
     {
       "text": "Vlaky z/do Lubů u Chebu jsou přípojnými vlaky na rychlíky směr z /do Karlových Varů.",
+      "source_row": 14,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Luby u Chebu"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "from_directions": [
+                "Karlovy Vary"
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "to_directions": [
+                "Karlovy Vary"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Luby u Chebu"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 15,
       "structured": {
         "type": "default_rules"
       }
@@ -1345,14 +1393,7 @@
     "sections": 4,
     "rules_active": 23,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 14,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky z/do Lubů u Chebu jsou přípojnými vlaky na rychlíky směr z /do Karlových Varů."
-    }
-  ]
+  "review": []
 }

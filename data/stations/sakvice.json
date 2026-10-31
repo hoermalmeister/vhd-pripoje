@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I. a II. nástupištěm – 4 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -30,6 +32,7 @@
   "part_b": [
     {
       "text": "Platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }
@@ -532,15 +535,7 @@
     "sections": 3,
     "rules_active": 13,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "sakvice-004",
-      "row": 19,
-      "field": "wait.workday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    }
-  ]
+  "review": []
 }

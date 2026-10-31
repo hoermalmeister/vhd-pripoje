@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I. a I.A nástupištěm – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi I. a I.B nástupištěm – 4 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi I.B a III., IV. nástupištěm – 6 minut.",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 6,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Přestup mezi různými nástupišti vyjma výše uvedených – 5 minut",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -44,6 +48,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 10,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -54,6 +59,7 @@
   "part_b": [
     {
       "text": "Vlaky považované za přípoj: Os 14601 a R 801, Os 14605 a Os 2319 (Os 22319), Os 14619 a Os 2359 (Os 22359).",
+      "source_row": 13,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -108,6 +114,7 @@
     },
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 5 minut.",
+      "source_row": 14,
       "structured": {
         "type": "min_interval",
         "minutes": 5,
@@ -116,6 +123,7 @@
     },
     {
       "text": "Vlaky ARR jsou přípojem od vlaků ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 15,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -130,6 +138,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 16,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -144,6 +153,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 17,
       "structured": {
         "type": "default_rules"
       }

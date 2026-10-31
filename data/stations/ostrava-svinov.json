@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Základní přestupní doba je 4 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti (hrana – hrana) – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup z/na opavské nástupiště – 5 minut",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Ve stanici není zaručen přestup, je-li mezi příjezdem a odjezdem vlaků interval menší než 4 minuty.",
+      "source_row": 11,
       "structured": {
         "type": "min_interval",
         "minutes": 4,
@@ -46,6 +50,7 @@
     },
     {
       "text": "Přípojné vlaky s přestupní dobou 3 minuty jsou: R 1105 a Os 3409, R 1109 a Os 3413, R 1113 a Os 3417, R 1117 a Os 3421, R 1131 a Os 3435.",
+      "source_row": 12,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -127,6 +132,7 @@
     },
     {
       "text": "Přípojné vlaky opačného směru jsou: Sp 3070 a Ex 512, Ex 113 a Sp 3360, Ex 141 a Sp 3364, Ex 115 a Sp 3368, Ex 505 a Sp 3061+Sp 3370, Ex 143 a Sp 3372, Ex 117 a Sp 3376, Ex 511 a Sp 3065+Sp 3378, Ex 513+Ex 145 a Os 3380, Ex 515 a Sp 3067, Ex 547 a Sp 3382 a Ex 517 a Os 3324.",
+      "source_row": 13,
       "change": {
         "before": "Přípojné vlaky opačného směru jsou: Sp 3070 a Ex 512, Ex 113 a Sp 3360, Ex 141 a Sp 3364, Ex 503 a Sp 3059+Sp 3366, Ex 115 a Sp 3368, Ex 505 a Sp 3061+Sp 3370, Ex 143 a Sp 3372, Ex 507 a Sp 3063+Sp 3374, Ex 117 a Sp 3376, Ex 511 a Sp 3065+Sp 3378, Ex 513+Ex 145 a Os 3380, Ex 515 a Sp 3067, Ex 547 a Sp 3382 a Ex 517 a Os 3324.",
         "after": "Přípojné vlaky opačného směru jsou: Sp 3070 a Ex 512, Ex 113 a Sp 3360, Ex 141 a Sp 3364, Ex 115 a Sp 3368, Ex 505 a Sp 3061+Sp 3370, Ex 143 a Sp 3372, Ex 117 a Sp 3376, Ex 511 a Sp 3065+Sp 3378, Ex 513+Ex 145 a Os 3380, Ex 515 a Sp 3067, Ex 547 a Sp 3382 a Ex 517 a Os 3324."
@@ -321,20 +327,98 @@
     },
     {
       "text": "Za sebou jedoucí vlaky ve směru Ostrava hl. n. (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné. Toto ustanovení se nevztahuje na případy, kdy jeden z vlaků pokračuje ve směru Ostrava hl. n. obvod uhelné nádraží a na případy vyjmenované v následujícím řádku.",
+      "source_row": 14,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Ostrava hl.n."
+              ],
+              "not": {
+                "all": true,
+                "to_directions": [
+                  "Ostrava uhelné nádraží"
+                ]
+              }
+            },
+            "connecting": {
+              "all": true,
+              "to_directions": [
+                "Ostrava hl.n."
+              ],
+              "not": {
+                "all": true,
+                "to_directions": [
+                  "Ostrava uhelné nádraží"
+                ]
+              }
+            },
+            "note": "Za sebou jedoucí vlaky směr Ostrava hl.n. nejsou přípojné; neplatí, pokračuje-li vlak na Ostravu hl.n. obvod uhelné nádraží, a pro dvojice R 345/113, R 347/115, R 349/117."
+          }
+        ]
       }
     },
     {
       "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117.",
+      "source_row": 15,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "trains": [
+                345
+              ]
+            },
+            "connecting": {
+              "trains": [
+                113
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "trains": [
+                347
+              ]
+            },
+            "connecting": {
+              "trains": [
+                115
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "trains": [
+                349
+              ]
+            },
+            "connecting": {
+              "trains": [
+                117
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Bohumín – Brno hl.n. a zpět (1100 – 1133, zahrnuty i pod \"V\"), nejsou přípojem vlaků ostatních dopravců, pokud není v části C stanoveno jinak.",
+      "source_row": 16,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -353,13 +437,36 @@
     },
     {
       "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 17,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "RJ"
+              ],
+              "lines": [
+                "R8"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 18,
       "structured": {
         "type": "default_rules"
       }
@@ -2507,26 +2614,7 @@
     "sections": 4,
     "rules_active": 47,
     "rules_cancelled": 5,
-    "review_items": 3
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 14,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Za sebou jedoucí vlaky ve směru Ostrava hl. n. (a to i v případě, že druhý vlak je výchozí, případně zastavuje na zastávce Ostrava-Mariánské Hory) ve smyslu úvodního textu této pomůcky, bodu 2c, považujte za vlaky stejného směru téže tratě a nejsou tedy vzájemně přípojné. Toto ustanovení se nevztahuje na případy, kdy jeden z vlaků pokračuje ve směru Ostrava hl. n. obvod uhelné nádraží a na případy vyjmenované v následujícím řádku."
-    },
-    {
-      "where": "part_b",
-      "row": 15,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Přípojné vlaky jsou: R 345 má přípoj od vlaku Ex 113; R 347 má přípoj od vlaku Ex 115; R 349 má přípoj od vlaku Ex 117."
-    },
-    {
-      "where": "part_b",
-      "row": 17,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RJ linky R8 Brno - Bohumín jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců."
-    }
-  ]
+  "review": []
 }

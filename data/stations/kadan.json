@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestupní doba je vždy 1 minuta.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 1,
@@ -22,6 +23,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -34,6 +36,7 @@
     },
     {
       "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467.",
+      "source_row": 10,
       "change": {
         "before": null,
         "after": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
@@ -52,6 +55,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 11,
       "structured": {
         "type": "default_rules"
       }
@@ -118,14 +122,7 @@
     "sections": 1,
     "rules_active": 1,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
-    }
-  ]
+  "review": []
 }

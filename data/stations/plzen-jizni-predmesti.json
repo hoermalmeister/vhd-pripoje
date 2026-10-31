@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky ARR jsou přípojem vlaků všech dopravců",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -32,27 +34,84 @@
     },
     {
       "text": "Vlaky ve směru Domažlice jsou přípojnými na vlaky ze směru Cheb, které zde pravidelně zastavují.",
+      "source_row": 10,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Domažlice"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Cheb"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ve směru Cheb, které zde pravidelně zastavují, jsou přípojnými na vlaky ze směru Domažlice.",
+      "source_row": 11,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Cheb"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Domažlice"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Odchylně od výše uvedeného není přípoj mezi vlaky: Ex 515 a Os 7444.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                515
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7444
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
         "type": "default_rules"
       }
@@ -351,26 +410,7 @@
     "sections": 2,
     "rules_active": 7,
     "rules_cancelled": 0,
-    "review_items": 3
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ve směru Domažlice jsou přípojnými na vlaky ze směru Cheb, které zde pravidelně zastavují."
-    },
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ve směru Cheb, které zde pravidelně zastavují, jsou přípojnými na vlaky ze směru Domažlice."
-    },
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Odchylně od výše uvedeného není přípoj mezi vlaky: Ex 515 a Os 7444."
-    }
-  ]
+  "review": []
 }

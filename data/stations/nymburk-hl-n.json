@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky ARR jsou přípojem od vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -34,20 +36,69 @@
     },
     {
       "text": "Vlaky Os ČD ve směru Jičín jsou přípojem od vlaků R ARR ze směru Mladá Boleslav hl. n.",
+      "source_row": 10,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Os"
+              ],
+              "operators": [
+                "ČD"
+              ],
+              "to_directions": [
+                "Jičín"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "operators": [
+                "ARR"
+              ],
+              "from_directions": [
+                "Mladá Boleslav"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlak R 950 je přípojem od vlaku Os 15640.",
+      "source_row": 11,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "trains": [
+                950
+              ]
+            },
+            "connecting": {
+              "trains": [
+                15640
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce ARR a RJ (linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -67,13 +118,22 @@
     },
     {
       "text": "Mezi vlaky není přípoj, pokud je mezi příjezdem a odjezdem interval kratší než 3 minuty, v případě přestupu mezi nejvzdálenějšími nástupišti 4 minuty. Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "min_interval",
+            "minutes": 3,
+            "note": "Při přestupu mezi nejvzdálenějšími nástupišti 4 minuty."
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 14,
       "structured": {
         "type": "default_rules"
       }
@@ -818,26 +878,7 @@
     "sections": 5,
     "rules_active": 17,
     "rules_cancelled": 0,
-    "review_items": 3
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky Os ČD ve směru Jičín jsou přípojem od vlaků R ARR ze směru Mladá Boleslav hl. n."
-    },
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlak R 950 je přípojem od vlaku Os 15640."
-    },
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky není přípoj, pokud je mezi příjezdem a odjezdem interval kratší než 3 minuty, v případě přestupu mezi nejvzdálenějšími nástupišti 4 minuty. Jinak platí základní pravidla dle článku 2."
-    }
-  ]
+  "review": []
 }

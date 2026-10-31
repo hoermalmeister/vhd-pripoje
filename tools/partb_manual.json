@@ -1,0 +1,274 @@
+{
+  "_readme": "Ruční převod textů částí A/B, které automatický parser nerozpozná. Klíč '<id stanice>:<část a|b>:<řádek v Excelu>'. Hodnota = seznam pravidel. Typy: connection_rule (effect connection | no_connection), operator_basic_wait, min_interval, info. Selektory mají stejný tvar jako v části C (operators, categories, lines, trains, from_directions, to_directions, any_of, not, except). 'unordered' = dvojice platí v libovolném pořadí (bez určení, kdo čeká); 'reciprocal' = platí i s prohozenými rolemi; 'days' = workday/saturday/sunday_holiday nebo čísla dnů 1–7; 'interval_below' = pravidlo platí jen při plánovaném intervalu kratším než N min; 'min_interval' = přípoj jen při intervalu alespoň N min; 'approx' = čísla tratí převedena na směry.",
+
+  "beroun:b:13": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "to_directions": ["Řevnice"]}, "connecting": {"all": true, "from_directions": ["Nučice"]}}
+  ],
+  "beroun:b:14": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "to_directions": ["Nučice"]}, "connecting": {"all": true, "categories": ["R"], "from_directions": ["Praha"]}}
+  ],
+  "bohumin:a:9": [
+    {"type": "info", "note": "Přestupní doby podle nástupišť (4 / 5 min) – nástupiště z jízdního řádu zatím nevyhodnocujeme."}
+  ],
+  "bohumin:b:12": [
+    {"type": "info", "note": "Přípoje Ex/R směr Zebrzydowice od vlaků ze směru Český Těšín platí jen tam, kde jsou uvedeny v části C – vyhodnoceno tabulkou."}
+  ],
+  "bohumin:b:15": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["RJ"], "lines": ["R8"]}, "connecting": {"all": true, "operators": ["ČD"]}}
+  ],
+  "brno-hl-n:b:13": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "to_directions": ["Střelice"]}, "connecting": {"all": true, "from_directions": ["Břeclav"]}},
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "to_directions": ["Břeclav"]}, "connecting": {"all": true, "from_directions": ["Střelice"]}}
+  ],
+  "brno-hl-n:b:16": [
+    {"type": "connection_rule", "effect": "no_connection", "interval_below": 7, "approx": true, "note": "Tratě 240 a 244 = směr Střelice.",
+     "waiting": {"all": true, "not": {"all": true, "to_directions": ["Střelice"]}}, "connecting": {"all": true, "from_directions": ["Střelice"]}}
+  ],
+  "brno-hl-n:b:17": [
+    {"type": "connection_rule", "effect": "no_connection", "interval_below": 7, "approx": true, "note": "Příjezd z ostatních tratí, odjezd na tratě 240/244 (směr Střelice).",
+     "waiting": {"all": true, "to_directions": ["Střelice"]}, "connecting": {"all": true, "not": {"all": true, "from_directions": ["Střelice"]}}},
+    {"type": "connection_rule", "effect": "no_connection", "interval_below": 5, "approx": true, "note": "Příjezd z tratí 002/250/251/252/260/300/340 a odjezd na ostatní tratě.",
+     "waiting": {"all": true}, "connecting": {"all": true, "not": {"all": true, "from_directions": ["Střelice"]}}}
+  ],
+  "brno-hl-n:b:18": [{"type": "info", "note": "Pokryto pravidlem brno-hl-n:b:17 (tratě převedeny na směry)."}],
+  "brno-hl-n:b:19": [{"type": "info", "note": "Pokryto pravidlem brno-hl-n:b:17 (tratě převedeny na směry)."}],
+  "brno-hl-n:b:20": [{"type": "info", "note": "Pokryto pravidlem brno-hl-n:b:17 (tratě převedeny na směry)."}],
+  "brno-hl-n:b:21": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["ČD"]},
+     "connecting": {"any_of": [{"all": true, "operators": ["RJ"], "lines": ["R8"]}, {"trains": [1371, 1373], "operators": ["ARR"]}]}}
+  ],
+  "brno-hl-n:b:22": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "lines": ["R8"], "to_directions": ["Bohumín"]},
+     "connecting": {"any_of": [{"all": true, "operators": ["ČD"]}, {"trains": [1371, 1373]}]}}
+  ],
+  "brno-hl-n:b:23": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "operators": ["RJ"], "to_directions": ["Praha", "Břeclav"]},
+     "connecting": {"all": true, "not": {"all": true, "operators": ["RJ"]}}}
+  ],
+  "brno-hl-n:b:24": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["ARR"]},
+     "connecting": {"any_of": [{"all": true, "operators": ["ČD"]}, {"all": true, "operators": ["RJ"], "lines": ["R8"]}]}}
+  ],
+  "brno-kralovo-pole:b:10": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "lines": ["R8"], "to_directions": ["Bohumín"]}, "connecting": {"all": true, "operators": ["ČD"]}}
+  ],
+  "ceska-trebova:b:12": [
+    {"type": "connection_rule", "effect": "connection", "min_interval": 3, "waiting": {"all": true, "categories": ["Ex", "R"], "to_directions": ["Zábřeh na Moravě"]},
+     "connecting": {"patterns": ["37xx", "127xx", "247xx"]}}
+  ],
+  "ceska-trebova:b:13": [
+    {"type": "connection_rule", "effect": "connection", "min_interval": 3, "waiting": {"patterns": ["37xx", "127xx", "247xx"]},
+     "connecting": {"all": true, "categories": ["Ex", "R"], "from_directions": ["Zábřeh na Moravě"]}}
+  ],
+  "cicenice:b:13": [
+    {"type": "operator_basic_wait", "waiting_operator": "GWTR", "connecting_operators": ["ČD", "ARR"], "minutes": 10}
+  ],
+  "hodonin:b:12": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "categories": ["Os"], "to_directions": ["Veselí nad Moravou"]}, "connecting": {"all": true, "categories": ["R"], "from_directions": ["Přerov"]}},
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "categories": ["R"], "to_directions": ["Přerov"]}, "connecting": {"all": true, "categories": ["Os"], "from_directions": ["Veselí nad Moravou"]}}
+  ],
+  "hodonin:b:13": [
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "days": ["saturday", "sunday_holiday"], "waiting": {"trains": [2746]}, "connecting": {"trains": [813]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "days": [5], "waiting": {"trains": [4221]}, "connecting": {"trains": [14526]}}
+  ],
+  "hulin:b:11": [
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 2, "waiting": {"trains": [3909]}, "connecting": {"trains": [2021, 2029]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 2, "waiting": {"trains": [3961]}, "connecting": {"trains": [1650]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 2, "waiting": {"trains": [804]}, "connecting": {"trains": [3928]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 2, "waiting": {"trains": [802]}, "connecting": {"trains": [3932, 3933]}}
+  ],
+  "hulin:b:12": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "categories": ["Ex"], "to_directions": ["Luhačovice"]}, "connecting": {"all": true, "categories": ["Os"], "from_directions": ["Přerov"]}}
+  ],
+  "cheb:b:14": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "to_directions": ["Luby u Chebu"]}, "connecting": {"all": true, "categories": ["R"], "from_directions": ["Karlovy Vary"]}},
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "categories": ["R"], "to_directions": ["Karlovy Vary"]}, "connecting": {"all": true, "from_directions": ["Luby u Chebu"]}}
+  ],
+  "chodov:b:9": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "to_directions": ["Loket"]}, "connecting": {"all": true, "categories": ["R"], "from_directions": ["Cheb"]}},
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "categories": ["R"], "to_directions": ["Cheb"]}, "connecting": {"all": true, "from_directions": ["Loket"]}}
+  ],
+  "kolin:b:13": [
+    {"type": "operator_connection", "waiting_operators": ["ARR"], "connecting_operators": "all", "reciprocal": false, "exclusive": false, "note": "Platí základní čekací doby."}
+  ],
+  "kralupy-nad-vltavou:a:9": [
+    {"type": "info", "note": "Přestup na/z nástupiště 5 o 2 min delší – nástupiště zatím nevyhodnocujeme."}
+  ],
+  "kralupy-nad-vltavou:b:12": [
+    {"type": "connection_rule", "effect": "no_connection", "interval_below": 4, "approx": true, "note": "Tratě 092, 093, 110, 111 = směry Neratovice, Kladno, Slaný/Louny, Velvary.",
+     "waiting": {"all": true, "to_directions": ["Neratovice", "Kladno", "Slaný", "Velvary"]}, "connecting": {"all": true, "from_directions": ["Neratovice", "Kladno", "Slaný", "Velvary"]}},
+    {"type": "min_interval", "minutes": 3}
+  ],
+  "louny:b:9": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"trains": [1348]}, "connecting": {"trains": [9714]}}
+  ],
+  "marianske-lazne:b:10": [
+    {"type": "info", "note": "Poznámka zpracovatele, nejde o pravidlo."}
+  ],
+  "mlada-boleslav-mesto:b:9": [
+    {"type": "connection_rule", "effect": "no_connection", "reciprocal": true, "waiting": {"all": true, "operators": ["ČD"]}, "connecting": {"all": true, "operators": ["DLB"]},
+     "note": "Přípoje se vytvoří ve stanici Mladá Boleslav hl.n."}
+  ],
+  "navsi:b:10": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "categories": ["Os"], "to_directions": ["Bohumín"]}, "connecting": {"all": true, "categories": ["Ex", "R"], "to_directions": ["Bohumín"]}}
+  ],
+  "nymburk-hl-n:b:10": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "categories": ["Os"], "operators": ["ČD"], "to_directions": ["Jičín"]}, "connecting": {"all": true, "categories": ["R"], "operators": ["ARR"], "from_directions": ["Mladá Boleslav"]}}
+  ],
+  "nymburk-hl-n:b:11": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"trains": [950]}, "connecting": {"trains": [15640]}}
+  ],
+  "nymburk-hl-n:b:13": [
+    {"type": "min_interval", "minutes": 3, "note": "Při přestupu mezi nejvzdálenějšími nástupišti 4 minuty."}
+  ],
+  "obrnice:b:10": [
+    {"type": "operator_connection", "waiting_operators": ["RJÚK"], "connecting_operators": ["DLB"], "reciprocal": false, "exclusive": true, "note": "Platí základní čekací doba."}
+  ],
+  "olomouc-hl-n:a:7": [
+    {"type": "info", "note": "Přestupní doba podle vzdálenosti nástupišť (3–4 min) – nástupiště zatím nevyhodnocujeme."}
+  ],
+  "olomouc-hl-n:b:11": [
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [915]}, "connecting": {"trains": [1435]}, "note": "Přípoj i při mimořádném přistavení k jinému nástupišti."}
+  ],
+  "opava-vychod:b:9": [
+    {"type": "operator_connection", "waiting_operators": ["ČD"], "connecting_operators": ["GE", "RJ"], "reciprocal": false, "exclusive": true}
+  ],
+  "ostrava-hl-n:b:11": [
+    {"type": "connection_rule", "effect": "no_connection", "interval_below": 7, "approx": true, "note": "Tratě 001/271 = od Ostravy-Svinova a Bohumína; 321/323 = směr Havířov / Frýdek-Místek. Pravidlo pro Frýdlantské nástupiště (4 min, hrana–hrana 2 min) zatím nevyhodnocujeme.",
+     "waiting": {"all": true, "to_directions": ["Havířov", "Frýdek-Místek"]}, "connecting": {"all": true, "from_directions": ["Ostrava-Svinov", "Bohumín"]}},
+    {"type": "min_interval", "minutes": 4}
+  ],
+  "ostrava-hl-n:b:12": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "to_directions": ["Ostrava-Svinov"]}, "connecting": {"all": true, "to_directions": ["Ostrava-Svinov"]},
+     "note": "Za sebou jedoucí vlaky směr Ostrava-Svinov jsou vlaky stejného směru (článek 2c)."}
+  ],
+  "ostrava-hl-n:b:14": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["RJ"], "lines": ["R8"]}, "connecting": {"all": true, "operators": ["ČD"]}}
+  ],
+  "ostrava-svinov:b:14": [
+    {"type": "connection_rule", "effect": "no_connection",
+     "waiting": {"all": true, "to_directions": ["Ostrava hl.n."], "not": {"all": true, "to_directions": ["Ostrava uhelné nádraží"]}},
+     "connecting": {"all": true, "to_directions": ["Ostrava hl.n."], "not": {"all": true, "to_directions": ["Ostrava uhelné nádraží"]}},
+     "note": "Za sebou jedoucí vlaky směr Ostrava hl.n. nejsou přípojné; neplatí, pokračuje-li vlak na Ostravu hl.n. obvod uhelné nádraží, a pro dvojice R 345/113, R 347/115, R 349/117."}
+  ],
+  "ostrava-svinov:b:15": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"trains": [345]}, "connecting": {"trains": [113]}},
+    {"type": "connection_rule", "effect": "connection", "waiting": {"trains": [347]}, "connecting": {"trains": [115]}},
+    {"type": "connection_rule", "effect": "connection", "waiting": {"trains": [349]}, "connecting": {"trains": [117]}}
+  ],
+  "ostrava-svinov:b:17": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["RJ"], "lines": ["R8"]}, "connecting": {"all": true, "operators": ["ČD"]}}
+  ],
+  "otrokovice:b:9": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "categories": ["R"], "to_directions": ["Luhačovice"]}, "connecting": {"all": true, "categories": ["Os"], "from_directions": ["Přerov"]}}
+  ],
+  "pardubice-hl-n:a:7": [
+    {"type": "info", "note": "Přestupní doby podle nástupišť (4–5 min) – nástupiště zatím nevyhodnocujeme."}
+  ],
+  "pardubice-hl-n:a:9": [
+    {"type": "info", "note": "Přestupní doby mezi nástupišti 5 a 1/1A/2 (5–6 min) – nástupiště zatím nevyhodnocujeme."}
+  ],
+  "pardubice-hl-n:b:14": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "to_directions": ["Pardubice centrum"]}, "connecting": {"all": true},
+     "note": "Vlaky ve směru zastávky Pardubice centrum nečekají na žádné přípoje."}
+  ],
+  "plzen-hl-n:b:10": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"trains": [567]}, "connecting": {"trains": [624]}},
+    {"type": "connection_rule", "effect": "connection", "days": ["workday"], "waiting": {"trains": [1700]}, "connecting": {"trains": [7842]}}
+  ],
+  "plzen-hl-n:b:11": [
+    {"type": "connection_rule", "effect": "connection", "days": ["saturday", "sunday_holiday"], "waiting": {"trains": [778]}, "connecting": {"trains": [7844]}}
+  ],
+  "plzen-hl-n:b:13": [
+    {"type": "connection_rule", "effect": "connection",
+     "waiting": {"all": true, "operators": ["ČD"], "except": [{"all": true, "categories": ["Ex"], "from_directions": ["Praha"]}]},
+     "connecting": {"all": true, "operators": ["ARR", "GWTR"]},
+     "note": "Text v podkladu pokračuje větou 'Vlaky ČD jsou přípojem vlaků všech dopravců.', která první větě odporuje – použita první věta."}
+  ],
+  "plzen-hl-n:b:14": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "categories": ["Os"], "to_directions": ["Radnice"]}, "connecting": {"all": true, "categories": ["Ex"], "from_directions": ["Praha"]}}
+  ],
+  "plzen-hl-n:b:15": [
+    {"type": "operator_connection", "waiting_operators": ["GWTR"], "connecting_operators": "all", "reciprocal": false, "exclusive": false},
+    {"type": "operator_basic_wait", "waiting_operator": "GWTR", "connecting_operators": "others", "minutes": 10}
+  ],
+  "plzen-jizni-predmesti:b:10": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "to_directions": ["Domažlice"]}, "connecting": {"all": true, "from_directions": ["Cheb"]}}
+  ],
+  "plzen-jizni-predmesti:b:11": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "to_directions": ["Cheb"]}, "connecting": {"all": true, "from_directions": ["Domažlice"]}}
+  ],
+  "plzen-jizni-predmesti:b:12": [
+    {"type": "connection_rule", "effect": "no_connection", "unordered": true, "waiting": {"trains": [515]}, "connecting": {"trains": [7444]}}
+  ],
+  "postoloprty:b:9": [
+    {"type": "connection_rule", "effect": "no_connection", "waiting": {"all": true, "operators": ["ČD"]}, "connecting": {"all": true, "not": {"all": true, "operators": ["ČD"]}}}
+  ],
+  "praha-hl-n:b:10": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["ČD"]},
+     "connecting": {"any_of": [{"all": true, "operators": ["KŽC"]}, {"all": true, "operators": ["ARR"], "from_directions": ["Beroun", "Všetaty"]}]}}
+  ],
+  "praha-hl-n:b:11": [
+    {"type": "connection_rule", "effect": "no_connection", "reciprocal": true, "note": "Dálková doprava = vlaky Ex a R.",
+     "waiting": {"all": true, "categories": ["Ex", "R"], "to_directions": ["Nymburk"]}, "connecting": {"all": true, "categories": ["Ex", "R"], "from_directions": ["Kolín"]}},
+    {"type": "connection_rule", "effect": "no_connection",
+     "waiting": {"all": true, "categories": ["Ex", "R"], "to_directions": ["Kolín"]}, "connecting": {"all": true, "categories": ["Ex", "R"], "from_directions": ["Nymburk"]}}
+  ],
+  "praha-liben:b:10": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["ČD"]}, "connecting": {"all": true, "operators": ["RJ"], "lines": ["S49"]}}
+  ],
+  "prerov:a:7": [
+    {"type": "info", "note": "Přestupní doba podle vzdálenosti nástupišť (3–4 min) – nástupiště zatím nevyhodnocujeme."}
+  ],
+  "prerov:b:12": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "lines": ["R8"], "to_directions": ["Brno", "Bohumín"]}, "connecting": {"all": true, "operators": ["ČD"]}}
+  ],
+  "rokycany:b:9": [
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [7817]}, "connecting": {"trains": [27846]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [7821]}, "connecting": {"trains": [27848]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [27801]}, "connecting": {"trains": [7842]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [27805]}, "connecting": {"trains": [7804]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [27843]}, "connecting": {"trains": [1706]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [27845]}, "connecting": {"trains": [7816]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "min_interval": 3, "waiting": {"trains": [27851]}, "connecting": {"trains": [7860]}}
+  ],
+  "usti-nad-labem-hl-n-do-30-06:b:11": [
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [670]}, "connecting": {"trains": [1940]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [671]}, "connecting": {"trains": [620]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [6970]}, "connecting": {"trains": [6841]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [600]}, "connecting": {"trains": [6848, 6850, 6968]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [1943]}, "connecting": {"trains": [673]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [6942]}, "connecting": {"trains": [6856]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [16903]}, "connecting": {"trains": [6871]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [16907]}, "connecting": {"trains": [6964]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [5275]}, "connecting": {"trains": [6925]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [5277]}, "connecting": {"trains": [6923]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [6833]}, "connecting": {"trains": [6962]}}
+  ],
+  "usti-nad-labem-hl-n-od-01-07:b:11": [
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [670]}, "connecting": {"trains": [1940]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [671]}, "connecting": {"trains": [620]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [6970]}, "connecting": {"trains": [6841]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [600]}, "connecting": {"trains": [6848, 6968]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [1943]}, "connecting": {"trains": [673]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [6942]}, "connecting": {"trains": [6856]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [16903]}, "connecting": {"trains": [6871]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [16907]}, "connecting": {"trains": [6964]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [5275]}, "connecting": {"trains": [6925]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [5277]}, "connecting": {"trains": [6923]}},
+    {"type": "connection_rule", "effect": "connection", "unordered": true, "waiting": {"trains": [6565]}, "connecting": {"trains": [6962]}}
+  ],
+  "vsetaty:b:14": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["RJ"], "lines": ["R23"]}, "connecting": {"all": true, "operators": ["ARR"]}}
+  ],
+  "vyskov-na-morave:b:9": [
+    {"type": "connection_rule", "effect": "connection", "waiting": {"all": true, "operators": ["ČD"]}, "connecting": {"all": true, "operators": ["RJ"], "lines": ["R8"], "from_directions": ["Bohumín"]}}
+  ],
+  "zabreh-na-morave:a:7": [
+    {"type": "info", "note": "Přestupní doba podle vzdálenosti nástupišť (3–4 min) – nástupiště zatím nevyhodnocujeme."}
+  ],
+  "zelezna-ruda-alzbetin:b:9": [
+    {"type": "connection_rule", "effect": "connection", "approx": true, "waiting": {"all": true, "operators": ["ČD"]}, "connecting": {"all": true, "operators": ["DLB"]},
+     "note": "Pravidelné vlaky ze sousední infrastruktury DB (Bayerisch Eisenstein) provozuje Die Länderbahn GmbH – v datech jako DLB."}
+  ]
+}

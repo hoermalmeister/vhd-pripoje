@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na sousední nástupiště – 3 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti (hrana – hrana, za sebou) – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -30,13 +32,40 @@
   "part_b": [
     {
       "text": "Vlaky Os směr Bohumín nejsou přípojné od vlaků Ex/R stejného směru.",
+      "source_row": 10,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Os"
+              ],
+              "to_directions": [
+                "Bohumín"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "to_directions": [
+                "Bohumín"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 11,
       "structured": {
         "type": "default_rules"
       }
@@ -193,14 +222,7 @@
     "sections": 2,
     "rules_active": 3,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky Os směr Bohumín nejsou přípojné od vlaků Ex/R stejného směru."
-    }
-  ]
+  "review": []
 }

@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -34,6 +36,7 @@
     },
     {
       "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -46,6 +49,7 @@
     },
     {
       "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "source_row": 11,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -55,6 +59,7 @@
     },
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 7400 a Os 7200, Os 7406 a Os 17563, Os 7416 a Os 17569, Os 7418 a Os 17571.",
+      "source_row": 12,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -122,6 +127,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
         "type": "default_rules"
       }
@@ -498,22 +504,7 @@
     "sections": 4,
     "rules_active": 9,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "domazlice-008",
-      "row": 30,
-      "field": "wait.saturday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    },
-    {
-      "where": "domazlice-008",
-      "row": 30,
-      "field": "wait.sunday_holiday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    }
-  ]
+  "review": []
 }

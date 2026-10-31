@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj je-li mezi příjezdem a odjezdem vlaků interval kratší než 6 minut.",
+      "source_row": 9,
       "structured": {
         "type": "min_interval",
         "minutes": 6,
@@ -28,20 +30,76 @@
     },
     {
       "text": "Vlak Ex 567 je přípojný od vlaku R 624 a v ⚒ je vlak Sp 1700 přípojný od vlaku Os 7842.",
+      "source_row": 10,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "trains": [
+                567
+              ]
+            },
+            "connecting": {
+              "trains": [
+                624
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "days": [
+              "workday"
+            ],
+            "waiting": {
+              "trains": [
+                1700
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7842
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlak R 778 je přípojný od vlaku Os 7844 v ⑥ a †.",
+      "source_row": 11,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "days": [
+              "saturday",
+              "sunday_holiday"
+            ],
+            "waiting": {
+              "trains": [
+                778
+              ]
+            },
+            "connecting": {
+              "trains": [
+                7844
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ARR jsou přípojem vlaků všech dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -54,39 +112,108 @@
     },
     {
       "text": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců.",
+      "source_row": 13,
       "change": {
         "before": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců.",
         "after": null
       },
       "status": "cancelled",
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ],
+              "except": [
+                {
+                  "all": true,
+                  "categories": [
+                    "Ex"
+                  ],
+                  "from_directions": [
+                    "Praha"
+                  ]
+                }
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "operators": [
+                "ARR",
+                "GWTR"
+              ]
+            },
+            "note": "Text v podkladu pokračuje větou 'Vlaky ČD jsou přípojem vlaků všech dopravců.', která první větě odporuje – použita první věta."
+          }
+        ]
       }
     },
     {
       "text": "Vlaky Os směr Radnice jsou přípojnými vlaky od Ex ze směru Praha hl.n.",
+      "source_row": 14,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Os"
+              ],
+              "to_directions": [
+                "Radnice"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Ex"
+              ],
+              "from_directions": [
+                "Praha"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců. Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min.",
+      "source_row": 15,
       "structured": {
-        "type": "operator_connection",
-        "waiting_operators": [
-          "GWTR"
-        ],
-        "connecting_operators": "all",
-        "reciprocal": false,
-        "exclusive": false,
-        "additional_text": "Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min.",
-        "parse": "partial"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "operator_connection",
+            "waiting_operators": [
+              "GWTR"
+            ],
+            "connecting_operators": "all",
+            "reciprocal": false,
+            "exclusive": false
+          },
+          {
+            "type": "operator_basic_wait",
+            "waiting_operator": "GWTR",
+            "connecting_operators": "others",
+            "minutes": 10
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 16,
       "structured": {
         "type": "default_rules"
       }
@@ -1865,38 +1992,7 @@
     "sections": 7,
     "rules_active": 44,
     "rules_cancelled": 0,
-    "review_items": 5
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlak Ex 567 je přípojný od vlaku R 624 a v ⚒ je vlak Sp 1700 přípojný od vlaku Os 7842."
-    },
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlak R 778 je přípojný od vlaku Os 7844 v ⑥ a †."
-    },
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD, vyjma vlaků Ex ze směru Praha, jsou přípojem vlaků dopravce ARR a GWTR, nejsou přípojem vlaků ostatních dopravců. Vlaky ČD jsou přípojem vlaků všech dopravců."
-    },
-    {
-      "where": "part_b",
-      "row": 14,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky Os směr Radnice jsou přípojnými vlaky od Ex ze směru Praha hl.n."
-    },
-    {
-      "where": "part_b",
-      "row": 15,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců. Základní čekací doba GWTR na vlaky ostatních dopravců je 10 min."
-    }
-  ]
+  "review": []
 }

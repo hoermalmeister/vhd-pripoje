@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I., II., III. a IV. nástupištěm – 5 minut",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi I. a V., VI. nástupištěm – 5 minut",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi II., III., IV. a V., VI. nástupištěm – 7 minut",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 7,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Přestup mezi V. a VI. nástupištěm – 5 minut",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -44,6 +48,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 10,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -54,13 +59,49 @@
   "part_b": [
     {
       "text": "Vlaky opačného směru: vlaky směr Střelice a vlaky směr Břeclav jsou přípojné v obou směrech.",
+      "source_row": 13,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Střelice"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Břeclav"
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Břeclav"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Střelice"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Přípojné vlaky opačného směru jsou Ex 50 a Os 4959, R 879 a Os 4082.",
+      "source_row": 14,
       "structured": {
         "type": "connection_pairs",
         "kind": "opposite_direction_connection",
@@ -99,6 +140,7 @@
     },
     {
       "text": "Přípojné vlaky stejného směru jsou R 1102 a R 986, R 1106 a R 984, R 1110 a R 982, R 1114 a R 980, R 1116 a R 978, R 1118 a R 976, R 1120 a R 974, R 1122 a R 972, R 1126 a R 970",
+      "source_row": 15,
       "change": {
         "before": null,
         "after": "Přípojné vlaky stejného směru jsou R 1102 a R 986, R 1106 a R 984, R 1110 a R 982, R 1114 a R 980, R 1116 a R 978, R 1118 a R 976, R 1120 a R 974, R 1122 a R 972, R 1126 a R 970"
@@ -239,69 +281,285 @@
     },
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratí 240 a 244 a odjezdem vlaků na jiné tratě interval kratší než 7 minut.",
+      "source_row": 16,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "interval_below": 7,
+            "approx": true,
+            "note": "Tratě 240 a 244 = směr Střelice.",
+            "waiting": {
+              "all": true,
+              "not": {
+                "all": true,
+                "to_directions": [
+                  "Střelice"
+                ]
+              }
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Střelice"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 002+250+251+252 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucích na jiné tratě a na trať 250 kratší než 5 minut. Vlaky stejných čísel jsou však vždy přípojné.",
+      "source_row": 17,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "interval_below": 7,
+            "approx": true,
+            "note": "Příjezd z ostatních tratí, odjezd na tratě 240/244 (směr Střelice).",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Střelice"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "not": {
+                "all": true,
+                "from_directions": [
+                  "Střelice"
+                ]
+              }
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "interval_below": 5,
+            "approx": true,
+            "note": "Příjezd z tratí 002/250/251/252/260/300/340 a odjezd na ostatní tratě.",
+            "waiting": {
+              "all": true
+            },
+            "connecting": {
+              "all": true,
+              "not": {
+                "all": true,
+                "from_directions": [
+                  "Střelice"
+                ]
+              }
+            }
+          }
+        ]
       }
     },
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 260 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut.",
+      "source_row": 18,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Pokryto pravidlem brno-hl-n:b:17 (tratě převedeny na směry)."
+          }
+        ]
       }
     },
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 300 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut.",
+      "source_row": 19,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Pokryto pravidlem brno-hl-n:b:17 (tratě převedeny na směry)."
+          }
+        ]
       }
     },
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 340 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut.",
+      "source_row": 20,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Pokryto pravidlem brno-hl-n:b:17 (tratě převedeny na směry)."
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, a od vlaků Sp 1371 a Sp 1373 dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 21,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ]
+            },
+            "connecting": {
+              "any_of": [
+                {
+                  "all": true,
+                  "operators": [
+                    "RJ"
+                  ],
+                  "lines": [
+                    "R8"
+                  ]
+                },
+                {
+                  "trains": [
+                    1371,
+                    1373
+                  ],
+                  "operators": [
+                    "ARR"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD a ARR (Sp 1371 a 1373).",
+      "source_row": 22,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "lines": [
+                "R8"
+              ],
+              "to_directions": [
+                "Bohumín"
+              ]
+            },
+            "connecting": {
+              "any_of": [
+                {
+                  "all": true,
+                  "operators": [
+                    "ČD"
+                  ]
+                },
+                {
+                  "trains": [
+                    1371,
+                    1373
+                  ]
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky RJ ve směru Praha a Břeclav nejsou přípojné od vlaků ostatních dopravců.",
+      "source_row": 23,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "RJ"
+              ],
+              "to_directions": [
+                "Praha",
+                "Břeclav"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "not": {
+                "all": true,
+                "operators": [
+                  "RJ"
+                ]
+              }
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ARR jsou přípojem od vlaků ČD a dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 24,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "ARR"
+              ]
+            },
+            "connecting": {
+              "any_of": [
+                {
+                  "all": true,
+                  "operators": [
+                    "ČD"
+                  ]
+                },
+                {
+                  "all": true,
+                  "operators": [
+                    "RJ"
+                  ],
+                  "lines": [
+                    "R8"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 25,
       "structured": {
         "type": "default_rules"
       }
@@ -2627,68 +2885,7 @@
     "sections": 7,
     "rules_active": 63,
     "rules_cancelled": 0,
-    "review_items": 10
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky opačného směru: vlaky směr Střelice a vlaky směr Břeclav jsou přípojné v obou směrech."
-    },
-    {
-      "where": "part_b",
-      "row": 16,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z tratí 240 a 244 a odjezdem vlaků na jiné tratě interval kratší než 7 minut."
-    },
-    {
-      "where": "part_b",
-      "row": 17,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 002+250+251+252 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucích na jiné tratě a na trať 250 kratší než 5 minut. Vlaky stejných čísel jsou však vždy přípojné."
-    },
-    {
-      "where": "part_b",
-      "row": 18,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 260 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
-    },
-    {
-      "where": "part_b",
-      "row": 19,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 300 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
-    },
-    {
-      "where": "part_b",
-      "row": 20,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky není přípoj, je-li mezi příjezdem vlaků z trati 340 a odjezdem vlaků na tratě 240 a 244 interval kratší než 7 minut, u vlaků jedoucí na jiné tratě kratší než 5 minut."
-    },
-    {
-      "where": "part_b",
-      "row": 21,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ linky R8 Brno hl.n. – Bohumín, a od vlaků Sp 1371 a Sp 1373 dopravce ARR, nejsou přípojem vlaků ostatních dopravců."
-    },
-    {
-      "where": "part_b",
-      "row": 22,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky linky R8 směr Bohumín jsou přípojem od ostatních spojů ČD a ARR (Sp 1371 a 1373)."
-    },
-    {
-      "where": "part_b",
-      "row": 23,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RJ ve směru Praha a Břeclav nejsou přípojné od vlaků ostatních dopravců."
-    },
-    {
-      "where": "part_b",
-      "row": 24,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ARR jsou přípojem od vlaků ČD a dopravce RJ linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců."
-    }
-  ]
+  "review": []
 }

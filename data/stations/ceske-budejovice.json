@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 3 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Jinak platí základní přestupní doby.",
+      "source_row": 7,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -28,6 +30,7 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 4 minuty jsou: R 625 a Ex 538, R 629 a Ex 536, R 631 a Ex 334, R 633 a Ex 530, R 635 a Ex 332, Os 3800 a R 657, Os 8005 a Ex 540, Os 18821 a Os 8054.",
+      "source_row": 10,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -151,6 +154,7 @@
     },
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: Ex 500 a Sp 1998, Ex 500 a R 1177, Ex 537 a Os 18810, Ex 543 a Os 18822, Os 3880 a Os 8202, Os 8019 a R 704, Os 8126 a Os 1730, Os 18803 a Ex 534, Os 18805 a Ex 532.",
+      "source_row": 11,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -288,6 +292,7 @@
     },
     {
       "text": "Vlaky ARR jsou přípojem vlaků dopravce ČD a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -303,6 +308,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravců ARR a GWTR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 13,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -318,6 +324,7 @@
     },
     {
       "text": "Vlaky GWTR jsou přípojem vlaků dopravce ARR, ČD a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -333,6 +340,7 @@
     },
     {
       "text": "Základní čekací doba dopravce GWTR na vlaky dopravců ARR a ČD je 10 minut.",
+      "source_row": 15,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -345,6 +353,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 16,
       "structured": {
         "type": "default_rules"
       }
@@ -3018,22 +3027,7 @@
     "sections": 5,
     "rules_active": 73,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "ceske-budejovice-062",
-      "row": 88,
-      "field": "wait.saturday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    },
-    {
-      "where": "ceske-budejovice-062",
-      "row": 88,
-      "field": "wait.sunday_holiday",
-      "issue": "Prázdná nebo nerozpoznaná čekací doba.",
-      "text": ""
-    }
-  ]
+  "review": []
 }

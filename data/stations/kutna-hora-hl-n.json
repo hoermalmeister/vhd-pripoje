@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti nebo mezi kolejemi 11 a 13 – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup z/na ostrovního nástupiště u vlaků směr Kolín a vlaků končících a vlaků nezávislé trakce směr Čáslav na/z koleje 11 a 13 – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup z/na ostrovního nástupiště u elektrických vlaků směr Čáslav na/z koleje 11 a 13 – 4 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Platí základní pravidla dle článku 2.",
+      "source_row": 11,
       "structured": {
         "type": "default_rules"
       }

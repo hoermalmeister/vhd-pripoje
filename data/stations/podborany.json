@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -32,6 +34,7 @@
     },
     {
       "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "source_row": 10,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -41,6 +44,7 @@
     },
     {
       "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -55,6 +59,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }
@@ -78,14 +83,7 @@
     "sections": 0,
     "rules_active": 0,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RCAS jsou přípojné vlaky všech dopravců. Čekání vlaků RCAS nad rámec základních čekacích dob je nutné projednat s dispečery RCAS na tel. +420 212 249 467."
-    }
-  ]
+  "review": []
 }

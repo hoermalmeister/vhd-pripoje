@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi II. a III. nástupištěm – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup z/na I. nástupiště – 4 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: R 991 a Os 14977, Os 14978 a R 970",
+      "source_row": 11,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -77,6 +81,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }

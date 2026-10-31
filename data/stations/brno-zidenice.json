@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I. a II., III. nástupištěm – 3 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi II. a III. nástupištěm – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "source_row": 11,
       "structured": {
         "type": "min_interval",
         "minutes": 3,
@@ -46,6 +50,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }

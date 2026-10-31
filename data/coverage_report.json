@@ -7,7 +7,7 @@
   "2026-11-08"
  ],
  "rules_total": 2971,
- "rules_matched": 2754,
+ "rules_matched": 2746,
  "not_matched": [
   {
    "rule_id": "as-001",
@@ -15,7 +15,7 @@
    "section": "vlaky směr Hof",
    "waiting_train": "20870",
    "connecting_train": "17241",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "as-005",
@@ -23,7 +23,7 @@
    "section": "vlaky směr Hranice v Čechách",
    "waiting_train": "17220",
    "connecting_train": "20874",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "beroun-002",
@@ -39,7 +39,7 @@
    "section": "vlaky směr Zdice",
    "waiting_train": "1596",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "becov-nad-teplou-002",
@@ -47,7 +47,7 @@
    "section": "vlaky směr Žlutice",
    "waiting_train": "16739",
    "connecting_train": "7112, 7113",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "becov-nad-teplou-006",
@@ -55,7 +55,7 @@
    "section": "vlaky směr Karlovy Vary (opatření dopravce GWTR)",
    "waiting_train": "7112",
    "connecting_train": "16732",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "becov-nad-teplou-008",
@@ -63,7 +63,7 @@
    "section": "vlaky směr Mariánské Lázně (opatření dopravce GWTR)",
    "waiting_train": "7113",
    "connecting_train": "16732",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bohumin-004",
@@ -71,7 +71,7 @@
    "section": "vlaky směr Ostrava hl.n. – Hranice na Moravě – Přerov (Olomouc hl.n.)",
    "waiting_train": "131",
    "connecting_train": "205 kurzy",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bohumin-009",
@@ -79,15 +79,7 @@
    "section": "vlaky směr Ostrava hl.n. – Hranice na Moravě – Přerov (Olomouc hl.n.)",
    "waiting_train": "442",
    "connecting_train": "407 kurzy, 417 kurzy",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
-  },
-  {
-   "rule_id": "bohumin-014",
-   "station": "Bohumín",
-   "section": "vlaky směr Ostrava hl.n. – Hranice na Moravě – Přerov (Olomouc hl.n.)",
-   "waiting_train": "R8 směr Brno (sudé 1100-1132)",
-   "connecting_train": "vlaky linky S2 ze směru Karviná",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bohumin-018",
@@ -95,7 +87,7 @@
    "section": "vlaky směr Dětmarovice",
    "waiting_train": "204",
    "connecting_train": "130 kurzy",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bohumin-032",
@@ -103,7 +95,7 @@
    "section": "vlaky směr Chałupki (PKP)",
    "waiting_train": "406, 416",
    "connecting_train": "406, 443 kurzy",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "brno-hl-n-027",
@@ -111,7 +103,7 @@
    "section": "vlaky směr Břeclav",
    "waiting_train": "1360",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "brno-hl-n-028",
@@ -119,7 +111,15 @@
    "section": "vlaky směr Břeclav",
    "waiting_train": "1372",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "brno-hl-n-045",
+   "station": "Brno hl. n.",
+   "section": "vlaky směr Česká Třebová",
+   "waiting_train": "4082",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "brno-hl-n-054",
@@ -127,7 +127,15 @@
    "section": "vlaky směr Křenovice horní nádraží / Vyškov",
    "waiting_train": "4089",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "brno-hl-n-062",
+   "station": "Brno hl. n.",
+   "section": "vlaky směr Veselí nad Moravou",
+   "waiting_train": "4141",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "brno-horni-herspice-006",
@@ -143,7 +151,7 @@
    "section": "vlaky směr Blansko",
    "waiting_train": "4082",
    "connecting_train": "4665",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bruntal-001",
@@ -159,7 +167,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6539, 6547, 6555, 6563",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bilina-do-30-6-007",
@@ -167,7 +175,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6835",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bilina-do-30-6-012",
@@ -175,7 +183,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6542, 6550, 6558",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "bilina-do-30-6-015",
@@ -183,7 +191,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6846",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-014",
@@ -191,7 +199,15 @@
    "section": "vlaky směr Brno hl. n.",
    "waiting_train": "818, 1788",
    "connecting_train": "4555, 4553",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "breclav-015",
+   "station": "Břeclav",
+   "section": "vlaky směr Brno hl. n.",
+   "waiting_train": "1371",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-027",
@@ -199,7 +215,7 @@
    "section": "vlaky směr Kúty",
    "waiting_train": "477",
    "connecting_train": "407, 457, 577",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-031",
@@ -207,7 +223,7 @@
    "section": "vlaky směr Přerov",
    "waiting_train": "102",
    "connecting_train": "1367",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-037",
@@ -215,7 +231,7 @@
    "section": "vlaky směr Přerov",
    "waiting_train": "204",
    "connecting_train": "1365",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-039",
@@ -223,7 +239,7 @@
    "section": "vlaky směr Přerov",
    "waiting_train": "206",
    "connecting_train": "1361",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-040",
@@ -231,7 +247,7 @@
    "section": "vlaky směr Přerov",
    "waiting_train": "406",
    "connecting_train": "476",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-046",
@@ -239,7 +255,7 @@
    "section": "vlaky směr Přerov",
    "waiting_train": "2723",
    "connecting_train": "255",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breclav-049",
@@ -255,7 +271,7 @@
    "section": "vlaky směr Wien",
    "waiting_train": "457",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breznice-006",
@@ -263,7 +279,7 @@
    "section": "vlaky směr Rožmitál pod Třemšínem",
    "waiting_train": "27941",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breznice-007",
@@ -271,7 +287,7 @@
    "section": "vlaky směr Rožmitál pod Třemšínem",
    "waiting_train": "27943",
    "connecting_train": "V (vyjma 1596)",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breznice-008",
@@ -279,7 +295,7 @@
    "section": "vlaky směr Rožmitál pod Třemšínem",
    "waiting_train": "27943",
    "connecting_train": "1596",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breznice-009",
@@ -287,7 +303,7 @@
    "section": "vlaky směr Rožmitál pod Třemšínem",
    "waiting_train": "27945",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "breznice-010",
@@ -295,7 +311,7 @@
    "section": "vlaky směr Rožmitál pod Třemšínem",
    "waiting_train": "27947",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "cheb-018",
@@ -327,7 +343,7 @@
    "section": "vlaky směr Vysoké Mýto",
    "waiting_train": "15030",
    "connecting_train": "579",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-od-01-07-001",
@@ -335,7 +351,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-od-01-07-015",
@@ -343,7 +359,7 @@
    "section": "vlaky směr Kadaň-Prunéřov",
    "waiting_train": "všechny vlaky Ex (vyjma 606)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-od-01-07-035",
@@ -351,7 +367,7 @@
    "section": "směr Vejprty",
    "waiting_train": "5690-5695",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-001",
@@ -359,7 +375,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-005",
@@ -367,7 +383,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6555",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-006",
@@ -375,7 +391,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6547",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-007",
@@ -383,7 +399,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6563",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-009",
@@ -391,7 +407,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6805",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-013",
@@ -399,7 +415,7 @@
    "section": "vlaky směr Kadaň-Prunéřov",
    "waiting_train": "všechny vlaky Ex (vyjma 606)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-016",
@@ -407,7 +423,7 @@
    "section": "vlaky směr Kadaň-Prunéřov",
    "waiting_train": "6550",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-020",
@@ -415,7 +431,7 @@
    "section": "vlaky směr Kadaň-Prunéřov",
    "waiting_train": "7078",
    "connecting_train": "6808",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-022",
@@ -423,7 +439,7 @@
    "section": "směr Žatec",
    "waiting_train": "1095*",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-027",
@@ -431,7 +447,7 @@
    "section": "směr Žatec",
    "waiting_train": "16817",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "chomutov-do-30-06-032",
@@ -439,7 +455,7 @@
    "section": "směr Vejprty",
    "waiting_train": "5690-5695",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-od-01-07-006",
@@ -447,7 +463,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "1977",
    "connecting_train": "28023",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-od-01-07-011",
@@ -455,7 +471,7 @@
    "section": "vlaky směr Děčín východ",
    "waiting_train": "1966",
    "connecting_train": "6807, 6545 (RJ Úk)",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-od-01-07-019",
@@ -463,7 +479,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18310",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-od-01-07-020",
@@ -471,7 +487,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18312",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-od-01-07-021",
@@ -479,7 +495,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18314",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-od-01-07-022",
@@ -487,7 +503,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18316",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-006",
@@ -495,7 +511,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "1977",
    "connecting_train": "5271",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-011",
@@ -503,7 +519,7 @@
    "section": "vlaky směr Praha (přes Ústí nad Labem hl.n.)",
    "waiting_train": "6969",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-012",
@@ -511,7 +527,7 @@
    "section": "vlaky směr Děčín východ",
    "waiting_train": "1966",
    "connecting_train": "6807, 6545 (RJ ÚK)",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-013",
@@ -519,7 +535,7 @@
    "section": "vlaky směr Děčín východ",
    "waiting_train": "6621",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-018",
@@ -527,7 +543,7 @@
    "section": "vlaky směr Bad Schandau",
    "waiting_train": "5270",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-019",
@@ -535,7 +551,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18310",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-020",
@@ -543,7 +559,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18312",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-021",
@@ -551,7 +567,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18314",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "decin-hl-n-do-30-06-022",
@@ -559,7 +575,7 @@
    "section": "vlaky směr Telnice",
    "waiting_train": "18316",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "frydlant-nad-ostravici-011",
@@ -567,7 +583,7 @@
    "section": "vlaky směr Ostravice",
    "waiting_train": "2044",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "hodonin-001",
@@ -575,7 +591,15 @@
    "section": "vlaky směr Zaječí",
    "waiting_train": "14526",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "hradec-kralove-hl-n-021",
+   "station": "Hradec Králové hl.n.",
+   "section": "vlaky směr Jaroměř",
+   "waiting_train": "5240",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "hradec-kralove-hl-n-036",
@@ -583,7 +607,7 @@
    "section": "vlaky směr Týniště nad Orlicí",
    "waiting_train": "2011",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-od-01-07-001",
@@ -591,7 +615,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-od-01-07-008",
@@ -599,7 +623,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6567",
    "connecting_train": "7063",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-od-01-07-011",
@@ -607,7 +631,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6825",
    "connecting_train": "17613",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-od-01-07-013",
@@ -615,7 +639,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "7051",
    "connecting_train": "17633",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-od-01-07-014",
@@ -623,7 +647,7 @@
    "section": "vlaky směr Klášterec nad Ohří",
    "waiting_train": "všechny vlaky Ex (vyjma 606)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-001",
@@ -631,7 +655,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-008",
@@ -639,7 +663,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6567",
    "connecting_train": "7063",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-016",
@@ -647,7 +671,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6825",
    "connecting_train": "17613",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-021",
@@ -655,7 +679,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "7051",
    "connecting_train": "17633",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-022",
@@ -663,7 +687,7 @@
    "section": "vlaky směr Klášterec nad Ohří",
    "waiting_train": "všechny vlaky Ex (vyjma 606)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-026",
@@ -671,7 +695,7 @@
    "section": "vlaky směr Klášterec nad Ohří",
    "waiting_train": "7048",
    "connecting_train": "1943",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "kadan-prunerov-do-30-06-041",
@@ -679,7 +703,7 @@
    "section": "vlaky směr Kadaň",
    "waiting_train": "17634",
    "connecting_train": "7000",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "karlovy-vary-005",
@@ -687,7 +711,7 @@
    "section": "vlaky směr Nejdek",
    "waiting_train": "19858",
    "connecting_train": "7065",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "karlovy-vary-007",
@@ -695,7 +719,7 @@
    "section": "vlaky směr Karlovy Vary dolní nádraží",
    "waiting_train": "19813",
    "connecting_train": "7060",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "krnov-003",
@@ -711,7 +735,7 @@
    "section": "vlaky směr Horní Slavkov-Kounice",
    "waiting_train": "27170",
    "connecting_train": "26902, 26903",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "krasny-jez-002",
@@ -719,7 +743,7 @@
    "section": "vlaky směr Horní Slavkov-Kounice",
    "waiting_train": "27172",
    "connecting_train": "26904, 26905",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "krasny-jez-003",
@@ -727,7 +751,7 @@
    "section": "vlaky směr Horní Slavkov-Kounice",
    "waiting_train": "27174",
    "connecting_train": "26908, 26909",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "krasny-jez-004",
@@ -735,7 +759,7 @@
    "section": "vlaky směr Horní Slavkov-Kounice",
    "waiting_train": "27176",
    "connecting_train": "26910, 26911",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "letovice-006",
@@ -743,7 +767,7 @@
    "section": "vlaky směr Brno",
    "waiting_train": "4039",
    "connecting_train": "4779",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "liberec-001",
@@ -751,7 +775,7 @@
    "section": "vlaky směr Česká Lípa",
    "waiting_train": "1298",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "liberec-021",
@@ -759,7 +783,7 @@
    "section": "vlaky směr Turnov",
    "waiting_train": "5431",
    "connecting_train": "20939",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "libochovice-001",
@@ -767,7 +791,7 @@
    "section": "vlaky směr Lovosice",
    "waiting_train": "6107",
    "connecting_train": "18340",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "litovel-predmesti-003",
@@ -783,7 +807,7 @@
    "section": "vlaky směr Děčín",
    "waiting_train": "670",
    "connecting_train": "25546",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "lovosice-020",
@@ -794,28 +818,12 @@
    "reason": "vlak(y) v GTFS vůbec nejsou"
   },
   {
-   "rule_id": "lysa-nad-labem-002",
-   "station": "Lysá nad Labem",
-   "section": "vlaky směr Milovice",
-   "waiting_train": "všechny vlaky (vyjma níže uvedených)",
-   "connecting_train": "V od Prahy",
-   "reason": "obecné pravidlo – žádný vlak ve zkušebních dnech nevyhověl (ověřit směr/kategorii)"
-  },
-  {
-   "rule_id": "lysa-nad-labem-004",
-   "station": "Lysá nad Labem",
-   "section": "vlaky směr Milovice",
-   "waiting_train": "25651, 25653",
-   "connecting_train": "vlaky Os od Prahy",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
-  },
-  {
    "rule_id": "mikulasovice-dolni-nadrazi-001",
    "station": "Mikulášovice dolní nádraží",
    "section": null,
    "waiting_train": "26008",
    "connecting_train": "28013",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "mlada-boleslav-hl-n-004",
@@ -823,7 +831,15 @@
    "section": "vlaky směr Bakov nad Jizerou",
    "waiting_train": "1554",
    "connecting_train": "6036",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "mlada-boleslav-hl-n-006",
+   "station": "Mladá Boleslav hl.n.",
+   "section": "vlaky směr Bakov nad Jizerou",
+   "waiting_train": "6020",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "mlada-boleslav-hl-n-008",
@@ -831,7 +847,15 @@
    "section": "vlaky směr Bakov nad Jizerou",
    "waiting_train": "9578",
    "connecting_train": "1546",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "mlada-boleslav-hl-n-027",
+   "station": "Mladá Boleslav hl.n.",
+   "section": "vlaky směr Mšeno",
+   "waiting_train": "8529, 8571",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "moravske-budejovice-001",
@@ -855,7 +879,7 @@
    "section": "vlaky směr Ústí nad Labem",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-od-01-07-010",
@@ -863,7 +887,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "všechny vlaky Ex (vyjma 604)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-001",
@@ -871,7 +895,7 @@
    "section": "vlaky směr Ústí nad Labem",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-003",
@@ -879,7 +903,7 @@
    "section": "vlaky směr Ústí nad Labem",
    "waiting_train": "6539, 6547, 6555, 6563",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-008",
@@ -887,7 +911,7 @@
    "section": "vlaky směr Ústí nad Labem",
    "waiting_train": "1957",
    "connecting_train": "6833",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-009",
@@ -895,7 +919,7 @@
    "section": "vlaky směr Ústí nad Labem",
    "waiting_train": "1957",
    "connecting_train": "1094",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-010",
@@ -903,7 +927,7 @@
    "section": "vlaky směr Ústí nad Labem",
    "waiting_train": "6835",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-012",
@@ -911,7 +935,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "všechny vlaky Ex (vyjma 604)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-015",
@@ -919,7 +943,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6542, 6550, 6558",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-019",
@@ -927,7 +951,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6846",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-022",
@@ -935,7 +959,7 @@
    "section": "vlaky směr Louny",
    "waiting_train": "6775",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "most-do-30-06-024",
@@ -943,7 +967,7 @@
    "section": "vlaky směr Žatec",
    "waiting_train": "1095*",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "melnik-002",
@@ -951,15 +975,7 @@
    "section": "vlaky směr Mšeno",
    "waiting_train": "8564",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
-  },
-  {
-   "rule_id": "nymburk-hl-n-001",
-   "station": "Nymburk hl.n.",
-   "section": "vlaky směr Jičín",
-   "waiting_train": "všechny vlaky Os (vyjma níže uvedených)",
-   "connecting_train": "vlaky R ze směru Mladá Boleslav",
-   "reason": "obecné pravidlo – žádný vlak ve zkušebních dnech nevyhověl (ověřit směr/kategorii)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "nymburk-mesto-003",
@@ -967,7 +983,7 @@
    "section": "vlaky směr Veleliby",
    "waiting_train": "1551",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-hl-n-004",
@@ -991,7 +1007,7 @@
    "section": "vlaky směr Ostrava střed",
    "waiting_train": "1601, 1615, 1631",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-hl-n-015",
@@ -999,7 +1015,7 @@
    "section": "vlaky směr Ostrava střed",
    "waiting_train": "3100, 3104, 3106, 3108, 3112, 3114, 3116, 3118, 3120, 3122, 3124, 3126, 3128, 3132, 3136, 3138, 3140",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-hl-n-016",
@@ -1007,7 +1023,7 @@
    "section": "vlaky směr Ostrava střed",
    "waiting_train": "3142, 3170",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-hl-n-017",
@@ -1015,7 +1031,7 @@
    "section": "vlaky směr Ostrava střed",
    "waiting_train": "3162",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-svinov-006",
@@ -1031,7 +1047,7 @@
    "section": "vlaky směr Studénka",
    "waiting_train": "3067",
    "connecting_train": "V (včetně 515)",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-svinov-020",
@@ -1047,7 +1063,7 @@
    "section": "vlaky směr Opava východ",
    "waiting_train": "513",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostrava-svinov-048",
@@ -1055,7 +1071,7 @@
    "section": "vlaky směr Havířov – Český Těšín",
    "waiting_train": "3423",
    "connecting_train": "502",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ostromer-004",
@@ -1063,7 +1079,7 @@
    "section": "vlaky směr Chlumec nad Cidlinou",
    "waiting_train": "5724",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "pardubice-hl-n-011",
@@ -1071,7 +1087,7 @@
    "section": "vlaky směr Praha",
    "waiting_train": "25061",
    "connecting_train": "579",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "pardubice-hl-n-014",
@@ -1079,7 +1095,7 @@
    "section": "vlaky směr Česká Třebová",
    "waiting_train": "579",
    "connecting_train": "5355",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "pardubice-hl-n-021",
@@ -1095,7 +1111,7 @@
    "section": "vlaky směr Hradec Králové hl.n.",
    "waiting_train": "6220",
    "connecting_train": "579",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "pardubice-hl-n-042",
@@ -1103,7 +1119,7 @@
    "section": "vlaky směr Chrudim",
    "waiting_train": "5351",
    "connecting_train": "579",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "pardubice-rosice-nad-labem-011",
@@ -1111,7 +1127,7 @@
    "section": "vlaky směr Chrudim",
    "waiting_train": "5353",
    "connecting_train": "1062",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "praha-masarykovo-nadrazi-002",
@@ -1135,7 +1151,47 @@
    "section": "vlaky směr Kralupy nad Vltavou",
    "waiting_train": "478",
    "connecting_train": "270",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "praha-hl-n-017",
+   "station": "Praha hl.n.",
+   "section": "vlaky směr Kralupy nad Vltavou",
+   "waiting_train": "9600",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "praha-bubny-002",
+   "station": "Praha-Bubny",
+   "section": "vlaky směr Kladno",
+   "waiting_train": "1572",
+   "connecting_train": "9640",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "praha-bubny-003",
+   "station": "Praha-Bubny",
+   "section": "vlaky směr Kladno",
+   "waiting_train": "1576",
+   "connecting_train": "9642",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "praha-bubny-004",
+   "station": "Praha-Bubny",
+   "section": "vlaky směr Kladno",
+   "waiting_train": "1578",
+   "connecting_train": "9646",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "praha-bubny-005",
+   "station": "Praha-Bubny",
+   "section": "vlaky směr Kladno",
+   "waiting_train": "1582",
+   "connecting_train": "9648",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "praha-liben-005",
@@ -1151,7 +1207,7 @@
    "section": "vlaky směr Praha-Smíchov",
    "waiting_train": "7751",
    "connecting_train": "25909",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "praha-zlicin-003",
@@ -1159,7 +1215,7 @@
    "section": "vlaky směr Praha-Smíchov",
    "waiting_train": "7753",
    "connecting_train": "25957",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "protivec-001",
@@ -1167,7 +1223,7 @@
    "section": "vlaky směr Bochov",
    "waiting_train": "16752",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "protivec-002",
@@ -1175,7 +1231,7 @@
    "section": "vlaky směr Bochov",
    "waiting_train": "16754",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "protivin-011",
@@ -1191,7 +1247,7 @@
    "section": "vlaky směr Břeclav",
    "waiting_train": "1650",
    "connecting_train": "899",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "rakovnik-008",
@@ -1199,7 +1255,7 @@
    "section": "vlaky směr Čistá",
    "waiting_train": "16838",
    "connecting_train": "1576",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "roudnice-nad-labem-007",
@@ -1207,7 +1263,7 @@
    "section": "vlaky směr Straškov",
    "waiting_train": "18340, 18342",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "rybniste-003",
@@ -1215,7 +1271,7 @@
    "section": "vlaky směr Varnsdorf",
    "waiting_train": "20978",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "senice-na-hane-005",
@@ -1223,7 +1279,7 @@
    "section": "vlaky směr Červenka",
    "waiting_train": "13826",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "smrzovka-004",
@@ -1231,7 +1287,7 @@
    "section": "vlaky směr Liberec",
    "waiting_train": "2673",
    "connecting_train": "26355",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "starkoc-003",
@@ -1239,7 +1295,7 @@
    "section": "vlaky směr Jaroměř",
    "waiting_train": "1381, 1383, 1385, 1387, 1389, 1391, 1393, 1395",
    "connecting_train": "přímé vozy Broumov – H.Králové (viz Prováděcí nařízení k SŽDC D7, část B)",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "strakonice-009",
@@ -1255,7 +1311,7 @@
    "section": "vlaky směr Suchdol nad Odrou",
    "waiting_train": "3324",
    "connecting_train": "3086",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tanvald-010",
@@ -1279,7 +1335,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "teplice-v-cechach-do-30-6-001",
@@ -1287,7 +1343,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "všechny vlaky Ex (vyjma 619)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "teplice-v-cechach-do-30-6-003",
@@ -1295,7 +1351,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6539, 6547, 6555, 6563",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "teplice-v-cechach-do-30-6-006",
@@ -1303,7 +1359,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6805",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "teplice-v-cechach-do-30-6-011",
@@ -1311,7 +1367,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6542, 6550, 6558",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "teplice-v-cechach-do-30-6-015",
@@ -1319,7 +1375,7 @@
    "section": "vlaky směr Chomutov",
    "waiting_train": "6846",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tisnov-014",
@@ -1327,7 +1383,7 @@
    "section": "vlaky směr Nedvědice",
    "waiting_train": "14948",
    "connecting_train": "4608",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "turnov-010",
@@ -1335,7 +1391,7 @@
    "section": "vlaky směr Jičín",
    "waiting_train": "5559",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tabor-008",
@@ -1351,7 +1407,7 @@
    "section": "vlaky směr Hradec Králové",
    "waiting_train": "2012",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tremesna-ve-slezsku-002",
@@ -1359,7 +1415,7 @@
    "section": "vlaky směr Osoblaha",
    "waiting_train": "20601",
    "connecting_train": "1440",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tremesna-ve-slezsku-003",
@@ -1367,7 +1423,7 @@
    "section": "vlaky směr Osoblaha",
    "waiting_train": "20603",
    "connecting_train": "1442",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tremesna-ve-slezsku-004",
@@ -1375,7 +1431,7 @@
    "section": "vlaky směr Osoblaha",
    "waiting_train": "20605",
    "connecting_train": "1444",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tremesna-ve-slezsku-005",
@@ -1383,7 +1439,7 @@
    "section": "vlaky směr Osoblaha",
    "waiting_train": "20607",
    "connecting_train": "1446",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "tremesna-ve-slezsku-006",
@@ -1391,7 +1447,7 @@
    "section": "vlaky směr Osoblaha",
    "waiting_train": "20651",
    "connecting_train": "1443, 3578",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "uherske-hradiste-002",
@@ -1415,7 +1471,7 @@
    "section": "vlaky směr České Velenice",
    "waiting_train": "8731",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "vranany-012",
@@ -1423,7 +1479,7 @@
    "section": "vlaky směr Lužec nad Vltavou",
    "waiting_train": "9674, 9676, 9678",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "vsetaty-008",
@@ -1431,7 +1487,7 @@
    "section": "vlaky směr Mělník",
    "waiting_train": "8562",
    "connecting_train": "1544",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "vsetaty-011",
@@ -1439,7 +1495,7 @@
    "section": "vlaky směr Mladá Boleslav",
    "waiting_train": "1554",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "vsetaty-016",
@@ -1447,7 +1503,7 @@
    "section": "vlaky směr Neratovice",
    "waiting_train": "1555",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "zajeci-008",
@@ -1455,7 +1511,7 @@
    "section": "vlaky směr Brno hl. n.",
    "waiting_train": "14674*",
    "connecting_train": "14556*",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "zdice-004",
@@ -1471,7 +1527,7 @@
    "section": "vlaky směr Březnice",
    "waiting_train": "1596",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-od-01-07-011",
@@ -1479,7 +1535,7 @@
    "section": "vlaky směr Děčín hl.n.",
    "waiting_train": "670",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-od-01-07-012",
@@ -1487,7 +1543,7 @@
    "section": "vlaky směr Děčín hl.n.",
    "waiting_train": "5274, 5276",
    "connecting_train": "607",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-od-01-07-025",
@@ -1495,7 +1551,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "všechny vlaky Ex (vyjma 606)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-od-01-07-028",
@@ -1503,7 +1559,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "1940",
    "connecting_train": "670",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-011",
@@ -1511,7 +1567,7 @@
    "section": "vlaky směr Děčín hl.n.",
    "waiting_train": "670",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-012",
@@ -1519,7 +1575,7 @@
    "section": "vlaky směr Děčín hl.n.",
    "waiting_train": "5274, 5276",
    "connecting_train": "607",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-013",
@@ -1527,7 +1583,7 @@
    "section": "vlaky směr Děčín hl.n.",
    "waiting_train": "6539, 6547, 6555",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-015",
@@ -1535,7 +1591,7 @@
    "section": "vlaky směr Děčín hl.n.",
    "waiting_train": "6563",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-024",
@@ -1543,7 +1599,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "všechny vlaky Ex (vyjma 606)",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-027",
@@ -1551,7 +1607,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "1940",
    "connecting_train": "670",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-028",
@@ -1559,7 +1615,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "6542, 6550, 6558",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-032",
@@ -1567,7 +1623,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "6840",
    "connecting_train": "6928",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-hl-n-do-30-06-033",
@@ -1575,7 +1631,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "6846",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-od-1-7-010",
@@ -1583,7 +1639,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6833",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-002",
@@ -1591,7 +1647,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6539, 6547, 6555",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-003",
@@ -1599,7 +1655,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6563",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-004",
@@ -1607,7 +1663,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6805",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-008",
@@ -1615,7 +1671,7 @@
    "section": "vlaky směr Ústí nad Labem hl.n.",
    "waiting_train": "6835",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-009",
@@ -1623,7 +1679,7 @@
    "section": "vlaky směr Lysá nad Labem",
    "waiting_train": "6433",
    "connecting_train": "6835",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-012",
@@ -1631,7 +1687,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "6542, 6550, 6558",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-zapad-do-30-6-016",
@@ -1639,7 +1695,7 @@
    "section": "vlaky směr Most",
    "waiting_train": "6846",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-strekov-001",
@@ -1647,7 +1703,7 @@
    "section": "vlaky směr Ústí nad Labem západ",
    "waiting_train": "6408",
    "connecting_train": "15481",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-strekov-002",
@@ -1655,7 +1711,7 @@
    "section": "vlaky směr Ústí nad Labem západ",
    "waiting_train": "6410",
    "connecting_train": "15483",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-strekov-003",
@@ -1663,7 +1719,7 @@
    "section": "vlaky směr Ústí nad Labem západ",
    "waiting_train": "6412",
    "connecting_train": "15485",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "usti-nad-labem-strekov-004",
@@ -1671,7 +1727,7 @@
    "section": "vlaky směr Ústí nad Labem západ",
    "waiting_train": "6414",
    "connecting_train": "15487",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ceska-kamenice-001",
@@ -1679,7 +1735,7 @@
    "section": "vlaky směr Děčín hl. n.",
    "waiting_train": "1967",
    "connecting_train": "2401",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ceska-kamenice-005",
@@ -1687,7 +1743,7 @@
    "section": "vlaky směr Rumburk",
    "waiting_train": "1966",
    "connecting_train": "2401",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ceska-trebova-009",
@@ -1695,7 +1751,7 @@
    "section": "vlaky směr Zábřeh na Moravě, Olomouc hl.n.",
    "waiting_train": "143",
    "connecting_train": "12736",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "ceska-trebova-015",
@@ -1703,7 +1759,7 @@
    "section": "vlaky směr Zábřeh na Moravě, Olomouc hl.n.",
    "waiting_train": "3787",
    "connecting_train": "V",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "cesky-tesin-023",
@@ -1711,7 +1767,7 @@
    "section": "vlaky směr Frýdek – Místek",
    "waiting_train": "12838",
    "connecting_train": "1257",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "caslav-005",
@@ -1719,7 +1775,7 @@
    "section": "vlaky směr Kolín",
    "waiting_train": "972, 976, 980, 982",
    "connecting_train": "vlaky Os ze směru Třemošnice",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "caslav-007",
@@ -1727,7 +1783,15 @@
    "section": "vlaky směr Třemošnice",
    "waiting_train": "15909 – 15933",
    "connecting_train": "vlaky R ze směru Praha",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
+  },
+  {
+   "rule_id": "sumperk-002",
+   "station": "Šumperk",
+   "section": "vlaky směr Hanušovice",
+   "waiting_train": "3603",
+   "connecting_train": "V",
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "zelezny-brod-003",
@@ -1735,7 +1799,7 @@
    "section": "vlaky směr Stará Paka",
    "waiting_train": "1295",
    "connecting_train": "1149",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   },
   {
    "rule_id": "zelezny-brod-007",
@@ -1743,7 +1807,7 @@
    "section": "vlaky směr Tanvald",
    "waiting_train": "1148",
    "connecting_train": "5420",
-   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / jiný přípojný vlak)"
+   "reason": "ve zkušebních dnech nenalezena žádná dvojice vlaků (jiné dny jízdy / interval > 60 min / vlak ve stanici začíná nebo končí)"
   }
  ]
 }

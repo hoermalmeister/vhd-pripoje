@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi kolejemi 13,15,17 a 1, 3 – 3 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi kolejemi 13,15,17 a 2, 6 – 4 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Jinak platí základní přestupní doby.",
+      "source_row": 8,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -36,82 +39,115 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 3909 a Sp 2021, 2029, Os 3961 a Sp 1650, R 804 a Os 3928, R 802 a Os 3932, Os 3933.",
+      "source_row": 11,
       "structured": {
-        "type": "connection_pairs",
-        "kind": "considered_connection",
-        "pairs": [
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 3909
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Sp",
-                "number": 2021
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 2,
+            "waiting": {
+              "trains": [
+                3909
+              ]
+            },
+            "connecting": {
+              "trains": [
+                2021,
+                2029
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 3961
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Sp",
-                "number": 1650
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 2,
+            "waiting": {
+              "trains": [
+                3961
+              ]
+            },
+            "connecting": {
+              "trains": [
+                1650
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "R",
-                "number": 804
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 3928
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 2,
+            "waiting": {
+              "trains": [
+                804
+              ]
+            },
+            "connecting": {
+              "trains": [
+                3928
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "R",
-                "number": 802
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 3932
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "min_interval": 2,
+            "waiting": {
+              "trains": [
+                802
+              ]
+            },
+            "connecting": {
+              "trains": [
+                3932,
+                3933
+              ]
+            }
           }
-        ],
-        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
-        "transfer_minutes": 2,
-        "unparsed": "2029 Os 3933",
-        "parse": "partial"
+        ]
       }
     },
     {
       "text": "Vlaky Ex ve směru Luhačovice nejsou přípojem od vlaků Os ze směru Přerov.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Ex"
+              ],
+              "to_directions": [
+                "Luhačovice"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Os"
+              ],
+              "from_directions": [
+                "Přerov"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
         "type": "default_rules"
       }
@@ -836,20 +872,7 @@
     "sections": 4,
     "rules_active": 18,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 3909 a Sp 2021, 2029, Os 3961 a Sp 1650, R 804 a Os 3928, R 802 a Os 3932, Os 3933."
-    },
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky Ex ve směru Luhačovice nejsou přípojem od vlaků Os ze směru Přerov."
-    }
-  ]
+  "review": []
 }

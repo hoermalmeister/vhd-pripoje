@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,13 +21,55 @@
   "part_b": [
     {
       "text": "Vlaky z/do Lokte jsou přípojnými vlaky na rychlíky směr z /do Chebu.",
+      "source_row": 9,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "to_directions": [
+                "Loket"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "from_directions": [
+                "Cheb"
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "to_directions": [
+                "Cheb"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "from_directions": [
+                "Loket"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }
@@ -333,14 +376,7 @@
     "sections": 4,
     "rules_active": 7,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 9,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky z/do Lokte jsou přípojnými vlaky na rychlíky směr z /do Chebu."
-    }
-  ]
+  "review": []
 }

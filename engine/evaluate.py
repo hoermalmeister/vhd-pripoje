@@ -68,7 +68,10 @@ class Train:
         return self.stations[self.idx - 1] if self.idx > 0 else None
 
     def label(self, names):
-        return f"{self.category} {self.number} ({self.operator}) {names.get(self.origin, '?')} – {names.get(self.terminus, '?')}"
+        dest = names.get(self.terminus, "?")
+        if self.times[-1][1] is not None and getattr(self, "headsign", None):
+            dest = self.headsign            # vlak pokračuje mimo data (do zahraničí)
+        return f"{self.category} {self.number} ({self.operator}) {names.get(self.origin, '?')} – {dest}"
 
 
 class Engine:
@@ -97,7 +100,11 @@ class Engine:
         d = date.isoformat()
         for st in self.index["stations"]:
             if st["station"] == station_name:
-                cands = [f for f in st["files"] if (f["valid_to"] is None or d <= f["valid_to"])]
+                for f in st["files"]:
+                    for p in f.get("periods", []):
+                        if p["from"] <= d and (p["to"] is None or d <= p["to"]):
+                            return self._load_station(f["file"]), None
+                cands = [f for f in st["files"] if not f.get("periods") and (f["valid_to"] is None or d <= f["valid_to"])]
                 exact = [f for f in cands if f["valid_from"] is None or f["valid_from"] <= d]
                 if exact:
                     return self._load_station(exact[-1]["file"]), None
@@ -140,17 +147,28 @@ class Engine:
                 blocks.setdefault(r[6], []).append(r)
             for blk, parts in blocks.items():
                 parts.sort(key=lambda r: r[7])
-                stations, times, meta = [], [], []
-                for tid, num, cat, druh, op, line, _, _, _hs in parts:
-                    for st, arr, dep in self.db.execute("select station_id, arr, dep from stops where tid=? order by seq", (tid,)):
+                stations, times, meta, kmpos = [], [], [], []
+                for pi, (tid, num, cat, druh, op, line, _, _, _hs) in enumerate(parts):
+                    for st, arr, dep, km in self.db.execute("select station_id, arr, dep, dist_km from stops where tid=? order by seq", (tid,)):
                         a = arr + shift * 1440 if arr is not None else None
                         d = dep + shift * 1440 if dep is not None else None
                         if stations and stations[-1] == st:      # navázání částí vlaku (např. NAD)
                             times[-1] = (times[-1][0], d)
+                            kmpos[-1] = (pi, km)
                             continue
-                        stations.append(st); times.append((a, d)); meta.append((num, cat, druh, op, line))
+                        stations.append(st); times.append((a, d)); meta.append((num, cat, druh, op, line)); kmpos.append((pi, km))
                 if station_id not in stations:
                     continue
+                # výchozí stanice nemá příjezd, konečná nemá odjezd (GTFS u nich uvádí oba časy)
+                # (u vlaků useknutých na hranici – cíl/odjezd mimo data – časy ponecháme)
+                a0, d0 = times[0]
+                if a0 is None or d0 is None or a0 >= d0:
+                    times[0] = (None, d0)
+                aN, dN = times[-1]
+                hs = (parts[-1][8] or "").strip()
+                if not (dN is not None and aN is not None and (dN > aN or (hs and hs != self.names.get(stations[-1])))):
+                    times[-1] = (aN, None)
+                seg_km = [(k2 - k1) if (p1 == p2 and k2 > k1) else None for (p1, k1), (p2, k2) in zip(kmpos, kmpos[1:])]
                 i = stations.index(station_id)
                 t_here = times[i][1] if times[i][1] is not None else times[i][0]
                 if shift == -1 and t_here < 0:
@@ -160,8 +178,8 @@ class Engine:
                 num, cat, druh, op, line = meta[i]
                 tr = Train(num, cat, druh, op, line, stations, times, i, stations[-1], stations[0])
                 tr.headsign = parts[-1][8]
-                tr.onward = self.net.expand(stations[i:])
-                tr.backward = self.net.expand(list(reversed(stations[: i + 1])))
+                tr.onward = self.net.expand(stations[i:], seg_km[i:])
+                tr.backward = self.net.expand(list(reversed(stations[: i + 1])), list(reversed(seg_km[:i])))
                 return tr
         return None
 
@@ -241,6 +259,12 @@ class Engine:
                 return False
         for ex in sel.get("except", []):
             r = self.match_selector(ex, train, station, role, date, trace)
+            if r is True:
+                return False
+            if r is None:
+                unknown = True
+        if "not" in sel:
+            r = self.match_selector(sel["not"], train, station, role, date, trace)
             if r is True:
                 return False
             if r is None:
@@ -327,15 +351,23 @@ class Engine:
         rule, section = (None, None)
         if st:
             rule, section = self._find_rule(st, conn, wait, sid, date, out["trace"])
-        if rule and not any(k in rule["connecting_train"] for k in ("trains", "ranges", "patterns", "any_of", "include")):
+        effect, prule, ptext = (None, None, None)
+        if st:
+            effect, prule, ptext = self._pair_effect(st, conn, wait, sid, date, dtype, interval, out["trace"])
+        if effect:
+            out["part_b_rule"] = {"effect": effect, "text": ptext, **({"note": prule["note"]} if prule.get("note") else {}), **({"approx": True} if prule.get("approx") else {})}
+        table_explicit = bool(rule) and any(k in rule["connecting_train"] for k in ("trains", "ranges", "patterns", "any_of", "include"))
+        if effect == "no_connection" and not table_explicit:
+            return self._finish(out, "not_a_connection", None, "Nejde o přípoj – " + self._pb_message(effect, prule, ptext), st, None)
+        if rule and not table_explicit and effect != "connection":
             # 'V' / obecný selektor = jen vlaky, které jsou přípojem dle článků 1 a 2 (+ část B)
-            partb = [i["structured"] for i in st["part_b"] if i.get("status") != "cancelled"]
+            partb = [r for r, _ in self._partb(st)]
             if conn.operator != wait.operator and not (rule["connecting_train"].get("operators") and conn.operator in rule["connecting_train"]["operators"]):
                 allowed, _ = self._operator_allowed(partb, wait, conn)
                 if not allowed:
                     return self._finish(out, "not_a_connection", None,
                                         f"Řádek tabulky '{rule['waiting_train']['text']} ← {rule['connecting_train']['text']}' platí jen pro přípojné vlaky; vlaky různých dopravců ({conn.operator} → {wait.operator}) přípojem nejsou (článek 2f, část B to nepovoluje).", st, None)
-            min_int = max([2] + [b["minutes"] for b in partb if b["type"] == "min_interval"])
+            min_int = max([2] + [b["minutes"] for b in partb if b.get("type") == "min_interval"])
             if 0 <= interval < min_int:
                 return self._finish(out, "not_a_connection", None, f"Plánovaný přestup {round(interval, 1)} min je kratší než {min_int} min – nejde o přípoj (článek 2a / část B).", st, None)
         if rule:
@@ -344,8 +376,11 @@ class Engine:
                                    "connecting_train": rule["connecting_train"]["text"], "wait_raw": w["raw"], "source_row": rule["source_row"]}
             if rule.get("_uncertain"):
                 out["warnings"].append("Pravidlo bylo vybráno s nejistotou (část selektoru nelze ověřit z jízdního řádu) – ověřte v tabulce.")
+            if w["kind"] == "empty":
+                out["warnings"].append("V tabulce stanice není pro tento typ dne u tohoto řádku čekací doba vyplněna – použita obecná pravidla.")
+                return self._basic(out, st, conn, wait, sid, interval, effect, prule, ptext)
             return self._finish_rule(out, w, rule, st, interval)
-        return self._basic(out, st, conn, wait, sid, interval)
+        return self._basic(out, st, conn, wait, sid, interval, effect, prule, ptext)
 
     def _find_rule(self, st, conn, wait, sid, date, trace):
         best = None
@@ -386,13 +421,69 @@ class Engine:
             return r, best[2]
         return None, None
 
+    # ------------------------------------------------------------ část B (pravidla)
+    @staticmethod
+    def _partb(st):
+        out = []
+        for i in (st["part_b"] if st else []):
+            if i.get("status") == "cancelled":
+                continue
+            s = i["structured"]
+            for r in (s["rules"] if s["type"] == "rule_set" else [s]):
+                out.append((r, i["text"]))
+        return out
+
+    def _pair_effect(self, st, conn, wait, sid, date, dtype, interval, trace):
+        """Pravidla části B typu 'je přípoj' / 'není přípoj'. Vrací (effect, rule, text) nebo (None, None, None).
+        Priorita: dvojice konkrétních vlaků 'je přípoj' > 'není přípoj' > obecné 'je přípoj'."""
+        found = {"num_conn": [], "no": [], "conn": []}
+        for r, text in self._partb(st):
+            if r.get("type") != "connection_rule":
+                continue
+            days = r.get("days")
+            if days and dtype not in days and date.isoweekday() not in days:
+                continue
+            if "interval_below" in r and not interval < r["interval_below"]:
+                continue
+            if "min_interval" in r and interval < r["min_interval"]:
+                continue
+            combos = [(wait, conn)]
+            if r.get("reciprocal") or r.get("unordered"):
+                combos.append((conn, wait))
+            hit = False
+            for w_tr, c_tr in combos:
+                mw = self.match_selector(r["waiting"], w_tr, sid, "waiting", date, trace)
+                mc = self.match_selector(r["connecting"], c_tr, sid, "connecting", date, trace) if mw else False
+                if mw is True and mc is True:
+                    hit = True
+                    break
+            if not hit:
+                continue
+            numbered = "trains" in r["waiting"] and "trains" in r["connecting"]
+            key = "no" if r["effect"] == "no_connection" else ("num_conn" if numbered else "conn")
+            found[key].append((r, text))
+        for key, eff in (("num_conn", "connection"), ("no", "no_connection"), ("conn", "connection")):
+            if found[key]:
+                r, text = found[key][0]
+                return eff, r, text
+        return None, None, None
+
+    def _pb_message(self, effect, r, text):
+        why = f"Část B: „{text}“"
+        if r.get("note"):
+            why += f" ({r['note']})"
+        if r.get("approx"):
+            why += " [čísla tratí převedena na směry – přibližné]"
+        return why
+
     # ------------------------------------------------------------ výsledek
     def _context(self, out, st, rule):
         if not st:
             return
         ctx = {"part_a": [i["text"] for i in st["part_a"] if i["structured"]["type"] != "default_transfer_times"],
                "notes": [n["text"] for n in st["notes"] if n.get("status") != "cancelled"],
-               "part_b_unstructured": [i["text"] for i in st["part_b"] if i["structured"]["type"] == "text" or i["structured"].get("additional_text")]}
+               "part_b_info": [i["text"] for i in st["part_b"] if i["structured"]["type"] == "text" or i["structured"].get("additional_text")
+                               or (i["structured"]["type"] == "rule_set" and any(r.get("type") == "info" for r in i["structured"]["rules"]))]}
         if rule:
             marks = set(rule["waiting_train"].get("footnote_marks", []) + rule["connecting_train"].get("footnote_marks", []))
             for w in rule["wait"].values():
@@ -437,18 +528,22 @@ class Engine:
         x = h * 60 + mi + m
         return f"{(x // 60) % 24:02d}:{x % 60:02d}"
 
-    def _basic(self, out, st, conn, wait, sid, interval):
+    def _basic(self, out, st, conn, wait, sid, interval, effect=None, prule=None, ptext=None):
         """Žádné pravidlo v části C -> články 1 a 2, část B a základní čekací doby."""
         reasons = []
-        partb = [i["structured"] for i in (st["part_b"] if st else []) if i.get("status") != "cancelled"]
+        partb = [r for r, _ in self._partb(st)] if st else []
         min_int = 2
         for b in partb:
-            if b["type"] == "min_interval":
+            if b.get("type") == "min_interval":
                 min_int = max(min_int, b["minutes"])
         # dvojice vlaků z části B
         pair_ok = False
+        if effect == "connection":
+            pair_ok = True
+            reasons.append(self._pb_message(effect, prule, ptext))
+            min_int = prule.get("min_interval", 2)
         for b in partb:
-            if b["type"] == "connection_pairs":
+            if b.get("type") == "connection_pairs":
                 for p in b["pairs"]:
                     a = {x["number"] for x in p["trains_a"]}; bb = {x["number"] for x in p["trains_b"]}
                     nums = {base_number(conn.number), base_number(wait.number)}
@@ -456,9 +551,9 @@ class Engine:
                         pair_ok = True
                         if b.get("transfer_minutes"):
                             min_int = min(min_int, b["transfer_minutes"])
-        if interval < 0 or interval > 60 and not pair_ok:
+        if interval < 0 or (interval > 60 and not pair_ok):
             return self._finish(out, "not_a_connection", None, f"Mezi příjezdem a odjezdem je {round(interval)} min – mimo rozmezí 2–60 min (článek 1), nejde o přípoj.", st, None)
-        if interval < min_int and not pair_ok:
+        if interval < min_int:
             return self._finish(out, "not_a_connection", None, f"Plánovaný přestup {round(interval, 1)} min je kratší než {min_int} min – nejde o přípoj (článek 2a / část B).", st, None)
         # různí dopravci
         if conn.operator != wait.operator and not pair_ok:
@@ -476,7 +571,7 @@ class Engine:
         minutes = self.rules["basic_wait_times"]["by_category"].get(wait.druh or "", 10)
         src = f"základní čekací doba pro druh {wait.druh or '?'}"
         for b in partb:
-            if b["type"] == "operator_basic_wait" and b["waiting_operator"] == wait.operator:
+            if b.get("type") == "operator_basic_wait" and b["waiting_operator"] == wait.operator:
                 co = b["connecting_operators"]
                 if co == "others" and conn.operator != wait.operator or isinstance(co, list) and conn.operator in co:
                     minutes = b["minutes"]; src = f"část B: základní čekací doba vlaků {wait.operator}"
@@ -486,12 +581,13 @@ class Engine:
         if not st:
             msg = f"Stanice nemá vlastní tabulku – platí {src}: nejvýše {minutes} min."
         out["reasons"] = reasons
-        out["warnings"].append("Výsledek je odvozen z obecných pravidel; zkontrolujte i upozornění stanice (část B a poznámky).") if st and any(i["structured"]["type"] == "text" for i in st["part_b"]) else None
         return self._finish(out, "waits_basic", minutes, msg, st, None)
 
     def _operator_allowed(self, partb, wait, conn):
         for b in partb:
-            if b["type"] != "operator_connection":
+            if b.get("type") != "operator_connection":
+                continue
+            if b.get("waiting_lines") and (wait.line or "") not in b["waiting_lines"]:
                 continue
             wo, co = b["waiting_operators"], b["connecting_operators"]
             def ok(w_op, c_op):

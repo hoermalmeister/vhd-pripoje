@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na sousední nástupiště – 3 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti (hrana – hrana, za sebou) – 2 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -30,6 +32,7 @@
   "part_b": [
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }

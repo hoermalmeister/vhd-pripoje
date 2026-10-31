@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, pokud je mezi příjezdem a odjezdem interval kratší než 7 minut.",
+      "source_row": 9,
       "structured": {
         "type": "min_interval",
         "minutes": 7,
@@ -28,20 +30,107 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR od Berouna a Všetat, nejsou přípojem vlaků ostatních dopravců (ARR z ostatních směrů).",
+      "source_row": 10,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ]
+            },
+            "connecting": {
+              "any_of": [
+                {
+                  "all": true,
+                  "operators": [
+                    "KŽC"
+                  ]
+                },
+                {
+                  "all": true,
+                  "operators": [
+                    "ARR"
+                  ],
+                  "from_directions": [
+                    "Beroun",
+                    "Všetaty"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky dálkové dopravy ze směru Kolín nejsou přípojem na vlaky dálkové dopravy směr Nymburk a opačně.",
+      "source_row": 11,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "reciprocal": true,
+            "note": "Dálková doprava = vlaky Ex a R.",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "to_directions": [
+                "Nymburk"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "from_directions": [
+                "Kolín"
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "no_connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "to_directions": [
+                "Kolín"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "from_directions": [
+                "Nymburk"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }
@@ -1232,20 +1321,7 @@
     "sections": 9,
     "rules_active": 27,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ČD jsou přípojem od vlaků dopravce KŽC a ARR od Berouna a Všetat, nejsou přípojem vlaků ostatních dopravců (ARR z ostatních směrů)."
-    },
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky dálkové dopravy ze směru Kolín nejsou přípojem na vlaky dálkové dopravy směr Nymburk a opačně."
-    }
-  ]
+  "review": []
 }

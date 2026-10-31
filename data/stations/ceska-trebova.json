@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi nástupišti č. 1 až č. 4 – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup na nástupiště č. 5 – 5 minut",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "source_row": 11,
       "structured": {
         "type": "min_interval",
         "minutes": 3,
@@ -46,20 +50,71 @@
     },
     {
       "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž k příslušným vlakům dálkové dopravy ve směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "min_interval": 3,
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "to_directions": [
+                "Zábřeh na Moravě"
+              ]
+            },
+            "connecting": {
+              "patterns": [
+                "37xx",
+                "127xx",
+                "247xx"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž od příslušných vlaků dálkové dopravy ze směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším.",
+      "source_row": 13,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "min_interval": 3,
+            "waiting": {
+              "patterns": [
+                "37xx",
+                "127xx",
+                "247xx"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Ex",
+                "R"
+              ],
+              "from_directions": [
+                "Zábřeh na Moravě"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce LET, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -74,6 +129,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 15,
       "structured": {
         "type": "default_rules"
       }
@@ -1328,20 +1384,7 @@
     "sections": 5,
     "rules_active": 34,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž k příslušným vlakům dálkové dopravy ve směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším."
-    },
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "V ŽST Česká Třebová jsou vlaky série 37xx, 127xx a 247xx přípojnými rovněž od příslušných vlaků dálkové dopravy ze směru Zábřeh na Moravě, pokud je rozdíl mezi jejich příjezdem a odjezdem 3 min. a větším."
-    }
-  ]
+  "review": []
 }

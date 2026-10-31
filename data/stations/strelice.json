@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Vlaky považované za přípoj: Os 4425 a Os 4842, Os 4427 a Os 4844.",
+      "source_row": 9,
       "change": {
         "before": null,
         "after": "Vlaky považované za přípoj: Os 4425 a Os 4842, Os 4427 a Os 4844."
@@ -62,6 +64,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "change": {
         "before": "platí základní pravidla dle článku 2.",
         "after": "Jinak platí základní pravidla dle článku 2."

@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Mezi vlaky DLB a RJÚK a naopak platí základní přestupní doba 5 minut.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -22,6 +23,7 @@
   "part_b": [
     {
       "text": "Vlaky DLB jsou přípojem od vlaků dopravce RJÚK, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -36,18 +38,24 @@
     },
     {
       "text": "Vlaky RJÚK jsou přípojem od vlaků dopravce DLB, nejsou přípojem vlaků ostatních dopravců. Platí základní čekací doba.",
+      "source_row": 10,
       "structured": {
-        "type": "operator_connection",
-        "waiting_operators": [
-          "RJÚK"
-        ],
-        "connecting_operators": [
-          "DLB"
-        ],
-        "reciprocal": false,
-        "exclusive": true,
-        "additional_text": "Platí základní čekací doba.",
-        "parse": "partial"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "operator_connection",
+            "waiting_operators": [
+              "RJÚK"
+            ],
+            "connecting_operators": [
+              "DLB"
+            ],
+            "reciprocal": false,
+            "exclusive": true,
+            "note": "Platí základní čekací doba."
+          }
+        ]
       }
     }
   ],
@@ -109,14 +117,7 @@
     "sections": 1,
     "rules_active": 1,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 10,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky RJÚK jsou přípojem od vlaků dopravce DLB, nejsou přípojem vlaků ostatních dopravců. Platí základní čekací doba."
-    }
-  ]
+  "review": []
 }

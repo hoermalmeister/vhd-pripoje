@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,15 +21,23 @@
     },
     {
       "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty",
+      "source_row": 7,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Přestupní doba podle vzdálenosti nástupišť (3–4 min) – nástupiště zatím nevyhodnocujeme."
+          }
+        ]
       }
     }
   ],
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "source_row": 10,
       "structured": {
         "type": "min_interval",
         "minutes": 4,
@@ -37,13 +46,33 @@
     },
     {
       "text": "Mezi vlaky 915 a 1435 je přípoj i v případě, že vlaky mimořádně nejsou přistaveny ke stejnému nástupišti.",
+      "source_row": 11,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                915
+              ]
+            },
+            "connecting": {
+              "trains": [
+                1435
+              ]
+            },
+            "note": "Přípoj i při mimořádném přistavení k jinému nástupišti."
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }
@@ -1712,20 +1741,7 @@
     "sections": 6,
     "rules_active": 40,
     "rules_cancelled": 1,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_a",
-      "row": 7,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Přestup na sousední nástupiště – 3 minuty a na každé další nástupiště o jednu minutu více, max. 4 minuty"
-    },
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Mezi vlaky 915 a 1435 je přípoj i v případě, že vlaky mimořádně nejsou přistaveny ke stejnému nástupišti."
-    }
-  ]
+  "review": []
 }

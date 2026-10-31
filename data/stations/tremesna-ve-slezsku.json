@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestupní doba je vždy 3 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -22,6 +23,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce SZD a OÚD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -37,6 +39,7 @@
     },
     {
       "text": "Vlaky SZD a OÚD jsou přípojem vlaků dopravce ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -52,6 +55,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 11,
       "structured": {
         "type": "default_rules"
       }

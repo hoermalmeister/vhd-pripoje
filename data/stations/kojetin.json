@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestupní doba je vždy 3 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -22,6 +23,7 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 3846 a Os 3983.",
+      "source_row": 9,
       "change": {
         "before": null,
         "after": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 3846 a Os 3983."
@@ -51,6 +53,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -69,6 +72,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín a naopak, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -87,6 +91,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }

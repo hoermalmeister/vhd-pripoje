@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Základní přestupní doba je 3 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Jinak platí základní přestupní doby.",
+      "source_row": 7,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -28,6 +30,7 @@
   "part_b": [
     {
       "text": "Platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }

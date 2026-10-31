@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I. a II. nástupištěm – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi I., II. a III., IV. nástupištěm – 5 minut",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi III. a IV. nástupištěm – 3 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -46,6 +50,7 @@
   "part_b": [
     {
       "text": "Vlaky považované za přípoj: Os 14500 a Sp 834, Os 14514 a Os 14614.",
+      "source_row": 12,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -84,6 +89,7 @@
     },
     {
       "text": "Vlaky ARR jsou přípojem od vlaků ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 13,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -98,6 +104,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -112,6 +119,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 15,
       "structured": {
         "type": "default_rules"
       }

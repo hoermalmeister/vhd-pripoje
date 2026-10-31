@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup z/na 4. na/z 5. nástupiště – 3 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi nástupišti – 4 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Při přestupu z/na 1A nástupiště na/z 3. – 5. nástupiště – 6 minut",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 6,
@@ -46,6 +50,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "source_row": 12,
       "structured": {
         "type": "min_interval",
         "minutes": 4,
@@ -54,13 +59,27 @@
     },
     {
       "text": "Vlaky ARR jsou přípojem vlaků všech dopravců, platí základní čekací doby.",
+      "source_row": 13,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "operator_connection",
+            "waiting_operators": [
+              "ARR"
+            ],
+            "connecting_operators": "all",
+            "reciprocal": false,
+            "exclusive": false,
+            "note": "Platí základní čekací doby."
+          }
+        ]
       }
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce ARR a RJ (pouze linky R23), nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -80,6 +99,7 @@
     },
     {
       "text": "Vlaky linky R23 dopravce RJ jsou přípojem od vlaků dopravce ČD.",
+      "source_row": 15,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -97,6 +117,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 16,
       "structured": {
         "type": "default_rules"
       }
@@ -1717,14 +1738,7 @@
     "sections": 5,
     "rules_active": 37,
     "rules_cancelled": 1,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky ARR jsou přípojem vlaků všech dopravců, platí základní čekací doby."
-    }
-  ]
+  "review": []
 }

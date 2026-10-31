@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestupní doba je vždy 1 minuta.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 1,
@@ -22,6 +23,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD a RJÚK jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 9,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -35,6 +37,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }

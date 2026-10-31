@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,15 +21,23 @@
     },
     {
       "text": "Přestup na sousední nástupiště – 3 minuty, a na každé další nástupiště o jednu minutu více, max. 4 minuty",
+      "source_row": 7,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "info",
+            "note": "Přestupní doba podle vzdálenosti nástupišť (3–4 min) – nástupiště zatím nevyhodnocujeme."
+          }
+        ]
       }
     }
   ],
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 3 minuty.",
+      "source_row": 10,
       "structured": {
         "type": "min_interval",
         "minutes": 3,
@@ -37,6 +46,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem od vlaků dopravce RJ pouze linky R8 Brno hl.n. – Bohumín, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -55,13 +65,37 @@
     },
     {
       "text": "Vlaky linky R8 směr Brno a Bohumín jsou přípojem od ostatních spojů ČD.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "lines": [
+                "R8"
+              ],
+              "to_directions": [
+                "Brno",
+                "Bohumín"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "operators": [
+                "ČD"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
         "type": "default_rules"
       }
@@ -1117,20 +1151,7 @@
     "sections": 4,
     "rules_active": 27,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_a",
-      "row": 7,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Přestup na sousední nástupiště – 3 minuty, a na každé další nástupiště o jednu minutu více, max. 4 minuty"
-    },
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky linky R8 směr Brno a Bohumín jsou přípojem od ostatních spojů ČD."
-    }
-  ]
+  "review": []
 }

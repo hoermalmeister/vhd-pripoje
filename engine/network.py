@@ -121,11 +121,50 @@ class Network:
             path.append(prev[path[-1]])
         return tuple(reversed(path))
 
-    def expand(self, stations):
-        """Seznam zastavení vlaku -> úplná trasa včetně projížděných stanic."""
+    def _sp(self, a, b, banned):
+        dist = {a: 0.0}; prev = {}; pq = [(0.0, a)]
+        while pq:
+            d, u = heapq.heappop(pq)
+            if u == b:
+                break
+            if d > dist.get(u, 1e18):
+                continue
+            for v, w in self.adj[u].items():
+                if (u, v) in banned or (v, u) in banned:
+                    continue
+                nd = d + w
+                if nd < dist.get(v, 1e18):
+                    dist[v] = nd; prev[v] = u; heapq.heappush(pq, (nd, v))
+        if b not in dist:
+            return None, None
+        path = [b]
+        while path[-1] != a:
+            path.append(prev[path[-1]])
+        return tuple(reversed(path)), dist[b]
+
+    @lru_cache(maxsize=200000)
+    def segment_path(self, a, b, km):
+        """Cesta mezi dvěma po sobě jdoucími zastaveními, jejíž délka nejlépe odpovídá kilometráži vlaku (km);
+        bez km = nejkratší cesta. Řeší úseky, kde vede více tratí (např. Beroun – Praha přes Řevnice / přes Nučice)."""
+        p = self.shortest_path(a, b)
+        if p is None or km is None or len(p) < 2:
+            return p
+        plen = sum(self.adj[x][y] for x, y in zip(p, p[1:]))
+        if abs(plen - km) <= max(1.0, 0.04 * km):
+            return p
+        best, bestd = p, abs(plen - km)
+        for x, y in zip(p, p[1:]):
+            q, ql = self._sp(a, b, {(x, y)})
+            if q and abs(ql - km) < bestd:
+                best, bestd = q, abs(ql - km)
+        return best
+
+    def expand(self, stations, kms=None):
+        """Seznam zastavení vlaku -> úplná trasa včetně projížděných stanic. kms[i] = km mezi stanicí i a i+1 (nebo None)."""
         out = [stations[0]]
-        for a, b in zip(stations, stations[1:]):
-            p = self.shortest_path(a, b)
+        for i, (a, b) in enumerate(zip(stations, stations[1:])):
+            km = kms[i] if kms else None
+            p = self.segment_path(a, b, round(km, 1) if km else None)
             if p is None:
                 out.append(b)
             else:
@@ -162,6 +201,22 @@ class Network:
             cands.sort(key=lambda s: (key(s)[1], key(s)[0]))
         return cands[0]
 
+    @lru_cache(maxsize=50000)
+    def resolve_all(self, token):
+        """Všechny stanice odpovídající názvu (např. 'Praha' -> všechny pražské stanice)."""
+        tw = tuple(name_words(token.replace("*", "")))
+        if not tw:
+            return frozenset()
+        alias = FOREIGN_ALIASES.get(tw[0])
+        if alias:
+            return frozenset(sid for sid, n in self.names.items() if n in alias)
+        scored = [(name_score(tw, sw), sid) for sid, sw in self.words.items()]
+        scored = [(sc[0], sid) for sc, sid in scored if sc]
+        if not scored:
+            return frozenset()
+        top = max(x[0] for x in scored)
+        return frozenset(sid for sc, sid in scored if sc == top)
+
     def _km(self, a, b):
         p = self.shortest_path(a, b)
         return sum(self.adj[x][y] for x, y in zip(p, p[1:])) if p else 1e9
@@ -187,9 +242,18 @@ class Network:
     def direction_match(self, station, onward, token):
         """Vrací (shoda, [vyřešené stanice]). Shoda, když trasa vede k některé z uvedených míst."""
         whole = self.resolve_place(token, station)
-        parts = [whole] if whole else [self.resolve_place(p, station) for p in self.split_places(token)]
-        pids = parts
-        pids = [p for p in pids if p and p != station]
+        toks = [token] if whole else self.split_places(token)
+        pids, hit = [], False
+        for t in toks:
+            p = self.resolve_place(t, station)
+            if not p or p == station:
+                continue
+            pids.append(p)
+            allc = self.resolve_all(t) - {station}
+            if onward and len(onward) > 1 and allc & set(onward[1:]):
+                hit = True
+            elif self.heads_towards(station, onward, p):
+                hit = True
         if not pids:
             return None, []
-        return any(self.heads_towards(station, onward, p) for p in pids), pids
+        return hit, pids

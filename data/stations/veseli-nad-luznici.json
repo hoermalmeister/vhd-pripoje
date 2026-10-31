@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 3,5 minuty jsou: Ex 500 a Os 8322, R 702 a Os 8320, R 702 a Os 8727, R 704 a Os 1738, R 712 a Os 8721, R 728 a Os 8707, Os 8309 a Os 8205, Os 8311 a R 709, Os 8313 a R 713.",
+      "source_row": 9,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -157,6 +159,7 @@
     },
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 3 minuty jsou: R 322 a R 659, R 326 a R 659, R 661 a Os 8717, Os 8201 a Os 8701, Os 8205 a Os 8304, Os 8213 a Os 8715, Os 8720 a R 663.",
+      "source_row": 10,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -266,6 +269,7 @@
     },
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2,5 minuty jsou: Os 8714 a R 717.",
+      "source_row": 11,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -291,6 +295,7 @@
     },
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: R 320 a Sp 1739, R 324 a Sp 1739, R 710 a R 663, Sp 1730 a R 715, Os 8213 a Os 8715.",
+      "source_row": 12,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -372,6 +377,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 13,
       "structured": {
         "type": "default_rules"
       }

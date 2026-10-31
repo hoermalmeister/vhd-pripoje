@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,6 +21,7 @@
   "part_b": [
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Sp 1697 a Os 7917, Os 7900 a R 638, Os 17910 a R 628.",
+      "source_row": 9,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -73,6 +75,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce GWTR a opačně, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -87,6 +90,7 @@
     },
     {
       "text": "Základní čekací doba vlaků GWTR na vlaky ČD je 10 minut.",
+      "source_row": 11,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -98,6 +102,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 12,
       "structured": {
         "type": "default_rules"
       }

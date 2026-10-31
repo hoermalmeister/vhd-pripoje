@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 2 (kolej 2 a 4a) – 4 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 2 (kolej 4) – 5 minut",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi nástupištěm č. 1 a nástupištěm č. 3 – 5 minut",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Přestup na nástupišti č. 2 mezi všemi kolejemi – 2 minuty",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -44,6 +48,7 @@
     },
     {
       "text": "Přestup z nástupiště č. 2 (kolej č. 2 a 4a) na nástupiště č. 3 – 3 minuty",
+      "source_row": 10,
       "structured": {
         "type": "transfer_time",
         "minutes": 3,
@@ -52,6 +57,7 @@
     },
     {
       "text": "Přestup z nástupiště č. 2 (kolej č. 4) na nástupiště č. 3 – 5 minut",
+      "source_row": 11,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -62,6 +68,7 @@
   "part_b": [
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce LET, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -76,6 +83,7 @@
     },
     {
       "text": "Vlaky LET jsou přípojem vlaků dopravců ČD a LE, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 15,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -91,6 +99,7 @@
     },
     {
       "text": "Vlaky LET čekají na vlaky LE maximálně 5 minut.",
+      "source_row": 16,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "LET",
@@ -102,6 +111,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 17,
       "structured": {
         "type": "default_rules"
       }

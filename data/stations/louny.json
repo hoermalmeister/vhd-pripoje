@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Platí základní přestupní doby.",
+      "source_row": 6,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -20,13 +21,31 @@
   "part_b": [
     {
       "text": "Vlak Os 9714 se považuje za přípojný vlak k vlaku Sp 1348.",
+      "source_row": 9,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "trains": [
+                1348
+              ]
+            },
+            "connecting": {
+              "trains": [
+                9714
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Přípojné vlaky s mimořádnou přestupní dobou 2 minuty jsou: Os 9714 a Sp 1348.",
+      "source_row": 10,
       "structured": {
         "type": "connection_pairs",
         "kind": "considered_connection",
@@ -52,6 +71,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -64,6 +84,7 @@
     },
     {
       "text": "Vlaky DLB jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -76,6 +97,7 @@
     },
     {
       "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "source_row": 13,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -88,6 +110,7 @@
     },
     {
       "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "source_row": 14,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -97,6 +120,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 15,
       "structured": {
         "type": "default_rules"
       }
@@ -295,14 +319,7 @@
     "sections": 4,
     "rules_active": 4,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 9,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlak Os 9714 se považuje za přípojný vlak k vlaku Sp 1348."
-    }
-  ]
+  "review": []
 }

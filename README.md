@@ -72,7 +72,7 @@ Selektor vlaků může obsahovat `trains`, `ranges` (vč. sudé/liché), `patter
 
 1. **Data jízdního řádu.** Tabulky neříkají druh vlaku, dopravce, směr ani časy. Pro pravidla typu „všechny vlaky Os“, „vlaky ČD“, „směr Jihlava“ i pro článek 1 (interval 2–60 min) bude služba potřebovat napojení na data JŘ (celostátní data CIS JŘ v XML).
 2. **Postup vyhledání** je popsán v `rules.json → lookup_algorithm` (výběr platné varianty podle data, typ dne podle svátků, normalizace šestimístných čísel, priorita konkrétního pravidla před obecným, fallback na základní čekací dobu Ex 5 / ostatní 10 min).
-3. **Ruční revize:** `data/review.json` obsahuje 95 míst – hlavně volně formulovaná pravidla části B (např. intervaly podle tratí v Brně hl.n.) a 17 prázdných buněk čekacích dob. Doslovný text je vždy zachován.
+3. **Ruční revize:** `data/review.json` je po ručním převodu prázdný (dříve 95 míst – volně formulovaná pravidla části B a 17 prázdných buněk čekacích dob, které jádro řeší obecnými pravidly s upozorněním). Doslovný text je vždy zachován.
 
 ## Zdroj a omezení
 
@@ -112,4 +112,9 @@ Postup vyhodnocení (`engine/evaluate.py`):
 
 Zatím se neověřuje: čísla tratí („z trati 340“) – pravidlo se pak vybere s upozorněním na nejistotu.
 
-`data/coverage_report.json` – pravidla, která se v pěti zkušebních dnech (červen, červenec, listopad – pracovní den, sobota, neděle) nechytila na žádnou reálnou dvojici vlaků z GTFS (217 z 2 971, většinou vlaky jedoucí jen v jiné dny). Užitečné pro kontrolu.
+`data/coverage_report.json` – pravidla, která se v pěti zkušebních dnech (červen, červenec, listopad – pracovní den, sobota, neděle) nechytila na žádnou reálnou dvojici vlaků z GTFS (225 z 2 971, většinou vlaky jedoucí jen v jiné dny). Užitečné pro kontrolu.
+
+
+### Ručně převedená pravidla části A/B (`tools/partb_manual.json`)
+
+70 textů, které nešly rozpoznat automaticky, je převedeno ručně na pravidla typu `connection_rule` (je přípoj / není přípoj), `operator_basic_wait`, `min_interval` nebo `info`. Používají stejné selektory jako část C, takže se vyhodnocují nad jízdním řádem: dopravce, linka, druh, směr („ze směru X“, „směr X“), čísla vlaků, dny (⑤, ⑥ a †…), podmínky na interval. Čísla tratí jsou převedena na směry a označena `approx` (Brno hl.n.: 240/244 = směr Střelice; Kralupy: 092/093/110/111 = Neratovice/Kladno/Slaný/Velvary; Ostrava hl.n.: 321/323 = Havířov/Frýdek-Místek). Nevyhodnocují se zatím přestupní doby podle konkrétních nástupišť.

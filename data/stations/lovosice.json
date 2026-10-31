@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Mezi NAD směr Radejčín a vlaky je přestupní doba 4 minuty.",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Jinak platí základní přestupní doby.",
+      "source_row": 7,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -28,6 +30,7 @@
   "part_b": [
     {
       "text": "Vlaky AŽD jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 10,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -40,6 +43,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 11,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -52,6 +56,7 @@
     },
     {
       "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -64,6 +69,7 @@
     },
     {
       "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "source_row": 13,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -73,6 +79,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 14,
       "structured": {
         "type": "default_rules"
       }

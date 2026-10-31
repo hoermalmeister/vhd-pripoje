@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I. a II. nástupištěm – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi I., II. a III. nástupištěm – 4 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -38,6 +41,7 @@
   "part_b": [
     {
       "text": "Platí základní pravidla dle článku 2.",
+      "source_row": 11,
       "structured": {
         "type": "default_rules"
       }

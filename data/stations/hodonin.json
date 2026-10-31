@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup mezi I., II., IV. a V. nástupištěm – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup mezi III. a IV. nástupištěm – 5 minut",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 5,
@@ -28,6 +30,7 @@
     },
     {
       "text": "Přestup mezi III. a I., II., V. nástupištěm – 4 minuty",
+      "source_row": 8,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -36,6 +39,7 @@
     },
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 9,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -46,53 +50,108 @@
   "part_b": [
     {
       "text": "Vlaky opačného směru: vlaky R Přerov – Břeclav a vlaky Os Hodonín – Veselí nad Moravou jsou přípojné v obou směrech.",
+      "source_row": 12,
       "structured": {
-        "type": "text",
-        "parse": "none"
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "Os"
+              ],
+              "to_directions": [
+                "Veselí nad Moravou"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "from_directions": [
+                "Přerov"
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "waiting": {
+              "all": true,
+              "categories": [
+                "R"
+              ],
+              "to_directions": [
+                "Přerov"
+              ]
+            },
+            "connecting": {
+              "all": true,
+              "categories": [
+                "Os"
+              ],
+              "from_directions": [
+                "Veselí nad Moravou"
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "text": "Vlaky považované za přípoj: Os 2746 a R 813 v ⑥ a †, Os 4221 a Os 14526 v ⑤.",
+      "source_row": 13,
       "structured": {
-        "type": "connection_pairs",
-        "kind": "considered_connection",
-        "pairs": [
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 2746
-              }
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "days": [
+              "saturday",
+              "sunday_holiday"
             ],
-            "trains_b": [
-              {
-                "category": "R",
-                "number": 813
-              }
-            ]
+            "waiting": {
+              "trains": [
+                2746
+              ]
+            },
+            "connecting": {
+              "trains": [
+                813
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 4221
-              }
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "days": [
+              5
             ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 14526
-              }
-            ]
+            "waiting": {
+              "trains": [
+                4221
+              ]
+            },
+            "connecting": {
+              "trains": [
+                14526
+              ]
+            }
           }
-        ],
-        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
-        "unparsed": "v ⑥ † v ⑤",
-        "parse": "partial"
+        ]
       }
     },
     {
       "text": "Vlaky ARR jsou přípojem od vlaků ČD, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -107,6 +166,7 @@
     },
     {
       "text": "Vlaky ČD jsou přípojem vlaků dopravce ARR, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 15,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -121,6 +181,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 16,
       "structured": {
         "type": "default_rules"
       }
@@ -453,20 +514,7 @@
     "sections": 4,
     "rules_active": 8,
     "rules_cancelled": 0,
-    "review_items": 2
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 12,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky opačného směru: vlaky R Přerov – Břeclav a vlaky Os Hodonín – Veselí nad Moravou jsou přípojné v obou směrech."
-    },
-    {
-      "where": "part_b",
-      "row": 13,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky považované za přípoj: Os 2746 a R 813 v ⑥ a †, Os 4221 a Os 14526 v ⑤."
-    }
-  ]
+  "review": []
 }

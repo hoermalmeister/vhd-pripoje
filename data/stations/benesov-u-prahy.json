@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Při přestupu na/od \"Vlašimky\" podchodem je přestupní doba 2 minuty.",
+      "source_row": 6,
       "change": {
         "before": "Při přestupu na/od \"Vlašimky\" podchodem je přestupní doba 3 minuty.",
         "after": "Při přestupu na/od \"Vlašimky\" podchodem je přestupní doba 2 minuty."
@@ -24,6 +25,7 @@
     },
     {
       "text": "Jinak platí základní přestupní doby.",
+      "source_row": 7,
       "structured": {
         "type": "default_transfer_times"
       }
@@ -32,6 +34,7 @@
   "part_b": [
     {
       "text": "Platí základní pravidla dle článku 2.",
+      "source_row": 10,
       "structured": {
         "type": "default_rules"
       }

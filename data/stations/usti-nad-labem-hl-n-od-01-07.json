@@ -12,6 +12,7 @@
   "part_a": [
     {
       "text": "Přestup na stejném nástupišti – 2 minuty",
+      "source_row": 6,
       "structured": {
         "type": "transfer_time",
         "minutes": 2,
@@ -20,6 +21,7 @@
     },
     {
       "text": "Přestup na sousední nástupiště – 4 minuty",
+      "source_row": 7,
       "structured": {
         "type": "transfer_time",
         "minutes": 4,
@@ -30,6 +32,7 @@
   "part_b": [
     {
       "text": "Mezi vlaky není přípoj, je-li mezi příjezdem a odjezdem vlaků interval kratší než 4 minuty.",
+      "source_row": 10,
       "structured": {
         "type": "min_interval",
         "minutes": 4,
@@ -38,165 +41,183 @@
     },
     {
       "text": "Vlaky považované za přípoj: R 670 a Sp 1940, R 671 a Ex 620, Os 6970 a Os 6841, Ex 600 a Os 6848 + Os 6968, Sp 1943 a R 673, Os 6942 a Os 6856, Os 16903 (RJ ÚK) a Os 6871, Os 16907 (RJ ÚK) a Os 6964, Os 5275 a Os 6925, 5277 a Os 6923, Os 6565 (RJ ÚK) a Os 6962",
+      "source_row": 11,
       "structured": {
-        "type": "connection_pairs",
-        "kind": "considered_connection",
-        "pairs": [
+        "type": "rule_set",
+        "source": "manual",
+        "rules": [
           {
-            "trains_a": [
-              {
-                "category": "R",
-                "number": 670
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Sp",
-                "number": 1940
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                670
+              ]
+            },
+            "connecting": {
+              "trains": [
+                1940
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "R",
-                "number": 671
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Ex",
-                "number": 620
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                671
+              ]
+            },
+            "connecting": {
+              "trains": [
+                620
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 6970
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6841
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                6970
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6841
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Ex",
-                "number": 600
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6848
-              },
-              {
-                "category": "Os",
-                "number": 6968
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                600
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6848,
+                6968
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Sp",
-                "number": 1943
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "R",
-                "number": 673
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                1943
+              ]
+            },
+            "connecting": {
+              "trains": [
+                673
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 6942
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6856
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                6942
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6856
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 16903
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6871
-              }
-            ],
-            "note_a": "RJ ÚK"
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                16903
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6871
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 16907
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6964
-              }
-            ],
-            "note_a": "RJ ÚK"
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                16907
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6964
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 5275
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6925
-              }
-            ]
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                5275
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6925
+              ]
+            }
           },
           {
-            "trains_a": [
-              {
-                "category": "Os",
-                "number": 6565
-              }
-            ],
-            "trains_b": [
-              {
-                "category": "Os",
-                "number": 6962
-              }
-            ],
-            "note_a": "RJ ÚK"
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                5277
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6923
+              ]
+            }
+          },
+          {
+            "type": "connection_rule",
+            "effect": "connection",
+            "unordered": true,
+            "waiting": {
+              "trains": [
+                6565
+              ]
+            },
+            "connecting": {
+              "trains": [
+                6962
+              ]
+            }
           }
-        ],
-        "note": "Dvojice jsou uvedeny bez určení, který vlak čeká – platí pro přestup mezi uvedenými vlaky.",
-        "unparsed": "5277 Os 6923",
-        "parse": "partial"
+        ]
       }
     },
     {
       "text": "Vlaky ARR jsou přípojem vlaků ČD a RJÚK, nejsou přípojem vlaků ostatních dopravců.",
+      "source_row": 12,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -212,6 +233,7 @@
     },
     {
       "text": "Vlaky AŽD jsou přípojné vlaky všech dopravců.",
+      "source_row": 13,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -224,6 +246,7 @@
     },
     {
       "text": "Vlaky ČD a RJÚK jsou přípojem vlaků ostatních dopravců.",
+      "source_row": 14,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -237,6 +260,7 @@
     },
     {
       "text": "Vlaky GWTR jsou přípojné vlaky všech dopravců.",
+      "source_row": 15,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -249,6 +273,7 @@
     },
     {
       "text": "Základní čekací doba vlaků GWTR na vlaky ostatních dopravců je 10 minut.",
+      "source_row": 16,
       "structured": {
         "type": "operator_basic_wait",
         "waiting_operator": "GWTR",
@@ -258,6 +283,7 @@
     },
     {
       "text": "Vlaky linky R23 dopravce RJ jsou přípojem od vlaků všech dopravců.",
+      "source_row": 17,
       "structured": {
         "type": "operator_connection",
         "waiting_operators": [
@@ -273,6 +299,7 @@
     },
     {
       "text": "Jinak platí základní pravidla dle článku 2.",
+      "source_row": 18,
       "structured": {
         "type": "default_rules"
       }
@@ -1777,14 +1804,7 @@
     "sections": 4,
     "rules_active": 40,
     "rules_cancelled": 0,
-    "review_items": 1
+    "review_items": 0
   },
-  "review": [
-    {
-      "where": "part_b",
-      "row": 11,
-      "issue": "Text nebyl plně strukturován – zpracovat ručně.",
-      "text": "Vlaky považované za přípoj: R 670 a Sp 1940, R 671 a Ex 620, Os 6970 a Os 6841, Ex 600 a Os 6848 + Os 6968, Sp 1943 a R 673, Os 6942 a Os 6856, Os 16903 (RJ ÚK) a Os 6871, Os 16907 (RJ ÚK) a Os 6964, Os 5275 a Os 6925, 5277 a Os 6923, Os 6565 (RJ ÚK) a Os 6962"
-    }
-  ]
+  "review": []
 }
