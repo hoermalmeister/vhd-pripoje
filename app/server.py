@@ -29,6 +29,7 @@ import datetime as dt
 import json
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import threading
@@ -46,7 +47,6 @@ from engine.evaluate import Engine, _norm_name, hhmm  # noqa: E402
 from engine.itinerary import analyze, ics_to_text  # noqa: E402
 from email.parser import BytesParser  # noqa: E402
 from email import policy  # noqa: E402
-import build_gtfs_db  # noqa: E402
 
 REPO_DATA_DIR = os.path.join(ROOT, "data")
 STATIC_DIR = os.path.join(ROOT, "app", "static")
@@ -127,7 +127,8 @@ def build_database(src_override=None):
             log("Staženo", os.path.getsize(src) // 1024, "kB")
         new_db = TRAINS_DB + ".new"
         t0 = time.time()
-        build_gtfs_db.build(src, new_db)
+        # přepočet v samostatném procesu – jeho paměť se po skončení celá vrátí (hlavní služba zůstane malá)
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build_gtfs_db.py"), src, new_db], check=True)
         log(f"Databáze vlaků hotová za {time.time() - t0:.0f} s")
         os.replace(new_db, TRAINS_DB)
     finally:
@@ -189,7 +190,6 @@ def handbook_meta():
 def update_handbook(force=False):
     """Stáhne Excel pomůcky; pokud se změnil, přepočítá data stanic a vymění je za běhu."""
     import hashlib
-    import build_json   # vyžaduje openpyxl
     os.makedirs(VAR_DIR, exist_ok=True)
     tmpdir = tempfile.mkdtemp(prefix="handbook-")
     try:
@@ -214,7 +214,7 @@ def update_handbook(force=False):
         out = os.path.join(VAR_DIR, "data.new")
         shutil.rmtree(out, ignore_errors=True)
         os.makedirs(out)
-        build_json.main(xlsx, out)
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build_json.py"), xlsx, out], check=True)
         idx = json.load(open(os.path.join(out, "index.json"), encoding="utf-8"))
         if idx.get("station_count", 0) < 50:
             raise ValueError(f"Nová data mají jen {idx.get('station_count')} stanic – nepoužito.")
