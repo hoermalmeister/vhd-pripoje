@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Přípoje – správa dat</title>
+<link rel="icon" href="/icon-192.png">
+<style>
+  :root { --bg:#f4f2ee; --panel:#fff; --ink:#1d2430; --muted:#5d6675; --line:#dcd8d0; --accent:#0b4f8a; --accent-ink:#fff; --ok:#1d6b3a; --no:#9b2c2c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14171c; --panel:#1d2128; --ink:#e8eaee; --muted:#9aa3b0; --line:#2f3540; --accent:#5aa2e0; --accent-ink:#0d1117; --ok:#7fd39b; --no:#f19a9a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header { background:#0b4f8a; color:#fff; padding:16px; } header .w, main { max-width:760px; margin:0 auto; }
+  header h1 { margin:0; font-size:1.25rem; } header a { color:#fff; opacity:.85; font-size:.9rem; }
+  main { padding:16px 16px 40px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:14px; }
+  h2 { margin:0 0 8px; font-size:1.05rem; }
+  label { display:block; font-size:.78rem; font-weight:600; color:var(--muted); margin:10px 0 4px; text-transform:uppercase; letter-spacing:.04em; }
+  input { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; background:var(--panel); color:var(--ink); }
+  button { margin-top:12px; padding:10px 16px; border:0; border-radius:8px; background:var(--accent); color:var(--accent-ink); font:inherit; font-weight:600; cursor:pointer; }
+  dl { display:grid; grid-template-columns:200px 1fr; gap:4px 12px; margin:0; font-size:.92rem; } dt { color:var(--muted); } dd { margin:0; word-break:break-all; }
+  @media (max-width:620px) { dl { grid-template-columns:1fr; } }
+  .msg { margin-top:8px; font-size:.92rem; } .ok { color:var(--ok); } .err { color:var(--no); }
+  .hint { font-size:.85rem; color:var(--muted); }
+</style>
+</head>
+<body>
+<header><div class="w"><h1>Správa dat</h1><a href="/">← zpět na vyhledávání</a></div></header>
+<main>
+  <div class="card">
+    <h2>Stav</h2>
+    <dl id="state"><dt>načítám…</dt><dd></dd></dl>
+    <p class="hint"><a href="/api/review" target="_blank">Položky k revizi (JSON)</a> · <a href="/api/info" target="_blank">Informace o datech</a></p>
+  </div>
+  <div class="card">
+    <label for="token">Heslo (ADMIN_TOKEN)</label>
+    <input id="token" type="password" autocomplete="current-password">
+    <div class="hint">Heslo se nastavuje na Railway v proměnných prostředí služby (Variables → ADMIN_TOKEN).</div>
+  </div>
+  <div class="card">
+    <h2>Pomůcka „Přípoje mezi vlaky“ (Excel)</h2>
+    <div class="hint">Automaticky se kontroluje každých 7 dní; přepočítá se jen při změně souboru. Po přepočtu zkontrolujte „Položky k revizi“ – ruční opravy pravidel, jejichž text se v nové verzi změnil.</div>
+    <label for="hbUrl">Nový odkaz na Excel (nepovinné – např. pro JŘ 2027)</label>
+    <input id="hbUrl" placeholder="https://provoz.spravazeleznic.cz/…/Pripoje_2027.xlsx">
+    <label for="hbFile">nebo nahrát soubor .xlsx</label>
+    <input id="hbFile" type="file" accept=".xlsx">
+    <button data-action="handbook">Aktualizovat pomůcku</button>
+    <div class="msg" id="msg-handbook"></div>
+  </div>
+  <div class="card">
+    <h2>Jízdní řád (GTFS)</h2>
+    <div class="hint">Automaticky se stahuje každých 24 hodin a při každém restartu služby.</div>
+    <label for="gtUrl">Nový odkaz na GTFS zip (nepovinné)</label>
+    <input id="gtUrl" placeholder="https://motis.obehy.cz/get-feeds/cz-czptt-gtfs.zip">
+    <label for="gtFile">nebo nahrát soubor .zip</label>
+    <input id="gtFile" type="file" accept=".zip">
+    <button data-action="gtfs">Aktualizovat jízdní řád</button>
+    <div class="msg" id="msg-gtfs"></div>
+  </div>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+try { $("token").value = sessionStorage.getItem("adm") || ""; } catch (e) {}
+
+async function refresh() {
+  try {
+    const h = await (await fetch("/health")).json();
+    const hb = h.handbook || {};
+    const rows = [
+      ["Služba", h.ready ? "připravena" : "připravuje data"],
+      ["Jízdní řád postaven", h.built_at],
+      ["Úloha GTFS", h.jobs?.gtfs],
+      ["Zdroj GTFS", h.sources?.gtfs_url],
+      ["Pomůcka", hb.timetable ? `${hb.timetable}, ${hb.stations} stanic` : "z repozitáře (zatím nestaženo)"],
+      ["Pomůcka aktualizována", hb.updated_at],
+      ["Poslední kontrola pomůcky", hb.checked_at],
+      ["Položky k revizi", hb.review_items ?? "0"],
+      ["Úloha pomůcka", h.jobs?.handbook],
+      ["Zdroj pomůcky", h.sources?.handbook_url],
+      ["Chyba", h.error || "–"],
+      ["Administrace", h.admin_enabled ? "zapnuta" : "vypnuta – nastavte ADMIN_TOKEN"],
+    ];
+    $("state").innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v ?? "–")}</dd>`).join("");
+  } catch (e) { $("state").innerHTML = `<dt class="err">Stav nelze načíst</dt><dd></dd>`; }
+}
+refresh(); setInterval(refresh, 5000);
+
+document.querySelectorAll("button[data-action]").forEach(b => b.addEventListener("click", async () => {
+  const action = b.dataset.action, out = $("msg-" + action);
+  const fd = new FormData();
+  fd.append("token", $("token").value); fd.append("action", action);
+  const url = action === "gtfs" ? $("gtUrl").value.trim() : $("hbUrl").value.trim();
+  const file = (action === "gtfs" ? $("gtFile") : $("hbFile")).files[0];
+  if (url) fd.append("url", url);
+  if (file) fd.append("file", file);
+  try { sessionStorage.setItem("adm", $("token").value); } catch (e) {}
+  out.textContent = "Odesílám…"; out.className = "msg"; b.disabled = true;
+  try {
+    const r = await fetch("/admin/action", {method: "POST", body: fd});
+    const j = await r.json();
+    out.textContent = j.message || j.error; out.className = "msg " + (r.ok ? "ok" : "err");
+    refresh();
+  } catch (e) { out.textContent = e.message; out.className = "msg err"; }
+  finally { b.disabled = false; }
+}));
+</script>
+</body>
+</html>

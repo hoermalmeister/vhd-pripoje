@@ -13,19 +13,63 @@ from parse_rules import (parse_selector, parse_wait, parse_part_a, parse_part_b,
 SCHEMA_VERSION = "1.0"
 OVERRIDES = json.load(open(os.path.join(os.path.dirname(__file__), "overrides.json"), encoding="utf-8"))
 PARTB_MANUAL = json.load(open(os.path.join(os.path.dirname(__file__), "partb_manual.json"), encoding="utf-8"))
+try:
+    ANCHORS = json.load(open(os.path.join(os.path.dirname(__file__), "manual_anchors.json"), encoding="utf-8"))["anchors"]
+except Exception:
+    ANCHORS = {}
+USED_MANUAL = set()
+
+
+def _norm_txt(t):
+    return re.sub(r"\s+", " ", (t or "")).strip().lower()
+
+
+def find_manual_partab(station_id, part, row, text):
+    """Ruční převod textu části A/B: podle textu (kotvy), jinak podle čísla řádku."""
+    key = f"{station_id}:{part}:{row}"
+    cands = [k for k in PARTB_MANUAL if k.startswith(f"{station_id}:{part}:") and isinstance(ANCHORS.get(k), str)
+             and _norm_txt(ANCHORS[k]) == _norm_txt(text)]
+    if cands:
+        k = key if key in cands else cands[0]
+        USED_MANUAL.add(k)
+        return PARTB_MANUAL[k]
+    if key in PARTB_MANUAL and key not in ANCHORS:
+        USED_MANUAL.add(key)
+        return PARTB_MANUAL[key]
+    return None
+
+
+def _override_key(station_id, rule, field):
+    """Klíč ruční opravy pro řádek části C – podle textu pole (kotvy), jinak podle čísla řádku."""
+    r = rule["source_row"]
+    want = rule["connecting_train" if field == "_rule" else field]["text"]
+    cands = []
+    for k in OVERRIDES:
+        if not k.startswith(station_id + ":") or not k.endswith(":" + field):
+            continue
+        a = ANCHORS.get(k)
+        if isinstance(a, dict) and _norm_txt(a["text"]) == _norm_txt(rule[a["field"]]["text"]):
+            cands.append(k)
+    exact = f"{station_id}:{r}:{field}"
+    if cands:
+        return exact if exact in cands else cands[0]
+    if exact in OVERRIDES and exact not in ANCHORS:
+        return exact
+    return None
 
 
 def apply_overrides(station_id, rule):
-    r = rule["source_row"]
-    ro = OVERRIDES.get(f"{station_id}:{r}:_rule")
-    if ro:
-        rule.update(ro)
-    for k in ("waiting_train", "connecting_train"):
-        o = OVERRIDES.get(f"{station_id}:{r}:{k}")
-        if o:
-            text = rule[k]["text"]
-            marks = rule[k].get("footnote_marks")
-            rule[k] = OrderedDict(text=text, **({"footnote_marks": marks} if marks else {}), **o, parse="manual")
+    k = _override_key(station_id, rule, "_rule")
+    if k:
+        USED_MANUAL.add(k)
+        rule.update(OVERRIDES[k])
+    for f in ("waiting_train", "connecting_train"):
+        k = _override_key(station_id, rule, f)
+        if k:
+            USED_MANUAL.add(k)
+            text = rule[f]["text"]
+            marks = rule[f].get("footnote_marks")
+            rule[f] = OrderedDict(text=text, **({"footnote_marks": marks} if marks else {}), **OVERRIDES[k], parse="manual")
     return rule
 
 
@@ -69,8 +113,11 @@ def variant_from_sheet(name):
     return n, None, None
 
 
-def build_sheet(ws, year_hint=2026):
+def build_sheet(ws, year_hint=None):
     g = sheet_grid(ws)
+    if year_hint is None:
+        m = re.search(r"JŘ\s*(\d{4})", g[3][0].effective if 3 in g else "")
+        year_hint = int(m.group(1)) if m else datetime.date.today().year
     review = []
     station_cell = g.get(2, [None])[0]
     station_name = clean(station_cell.effective) if station_cell else ws.title.strip()
@@ -145,7 +192,7 @@ def build_sheet(ws, year_hint=2026):
                 item["status"] = "cancelled"
                 item["text"] = a.original
             parsed = (parse_part_a if part == "A" else parse_part_b)(t if not a.fully_struck else a.original)
-            manual = PARTB_MANUAL.get(f"{station_id}:{part.lower()}:{r}")
+            manual = find_manual_partab(station_id, part.lower(), r, item["text"])
             if manual:
                 parsed = {"type": "rule_set", "source": "manual", "rules": manual}
             item["structured"] = parsed
@@ -269,7 +316,18 @@ def build_sheet(ws, year_hint=2026):
 
 def main(xlsx, outdir):
     wb = load_workbook(xlsx)
-    os.makedirs(os.path.join(outdir, "stations"), exist_ok=True)
+    sdir = os.path.join(outdir, "stations")
+    os.makedirs(sdir, exist_ok=True)
+    for f in os.listdir(sdir):                     # stanice, které v nové verzi nejsou, nesmí zůstat
+        if f.endswith(".json"):
+            os.remove(os.path.join(sdir, f))
+    USED_MANUAL.clear()
+    year = None
+    for ws in wb.worksheets[1:3]:
+        m = re.search(r"JŘ\s*(\d{4})", str(ws["A3"].value or ""))
+        if m:
+            year = int(m.group(1)); break
+    year = year or datetime.date.today().year
     index = []
     for ws in wb.worksheets:
         if ws.title.strip().lower() == "seznam":
@@ -288,8 +346,9 @@ def main(xlsx, outdir):
         stations.setdefault(it["station"], []).append(it)
     out = OrderedDict(
         schema_version=SCHEMA_VERSION,
-        source=OrderedDict(document="Přípoje mezi vlaky osobní dopravy 2026", issuer="Správa železnic, státní organizace",
-                           timetable="JŘ 2026", valid_from="2025-12-14", valid_to="2026-12-12",
+        source=OrderedDict(document=f"Přípoje mezi vlaky osobní dopravy {year}", issuer="Správa železnic, státní organizace",
+                           timetable=f"JŘ {year}",
+                           valid_from=min((it["valid_from"] for it in index if it["valid_from"]), default=None),
                            source_file=os.path.basename(xlsx),
                            generated_at=datetime.datetime.now().isoformat(timespec="seconds")),
         station_count=len(stations), file_count=len(index),
@@ -303,6 +362,13 @@ def main(xlsx, outdir):
         st = json.load(open(os.path.join(outdir, it["file"]), encoding="utf-8"))
         for r in st["review"]:
             review.append(OrderedDict(station=st["station"], file=it["file"], **r))
+    for k in list(PARTB_MANUAL) + list(OVERRIDES):
+        if k.startswith("_") or k in USED_MANUAL:
+            continue
+        a = ANCHORS.get(k)
+        review.append(OrderedDict(station=k.split(":")[0], file=None, where=k,
+                                  issue="Ruční oprava nebyla použita – původní text v nové verzi Excelu nenalezen (změnil se nebo byl zrušen). Zkontrolovat tools/partb_manual.json / overrides.json.",
+                                  text=(a if isinstance(a, str) else (a or {}).get("text", ""))))
     with open(os.path.join(outdir, "review.json"), "w", encoding="utf-8") as f:
         json.dump(OrderedDict(count=len(review), items=review), f, ensure_ascii=False, indent=2)
     print(f"{len(index)} souborů, {len(stations)} stanic")

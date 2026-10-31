@@ -150,10 +150,23 @@ GTFS_PATH=cesta/ke/gtfs.zip python -m app.server        # nebo z lokálního sou
 
 Výsledek `/api/connection` – pole `result`: `waits` / `waits_basic` (čeká `wait_minutes`), `always` (čeká vždy), `no_wait` (N), `no_connection` (vazba v daný den neexistuje), `not_a_connection` (není přípoj), `unspecified`, `train_not_found`, `unknown_station`; dále `message`, `warnings`, `matched_rule`, `part_b_rule`, `station_info`. CORS je povolen (`Access-Control-Allow-Origin: *`).
 
+### Aktualizace dat
+
+| data | automaticky | ručně |
+|---|---|---|
+| jízdní řád (GTFS) | každých 24 h (`REFRESH_HOURS`) a při každém restartu, pokud je databáze starší | `/admin` → Aktualizovat jízdní řád (nový odkaz nebo nahrání zipu) |
+| pomůcka (Excel) | kontrola každých 7 dní (`HANDBOOK_REFRESH_DAYS`), přepočet jen při změně souboru (SHA-256) | `/admin` → Aktualizovat pomůcku (nový odkaz, např. JŘ 2027, nebo nahrání .xlsx) |
+
+- Administrace vyžaduje proměnnou `ADMIN_TOKEN` (heslo); bez ní je vypnutá.
+- Nový odkaz zadaný v administraci se uloží do `var/settings.json` a používá se pro další automatické kontroly. Bez Railway Volume se po restartu vrátí výchozí odkaz – pro trvalou změnu nastavte proměnnou `HANDBOOK_URL` / `GTFS_URL`, nebo připojte Volume na `/app/var`.
+- Stažená pomůcka se přepočítá do `var/data` a má přednost před daty v repozitáři; nevydaří-li se (např. jiný formát souboru), služba běží dál s předchozími daty.
+- Ruční opravy pravidel (`tools/partb_manual.json`, `tools/overrides.json`) jsou navázané na původní text (`tools/manual_anchors.json`), ne na číslo řádku – při posunu řádků v nové verzi se použijí dál; když se text pravidla změní, oprava se nepoužije a objeví se v `/api/review`.
+- Svátky se počítají pro libovolný rok (vč. Velikonoc), takže přechod na JŘ 2027 nevyžaduje úpravu kódu.
+
 ### Nasazení na Railway
 
 1. railway.com → New Project → Deploy from GitHub repo → `vhd-pripoje`.
-2. Railway použije `Dockerfile` a `railway.json` (healthcheck `/health`). Proměnné prostředí nejsou nutné; volitelně `GTFS_URL`, `REFRESH_HOURS`.
+2. Railway použije `Dockerfile` a `railway.json` (healthcheck `/health`). Doporučené proměnné: `ADMIN_TOKEN` (heslo pro `/admin`); volitelně `HANDBOOK_URL`, `GTFS_URL`, `REFRESH_HOURS`, `HANDBOOK_REFRESH_DAYS`.
 3. Settings → Networking → Generate Domain.
 4. Volitelně připojte Volume na `/app/var` – databáze vlaků pak přežije restart a nemusí se pokaždé stahovat.
 

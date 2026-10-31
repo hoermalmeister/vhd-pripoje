@@ -32,6 +32,21 @@ def _norm_name(s):
     return re.sub(r"\s+", " ", s)
 
 
+def easter_sunday(y):
+    a = y % 19; b = y // 100; c = y % 100; d = b // 4; e = b % 4; f = (b + 8) // 25; g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30; i = c // 4; k = c % 4; l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451; month = (h + l - 7 * m + 114) // 31; day = ((h + l - 7 * m + 114) % 31) + 1
+    return dt.date(y, month, day)
+
+
+def czech_holidays(y):
+    """Státní svátky a ostatní svátky ČR v roce y (vč. Velkého pátku a Velikonočního pondělí)."""
+    fixed = [(1, 1), (5, 1), (5, 8), (7, 5), (7, 6), (9, 28), (10, 28), (11, 17), (12, 24), (12, 25), (12, 26)]
+    e = easter_sunday(y)
+    days = {dt.date(y, m, d) for m, d in fixed} | {e - dt.timedelta(days=2), e + dt.timedelta(days=1)}
+    return {d.isoformat() for d in days}
+
+
 def base_number(n):
     """Šestimístná čísla odvozená od kmenového (1xxxxx, 2xxxxx, 3xxxxx) -> kmenové číslo."""
     if n >= 100000 and str(n)[0] in "123":
@@ -155,7 +170,7 @@ class Engine:
         return rec["category"], rec["type"]
 
     def day_type(self, date):
-        if date.isoformat() in self.holidays or date.weekday() == 6:
+        if date.isoformat() in self.holidays or date.isoformat() in czech_holidays(date.year) or date.weekday() == 6:
             return "sunday_holiday"
         if date.weekday() == 5:
             return "saturday"
