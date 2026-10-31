@@ -24,7 +24,7 @@
 "name": "Adršpach",
 "sr70": "573501",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Trutnov – Teplice nad Metují"
 }
 ],
@@ -33,7 +33,7 @@
 "name": "Albeř",
 "sr70": "744524",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -87,7 +87,7 @@
 "name": "Aš město",
 "sr70": "730150",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Cheb – Hranice v Čechách"
 }
 ],
@@ -195,7 +195,7 @@
 "name": "Bartoušov",
 "sr70": "581231",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Nymburk–Jičín"
 }
 ],
@@ -240,7 +240,7 @@
 "name": "Bavorov",
 "sr70": "737924",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -528,7 +528,7 @@
 "name": "Bezděčín",
 "sr70": "584516",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Nymburk – Mladá Boleslav"
 }
 ],
@@ -573,7 +573,7 @@
 "name": "Bezdružice",
 "sr70": "755157",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Pňovany–Bezdružice"
 }
 ],
@@ -663,7 +663,7 @@
 "name": "Bílovec",
 "sr70": "330647",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Studénka–Bílovec"
 }
 ],
@@ -807,7 +807,7 @@
 "name": "Blažejov",
 "sr70": "743826",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -951,7 +951,7 @@
 "name": "Bohumilice v Čechách",
 "sr70": "751123",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -1050,7 +1050,7 @@
 "name": "Bohušov",
 "sr70": "343145",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třemešná ve Slezsku – Osoblaha"
 }
 ],
@@ -1086,7 +1086,7 @@
 "name": "Bochov",
 "sr70": "757757",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Protivec–Bochov"
 }
 ],
@@ -1338,7 +1338,7 @@
 "name": "Bošice",
 "sr70": "565465",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Pečky–Kouřim"
 }
 ],
@@ -1707,7 +1707,7 @@
 "name": "Brumov",
 "sr70": "334052",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Horní Lideč – Bylnice"
 }
 ],
@@ -1896,7 +1896,7 @@
 "name": "Břidličná",
 "sr70": "332320",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Valšov–Rýmařov"
 }
 ],
@@ -1968,7 +1968,7 @@
 "name": "Budišov nad Budišovkou",
 "sr70": "330845",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Budišov nad Budišovkou"
 }
 ],
@@ -1977,7 +1977,7 @@
 "name": "Budišov u Třebíče",
 "sr70": "367250",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Křižanov–Studenec"
 }
 ],
@@ -1986,7 +1986,7 @@
 "name": "Budyně nad Ohří",
 "sr70": "541979",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Vraňany–Libochovice"
 }
 ],
@@ -2157,7 +2157,7 @@
 "name": "Cejřov",
 "sr70": "580738",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Pardubice – Havlíčkův Brod"
 }
 ],
@@ -2542,7 +2542,7 @@
 "name": "Černovice u Chomutova",
 "sr70": "534990",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chomutov–Vejprty"
 }
 ],
@@ -2551,7 +2551,7 @@
 "name": "Černovice u Tábora",
 "sr70": "746024",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -2623,7 +2623,7 @@
 "name": "Červená Voda",
 "sr70": "535203",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Lichkov–Štíty"
 }
 ],
@@ -3010,7 +3010,7 @@
 "name": "Čkyně",
 "sr70": "750927",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -3226,7 +3226,7 @@
 "name": "Desná",
 "sr70": "549725",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Liberec–Harrachov"
 }
 ],
@@ -3361,7 +3361,7 @@
 "name": "Dluhonice",
 "sr70": "380428",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Česká Třebová – Přerov"
 }
 ],
@@ -3712,7 +3712,7 @@
 "name": "Dolní Benešov",
 "sr70": "333047",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Opava východ – Hlučín"
 }
 ],
@@ -3901,7 +3901,7 @@
 "name": "Dolní Polubný",
 "sr70": "549626",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Liberec–Harrachov"
 }
 ],
@@ -3919,7 +3919,7 @@
 "name": "Dolní Poustevna",
 "sr70": "565291",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rumburk–Sebnitz"
 }
 ],
@@ -4189,7 +4189,7 @@
 "name": "Drahanovice",
 "sr70": "334524",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Červenka–Prostějov"
 }
 ],
@@ -4261,7 +4261,7 @@
 "name": "Dubí",
 "sr70": "542092",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Most – Moldava v Krušných Horách"
 }
 ],
@@ -4432,7 +4432,7 @@
 "name": "Dzbel",
 "sr70": "337154",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třebovice v Čechách – Prostějov"
 }
 ],
@@ -4585,7 +4585,7 @@
 "name": "Fulnek",
 "sr70": "334045",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Fulnek"
 }
 ],
@@ -4729,7 +4729,7 @@
 "name": "Harrachov",
 "sr70": "549220",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Liberec–Harrachov, Jelenia Góra – Harrachov"
 }
 ],
@@ -4882,7 +4882,7 @@
 "name": "Heřmánky",
 "sr70": "341743",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Budišov nad Budišovkou"
 }
 ],
@@ -4891,7 +4891,7 @@
 "name": "Heřmanova Huť",
 "sr70": "746453",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Nýřany – Heřmanova Huť"
 }
 ],
@@ -4909,7 +4909,7 @@
 "name": "Hevlín",
 "sr70": "339358",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Hrušovany nad Jevišovkou-Šanov – Hevlín"
 }
 ],
@@ -5053,7 +5053,7 @@
 "name": "Hlučín",
 "sr70": "335042",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Opava východ – Hlučín"
 }
 ],
@@ -5251,7 +5251,7 @@
 "name": "Holice",
 "sr70": "555136",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chrudim–Borohrádek"
 }
 ],
@@ -5638,7 +5638,7 @@
 "name": "Horní Skrýchov",
 "sr70": "744722",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -5647,7 +5647,7 @@
 "name": "Horní Slavkov-Kounice",
 "sr70": "743252",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Nové Sedlo u Lokte – Krásný Jez"
 }
 ],
@@ -5890,7 +5890,7 @@
 "name": "Hostomice pod Brdy",
 "sr70": "768242",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Zadní Třebaň – Lochovice"
 }
 ],
@@ -5899,7 +5899,7 @@
 "name": "Hostouň",
 "sr70": "755454",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Domažlice – Planá u Mariánských Lázní"
 }
 ],
@@ -5980,7 +5980,7 @@
 "name": "Hovězí",
 "sr70": "354522",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Vsetín – Velké Karlovice"
 }
 ],
@@ -5998,7 +5998,7 @@
 "name": "Hrabačov",
 "sr70": "571901",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Martinice v Krkonoších – Rokytnice nad Jizerou"
 }
 ],
@@ -6088,7 +6088,7 @@
 "name": "Hradec nad Moravicí",
 "sr70": "335745",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Opava východ – Hradec nad Moravicí"
 }
 ],
@@ -6214,7 +6214,7 @@
 "name": "Hranice v Čechách",
 "sr70": "730655",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Cheb – Hranice v Čechách"
 }
 ],
@@ -6259,7 +6259,7 @@
 "name": "Hrob",
 "sr70": "541896",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Most – Moldava v Krušných horách"
 }
 ],
@@ -6277,7 +6277,7 @@
 "name": "Hrochův Týnec",
 "sr70": "556134",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chrudim–Borohrádek"
 }
 ],
@@ -6304,7 +6304,7 @@
 "name": "Hroznětín",
 "sr70": "734855",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Merklín"
 }
 ],
@@ -6358,7 +6358,7 @@
 "name": "Hrušky",
 "sr70": "339051",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Přerov–Břeclav"
 }
 ],
@@ -6403,7 +6403,7 @@
 "name": "Hřebeny",
 "sr70": "764951",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Sokolov–Zwotental"
 }
 ],
@@ -6457,7 +6457,7 @@
 "name": "Hůrky",
 "sr70": "744425",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -6466,7 +6466,7 @@
 "name": "Husinec",
 "sr70": "738229",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -6871,7 +6871,7 @@
 "name": "Chotěšov",
 "sr70": "781054",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Plzeň – Furth im Wald"
 }
 ],
@@ -6979,7 +6979,7 @@
 "name": "Chrást u Plzně",
 "sr70": "732453",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Ejpovice–Radnice"
 }
 ],
@@ -7051,7 +7051,7 @@
 "name": "Chroboly",
 "sr70": "738625",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -7087,7 +7087,7 @@
 "name": "Chrudim město",
 "sr70": "555532",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chrudim–Borohrádek, Chrudim město – Heřmanův Městec"
 }
 ],
@@ -7150,7 +7150,7 @@
 "name": "Chvaleč",
 "sr70": "573303",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Trutnov – Teplice nad Metují"
 }
 ],
@@ -7177,7 +7177,7 @@
 "name": "Chválkov",
 "sr70": "745828",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -7231,7 +7231,7 @@
 "name": "Chyše",
 "sr70": "733352",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -7276,7 +7276,7 @@
 "name": "Jablonec nad Jizerou",
 "sr70": "571208",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Martinice v Krkonoších – Rokytnice nad Jizerou"
 }
 ],
@@ -7438,7 +7438,7 @@
 "name": "Janovice u Trutnova",
 "sr70": "573402",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Trutnov – Teplice nad Metují"
 }
 ],
@@ -7501,7 +7501,7 @@
 "name": "Javorník ve Slezsku",
 "sr70": "338624",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Lipová Lázně – Javorník ve Slezsku"
 }
 ],
@@ -7519,7 +7519,7 @@
 "name": "Jemnice",
 "sr70": "341859",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Moravské Budějovice – Jemnice"
 }
 ],
@@ -7870,7 +7870,7 @@
 "name": "Jindřichovice pod Smrkem",
 "sr70": "545723",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Frýdlant v Čechách – Jindřichovice pod Smrkem"
 }
 ],
@@ -7897,7 +7897,7 @@
 "name": "Jindřiš",
 "sr70": "743724",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -8095,7 +8095,7 @@
 "name": "Kadaňský Rohozec",
 "sr70": "536797",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Vilémov u Kadaně – Kadaňský Rohozec"
 }
 ],
@@ -8131,7 +8131,7 @@
 "name": "Kamenice nad Lipou",
 "sr70": "745521",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -8185,7 +8185,7 @@
 "name": "Kamenný Malíkov",
 "sr70": "780122",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Havlíčkův Brod – Veselí nad Lužnicí"
 }
 ],
@@ -8284,7 +8284,7 @@
 "name": "Kaproun",
 "sr70": "744227",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -8320,7 +8320,7 @@
 "name": "Karlovice",
 "sr70": "353722",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Milotice nad Opavou – Vrbno pod Pradědem"
 }
 ],
@@ -8374,7 +8374,7 @@
 "name": "Karlovy Vary-Březová",
 "sr70": "745653",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Mariánské Lázně"
 }
 ],
@@ -8509,7 +8509,7 @@
 "name": "Katusice",
 "sr70": "560516",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mladá Boleslav – Mělník"
 }
 ],
@@ -8653,7 +8653,7 @@
 "name": "Klenčí pod Čerchovem",
 "sr70": "735654",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Domažlice – Planá u Mariánských Lázní"
 }
 ],
@@ -8689,7 +8689,7 @@
 "name": "Klobouky u Brna",
 "sr70": "342352",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Čejč – Uhřice u Kyjova – Ždánice"
 }
 ],
@@ -8977,7 +8977,7 @@
 "name": "Konice",
 "sr70": "337352",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třebovice v Čechách – Prostějov"
 }
 ],
@@ -9067,7 +9067,7 @@
 "name": "Kořenov",
 "sr70": "549121",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Liberec–Harrachov"
 }
 ],
@@ -9292,7 +9292,7 @@
 "name": "Kouřim",
 "sr70": "565366",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Pečky–Kouřim"
 }
 ],
@@ -9310,7 +9310,7 @@
 "name": "Kouty nad Desnou",
 "sr70": "339523",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Šumperk – Kouty nad Desnou"
 }
 ],
@@ -9337,7 +9337,7 @@
 "name": "Kovářská",
 "sr70": "538991",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chomutov–Vejprty"
 }
 ],
@@ -9427,7 +9427,7 @@
 "name": "Králíky",
 "sr70": "535005",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Lichkov–Štíty"
 }
 ],
@@ -9445,7 +9445,7 @@
 "name": "Královec",
 "sr70": "572800",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Trutnov–Sędzisław, Královec–Žacléř"
 }
 ],
@@ -9544,7 +9544,7 @@
 "name": "Kraslice",
 "sr70": "765354",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Sokolov–Zwotental"
 }
 ],
@@ -9607,7 +9607,7 @@
 "name": "Krásný Dvůr",
 "sr70": "536193",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kadaň–Kaštice"
 }
 ],
@@ -9616,7 +9616,7 @@
 "name": "Krásný Jez",
 "sr70": "743153",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Mariánské Lázně, Nové Sedlo u Lokte – Krásný Jez"
 }
 ],
@@ -9814,7 +9814,7 @@
 "name": "Krupka",
 "sr70": "544197",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Děčín – Oldřichov u Duchcova"
 }
 ],
@@ -9823,7 +9823,7 @@
 "name": "Krupka město",
 "sr70": "544395",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Děčín – Oldřichov u Duchcova"
 }
 ],
@@ -9859,7 +9859,7 @@
 "name": "Křeč",
 "sr70": "746123",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -9949,7 +9949,7 @@
 "name": "Křimov",
 "sr70": "538199",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chomutov–Vejprty"
 }
 ],
@@ -10030,7 +10030,7 @@
 "name": "Kubova Huť",
 "sr70": "751628",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -10075,7 +10075,7 @@
 "name": "Kunov",
 "sr70": "342626",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Milotice nad Opavou – Vrbno pod Pradědem"
 }
 ],
@@ -10111,7 +10111,7 @@
 "name": "Kunžak-Lomy",
 "sr70": "744128",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -10201,7 +10201,7 @@
 "name": "Kyjice",
 "sr70": "534594",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Ústí nad Labem – Chomutov"
 }
 ],
@@ -10264,7 +10264,7 @@
 "name": "Lampertice",
 "sr70": "572701",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Královec–Žacléř"
 }
 ],
@@ -10273,7 +10273,7 @@
 "name": "Lanškroun",
 "sr70": "553537",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rudoltice v Čechách – Lanškroun"
 }
 ],
@@ -10435,7 +10435,7 @@
 "name": "Lenora",
 "sr70": "752022",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -10615,7 +10615,7 @@
 "name": "Lhotka u Mělníka",
 "sr70": "561415",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mladá Boleslav – Mělník"
 }
 ],
@@ -10822,7 +10822,7 @@
 "name": "Libouchec",
 "sr70": "543496",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Děčín – Oldřichov u Duchcova"
 }
 ],
@@ -10939,7 +10939,7 @@
 "name": "Lipka",
 "sr70": "751420",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -10966,7 +10966,7 @@
 "name": "Lipno nad Vltavou",
 "sr70": "748129",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rybník – Lipno nad Vltavou"
 }
 ],
@@ -11038,7 +11038,7 @@
 "name": "Liptaň",
 "sr70": "349142",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třemešná ve Slezsku – Osoblaha"
 }
 ],
@@ -11182,7 +11182,7 @@
 "name": "Litovel",
 "sr70": "340828",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Červenka–Prostějov"
 }
 ],
@@ -11416,7 +11416,7 @@
 "name": "Loučná nad Desnou",
 "sr70": "339622",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Šumperk – Kouty nad Desnou"
 }
 ],
@@ -11443,7 +11443,7 @@
 "name": "Loučovice",
 "sr70": "747923",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rybník – Lipno nad Vltavou"
 }
 ],
@@ -11560,7 +11560,7 @@
 "name": "Lovětín",
 "sr70": "744920",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -11623,7 +11623,7 @@
 "name": "Lubenec",
 "sr70": "733063",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -11650,7 +11650,7 @@
 "name": "Luby u Chebu",
 "sr70": "767459",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Tršnice – Luby u Chebu"
 }
 ],
@@ -11974,7 +11974,7 @@
 "name": "Malá Morávka",
 "sr70": "331728",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Bruntál – Malá Morávka"
 }
 ],
@@ -12028,7 +12028,7 @@
 "name": "Malé Chvojno",
 "sr70": "543793",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Děčín – Oldřichov u Duchcova"
 }
 ],
@@ -12127,7 +12127,7 @@
 "name": "Malšice",
 "sr70": "754028",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Tábor–Bechyně"
 }
 ],
@@ -12352,7 +12352,7 @@
 "name": "Merklín",
 "sr70": "735050",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Merklín"
 }
 ],
@@ -12379,7 +12379,7 @@
 "name": "Městečko Trnávka",
 "sr70": "348375",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třebovice v Čechách – Prostějov"
 }
 ],
@@ -12793,7 +12793,7 @@
 "name": "Mladecko",
 "sr70": "340646",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Opava východ – Svobodné Heřmanice"
 }
 ],
@@ -12802,7 +12802,7 @@
 "name": "Mladeč",
 "sr70": "341321",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Litovel předměstí – Mladeč"
 }
 ],
@@ -12820,7 +12820,7 @@
 "name": "Mladějov na Moravě",
 "sr70": "349076",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třebovice v Čechách – Prostějov"
 }
 ],
@@ -12829,7 +12829,7 @@
 "name": "Mladějov v Čechách",
 "sr70": "558601",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mladá Boleslav – Stará Paka"
 }
 ],
@@ -13054,7 +13054,7 @@
 "name": "Moldava v Krušných horách",
 "sr70": "542290",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Most – Moldava v Krušných Horách"
 }
 ],
@@ -13108,7 +13108,7 @@
 "name": "Moravská Třebová",
 "sr70": "349670",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třebovice v Čechách – Prostějov"
 }
 ],
@@ -13306,7 +13306,7 @@
 "name": "Mšeno",
 "sr70": "560912",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mladá Boleslav – Mělník"
 }
 ],
@@ -13666,7 +13666,7 @@
 "name": "Nemanice",
 "sr70": "780635",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Plzeň – České Budějovice, Praha – České Budějovice"
 }
 ],
@@ -13810,7 +13810,7 @@
 "name": "Netolice",
 "sr70": "741025",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Dívčice–Netolice"
 }
 ],
@@ -13954,7 +13954,7 @@
 "name": "Nová Bystřice",
 "sr70": "744623",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -14044,7 +14044,7 @@
 "name": "Nová Včelnice",
 "sr70": "745224",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -14125,7 +14125,7 @@
 "name": "Nové Hamry",
 "sr70": "742353",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Johanngeorgenstadt"
 }
 ],
@@ -14332,7 +14332,7 @@
 "name": "Nový Jičín město",
 "sr70": "341446",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Nový Jičín město"
 }
 ],
@@ -14494,7 +14494,7 @@
 "name": "Odolice",
 "sr70": "553222",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Čížkovice–Obrnice"
 }
 ],
@@ -14521,7 +14521,7 @@
 "name": "Odry",
 "sr70": "341644",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Budišov nad Budišovkou"
 }
 ],
@@ -14737,7 +14737,7 @@
 "name": "Oloví",
 "sr70": "765057",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Sokolov–Zwotental"
 }
 ],
@@ -14908,7 +14908,7 @@
 "name": "Oráčov",
 "sr70": "761445",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -14953,7 +14953,7 @@
 "name": "Osek město",
 "sr70": "541698",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Most – Moldava v Krušných Horách"
 }
 ],
@@ -15034,7 +15034,7 @@
 "name": "Osoblaha",
 "sr70": "342949",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třemešná ve Slezsku – Osoblaha"
 }
 ],
@@ -15376,7 +15376,7 @@
 "name": "Ovesné Kladruby",
 "sr70": "744458",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Mariánské Lázně"
 }
 ],
@@ -15430,7 +15430,7 @@
 "name": "Panský",
 "sr70": "564898",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rumburk – Panský – Mikulášovice, Krásná Lípa – Panský"
 }
 ],
@@ -15646,7 +15646,7 @@
 "name": "Pernink",
 "sr70": "742759",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Johanngeorgenstadt"
 }
 ],
@@ -16384,7 +16384,7 @@
 "name": "Poláky",
 "sr70": "535799",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kadaň–Kaštice"
 }
 ],
@@ -16402,7 +16402,7 @@
 "name": "Polanka nad Odrou",
 "sr70": "383141",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Přerov–Bohumín, Ostrava-Svinov – Český Těšín"
 }
 ],
@@ -16537,7 +16537,7 @@
 "name": "Poniklá",
 "sr70": "571505",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Martinice v Krkonoších – Rokytnice nad Jizerou"
 }
 ],
@@ -16717,7 +16717,7 @@
 "name": "Potůčky",
 "sr70": "743054",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Johanngeorgenstadt"
 }
 ],
@@ -16753,7 +16753,7 @@
 "name": "Poutnov",
 "sr70": "744854",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Mariánské Lázně"
 }
 ],
@@ -16868,7 +16868,7 @@
 "name": "Praha-Bubeneč",
 "sr70": "570267",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Praha–Děčín"
 }
 ],
@@ -17246,7 +17246,7 @@
 "name": "Praha-Vyšehrad",
 "sr70": "583666",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Železniční uzel Praha"
 }
 ],
@@ -17318,7 +17318,7 @@
 "name": "Prachatice lázně",
 "sr70": "738427",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -17381,7 +17381,7 @@
 "name": "Prokopské údolí",
 "sr70": "581876",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Praha – Rudná u Prahy – Beroun"
 }
 ],
@@ -17480,7 +17480,7 @@
 "name": "Protivec",
 "sr70": "733451",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou, Protivec–Bochov"
 }
 ],
@@ -17759,7 +17759,7 @@
 "name": "Pšovlky",
 "sr70": "761247",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -17768,7 +17768,7 @@
 "name": "Ptení",
 "sr70": "357756",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třebovice v Čechách – Prostějov"
 }
 ],
@@ -17903,7 +17903,7 @@
 "name": "Radnice",
 "sr70": "741553",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Ejpovice–Radnice"
 }
 ],
@@ -17948,7 +17948,7 @@
 "name": "Radonice nad Ohří",
 "sr70": "555193",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Lovosice–Postoloprty"
 }
 ],
@@ -17966,7 +17966,7 @@
 "name": "Radonice",
 "sr70": "780650",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Plzeň – Furth im Wald"
 }
 ],
@@ -18011,7 +18011,7 @@
 "name": "Radvanice",
 "sr70": "573204",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Trutnov – Teplice nad Metují"
 }
 ],
@@ -18146,7 +18146,7 @@
 "name": "Rašovice",
 "sr70": "582189",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Týniště nad Orlicí – Letohrad"
 }
 ],
@@ -18344,7 +18344,7 @@
 "name": "Rokytnice nad Jizerou",
 "sr70": "571109",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Martinice v Krkonoších – Rokytnice nad Jizerou"
 }
 ],
@@ -18362,7 +18362,7 @@
 "name": "Rokytnice v Orlických horách",
 "sr70": "541409",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Doudleby nad Orlicí – Rokytnice v Orlických horách"
 }
 ],
@@ -18371,7 +18371,7 @@
 "name": "Ronov nad Doubravou",
 "sr70": "554436",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Čáslav–Třemošnice"
 }
 ],
@@ -18443,7 +18443,7 @@
 "name": "Rotava",
 "sr70": "765156",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Sokolov–Zwotental"
 }
 ],
@@ -18623,7 +18623,7 @@
 "name": "Rožmberk nad Vltavou",
 "sr70": "747428",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rybník – Lipno nad Vltavou"
 }
 ],
@@ -18650,7 +18650,7 @@
 "name": "Rožnov pod Radhoštěm",
 "sr70": "347823",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Valašské Meziříčí – Rožnov pod Radhoštěm"
 }
 ],
@@ -18695,7 +18695,7 @@
 "name": "Rudíkov",
 "sr70": "367359",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Křižanov–Studenec"
 }
 ],
@@ -18866,7 +18866,7 @@
 "name": "Rýmařov",
 "sr70": "348326",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Valšov–Rýmařov"
 }
 ],
@@ -18902,7 +18902,7 @@
 "name": "Řasnice",
 "sr70": "546226",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Frýdlant v Čechách – Jindřichovice pod Smrkem"
 }
 ],
@@ -19082,7 +19082,7 @@
 "name": "Sadov",
 "sr70": "734558",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Merklín"
 }
 ],
@@ -19208,7 +19208,7 @@
 "name": "Sedlčany",
 "sr70": "551762",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Olbramovice–Sedlčany"
 }
 ],
@@ -19406,7 +19406,7 @@
 "name": "Senomaty",
 "sr70": "761049",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -19415,7 +19415,7 @@
 "name": "Senotín",
 "sr70": "744326",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -19487,7 +19487,7 @@
 "name": "Skalná",
 "sr70": "767053",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Tršnice – Luby u Chebu"
 }
 ],
@@ -19496,7 +19496,7 @@
 "name": "Skalsko",
 "sr70": "560110",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mladá Boleslav – Mělník"
 }
 ],
@@ -19514,7 +19514,7 @@
 "name": "Skály",
 "sr70": "583260",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Praha–Turnov, Praha – Lysá nad Labem – Kolín"
 }
 ],
@@ -19550,7 +19550,7 @@
 "name": "Skovice",
 "sr70": "554840",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Čáslav–Třemošnice"
 }
 ],
@@ -19676,7 +19676,7 @@
 "name": "Slapy",
 "sr70": "753822",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Tábor–Bechyně"
 }
 ],
@@ -19685,7 +19685,7 @@
 "name": "Slatina nad Zdobnicí",
 "sr70": "541706",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Doudleby nad Orlicí – Rokytnice v Orlických horách"
 }
 ],
@@ -19811,7 +19811,7 @@
 "name": "Slezské Rudoltice",
 "sr70": "343541",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Třemešná ve Slezsku – Osoblaha"
 }
 ],
@@ -19964,7 +19964,7 @@
 "name": "Sobotín",
 "sr70": "348920",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Petrov nad Desnou – Sobotín"
 }
 ],
@@ -19973,7 +19973,7 @@
 "name": "Sobotka",
 "sr70": "558809",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mladá Boleslav – Stará Paka"
 }
 ],
@@ -20072,21 +20072,21 @@
 "name": "Spělov",
 "sr70": "750528",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Havlíčkův Brod – Veselí nad Lužnicí"
 },
 {
 "name": "Velký Ratmírov",
 "sr70": "750528",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Havlíčkův Brod – Veselí nad Lužnicí"
 },
 {
 "name": "Volyně",
 "sr70": "750521",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -20221,7 +20221,7 @@
 "name": "Staré Město pod Sněžníkem",
 "sr70": "349027",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Hanušovice – Staré Město pod Sněžníkem"
 }
 ],
@@ -20248,7 +20248,7 @@
 "name": "Staré Sedliště",
 "sr70": "756452",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Domažlice – Planá u Mariánských Lázní"
 }
 ],
@@ -20428,7 +20428,7 @@
 "name": "Straky",
 "sr70": "562512",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Nymburk – Mladá Boleslav"
 }
 ],
@@ -20482,7 +20482,7 @@
 "name": "Stráž u Tachova",
 "sr70": "756254",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Domažlice – Planá u Mariánských Lázní"
 }
 ],
@@ -20518,7 +20518,7 @@
 "name": "Strunkovice nad Blanicí",
 "sr70": "738120",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -20527,7 +20527,7 @@
 "name": "Strunkovice nad Volyňkou",
 "sr70": "750323",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Strakonice–Volary"
 }
 ],
@@ -20680,7 +20680,7 @@
 "name": "Střítež nad Bečvou",
 "sr70": "347922",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Valašské Meziříčí – Rožnov pod Radhoštěm"
 }
 ],
@@ -20716,7 +20716,7 @@
 "name": "Střížovice",
 "sr70": "744029",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Nová Bystřice"
 }
 ],
@@ -20761,7 +20761,7 @@
 "name": "Stupno",
 "sr70": "741355",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Ejpovice–Radnice"
 }
 ],
@@ -20824,7 +20824,7 @@
 "name": "Sudoměřice u Bechyně",
 "sr70": "754523",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Tábor–Bechyně"
 }
 ],
@@ -20914,7 +20914,7 @@
 "name": "Svatava",
 "sr70": "764654",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Sokolov–Zwotental"
 }
 ],
@@ -20932,7 +20932,7 @@
 "name": "Svatoňovice",
 "sr70": "330944",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Budišov nad Budišovkou"
 }
 ],
@@ -20968,7 +20968,7 @@
 "name": "Světlá Hora",
 "sr70": "332023",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Bruntál – Malá Morávka"
 }
 ],
@@ -21076,7 +21076,7 @@
 "name": "Svobodné Heřmanice",
 "sr70": "335646",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Opava východ – Svobodné Heřmanice"
 }
 ],
@@ -21265,7 +21265,7 @@
 "name": "Široká Niva",
 "sr70": "354027",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Milotice nad Opavou – Vrbno pod Pradědem"
 }
 ],
@@ -21373,7 +21373,7 @@
 "name": "Štědrá",
 "sr70": "733857",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -21427,7 +21427,7 @@
 "name": "Štětkovice",
 "sr70": "551861",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Olbramovice–Sedlčany"
 }
 ],
@@ -21463,7 +21463,7 @@
 "name": "Štíty",
 "sr70": "535708",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Lichkov–Štíty"
 }
 ],
@@ -21713,7 +21713,7 @@
 "name": "Telnice",
 "sr70": "543892",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Děčín – Oldřichov u Duchcova"
 }
 ],
@@ -21731,7 +21731,7 @@
 "name": "Teplá",
 "sr70": "744656",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Karlovy Vary – Mariánské Lázně"
 }
 ],
@@ -21740,7 +21740,7 @@
 "name": "Teplice lesní brána",
 "sr70": "544593",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Děčín – Oldřichov u Duchcova"
 }
 ],
@@ -21767,7 +21767,7 @@
 "name": "Teplice nad Metují město",
 "sr70": "573907",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Trutnov – Teplice nad Metují"
 }
 ],
@@ -21965,7 +21965,7 @@
 "name": "Toužim",
 "sr70": "734152",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],
@@ -22055,7 +22055,7 @@
 "name": "Troubelice",
 "sr70": "350025",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Olomouc–Šumperk"
 }
 ],
@@ -22100,7 +22100,7 @@
 "name": "Trpísty",
 "sr70": "754457",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Pňovany–Bezdružice"
 }
 ],
@@ -22199,7 +22199,7 @@
 "name": "Třebčín",
 "sr70": "350629",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Červenka–Prostějov"
 }
 ],
@@ -22226,7 +22226,7 @@
 "name": "Třebelovice",
 "sr70": "350850",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Moravské Budějovice – Jemnice"
 }
 ],
@@ -22370,7 +22370,7 @@
 "name": "Třemešné pod Přimdou",
 "sr70": "755959",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Domažlice – Planá u Mariánských Lázní"
 }
 ],
@@ -22388,7 +22388,7 @@
 "name": "Třemošnice",
 "sr70": "554139",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Čáslav–Třemošnice"
 }
 ],
@@ -22505,7 +22505,7 @@
 "name": "Tutleky",
 "sr70": "541318",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Častolovice–Solnice"
 }
 ],
@@ -22640,7 +22640,7 @@
 "name": "Uhřice u Kyjova",
 "sr70": "366054",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Čejč – Uhřice u Kyjova – Ždánice"
 }
 ],
@@ -22937,7 +22937,7 @@
 "name": "Valašské Klobouky",
 "sr70": "366351",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Horní Lideč – Bylnice"
 }
 ],
@@ -23099,7 +23099,7 @@
 "name": "Včelnička",
 "sr70": "745620",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Jindřichův Hradec – Obrataň"
 }
 ],
@@ -23117,7 +23117,7 @@
 "name": "Vejprty",
 "sr70": "539494",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Chomutov–Vejprty"
 }
 ],
@@ -23333,7 +23333,7 @@
 "name": "Velké Karlovice",
 "sr70": "353128",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Vsetín – Velké Karlovice"
 }
 ],
@@ -23351,7 +23351,7 @@
 "name": "Velké Losiny",
 "sr70": "345421",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Šumperk – Kouty nad Desnou"
 }
 ],
@@ -23540,7 +23540,7 @@
 "name": "Velký Šenov",
 "sr70": "565895",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rumburk–Sebnitz"
 }
 ],
@@ -23585,7 +23585,7 @@
 "name": "Velvary",
 "sr70": "545665",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kralupy nad Vltavou – Velvary"
 }
 ],
@@ -23765,7 +23765,7 @@
 "name": "Vidnava",
 "sr70": "338020",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Velká Kraš – Vidnava – Nysa"
 }
 ],
@@ -23810,7 +23810,7 @@
 "name": "Vilémov u Kadaně",
 "sr70": "535997",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kadaň–Kaštice"
 }
 ],
@@ -23909,7 +23909,7 @@
 "name": "Vítkov",
 "sr70": "350041",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Suchdol nad Odrou – Budišov nad Budišovkou"
 }
 ],
@@ -23918,7 +23918,7 @@
 "name": "Vizovice",
 "sr70": "368050",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Otrokovice–Vizovice"
 }
 ],
@@ -24143,7 +24143,7 @@
 "name": "Vodňany",
 "sr70": "737627",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -24449,7 +24449,7 @@
 "name": "Vrbno pod Pradědem",
 "sr70": "353623",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Milotice nad Opavou – Vrbno pod Pradědem"
 }
 ],
@@ -24575,7 +24575,7 @@
 "name": "Všeradice",
 "sr70": "767947",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Zadní Třebaň – Lochovice"
 }
 ],
@@ -24710,7 +24710,7 @@
 "name": "Vyšší Brod klášter",
 "sr70": "747725",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rybník – Lipno nad Vltavou"
 }
 ],
@@ -24998,7 +24998,7 @@
 "name": "Zásmuky",
 "sr70": "565267",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Pečky–Bečváry"
 }
 ],
@@ -25133,7 +25133,7 @@
 "name": "Zborovice",
 "sr70": "369454",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kroměříž–Zborovice"
 }
 ],
@@ -25196,7 +25196,7 @@
 "name": "Zbytiny",
 "sr70": "738922",
 "type": "dopravna radiobloku",
-"category": "station",
+"category": "dopravna",
 "line": "Číčenice – Nové Údolí"
 }
 ],
@@ -25259,7 +25259,7 @@
 "name": "Zdounky",
 "sr70": "369355",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kroměříž–Zborovice"
 }
 ],
@@ -25304,7 +25304,7 @@
 "name": "Zlaté Hory",
 "sr70": "355222",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Mikulovice – Zlaté Hory"
 }
 ],
@@ -25556,7 +25556,7 @@
 "name": "Žacléř",
 "sr70": "572602",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Královec–Žacléř"
 }
 ],
@@ -25781,7 +25781,7 @@
 "name": "Želina",
 "sr70": "535898",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Kadaň–Kaštice"
 }
 ],
@@ -25916,7 +25916,7 @@
 "name": "Žizníkov",
 "sr70": "582395",
 "type": "výhybna",
-"category": "station",
+"category": "dopravna",
 "line": "Bakov nad Jizerou – Jedlová, Liberec – Česká Lípa"
 }
 ],
@@ -25952,7 +25952,7 @@
 "name": "Žleby",
 "sr70": "554741",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Čáslav–Třemošnice"
 }
 ],
@@ -25979,7 +25979,7 @@
 "name": "Žlutice",
 "sr70": "733659",
 "type": "dopravna D3",
-"category": "station",
+"category": "dopravna",
 "line": "Rakovník – Bečov nad Teplou"
 }
 ],

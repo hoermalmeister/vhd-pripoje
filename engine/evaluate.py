@@ -670,9 +670,10 @@ class Engine:
     def _basic(self, out, st, conn, wait, sid, interval, effect=None, prule=None, ptext=None):
         """Žádné pravidlo v části C -> články 1 a 2, část B a základní čekací doby."""
         reasons = []
-        if not st and out["station"].get("kind_category") == "stop":
+        if not st and out["station"].get("kind_category") in ("stop", "dopravna"):
+            where = "na zastávkách" if out["station"]["kind_category"] == "stop" else "v dopravnách"
             return self._finish(out, "not_a_connection", None,
-                                f"{out['station']['name']} je {out['station']['kind']} (ne stanice) – na zastávkách se přípoje nezajišťují "
+                                f"{out['station']['name']} je {out['station']['kind']} (ne stanice) – {where} se přípoje nezajišťují "
                                 "a žádné vlaky zde nečekají (článek 1).", st, None)
         partb = [r for r, _ in self._partb(st)] if st else []
         min_int = 2

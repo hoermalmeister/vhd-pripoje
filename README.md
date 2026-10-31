@@ -177,8 +177,9 @@ Rozbor (`engine/itinerary.py`) jinak nezávisí na formátu vyhledávače: z tex
 
 Podle článku 1 se na zastávkách přípoje nezajišťují. GTFS stanice a zastávky nerozlišuje, proto `data/station_types.json` obsahuje typ dopravny ze seznamu na Wikipedii ([Seznam železničních stanic, zastávek a nákladišť v Česku](https://cs.wikipedia.org/wiki/Seznam_%C5%BEelezni%C4%8Dn%C3%ADch_stanic,_zast%C3%A1vek_a_n%C3%A1kladi%C5%A1%C5%A5_v_%C4%8Cesku), CC BY-SA 4.0). Párování s GTFS je přes kód SR70 (id `czptt:stop:CZ:34434` = prvních 5 číslic SR70); spáruje se 2 671 z 2 691 míst, kde v GTFS staví vlaky.
 
-- **stanice** (přípoje se zajišťují): stanice, dopravna D3, dopravna radiobloku, výhybna, kolejová skupina / obvod stanice,
+- **stanice** (přípoje se zajišťují): stanice, kolejová skupina / obvod stanice, seřaďovací nádraží,
 - **zastávka** (přípoje se nezajišťují): všechny typy „zastávka …“ včetně „zastávka v obvodu stanice“,
+- **dopravna** (k návaznostem nedochází): dopravna D3, dopravna radiobloku, výhybna,
 - **ostatní**: odbočka, nákladiště, vlečka.
 
-Typ se použije jen u míst, která nemají vlastní tabulku v pomůcce (tabulka má přednost – např. Brno-Židenice je na Wikipedii „zastávka a odbočka“, ale pomůcka pro ni tabulku má). Aktualizace: uložte stránku Wikipedie jako HTML a spusťte `python tools/build_station_types.py stranka.html data/station_types.json`.
+Typ se použije jen u míst, která nemají vlastní tabulku v pomůcce (tabulka má přednost – např. Brno-Židenice je na Wikipedii „zastávka a odbočka“, Krásný Jez a Protivec jsou dopravny D3, ale pomůcka pro ně tabulky má). Aktualizace: uložte stránku Wikipedie jako HTML a spusťte `python tools/build_station_types.py stranka.html data/station_types.json`.

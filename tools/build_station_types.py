@@ -9,14 +9,18 @@ Párování s GTFS: id stanice v GTFS 'czptt:stop:CZ:34434' = prvních 5 čísli
 import html, json, re, sys
 from collections import OrderedDict
 
-STATION_TYPES = {"stanice", "dopravna D3", "dopravna radiobloku", "výhybna", "kolejová skupina stanice",
-                 "kolejová skupina stanice se zastávkou", "obvod stanice", "tarifní místo v rámci stanice", "seřaďovací nádraží"}
+STATION_TYPES = {"stanice", "kolejová skupina stanice", "kolejová skupina stanice se zastávkou", "obvod stanice",
+                 "tarifní místo v rámci stanice", "seřaďovací nádraží"}
+# dopravny, ve kterých k návaznostem nedochází
+DOPRAVNA_TYPES = {"dopravna D3", "dopravna radiobloku", "výhybna"}
 
 
 def category(typ):
     t = typ.strip()
     if t in STATION_TYPES:
         return "station"
+    if t in DOPRAVNA_TYPES:
+        return "dopravna"
     if t.startswith("zastávka"):
         return "stop"
     return "other"
