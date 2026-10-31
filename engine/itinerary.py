@@ -51,33 +51,86 @@ def parse_trains(text):
     return uniq
 
 
+MONTHS = {
+    # čeština
+    "ledna": 1, "led": 1, "února": 2, "úno": 2, "března": 3, "bře": 3, "dubna": 4, "dub": 4, "května": 5, "kvě": 5,
+    "června": 6, "čvn": 6, "července": 7, "čvc": 7, "srpna": 8, "srp": 8, "září": 9, "zář": 9, "října": 10, "říj": 10,
+    "listopadu": 11, "lis": 11, "prosince": 12, "pro": 12,
+    # angličtina / němčina
+    "jan": 1, "january": 1, "januar": 1, "jänner": 1, "feb": 2, "february": 2, "februar": 2, "mar": 3, "march": 3, "märz": 3,
+    "mär": 3, "mrz": 3, "apr": 4, "april": 4, "may": 5, "mai": 5, "jun": 6, "june": 6, "juni": 6, "jul": 7, "july": 7,
+    "juli": 7, "aug": 8, "august": 8, "sep": 9, "sept": 9, "september": 9, "oct": 10, "october": 10, "okt": 10, "oktober": 10,
+    "nov": 11, "november": 11, "dec": 12, "december": 12, "dez": 12, "dezember": 12,
+    # ruština (genitiv a zkratky)
+    "янв": 1, "января": 1, "фев": 2, "февр": 2, "февраля": 2, "мар": 3, "марта": 3, "апр": 4, "апреля": 4, "мая": 5, "май": 5,
+    "июн": 6, "июня": 6, "июл": 7, "июля": 7, "авг": 8, "августа": 8, "сен": 9, "сент": 9, "сентября": 9, "окт": 10,
+    "октября": 10, "ноя": 11, "нояб": 11, "ноября": 11, "дек": 12, "декабря": 12,
+}
+_MONTH_ALT = "|".join(sorted((re.escape(k) for k in MONTHS), key=len, reverse=True))
+DATE_DAY_MONTH = re.compile(r"(?<![\d:])(\d{1,2})\.?\s*(" + _MONTH_ALT + r")\.?(?![\w])(?:\s*(20\d{2}))?", re.I)   # 3 Nov / 3. listopadu / 3 нояб.
+DATE_MONTH_DAY = re.compile(r"(?<![\w])(" + _MONTH_ALT + r")\.?\s+(\d{1,2})(?![\d:])(?:,?\s*(20\d{2}))?", re.I)   # Nov 3, 2026
+DATE_SLASH = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?(?![\d/])")                                    # 11/03, 03/11/2026
+TOMORROW = ("zítra", "zitra", "morgen", "tomorrow", "завтра")
+
+
+def _closest(cands, today):
+    """Z kandidátů na datum vyber ten nejbližší dnešku (preferuje budoucí, nejvýš ~2 měsíce zpět)."""
+    best = None
+    for d in cands:
+        diff = (d - today).days
+        key = (0 if diff >= -1 else 1, abs(diff))
+        if best is None or key < best[0]:
+            best = (key, d)
+    return best[1] if best else None
+
+
+def _mk(y, mo, d, today):
+    try:
+        if y:
+            y = int(y)
+            y = y + 2000 if y < 100 else y
+            return [dt.date(y, mo, d)]
+        out = []
+        for yy in (today.year - 1, today.year, today.year + 1):
+            out.append(dt.date(yy, mo, d))
+        return out
+    except ValueError:
+        return []
+
+
 def parse_date(text, today=None):
-    """Datum cesty z textu. Přednost má datum v textu před datem v odkazu (v odkazu bývá čas hledání)."""
+    """Datum cesty z textu (čeština, angličtina, němčina, ruština). Přednost má datum v textu před datem v odkazu
+    (v odkazu bývá čas hledání); při více formátech rozhoduje první výskyt v textu."""
     today = today or prague_today()
     t = text or ""
     plain = URL_RE.sub(" ", t)
-    m = DATE_FULL.search(plain)
-    if m:
-        return dt.date(int(m.group(3)), int(m.group(2)), int(m.group(1))), True
+    found = []   # (pozice, [kandidáti])
+    for m in DATE_FULL.finditer(plain):
+        found.append((m.start(), _mk(m.group(3), int(m.group(2)), int(m.group(1)), today)))
+    for m in DATE_DAY_MONTH.finditer(plain):
+        found.append((m.start(), _mk(m.group(3), MONTHS[m.group(2).lower()], int(m.group(1)), today)))
+    for m in DATE_MONTH_DAY.finditer(plain):
+        found.append((m.start(), _mk(m.group(3), MONTHS[m.group(1).lower()], int(m.group(2)), today)))
     for m in DATE_SHORT.finditer(plain):
-        d, mo = int(m.group(1)), int(m.group(2))
-        if 1 <= d <= 31 and 1 <= mo <= 12:
-            try:
-                cand = dt.date(today.year, mo, d)
-            except ValueError:
-                continue
-            if cand < today - dt.timedelta(days=60):
-                cand = dt.date(today.year + 1, mo, d)
-            return cand, True
-    for src in (plain, t):
-        m = DATE_ISO.search(src)
-        if m:
-            try:
-                return dt.date(int(m.group(1)), int(m.group(2)), int(m.group(3))), True
-            except ValueError:
-                pass
+        found.append((m.start(), _mk(None, int(m.group(2)), int(m.group(1)), today)))
+    for m in DATE_SLASH.finditer(plain):
+        a_, b_, y = int(m.group(1)), int(m.group(2)), m.group(3)
+        found.append((m.start(), _mk(y, b_, a_, today) + _mk(y, a_, b_, today)))   # dd/mm i mm/dd
+    for m in DATE_ISO.finditer(plain):
+        found.append((m.start(), _mk(m.group(1), int(m.group(2)), int(m.group(3)), today)))
+    found = [(p, c) for p, c in found if c]
+    if found:
+        found.sort(key=lambda x: x[0])
+        d = _closest(found[0][1], today)
+        if d and abs((d - today).days) <= 400:
+            return d, True
+    m = DATE_ISO.search(t)          # až nakonec datum z odkazu
+    if m:
+        c = _mk(m.group(1), int(m.group(2)), int(m.group(3)), today)
+        if c:
+            return c[0], True
     low = plain.lower()
-    if "zítra" in low or "zitra" in low or "morgen" in low or "tomorrow" in low:
+    if any(w in low for w in TOMORROW):
         return today + dt.timedelta(days=1), True
     return today, False
 
@@ -161,7 +214,9 @@ def find_transfer(engine, a_no, b_no, date, text=""):
     return best[1] if best else None
 
 
-OTHER_MODE_RE = re.compile(r"(?<![\w])(Autobus|autobus|Bus|BUS|Tramvaj|tramvaj|Tram|Trolejbus|trolejbus|Metro|metro|Lanovka|Loď|Přívoz|Taxi)(?![\w])")
+OTHER_MODE_RE = re.compile(r"(?<![\w])(Autobus|autobus|Bus|BUS|Bus\.|Tramvaj|tramvaj|Tram|tram|Straßenbahn|Trolejbus|trolejbus|Trolleybus|Obus|O-Bus|"
+                           r"Metro|metro|U-Bahn|Subway|Lanovka|Seilbahn|Cable car|Loď|Přívoz|Fähre|Ferry|Taxi|"
+                           r"Автобус|автобус|Трамвай|трамвай|Троллейбус|троллейбус|Метро|метро|Паром|паром|Фуникулёр|Канатная дорога)(?![\w])")
 
 
 def _cut(text, start_markers, end_markers):
@@ -215,7 +270,7 @@ def extract_legs(text, url=""):
         chunks = re.split(r"\n\s*\n", t)
         legs = _legs_from_chunks(chunks)
         if len(legs) >= 2 or any(l["type"] == "other" for l in legs):
-            return legs, t, "mujvlak" if "Můj vlak" in t else ("pubtran" if "Pubtran" in t else "text")
+            return legs, t, "mujvlak" if "Můj vlak" in t else ("pubtran" if re.search(r"Pubtran", t, re.I) else "text")
     # obecný text: vlaky v pořadí, jiné druhy dopravy jako oddělovač
     legs = []
     pos = []
