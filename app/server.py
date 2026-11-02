@@ -45,7 +45,7 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 from engine.evaluate import Engine, _norm_name, hhmm  # noqa: E402
-from engine.itinerary import analyze, ics_to_text  # noqa: E402
+from engine.itinerary import analyze, ics_to_text, parse_trains, URL_RE, MAPY_RE  # noqa: E402
 from email.parser import BytesParser  # noqa: E402
 from email import policy  # noqa: E402
 
@@ -370,6 +370,42 @@ def fetch_raw(url):
         raise
 
 
+RENDER_SEM = threading.Semaphore(int(os.environ.get("RENDER_CONCURRENCY", "1")))
+_HAS_PLAYWRIGHT = None
+
+
+def render_route(text):
+    """Odkaz Mapy.com bez čísel vlaků -> spojení přečtená ze stránky v neviditelném prohlížeči (samostatný proces).
+    Vypnutí: RENDER_ROUTES=0. Bez nainstalovaného Playwrightu se tiše přeskočí (spojení se dohledá v jízdním řádu)."""
+    global _HAS_PLAYWRIGHT
+    if os.environ.get("RENDER_ROUTES", "1") == "0" or not text:
+        return None
+    if len(parse_trains(text)) >= 2:
+        return None
+    urls = [u.rstrip(").,") for u in URL_RE.findall(text) if MAPY_RE.search(u)]
+    if not urls:
+        return None
+    if _HAS_PLAYWRIGHT is None:
+        import importlib.util
+        _HAS_PLAYWRIGHT = importlib.util.find_spec("playwright") is not None
+    if not _HAS_PLAYWRIGHT:
+        return None
+    if not RENDER_SEM.acquire(timeout=60):
+        return {"connections": [], "error": "Prohlížeč je vytížený, zkuste to za chvíli."}
+    try:
+        t0 = time.time()
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "render_route.py"), urls[0], "4", "30"],
+                           capture_output=True, text=True, timeout=50)
+        log(f"render {urls[0]}: {time.time() - t0:.1f} s, exit {r.returncode}")
+        if r.returncode != 0:
+            return {"connections": [], "error": (r.stderr or "")[-200:]}
+        return json.loads(r.stdout.strip().splitlines()[-1])
+    except Exception as e:
+        return {"connections": [], "error": f"{type(e).__name__}"}
+    finally:
+        RENDER_SEM.release()
+
+
 def api_info():
     eng = State.engine
     return {"handbook": eng.index.get("source", eng.rules["document"]), "stations_in_handbook": len(eng.index["stations"]),
@@ -527,6 +563,10 @@ class Handler(BaseHTTPRequestHandler):
             if State.engine is None:
                 return self._send(503, {"error": "Data jízdního řádu se připravují (stahuje se GTFS), zkuste to za minutu.",
                                         "data": State.status})
+            rendered = None
+            if u.path == "/api/itinerary":
+                # stránku Mapy.com čteme v prohlížeči mimo zámek – trvá několik sekund a nesmí blokovat ostatní dotazy
+                rendered = render_route(" ".join(x for x in (q.get("title", ""), q.get("text", ""), q.get("url", "")) if x))
             with State.lock:
                 if u.path == "/api/info":
                     return self._send(200, api_info())
@@ -543,7 +583,7 @@ class Handler(BaseHTTPRequestHandler):
                     if not text.strip():
                         return self._send(400, {"error": "Chybí parametr text nebo url."})
                     d = parse_date(q["date"]) if q.get("date") else None
-                    return self._send(200, analyze(State.engine, text, d, fetch=fetch_url, resolve=fetch_raw))
+                    return self._send(200, analyze(State.engine, text, d, fetch=fetch_url, resolve=fetch_raw, rendered=rendered))
                 if u.path == "/api/connection":
                     miss = [k for k in ("station", "arriving", "departing") if not q.get(k)]
                     if miss:

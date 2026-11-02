@@ -107,10 +107,10 @@ if (joined) $("text").value = joined;
 let planned = null;
 function renderPlan() {
   if (!planned) { $("plan").innerHTML = ""; return; }
-  const legsTxt = o => o.legs.map(l => l.bus ? `🚌 NAD` : `${esc(l.category)} ${l.number}`).join(" → ");
+  const legsTxt = o => o.legs.map(l => l.bus ? `🚌 ${esc(l.label || "NAD")}` : `${esc(l.category)} ${l.number}`).join(" → ");
   const via = o => o.legs.slice(0, -1).map(l => esc(l.to)).join(", ");
   $("plan").innerHTML = `<div class="card"><label>Kterým spojením jedete?</label>
-    <div class="status">${esc(planned.from)} → ${esc(planned.to)} · dohledáno v jízdním řádu</div>
+    <div class="status">${esc(planned.from)} → ${esc(planned.to)} · ${planned.rendered ? "spojení z Mapy.com" : "dohledáno v jízdním řádu"}</div>
     <div class="opts">${planned.options.map((o, i) => `<button class="opt${i === planned.selected ? " sel" : ""}" data-i="${i}">
       <b>${o.dep} – ${o.arr}</b>${o.date !== planned.options[0].date ? ` <span class="tr-list">(${o.date})</span>` : ""}
       <div class="tr-list">${legsTxt(o)}${o.legs.length > 1 ? ` · přestup: ${via(o)}` : " · bez přestupu"}</div></button>`).join("")}</div></div>`;
@@ -134,7 +134,7 @@ async function run(optText, optDate) {
     if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
     if (j.planned) {
       const o0 = j.options[0], last = o0.legs[o0.legs.length - 1];
-      planned = {options: j.options, selected: j.selected, from: o0.legs[0].from, to: last.to, source: j.source};
+      planned = {options: j.options, selected: j.selected, from: o0.legs[0].from, to: last.to, source: j.source, rendered: !!j.rendered};
       renderPlan();
     }
     if (fromOption && planned) j.source = planned.source;

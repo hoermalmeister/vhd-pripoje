@@ -365,11 +365,38 @@ def option_text(opt):
     """Textová podoba nalezeného spojení – dá se poslat zpět do analyze() (výběr jiného spojení v aplikaci)."""
     rows = []
     for l in opt["legs"]:
-        if l["bus"]:
-            rows.append(f"Bus NAD {l['from']} {l['dep']} → {l['to']} {l['arr']}")
+        if l.get("bus") or l.get("number") is None:
+            mode = {"tram": "Tram", "metro": "Metro", "ship": "Loď", "boat": "Loď", "cable": "Lanovka"}.get(l.get("mode"), "Bus")
+            rows.append(f"{mode} {l.get('label') or 'NAD'} {l['from']} {l['dep']} → {l['to']} {l['arr']}")
         else:
             rows.append(f"{l['category']} {l['number']} {l['from']} {l['dep']} → {l['to']} {l['arr']}")
     return "\n".join(rows)
+
+
+def options_from_rendered(data):
+    """Výstup tools/render_route.py (spojení přečtená ze stránky Mapy.com) -> nabídka spojení."""
+    options = []
+    for con in (data or {}).get("connections", []):
+        legs = []
+        for l in con.get("legs", []):
+            tr = parse_trains(l.get("line", ""))
+            kind = (l.get("kind") or "").lower()
+            leg = {"from": l.get("from", ""), "to": l.get("to", ""), "dep": l.get("dep", ""), "arr": l.get("arr", "")}
+            if tr and ("train" in kind or not kind):
+                leg.update(category=tr[-1][0], number=tr[-1][1], bus=False)
+            else:
+                mode = next((m for m in ("tram", "metro", "trolley", "ship", "boat", "cable") if m in kind), "bus")
+                label = re.sub(r"^(?:Autobus|Bus|Tramvaj|Tram|Trolejbus|Metro|Loď|Lanovka)\s*", "", l.get("line", ""), flags=re.I)
+                leg.update(category=None, number=None, bus=True, mode=mode, label=label[:30] or mode)
+            legs.append(leg)
+        if not legs:
+            continue
+        m = DATE_FULL.search(con.get("title", "") + " " + (con["legs"][0].get("dep_full") or ""))
+        date = (dt.date(int(m.group(3)), int(m.group(2)), int(m.group(1))) if m else prague_today()).isoformat()
+        o = {"dep": legs[0]["dep"], "arr": legs[-1]["arr"], "date": date, "legs": legs}
+        o["text"] = option_text(o)
+        options.append(o)
+    return options
 
 
 def _from_route_link(engine, urls, resolve, date, now=None):
@@ -412,7 +439,7 @@ def _from_route_link(engine, urls, resolve, date, now=None):
     return None, err
 
 
-def analyze(engine, text, date=None, fetch=None, resolve=None, now=None):
+def analyze(engine, text, date=None, fetch=None, resolve=None, now=None, rendered=None):
     """Hlavní funkce: vrátí úseky spojení, přestupy mezi vlaky a vyhodnocení každého přestupu."""
     out = {"input_text": (text or "")[:2000], "warnings": []}
     legs, date_text, source = extract_legs(text)
@@ -425,6 +452,16 @@ def analyze(engine, text, date=None, fetch=None, resolve=None, now=None):
             if LINK_ONLY_HOSTS.match(url):
                 link_only = "Mapy.com" if MAPY_RE.search(url) else "Google Maps"
                 route_urls.append(url)
+    if len(trains) < 2 and route_urls and rendered:
+        options = options_from_rendered(rendered)
+        if options:
+            opt = options[0]
+            res = analyze(engine, opt["text"], date or dt.date.fromisoformat(opt["date"]))
+            res.update(input_text=out["input_text"], source="mapy", planned=True, rendered=True, options=options,
+                       selected=0, time_from_link=True, route_url=rendered.get("final_url") or rendered.get("url"))
+            return res
+        out["warnings"].append("Stránku Mapy.com se nepodařilo přečíst – spojení dohledávám v jízdním řádu."
+                               + (f" ({rendered['error'][:80]})" if rendered.get("error") else ""))
     if len(trains) < 2 and route_urls and (resolve or fetch):
         found, err = _from_route_link(engine, route_urls, resolve, date, now)
         if found:
