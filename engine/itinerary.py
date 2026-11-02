@@ -351,17 +351,98 @@ def order_by_timetable(engine, legs, date, text=""):
     return ordered
 
 
-def analyze(engine, text, date=None, fetch=None):
+def prague_now():
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.datetime.now(ZoneInfo("Europe/Prague")).replace(tzinfo=None)
+    except Exception:
+        d = prague_today()
+        off = dt.datetime.combine(d, dt.time()) - dt.datetime.combine(dt.datetime.utcnow().date(), dt.time())
+        return dt.datetime.utcnow() + off + dt.timedelta(hours=1 if off.days == 0 else 0)
+
+
+def option_text(opt):
+    """Textová podoba nalezeného spojení – dá se poslat zpět do analyze() (výběr jiného spojení v aplikaci)."""
+    rows = []
+    for l in opt["legs"]:
+        if l["bus"]:
+            rows.append(f"Bus NAD {l['from']} {l['dep']} → {l['to']} {l['arr']}")
+        else:
+            rows.append(f"{l['category']} {l['number']} {l['from']} {l['dep']} → {l['to']} {l['arr']}")
+    return "\n".join(rows)
+
+
+def _from_route_link(engine, urls, resolve, date, now=None):
+    """Sdílený odkaz Mapy.com / Google Maps -> nabídka spojení z jízdního řádu + vyhodnocení vybraného."""
+    from .planner import parse_route_url, resolve_short_link, plan
+    err = None
+    for url in urls:
+        try:
+            long_url = resolve_short_link(url, resolve) if resolve else (url if parse_route_url(url) else None)
+        except Exception as e:
+            err = f"Odkaz se nepodařilo rozbalit ({type(e).__name__})."
+            continue
+        route = parse_route_url(long_url) if long_url else None
+        if not route:
+            err = err or "Z odkazu se nepodařilo vyčíst start a cíl trasy."
+            continue
+        now = now or prague_now()
+        when = route["when"]
+        explicit = when is not None
+        if when is None:
+            when = now - dt.timedelta(minutes=15)     # „odjezd teď“ – zahrň i spojení, které právě odjelo
+        if date is not None and when.date() != date:
+            when = dt.datetime.combine(date, when.time())
+        options, perr = plan(engine, route["points"][0], route["points"][-1], when, route["arrive_by"])
+        if not options:
+            err = perr
+            continue
+        pick = 0
+        if not explicit:
+            soon = now - dt.timedelta(minutes=5)
+            for i, o in enumerate(options):
+                h, m = map(int, o["dep"].split(":"))
+                if dt.datetime.combine(dt.date.fromisoformat(o["date"]), dt.time(h, m)) >= soon:
+                    pick = i
+                    break
+        for o in options:
+            o["text"] = option_text(o)
+        return {"route": route, "long_url": long_url, "options": options, "selected": pick,
+                "time_from_link": explicit}, None
+    return None, err
+
+
+def analyze(engine, text, date=None, fetch=None, resolve=None, now=None):
     """Hlavní funkce: vrátí úseky spojení, přestupy mezi vlaky a vyhodnocení každého přestupu."""
     out = {"input_text": (text or "")[:2000], "warnings": []}
     legs, date_text, source = extract_legs(text)
     trains = [l for l in legs if l["type"] == "train"]
     link_only = None
-    if len(trains) < 2 and fetch:
+    route_urls = []
+    if len(trains) < 2:
         for url in URL_RE.findall(text or ""):
             url = url.rstrip(").,")
             if LINK_ONLY_HOSTS.match(url):
                 link_only = "Mapy.com" if MAPY_RE.search(url) else "Google Maps"
+                route_urls.append(url)
+    if len(trains) < 2 and route_urls and (resolve or fetch):
+        found, err = _from_route_link(engine, route_urls, resolve, date, now)
+        if found:
+            opt = found["options"][found["selected"]]
+            res = analyze(engine, opt["text"], dt.date.fromisoformat(opt["date"]))
+            res.update(input_text=out["input_text"], source="mapy" if link_only == "Mapy.com" else "google",
+                       planned=True, options=found["options"], selected=found["selected"],
+                       time_from_link=found["time_from_link"], route_url=found["long_url"])
+            res["warnings"] = ([] if found["time_from_link"] else
+                               [f"{link_only} posílá jen start a cíl trasy – spojení jsem dohledal v jízdním řádu. "
+                                "Pokud jedete jiným, vyberte ho v seznamu."]) + res["warnings"]
+            return res
+        if err:
+            out["warnings"].append(err)
+    if len(trains) < 2 and fetch:
+        for url in URL_RE.findall(text or ""):
+            url = url.rstrip(").,")
+            if LINK_ONLY_HOSTS.match(url):
                 continue
             try:
                 page_text = html_to_text(fetch(url))
@@ -415,8 +496,8 @@ def analyze(engine, text, date=None, fetch=None):
     if not transfers:
         out["result"] = "no_transfer"
         if link_only and not trains:
-            out["message"] = (f"{link_only} při sdílení pošle jen odkaz na trasu a z něj čísla vlaků nevyčtu. "
-                              "Otevřete spojení, zkopírujte jeho text (nebo jen čísla vlaků, např. „EC 332, R 674“) a vložte ho sem.")
+            out["message"] = (f"Z odkazu {link_only} se nepodařilo dohledat spojení. "
+                              "Zkopírujte text spojení (nebo jen čísla vlaků, např. „EC 332, R 674“) a vložte ho sem.")
         else:
             out["message"] = ("Spojení je bez přestupu mezi vlaky." if trains else
                               "V textu ani v odkazu jsem nenašel čísla vlaků (např. „R 881“, „Os 2803“).")

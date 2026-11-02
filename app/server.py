@@ -35,6 +35,7 @@ import tempfile
 import threading
 import time
 import traceback
+import urllib.error
 import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -345,6 +346,30 @@ def fetch_url(url):
     return raw.decode(enc, "replace")
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+_NO_REDIRECT_OPENER = urllib.request.build_opener(_NoRedirect)
+
+
+def fetch_raw(url):
+    """Jeden krok rozbalení krátkého odkazu: (stav, Location, začátek těla) – bez následování přesměrování."""
+    if not url.startswith(("http://", "https://")):
+        raise ValueError("Neplatný odkaz")
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Linux; Android 14) vhd-pripoje",
+                                               "Accept-Language": "cs"})
+    try:
+        with _NO_REDIRECT_OPENER.open(req, timeout=12) as r:
+            raw = r.read(1_000_000)
+            return r.status, None, raw.decode(r.headers.get_content_charset() or "utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        if 300 <= e.code < 400:
+            return e.code, e.headers.get("Location"), ""
+        raise
+
+
 def api_info():
     eng = State.engine
     return {"handbook": eng.index.get("source", eng.rules["document"]), "stations_in_handbook": len(eng.index["stations"]),
@@ -518,7 +543,7 @@ class Handler(BaseHTTPRequestHandler):
                     if not text.strip():
                         return self._send(400, {"error": "Chybí parametr text nebo url."})
                     d = parse_date(q["date"]) if q.get("date") else None
-                    return self._send(200, analyze(State.engine, text, d, fetch=fetch_url))
+                    return self._send(200, analyze(State.engine, text, d, fetch=fetch_url, resolve=fetch_raw))
                 if u.path == "/api/connection":
                     miss = [k for k in ("station", "arriving", "departing") if not q.get(k)]
                     if miss:

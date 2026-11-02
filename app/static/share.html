@@ -51,6 +51,11 @@
   .status { color: var(--muted); font-size: .92rem; }
   .err { color: var(--no); }
   .install { font-size: .88rem; color: var(--muted); }
+  .opts { display: grid; gap: 8px; margin-top: 8px; }
+  .opt { text-align: left; white-space: normal; background: var(--panel); color: var(--ink); border: 1px solid var(--line); font-weight: 400; padding: 10px 12px; }
+  .opt b { font-size: 1.02rem; }
+  .opt .tr-list { font-size: .88rem; color: var(--muted); }
+  .opt.sel { border: 2px solid var(--accent); background: var(--info-bg); }
 </style>
 </head>
 <body>
@@ -72,6 +77,7 @@
     <div class="chips" id="chips"></div>
     <div class="status" id="status"></div>
   </div>
+  <div id="plan"></div>
   <div id="out"></div>
   <p class="install" id="install"></p>
 </main>
@@ -97,18 +103,44 @@ const shared = ["title", "text", "url"].map(k => params.get(k)).filter(Boolean);
 const joined = shared.filter((x, i) => !shared.some((y, j) => j !== i && y.includes(x) && y !== x)).join("\n");
 if (joined) $("text").value = joined;
 
-async function run() {
-  const text = $("text").value.trim();
+// spojení dohledaná z odkazu Mapy.com / Google Maps (odkaz neobsahuje čísla vlaků)
+let planned = null;
+function renderPlan() {
+  if (!planned) { $("plan").innerHTML = ""; return; }
+  const legsTxt = o => o.legs.map(l => l.bus ? `🚌 NAD` : `${esc(l.category)} ${l.number}`).join(" → ");
+  const via = o => o.legs.slice(0, -1).map(l => esc(l.to)).join(", ");
+  $("plan").innerHTML = `<div class="card"><label>Kterým spojením jedete?</label>
+    <div class="status">${esc(planned.from)} → ${esc(planned.to)} · dohledáno v jízdním řádu</div>
+    <div class="opts">${planned.options.map((o, i) => `<button class="opt${i === planned.selected ? " sel" : ""}" data-i="${i}">
+      <b>${o.dep} – ${o.arr}</b>${o.date !== planned.options[0].date ? ` <span class="tr-list">(${o.date})</span>` : ""}
+      <div class="tr-list">${legsTxt(o)}${o.legs.length > 1 ? ` · přestup: ${via(o)}` : " · bez přestupu"}</div></button>`).join("")}</div></div>`;
+  $("plan").querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => {
+    const i = +b.dataset.i; planned.selected = i; renderPlan();
+    run(planned.options[i].text, planned.options[i].date);
+  }));
+}
+
+async function run(optText, optDate) {
+  const fromOption = typeof optText === "string";
+  const text = fromOption ? optText : $("text").value.trim();
   if (!text) return;
+  if (!fromOption) { planned = null; renderPlan(); }
   $("status").textContent = "Vyhodnocuji…"; $("out").innerHTML = ""; $("chips").innerHTML = "";
   let q = "/api/itinerary?text=" + encodeURIComponent(text);
-  if ($("date").value) q += "&date=" + $("date").value;
+  const d = fromOption ? optDate : $("date").value;
+  if (d) q += "&date=" + d;
   try {
     const r = await fetch(q); const j = await r.json();
     if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
+    if (j.planned) {
+      const o0 = j.options[0], last = o0.legs[o0.legs.length - 1];
+      planned = {options: j.options, selected: j.selected, from: o0.legs[0].from, to: last.to, source: j.source};
+      renderPlan();
+    }
+    if (fromOption && planned) j.source = planned.source;
     const src = {idos: "IDOS", seznam: "Seznam Jízdní řády", mujvlak: "Můj vlak", pubtran: "Pubtran", mapy: "Mapy.com", google: "Google Maps"}[j.source];
     $("status").textContent = `Datum: ${j.date}` + (src ? ` · ${src}` : "") + (j.fetched_url ? " · načteno z odkazu" : "");
-    if (!$("date").value) $("date").value = j.date;
+    if (!$("date").value && !planned) $("date").value = j.date;
     $("chips").innerHTML = (j.legs || []).map(l => l.type === "train"
       ? `<span class="chip">${esc(l.category)} ${l.number}</span>`
       : `<span class="chip" style="opacity:.6">🚌 ${esc(l.text.split(/\s+/).slice(0, 2).join(" "))}</span>`).join(" → ");
@@ -138,7 +170,7 @@ async function run() {
     $("out").innerHTML = h;
   } catch (err) { $("status").innerHTML = `<span class="err">${esc(err.message)}</span>`; }
 }
-$("go").addEventListener("click", run);
+$("go").addEventListener("click", () => run());
 $("paste").addEventListener("click", async () => {
   try {
     const t = await navigator.clipboard.readText();
