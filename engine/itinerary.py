@@ -250,9 +250,53 @@ def _legs_from_chunks(chunks):
     return legs
 
 
+MAPY_RE = re.compile(r"\bmapy\.(?:com|cz)\b", re.I)
+GOOGLE_RE = re.compile(r"Google Maps|Mapy Google|Google Map[ys]|Google Карты|maps\.app\.goo\.gl|goo\.gl/maps|google\.[a-z.]+/maps", re.I)
+KM_RE = re.compile(r"(?<![\d,.])\d{1,4}(?:[,.]\d)?\s?km\b")
+# odkazy, ze kterých nic nevyčteme: stránka se skládá až v prohlížeči (JavaScript) a v adrese nejsou čísla vlaků
+LINK_ONLY_HOSTS = re.compile(r"https?://(?:[\w-]+\.)*(?:mapy\.(?:com|cz)|maps\.app\.goo\.gl|goo\.gl|google\.[a-z.]+/maps)", re.I)
+
+
+def _generic_legs(t):
+    """Obecný text: vlaky v pořadí výskytu (každý jen jednou), jiné druhy dopravy jako oddělovač."""
+    legs, pos, seen = [], [], set()
+    for m in TRAIN_RE.finditer(t):
+        pos.append((m.start(), "train", (m.group(1) or m.group(3), int(m.group(2) or m.group(4)))))
+    for m in OTHER_MODE_RE.finditer(t):
+        pos.append((m.start(), "other", m.group(0)))
+    for _, kind, val in sorted(pos):
+        if kind == "train":
+            if val[1] in seen or val[1] == 0:
+                continue
+            seen.add(val[1])
+            legs.append({"type": "train", "category": val[0], "number": val[1], "text": f"{val[0]} {val[1]}"})
+        elif not legs or legs[-1]["type"] != "other":
+            legs.append({"type": "other", "text": val})
+    while legs and legs[0]["type"] == "other":
+        legs.pop(0)
+    while legs and legs[-1]["type"] == "other":
+        legs.pop()
+    return legs
+
+
 def extract_legs(text, url=""):
     """Rozdělí spojení na úseky. Vrací (legs, text_pro_datum, zdroj)."""
     t = text or ""
+    if MAPY_RE.search(t[:300]) or MAPY_RE.search(url) or ("Seznam.cz, a.s." in t and KM_RE.search(t)):
+        # Mapy.com / Mapy.cz: „Ex7 / EC 332 … Umsteigen 8 min … R20 / R 674“; za délkou trasy („132,5 km“)
+        # už následují novinky s vlastními daty – ty se do data cesty nesmí započítat
+        first = TRAIN_RE.search(t)
+        if first:
+            km = KM_RE.search(t, first.end())
+            seg = t[:km.end()] if km else t
+            legs = _generic_legs(seg)
+            if legs:
+                return legs, seg, "mapy"
+    if GOOGLE_RE.search(t[:300]) or GOOGLE_RE.search(url):
+        # Google Maps: souhrn nahoře uvádí jen některé vlaky a v jiném pořadí – pořadí se dopočítá z jízdního řádu
+        legs = _generic_legs(t)
+        if legs:
+            return legs, t, "google"
     if "Jízdní řády Seznam" in t or "seznam.cz/jizdnirady" in url:
         seg = _cut(t, ["Předchozí spojení"], ["Následující spojení"])
         chunks = re.split(r"(?=(?<![\w])(?:Vlak|Autobus|Tramvaj|Trolejbus|Metro|Lanovka|Loď)\s)", seg)
@@ -272,24 +316,39 @@ def extract_legs(text, url=""):
         if len(legs) >= 2 or any(l["type"] == "other" for l in legs):
             return legs, t, "mujvlak" if "Můj vlak" in t else ("pubtran" if re.search(r"Pubtran", t, re.I) else "text")
     # obecný text: vlaky v pořadí, jiné druhy dopravy jako oddělovač
-    legs = []
-    pos = []
-    for m in TRAIN_RE.finditer(t):
-        pos.append((m.start(), "train", (m.group(1) or m.group(3), int(m.group(2) or m.group(4)))))
-    for m in OTHER_MODE_RE.finditer(t):
-        pos.append((m.start(), "other", m.group(0)))
-    seen = set()
-    for _, kind, val in sorted(pos):
-        if kind == "train":
-            if val[1] in seen:
-                continue
-            seen.add(val[1])
-            legs.append({"type": "train", "category": val[0], "number": val[1], "text": f"{val[0]} {val[1]}"})
-        elif not legs or legs[-1]["type"] != "other":
-            legs.append({"type": "other", "text": val})
-    while legs and legs[0]["type"] == "other":
-        legs.pop(0)
-    return legs, t, "text"
+    return _generic_legs(t), t, "text"
+
+
+def order_by_timetable(engine, legs, date, text=""):
+    """Seřadí vlaky podle jízdního řádu: A před B, když z A jde přestoupit na B, ale ne naopak.
+    Úseky jinou dopravou zůstávají jen tehdy, je-li pořadí vlaků beze změny (jinak nevíme, kam patří)."""
+    trains = [l for l in legs if l["type"] == "train"]
+    if len(trains) < 2:
+        return legs
+    cache = {}
+
+    def ok(a, b):
+        k = (a["number"], b["number"])
+        if k not in cache:
+            cache[k] = find_transfer(engine, a["number"], b["number"], date, text) is not None
+        return cache[k]
+
+    import functools
+
+    def cmp(a, b):
+        ab, ba = ok(a, b), ok(b, a)
+        return -1 if ab and not ba else (1 if ba and not ab else 0)
+
+    ordered = list(trains)
+    # vkládací řazení – porovnání nemusí být tranzitivní, proto ne sorted()
+    for i in range(1, len(ordered)):
+        j = i
+        while j > 0 and cmp(ordered[j - 1], ordered[j]) > 0:
+            ordered[j - 1], ordered[j] = ordered[j], ordered[j - 1]
+            j -= 1
+    if [l["number"] for l in ordered] == [l["number"] for l in trains]:
+        return legs
+    return ordered
 
 
 def analyze(engine, text, date=None, fetch=None):
@@ -297,9 +356,13 @@ def analyze(engine, text, date=None, fetch=None):
     out = {"input_text": (text or "")[:2000], "warnings": []}
     legs, date_text, source = extract_legs(text)
     trains = [l for l in legs if l["type"] == "train"]
+    link_only = None
     if len(trains) < 2 and fetch:
         for url in URL_RE.findall(text or ""):
             url = url.rstrip(").,")
+            if LINK_ONLY_HOSTS.match(url):
+                link_only = "Mapy.com" if MAPY_RE.search(url) else "Google Maps"
+                continue
             try:
                 page_text = html_to_text(fetch(url))
                 l2, d2, src2 = extract_legs(page_text, url)
@@ -316,6 +379,13 @@ def analyze(engine, text, date=None, fetch=None):
         if not explicit:
             out["warnings"].append("V textu nebylo datum – použit dnešek.")
     out["date"] = date.isoformat()
+    if source == "google":
+        legs = order_by_timetable(engine, legs, date, date_text)
+        trains = [l for l in legs if l["type"] == "train"]
+    if link_only and len(trains) < 2:
+        out["source"] = "mapy" if link_only == "Mapy.com" else "google"
+        out["link_only"] = True
+        out["warnings"] = [w for w in out["warnings"] if not w.startswith("V textu nebylo datum")]
     out["legs"] = [{"type": l["type"], **({"category": l["category"], "number": l["number"]} if l["type"] == "train" else {"text": l["text"][:60]})} for l in legs]
     out["trains"] = [{"category": l["category"], "number": l["number"]} for l in trains]
     transfers = []
@@ -344,8 +414,12 @@ def analyze(engine, text, date=None, fetch=None):
     out["transfers"] = transfers
     if not transfers:
         out["result"] = "no_transfer"
-        out["message"] = ("Spojení je bez přestupu mezi vlaky." if trains else
-                          "V textu ani v odkazu jsem nenašel čísla vlaků (např. „R 881“, „Os 2803“).")
+        if link_only and not trains:
+            out["message"] = (f"{link_only} při sdílení pošle jen odkaz na trasu a z něj čísla vlaků nevyčtu. "
+                              "Otevřete spojení, zkopírujte jeho text (nebo jen čísla vlaků, např. „EC 332, R 674“) a vložte ho sem.")
+        else:
+            out["message"] = ("Spojení je bez přestupu mezi vlaky." if trains else
+                              "V textu ani v odkazu jsem nenašel čísla vlaků (např. „R 881“, „Os 2803“).")
     else:
         out["result"] = "ok"
     return out

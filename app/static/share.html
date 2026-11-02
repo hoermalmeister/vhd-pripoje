@@ -106,7 +106,7 @@ async function run() {
   try {
     const r = await fetch(q); const j = await r.json();
     if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
-    const src = {idos: "IDOS", seznam: "Seznam Jízdní řády", mujvlak: "Můj vlak", pubtran: "Pubtran"}[j.source];
+    const src = {idos: "IDOS", seznam: "Seznam Jízdní řády", mujvlak: "Můj vlak", pubtran: "Pubtran", mapy: "Mapy.com", google: "Google Maps"}[j.source];
     $("status").textContent = `Datum: ${j.date}` + (src ? ` · ${src}` : "") + (j.fetched_url ? " · načteno z odkazu" : "");
     if (!$("date").value) $("date").value = j.date;
     $("chips").innerHTML = (j.legs || []).map(l => l.type === "train"
@@ -114,7 +114,7 @@ async function run() {
       : `<span class="chip" style="opacity:.6">🚌 ${esc(l.text.split(/\s+/).slice(0, 2).join(" "))}</span>`).join(" → ");
     let h = "";
     (j.warnings || []).forEach(w => h += `<div class="note w">${esc(w)}</div>`);
-    if (!j.transfers.length) h += `<div class="tr warn"><div class="big">Bez přestupu</div><div class="msg">${esc(j.message)}</div></div>`;
+    if (!j.transfers.length) h += `<div class="tr warn"><div class="big">${j.link_only ? "Jen odkaz – chybí čísla vlaků" : "Bez přestupu"}</div><div class="msg">${esc(j.message)}</div></div>`;
     for (const t of j.transfers) {
       const e = t.evaluation || {};
       const [cls, fn] = V[t.result] || ["warn", () => t.result];
