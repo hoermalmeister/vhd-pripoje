@@ -420,9 +420,21 @@ def _from_route_link(engine, urls, resolve, date, now=None):
             when = now - dt.timedelta(minutes=15)     # „odjezd teď“ – zahrň i spojení, které právě odjelo
         if date is not None and when.date() != date:
             when = dt.datetime.combine(date, when.time())
-        options, perr = plan(engine, route["points"][0], route["points"][-1], when, route["arrive_by"])
+        options, by = None, "timetable"
+        if route["source"] == "google":
+            from . import google_routes
+            gwhen = route["when"] if explicit else None
+            if date is not None and gwhen is None:
+                gwhen = when
+            options, gerr = google_routes.options(route["points"], gwhen, route["arrive_by"], now, parse_trains, CATS, option_text)
+            if options:
+                by = "google"
+            elif gerr:
+                err = gerr
         if not options:
-            err = perr
+            options, perr = plan(engine, route["points"][0], route["points"][-1], when, route["arrive_by"])
+        if not options:
+            err = perr if not err else err + " " + (perr or "")
             continue
         pick = 0
         if not explicit:
@@ -435,7 +447,7 @@ def _from_route_link(engine, urls, resolve, date, now=None):
         for o in options:
             o["text"] = option_text(o)
         return {"route": route, "long_url": long_url, "options": options, "selected": pick,
-                "time_from_link": explicit}, None
+                "time_from_link": explicit, "by": by, "warning": err}, None
     return None, err
 
 
@@ -457,7 +469,7 @@ def analyze(engine, text, date=None, fetch=None, resolve=None, now=None, rendere
         if options:
             opt = options[0]
             res = analyze(engine, opt["text"], date or dt.date.fromisoformat(opt["date"]))
-            res.update(input_text=out["input_text"], source="mapy", planned=True, rendered=True, options=options,
+            res.update(input_text=out["input_text"], source="mapy", planned=True, rendered=True, options_by="mapy", options=options,
                        selected=0, time_from_link=True, route_url=rendered.get("final_url") or rendered.get("url"))
             return res
         out["warnings"].append("Stránku Mapy.com se nepodařilo přečíst – spojení dohledávám v jízdním řádu."
@@ -468,11 +480,15 @@ def analyze(engine, text, date=None, fetch=None, resolve=None, now=None, rendere
             opt = found["options"][found["selected"]]
             res = analyze(engine, opt["text"], dt.date.fromisoformat(opt["date"]))
             res.update(input_text=out["input_text"], source="mapy" if link_only == "Mapy.com" else "google",
-                       planned=True, options=found["options"], selected=found["selected"],
-                       time_from_link=found["time_from_link"], route_url=found["long_url"])
-            res["warnings"] = ([] if found["time_from_link"] else
-                               [f"{link_only} posílá jen start a cíl trasy – spojení jsem dohledal v jízdním řádu. "
-                                "Pokud jedete jiným, vyberte ho v seznamu."]) + res["warnings"]
+                       planned=True, options=found["options"], selected=found["selected"], options_by=found["by"],
+                       rendered=found["by"] == "google", time_from_link=found["time_from_link"], route_url=found["long_url"])
+            pre = []
+            if found["by"] != "google" and not found["time_from_link"]:
+                pre.append(f"{link_only} posílá jen start a cíl trasy – spojení jsem dohledal v jízdním řádu. "
+                           "Pokud jedete jiným, vyberte ho v seznamu.")
+            if found.get("warning"):
+                pre.append(found["warning"])
+            res["warnings"] = pre + res["warnings"]
             return res
         if err:
             out["warnings"].append(err)
