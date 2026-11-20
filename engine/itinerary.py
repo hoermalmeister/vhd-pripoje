@@ -169,8 +169,11 @@ def train_run(engine, number, date):
                from trains t join service_dates s on s.service_id=t.service_id join stops p on p.tid=t.tid
                where t.number in (?, ?) and s.date=?""", (number, base_number(number), d)).fetchall()
         for st, arr, dep, seq, tid, smin, smax in rows:
-            a = arr + shift * 1440 if arr is not None and seq != smin else None
-            dd = dep + shift * 1440 if dep is not None and seq != smax else None
+            # GTFS uvádí oba časy i ve výchozí a konečné; platí jen tehdy, když vlak stojí (pobyt) –
+            # to jsou vlaky useknuté na hranici (např. EC 205 končí v datech v Břeclavi, ale jede dál do Vídně)
+            dwell = arr is not None and dep is not None and dep > arr
+            a = arr + shift * 1440 if arr is not None and (seq != smin or dwell) else None
+            dd = dep + shift * 1440 if dep is not None and (seq != smax or dwell) else None
             if shift == -1 and (dd if dd is not None else (a if a is not None else -1)) < 0:
                 continue
             prev = res.get(st, (None, None))
