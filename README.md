@@ -184,3 +184,7 @@ Podle článku 1 se na zastávkách přípoje nezajišťují. GTFS stanice a zas
 - **ostatní**: odbočka, nákladiště, vlečka.
 
 Typ se použije jen u míst, která nemají vlastní tabulku v pomůcce (tabulka má přednost – např. Brno-Židenice je na Wikipedii „zastávka a odbočka“, Krásný Jez a Protivec jsou dopravny D3, ale pomůcka pro ně tabulky má). Aktualizace: uložte stránku Wikipedie jako HTML a spusťte `python tools/build_station_types.py stranka.html data/station_types.json`.
+
+## Návštěvnost
+
+Server počítá návštěvnost sám (`app/stats.py`), bez cookies a bez ukládání IP adres: návštěvník se rozpozná jen v rámci dne / měsíce podle otisku s denně (měsíčně) měněným tajným klíčem; do historie se ukládají jen součty (zobrazení, návštěvy, unikátní lidé za měsíc, vyhodnocení podle zdroje, cizí volání API). Data jsou v `var/stats.json` (Volume), přehled v `/admin` → Návštěvnost (heslo `ADMIN_TOKEN`).

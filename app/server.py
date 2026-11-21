@@ -26,6 +26,7 @@ Endpointy (všechny GET, odpověď JSON, CORS povolen):
   /admin                              ruční aktualizace GTFS a pomůcky (POST /admin/action, heslo ADMIN_TOKEN)
 """
 import datetime as dt
+import hmac
 import json
 import os
 import shutil
@@ -46,6 +47,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 from engine.evaluate import Engine, _norm_name, hhmm  # noqa: E402
 from engine.itinerary import analyze, ics_to_text, parse_trains, URL_RE, MAPY_RE  # noqa: E402
+from app.stats import Stats  # noqa: E402
 from email.parser import BytesParser  # noqa: E402
 from email import policy  # noqa: E402
 
@@ -60,6 +62,7 @@ GTFS_PATH = os.environ.get("GTFS_PATH")
 REFRESH_HOURS = float(os.environ.get("REFRESH_HOURS", "84"))   # 2× týdně
 HANDBOOK_REFRESH_DAYS = float(os.environ.get("HANDBOOK_REFRESH_DAYS", "7"))
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
+STATS = Stats(os.path.join(VAR_DIR, "stats.json"))
 DEFAULTS = {
     "gtfs_url": os.environ.get("GTFS_URL", "https://motis.obehy.cz/get-feeds/cz-czptt-gtfs.zip"),
     "handbook_url": os.environ.get("HANDBOOK_URL",
@@ -430,6 +433,21 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _client(self):
+        ip = (self.headers.get("X-Forwarded-For") or "").split(",")[0].strip() or self.client_address[0]
+        return ip, self.headers.get("User-Agent", "")
+
+    def _internal(self):
+        """Dotaz z našich stránek (Referer ze stejné domény) – jinak jde o cizí využití API."""
+        ref = urllib.parse.urlparse(self.headers.get("Referer", "")).netloc
+        return bool(ref) and ref == (self.headers.get("Host") or "")
+
+    def _count(self, fn, *a):
+        try:
+            fn(*a)
+        except Exception:
+            traceback.print_exc()
+
     def do_OPTIONS(self):
         self.send_response(204)
         self.send_header("Access-Control-Allow-Origin", "*")
@@ -537,12 +555,16 @@ class Handler(BaseHTTPRequestHandler):
         q = {k: v[0] for k, v in urllib.parse.parse_qs(u.query).items()}
         try:
             if u.path in ("/", "/index.html"):
+                self._count(STATS.page_view, "hledani", *self._client())
                 with open(os.path.join(STATIC_DIR, "index.html"), "rb") as f:
                     return self._send(200, f.read(), "text/html; charset=utf-8")
             if u.path == "/admin":
                 with open(os.path.join(STATIC_DIR, "admin.html"), "rb") as f:
                     return self._send(200, f.read(), "text/html; charset=utf-8")
             if u.path == "/share":
+                self._count(STATS.page_view, "sdileni", *self._client())
+                if q.get("text") or q.get("url"):
+                    self._count(STATS.event, "shares")
                 with open(os.path.join(STATIC_DIR, "share.html"), "rb") as f:
                     return self._send(200, f.read(), "text/html; charset=utf-8")
             static = {"/manifest.webmanifest": "application/manifest+json", "/sw.js": "text/javascript; charset=utf-8",
@@ -550,6 +572,11 @@ class Handler(BaseHTTPRequestHandler):
             if u.path in static:
                 with open(os.path.join(STATIC_DIR, u.path.lstrip("/")), "rb") as f:
                     return self._send(200, f.read(), static[u.path])
+            if u.path == "/admin/stats":
+                tok = self.headers.get("X-Admin-Token", "")
+                if not ADMIN_TOKEN or not hmac.compare_digest(tok.encode(), ADMIN_TOKEN.encode()):
+                    return self._send(403, {"error": "Nesprávné heslo."})
+                return self._send(200, STATS.summary())
             if u.path == "/health":
                 return self._send(200, {"status": "ok", "ready": State.engine is not None, "data": State.status,
                                         "built_at": State.built_at, "error": State.error, "jobs": State.jobs,
@@ -563,6 +590,8 @@ class Handler(BaseHTTPRequestHandler):
             if State.engine is None:
                 return self._send(503, {"error": "Data jízdního řádu se připravují (stahuje se GTFS), zkuste to za minutu.",
                                         "data": State.status})
+            if u.path in ("/api/itinerary", "/api/connection", "/api/trains", "/api/station-table") and not self._internal():
+                self._count(STATS.api_call, *self._client())
             rendered = None
             if u.path == "/api/itinerary":
                 # stránku Mapy.com čteme v prohlížeči mimo zámek – trvá několik sekund a nesmí blokovat ostatní dotazy
@@ -583,7 +612,10 @@ class Handler(BaseHTTPRequestHandler):
                     if not text.strip():
                         return self._send(400, {"error": "Chybí parametr text nebo url."})
                     d = parse_date(q["date"]) if q.get("date") else None
-                    return self._send(200, analyze(State.engine, text, d, fetch=fetch_url, resolve=fetch_raw, rendered=rendered))
+                    res = analyze(State.engine, text, d, fetch=fetch_url, resolve=fetch_raw, rendered=rendered)
+                    if self._internal():
+                        self._count(STATS.event, "searches", res.get("source") or "text")
+                    return self._send(200, res)
                 if u.path == "/api/connection":
                     miss = [k for k in ("station", "arriving", "departing") if not q.get(k)]
                     if miss:
@@ -594,6 +626,8 @@ class Handler(BaseHTTPRequestHandler):
                         return self._send(400, {"error": "Čísla vlaků musí být čísla."})
                     res = State.engine.evaluate(q["station"], parse_date(q.get("date")), arr_no, dep_no)
                     res.pop("trace", None)
+                    if self._internal():
+                        self._count(STATS.event, "manual")
                     return self._send(200, res)
             return self._send(404, {"error": "Neznámý endpoint"})
         except ValueError as e:
@@ -607,6 +641,12 @@ def main():
     port = int(os.environ.get("PORT", "8000"))
     threading.Thread(target=gtfs_worker, daemon=True).start()
     threading.Thread(target=handbook_worker, daemon=True).start()
+    import signal
+
+    def _stop(signum, frame):
+        STATS.flush()
+        raise SystemExit(0)
+    signal.signal(signal.SIGTERM, _stop)
     srv = ThreadingHTTPServer(("0.0.0.0", port), Handler)
     log(f"Server běží na portu {port}")
     srv.serve_forever()

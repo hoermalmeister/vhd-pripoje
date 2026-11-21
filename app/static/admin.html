@@ -23,6 +23,16 @@
   @media (max-width:620px) { dl { grid-template-columns:1fr; } }
   .msg { margin-top:8px; font-size:.92rem; } .ok { color:var(--ok); } .err { color:var(--no); }
   .hint { font-size:.85rem; color:var(--muted); }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin:10px 0; }
+  .tile { border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+  .tile b { display:block; font-size:1.5rem; font-variant-numeric:tabular-nums; }
+  .tile span { font-size:.8rem; color:var(--muted); }
+  .tbl { overflow-x:auto; margin-top:10px; }
+  table { border-collapse:collapse; width:100%; font-size:.88rem; font-variant-numeric:tabular-nums; }
+  th, td { padding:5px 8px; border-bottom:1px solid var(--line); text-align:right; white-space:nowrap; }
+  th:first-child, td:first-child { text-align:left; }
+  th { color:var(--muted); font-weight:600; font-size:.78rem; }
+  h3 { margin:16px 0 0; font-size:.95rem; }
 </style>
 </head>
 <body>
@@ -37,6 +47,13 @@
     <label for="token">Heslo (ADMIN_TOKEN)</label>
     <input id="token" type="password" autocomplete="current-password">
     <div class="hint">Heslo se nastavuje na Railway v proměnných prostředí služby (Variables → ADMIN_TOKEN).</div>
+  </div>
+  <div class="card">
+    <h2>Návštěvnost</h2>
+    <div class="hint">Bez cookies a bez ukládání IP adres – návštěvník se pozná jen v rámci jednoho dne (měsíce) podle anonymního otisku. Roboti se nepočítají.</div>
+    <button id="statsBtn">Načíst statistiky</button>
+    <div class="msg" id="msg-stats"></div>
+    <div id="stats"></div>
   </div>
   <div class="card">
     <h2>Pomůcka „Přípoje mezi vlaky“ (Excel)</h2>
@@ -86,6 +103,46 @@ async function refresh() {
   } catch (e) { $("state").innerHTML = `<dt class="err">Stav nelze načíst</dt><dd></dd>`; }
 }
 refresh(); setInterval(refresh, 5000);
+
+const N = n => (n || 0).toLocaleString("cs-CZ");
+const SRC = {idos: "IDOS", seznam: "Seznam", mujvlak: "Můj vlak", pubtran: "Pubtran", mapy: "Mapy.com", google: "Google Maps", text: "vložený text"};
+async function loadStats() {
+  const out = $("msg-stats");
+  try { sessionStorage.setItem("adm", $("token").value); } catch (e) {}
+  out.textContent = "Načítám…"; out.className = "msg";
+  try {
+    const r = await fetch("/admin/stats", {headers: {"X-Admin-Token": $("token").value}});
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || r.status);
+    out.textContent = j.since ? `Počítáno od ${j.since}.` : "Zatím žádná data."; out.className = "msg";
+    const tile = (n, label) => `<div class="tile"><b>${N(n)}</b><span>${label}</span></div>`;
+    // „návštěvy“ = součet denních unikátních návštěvníků; měsíční unikátní = každý člověk jednou za měsíc
+    const visitsByMonth = {};
+    for (const [d, v] of Object.entries(j.days)) visitsByMonth[d.slice(0, 7)] = (visitsByMonth[d.slice(0, 7)] || 0) + (v.visitors || 0);
+    const srcAll = Object.entries(j.total_sources).sort((a, b) => b[1] - a[1]);
+    $("stats").innerHTML = `
+      <div class="tiles">
+        ${tile(j.today.visitors, "návštěvníků dnes")}
+        ${tile(j.last7.visitors, "návštěv za 7 dní")}
+        ${tile(j.last30.visitors, "návštěv za 30 dní")}
+        ${tile(j.total.visitors, "návštěv celkem")}
+        ${tile(j.total.views, "zobrazení stránek celkem")}
+        ${tile(j.total.searches + j.total.manual, "vyhodnocení celkem")}
+      </div>
+      <div class="hint">Návštěva = jeden člověk v jednom dni. Kdo přijde třikrát za týden, jsou to tři návštěvy, ale jeden unikátní návštěvník měsíce.</div>
+      <h3>Po měsících</h3>
+      <div class="tbl"><table><tr><th>Měsíc</th><th>Unikátní lidé</th><th>Návštěvy</th><th>Zobrazení</th><th>Ze sdílení</th><th>Vyhodnocení spojení</th><th>Ruční dotazy</th><th>API (cizí)</th></tr>
+      ${Object.entries(j.months).map(([m, v]) => `<tr><td>${m}</td><td>${N(v.visitors)}</td><td>${N(visitsByMonth[m])}</td><td>${N(v.views)}</td><td>${N(v.shares)}</td><td>${N(v.searches)}</td><td>${N(v.manual)}</td><td>${N(v.api)}</td></tr>`).join("")}
+      <tr><td><b>Celkem</b></td><td>–</td><td><b>${N(j.total.visitors)}</b></td><td><b>${N(j.total.views)}</b></td><td><b>${N(j.total.shares)}</b></td><td><b>${N(j.total.searches)}</b></td><td><b>${N(j.total.manual)}</b></td><td><b>${N(j.total.api)}</b></td></tr></table></div>
+      <h3>Odkud spojení přišlo (celkem)</h3>
+      <div class="tbl"><table><tr><th>Zdroj</th><th>Vyhodnocení</th></tr>${srcAll.map(([k, n]) => `<tr><td>${esc(SRC[k] || k)}</td><td>${N(n)}</td></tr>`).join("") || "<tr><td>–</td><td></td></tr>"}</table></div>
+      <h3>Po dnech</h3>
+      <div class="tbl"><table><tr><th>Den</th><th>Návštěvníci</th><th>Zobrazení</th><th>Ze sdílení</th><th>Vyhodnocení</th><th>Ruční</th><th>API</th><th>Roboti</th></tr>
+      ${Object.entries(j.days).slice(0, 90).map(([d, v]) => `<tr><td>${d}</td><td>${N(v.visitors)}</td><td>${N(v.views)}</td><td>${N(v.shares)}</td><td>${N(v.searches)}</td><td>${N(v.manual)}</td><td>${N(v.api)}</td><td>${N(v.bots)}</td></tr>`).join("")}</table></div>`;
+  } catch (e) { out.textContent = e.message; out.className = "msg err"; }
+}
+$("statsBtn").addEventListener("click", loadStats);
+if ($("token").value) loadStats();
 
 document.querySelectorAll("button[data-action]").forEach(b => b.addEventListener("click", async () => {
   const action = b.dataset.action, out = $("msg-" + action);
