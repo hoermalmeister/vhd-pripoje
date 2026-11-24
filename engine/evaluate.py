@@ -50,10 +50,13 @@ def czech_holidays(y):
 def number_tiers(n):
     """Čísla, pod kterými vlak hledat: nejdřív přesně (a kmenové), pak výlukové varianty 1xxxxx–3xxxxx
     (např. R 977 jede při výluce v GTFS jako 100977)."""
-    tiers = [{n, base_number(n)}]
+    b = base_number(n)
+    if b != n:
+        # zadáno výlukové číslo (100977): nejdřív přesně, pak běžné číslo (977), pak jiné výlukové varianty
+        return [{n}, {b}, {k * 100000 + b for k in (1, 2, 3)} - {n}]
     if n < 100000:
-        tiers.append({k * 100000 + n for k in (1, 2, 3)})
-    return tiers
+        return [{n}, {k * 100000 + n for k in (1, 2, 3)}]
+    return [{n}]
 
 
 def base_number(n):
@@ -418,8 +421,13 @@ class Engine:
             out[key] = {"label": tr.label(self.names), "number": tr.number, "category": tr.category, "druh": tr.druh,
                         "operator": tr.operator, "line": tr.line, "arrival": hhmm(tr.times[tr.idx][0]), "departure": hhmm(tr.times[tr.idx][1]),
                         "from": self.names.get(tr.origin), "to": self.names.get(tr.terminus), "found_in_timetable": True}
-            if tr.number != int(no) and base_number(tr.number) == int(no):
-                out["warnings"].append(f"Vlak {no} jede tento den ve výlukovém jízdním řádu pod číslem {tr.number}.")
+            if tr.number != int(no):
+                if base_number(tr.number) == int(no):
+                    out["warnings"].append(f"Vlak {no} jede tento den ve výlukovém jízdním řádu pod číslem {tr.number}.")
+                elif tr.number == base_number(int(no)):
+                    out["warnings"].append(f"Vlak {no} tento den nejede pod výlukovým číslem – použit vlak {tr.number} podle běžného jízdního řádu.")
+                else:
+                    out["warnings"].append(f"Vlak {no} jede tento den pod číslem {tr.number}.")
         # 1) výslovný řádek tabulky pro obě čísla vlaků platí vždy – bez ohledu na jízdní řád
         if st:
             exp = self._explicit_rule(st, int(waiting_no), int(connecting_no), sid, date, out["trace"])
