@@ -159,15 +159,25 @@ def html_to_text(s):
 
 
 def train_run(engine, number, date):
-    """Všechna zastavení vlaku v daný den: {station_id: (arr, dep)} v minutách vůči půlnoci 'date'."""
+    """Všechna zastavení vlaku v daný den: {station_id: (arr, dep)} v minutách vůči půlnoci 'date'.
+    Když vlak pod svým číslem nejede, zkusí výlukové varianty (např. 100977 za 977)."""
+    from .evaluate import number_tiers
+    for nums in number_tiers(number):
+        res = _train_run(engine, sorted(nums), date)
+        if res:
+            return res
+    return {}
+
+
+def _train_run(engine, nums, date):
     res = {}
     for shift in (0, -1):
         d = int((date + dt.timedelta(days=shift)).strftime("%Y%m%d"))
         rows = engine.db.execute(
-            """select p.station_id, p.arr, p.dep, p.seq, t.tid,
+            f"""select p.station_id, p.arr, p.dep, p.seq, t.tid,
                       (select min(seq) from stops where tid=t.tid), (select max(seq) from stops where tid=t.tid)
                from trains t join service_dates s on s.service_id=t.service_id join stops p on p.tid=t.tid
-               where t.number in (?, ?) and s.date=?""", (number, base_number(number), d)).fetchall()
+               where t.number in ({','.join('?' * len(nums))}) and s.date=?""", (*nums, d)).fetchall()
         for st, arr, dep, seq, tid, smin, smax in rows:
             # GTFS uvádí oba časy i ve výchozí a konečné; platí jen tehdy, když vlak stojí (pobyt) –
             # to jsou vlaky useknuté na hranici (např. EC 205 končí v datech v Břeclavi, ale jede dál do Vídně)

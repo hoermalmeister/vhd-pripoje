@@ -138,6 +138,7 @@ async function run(optText, optDate) {
       renderPlan();
     }
     if (fromOption && planned) j.source = planned.source;
+    const repPayload = () => ({page: "share", input: {text, date: d || "", original_text: $("text").value.trim()}, response: j});
     const src = {idos: "IDOS", seznam: "Seznam Jízdní řády", mujvlak: "Můj vlak", pubtran: "Pubtran", mapy: "Mapy.com", google: "Google Maps"}[j.source];
     $("status").textContent = `Datum: ${j.date}` + (src ? ` · ${src}` : "") + (j.fetched_url ? " · načteno z odkazu" : "");
     if (!$("date").value && !planned) $("date").value = j.date;
@@ -146,7 +147,7 @@ async function run(optText, optDate) {
       : `<span class="chip" style="opacity:.6">🚌 ${esc(l.text.split(/\s+/).slice(0, 2).join(" "))}</span>`).join(" → ");
     let h = "";
     (j.warnings || []).forEach(w => h += `<div class="note w">${esc(w)}</div>`);
-    if (!j.transfers.length) h += `<div class="tr warn"><div class="big">${j.link_only ? "Jen odkaz – chybí čísla vlaků" : "Bez přestupu"}</div><div class="msg">${esc(j.message)}</div></div>`;
+    if (!j.transfers.length) h += `<div class="tr warn"><div class="big">${j.link_only ? "Jen odkaz – chybí čísla vlaků" : "Bez přestupu"}</div><div class="msg">${esc(j.message)}</div>${window.Report ? Report.html(repPayload()) : ""}</div>`;
     for (const t of j.transfers) {
       const e = t.evaluation || {};
       const [cls, fn] = V[t.result] || ["warn", () => t.result];
@@ -165,10 +166,14 @@ async function run(optText, optDate) {
       if (e.matched_rule) notes.unshift(["", `Řádek tabulky (${e.matched_rule.section}): ${e.matched_rule.waiting_train} ← ${e.matched_rule.connecting_train} = ${e.matched_rule.wait_raw}`]);
       if (e.part_b_rule) notes.unshift(["", `Pravidlo stanice: ${e.part_b_rule.text}`]);
       if (notes.length) h += `<details><summary>Podrobnosti (${notes.length})</summary>${notes.map(([c, x]) => `<div class="note ${c}">${esc(x)}</div>`).join("")}</details>`;
+      if (cls === "warn" && window.Report) h += Report.html(Object.assign(repPayload(), {transfer: `${t.from_train} → ${t.to_train}`}));
       h += `</div>`;
     }
     $("out").innerHTML = h;
-  } catch (err) { $("status").innerHTML = `<span class="err">${esc(err.message)}</span>`; }
+  } catch (err) {
+    $("status").innerHTML = `<span class="err">${esc(err.message)}</span>`;
+    if (window.Report) $("out").innerHTML = Report.html({page: "share", input: {text, date: d || ""}, response: {error: err.message}});
+  }
 }
 $("go").addEventListener("click", () => run());
 $("paste").addEventListener("click", async () => {
@@ -180,5 +185,6 @@ $("paste").addEventListener("click", async () => {
 });
 if (joined) run();
 </script>
+<script src="/report.js"></script>
 </body>
 </html>

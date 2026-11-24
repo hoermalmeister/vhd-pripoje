@@ -182,12 +182,16 @@ $("go").addEventListener("click", async () => {
     (si.notes || []).forEach(t => h += `<div class="note"><b>Pokyn stanice</b>${esc(t)}</div>`);
     (si.part_b_info || []).forEach(t => h += `<div class="note"><b>Část B</b>${esc(t)}</div>`);
     (si.part_a || []).forEach(t => h += `<div class="note"><b>Přestupní doba</b>${esc(t)}</div>`);
-    h += `</div></div>`;
+    h += `</div>`;
+    if (cls === "warn" && window.Report) h += Report.html({page: "manual", input: {station: st, date: d, arriving: a, departing: b}, response: r});
+    h += `</div>`;
     $("result").innerHTML = h;
   } catch (e) {
     $("status").innerHTML = `<span class="err">${esc(e.message)}</span>`;
+    if (window.Report) $("result").innerHTML = `<div class="card">${Report.html({page: "manual", input: {station: st, date: d, arriving: a, departing: b}, response: {error: e.message}})}</div>`;
   } finally { $("go").disabled = false; }
 });
 </script>
+<script src="/report.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@ Proměnné prostředí:
   HANDBOOK_URL    odkaz na Excel pomůcky „Přípoje mezi vlaky osobní dopravy“ (výchozí JŘ 2026)
   HANDBOOK_REFRESH_DAYS  jak často kontrolovat novou verzi Excelu, výchozí 7 (přepočítá se jen při změně)
   ADMIN_TOKEN     heslo pro ruční aktualizaci na /admin (bez něj je administrace vypnutá)
+  REPORT_WEBHOOK_URL  kam poslat upozornění na nahlášenou chybu (Discord webhook, ntfy.sh téma apod.; nepovinné)
 
 Endpointy (všechny GET, odpověď JSON, CORS povolen):
   /health                         stav služby (ready = databáze vlaků je připravena)
@@ -27,6 +28,7 @@ Endpointy (všechny GET, odpověď JSON, CORS povolen):
 """
 import datetime as dt
 import hmac
+import secrets
 import json
 import os
 import shutil
@@ -45,8 +47,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
-from engine.evaluate import Engine, _norm_name, hhmm  # noqa: E402
-from engine.itinerary import analyze, ics_to_text, parse_trains, URL_RE, MAPY_RE  # noqa: E402
+from engine.evaluate import Engine, _norm_name, hhmm, base_number, number_tiers  # noqa: E402
+from engine.itinerary import analyze, ics_to_text, parse_trains, prague_now, URL_RE, MAPY_RE  # noqa: E402
 from app.stats import Stats  # noqa: E402
 from email.parser import BytesParser  # noqa: E402
 from email import policy  # noqa: E402
@@ -409,6 +411,135 @@ def render_route(text):
         RENDER_SEM.release()
 
 
+REPORTS_FILE = os.path.join(VAR_DIR, "reports.jsonl")
+REPORTS_DONE = os.path.join(VAR_DIR, "reports_done.json")
+_REPORT_LOCK = threading.Lock()
+_REPORT_RATE = {}
+
+
+def debug_trains(numbers, date):
+    """Podklady k nahlášené chybě: co o vlacích ví náš jízdní řád (jízdy, dny, první/poslední stanice)."""
+    eng = State.engine
+    if eng is None:
+        return {}
+    out = {}
+    with State.lock:
+        for n in sorted(set(numbers))[:6]:
+            cand = sorted(set().union(*number_tiers(n)))
+            rows = eng.db.execute(
+                f"select tid, number, category, operator, part, service_id, headsign, bus from trains where number in ({','.join('?' * len(cand))})",
+                cand).fetchall()
+            trips = []
+            for tid, num, cat, op, part, sid, hs, bus in rows[:40]:
+                days = [r[0] for r in eng.db.execute(
+                    "select date from service_dates where service_id=? and date between ? and ?",
+                    (sid, int((date - dt.timedelta(days=1)).strftime("%Y%m%d")), int((date + dt.timedelta(days=1)).strftime("%Y%m%d"))))]
+                st = eng.db.execute("select station_id, arr, dep from stops where tid=? order by seq", (tid,)).fetchall()
+                trips.append({"number": num, "cat": cat, "op": op, "part": part, "bus": bool(bus), "headsign": hs,
+                              "runs_around_date": days, "stops": len(st),
+                              "first": [eng.names.get(st[0][0], st[0][0]), st[0][1], st[0][2]] if st else None,
+                              "last": [eng.names.get(st[-1][0], st[-1][0]), st[-1][1], st[-1][2]] if st else None})
+            similar = [r[0] for r in eng.db.execute(
+                "select distinct number from trains where cast(number as text) like ? limit 10", (f"%{n}%",))]
+            out[str(n)] = {"trips_total": len(rows), "trips": trips, "similar_numbers": similar}
+    return out
+
+
+def notify_report(rep):
+    """Upozornění na nové hlášení: REPORT_WEBHOOK_URL (Discord webhook, ntfy.sh/… nebo jiný POST)."""
+    url = os.environ.get("REPORT_WEBHOOK_URL", "").strip()
+    if not url:
+        return
+    inp = rep.get("input") or {}
+    resp = rep.get("response") or {}
+    lines = [f"Nahlášená chyba #{rep['id']} ({rep.get('page')})"]
+    if rep.get("note"):
+        lines.append(f"Poznámka: {rep['note']}")
+    lines.append("Zadání: " + (inp.get("text") or " ".join(f"{k}={v}" for k, v in inp.items()))[:600])
+    msgs = [t.get("message") for t in resp.get("transfers", []) if t.get("message")] or [resp.get("message")]
+    lines.append("Odpověď: " + " | ".join(m for m in msgs if m)[:800])
+    text = "\n".join(lines)
+    try:
+        if "discord.com/api/webhooks" in url or "discordapp.com/api/webhooks" in url:
+            data, ctype = json.dumps({"content": text[:1900]}).encode(), "application/json"
+        else:
+            data, ctype = text.encode("utf-8"), "text/plain; charset=utf-8"
+        req = urllib.request.Request(url, data=data, method="POST",
+                                     headers={"Content-Type": ctype, "Title": "Pripoje: nahlasena chyba", "User-Agent": "vhd-pripoje"})
+        urllib.request.urlopen(req, timeout=8).close()
+    except Exception as e:
+        log(f"webhook hlášení selhal: {type(e).__name__}: {e}")
+
+
+def save_report(body, ip):
+    import hashlib
+    key = hashlib.sha256(ip.encode()).hexdigest()[:12]
+    now = time.time()
+    hits = [t for t in _REPORT_RATE.get(key, []) if now - t < 3600]
+    if len(hits) >= 20:
+        raise ValueError("Příliš mnoho hlášení, zkuste to později.")
+    _REPORT_RATE[key] = hits + [now]
+    resp = body.get("response") or {}
+    inp = body.get("input") or {}
+    nums = []
+    for l in resp.get("legs", []) or []:
+        if isinstance(l, dict) and isinstance(l.get("number"), int):
+            nums.append(l["number"])
+    for k in ("arriving", "departing"):
+        try:
+            nums.append(int(str(inp.get(k, "")).strip()))
+        except ValueError:
+            pass
+    for k in ("connecting_train", "waiting_train"):
+        if isinstance((resp.get(k) or {}).get("number"), int):
+            nums.append(resp[k]["number"])
+    try:
+        d = dt.date.fromisoformat(str(resp.get("date") or inp.get("date") or (resp.get("input") or {}).get("date")))
+    except ValueError:
+        d = dt.date.today()
+    rep = {"id": f"{int(now)}-{secrets.token_hex(2)}", "time": prague_now().isoformat(timespec="seconds"),
+           "page": str(body.get("page", ""))[:20], "note": str(body.get("note", ""))[:1000],
+           "input": inp, "response": resp, "debug_trains": debug_trains(nums, d),
+           "version": os.environ.get("RAILWAY_GIT_COMMIT_SHA", "")[:7], "timetable_built_at": State.built_at}
+    with _REPORT_LOCK:
+        os.makedirs(VAR_DIR, exist_ok=True)
+        with open(REPORTS_FILE, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rep, ensure_ascii=False) + "\n")
+    threading.Thread(target=notify_report, args=(rep,), daemon=True).start()
+    return rep["id"]
+
+
+def load_reports():
+    done = set()
+    try:
+        with open(REPORTS_DONE, encoding="utf-8") as f:
+            done = set(json.load(f))
+    except (OSError, ValueError):
+        pass
+    out = []
+    try:
+        with open(REPORTS_FILE, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    r = json.loads(line)
+                except ValueError:
+                    continue
+                r["done"] = r["id"] in done
+                out.append(r)
+    except OSError:
+        pass
+    return list(reversed(out))
+
+
+def mark_report_done(rid, done=True):
+    with _REPORT_LOCK:
+        ids = {r["id"]: r["done"] for r in load_reports()}
+        cur = {k for k, v in ids.items() if v}
+        (cur.add if done else cur.discard)(rid)
+        with open(REPORTS_DONE, "w", encoding="utf-8") as f:
+            json.dump(sorted(cur), f)
+
+
 def api_info():
     eng = State.engine
     return {"handbook": eng.index.get("source", eng.rules["document"]), "stations_in_handbook": len(eng.index["stations"]),
@@ -516,6 +647,26 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e:
                 traceback.print_exc()
                 return self._send(500, {"error": f"{type(e).__name__}: {e}"})
+        if u.path == "/api/report":
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+                if length > 600_000:
+                    return self._send(413, {"error": "Hlášení je příliš velké."})
+                body = json.loads(self.rfile.read(length).decode("utf-8") or "{}")
+                rid = save_report(body, self._client()[0])
+                return self._send(200, {"ok": True, "id": rid})
+            except ValueError as e:
+                return self._send(400, {"error": str(e)})
+            except Exception as e:
+                traceback.print_exc()
+                return self._send(500, {"error": f"{type(e).__name__}: {e}"})
+        if u.path == "/admin/reports":
+            tok = self.headers.get("X-Admin-Token", "")
+            if not ADMIN_TOKEN or not hmac.compare_digest(tok.encode(), ADMIN_TOKEN.encode()):
+                return self._send(403, {"error": "Nesprávné heslo."})
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)).decode("utf-8") or "{}")
+            mark_report_done(str(body.get("id", "")), bool(body.get("done", True)))
+            return self._send(200, {"ok": True})
         if u.path != "/share":
             return self._send(404, {"error": "Nenalezeno"})
         try:
@@ -567,11 +718,16 @@ class Handler(BaseHTTPRequestHandler):
                     self._count(STATS.event, "shares")
                 with open(os.path.join(STATIC_DIR, "share.html"), "rb") as f:
                     return self._send(200, f.read(), "text/html; charset=utf-8")
-            static = {"/manifest.webmanifest": "application/manifest+json", "/sw.js": "text/javascript; charset=utf-8",
+            static = {"/manifest.webmanifest": "application/manifest+json", "/sw.js": "text/javascript; charset=utf-8", "/report.js": "text/javascript; charset=utf-8",
                       "/icon-192.png": "image/png", "/icon-512.png": "image/png", "/icon-maskable-512.png": "image/png"}
             if u.path in static:
                 with open(os.path.join(STATIC_DIR, u.path.lstrip("/")), "rb") as f:
                     return self._send(200, f.read(), static[u.path])
+            if u.path == "/admin/reports":
+                tok = self.headers.get("X-Admin-Token", "")
+                if not ADMIN_TOKEN or not hmac.compare_digest(tok.encode(), ADMIN_TOKEN.encode()):
+                    return self._send(403, {"error": "Nesprávné heslo."})
+                return self._send(200, {"reports": load_reports()})
             if u.path == "/admin/stats":
                 tok = self.headers.get("X-Admin-Token", "")
                 if not ADMIN_TOKEN or not hmac.compare_digest(tok.encode(), ADMIN_TOKEN.encode()):

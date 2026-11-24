@@ -188,3 +188,7 @@ Typ se použije jen u míst, která nemají vlastní tabulku v pomůcce (tabulka
 ## Návštěvnost
 
 Server počítá návštěvnost sám (`app/stats.py`), bez cookies a bez ukládání IP adres: návštěvník se rozpozná jen v rámci dne / měsíce podle otisku s denně (měsíčně) měněným tajným klíčem; do historie se ukládají jen součty (zobrazení, návštěvy, unikátní lidé za měsíc, vyhodnocení podle zdroje, cizí volání API). Data jsou v `var/stats.json` (Volume), přehled v `/admin` → Návštěvnost (heslo `ADMIN_TOKEN`).
+
+## Nahlášené chyby
+
+Pod každým nejistým (žlutým) výsledkem a pod chybou je tlačítko **Nahlásit chybu**. Hlášení obsahuje zadání, odpověď aplikace, volitelnou poznámku a podklady z jízdního řádu (jaké jízdy vlaků v datech jsou, včetně výlukových čísel). Ukládá se do `var/reports.jsonl`, přehled je v `/admin` → Nahlášené chyby. Upozornění na nové hlášení lze posílat na webhook v proměnné `REPORT_WEBHOOK_URL` (Discord webhook nebo např. téma na ntfy.sh).

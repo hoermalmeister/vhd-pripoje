@@ -47,6 +47,15 @@ def czech_holidays(y):
     return {d.isoformat() for d in days}
 
 
+def number_tiers(n):
+    """Čísla, pod kterými vlak hledat: nejdřív přesně (a kmenové), pak výlukové varianty 1xxxxx–3xxxxx
+    (např. R 977 jede při výluce v GTFS jako 100977)."""
+    tiers = [{n, base_number(n)}]
+    if n < 100000:
+        tiers.append({k * 100000 + n for k in (1, 2, 3)})
+    return tiers
+
+
 def base_number(n):
     """Šestimístná čísla odvozená od kmenového (1xxxxx, 2xxxxx, 3xxxxx) -> kmenové číslo."""
     if n >= 100000 and str(n)[0] in "123":
@@ -178,8 +187,15 @@ class Engine:
 
     # ------------------------------------------------------------ vlaky z GTFS
     def train_at(self, number, station_id, date):
-        """Najde vlak číslo 'number' jedoucí dne 'date' přes stanici. Zohlední i vlaky z předchozího dne po půlnoci."""
-        nums = {number, base_number(number)}
+        """Najde vlak číslo 'number' jedoucí dne 'date' přes stanici – i pod výlukovým číslem (100977 za 977)."""
+        for nums in number_tiers(number):
+            tr = self._train_at(nums, station_id, date)
+            if tr is not None:
+                return tr
+        return None
+
+    def _train_at(self, nums, station_id, date):
+        """Vlak s některým z čísel 'nums' jedoucí dne 'date' přes stanici. Zohlední i vlaky z předchozího dne po půlnoci."""
         for shift in (0, -1):
             day = date + dt.timedelta(days=shift)
             dint = int(day.strftime("%Y%m%d"))
@@ -402,6 +418,8 @@ class Engine:
             out[key] = {"label": tr.label(self.names), "number": tr.number, "category": tr.category, "druh": tr.druh,
                         "operator": tr.operator, "line": tr.line, "arrival": hhmm(tr.times[tr.idx][0]), "departure": hhmm(tr.times[tr.idx][1]),
                         "from": self.names.get(tr.origin), "to": self.names.get(tr.terminus), "found_in_timetable": True}
+            if tr.number != int(no) and base_number(tr.number) == int(no):
+                out["warnings"].append(f"Vlak {no} jede tento den ve výlukovém jízdním řádu pod číslem {tr.number}.")
         # 1) výslovný řádek tabulky pro obě čísla vlaků platí vždy – bez ohledu na jízdní řád
         if st:
             exp = self._explicit_rule(st, int(waiting_no), int(connecting_no), sid, date, out["trace"])

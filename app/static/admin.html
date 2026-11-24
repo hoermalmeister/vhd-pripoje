@@ -33,6 +33,15 @@
   th:first-child, td:first-child { text-align:left; }
   th { color:var(--muted); font-weight:600; font-size:.78rem; }
   h3 { margin:16px 0 0; font-size:.95rem; }
+  .rep { border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:10px; }
+  .rep.done { opacity:.55; }
+  .rep .top { display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; font-size:.85rem; color:var(--muted); }
+  .rep .inp { white-space:pre-wrap; font-size:.9rem; margin:6px 0; word-break:break-word; }
+  .rep .ans { font-size:.9rem; color:var(--no); margin:4px 0; }
+  .rep .note { font-size:.9rem; background:var(--bg); border-radius:6px; padding:6px 8px; margin:4px 0; }
+  .rep pre { max-height:300px; overflow:auto; font-size:.75rem; background:var(--bg); padding:8px; border-radius:6px; }
+  .rep button { margin-top:6px; padding:6px 12px; font-size:.85rem; }
+  .rep .sec { background:transparent; color:var(--accent); border:1px solid var(--accent); }
 </style>
 </head>
 <body>
@@ -47,6 +56,14 @@
     <label for="token">Heslo (ADMIN_TOKEN)</label>
     <input id="token" type="password" autocomplete="current-password">
     <div class="hint">Heslo se nastavuje na Railway v proměnných prostředí služby (Variables → ADMIN_TOKEN).</div>
+  </div>
+  <div class="card">
+    <h2>Nahlášené chyby</h2>
+    <div class="hint">Hlášení z tlačítka „Nahlásit chybu“: zadání, odpověď aplikace a co o vlacích ví jízdní řád. „Kopírovat“ zkopíruje celé hlášení, např. pro vložení do chatu s Claudem.</div>
+    <button id="repBtn">Načíst hlášení</button>
+    <label style="display:inline-flex;gap:6px;align-items:center;text-transform:none;letter-spacing:0;margin-left:10px"><input type="checkbox" id="repAll" style="width:auto"> i vyřešená</label>
+    <div class="msg" id="msg-rep"></div>
+    <div id="reps"></div>
   </div>
   <div class="card">
     <h2>Návštěvnost</h2>
@@ -142,6 +159,51 @@ async function loadStats() {
   } catch (e) { out.textContent = e.message; out.className = "msg err"; }
 }
 $("statsBtn").addEventListener("click", loadStats);
+
+let REPS = [];
+async function loadReports() {
+  const out = $("msg-rep");
+  try { sessionStorage.setItem("adm", $("token").value); } catch (e) {}
+  out.textContent = "Načítám…"; out.className = "msg";
+  try {
+    const r = await fetch("/admin/reports", {headers: {"X-Admin-Token": $("token").value}});
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || r.status);
+    REPS = j.reports;
+    const open = REPS.filter(x => !x.done).length;
+    out.textContent = `${REPS.length} hlášení, nevyřešených ${open}.`;
+    const show = REPS.filter(x => $("repAll").checked || !x.done);
+    $("reps").innerHTML = show.map(x => {
+      const inp = x.input || {}, resp = x.response || {};
+      const inText = inp.text || inp.original_text || [inp.station, inp.arriving && `${inp.arriving} → ${inp.departing}`, inp.date].filter(Boolean).join(" · ");
+      const msgs = (resp.transfers || []).filter(t => !x.transfer || `${t.from_train} → ${t.to_train}` === x.transfer).map(t => `${t.from_train} → ${t.to_train}: ${t.message}`);
+      if (!msgs.length) msgs.push(resp.message || resp.error || "");
+      return `<div class="rep${x.done ? " done" : ""}" data-id="${esc(x.id)}">
+        <div class="top"><span>#${esc(x.id)} · ${esc(x.time)} · ${x.page === "manual" ? "ruční zadání" : "sdílení / vložení"}</span><span>verze ${esc(x.version || "?")} · JŘ ${esc(x.timetable_built_at || "?")}</span></div>
+        ${x.note ? `<div class="note">💬 ${esc(x.note)}</div>` : ""}
+        <div class="inp">${esc(inText)}${inp.date && inp.text ? ` (datum ${esc(inp.date)})` : ""}</div>
+        ${msgs.map(m => `<div class="ans">${esc(m)}</div>`).join("")}
+        <details><summary>Podrobnosti (JSON)</summary><pre>${esc(JSON.stringify({debug_trains: x.debug_trains, response: resp}, null, 1))}</pre></details>
+        <button class="sec" data-copy="${esc(x.id)}">Kopírovat</button>
+        <button data-done="${esc(x.id)}" data-v="${x.done ? 0 : 1}">${x.done ? "Znovu otevřít" : "Vyřešeno"}</button></div>`;
+    }).join("") || `<div class="hint">Žádná nevyřešená hlášení.</div>`;
+  } catch (e) { out.textContent = e.message; out.className = "msg err"; }
+}
+$("repBtn").addEventListener("click", loadReports);
+$("repAll").addEventListener("change", loadReports);
+$("reps").addEventListener("click", async ev => {
+  const c = ev.target.dataset.copy, dn = ev.target.dataset.done;
+  if (c) {
+    const x = REPS.find(r => r.id === c);
+    try { await navigator.clipboard.writeText(JSON.stringify(x, null, 1)); ev.target.textContent = "Zkopírováno"; }
+    catch (e) { ev.target.textContent = "Kopírování selhalo"; }
+  } else if (dn) {
+    await fetch("/admin/reports", {method: "POST", headers: {"X-Admin-Token": $("token").value, "Content-Type": "application/json"},
+                                   body: JSON.stringify({id: dn, done: ev.target.dataset.v === "1"})});
+    loadReports();
+  }
+});
+if ($("token").value) loadReports();
 if ($("token").value) loadStats();
 
 document.querySelectorAll("button[data-action]").forEach(b => b.addEventListener("click", async () => {
