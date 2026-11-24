@@ -181,6 +181,28 @@ def train_run(engine, number, date):
     return res
 
 
+def transfer_diagnosis(engine, a_no, b_no, date, item=None):
+    """Proč se přestup nenašel – srozumitelný důvod (a podklady pro ladění v item["diagnosis"])."""
+    ra, rb = train_run(engine, a_no, date), train_run(engine, b_no, date)
+    fmt = lambda m: "–" if m is None else f"{int(m) // 60 % 24}:{int(m) % 60:02d}"
+    diag = {"from_stops": len(ra), "to_stops": len(rb)}
+    if item is not None:
+        item["diagnosis"] = diag
+    if not ra and not rb:
+        return f"ani jeden z vlaků v jízdním řádu na tento den není."
+    if not ra:
+        return f"vlak {a_no} v jízdním řádu na tento den není (nejede, nebo jede jen mimo ČR)."
+    if not rb:
+        return f"vlak {b_no} v jízdním řádu na tento den není (nejede, nebo jede jen mimo ČR)."
+    common = set(ra) & set(rb)
+    diag["common"] = {engine.names.get(st, st): {"arr": fmt(ra[st][0]), "dep": fmt(rb[st][1])} for st in common}
+    if not common:
+        return "vlaky nemají v českém jízdním řádu společnou stanici (přestup je mimo ČR, nebo se přechází na jiné nádraží)."
+    st = sorted(common, key=lambda x: (ra[x][0] is None, ra[x][0] or 0))[0]
+    return (f"oba vlaky staví v {engine.names.get(st, st)}, ale podle jízdního řádu tam {a_no} přijede {fmt(ra[st][0])} "
+            f"a {b_no} odjede {fmt(rb[st][1])} – na tento vlak se tam přestoupit nedá.")
+
+
 def find_transfer(engine, a_no, b_no, date, text=""):
     """Stanice přestupu z vlaku a_no na b_no: kde oba staví, a přijede a b odjede nejdříve po příjezdu."""
     ra, rb = train_run(engine, a_no, date), train_run(engine, b_no, date)
@@ -537,8 +559,8 @@ def analyze(engine, text, date=None, fetch=None, resolve=None, now=None, rendere
         st = find_transfer(engine, a, b, date, date_text)
         if st is None:
             item["result"] = "station_not_found"
-            item["message"] = (f"Nenašel jsem stanici, kde by šlo z {item['from_train']} přestoupit na {item['to_train']} dne {date.isoformat()} "
-                               "(vlaky ten den nejedou, nebo se mezi nimi přechází jinam).")
+            item["message"] = (f"Nenašel jsem stanici, kde by šlo z {item['from_train']} přestoupit na {item['to_train']} dne {date.isoformat()}: "
+                               + transfer_diagnosis(engine, a, b, date, item))
             transfers.append(item)
             continue
         name = engine.names.get(st)

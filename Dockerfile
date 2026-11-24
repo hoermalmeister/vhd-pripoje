@@ -1,4 +1,5 @@
-FROM python:3.12-slim
+# bookworm (Debian 12): Playwright umí doinstalovat knihovny prohlížeče; na novějším Debianu by sestavení selhalo
+FROM python:3.12-slim-bookworm
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 WORKDIR /app
 COPY requirements.txt .
