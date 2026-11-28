@@ -74,7 +74,7 @@
   </div>
   <div class="card">
     <h2>Pomůcka „Přípoje mezi vlaky“ (Excel)</h2>
-    <div class="hint">Automaticky se kontroluje každých 7 dní; přepočítá se jen při změně souboru. Po přepočtu zkontrolujte „Položky k revizi“ – ruční opravy pravidel, jejichž text se v nové verzi změnil.</div>
+    <div class="hint">Platná pomůcka se kontroluje každých 7 dní, pomůcka příštího jízdního řádu (odhadnutý odkaz, např. …/JR2027/Pripoje_2027.xlsx) každý den, dokud nevyjde. Rok se pozná z obsahu Excelu („JŘ 2027“), takže nová pomůcka se uloží vedle stávající a obě platí současně – každá pro své období. Dokud nová nevyjde, hledání po konci platné pomůcky se označí jako orientační. Po přepočtu zkontrolujte „Položky k revizi“.</div>
     <label for="hbUrl">Nový odkaz na Excel (nepovinné – např. pro JŘ 2027)</label>
     <input id="hbUrl" placeholder="https://provoz.spravazeleznic.cz/…/Pripoje_2027.xlsx">
     <label for="hbFile">nebo nahrát soubor .xlsx</label>
@@ -107,10 +107,14 @@ async function refresh() {
       ["Jízdní řád postaven", h.built_at],
       ["Úloha GTFS", h.jobs?.gtfs],
       ["Zdroj GTFS", h.sources?.gtfs_url],
-      ["Pomůcka", hb.timetable ? `${hb.timetable}, ${hb.stations} stanic` : "z repozitáře (zatím nestaženo)"],
-      ["Pomůcka aktualizována", hb.updated_at],
-      ["Poslední kontrola pomůcky", hb.checked_at],
-      ["Položky k revizi", hb.review_items ?? "0"],
+      ["Pomůcky", (h.handbooks || []).map(x => `${x.timetable} (${x.valid_from} – ${x.valid_to}, ${x.stations} stanic)`).join(" · ") || "–"],
+      ...(h.handbook_targets || []).map(t => {
+        const m = (h.handbook || {})[t.key] || {};
+        const have = (h.handbooks || []).some(x => (x.timetable || "").replace(/\D/g, "") === t.key.replace(/\D/g, ""));
+        return [`${t.key.replace("JR", "JŘ ")}${t.required ? "" : " (příští)"}`,
+                `${have ? "načteno" : (t.required ? "z repozitáře" : "zatím nevyšla")}${m.updated_at ? ", aktualizováno " + m.updated_at : ""}` +
+                `${m.tried_at ? ", kontrola " + m.tried_at : ""}${m.last_result ? " – " + m.last_result : ""} · ${t.url}`];
+      }),
       ["Úloha pomůcka", h.jobs?.handbook],
       ["Zdroj pomůcky", h.sources?.handbook_url],
       ["Chyba", h.error || "–"],

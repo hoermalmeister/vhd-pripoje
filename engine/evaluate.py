@@ -116,13 +116,17 @@ class Train:
 
 
 class Engine:
-    def __init__(self, data_dir, db_path=None):
+    def __init__(self, data_dir, db_path=None, shared=None):
+        """shared = jiný Engine, se kterým se sdílí databáze vlaků a síť (víc pomůcek najednou bez dvojnásobné paměti)."""
         self.data_dir = data_dir
         self.rules = json.load(open(os.path.join(data_dir, "rules.json"), encoding="utf-8"))
         self.index = json.load(open(os.path.join(data_dir, "index.json"), encoding="utf-8"))
         self.holidays = set(self.rules["day_types"]["public_holidays"])
-        self.db = sqlite3.connect(db_path or os.path.join(data_dir, "trains.db"), check_same_thread=False)
-        self.net = Network(self.db)
+        if shared is not None:
+            self.db, self.net = shared.db, shared.net
+        else:
+            self.db = sqlite3.connect(db_path or os.path.join(data_dir, "trains.db"), check_same_thread=False)
+            self.net = Network(self.db)
         self.names = self.net.names
         by_norm = {}
         for sid, n in self.names.items():
@@ -132,10 +136,13 @@ class Engine:
             self.station_gtfs[st["station"]] = by_norm.get(_norm_name(st["station"]))
         self.gtfs_by_name = by_norm
         # typy dopraven (stanice / zastávka) z Wikipedie, párované přes kód SR70
-        try:
-            self.station_types = json.load(open(os.path.join(data_dir, "station_types.json"), encoding="utf-8"))["by_code"]
-        except Exception:
-            self.station_types = {}
+        if shared is not None and shared.station_types:
+            self.station_types = shared.station_types
+        else:
+            try:
+                self.station_types = json.load(open(os.path.join(data_dir, "station_types.json"), encoding="utf-8"))["by_code"]
+            except Exception:
+                self.station_types = {}
         self.districts = {}
         for st_name, sid in self.station_gtfs.items():
             extra = STATION_DISTRICTS.get(st_name) or STATION_DISTRICTS.get(self.names.get(sid, ""), [])
@@ -794,3 +801,74 @@ class Engine:
                     continue
                 return True, ""
         return False, ""
+
+
+# ---------------------------------------------------------------- víc pomůcek najednou (přechod mezi jízdními řády)
+
+def timetable_start(year):
+    """První den jízdního řádu 'JŘ year': neděle po druhé sobotě v prosinci předchozího roku (např. JŘ 2027 od 13. 12. 2026)."""
+    d = dt.date(year - 1, 12, 1)
+    sats = [d + dt.timedelta(days=i) for i in range(31) if (d + dt.timedelta(days=i)).weekday() == 5]
+    return sats[1] + dt.timedelta(days=1)
+
+
+def _fmt_date(iso):
+    d = dt.date.fromisoformat(iso)
+    return f"{d.day}. {d.month}. {d.year}"
+
+
+class MultiEngine:
+    """Několik pomůcek (např. JŘ 2026 a JŘ 2027) nad jednou databází vlaků; vyhodnocení podle data cesty.
+    Pro datum za koncem poslední známé pomůcky se použije poslední pomůcka a výsledek se označí jako orientační."""
+
+    def __init__(self, data_dirs, db_path):
+        self.engines = []
+        for d in data_dirs:
+            self.engines.append(Engine(d, db_path, shared=self.engines[0] if self.engines else None))
+        if not self.engines:
+            raise ValueError("Žádná data pomůcky")
+        self.engines.sort(key=lambda e: e.index["source"].get("valid_from") or "")
+
+    # atributy, které nezávisí na datu (db, names, net, …), a výchozí pomůcka = ta, která platí dnes
+    def current(self):
+        return self.for_date(dt.date.today())[0]
+
+    def __getattr__(self, name):
+        if name == "engines":
+            raise AttributeError(name)
+        return getattr(self.current(), name)
+
+    def for_date(self, date):
+        """(engine, None) – pomůcka platná pro datum; (engine, info) – datum mimo všechny známé pomůcky."""
+        d = date.isoformat()
+        for e in self.engines:
+            src = e.index["source"]
+            if (src.get("valid_from") or "") <= d and (src.get("valid_to") is None or d <= src["valid_to"]):
+                return e, None
+        last = self.engines[-1]
+        src = last.index["source"]
+        if src.get("valid_to") and d > src["valid_to"]:
+            m = re.search(r"(\d{4})", src.get("timetable") or "")
+            nxt = f"JŘ {int(m.group(1)) + 1}" if m else "nový jízdní řád"
+            return last, {"reason": "next_handbook_missing", "handbook": src.get("timetable"), "valid_to": src["valid_to"],
+                          "next_timetable": nxt,
+                          "message": f"Od {_fmt_date((dt.date.fromisoformat(src['valid_to']) + dt.timedelta(days=1)).isoformat())} "
+                                     f"platí {nxt}, jehož pomůcka „Přípoje mezi vlaky“ zatím není zveřejněná. "
+                                     f"Výsledek je jen orientační podle pomůcky {src.get('timetable')} – čekací doby se mohou změnit."}
+        first = self.engines[0]
+        fsrc = first.index["source"]
+        return first, {"reason": "before_first_handbook", "handbook": fsrc.get("timetable"), "valid_from": fsrc.get("valid_from"),
+                       "message": f"Pro toto datum pomůcku nemám (nejstarší platí od {_fmt_date(fsrc['valid_from'])}). Výsledek je jen orientační."}
+
+    def evaluate(self, station_text, date, connecting_no, waiting_no):
+        eng, prov = self.for_date(date)
+        res = eng.evaluate(station_text, date, connecting_no, waiting_no)
+        src = eng.index["source"]
+        res["handbook"] = {"timetable": src.get("timetable"), "valid_from": src.get("valid_from"), "valid_to": src.get("valid_to")}
+        if prov:
+            res["provisional"] = prov
+            res.setdefault("warnings", []).insert(0, prov["message"])
+        return res
+
+    def handbooks(self):
+        return [dict(e.index["source"], stations=e.index.get("station_count"), data_dir=e.data_dir) for e in self.engines]

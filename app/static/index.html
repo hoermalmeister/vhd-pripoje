@@ -50,6 +50,8 @@
   .notes { margin-top: 14px; }
   .note { background: var(--info-bg); border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: .92rem; }
   .note.w { background: var(--warn-bg); }
+  .prov { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+          padding: 2px 8px; border-radius: 999px; background: var(--warn-bg); color: var(--warn); border: 1px solid currentColor; margin-left: 8px; vertical-align: middle; }
   .note b { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 2px; }
   .status { font-size: .9rem; color: var(--muted); }
   .err { color: var(--no); }
@@ -166,16 +168,17 @@ $("go").addEventListener("click", async () => {
     const r = await api(`/api/connection?station=${encodeURIComponent(st)}&date=${d}&arriving=${encodeURIComponent(a)}&departing=${encodeURIComponent(b)}`);
     $("status").textContent = "";
     const [cls, fn] = VERDICT[r.result] || ["warn", () => r.result];
-    let h = `<div class="card"><div class="verdict ${cls}"><div class="big">${esc(fn(r))}</div><div class="msg">${esc(r.message)}</div></div><dl>`;
+    let h = `<div class="card"><div class="verdict ${cls}"><div class="big">${esc(fn(r))}${r.provisional ? '<span class="prov">orientační</span>' : ""}</div><div class="msg">${esc(r.message)}</div></div><dl>`;
     h += `<dt>Stanice</dt><dd>${esc(r.station?.name)}${r.station && !r.station.in_handbook ? " (bez vlastní tabulky)" : ""}</dd>`;
     h += `<dt>Den</dt><dd>${esc(r.input?.date)} – ${esc(r.day_type?.label)}</dd>`;
+    if (r.handbook) h += `<dt>Pomůcka</dt><dd>${esc(r.handbook.timetable)}${r.provisional ? " – pro toto datum ještě nevyšla nová, výsledek je orientační" : ""}</dd>`;
     h += `<dt>Přijíždím</dt><dd>${trainLine(r.connecting_train)}</dd>`;
     h += `<dt>Přestupuji na</dt><dd>${trainLine(r.waiting_train)}</dd>`;
     if (r.scheduled_transfer_minutes != null) h += `<dt>Plánovaný přestup</dt><dd>${r.scheduled_transfer_minutes} min</dd>`;
     if (r.matched_rule) h += `<dt>Řádek tabulky</dt><dd>${esc(r.matched_rule.section)}: ${esc(r.matched_rule.waiting_train)} ← ${esc(r.matched_rule.connecting_train)} (${esc(r.matched_rule.wait_raw)})</dd>`;
     if (r.part_b_rule) h += `<dt>Pravidlo stanice</dt><dd>${esc(r.part_b_rule.text)}</dd>`;
     h += `</dl><div class="notes">`;
-    (r.warnings || []).filter(Boolean).forEach(w => h += `<div class="note w"><b>Upozornění</b>${esc(w)}</div>`);
+    (r.warnings || []).filter(Boolean).forEach(w => h += `<div class="note w"><b>${r.provisional && w === r.provisional.message ? "⚠ Orientační výsledek" : "Upozornění"}</b>${esc(w)}</div>`);
     (r.reasons || []).forEach(w => h += `<div class="note"><b>Odůvodnění</b>${esc(w)}</div>`);
     const si = r.station_info || {};
     Object.entries(si.footnotes || {}).forEach(([m, t]) => h += `<div class="note"><b>Poznámka ${esc(m)}</b>${esc(t)}</div>`);

@@ -199,6 +199,14 @@ def transfer_diagnosis(engine, a_no, b_no, date, item=None):
     if item is not None:
         item["diagnosis"] = diag
     if not ra and not rb:
+        try:
+            last = engine.db.execute("select max(date) from service_dates").fetchone()[0]
+        except Exception:
+            last = None
+        if last and int(date.strftime("%Y%m%d")) > int(last):
+            ls = str(last)
+            return (f"jízdní řád vlaků máme zatím jen do {int(ls[6:])}. {int(ls[4:6])}. {ls[:4]} – data pro pozdější dny "
+                    "se doplní, jakmile je dopravci zveřejní (stahují se dvakrát týdně).")
         return f"ani jeden z vlaků v jízdním řádu na tento den není."
     if not ra:
         return f"vlak {a_no} v jízdním řádu na tento den není (nejede, nebo jede jen mimo ČR)."
@@ -548,6 +556,10 @@ def analyze(engine, text, date=None, fetch=None, resolve=None, now=None, rendere
         if not explicit:
             out["warnings"].append("V textu nebylo datum – použit dnešek.")
     out["date"] = date.isoformat()
+    prov = engine.for_date(date)[1] if hasattr(engine, "for_date") else None
+    if prov:
+        out["provisional"] = prov
+        out["warnings"].insert(0, prov["message"])
     if source == "google":
         legs = order_by_timetable(engine, legs, date, date_text)
         trains = [l for l in legs if l["type"] == "train"]
@@ -574,7 +586,7 @@ def analyze(engine, text, date=None, fetch=None, resolve=None, now=None, rendere
             transfers.append(item)
             continue
         name = engine.names.get(st)
-        hb, _sid = engine.find_station(name)
+        hb, _sid = (engine.for_date(date)[0] if hasattr(engine, "for_date") else engine).find_station(name)
         res = engine.evaluate(hb or name, date, a, b)
         res.pop("trace", None)
         item.update(station=res.get("station", {}).get("name", name), evaluation=res,

@@ -28,6 +28,7 @@ Endpointy (všechny GET, odpověď JSON, CORS povolen):
 """
 import datetime as dt
 import hmac
+import re
 import secrets
 import json
 import os
@@ -47,7 +48,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
-from engine.evaluate import Engine, _norm_name, hhmm, base_number, number_tiers  # noqa: E402
+from engine.evaluate import Engine, MultiEngine, timetable_start, _norm_name, hhmm, base_number, number_tiers  # noqa: E402
 from engine.itinerary import analyze, ics_to_text, parse_trains, prague_now, URL_RE, MAPY_RE  # noqa: E402
 from app.stats import Stats  # noqa: E402
 from email.parser import BytesParser  # noqa: E402
@@ -57,7 +58,8 @@ REPO_DATA_DIR = os.path.join(ROOT, "data")
 STATIC_DIR = os.path.join(ROOT, "app", "static")
 TRAINS_DB = os.environ.get("TRAINS_DB", os.path.join(ROOT, "var", "trains.db"))
 VAR_DIR = os.path.dirname(TRAINS_DB)
-RUNTIME_DATA_DIR = os.path.join(VAR_DIR, "data")            # pomůcka stažená za běhu (přednost před repozitářem)
+RUNTIME_DATA_DIR = os.path.join(VAR_DIR, "data")            # starší umístění (jedna pomůcka) – převede se do HANDBOOKS_DIR
+HANDBOOKS_DIR = os.path.join(VAR_DIR, "handbooks")          # pomůcky stažené za běhu, po jízdních řádech: JR2026, JR2027, …
 SETTINGS_FILE = os.path.join(VAR_DIR, "settings.json")
 HANDBOOK_META = os.path.join(VAR_DIR, "handbook_meta.json")
 GTFS_PATH = os.environ.get("GTFS_PATH")
@@ -82,6 +84,7 @@ class State:
     handbook_event = threading.Event()
     gtfs_upload = None          # cesta k ručně nahranému GTFS zipu
     handbook_upload = None      # cesta k ručně nahranému Excelu
+    handbook_manual_url = None  # odkaz zadaný v administraci
     jobs = {"gtfs": "–", "handbook": "–"}
 
 
@@ -105,8 +108,64 @@ def save_settings(**kw):
     json.dump(s, open(SETTINGS_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 
+def _timetable_year(data_path):
+    try:
+        src = json.load(open(os.path.join(data_path, "index.json"), encoding="utf-8"))["source"]
+        m = re.search(r"(\d{4})", src.get("timetable") or "")
+        return int(m.group(1)) if m else None
+    except Exception:
+        return None
+
+
+def migrate_runtime_data():
+    """Dřívější jediná stažená pomůcka (var/data) -> var/handbooks/JR<rok>."""
+    if os.path.exists(os.path.join(RUNTIME_DATA_DIR, "index.json")):
+        y = _timetable_year(RUNTIME_DATA_DIR)
+        if y:
+            os.makedirs(HANDBOOKS_DIR, exist_ok=True)
+            dest = os.path.join(HANDBOOKS_DIR, f"JR{y}")
+            if not os.path.exists(dest):
+                os.replace(RUNTIME_DATA_DIR, dest)
+                log("Pomůcka převedena do", dest)
+    meta = handbook_meta()
+    if "sha256" in meta:            # starý formát metadat (jedna pomůcka)
+        y = re.search(r"(\d{4})", meta.get("timetable") or "")
+        new = {f"JR{y.group(1)}": meta} if y else {}
+        json.dump(new, open(HANDBOOK_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+
+def datasets():
+    """Složky s daty pomůcek, které se mají načíst: stažené (po jízdních řádech) + z repozitáře, pokud jeho rok chybí.
+    Pomůcky, které skončily před více než 60 dny, se vynechají."""
+    found = {}
+    if os.path.isdir(HANDBOOKS_DIR):
+        for name in sorted(os.listdir(HANDBOOKS_DIR)):
+            p = os.path.join(HANDBOOKS_DIR, name)
+            y = _timetable_year(p)
+            if y:
+                found[y] = p
+    ry = _timetable_year(REPO_DATA_DIR)
+    if ry and ry not in found:
+        found[ry] = REPO_DATA_DIR
+    limit = (dt.date.today() - dt.timedelta(days=60)).isoformat()
+    keep = []
+    for y in sorted(found):
+        try:
+            vt = json.load(open(os.path.join(found[y], "index.json"), encoding="utf-8"))["source"].get("valid_to")
+        except Exception:
+            vt = None
+        if vt is None or vt >= limit or y == max(found):
+            keep.append(found[y])
+    return keep
+
+
 def data_dir():
-    return RUNTIME_DATA_DIR if os.path.exists(os.path.join(RUNTIME_DATA_DIR, "index.json")) else REPO_DATA_DIR
+    """Data pomůcky platné dnes (pro seznam položek k revizi apod.)."""
+    eng = State.engine
+    if eng is not None:
+        return eng.current().data_dir
+    ds = datasets()
+    return ds[-1] if ds else REPO_DATA_DIR
 
 
 def download(url, dest, timeout=300):
@@ -142,12 +201,12 @@ def build_database(src_override=None):
 
 
 def load_engine():
-    eng = Engine(data_dir(), TRAINS_DB)
+    eng = MultiEngine(datasets(), TRAINS_DB)
     with State.lock:
         State.engine = eng
         State.status = "ready"
         State.built_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(os.path.getmtime(TRAINS_DB)))
-    log("Engine připraven, data pomůcky:", data_dir())
+    log("Engine připraven, pomůcky:", ", ".join(f"{h.get('timetable')} ({h.get('valid_from')} – {h.get('valid_to')})" for h in eng.handbooks()))
 
 
 def gtfs_worker():
@@ -193,76 +252,161 @@ def handbook_meta():
         return {}
 
 
-def update_handbook(force=False):
-    """Stáhne Excel pomůcky; pokud se změnil, přepočítá data stanic a vymění je za běhu."""
+def next_year_url(url, year):
+    """Odkaz na pomůcku dalšího jízdního řádu odvozený z aktuálního (…/JR2026/Pripoje_2026.xlsx -> …/JR2027/Pripoje_2027.xlsx)."""
+    return url.replace(str(year), str(year + 1)) if url and str(year) in url else None
+
+
+def handbook_targets():
+    """Co kontrolovat: [(klíč, odkaz, povinné)] – pomůcka platného JŘ a odhadnutý odkaz na příští (zatím nemusí existovat)."""
+    st = settings()
+    urls = dict(st.get("handbook_urls") or {})
+    m = re.search(r"(20\d\d)", st["handbook_url"] or "")
+    if m:
+        urls.setdefault(m.group(1), st["handbook_url"])
+    out = []
+    today = dt.date.today()
+    cur = today.year + 1 if today >= timetable_start(today.year + 1) else today.year
+    for y in (cur, cur + 1):
+        url = urls.get(str(y))
+        if not url and str(y - 1) in urls:
+            url = next_year_url(urls[str(y - 1)], y - 1)
+        if url:
+            out.append((f"JR{y}", url, y == cur))
+    return out
+
+
+def update_handbook(force=False, url=None, upload=None, required=True):
+    """Stáhne Excel pomůcky; pokud se změnil, přepočítá data stanic do var/handbooks/JR<rok> a vymění je za běhu.
+    Rok jízdního řádu se bere z obsahu Excelu („JŘ 2027“), takže pomůcky různých let se nepřepisují."""
     import hashlib
-    os.makedirs(VAR_DIR, exist_ok=True)
+    os.makedirs(HANDBOOKS_DIR, exist_ok=True)
     tmpdir = tempfile.mkdtemp(prefix="handbook-")
     try:
-        upload, State.handbook_upload = State.handbook_upload, None
         if upload:
             xlsx, source = upload, "ruční nahrání"
         else:
-            source = settings()["handbook_url"]
+            source = url
             xlsx = os.path.join(tmpdir, "pripoje.xlsx")
             log("Stahuji pomůcku", source)
-            download(source, xlsx, timeout=120)
+            try:
+                download(source, xlsx, timeout=120)
+            except urllib.error.HTTPError as e:
+                if not required and e.code in (403, 404, 410):
+                    return "zatím nezveřejněno"
+                raise
+            except (urllib.error.URLError, OSError) as e:
+                if not required:
+                    return f"zatím nedostupné ({type(e).__name__})"
+                raise
         raw = open(xlsx, "rb").read()
         if raw[:2] != b"PK":
+            if not required:
+                return "zatím nezveřejněno"
             raise ValueError("Stažený soubor není Excel (xlsx) – zkontrolujte odkaz.")
         sha = hashlib.sha256(raw).hexdigest()
-        meta = handbook_meta()
-        meta["checked_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
-        if sha == meta.get("sha256") and not force and os.path.exists(os.path.join(RUNTIME_DATA_DIR, "index.json")):
-            json.dump(meta, open(HANDBOOK_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-            log("Pomůcka beze změny")
-            return "beze změny"
-        out = os.path.join(VAR_DIR, "data.new")
+        meta_all = handbook_meta()
+        for k, m in meta_all.items():
+            if isinstance(m, dict) and m.get("sha256") == sha and not force and os.path.exists(os.path.join(HANDBOOKS_DIR, k, "index.json")):
+                m["checked_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+                json.dump(meta_all, open(HANDBOOK_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                log("Pomůcka beze změny:", k)
+                return "beze změny"
+        out = os.path.join(VAR_DIR, "handbook.new")
         shutil.rmtree(out, ignore_errors=True)
         os.makedirs(out)
         subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build_json.py"), xlsx, out], check=True)
         idx = json.load(open(os.path.join(out, "index.json"), encoding="utf-8"))
         if idx.get("station_count", 0) < 50:
             raise ValueError(f"Nová data mají jen {idx.get('station_count')} stanic – nepoužito.")
+        y = _timetable_year(out)
+        if not y:
+            raise ValueError("V Excelu jsem nenašel rok jízdního řádu („JŘ 2027“).")
+        # platnost: když ji Excel neuvádí, dopočítá se z pravidel změny jízdního řádu
+        src = idx["source"]
+        changed = False
+        if not src.get("valid_from"):
+            src["valid_from"] = timetable_start(y).isoformat(); changed = True
+        if not src.get("valid_to"):
+            src["valid_to"] = (timetable_start(y + 1) - dt.timedelta(days=1)).isoformat(); changed = True
+        if changed:
+            json.dump(idx, open(os.path.join(out, "index.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         for f in ("rules.json", "station_types.json", "coverage_report.json"):
             if os.path.exists(os.path.join(REPO_DATA_DIR, f)):
                 shutil.copy(os.path.join(REPO_DATA_DIR, f), os.path.join(out, f))
-        old = os.path.join(VAR_DIR, "data.old")
+        key = f"JR{y}"
+        dest = os.path.join(HANDBOOKS_DIR, key)
+        old = dest + ".old"
         shutil.rmtree(old, ignore_errors=True)
-        if os.path.exists(RUNTIME_DATA_DIR):
-            os.replace(RUNTIME_DATA_DIR, old)
-        os.replace(out, RUNTIME_DATA_DIR)
-        review = json.load(open(os.path.join(RUNTIME_DATA_DIR, "review.json"), encoding="utf-8"))
-        meta.update(sha256=sha, source=source, updated_at=time.strftime("%Y-%m-%d %H:%M:%S"),
-                    timetable=idx["source"].get("timetable"), stations=idx.get("station_count"), review_items=review.get("count"))
-        json.dump(meta, open(HANDBOOK_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        if os.path.exists(dest):
+            os.replace(dest, old)
+        os.replace(out, dest)
+        shutil.rmtree(old, ignore_errors=True)
+        review = json.load(open(os.path.join(dest, "review.json"), encoding="utf-8"))
+        meta_all[key] = dict(sha256=sha, source=source, updated_at=time.strftime("%Y-%m-%d %H:%M:%S"),
+                             checked_at=time.strftime("%Y-%m-%d %H:%M:%S"), timetable=src.get("timetable"),
+                             valid_from=src.get("valid_from"), valid_to=src.get("valid_to"),
+                             stations=idx.get("station_count"), review_items=review.get("count"))
+        json.dump(meta_all, open(HANDBOOK_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        if url and not upload:
+            st = settings()
+            urls = dict(st.get("handbook_urls") or {})
+            urls[str(y)] = url
+            save_settings(handbook_urls=urls)
         if State.engine is not None:
             load_engine()
-        log("Pomůcka aktualizována:", meta)
-        return "aktualizováno"
+        log("Pomůcka aktualizována:", key, meta_all[key])
+        return f"aktualizováno ({src.get('timetable')})"
     finally:
         shutil.rmtree(tmpdir, ignore_errors=True)
 
 
 def handbook_worker():
+    """Pomůcka platného jízdního řádu se kontroluje jednou za HANDBOOK_REFRESH_DAYS dní; pomůcka příštího
+    jízdního řádu (odhadnutý odkaz), dokud nevyjde, každý den. Ruční aktualizace z /admin proběhne hned."""
     time.sleep(5)
     while True:
         forced = State.handbook_event.is_set()
         State.handbook_event.clear()
-        meta = handbook_meta()
-        last = meta.get("checked_at")
-        due = forced or not last or (time.time() - time.mktime(time.strptime(last, "%Y-%m-%d %H:%M:%S"))) > HANDBOOK_REFRESH_DAYS * 86400 \
-            or not os.path.exists(os.path.join(RUNTIME_DATA_DIR, "index.json"))
-        if due:
-            try:
+        upload, State.handbook_upload = State.handbook_upload, None
+        manual_url, State.handbook_manual_url = State.handbook_manual_url, None
+        results = []
+        try:
+            if upload or manual_url:
                 State.jobs["handbook"] = "probíhá " + time.strftime("%H:%M:%S")
-                res = update_handbook(force=forced)
-                State.jobs["handbook"] = f"{res} " + time.strftime("%Y-%m-%d %H:%M:%S")
-            except Exception as e:
-                State.jobs["handbook"] = f"chyba: {type(e).__name__}: {e}"
-                log("Chyba při aktualizaci pomůcky:", State.jobs["handbook"])
-                traceback.print_exc()
-        State.handbook_event.wait(6 * 3600)     # kontrola termínu každých 6 h
+                results.append(update_handbook(force=True, url=manual_url, upload=upload))
+            else:
+                meta = handbook_meta()
+                for key, url, required in handbook_targets():
+                    m = meta.get(key) or {}
+                    last = m.get("checked_at") or m.get("tried_at")
+                    have = os.path.exists(os.path.join(HANDBOOKS_DIR, key, "index.json"))
+                    period = HANDBOOK_REFRESH_DAYS * 86400 if (have or required) else 86400
+                    elapsed = (time.time() - time.mktime(time.strptime(last, "%Y-%m-%d %H:%M:%S"))) if last else None
+                    due = forced or elapsed is None or elapsed > period or (required and not have)
+                    if not due:
+                        continue
+                    State.jobs["handbook"] = f"probíhá {key} " + time.strftime("%H:%M:%S")
+                    try:
+                        res = update_handbook(force=forced, url=url, required=required)
+                    except Exception as e:
+                        res = f"chyba: {type(e).__name__}: {e}"
+                        log("Chyba při aktualizaci pomůcky", key, res)
+                        traceback.print_exc()
+                    meta = handbook_meta()
+                    meta.setdefault(key, {})
+                    meta[key]["tried_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+                    meta[key]["last_result"] = res
+                    meta[key].setdefault("source", url)
+                    json.dump(meta, open(HANDBOOK_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                    results.append(f"{key}: {res}")
+            if results:
+                State.jobs["handbook"] = "; ".join(results) + " · " + time.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception as e:
+            State.jobs["handbook"] = f"chyba: {type(e).__name__}: {e}"
+            log("Chyba při aktualizaci pomůcky:", State.jobs["handbook"])
+            traceback.print_exc()
+        State.handbook_event.wait(6 * 3600)     # kontrola termínů každých 6 h
 
 
 # ---------------------------------------------------------------- API
@@ -332,12 +476,13 @@ def api_trains(station, date):
 
 
 def api_station_table(station, date):
-    eng = State.engine
+    eng, prov = State.engine.for_date(date)
     name, sid = eng.find_station(station)
     if not name:
         return 404, {"error": "Stanice nemá v pomůcce vlastní tabulku – platí obecná pravidla."}
     st, warn = eng.station_file(name, date)
-    return 200, {"warning": warn, "table": st}
+    return 200, {"warning": warn, "table": st, "handbook": eng.index["source"].get("timetable"),
+                 "provisional": prov}
 
 
 def fetch_url(url):
@@ -544,7 +689,8 @@ def api_info():
     eng = State.engine
     return {"handbook": eng.index.get("source", eng.rules["document"]), "stations_in_handbook": len(eng.index["stations"]),
             "timetable_db_built_at": State.built_at, "gtfs_source": GTFS_PATH or settings()["gtfs_url"],
-            "handbook_data": "staženo za běhu" if data_dir() == RUNTIME_DATA_DIR else "z repozitáře",
+            "handbook_data": "z repozitáře" if data_dir() == REPO_DATA_DIR else "staženo za běhu",
+            "handbooks": [{k: v for k, v in h.items() if k != "data_dir"} for h in eng.handbooks()],
             "handbook_meta": handbook_meta(), "handbook_url": settings()["handbook_url"], "jobs": State.jobs}
 
 
@@ -629,7 +775,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, {"ok": True, "message": "Aktualizace jízdního řádu (GTFS) spuštěna – trvá asi 1–2 minuty."})
         if action == "handbook":
             if url:
-                save_settings(handbook_url=url)
+                State.handbook_manual_url = url
             if "file" in files:
                 p = os.path.join(VAR_DIR, "upload-pripoje.xlsx")
                 open(p, "wb").write(files["file"][1]); State.handbook_upload = p
@@ -737,6 +883,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, {"status": "ok", "ready": State.engine is not None, "data": State.status,
                                         "built_at": State.built_at, "error": State.error, "jobs": State.jobs,
                                         "handbook": handbook_meta(), "admin_enabled": bool(ADMIN_TOKEN),
+                                        "handbooks": ([{k: v for k, v in h.items() if k != "data_dir"} for h in State.engine.handbooks()]
+                                                      if State.engine is not None else []),
+                                        "handbook_targets": [{"key": k, "url": u, "required": r} for k, u, r in handbook_targets()],
                                         "sources": {k: v for k, v in settings().items() if k.endswith("_url")}})
             if u.path == "/api/review":
                 with open(os.path.join(data_dir(), "review.json"), "rb") as f:
@@ -795,6 +944,10 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     port = int(os.environ.get("PORT", "8000"))
+    try:
+        migrate_runtime_data()
+    except Exception:
+        traceback.print_exc()
     threading.Thread(target=gtfs_worker, daemon=True).start()
     threading.Thread(target=handbook_worker, daemon=True).start()
     import signal

@@ -192,3 +192,7 @@ Server počítá návštěvnost sám (`app/stats.py`), bez cookies a bez uklád�
 ## Nahlášené chyby
 
 Pod každým nejistým (žlutým) výsledkem a pod chybou je tlačítko **Nahlásit chybu**. Hlášení obsahuje zadání, odpověď aplikace, volitelnou poznámku a podklady z jízdního řádu (jaké jízdy vlaků v datech jsou, včetně výlukových čísel). Ukládá se do `var/reports.jsonl`, přehled je v `/admin` → Nahlášené chyby. Upozornění na nové hlášení lze posílat na webhook v proměnné `REPORT_WEBHOOK_URL` (Discord webhook nebo např. téma na ntfy.sh).
+
+## Přechod na nový jízdní řád (víc pomůcek najednou)
+
+Stažené pomůcky se ukládají po jízdních řádech do `var/handbooks/JR<rok>` (rok se pozná z obsahu Excelu, „JŘ 2027“) a načítají se všechny současně: dotaz se vyhodnotí podle pomůcky platné pro datum cesty. Platná pomůcka se kontroluje jednou týdně, pomůcka příštího jízdního řádu (odkaz odvozený z aktuálního, např. `…/JR2027/Pripoje_2027.xlsx`) každý den, dokud nevyjde – pak se načte sama. Do té doby se dotazy na data po konci platné pomůcky vyhodnotí podle ní, ale označí jako **orientační**. Novou pomůcku lze nahrát i ručně v `/admin` (odkaz nebo soubor) – stávající zůstane.
